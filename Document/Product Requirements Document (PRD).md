@@ -84,8 +84,47 @@ The product adheres to industry standards of security and data privacy, ensuring
 
 
 ### 2.6. Assumptions and Risks
-- **Assumption 1:** [e.g., Users will adopt new technology]
-- **Risk 1:** [e.g., Delayed launch due to technology constraints]
+
+**Assumptions:**
+
+1. **Users will Adopt Debt Repayment Strategies:**  
+   It is assumed that users are motivated to follow structured debt repayment strategies such as Snowball, Avalanche, and Snowflake, and will find value in a tool that provides these options.
+
+2. **Widespread Multicurrency Need:**  
+   It is assumed that there is a significant user base requiring multicurrency support, particularly among expatriates, international students, and professionals managing debts across different countries.
+
+3. **Users Prefer Web-Based Solutions:**  
+   It is assumed that users will prefer a web-based application over desktop-only software, and that they value mobile accessibility for managing their debt repayment plans on the go.
+
+4. **Availability of APIs:**  
+   It is assumed that integration with third-party financial tools like YNAB or Mint (through unofficial APIs) will be feasible and stable, allowing users to import their financial data easily.
+
+5. **Stable Development and Deployment Environment:**  
+   It is assumed that the MERN stack will provide a stable and efficient environment for development, deployment, and scaling of the application.
+
+**Risks:**
+
+1. **Technological Constraints and Delays:**  
+   There is a risk that unforeseen technological constraints, such as compatibility issues with multicurrency support or difficulties in implementing the Snowflake strategy, could delay the launch of the product.
+
+2. **Low User Adoption:**  
+   If users do not adopt the structured debt repayment strategies offered by the tool, the product could fail to gain traction in the market.
+
+3. **Security and Privacy Breaches:**  
+   Given the sensitive nature of financial data, there is a risk of security and privacy breaches, which could damage user trust and lead to legal consequences.
+
+4. **Regulatory Compliance Challenges:**  
+   As the product will handle financial data, there is a risk of non-compliance with data privacy regulations such as GDPR and CCPA, which could result in fines or restrictions.
+
+5. **Competitive Pressure:**  
+   The product may face significant competition from established financial management tools and newer, innovative entrants that could replicate or surpass its features, making it harder to capture and retain market share.
+
+6. **APIs Becoming Unavailable or Changing:**  
+   There is a risk that third-party APIs (like those from YNAB or unofficial Mint APIs) might change or become unavailable, which could disrupt the product's functionality and user experience.
+
+7. **Resource and Budget Constraints:**  
+   There is a risk that the development process might exceed the planned budget or require more resources than anticipated, which could lead to compromises in features or quality.
+
 
 ---
 
