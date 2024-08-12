@@ -69,7 +69,7 @@
 
 ---
 
-## 2. Background and Strategic Fit
+## 2. Market and User Insights
 
 ### 2.1. Problem Statement
 Virtually all loan recipients struggle to estimate their debt-free date or the total interest their debts will incur due to inadequate tools and education.
@@ -125,7 +125,6 @@ Recognizing that every user's financial situation is unique, the Debt-Free Calcu
 **Security and Privacy:**  
 The product adheres to industry standards of security and data privacy, ensuring that user information is protected at all times. This includes compliance with relevant regulations such as GDPR and CCPA, as well as implementing best practices in web security.
 
-
 ### 2.6. Assumptions and Risks
 
 **Assumptions:**
@@ -170,6 +169,58 @@ The product adheres to industry standards of security and data privacy, ensuring
 
 ---
 
+
+### 2.7 User Personas:
+
+#### Emily Thompson - Young Professional
+- **Occupation:** Marketing Coordinator at a tech startup
+- **Location:** Austin, Texas, USA (North America)
+- **Life Stage:** Early in her career, dealing with student loans and other early debts.
+- **Financial Goals:** Manage her student loan debt efficiently while beginning to save for future goals like purchasing a home and starting a family.
+- **Behavior:** Financially engaged and tech-savvy, Emily uses various apps to track her spending and savings. She’s looking for a tool that can help her create a clear path to debt repayment while allowing her to save for her future.
+- **Challenges:** Balancing debt repayment with other financial priorities, such as building an emergency fund and saving for a down payment.
+- **Needs:** A tool that offers personalized debt repayment plans, integrates with her existing financial accounts, and provides clear insights into how different strategies (e.g., Avalanche vs. Snowball) affect her long-term financial health.
+
+#### Michael Harris - Pre-Retiree
+- **Occupation:** Senior Manager at a manufacturing company
+- **Location:** Toronto, Canada (North America)
+- **Life Stage:** Approaching retirement, focused on paying off the remaining mortgage and small personal loans.
+- **Financial Goals:** Achieve a debt-free retirement in the next five years while maintaining a comfortable lifestyle.
+- **Behavior:** Financially engaged but prefers straightforward, user-friendly tools that don’t require too much technical know-how.
+- **Challenges:** Managing multiple types of debt, including a mortgage, car loan, and credit card debt, while preparing for retirement.
+- **Needs:** A clear, easy-to-use tool that can help him create a debt repayment strategy aligned with his retirement timeline, with minimal technical complexity.
+
+#### Sofia Ramirez - Debt Consolidation Seeker
+- **Occupation:** Small Business Owner
+- **Location:** Mexico City, Mexico (North America)
+- **Life Stage:** Managing multiple business and personal loans that need to be consolidated into a single, manageable payment.
+- **Financial Goals:** Simplify her financial obligations by consolidating debt and improving cash flow management.
+- **Behavior:** Financially engaged and moderately tech-savvy, Sofia uses mobile banking apps and online tools but prefers simple interfaces due to her busy schedule.
+- **Challenges:** Juggling multiple financial obligations with inconsistent business income, requiring flexible and localized solutions.
+- **Needs:** A tool that offers debt consolidation options, tailored to the Mexican market, with support for local currency and language, helping her streamline her finances and reduce financial stress.
+
+#### Javier García - Financially Engaged User
+- **Occupation:** Software Engineer
+- **Location:** Barcelona, Spain (Europe)
+- **Life Stage:** Mid-career professional with a mortgage and a car loan, looking to optimize debt repayment and investments.
+- **Financial Goals:** Optimize his debt repayment while also investing in long-term financial goals like retirement and education funds for his children.
+- **Behavior:** Highly financially engaged and tech-savvy, Javier enjoys using advanced financial tools to track and optimize his finances.
+- **Challenges:** Balancing debt repayment with investments, managing currency fluctuations for international investments.
+- **Needs:** A customizable, data-driven tool that integrates with his existing financial tools, supports multiple currencies, and offers advanced analytics for debt repayment and investment strategies.
+
+#### Lucia Torres - Tech-Savvy User
+- **Occupation:** Freelance Graphic Designer
+- **Location:** Buenos Aires, Argentina (South America)
+- **Life Stage:** Early career, dealing with student loans and some credit card debt, looking to manage her finances more effectively.
+- **Financial Goals:** Pay off her student loans and credit card debt while saving for future goals like traveling and potentially buying a home.
+- **Behavior:** Tech-savvy, Lucia prefers mobile-friendly solutions that allow her to manage her finances on the go. She uses various apps for budgeting and financial tracking but needs a more comprehensive solution for debt management.
+- **Challenges:** Managing inconsistent income as a freelancer while staying on top of debt repayment and savings goals.
+- **Needs:** A cloud-based tool with a mobile-friendly interface that allows her to easily manage and track her debt repayment, offers budgeting tools tailored to variable income, and provides insights into achieving her financial goals.
+---
+
+
+
+
 ## 3. Jobs to Get Done
 
 ### 3.1. Core Jobs
@@ -203,82 +254,40 @@ The product adheres to industry standards of security and data privacy, ensuring
 
 ---
 
-## 4. User Stories and Personas
+## 4. Technical Requirements
 
-### 4.1. User Personas
+### 4.1. Architecture Overview
+A high-level description of the system architecture, including key components and interactions.
 
-### Emily Thompson - Young Professional
-- **Occupation:** Marketing Coordinator at a tech startup
-- **Location:** Austin, Texas, USA (North America)
-- **Life Stage:** Early in her career, dealing with student loans and other early debts.
-- **Financial Goals:** Manage her student loan debt efficiently while beginning to save for future goals like purchasing a home and starting a family.
-- **Behavior:** Financially engaged and tech-savvy, Emily uses various apps to track her spending and savings. She’s looking for a tool that can help her create a clear path to debt repayment while allowing her to save for her future.
-- **Challenges:** Balancing debt repayment with other financial priorities, such as building an emergency fund and saving for a down payment.
-- **Needs:** A tool that offers personalized debt repayment plans, integrates with her existing financial accounts, and provides clear insights into how different strategies (e.g., Avalanche vs. Snowball) affect her long-term financial health.
+### 4.2. APIs and Integrations
+List of APIs and third-party integrations needed.
 
-### Michael Harris - Pre-Retiree
-- **Occupation:** Senior Manager at a manufacturing company
-- **Location:** Toronto, Canada (North America)
-- **Life Stage:** Approaching retirement, focused on paying off the remaining mortgage and small personal loans.
-- **Financial Goals:** Achieve a debt-free retirement in the next five years while maintaining a comfortable lifestyle.
-- **Behavior:** Financially engaged but prefers straightforward, user-friendly tools that don’t require too much technical know-how.
-- **Challenges:** Managing multiple types of debt, including a mortgage, car loan, and credit card debt, while preparing for retirement.
-- **Needs:** A clear, easy-to-use tool that can help him create a debt repayment strategy aligned with his retirement timeline, with minimal technical complexity.
+### 4.3. Technical Constraints
+List any technical constraints, such as platform limitations or dependencies.
 
-### Sofia Ramirez - Debt Consolidation Seeker
-- **Occupation:** Small Business Owner
-- **Location:** Mexico City, Mexico (North America)
-- **Life Stage:** Managing multiple business and personal loans that need to be consolidated into a single, manageable payment.
-- **Financial Goals:** Simplify her financial obligations by consolidating debt and improving cash flow management.
-- **Behavior:** Financially engaged and moderately tech-savvy, Sofia uses mobile banking apps and online tools but prefers simple interfaces due to her busy schedule.
-- **Challenges:** Juggling multiple financial obligations with inconsistent business income, requiring flexible and localized solutions.
-- **Needs:** A tool that offers debt consolidation options, tailored to the Mexican market, with support for local currency and language, helping her streamline her finances and reduce financial stress.
-
-### Javier García - Financially Engaged User
-- **Occupation:** Software Engineer
-- **Location:** Barcelona, Spain (Europe)
-- **Life Stage:** Mid-career professional with a mortgage and a car loan, looking to optimize debt repayment and investments.
-- **Financial Goals:** Optimize his debt repayment while also investing in long-term financial goals like retirement and education funds for his children.
-- **Behavior:** Highly financially engaged and tech-savvy, Javier enjoys using advanced financial tools to track and optimize his finances.
-- **Challenges:** Balancing debt repayment with investments, managing currency fluctuations for international investments.
-- **Needs:** A customizable, data-driven tool that integrates with his existing financial tools, supports multiple currencies, and offers advanced analytics for debt repayment and investment strategies.
-
-### Lucia Torres - Tech-Savvy User
-- **Occupation:** Freelance Graphic Designer
-- **Location:** Buenos Aires, Argentina (South America)
-- **Life Stage:** Early career, dealing with student loans and some credit card debt, looking to manage her finances more effectively.
-- **Financial Goals:** Pay off her student loans and credit card debt while saving for future goals like traveling and potentially buying a home.
-- **Behavior:** Tech-savvy, Lucia prefers mobile-friendly solutions that allow her to manage her finances on the go. She uses various apps for budgeting and financial tracking but needs a more comprehensive solution for debt management.
-- **Challenges:** Managing inconsistent income as a freelancer while staying on top of debt repayment and savings goals.
-- **Needs:** A cloud-based tool with a mobile-friendly interface that allows her to easily manage and track her debt repayment, offers budgeting tools tailored to variable income, and provides insights into achieving her financial goals.
 ---
 
-### 4.2. User Stories
+## 5. User Stories
+
+### 5.1. User Stories
+User storys shuld be
+ - User-Centric Focus
+ - INVEST Criteria
+ - have a aceptance Criteria
+- Prioritization
+
 - **Story 1:** As a [user], I want to [action], so that [benefit].
 - **Story 2:** As a [user], I want to [action], so that [benefit].
 
 ---
 
-## 5. Design and User Experience
+## 6. Design and User Experience
 
-### 5.1. User Flow
+### 6.1. User Flow
 A detailed diagram or description of the user journey from start to finish.
 
-### 5.2. Wireframes/Mockups
+### 6.2. Wireframes/Mockups
 Include wireframes or mockups to visualize the product.
-
----
-
-## 6. Technical Requirements
-
-### 6.1. Architecture Overview
-A high-level description of the system architecture, including key components and interactions.
-
-### 6.2. APIs and Integrations
-List of APIs and third-party integrations needed.
-
-### 6.3. Technical Constraints
-List any technical constraints, such as platform limitations or dependencies.
 
 ---
 
@@ -298,8 +307,6 @@ The benchmarks the product must achieve.
 
 ### 7.5. Supportability
 How you will ensure the product can be supported by your company.
-
----
 
 ## 8. Development and Delivery Plan
 
