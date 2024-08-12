@@ -1,8 +1,12 @@
 # 1. Overview
 
-## 1.1. Product Name and Summary
-**Product Name:** [Insert Product Name]  
-**Summary:** A brief description of what is being built (e.g., software, course, physical product).
+### 1.1. Product Name and Summary
+
+**Product Name:** Debt Free Calculator  
+**Product Motto:** Plan Your Path to Financial Freedom with Precision
+
+**Summary:** 'Debt Free Calculator' is a MERN-based portfolio web application designed to help users achieve financial freedom through tailored debt repayment plans. It supports multicurrency and leverages the Snowball and Avalanche strategies, making it particularly suited for users seeking a structured, data-driven approach to debt management.
+
 
 ## 1.2. Objectives and Key Results (OKRs)
 Be shure OKRs are SMART (Specific, Measurable, Achievable, Relevant, and Time-bound).
