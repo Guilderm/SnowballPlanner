@@ -1,6 +1,6 @@
 # Product Requirements Document (PRD)
 
-# Table of Contents
+## Table of Contents
 1. [Overview](#1-overview)
    - [1.1. Product Name and Summary](#11-product-name-and-summary)
    - [1.2. Objectives and Key Results (OKRs)](#12-objectives-and-key-results-okrs)
@@ -11,13 +11,12 @@
    - [2.4. Competitive Landscape](#24-competitive-landscape)
    - [2.5. Product Principles](#25-product-principles)
    - [2.6. Assumptions and Risks](#26-assumptions-and-risks)
-3. [User Stories and Personas](#3-user-stories-and-personas)
-   - [3.1. User Personas](#31-user-personas)
-   - [3.2. User Stories](#32-user-stories)
-4. [Product Features](#4-product-features)
-   - [4.1. Core Features](#41-core-features)
-   - [4.2. Nice-to-Have Features](#42-nice-to-have-features)
-   - [4.3. Out of Scope](#43-out-of-scope)
+3. [Jobs to Get Done](#3-jobs-to-get-done)
+   - [3.1. Core Jobs](#31-core-jobs)
+   - [3.2. Supporting Jobs](#32-supporting-jobs)
+4. [User Stories and Personas](#4-user-stories-and-personas)
+   - [4.1. User Personas](#41-user-personas)
+   - [4.2. User Stories](#42-user-stories)
 5. [Design and User Experience](#5-design-and-user-experience)
    - [5.1. User Flow](#51-user-flow)
    - [5.2. Wireframes/Mockups](#52-wireframesmockups)
@@ -40,12 +39,10 @@
    - [9.2. Accessibility](#92-accessibility)
    - [9.3. Licensing and Intellectual Property](#93-licensing-and-intellectual-property)
 10. [Appendix](#10-appendix)
-   - [10.1. Glossary](#101-glossary)
-   - [10.2. References](#102-references)
+    - [10.1. Glossary](#101-glossary)
+    - [10.2. References](#102-references)
 
-
-
-# 1. Overview
+## 1. Overview
 
 ### 1.1. Product Name and Summary
 
@@ -53,7 +50,6 @@
 **Product Motto:** Plan Your Path to Financial Freedom with Precision
 
 **Summary:** 'Debt Free Calculator' is a MERN-based portfolio web application designed to help users achieve financial freedom through tailored debt repayment plans. It supports multicurrency and leverages the Snowball and Avalanche strategies, making it particularly suited for users seeking a structured, data-driven approach to debt management.
-
 
 ### 1.2. Objectives and Key Results (OKRs)
 
@@ -73,7 +69,7 @@
 
 ---
 
-# 2. Background and Strategic Fit
+## 2. Background and Strategic Fit
 
 ### 2.1. Problem Statement
 Virtually all loan recipients struggle to estimate their debt-free date or the total interest their debts will incur due to inadequate tools and education.
@@ -172,11 +168,11 @@ The product adheres to industry standards of security and data privacy, ensuring
 7. **Resource and Budget Constraints:**  
    There is a risk that the development process might exceed the planned budget or require more resources than anticipated, which could lead to compromises in features or quality.
 
-
 ---
-# 3. Jobs to Get Done
 
-#### 3.1 Core Jobs
+## 3. Jobs to Get Done
+
+### 3.1. Core Jobs
 - **Job 1: Create and manage a debt repayment plan.**
   - **Description:** Users need to generate a personalized debt repayment plan that suits their financial situation. This includes selecting the best strategy (e.g., Snowball or Avalanche), customizing payment schedules, and adapting the plan as circumstances change.
 
@@ -186,7 +182,7 @@ The product adheres to industry standards of security and data privacy, ensuring
 - **Job 3: Track progress towards financial goals.**
   - **Description:** Users need a clear way to monitor their progress as they work toward becoming debt-free. This includes tracking payments, visualizing reductions in debt over time, and receiving updates on milestones.
 
-#### 3.2 Supporting Jobs
+### 3.2. Supporting Jobs
 - **Job 1: Visualize debt repayment timelines.**
   - **Description:** Users benefit from visual tools that help them understand the impact of their payments over time, such as charts and graphs that show how their debt will decrease.
 
@@ -207,10 +203,11 @@ The product adheres to industry standards of security and data privacy, ensuring
 
 ---
 
+## 4. User Stories and Personas
 
-# 3. User Stories and Personas
-### 3.1. User Personas
-### Persona 1: **Emily Carter - Young Professional in North America**
+### 4.1. User Personas
+
+#### Persona 1: **Emily Carter - Young Professional in North America**
 
 **Name:** Emily Carter  
 **Age:** 29  
@@ -249,7 +246,7 @@ Emily is a young professional working in a growing tech company. She graduated w
 
 ---
 
-### Persona 2: **Carlos Alvarez - Debt Consolidation Seeker in Latin America**
+#### Persona 2: **Carlos Alvarez - Debt Consolidation Seeker in Latin America**
 
 **Name:** Carlos Alvarez  
 **Age:** 45  
@@ -288,7 +285,7 @@ Carlos owns a small but popular restaurant in Buenos Aires. Due to economic inst
 
 ---
 
-### Persona 3: **Sophie Dubois - Pre-Retiree in Europe**
+#### Persona 3: **Sophie Dubois - Pre-Retiree in Europe**
 
 **Name:** Sophie Dubois  
 **Age:** 58  
@@ -327,7 +324,7 @@ Sophie has worked in marketing for over 30 years and is approaching retirement. 
 
 ---
 
-### Persona 4: **Anil Kumar - Financially Savvy User in Asia**
+#### Persona 4: **Anil Kumar - Financially Savvy User in Asia**
 
 **Name:** Anil Kumar  
 **Age:** 34  
@@ -366,7 +363,7 @@ Anil is a financial analyst with a strong understanding of debt management and i
 
 ---
 
-### Persona 5: **Amina Abdallah - Small Business Owner in Africa**
+#### Persona 5: **Amina Abdallah - Small Business Owner in Africa**
 
 **Name:** Amina Abdallah  
 **Age:** 39  
@@ -383,16 +380,36 @@ Amina runs a small but successful boutique fashion store in Nairobi. She has tak
 - **Motivations:** Amina is motivated by her passion for her business and her desire to achieve financial stability for her family.
 
 **Challenges and Pain Points:**  
-- **Debt-Related
+- **Debt-Related Challenges:** High-interest rates and managing multiple loans.
+- **General Financial Pain Points:** Difficulty in forecasting cash flow, leading to challenges in balancing debt repayment with business expansion needs.
 
+**Technology Usage:**  
+- **Tech Savviness:** Moderate; primarily uses technology for business management tasks.
+- **Preferred Platforms:** Uses a desktop for most tasks; occasionally uses a tablet for convenience.
+- **Digital Habits:** Regularly checks financial data related to her business; however, she rarely explores new financial tools unless necessary.
 
-### 3.2. User Stories
+**Behavioral Insights:**  
+- **Decision-Making Process:** Amina consults with her business advisor and trusted peers before making financial decisions.
+- **Financial Habits:** She prioritizes keeping her business financially stable and aims to avoid high-interest debt.
+- **Information Sources:** Relies on local financial advisors and discussions with other business owners.
+
+**Needs and Expectations:**  
+- **Product Needs:** A straightforward tool that helps her manage and consolidate her debts while offering flexible repayment options.
+- **Expectations:** Amina expects the product to be reliable, easy to use, and adaptable to her specific business needs.
+
+**Quote:**  
+"I need a tool that helps me manage my debts effectively while still allowing me to focus on growing my business."
+
+---
+
+### 4.2. User Stories
 - **Story 1:** As a [user], I want to [action], so that [benefit].
 - **Story 2:** As a [user], I want to [action], so that [benefit].
 
 ---
 
-# 5. Design and User Experience
+## 5. Design and User Experience
+
 ### 5.1. User Flow
 A detailed diagram or description of the user journey from start to finish.
 
@@ -401,7 +418,8 @@ Include wireframes or mockups to visualize the product.
 
 ---
 
-# 6. Technical Requirements
+## 6. Technical Requirements
+
 ### 6.1. Architecture Overview
 A high-level description of the system architecture, including key components and interactions.
 
@@ -414,6 +432,7 @@ List any technical constraints, such as platform limitations or dependencies.
 ---
 
 ## 7. Release Criteria
+
 ### 7.1. Functionality
 Minimum functionality required for release.
 
@@ -431,7 +450,8 @@ How you will ensure the product can be supported by your company.
 
 ---
 
-# 8. Development and Delivery Plan
+## 8. Development and Delivery Plan
+
 ### 8.1. Milestones
 - **Milestone 1:** [Description of Milestone and Target Date]
 - **Milestone 2:** [Description of Milestone and Target Date]
@@ -444,7 +464,8 @@ List of required resources, including team roles, tools, and technologies.
 
 ---
 
-# 9. Legal and Compliance
+## 9. Legal and Compliance
+
 ### 9.1. Data Privacy
 Compliance with GDPR, CCPA, or other relevant data privacy regulations.
 
@@ -456,7 +477,8 @@ Any licensing or IP considerations that need to be addressed.
 
 ---
 
-# 10. Appendix
+## 10. Appendix
+
 ### 10.1. Glossary
 
 - **Debt Snowball Strategy:** A debt repayment method where the user begins by paying off debts with the smallest balances first. This approach builds psychological momentum, as eliminating smaller debts quickly provides a sense of accomplishment and motivation to tackle larger debts.
@@ -467,7 +489,5 @@ Any licensing or IP considerations that need to be addressed.
 
 - **Debt Snowflake Strategy:** A method of accelerating debt repayment where users make additional, smaller payments—either one-time or recurring—towards their debts. These "snowflakes" can be applied on top of regular payments, helping to reduce the principal balance faster and potentially save on interest.
 
-
 ### 10.2. References
 List of references or related documents.
-
