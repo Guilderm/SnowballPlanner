@@ -8,16 +8,22 @@
 **Summary:** 'Debt Free Calculator' is a MERN-based portfolio web application designed to help users achieve financial freedom through tailored debt repayment plans. It supports multicurrency and leverages the Snowball and Avalanche strategies, making it particularly suited for users seeking a structured, data-driven approach to debt management.
 
 
-## 1.2. Objectives and Key Results (OKRs)
-Be shure OKRs are SMART (Specific, Measurable, Achievable, Relevant, and Time-bound).
+### 1.2. Objectives and Key Results (OKRs)
 
-- **Objective 1:** [High-level goal the product aims to achieve]
-  - **Key Result 1.1:** [Specific, measurable result tied to the objective]
-  - **Key Result 1.2:** [Another measurable result tied to the objective]
+#### Objective 1: Empower users to create personalized debt elimination plans.
+- **Key Result 1.1:** Implement the Snowball and Avalanche strategies.
+- **Key Result 1.2:** Enable users to create custom debt repayment strategies.
+- **Key Result 1.3:** Integrate multicurrency support.
+- **Key Result 1.4:** Implement the Snowflake strategy, allowing users to apply one-time or recurring extra payments to their debt plan.
 
-- **Objective 2:** [Another high-level goal]
-  - **Key Result 2.1:** [Specific, measurable result tied to this objective]
-  - **Key Result 2.2:** [Another measurable result tied to this objective]
+#### Objective 2: Develop a MERN Stack Portfolio
+- **Key Result 2.1:** Demonstrate advanced front-end development skills by delivering a polished, user-friendly interface.
+- **Key Result 2.2:** Implement security measures to protect against common web vulnerabilities, showcasing SecOps skills.
+- **Key Result 2.3:** Set up CI/CD pipelines to automate testing, deployment, and monitoring, demonstrating DevOps skills.
+- **Key Result 2.4:** Showcase software architecture skills through the successful design and implementation of a modular, scalable application structure.
+- **Key Result 2.5:** Create clear, comprehensive, and professional documentation for all aspects of the project, showcasing documentation skills.
+- **Key Result 2.6:** Demonstrate testing and quality assurance skills through comprehensive unit, integration, and end-to-end testing coverage.
+
 
 ---
 
@@ -137,12 +143,16 @@ Any licensing or IP considerations that need to be addressed.
 
 ## 10. Appendix
 ### 10.1. Glossary
-Definitions of key terms used in the document.
 
-## 9. Appendix
-### 9.1. Glossary
-Definitions of key terms used in the document.
+- **Debt Snowball Strategy:** A debt repayment method where the user begins by paying off debts with the smallest balances first. This approach builds psychological momentum, as eliminating smaller debts quickly provides a sense of accomplishment and motivation to tackle larger debts.
 
-### 9.2. References
+- **Debt Avalanche Strategy:** A debt repayment method that prioritizes paying off debts with the highest interest rates first. This strategy focuses on minimizing the total interest paid over time, making it the most cost-effective approach in the long run.
+
+- **Hybrid Debt Repayment Strategy:** A debt repayment method that combines the strengths of both the Debt Snowball and Debt Avalanche strategies. It allows users to experience early wins by paying off smaller debts (like the Snowball method) while also focusing on reducing overall interest costs by targeting high-interest debts (like the Avalanche method).
+
+- **Debt Snowflake Strategy:** A method of accelerating debt repayment where users make additional, smaller payments—either one-time or recurring—towards their debts. These "snowflakes" can be applied on top of regular payments, helping to reduce the principal balance faster and potentially save on interest.
+
+
+### 10.2. References
 List of references or related documents.
 
