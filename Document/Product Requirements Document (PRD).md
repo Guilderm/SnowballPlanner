@@ -73,7 +73,7 @@
 
 ---
 
-## 2. Background and Strategic Fit
+# 2. Background and Strategic Fit
 
 ### 2.1. Problem Statement
 Virtually all loan recipients struggle to estimate their debt-free date or the total interest their debts will incur due to inadequate tools and education.
@@ -174,8 +174,41 @@ The product adheres to industry standards of security and data privacy, ensuring
 
 
 ---
+# 3. Jobs to Get Done
 
-## 3. User Stories and Personas
+#### 3.1 Core Jobs
+- **Job 1: Create and manage a debt repayment plan.**
+  - **Description:** Users need to generate a personalized debt repayment plan that suits their financial situation. This includes selecting the best strategy (e.g., Snowball or Avalanche), customizing payment schedules, and adapting the plan as circumstances change.
+
+- **Job 2: Compare different debt repayment strategies.**
+  - **Description:** Users need to evaluate different repayment strategies to determine the most efficient path to debt freedom. This involves analyzing interest rates, payment timelines, and total costs associated with each strategy.
+
+- **Job 3: Track progress towards financial goals.**
+  - **Description:** Users need a clear way to monitor their progress as they work toward becoming debt-free. This includes tracking payments, visualizing reductions in debt over time, and receiving updates on milestones.
+
+#### 3.2 Supporting Jobs
+- **Job 1: Visualize debt repayment timelines.**
+  - **Description:** Users benefit from visual tools that help them understand the impact of their payments over time, such as charts and graphs that show how their debt will decrease.
+
+- **Job 2: Receive recommendations and insights.**
+  - **Description:** Users need guidance on optimizing their debt repayment strategy. This could include automated suggestions for extra payments, alerts for upcoming deadlines, or tips on how to stay motivated.
+
+- **Job 3: Multicurrency support and global considerations.**
+  - **Description:** For users in different financial regions, the ability to manage debt in multiple currencies and understand the impact of exchange rates is crucial. This job ensures that the Debt Free Calculator is adaptable to a global audience.
+
+- **Job 4: Generate detailed reports and export data.**
+  - **Description:** Users might require the ability to generate detailed reports on their debt repayment progress for personal records, financial advisors, or lenders. This includes exporting data in various formats (e.g., PDF, CSV).
+
+- **Job 5: Sync with external financial accounts.**
+  - **Description:** To streamline data entry and ensure accuracy, users may benefit from the ability to sync the Debt Free Calculator with their bank accounts or other financial institutions. This job ensures that payment records, balances, and transaction histories are automatically updated.
+
+- **Job 6: Provide educational resources and financial literacy tools.**
+  - **Description:** Users might appreciate access to educational content, such as articles, videos, or interactive tools, that help them better understand debt management, budgeting, and personal finance.
+
+---
+
+
+# 3. User Stories and Personas
 ### 3.1. User Personas
 ### Persona 1: **Emily Carter - Young Professional in North America**
 
@@ -359,21 +392,7 @@ Amina runs a small but successful boutique fashion store in Nairobi. She has tak
 
 ---
 
-## 4. Product Features
-### 4.1. Core Features
-- **Feature 1:** [Description of Core Feature]
-- **Feature 2:** [Description of Core Feature]
-
-### 4.2. Nice-to-Have Features
-- **Feature 1:** [Description of Nice-to-Have Feature]
-- **Feature 2:** [Description of Nice-to-Have Feature]
-
-### 4.3. Out of Scope
-Clearly outline what will not be included in the product to manage expectations.
-
----
-
-## 5. Design and User Experience
+# 5. Design and User Experience
 ### 5.1. User Flow
 A detailed diagram or description of the user journey from start to finish.
 
@@ -382,7 +401,7 @@ Include wireframes or mockups to visualize the product.
 
 ---
 
-## 6. Technical Requirements
+# 6. Technical Requirements
 ### 6.1. Architecture Overview
 A high-level description of the system architecture, including key components and interactions.
 
@@ -412,7 +431,7 @@ How you will ensure the product can be supported by your company.
 
 ---
 
-## 8. Development and Delivery Plan
+# 8. Development and Delivery Plan
 ### 8.1. Milestones
 - **Milestone 1:** [Description of Milestone and Target Date]
 - **Milestone 2:** [Description of Milestone and Target Date]
@@ -425,7 +444,7 @@ List of required resources, including team roles, tools, and technologies.
 
 ---
 
-## 9. Legal and Compliance
+# 9. Legal and Compliance
 ### 9.1. Data Privacy
 Compliance with GDPR, CCPA, or other relevant data privacy regulations.
 
@@ -437,7 +456,7 @@ Any licensing or IP considerations that need to be addressed.
 
 ---
 
-## 10. Appendix
+# 10. Appendix
 ### 10.1. Glossary
 
 - **Debt Snowball Strategy:** A debt repayment method where the user begins by paying off debts with the smallest balances first. This approach builds psychological momentum, as eliminating smaller debts quickly provides a sense of accomplishment and motivation to tackle larger debts.
