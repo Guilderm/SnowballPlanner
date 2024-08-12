@@ -24,27 +24,64 @@
 - **Key Result 2.5:** Create clear, comprehensive, and professional documentation for all aspects of the project, showcasing documentation skills.
 - **Key Result 2.6:** Demonstrate testing and quality assurance skills through comprehensive unit, integration, and end-to-end testing coverage.
 
-
 ---
 
 ## 2. Background and Strategic Fit
 
 ### 2.1. Problem Statement
-What problems does this product solve? Include user pain points and gaps in the current market.
+Virtually all loan recipients struggle to estimate their debt-free date or the total interest their debts will incur due to inadequate tools and education.
 
 ### 2.2. Market Opportunity
-A detailed analysis of the market opportunity, including target audience, market size, and growth potential.
+Existing personal financial management applications primarily focus on general budgeting and expense tracking, neglecting the specific needs of loan recipients who require a structured debt repayment plan. The Debt-Free Calculator can address this gap and capture a niche market of users motivated to optimize their debt repayment process. By offering a tool that leverages popular strategies like Snowball, Avalanche, and Snowflake, and provides multicurrency support, the Debt-Free Calculator enables users to create a tailored debt repayment plan.
 
 ### 2.3. Value Proposition
-A clear statement of the unique value that the product offers to the target market, and why it stands out from competitors.
+Unlike general budgeting apps, the Debt-Free Calculator focuses exclusively on debt repayment, offering a combination of advanced features that are rarely found together in other products:
+
+- **Multiple Repayment Strategies:** The tool includes the Snowball, Avalanche, and Snowflake strategies, allowing users to choose the approach that best suits their financial goals. This flexibility ensures that users can adopt a strategy that maximizes their debt repayment efficiency.
+
+- **Multicurrency Support:** Recognizing the global nature of debt, the Debt-Free Calculator offers multicurrency support, making it ideal for users with loans in different currencies. This feature is particularly valuable for expatriates, international students, and professionals who manage debts across borders.
+
+- **Customizable Debt Plans:** Users can create and modify debt repayment plans according to their specific needs, with the ability to apply one-time or recurring extra payments, adjust repayment priorities, and track progress in real-time.
 
 ### 2.4. Competitive Landscape
-An overview of the competitive environment, including key competitors and differentiators.
+The Debt-Free Calculator faces competition from both general financial management apps and dedicated debt repayment tools.
+
+- **Direct Competitors:** Debt Payoff Planner, Undebt.it, unbury.me, and Vertex42 Debt Reduction Calculator are focused on helping users manage and pay down debt using popular strategies like Snowball and Avalanche. However, none of these tools offer multicurrency support or the ability to customize debt repayment plans as extensively as the Debt-Free Calculator. These tools primarily cater to users who want straightforward debt repayment solutions but lack the advanced features that the Debt-Free Calculator provides.
+
+- **General Competitors:** Mint, YNAB, Quicken, Personal Capital, and Simplifi are popular tools that offer a wide range of financial management features, including budgeting, expense tracking, and investment management. However, they do not provide features that support the creation of debt repayment strategies. Among these, YNAB is the only tool that offers an official, well-documented API that could be used to pull data into the Debt-Free Calculator. While Mint does not officially offer a public API, there are unofficial third-party APIs that have been developed to interact with Mint’s data.
+
+- **Differentiation:** The Debt-Free Calculator stands out in this competitive landscape by offering a highly specialized tool that caters directly to the needs of loan recipients. Its focus on advanced debt repayment strategies, including the unique Hybrid Debt Repayment Strategy, multicurrency support, and customizable debt plans, provides a unique value proposition that is not fully addressed by any existing mainstream financial management tools. This specialization positions the Debt-Free Calculator as the go-to solution for users serious about optimizing their debt repayment process and achieving financial freedom.
+
+| **Tool**                           | **Key Features**                                                                 | **Debt Repayment Strategies**                   | **Multicurrency Support** | **Customizable Debt Plans** | **Platform Support**         | **API Availability** | **Target Focus**                       |
+|------------------------------------|----------------------------------------------------------------------------------|-------------------------------------------------|---------------------------|---------------------------------|---------------------------------|-------------------|----------------------------------------|
+| **Debt-Free Calculator**           | Multiple repayment strategies (Snowball, Avalanche, Snowflake), multicurrency support, customizable debt plans | Snowball, Avalanche, Snowflake                  | Yes                       | Yes                             | Web, Android, iOS           | Planned              | Focused on debt repayment              |
+| **Direct Competitors**             |                                                                                  |                                                 |                           |                                 |                                 |                   |                                        |
+| **Debt Payoff Planner**            | Debt tracking, snowball/avalanche strategies, progress tracking                   | Snowball, Avalanche                             | No                        | Limited                         | Web, Android, iOS           | No                | Focused on debt repayment              |
+| **Undebt.it**                      | Detailed debt tracking, snowball/avalanche strategies, progress visualization      | Snowball, Avalanche                             | No                        | Limited                         | Web                          | No                | Focused on debt repayment              |
+| **unbury.me**                      | Loan calculator, snowball/avalanche strategies, visual progress tracking           | Snowball, Avalanche                             | No                        | Limited                         | Web                          | No                | Focused on debt repayment              |
+| **Vertex42 Debt Reduction Calculator** | Debt reduction spreadsheet, snowball/avalanche strategies                         | Snowball, Avalanche                             | No                        | Limited                         | Web (Excel/Spreadsheet)      | No                | Focused on debt repayment              |
+| **General Competitors**            |                                                                                  |                                                 |                           |                                 |                                 |                   |                                        |
+| **Mint**                           | Budgeting, expense tracking, basic debt tracking                                  | None                                            | No                        | No                              | Web, Android, iOS           | Yes                | General financial management          |
+| **YNAB (You Need A Budget)**       | Proactive budgeting, debt tracking                                                | None (encourages debt paydown through budgeting) | No                        | No                              | Web, Android, iOS           | No                | Budgeting and financial education     |
+| **Quicken**                        | Comprehensive financial management, investment tracking, basic debt tracking      | Basic debt reduction plan                       | No                        | Limited                         | Web, Windows, Mac, Android, iOS | No                | Overall financial management          |
+| **Personal Capital**               | Investment tracking, wealth management, limited debt tracking                     | None                                            | No                        | No                              | Web, Android, iOS           | Yes                | Wealth and investment management      |
+| **Simplifi by Quicken**            | Spending tracking, budgeting                                                      | None                                            | No                        | No                              | Web, Android, iOS           | No                | Simplified financial management       |
+
 
 ### 2.5. Product Principles
-- **Principle 1:** [e.g., Extremely safe]
-- **Principle 2:** [e.g., Highly reliable]
-- **Principle 3:** [e.g., Easy and intuitive to use]
+
+**User-Centric Design:**  
+The Debt-Free Calculator is designed with the user in mind, prioritizing ease of use, accessibility, and a seamless experience across all devices.
+
+**Empowers Informed Decisions:**  
+The Debt-Free Calculator not only provides essential data but also presents it in a compelling, easy-to-understand manner through data storytelling techniques.
+
+**Flexibility and Customization:**  
+Recognizing that every user's financial situation is unique, the Debt-Free Calculator offers the capability to customize their debt repayment plans.
+
+**Security and Privacy:**  
+The product adheres to industry standards of security and data privacy, ensuring that user information is protected at all times. This includes compliance with relevant regulations such as GDPR and CCPA, as well as implementing best practices in web security.
+
 
 ### 2.6. Assumptions and Risks
 - **Assumption 1:** [e.g., Users will adopt new technology]
