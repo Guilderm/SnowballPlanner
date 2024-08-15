@@ -46,10 +46,10 @@
 
 ### 1.1. Product Name and Summary
 
-**Product Name:** Debt Free Calculator  
+**Product Name:** Debt Free Planner  
 **Product Motto:** Plan Your Path to Financial Freedom with Precision
 
-**Summary:** 'Debt Free Calculator' is a MERN-based portfolio web application designed to help users achieve financial freedom through tailored debt repayment plans. It supports multicurrency and leverages the Snowball and Avalanche strategies, making it particularly suited for users seeking a structured, data-driven approach to debt management.
+**Summary:** 'Debt Free Planner' is a MERN-based portfolio web application designed to help users achieve financial freedom through tailored debt repayment plans. It supports multicurrency and leverages the Snowball and Avalanche strategies, making it particularly suited for users seeking a structured, data-driven approach to debt management.
 
 ### 1.2. Objectives and Key Results (OKRs)
 
@@ -241,13 +241,13 @@ The product adheres to industry standards of security and data privacy, ensuring
   - **Description:** Users need guidance on optimizing their debt repayment strategy. This could include automated suggestions for extra payments, alerts for upcoming deadlines, or tips on how to stay motivated.
 
 - **Job 3: Multicurrency support and global considerations.**
-  - **Description:** For users in different financial regions, the ability to manage debt in multiple currencies and understand the impact of exchange rates is crucial. This job ensures that the Debt Free Calculator is adaptable to a global audience.
+  - **Description:** For users in different financial regions, the ability to manage debt in multiple currencies and understand the impact of exchange rates is crucial. This job ensures that the Debt Free Planner is adaptable to a global audience.
 
 - **Job 4: Generate detailed reports and export data.**
   - **Description:** Users might require the ability to generate detailed reports on their debt repayment progress for personal records, financial advisors, or lenders. This includes exporting data in various formats (e.g., PDF, CSV).
 
 - **Job 5: Sync with external financial accounts.**
-  - **Description:** To streamline data entry and ensure accuracy, users may benefit from the ability to sync the Debt Free Calculator with their bank accounts or other financial institutions. This job ensures that payment records, balances, and transaction histories are automatically updated.
+  - **Description:** To streamline data entry and ensure accuracy, users may benefit from the ability to sync the Debt Free Planner with their bank accounts or other financial institutions. This job ensures that payment records, balances, and transaction histories are automatically updated.
 
 - **Job 6: Provide educational resources and financial literacy tools.**
   - **Description:** Users might appreciate access to educational content, such as articles, videos, or interactive tools, that help them better understand debt management, budgeting, and personal finance.
