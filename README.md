@@ -23,37 +23,45 @@ This portfolio project showcases a debt payoff planner built with MongoDB, Expre
 - **Customizable Debt Plans**: Tailor repayment plans to meet individual financial goals.
 
 ## Documentation
-This project prioritizes "working software over comprehensive documentation" in line with Agile principles while also recognizing the importance of clear, concise documentation to ensure shared understanding, especially in a portfolio context.
+This project prioritizes "working software over comprehensive documentation" in accordance with Agile principles while also recognizing the important role that documentation plays in creating a "shared understanding," especially in the context of a portfolio project.
 
-To this end, the project includes documents that explain the "why," "what," and "how" of the application. These documents showcase not only coding ability but also the capacity to communicate shared understanding—a skill critical to software development.
+To this end, the project includes documents that explain the "why," "what," and "how" of the application, showcasing not only programming expertise but also the ability to convey a 'shared understanding'—a skill critical in software development.
+
+The project's documentation is guided by the book *Docs for Developers: An Engineer's Field Guide to Technical Writing* by Jared Bhatti and others, alongside other industry standards.
 
 ### [Product Specification Document (PSD)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Specification%20Document%20(PSD).md)
 The PSD details the "why" of the project by providing an overview of the business case, product vision, and roadmap.
 The PSD demonstrates product management skills, including market analysis, vision setting, and strategic thinking.
 
+
 ### [Software Requirements Specification (SRS)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Software%20Requirements%20Specification%20(SRS).md)
 The SRS details the "what" of the project, translating the product vision into functional and non-functional requirements that define what the software should do and how it should perform.
-
 The SRS highlights expertise in requirements engineering and systems analysis.
+
 
 ### [Software Design Document (SDD)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Software%20Design%20Document%20(SDD).md)
 The SDD explains the project's "how" by outlining the software architecture, design patterns, and data structures.
 The SDD illustrates software architecture and design skills, focusing on creating robust, scalable, and maintainable systems.
 
+
 ### [Software Test Document (STD)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Software%20Test%20Document%20(STD).md)
 The STD outlines the project's testing strategy, including detailed test plans, test cases, and results, ensuring that the software meets the specified requirements and is defect-free.
 The STD highlights quality assurance and testing skills, demonstrating a commitment to delivering high-quality software.
 
+
 ### [User Guide](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/User%20Guide.md)
 The User Guide provides a detailed explanation of how to use the Debt Free Planner application. It showcases technical writing and user education skills, demonstrating the ability to communicate complex technical concepts in a way that is accessible and useful to end users.
 
+
 ## Installation
 [Instructions on how to set up and run the project locally.]
+
 
 ## Meet the Developer
 This project was developed by [Guilder W. Millner](https://www.linkedin.com/in/guilder/), a seasoned Senior Application Support Engineer transitioning into software development. With over 15 years of experience in troubleshooting and customer management, Guilder brings a deep understanding of both the technical and user-facing aspects of software.
 
 Currently completing a BA in Software Engineering, Guilder is passionate about building tools that make a difference. Connect with Guilder on [LinkedIn](https://www.linkedin.com/in/guilder/) to learn more about his journey into software development.
 
+
 ## License
-This project is licensed under the terms of the [LICENSE](https://github.com/Guilderm/DebtFreePlanner/blob/main/LICENSE) file.
+This project is licensed under the terms of the [MIT License](https://github.com/Guilderm/DebtFreePlanner/blob/main/LICENSE) file.
