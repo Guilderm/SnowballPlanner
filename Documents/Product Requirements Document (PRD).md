@@ -4,53 +4,57 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 The structure and content of this document are guided by the principles and methodologies outlined in [*Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation*](https://designabetterbusiness.com/) by Pijl, Lokitz, and Solomon (2016).
 Additionally, insights from the [Product Mastery Now](https://productmasterynow.com/mastery/) podcast shape the approach, particularly within the "design and development" knowledge area of the "product innovation management" framework.
 
-
-
 ## Table of Contents
-1. [Overview](#1-overview)
-   - [1.1. Product Name and Summary](#11-product-name-and-summary)
+1. [Executive Summary](#1-executive-summary)
+   - [1.1. Overview](#11-overview)
    - [1.2. Objectives and Key Results (OKRs)](#12-objectives-and-key-results-okrs)
-2. [Background and Strategic Fit](#2-background-and-strategic-fit)
+   - [1.3. Product Principles](#13-product-principles)
+2. [Market and User Insights](#2-market-and-user-insights)
    - [2.1. Problem Statement](#21-problem-statement)
    - [2.2. Market Opportunity](#22-market-opportunity)
    - [2.3. Value Proposition](#23-value-proposition)
    - [2.4. Competitive Landscape](#24-competitive-landscape)
-   - [2.5. Product Principles](#25-product-principles)
-   - [2.6. Assumptions and Risks](#26-assumptions-and-risks)
+   - [2.5. Assumptions and Risks](#25-assumptions-and-risks)
+   - [2.6. User Personas](#26-user-personas)
 3. [Jobs to Get Done](#3-jobs-to-get-done)
    - [3.1. Core Jobs](#31-core-jobs)
    - [3.2. Supporting Jobs](#32-supporting-jobs)
-4. [User Stories and Personas](#4-user-stories-and-personas)
-   - [4.1. User Personas](#41-user-personas)
-   - [4.2. User Stories](#42-user-stories)
-5. [Design and User Experience](#5-design-and-user-experience)
-   - [5.1. User Flow](#51-user-flow)
-   - [5.2. Wireframes/Mockups](#52-wireframesmockups)
-6. [Legal and Compliance](#9-legal-and-compliance)
-   - [9.1. Data Privacy](#91-data-privacy)
+4. [Design and User Experience](#4-design-and-user-experience)
+   - [4.1. User Flow](#41-user-flow)
+   - [4.2. Wireframes/Mockups](#42-wireframesmockups)
+5. [User Stories](#5-user-stories)
+   - [5.1. User Stories](#51-user-stories)
+6. [Legal and Compliance](#6-legal-and-compliance)
+   - [6.1. Data Privacy](#61-data-privacy)
+   - [6.2. Regulatory Compliance](#62-regulatory-compliance)
+   - [6.3. International Regulations](#63-international-regulations)
+   - [6.4. Terms of Service & User Agreements](#64-terms-of-service--user-agreements)
+   - [6.5. Record Keeping and Audit Trails](#65-record-keeping-and-audit-trails)
+   - [6.6. Legal Risk Management](#66-legal-risk-management)
+   - [6.7. Protection of Intellectual Property (IP)](#67-protection-of-intellectual-property-ip)
+7. [Shared Appendix](#7-shared-appendix)
+8. [Related Documents](#8-related-documents)
 
-7. [Shared Appendix](#10-shared-appendix)
-8. [Related Documents](#11-related-documents)
 ---
 
-## 1. Overview
+## 1. Executive Summary
 
-### 1.1. Product Name and Summary
+### 1.1. Overview
 
 **Product Name:** Debt Free Planner  
-**Product Motto:** Plan Your Path to Financial Freedom with Precision
+**Product Motto:** Precision Planning for Debt-Free Living
 
-**Summary:** 'Debt Free Planner' is a MERN-based portfolio web application designed to help users achieve financial freedom through tailored debt repayment plans. It supports multicurrency and leverages the Snowball and Avalanche strategies, making it particularly suited for users seeking a structured, data-driven approach to debt management.
+'Debt Free Planner' is a MERN-based portfolio web application designed to help users achieve financial freedom through tailored debt repayment plans. It supports multicurrency and leverages the Snowball and Avalanche strategies, making it particularly suited for users seeking a structured, data-driven approach to debt management.
 
 ### 1.2. Objectives and Key Results (OKRs)
 
-#### Objective 1: Empower users to create personalized debt elimination plan.
+#### Objective 1: Empower users to create debt elimination plans.
 - **Key Result 1.1:** Implement the Snowball and Avalanche strategies.
 - **Key Result 1.2:** Enable users to create custom debt repayment strategies.
 - **Key Result 1.3:** Integrate multicurrency support.
 - **Key Result 1.4:** Implement the Snowflake strategy, allowing users to apply one-time or recurring extra payments to their debt plan.
 
-#### Objective 2: Develop a MERN Stack Portfolio
+#### Objective 2: Develop a MERN Stack Portfolio.
 - **Key Result 2.1:** Demonstrate advanced front-end development skills by delivering a polished, user-friendly interface.
 - **Key Result 2.2:** Implement security measures to protect against common web vulnerabilities, showcasing SecOps skills.
 - **Key Result 2.3:** Set up CI/CD pipelines to automate testing, deployment, and monitoring, demonstrating DevOps skills.
@@ -58,8 +62,7 @@ Additionally, insights from the [Product Mastery Now](https://productmasterynow.
 - **Key Result 2.5:** Create clear, comprehensive, and professional documentation for all aspects of the project, showcasing documentation skills.
 - **Key Result 2.6:** Demonstrate testing and quality assurance skills through comprehensive unit, integration, and end-to-end testing coverage.
 
-
-### 1.3 Product Principles
+### 1.3. Product Principles
 
 > **Note:** This section was identified as potentially redundant, as the principles surfaced during the review felt either generic or unnecessary. It will be kept as a placeholder for now, in case a more meaningful principle emerges in the future.
 
@@ -68,10 +71,10 @@ Additionally, insights from the [Product Mastery Now](https://productmasterynow.
 ## 2. Market and User Insights
 
 ### 2.1. Problem Statement
-Individuals managing multiple debts often struggle struggle to estimate their debt-free date or the total interest their debts will incur due to inadequate tools and education.
+Individuals managing multiple debts often struggle to estimate their debt-free date or the total interest their debts will incur due to inadequate tools and education.
 
 ### 2.2. Market Opportunity
-Existing personal financial management applications primarily focus on general budgeting and expense tracking, neglecting the specific needs of loan recipients who require a structured debt repayment plan. The Debt Free Planner app address this gap and capture a niche market of users motivated to optimize their debt repayment process. By offering a tool that leverages popular strategies like Snowball, Avalanche, and Snowflake, and provides multicurrency support, the Debt Free Planner enables users to create a tailored debt repayment plan.
+Existing personal financial management applications primarily focus on general budgeting and expense tracking, neglecting the specific needs of loan recipients who require a structured debt repayment plan. The Debt Free Planner app addresses this gap and captures a niche market of users motivated to optimize their debt repayment process. By offering a tool that leverages popular strategies like Snowball, Avalanche, and Snowflake, and provides multicurrency support, the Debt Free Planner enables users to create a tailored debt repayment plan.
 
 ### 2.3. Value Proposition
 Unlike general budgeting apps, the Debt Free Planner focuses exclusively on debt repayment, offering a combination of advanced features that are rarely found together in other products:
@@ -87,10 +90,9 @@ The Debt Free Planner faces competition from both general financial management a
 
 - **Direct Competitors:** [Debt Payoff Planner](https://www.debtpayoffplanner.com/), [Undebt.it](https://undebt.it/), [unbury.me](https://unbury.me/), and [Vertex42 Debt Reduction Calculator](https://www.vertex42.com/Calculators/debt-reduction-calculator.html) are focused on helping users manage and pay down debt using popular strategies like Snowball and Avalanche. However, none of these tools offer multicurrency support or the ability to customize debt repayment plans as extensively as the Debt Free Planner. These tools primarily cater to users who want straightforward debt repayment solutions but lack the advanced features that the Debt Free Planner provides.
 
-- **General Competitors:** Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) are popular tools that offer a wide range of financial management featuress, including budgeting, expense tracking, and investment management. However, they do not provide features that support the creation of debt repayment strategies. Among these, YNAB is the only tool that offers an official, well-documented API that could be used to pull data into the Debt Free Planner. While Mint does not officially offer a public API, there are unofficial third-party APIs that have been developed to interact with Mint’s data.
+- **General Competitors:** Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) are popular tools that offer a wide range of financial management features, including budgeting, expense tracking, and investment management. However, they do not provide features that support the creation of debt repayment strategies. Among these, YNAB is the only tool that offers an official, well-documented API that could be used to pull data into the Debt Free Planner. While Mint does not officially offer a public API, there are unofficial third-party APIs that have been developed to interact with Mint’s data.
 
 - **Differentiation:** The Debt Free Planner stands out in this competitive landscape by offering a highly specialized tool that caters directly to the needs of loan recipients. Its focus on advanced debt repayment strategies, including the unique Hybrid Debt Repayment Strategy, multicurrency support, and customizable debt plans, provides a unique value proposition that is not fully addressed by any existing mainstream financial management tools. This specialization positions the Debt Free Planner as the go-to solution for users serious about optimizing their debt repayment process and achieving financial freedom.
-
 
 ### 2.5. Assumptions and Risks
 
@@ -134,10 +136,7 @@ The Debt Free Planner faces competition from both general financial management a
 7. **Resource and Budget Constraints:**  
    There is a risk that the development process might exceed the planned budget or require more resources than anticipated, which could lead to compromises in features or quality.
 
----
-
-
-### 2.6 User Personas:
+### 2.6. User Personas
 
 #### Emily Thompson - Young Professional
 - **Occupation:** Marketing Coordinator at a tech startup
@@ -219,26 +218,23 @@ The Debt Free Planner faces competition from both general financial management a
 
 ---
 
-## 4. Technical Requirements
+## 4. Design and User Experience
 
-### 4.1. Architecture Overview
-A high-level description of the system architecture, including key components and interactions.
+### 4.1. User Flow
+A high-level overview of the primary user journeys within the Debt Free Planner, including how users will navigate through the application to achieve their goals (e.g., creating a debt repayment plan, viewing progress, making adjustments).
 
-### 4.2. APIs and Integrations
-List of APIs and third-party integrations needed.
-
-### 4.3. Technical Constraints
-List any technical constraints, such as platform limitations or dependencies.
+### 4.2. Key Wireframes/Mockups
+A brief summary and visual examples of critical screens or interactions, illustrating the intended user experience and design approach. For detailed wireframes and design specifications, refer to the Software Design Document (SDD).
 
 ---
 
 ## 5. User Stories
 
 ### 5.1. User Stories
-User storys shuld be
- - User-Centric Focus
- - INVEST Criteria
- - have a aceptance Criteria
+User stories should be:
+- User-Centric Focus
+- INVEST Criteria
+- Have an Acceptance Criteria
 - Prioritization
 
 - **Story 1:** As a [user], I want to [action], so that [benefit].
@@ -248,7 +244,7 @@ User storys shuld be
 
 ## 6. Legal and Compliance
 
-### 9.1 Data Privacy
+### 6.1. Data Privacy
 - **Overview**: Outline the commitment to protecting user data and complying with relevant data privacy regulations.
 - **Key Regulations**:
   - **GDPR (General Data Protection Regulation)**: Describe how the product will ensure compliance with GDPR, including data collection, processing, storage, and user rights.
@@ -258,14 +254,14 @@ User storys shuld be
   - **Data Deletion**: Describe the process for users to request the deletion of their data.
   - **Data Portability**: Outline the mechanisms for providing users with their data in a portable format.
 
-### 9.2 Regulatory Compliance
+### 6.2. Regulatory Compliance
 - **Industry-Specific Regulations**: 
   - **Financial Regulations**: If applicable, discuss any financial regulations that must be adhered to, such as anti-money laundering (AML) or Know Your Customer (KYC) guidelines.
   - **Health Regulations**: If the product deals with health data, outline compliance with regulations like HIPAA (Health Insurance Portability and Accountability Act).
 - **Compliance Monitoring**: Describe how ongoing compliance will be monitored and maintained throughout the product lifecycle.
 - **Audit and Reporting**: Explain any auditing mechanisms that will be in place to ensure compliance and to report on compliance status.
 
-### 9.3 International Regulations
+### 6.3. International Regulations
 - **Global Compliance Strategy**: 
   - Describe the approach to ensuring the product complies with legal requirements in all countries where it will be available.
 - **Local Data Privacy Laws**: 
@@ -273,13 +269,13 @@ User storys shuld be
 - **Cross-Border Data Transfers**: 
   - Discuss how data will be handled when transferring across borders, particularly in compliance with regulations like GDPR's data transfer restrictions.
 
-### 9.4 Terms of Service & User Agreements
+### 6.4. Terms of Service & User Agreements
 - **User Agreements**: 
   - Outline the key terms that will be included in the end-user agreements, such as acceptable use policies, limitations of liability, and dispute resolution processes.
 - **Terms of Service**: 
   - Provide an overview of the terms of service that users must agree to when using the product. This should include disclaimers, intellectual property notices, and the governing law.
 
-### 9.5 Record Keeping and Audit Trails
+### 6.5. Record Keeping and Audit Trails
 - **Record Keeping Requirements**: 
   - Detail the types of records that must be maintained for compliance purposes, including user consent records, transaction logs, and access records.
 - **Audit Trails**: 
@@ -287,7 +283,7 @@ User storys shuld be
 - **Retention Policies**: 
   - Explain the data retention policies, including how long different types of data will be stored and when they will be purged or anonymized.
 
-### 9.6 Legal Risk Management
+### 6.6. Legal Risk Management
 - **Risk Identification**: 
   - Identify potential legal risks associated with the product, such as non-compliance with data privacy laws, intellectual property disputes, or liability issues.
 - **Mitigation Strategies**: 
@@ -295,31 +291,19 @@ User storys shuld be
 - **Legal Reviews**: 
   - Describe the process for regular legal reviews of the product to ensure ongoing compliance with evolving laws and regulations.
 
-### 9.7 Protection of Intellectual Property (IP)
+### 6.7. Protection of Intellectual Property (IP)
 - **Overview**: 
   - Describe the steps that will be taken to protect the intellectual property associated with the product, particularly in preparation for potential monetization.
 - **Patents**: 
-  - Discuss any patentable inventions or processes that are part of the product and outli
-
-
-### 9.1. Data Privacy
-Compliance with GDPR, CCPA, or other relevant data privacy regulations.
-
-### 9.2. Accessibility
-Accessibility standards (e.g., WCAG) that the product must adhere to.
-
-### 9.3. Licensing and Intellectual Property
-Any licensing or IP considerations that need to be addressed.
+  - Discuss any patentable inventions or processes that are part of the product and outline the strategy for securing patents.
 
 ---
-
 
 ## 7. Shared Appendix
 
 The glossary, data dictionary, and additional references are available in the [Shared Appendix](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Shared%20Appendix.md) document.
 
 ---
-
 
 ## 8. Related Documents
 
@@ -330,5 +314,3 @@ The glossary, data dictionary, and additional references are available in the [S
 - [User Guide](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/User%20Guide.md)
 - [Architecture Decision Record (ADR)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Architecture%20Decision%20Record%20(ADR).md).
 - [Shared Appendix](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Shared%20Appendix.md)
-
----
