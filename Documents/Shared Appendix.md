@@ -58,3 +58,8 @@ This section can include any additional resources that might be useful to the us
 - **User Guides and Tutorials**: Links to helpful guides or tutorials related to the technologies used in this project.
 - **Development Tools**: List of tools and environments used in the development process.
 
+
+### 7. References
+List of references or related documents.
+
+[Design a Better Business](https://designabetterbusiness.com): Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation.

@@ -17,10 +17,10 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
    - 4.4. [Competitive Landscape](#competitive-landscape)
    - 4.5. [Assumptions and Risks](#assumptions-and-risks)
    - 4.6. [User Personas](#user-personas)
-5. [Jobs to Get Done](#jobs-to-get-done)
+5. [Jobs-to-be-Done (JTBD)](#jobs-to-get-done)
    - 5.1. [Core Jobs](#core-jobs)
    - 5.2. [Supporting Jobs](#supporting-jobs)
-6. [Design and User Experience](#design-and-user-experience)
+6. [User Interface and User Experience (UI/UX)](#design-and-user-experience)
    - 6.1. [User Flow](#user-flow)
    - 6.2. [Wireframes/Mockups](#wireframesmockups)
 7. [User Stories](#user-stories)
@@ -51,7 +51,7 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
    - Develop a robust MERN stack portfolio project that demonstrates full-stack development, security, and DevOps capabilities.
 
 3. **Target Audience**  
-   Individuals and families seeking effective debt repayment strategies with varying levels of financial literacy.
+   Individuals and families seeking to creatre a debt repayment plan with varying levels of financial literacy.
 
 4. **Problem Statement**  
    Many individuals struggle with managing multiple debts, leading to prolonged financial strain due to a lack of effective tools and knowledge.
@@ -59,13 +59,7 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 5. **Proposed Solution**  
    DebtFreePlanner provides a web-based application for users to organize their debts and choose between various repayment methods, including Snowball, Avalanche, and Snowflake strategies.
 
-6. **Portfolio Impact**  
-   This project will showcase advanced front-end and back-end development skills, security measures, and DevOps practices, positioning you as a well-rounded software developer with a strong focus on financial technology.
-
-7. **Career Alignment**  
-   The project aligns with your career goal of transitioning into a Backend programmer role, demonstrating proficiency in the MERN stack, software architecture, and industry best practices.
-
-8. **Product Principles**  
+6. **Product Principles**  
    > **Note:** The 'Product Principles' section was identified as potentially redundant, as the principles surfaced during the review felt either generic or unnecessary. It will be kept as a placeholder for now, in case a more meaningful principle emerges in the future.
 
 ---
@@ -169,7 +163,7 @@ Unlike general budgeting apps, the DebtFreePlanner focuses exclusively on debt r
 Note: The 'Assumptions and Risks' section was identified as potentially redundant, as the principles surfaced during the review felt either generic or unnecessary. It will be kept as a placeholder for now, in case a more meaningful principle emerges in the future.
 
 
-## 5. Jobs to Get Done
+## 5. Jobs-to-be-Done (JTBD)
 
 ### 5.1. Core Jobs
 - **Core Job 1: Create and manage a debt repayment plan.**
@@ -203,14 +197,67 @@ Note: The 'Assumptions and Risks' section was identified as potentially redundan
 ---
 
 
-## 6. Design and User Experience
+## 6. User Interface and User Experience (UI/UX)
 
-### 6.1. User Flow
-- **Sign Up/Login:** Users create an account or log in to access their debt repayment plans.
-- **Dashboard:** Users view an overview of their debt situation, including repayment progress and upcoming payments.
-- **Create Plan:** Users enter debt details and select a repayment strategy.
-- **Customize Plan:** Users adjust repayment priorities, set extra payments, and save changes.
-- **Track Progress:** Users monitor their repayment progress through charts and summaries.
+### 6.1. User Flows
+
+1. **Session Management:**
+   - Users create an account or log in to access their debt repayment plans.
+
+   ```plantuml
+@startuml
+title Session Management User Flow
+
+start
+:Open Application;
+
+if (Existing Account?) then (Yes)
+  :Login;
+  :Enter Credentials;
+  :Submit Login Form;
+  if (Authentication Successful?) then (Yes)
+    :Access Dashboard;
+  else (No)
+    :Show Error Message;
+  endif
+else (No)
+  :Sign Up;
+  :Enter Email and Password;
+  :Submit Sign Up Form;
+  :Confirmation Email Sent;
+  :Click Confirmation Link;
+  :Account Created;
+  :Access Dashboard;
+endif
+
+@enduml
+
+
+
+2. **Plan Management:**
+   - Users manage their debt details, including:
+     - **Loan Amount (Remaining Principal):** The total remaining amount that needs to be repaid.
+     - **Interest Rate:** The annual percentage rate (APR) charged on the loan amount.
+     - **Loan Term:** The length of time over which the loan will be repaid, typically expressed in years or months.
+     - **Repayment Frequency:** How often payments are made (e.g., monthly, bi-weekly).
+     - **Start Date:** The date when the loan was disbursed or when the repayment schedule began.
+     - **Interest Type:** Whether the interest rate is fixed (remains constant) or variable (can change over time).
+     - **Amortization Type:** Whether the loan is fully amortizing, interest-only, or involves a balloon payment at the end.
+     - **Fees and Penalties:** Any additional charges, such as origination fees, prepayment penalties, or late payment fees.
+   - Users also manage snowflake payments, including:
+     - **Extra Payment Amount:** Any additional payments made beyond the regular scheduled payments.
+     - **Payment Frequency:** The frequency of these extra payments (e.g., monthly, bi-weekly).
+     - **Start Date:** The date when extra payments begin.
+
+3. **Profile Management:**
+   - Users update their personal information, change passwords, adjust notification preferences, and delete their account if desired.
+
+4. **Data Management:**
+   - Users export and import their debt repayment data for personal records or to share with financial advisors.
+
+5. **Report Management:**
+   - Users view, print, and gain insights from their reports on debt repayment progress and strategies.
+
 
 ### 6.2. Wireframes/Mockups
 - **Dashboard:** Displays key metrics, repayment progress, and quick actions.
@@ -220,12 +267,14 @@ Note: The 'Assumptions and Risks' section was identified as potentially redundan
 
 ## 7. User Stories
 
-### 7.1. User Stories
 User stories should be:
 - User-Centric Focus
 - INVEST Criteria
 - Have an Acceptance Criteria
 - Prioritization
+
+### 7.1. User Stories
+
 
 - **As a user, I want to create a debt repayment plan using the Snowball strategy so that I can pay off my smallest debts first and gain motivation.**
 - **As a user, I want to see a summary of my debt repayment progress so that I can track my achievements and stay motivated.**
