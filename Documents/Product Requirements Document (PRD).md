@@ -1,5 +1,11 @@
 # Product Requirements Document (PRD)
 
+This PRD lays the groundwork for the DebtFreePlanner by clearly defining the product’s purpose and target audience.
+The structure and content of this document are guided by the principles and methodologies outlined in [*Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation*](https://designabetterbusiness.com/) by Pijl, Lokitz, and Solomon (2016).
+Additionally, insights from the [Product Mastery Now](https://productmasterynow.com/mastery/) podcast shape the approach, particularly within the "design and development" knowledge area of the "product innovation management" framework.
+
+
+
 ## Table of Contents
 1. [Overview](#1-overview)
    - [1.1. Product Name and Summary](#11-product-name-and-summary)
@@ -53,7 +59,7 @@
 
 ### 1.2. Objectives and Key Results (OKRs)
 
-#### Objective 1: Empower users to create personalized debt elimination plans.
+#### Objective 1: Empower users to create personalized debt elimination plan.
 - **Key Result 1.1:** Implement the Snowball and Avalanche strategies.
 - **Key Result 1.2:** Enable users to create custom debt repayment strategies.
 - **Key Result 1.3:** Integrate multicurrency support.
@@ -67,65 +73,41 @@
 - **Key Result 2.5:** Create clear, comprehensive, and professional documentation for all aspects of the project, showcasing documentation skills.
 - **Key Result 2.6:** Demonstrate testing and quality assurance skills through comprehensive unit, integration, and end-to-end testing coverage.
 
+
+### 1.3 Product Principles
+
+> **Note:** This section was identified as potentially redundant, as the principles surfaced during the review felt either generic or unnecessary. It will be kept as a placeholder for now, in case a more meaningful principle emerges in the future.
+
 ---
 
 ## 2. Market and User Insights
 
 ### 2.1. Problem Statement
-Virtually all loan recipients struggle to estimate their debt-free date or the total interest their debts will incur due to inadequate tools and education.
+Individuals managing multiple debts often struggle struggle to estimate their debt-free date or the total interest their debts will incur due to inadequate tools and education.
 
 ### 2.2. Market Opportunity
-Existing personal financial management applications primarily focus on general budgeting and expense tracking, neglecting the specific needs of loan recipients who require a structured debt repayment plan. The Debt-Free Calculator can address this gap and capture a niche market of users motivated to optimize their debt repayment process. By offering a tool that leverages popular strategies like Snowball, Avalanche, and Snowflake, and provides multicurrency support, the Debt-Free Calculator enables users to create a tailored debt repayment plan.
+Existing personal financial management applications primarily focus on general budgeting and expense tracking, neglecting the specific needs of loan recipients who require a structured debt repayment plan. The Debt Free Planner app address this gap and capture a niche market of users motivated to optimize their debt repayment process. By offering a tool that leverages popular strategies like Snowball, Avalanche, and Snowflake, and provides multicurrency support, the Debt Free Planner enables users to create a tailored debt repayment plan.
 
 ### 2.3. Value Proposition
-Unlike general budgeting apps, the Debt-Free Calculator focuses exclusively on debt repayment, offering a combination of advanced features that are rarely found together in other products:
+Unlike general budgeting apps, the Debt Free Planner focuses exclusively on debt repayment, offering a combination of advanced features that are rarely found together in other products:
 
 - **Multiple Repayment Strategies:** The tool includes the Snowball, Avalanche, and Snowflake strategies, allowing users to choose the approach that best suits their financial goals. This flexibility ensures that users can adopt a strategy that maximizes their debt repayment efficiency.
 
-- **Multicurrency Support:** Recognizing the global nature of debt, the Debt-Free Calculator offers multicurrency support, making it ideal for users with loans in different currencies. This feature is particularly valuable for expatriates, international students, and professionals who manage debts across borders.
+- **Multicurrency Support:** Recognizing the global nature of debt, the Debt Free Planner offers multicurrency support, making it ideal for users with loans in different currencies. This feature is particularly valuable for expatriates, international students, and professionals who manage debts across borders.
 
 - **Customizable Debt Plans:** Users can create and modify debt repayment plans according to their specific needs, with the ability to apply one-time or recurring extra payments, adjust repayment priorities, and track progress in real-time.
 
 ### 2.4. Competitive Landscape
-The Debt-Free Calculator faces competition from both general financial management apps and dedicated debt repayment tools.
+The Debt Free Planner faces competition from both general financial management apps and dedicated debt repayment tools.
 
-- **Direct Competitors:** Debt Payoff Planner, Undebt.it, unbury.me, and Vertex42 Debt Reduction Calculator are focused on helping users manage and pay down debt using popular strategies like Snowball and Avalanche. However, none of these tools offer multicurrency support or the ability to customize debt repayment plans as extensively as the Debt-Free Calculator. These tools primarily cater to users who want straightforward debt repayment solutions but lack the advanced features that the Debt-Free Calculator provides.
+- **Direct Competitors:** [Debt Payoff Planner](https://www.debtpayoffplanner.com/), [Undebt.it](https://undebt.it/), [unbury.me](https://unbury.me/), and [Vertex42 Debt Reduction Calculator](https://www.vertex42.com/Calculators/debt-reduction-calculator.html) are focused on helping users manage and pay down debt using popular strategies like Snowball and Avalanche. However, none of these tools offer multicurrency support or the ability to customize debt repayment plans as extensively as the Debt Free Planner. These tools primarily cater to users who want straightforward debt repayment solutions but lack the advanced features that the Debt Free Planner provides.
 
-- **General Competitors:** Mint, YNAB, Quicken, Personal Capital, and Simplifi are popular tools that offer a wide range of financial management features, including budgeting, expense tracking, and investment management. However, they do not provide features that support the creation of debt repayment strategies. Among these, YNAB is the only tool that offers an official, well-documented API that could be used to pull data into the Debt-Free Calculator. While Mint does not officially offer a public API, there are unofficial third-party APIs that have been developed to interact with Mint’s data.
+- **General Competitors:** Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) are popular tools that offer a wide range of financial management featuress, including budgeting, expense tracking, and investment management. However, they do not provide features that support the creation of debt repayment strategies. Among these, YNAB is the only tool that offers an official, well-documented API that could be used to pull data into the Debt Free Planner. While Mint does not officially offer a public API, there are unofficial third-party APIs that have been developed to interact with Mint’s data.
 
-- **Differentiation:** The Debt-Free Calculator stands out in this competitive landscape by offering a highly specialized tool that caters directly to the needs of loan recipients. Its focus on advanced debt repayment strategies, including the unique Hybrid Debt Repayment Strategy, multicurrency support, and customizable debt plans, provides a unique value proposition that is not fully addressed by any existing mainstream financial management tools. This specialization positions the Debt-Free Calculator as the go-to solution for users serious about optimizing their debt repayment process and achieving financial freedom.
-
-| **Tool**                           | **Key Features**                                                                 | **Debt Repayment Strategies**                   | **Multicurrency Support** | **Customizable Debt Plans** | **Platform Support**         | **API Availability** | **Target Focus**                       |
-|------------------------------------|----------------------------------------------------------------------------------|-------------------------------------------------|---------------------------|---------------------------------|---------------------------------|-------------------|----------------------------------------|
-| **Debt-Free Calculator**           | Multiple repayment strategies (Snowball, Avalanche, Snowflake), multicurrency support, customizable debt plans | Snowball, Avalanche, Snowflake                  | Yes                       | Yes                             | Web, Android, iOS           | Planned              | Focused on debt repayment              |
-| **Direct Competitors**             |                                                                                  |                                                 |                           |                                 |                                 |                   |                                        |
-| **Debt Payoff Planner**            | Debt tracking, snowball/avalanche strategies, progress tracking                   | Snowball, Avalanche                             | No                        | Limited                         | Web, Android, iOS           | No                | Focused on debt repayment              |
-| **Undebt.it**                      | Detailed debt tracking, snowball/avalanche strategies, progress visualization      | Snowball, Avalanche                             | No                        | Limited                         | Web                          | No                | Focused on debt repayment              |
-| **unbury.me**                      | Loan calculator, snowball/avalanche strategies, visual progress tracking           | Snowball, Avalanche                             | No                        | Limited                         | Web                          | No                | Focused on debt repayment              |
-| **Vertex42 Debt Reduction Calculator** | Debt reduction spreadsheet, snowball/avalanche strategies                         | Snowball, Avalanche                             | No                        | Limited                         | Web (Excel/Spreadsheet)      | No                | Focused on debt repayment              |
-| **General Competitors**            |                                                                                  |                                                 |                           |                                 |                                 |                   |                                        |
-| **Mint**                           | Budgeting, expense tracking, basic debt tracking                                  | None                                            | No                        | No                              | Web, Android, iOS           | Yes                | General financial management          |
-| **YNAB (You Need A Budget)**       | Proactive budgeting, debt tracking                                                | None (encourages debt paydown through budgeting) | No                        | No                              | Web, Android, iOS           | No                | Budgeting and financial education     |
-| **Quicken**                        | Comprehensive financial management, investment tracking, basic debt tracking      | Basic debt reduction plan                       | No                        | Limited                         | Web, Windows, Mac, Android, iOS | No                | Overall financial management          |
-| **Personal Capital**               | Investment tracking, wealth management, limited debt tracking                     | None                                            | No                        | No                              | Web, Android, iOS           | Yes                | Wealth and investment management      |
-| **Simplifi by Quicken**            | Spending tracking, budgeting                                                      | None                                            | No                        | No                              | Web, Android, iOS           | No                | Simplified financial management       |
+- **Differentiation:** The Debt Free Planner stands out in this competitive landscape by offering a highly specialized tool that caters directly to the needs of loan recipients. Its focus on advanced debt repayment strategies, including the unique Hybrid Debt Repayment Strategy, multicurrency support, and customizable debt plans, provides a unique value proposition that is not fully addressed by any existing mainstream financial management tools. This specialization positions the Debt Free Planner as the go-to solution for users serious about optimizing their debt repayment process and achieving financial freedom.
 
 
-### 2.5. Product Principles
-
-**User-Centric Design:**  
-The Debt-Free Calculator is designed with the user in mind, prioritizing ease of use, accessibility, and a seamless experience across all devices.
-
-**Empowers Informed Decisions:**  
-The Debt-Free Calculator not only provides essential data but also presents it in a compelling, easy-to-understand manner through data storytelling techniques.
-
-**Flexibility and Customization:**  
-Recognizing that every user's financial situation is unique, the Debt-Free Calculator offers the capability to customize their debt repayment plans.
-
-**Security and Privacy:**  
-The product adheres to industry standards of security and data privacy, ensuring that user information is protected at all times. This includes compliance with relevant regulations such as GDPR and CCPA, as well as implementing best practices in web security.
-
-### 2.6. Assumptions and Risks
+### 2.5. Assumptions and Risks
 
 **Assumptions:**
 
@@ -170,7 +152,7 @@ The product adheres to industry standards of security and data privacy, ensuring
 ---
 
 
-### 2.7 User Personas:
+### 2.6 User Personas:
 
 #### Emily Thompson - Young Professional
 - **Occupation:** Marketing Coordinator at a tech startup
@@ -216,10 +198,8 @@ The product adheres to industry standards of security and data privacy, ensuring
 - **Behavior:** Tech-savvy, Lucia prefers mobile-friendly solutions that allow her to manage her finances on the go. She uses various apps for budgeting and financial tracking but needs a more comprehensive solution for debt management.
 - **Challenges:** Managing inconsistent income as a freelancer while staying on top of debt repayment and savings goals.
 - **Needs:** A cloud-based tool with a mobile-friendly interface that allows her to easily manage and track her debt repayment, offers budgeting tools tailored to variable income, and provides insights into achieving her financial goals.
+
 ---
-
-
-
 
 ## 3. Jobs to Get Done
 
@@ -335,19 +315,6 @@ Any licensing or IP considerations that need to be addressed.
 
 ---
 
-## 10. Appendix
+## Appendix
 
-### 10.1. Glossary
-
-- **Debt Snowball Strategy:** A debt repayment method where the user begins by paying off debts with the smallest balances first. This approach builds psychological momentum, as eliminating smaller debts quickly provides a sense of accomplishment and motivation to tackle larger debts.
-
-- **Debt Avalanche Strategy:** A debt repayment method that prioritizes paying off debts with the highest interest rates first. This strategy focuses on minimizing the total interest paid over time, making it the most cost-effective approach in the long run.
-
-- **Hybrid Debt Repayment Strategy:** A debt repayment method that combines the strengths of both the Debt Snowball and Debt Avalanche strategies. It allows users to experience early wins by paying off smaller debts (like the Snowball method) while also focusing on reducing overall interest costs by targeting high-interest debts (like the Avalanche method).
-
-- **Debt Snowflake Strategy:** A method of accelerating debt repayment where users make additional, smaller payments—either one-time or recurring—towards their debts. These "snowflakes" can be applied on top of regular payments, helping to reduce the principal balance faster and potentially save on interest.
-
-### 10.2. References
-List of references or related documents.
-
-[Design a Better Business](https://designabetterbusiness.com): Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation.
+For a glossary of terms, references, and other shared information, please see the [Shared Appendix](./Shared Appendix.md) .

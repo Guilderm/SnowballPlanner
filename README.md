@@ -29,7 +29,7 @@ To this end, the project includes documents that explain the "why," "what," and 
 
 The project's documentation is guided by the book *Docs for Developers: An Engineer's Field Guide to Technical Writing* by Jared Bhatti and others, alongside other industry standards.
 
-### [Product Specification Document (PSD)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Specification%20Document%20(PSD).md)
+### [Product Requirements Document (PRD)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md)
 The PSD details the "why" of the project by providing an overview of the business case, product vision, and roadmap.
 The PSD demonstrates product management skills, including market analysis, vision setting, and strategic thinking.
 
@@ -60,7 +60,8 @@ The User Guide provides a detailed explanation of how to use the Debt Free Plann
 ## Meet the Developer
 This project was developed by [Guilder W. Millner](https://www.linkedin.com/in/guilder/), a seasoned Senior Application Support Engineer transitioning into software development. With over 15 years of experience in troubleshooting and customer management, Guilder brings a deep understanding of both the technical and user-facing aspects of software.
 
-Currently completing a BA in Software Engineering, Guilder is passionate about building tools that make a difference. Connect with Guilder on [LinkedIn](https://www.linkedin.com/in/guilder/) to learn more about his journey into software development.
+Currently completing a BA in Software Engineering, Guilder is passionate about building tools that make a difference. Connect with Guilder on [LinkedIn](https://www.linkedin.com/in/guilder/) or via email at [guilderw@gmail.com](mailto:guilderw@gmail.com) to learn more about his journey into software development.
+
 
 
 ## License
