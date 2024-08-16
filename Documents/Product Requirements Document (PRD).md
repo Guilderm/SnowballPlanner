@@ -1,6 +1,6 @@
 # Product Requirements Document (PRD)
 
-This PRD lays the groundwork for the Debt Free Planner by clearly defining the product’s purpose and target audience. The structure and content of this document are guided by the principles and methodologies outlined in [*Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation*](https://designabetterbusiness.com/) by Pijl, Lokitz, and Solomon (2016). Additionally, insights from the [Product Mastery Now](https://productmasterynow.com/mastery/) podcast shape the approach, particularly within the "design and development" knowledge area of the "product innovation management" framework.
+This PRD lays the groundwork for the DebtFreePlanner by clearly defining the product’s purpose and target audience. The structure and content of this document are guided by the principles and methodologies outlined in [*Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation*](https://designabetterbusiness.com/) by Pijl, Lokitz, and Solomon (2016). Additionally, insights from the [Product Mastery Now](https://productmasterynow.com/mastery/) podcast shape the approach, particularly within the "design and development" knowledge area of the "product innovation management" framework.
 
 ## Table of Contents
 1. [Executive Summary](#1-executive-summary)
@@ -40,11 +40,11 @@ This PRD lays the groundwork for the Debt Free Planner by clearly defining the p
 
 ## 1. Executive Summary
 
-**Product Name:** Debt Free Planner  
+**Product Name:** DebtFreePlanner  
 **Product Motto:** Precision Planning for Debt-Free Living
 
 1. **Product Vision**  
-   Debt Free Planner aims to empower individuals and families to achieve financial freedom by providing a user-friendly tool for managing and paying off debt using the Snowball and Avalanche strategies.
+   DebtFreePlanner aims to empower individuals and families to achieve financial freedom by providing a user-friendly tool for managing and paying off debt using the Snowball and Avalanche strategies.
 
 2. **Key Objectives**  
    - Enable users to create and manage debt repayment plans with various strategies.
@@ -57,7 +57,7 @@ This PRD lays the groundwork for the Debt Free Planner by clearly defining the p
    Many individuals struggle with managing multiple debts, leading to prolonged financial strain due to a lack of effective tools and knowledge.
 
 5. **Proposed Solution**  
-   Debt Free Planner provides a web-based application for users to organize their debts and choose between various repayment methods, including Snowball, Avalanche, and Snowflake strategies.
+   DebtFreePlanner provides a web-based application for users to organize their debts and choose between various repayment methods, including Snowball, Avalanche, and Snowflake strategies.
 
 6. **Portfolio Impact**  
    This project will showcase advanced front-end and back-end development skills, security measures, and DevOps practices, positioning you as a well-rounded software developer with a strong focus on financial technology.
@@ -94,25 +94,25 @@ This PRD lays the groundwork for the Debt Free Planner by clearly defining the p
 Individuals struggle to manage multiple debts, leading to prolonged financial strain. This challenge arises from a lack of tools and knowledge that support practical debt management strategies such as Snowball, Avalanche, and Snowflake, as well as multicurrency support. Loan recipients need resources to create debt repayment plans that reduce the interest paid and increase their amortization, thereby shortening the time required to become debt-free.
 
 ### 3.2. Competitive Landscape
-The Debt Free Planner faces competition from both general financial management apps and dedicated debt repayment tools.
+The DebtFreePlanner faces competition from both general financial management apps and dedicated debt repayment tools.
 Individuals managing multiple debts often struggle to estimate their debt-free date or the total interest their debts will incur due to inadequate tools and education.
 
 ### 2.2. Market Opportunity
-Existing personal financial management applications primarily focus on general budgeting and expense tracking, neglecting the specific needs of loan recipients who require a structured debt repayment plan. The Debt Free Planner app addresses this gap and captures a niche market of users motivated to optimize their debt repayment process. By offering a tool that leverages popular strategies like Snowball, Avalanche, and Snowflake, and provides multicurrency support, the Debt Free Planner enables users to create a tailored debt repayment plan.
+Existing personal financial management applications primarily focus on general budgeting and expense tracking, neglecting the specific needs of loan recipients who require a structured debt repayment plan. The DebtFreePlanner app addresses this gap and captures a niche market of users motivated to optimize their debt repayment process. By offering a tool that leverages popular strategies like Snowball, Avalanche, and Snowflake, and provides multicurrency support, the DebtFreePlanner enables users to create a tailored debt repayment plan.
 
-- **Direct Competitors:** [Debt Payoff Planner](https://www.debtpayoffplanner.com/), [Undebt.it](https://undebt.it/), [unbury.me](https://unbury.me/), and [Vertex42 Debt Reduction Calculator](https://www.vertex42.com/Calculators/debt-reduction-calculator.html) are focused on helping users manage and pay down debt using popular strategies like Snowball and Avalanche. However, none of these tools offer multicurrency support or the ability to customize debt repayment plans as extensively as the Debt Free Planner. These tools primarily cater to users who want straightforward debt repayment solutions but lack the advanced features that the Debt Free Planner provides.
+- **Direct Competitors:** [Debt Payoff Planner](https://www.debtpayoffplanner.com/), [Undebt.it](https://undebt.it/), [unbury.me](https://unbury.me/), and [Vertex42 Debt Reduction Calculator](https://www.vertex42.com/Calculators/debt-reduction-calculator.html) are focused on helping users manage and pay down debt using popular strategies like Snowball and Avalanche. However, none of these tools offer multicurrency support or the ability to customize debt repayment plans as extensively as the DebtFreePlanner. These tools primarily cater to users who want straightforward debt repayment solutions but lack the advanced features that the DebtFreePlanner provides.
 
-- **General Competitors:** Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) are popular tools that offer a wide range of financial management features, including budgeting, expense tracking, and investment management. However, they do not provide features that support the creation of debt repayment strategies. Among these, YNAB is the only tool that offers an official, well-documented API that could be used to pull data into the Debt Free Planner. While Mint does not officially offer a public API, there are unofficial third-party APIs that have been developed to interact with Mint’s data.
+- **General Competitors:** Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) are popular tools that offer a wide range of financial management features, including budgeting, expense tracking, and investment management. However, they do not provide features that support the creation of debt repayment strategies. Among these, YNAB is the only tool that offers an official, well-documented API that could be used to pull data into the DebtFreePlanner. While Mint does not officially offer a public API, there are unofficial third-party APIs that have been developed to interact with Mint’s data.
 
-- **Differentiation:** The Debt Free Planner stands out in this competitive landscape by offering a highly specialized tool that caters directly to the needs of loan recipients. Its focus on advanced debt repayment strategies, including the unique Hybrid Debt Repayment Strategy, multicurrency support, and customizable debt plans, provides a unique value proposition that is not fully addressed by any existing mainstream financial management tools. This specialization positions the Debt Free Planner as the go-to solution for users serious about optimizing their debt repayment process and achieving financial freedom.
+- **Differentiation:** The DebtFreePlanner stands out in this competitive landscape by offering a highly specialized tool that caters directly to the needs of loan recipients. Its focus on advanced debt repayment strategies, including the unique Hybrid Debt Repayment Strategy, multicurrency support, and customizable debt plans, provides a unique value proposition that is not fully addressed by any existing mainstream financial management tools. This specialization positions the DebtFreePlanner as the go-to solution for users serious about optimizing their debt repayment process and achieving financial freedom.
 
 
 ### 3.3. Solution and Value Proposition
-Unlike general budgeting apps, the Debt Free Planner focuses exclusively on debt repayment, combining advanced features that are rarely found together:
+Unlike general budgeting apps, the DebtFreePlanner focuses exclusively on debt repayment, combining advanced features that are rarely found together:
 
 - **Multiple Repayment Strategies:** The tool includes the Snowball, Avalanche, and Snowflake strategies, allowing users to select the approach that best aligns with their financial goals. This flexibility ensures users can adopt a strategy that maximizes their debt repayment efficiency.
   
-- **Multicurrency Support:** Recognizing the global nature of debt, the Debt Free Planner provides multicurrency support, making it suitable for users with loans in various currencies. This feature is especially valuable for expatriates, international students, and professionals managing debts across borders.
+- **Multicurrency Support:** Recognizing the global nature of debt, the DebtFreePlanner provides multicurrency support, making it suitable for users with loans in various currencies. This feature is especially valuable for expatriates, international students, and professionals managing debts across borders.
   
 - **Customizable Debt Plans:** Users can create and modify debt repayment plans according to their specific needs. The tool allows for one-time or recurring extra payments, adjustment of repayment priorities, and real-time progress tracking.
 
@@ -172,27 +172,32 @@ Note: The 'Assumptions and Risks' section was identified as potentially redundan
 ## 5. Jobs to Get Done
 
 ### 5.1. Core Jobs
-- Create and manage debt repayment plans using multiple strategies.
-- Track and visualize progress towards debt repayment goals.
-- Customize repayment plans based on individual financial situations.
+- **Core Job 1: Create and manage a debt repayment plan.**
+  - **Description:** Users need to generate a personalized debt repayment plan that suits their financial situation. This includes selecting the best strategy (e.g., Snowball or Avalanche), customizing payment schedules, and adapting the plan as circumstances change.
+
+- **Core Job 2: Compare different debt repayment strategies.**
+  - **Description:** Users need to evaluate different repayment strategies to determine the most efficient path to debt freedom. This involves analyzing interest rates, payment timelines, and total costs associated with each strategy.
+
+- **Core Job 3: Track progress towards financial goals.**
+  - **Description:** Users need a clear way to monitor their progress as they work toward becoming debt-free. This includes tracking payments, visualizing reductions in debt over time, and receiving updates on milestones.
 
 ### 5.2. Supporting Jobs
-- **Job 1: Visualize debt repayment timelines.**
+- **Supporting Job 1: Visualize debt repayment timelines.**
   - **Description:** Users benefit from visual tools that help them understand the impact of their payments over time, such as charts and graphs that show how their debt will decrease.
 
-- **Job 2: Receive recommendations and insights.**
+- **Supporting Job 2: Receive recommendations and insights.**
   - **Description:** Users need guidance on optimizing their debt repayment strategy. This could include automated suggestions for extra payments, alerts for upcoming deadlines, or tips on how to stay motivated.
 
-- **Job 3: Multicurrency support and global considerations.**
-  - **Description:** For users in different financial regions, the ability to manage debt in multiple currencies and understand the impact of exchange rates is crucial. This job ensures that the Debt Free Planner is adaptable to a global audience.
+- **Supporting Job 3: Multicurrency support and global considerations.**
+  - **Description:** For users in different financial regions, the ability to manage debt in multiple currencies and understand the impact of exchange rates is crucial. This job ensures that the DebtFreePlanner is adaptable to a global audience.
 
-- **Job 4: Generate detailed reports and export data.**
+- **Supporting Job 4: Generate detailed reports and export data.**
   - **Description:** Users might require the ability to generate detailed reports on their debt repayment progress for personal records, financial advisors, or lenders. This includes exporting data in various formats (e.g., PDF, CSV).
 
-- **Job 5: Sync with external financial accounts.**
-  - **Description:** To streamline data entry and ensure accuracy, users may benefit from the ability to sync the Debt Free Planner with their bank accounts or other financial institutions. This job ensures that payment records, balances, and transaction histories are automatically updated.
+- **Supporting Job 5: Sync with external financial accounts.**
+  - **Description:** To streamline data entry and ensure accuracy, users may benefit from the ability to sync the DebtFreePlanner with their bank accounts or other financial institutions. This job ensures that payment records, balances, and transaction histories are automatically updated.
 
-- **Job 6: Provide educational resources and financial literacy tools.**
+- **Supporting Job 6: Provide educational resources and financial literacy tools.**
   - **Description:** Users might appreciate access to educational content, such as articles, videos, or interactive tools, that help them better understand debt management, budgeting, and personal finance.
 
 ---
