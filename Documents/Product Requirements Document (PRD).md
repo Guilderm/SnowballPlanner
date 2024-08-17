@@ -204,34 +204,35 @@ Note: The 'Assumptions and Risks' section was identified as potentially redundan
 1. **Session Management:**
    - Users create an account or log in to access their debt repayment plans.
 
-   ```plantuml
-@startuml
-title Session Management User Flow
+   ![alt text](image.png)
 
-start
-:Open Application;
+   ```plantuml:
+    @startuml
+    title Session Management User Flow
 
-if (Existing Account?) then (Yes)
-  :Login;
-  :Enter Credentials;
-  :Submit Login Form;
-  if (Authentication Successful?) then (Yes)
-    :Access Dashboard;
-  else (No)
-    :Show Error Message;
-  endif
-else (No)
-  :Sign Up;
-  :Enter Email and Password;
-  :Submit Sign Up Form;
-  :Confirmation Email Sent;
-  :Click Confirmation Link;
-  :Account Created;
-  :Access Dashboard;
-endif
+    start
+    :Open Application;
 
-@enduml
+    if (Existing Account?) then (Yes)
+      :Login;
+      :Enter Credentials;
+      :Submit Login Form;
+      if (Authentication Successful?) then (Yes)
+        :Access Dashboard;
+      else (No)
+        :Show Error Message;
+      endif
+    else (No)
+      :Sign Up;
+      :Enter Email and Password;
+      :Submit Sign Up Form;
+      :Confirmation Email Sent;
+      :Click Confirmation Link;
+      :Account Created;
+      :Access Dashboard;
+    endif
 
+    @enduml
 
 
 2. **Plan Management:**
