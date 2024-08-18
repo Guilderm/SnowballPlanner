@@ -235,20 +235,28 @@ Note: The 'Assumptions and Risks' section was identified as potentially redundan
     @enduml
 
 
-2. **Plan Management:**
-   - Users manage their debt details, including:
-     - **Loan Amount (Remaining Principal):** The total remaining amount that needs to be repaid.
-     - **Interest Rate:** The annual percentage rate (APR) charged on the loan amount.
+### 2. **Plan Management:**
+
+#### 2.1. **Debt Management:**
+   - The Debt Management sub-flow allows users to manage their debts, including the following aspects:
+     - **Loan Amount (Remaining Principal):** The total remaining balance that needs to be repaid.
+     - **Interest Rate:** The annual percentage rate (APR) charged on the remaining principal.
      - **Loan Term:** The length of time over which the loan will be repaid, typically expressed in years or months.
-     - **Repayment Frequency:** How often payments are made (e.g., monthly, bi-weekly).
+     - **Repayment Frequency:** The schedule for payments (e.g., monthly, bi-weekly).
      - **Start Date:** The date when the loan was disbursed or when the repayment schedule began.
-     - **Interest Type:** Whether the interest rate is fixed (remains constant) or variable (can change over time).
-     - **Amortization Type:** Whether the loan is fully amortizing, interest-only, or involves a balloon payment at the end.
+     - **Interest Type:** Indicates whether the interest rate is fixed (remains constant) or variable (can change over time).
+     - **Amortization Type:** Specifies whether the loan is fully amortizing, interest-only, or includes a balloon payment at the end.
      - **Fees and Penalties:** Any additional charges, such as origination fees, prepayment penalties, or late payment fees.
-   - Users also manage snowflake payments, including:
-     - **Extra Payment Amount:** Any additional payments made beyond the regular scheduled payments.
-     - **Payment Frequency:** The frequency of these extra payments (e.g., monthly, bi-weekly).
-     - **Start Date:** The date when extra payments begin.
+
+#### 2.2. **Snowflake Management:**
+   - The Snowflake Management sub-flow enables users to manage their snowflake payments, focusing on:
+     - **Extra Payment Amount:** Any additional payments made beyond the regularly scheduled payments.
+     - **Payment Frequency:** How often these extra payments are made (e.g., monthly, bi-weekly).
+     - **Start Date:** The date when the extra payments begin.
+
+#### 2.3. **Payment Management:**
+   - The Payment Management sub-flow is where users define their minimum global monthly payments. This involves setting the total amount they are willing to allocate each month towards debt repayment, which will then be distributed according to their chosen debt reduction strategy (e.g., snowball method).
+
 
 3. **Profile Management:**
    - Users update their personal information, change passwords, adjust notification preferences, and delete their account if desired.
