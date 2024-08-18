@@ -10,6 +10,7 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
    - 3.2. [Competitive Landscape](#competitive-landscape)
    - 3.3. [Solution and Value Proposition](#solution-and-value-proposition)
    - 3.4. [User Personas](#user-personas)
+   - 3.4. [Out of Scope](#out-of-scope)
 4. [Market and User Insights](#market-and-user-insights)
    - 4.1. [Problem Statement](#problem-statement)
    - 4.2. [Market Opportunity](#market-opportunity)
@@ -109,6 +110,25 @@ Unlike general budgeting apps, the DebtFreePlanner focuses exclusively on debt r
 - **Multicurrency Support:** Recognizing the global nature of debt, the DebtFreePlanner provides multicurrency support, making it suitable for users with loans in various currencies. This feature is especially valuable for expatriates, international students, and professionals managing debts across borders.
   
 - **Customizable Debt Plans:** Users can create and modify debt repayment plans according to their specific needs. The tool allows for one-time or recurring extra payments, adjustment of repayment priorities, and real-time progress tracking.
+
+### 3.4. **Out of Scope**
+
+#### 3.4.1. **Budgeting and Expense Tracking**
+- The DebtFreePlanner will not include features for general budgeting or expense tracking. This also includes loan payment history tracking, which will not be maintained within the application. 
+- **Integration with YNAB:** To satisfy users' needs for budgeting and tracking expenses, including detailed loan payment histories, the DebtFreePlanner will integrate with YNAB (You Need A Budget), a well-established tool that excels in these areas. However, it should be noted that this integration does not fully align with YNAB's philosophy, as they emphasize a different approach to debt management.
+
+#### 3.4.2. **Non-Conventional Loan Types**
+- The scope is limited to traditional conventional loans that are:
+  - Paid on a monthly basis.
+  - Have interest rates compounded monthly.
+  - Do not include balloon payments or penalties for early repayment.
+- **Exclusions:** Loans with variable interest rates, interest-only payments, or those with irregular payment schedules will not be supported. Additionally, complex loan types like mortgages with balloon payments or lines of credit are out of scope for this project.
+
+#### 3.4.3. **Advanced Loan Features**
+- The application will not support:
+  - Refinancing or consolidation of existing loans.
+  - Handling of overpayments beyond the scheduled extra payment configurations.
+  - Detailed amortization schedules beyond simple monthly breakdowns.
 
 
 ### 2.6. User Personas
