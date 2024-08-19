@@ -91,11 +91,17 @@ Individuals struggle to manage multiple debts, leading to prolonged financial st
 ### 3.3. Proposed Solution
 A web-based debt repayment calculator and planner with the following key features:
 
-- **Multiple Repayment Strategies:** The tool includes the Snowball, Avalanche, and Snowflake strategies, allowing users to select the approach that best aligns with their financial goals. This flexibility ensures users can adopt a strategy that maximizes their debt repayment efficiency.
-  
-- **Multicurrency Support:** Recognizing the global nature of debt, DebtFreePlanner provides multicurrency support, making it suitable for users with loans in various currencies. This feature is especially valuable for expatriates, international students, and professionals managing debts across borders.
-  
-- **Customizable Debt Plans:** Users can create and modify debt repayment plans according to their specific needs. The tool allows for one-time or recurring extra payments, adjustment of repayment priorities, and real-time progress tracking.
+- **Multiple Repayment Strategies:** Supports the Snowball, Avalanche, Debt-to-Interest Ratio, Cash Flow Index (CFI), Highest Monthly Payment, and Custom Strategies, allowing users to select the approach that best aligns with their financial goals.
+
+- **Multicurrency Support:** With automatic exchange rate updates to meet global needs.
+
+- **Data-Driven Reports:** In the future, the application will feature reports that use data storytelling techniques to help users understand their debt repayment journey.
+
+- **Integration with YNAB:** The application will integrate with YNAB (You Need A Budget) and possibly Firefly III, facilitating updates to users’ plans.
+
+- **Multi-User Support:** In the future, DebtFreePlanner will include multi-user support, allowing households or financial advisors to manage multiple users’ debts under a single account.
+
+- **Multi-Device Support:** In the future, DebtFreePlanner will support seamless use across various devices, including Web, Android, and iOS platforms.
 
 
 ### 3.2. Competitive Landscape
