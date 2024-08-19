@@ -10,7 +10,7 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 2. [Objectives and Key Results (OKRs)](#2-objectives-and-key-results-okrs)
    - 2.1. [Objective 1: Empower users to create debt elimination plans](#21-objective-1-empower-users-to-create-debt-elimination-plans)
    - 2.2. [Objective 2: Develop a MERN stack Portfolio](#22-objective-2-develop-a-mern-stack-portfolio)
-3. [Background](#3-background)
+3. [Context and Overview](#3-Context-and-Overview)
    - 3.1. [Problem Statement](#31-problem-statement)
    - 3.2. [Proposed Solution](#32-proposed-solution)
      - 3.2.1. [On the Roadmap](#321-on-the-roadmap)
@@ -69,7 +69,7 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 **Proposed Solution**  
  DebtFreePlanner provides a web-based application for users to organize their debts and choose between various repayment methods, including Snowball, Avalanche, and Snowflake strategies.
 
----
+
 
 ## 2. Objectives and Key Results (OKRs)
 
@@ -91,7 +91,7 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 
 ---
 
-## 3. Background
+## 3. Context and Overview
 
 ### 3.1. Problem Statement
 
@@ -139,7 +139,8 @@ Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com
 - The scope is limited to traditional conventional loans that are:
   - Paid on a monthly basis.
   - Have interest rates compounded monthly.
-  - Do not include balloon payments or penalties for early repayment.
+  - Do not have penalties for early repayment.
+  - Do not include balloon payments.
 - **Exclusions:** Loans with variable interest rates, interest-only payments, or those with irregular payment schedules will not be supported. Additionally, complex loan types like mortgages with balloon payments or lines of credit are out of scope for this project.
 
 ##### 3.4.3. **Advanced Loan Features**
@@ -169,6 +170,12 @@ Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com
 
 - Because the repository is public, there is an increased likelihood of a successful attack.
 - Since financial data is managed, the app is an attractive target (honeypot).
+
+
+### 3.6. User Personas
+
+> **Note:** At a later stage, we will create a user persona in [Figma](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
+
 
 ### 3.6.1. Taylor, The Debt-Strapped Professional
 - **Age:** Millennial (Gen Y)
@@ -216,8 +223,11 @@ Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com
 
 ---
 
-## 4. Jobs-to-be-Done (JTBD)
+## 4. Value Proposition Canvas
 
+> **Note:** At a later stage, we will create a Value Proposition Canvas in [Figma](https://www.figma.com/community/search?resource_type=mixed&sort_by=relevancy&query=Value+Proposition+Canvas).
+
+Jobs-to-be-Done (JTBD)
 ### 4.1. Core Jobs
 
 - **Core Job 1: Create and manage a debt repayment plan.**

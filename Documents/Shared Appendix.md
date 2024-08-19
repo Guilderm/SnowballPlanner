@@ -1,9 +1,14 @@
 # Shared Appendix
 
-## Table of Contents
 
+## Table of Contents
 1. [Glossary of Terms](#1-glossary-of-terms)
 2. [Development and Documentation Standards](#2-development-and-documentation-standards)
+   - [Supplementary Guidelines](#supplementary-guidelines)
+   - [Project-Specific Guidelines](#project-specific-guidelines)
+     - [Diagrams as Code (DaC)](#21-diagrams-as-code-dac)
+     - [Writing Tone](#22-writing-tone)
+     - [Feedback Driven Development (FDD)](#23-feedback-driven-development-fdd)
 3. [References](#3-references)
 4. [Resources](#4-resources)
 5. [Placeholders](#5-placeholders)
@@ -63,6 +68,18 @@ The tone of the document should convey authority, professionalism, and clarity.
     - **Do**: “Ensure that documentation is clear and concise.”
     - **Don’t**: “Strive to craft documentation that is a paragon of clarity and conciseness.”
 
+#### 2.3 Feedback Driven Development (FDD)
+
+We will incorporate Feedback Driven Development (FDD) as a core practice by the following principles:
+
+- **Continuous Feedback Loop:** Regularly gather feedback at all stages, from design to post-release, using both direct (e.g., user testing) and indirect (e.g., analytics) methods.
+- **Iterative Improvement:** Utilize the feedback to make continuous and incremental improvements to the product, ensuring it meets user needs and expectations.
+- **User-Centered Design:** Prioritize feedback that enhances the end-user experience, leveraging user personas and stories to guide decisions.
+- **Rapid Prototyping:** Develop and test prototypes or MVPs early to validate ideas and adjust the course as needed.
+- **Data-Driven Decisions:** Use quantitative feedback and analytics to inform feature prioritization and refinements.
+- **Collaboration:** Ensure effective communication among all team members to act upon feedback appropriately and maintain alignment with the product vision.
+
+
 ## 3. References
 
 This section includes references to external resources, standards, and other important documentation.
@@ -76,6 +93,7 @@ Resources that were helpful in the creation of the project. Note that this is no
 
 - [Design a Better Business](https://designabetterbusiness.com): *Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation*.
 - [Strategyzer](https://www.strategyzer.com): Innovation Strategy & Training for Future-Ready Organizations
+- [The Value Proposition Canvas](https://www.strategyzer.com/library/the-value-proposition-canvas)
  
 ## 5. Placeholders
 This section serves as a temporary placeholder for items that are looking for a home.
