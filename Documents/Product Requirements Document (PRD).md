@@ -5,38 +5,43 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 ## Table of Contents
 1. [Executive Summary](#1-executive-summary)
 2. [Objectives and Key Results (OKRs)](#2-objectives-and-key-results-okrs)
-3. [Background](#background)
-   - 3.1. [Problem Statement](#problem-statement)
-   - 3.2. [Competitive Landscape](#competitive-landscape)
-   - 3.3. [Solution and Value Proposition](#solution-and-value-proposition)
-   - 3.4. [User Personas](#user-personas)
-   - 3.4. [Out of Scope](#out-of-scope)
-4. [Market and User Insights](#market-and-user-insights)
-   - 4.1. [Problem Statement](#problem-statement)
-   - 4.2. [Market Opportunity](#market-opportunity)
-   - 4.3. [Value Proposition](#value-proposition)
-   - 4.4. [Competitive Landscape](#competitive-landscape)
-   - 4.5. [Assumptions and Limitations](#assumptions-and-risks)
-   - 4.6. [User Personas](#user-personas)
-5. [Jobs-to-be-Done (JTBD)](#jobs-to-get-done)
-   - 5.1. [Core Jobs](#core-jobs)
-   - 5.2. [Supporting Jobs](#supporting-jobs)
-6. [User Interface and User Experience (UI/UX)](#design-and-user-experience)
-   - 6.1. [User Flow](#user-flow)
-   - 6.2. [Wireframes/Mockups](#wireframesmockups)
-7. [User Stories](#user-stories)
-   - 7.1. [User Stories](#user-stories)
-8. [Legal and Compliance](#legal-and-compliance)
-   - 8.1. [Data Privacy](#data-privacy)
-   - 8.2. [Regulatory Compliance](#regulatory-compliance)
-   - 8.3. [International Regulations](#international-regulations)
-   - 8.4. [Terms of Service & User Agreements](#terms-of-service--user-agreements)
-   - 8.5. [Record Keeping and Audit Trails](#record-keeping-and-audit-trails)
-   - 8.6. [Legal Risk Management](#legal-risk-management)
-   - 8.7. [Protection of Intellectual Property (IP)](#protection-of-intellectual-property-ip)
-9. [Shared Appendix](#shared-appendix)
-10. [Related Documents](#related-documents)
-
+   - 2.1. [Objective 1: Empower users to create debt elimination plans](#21-objective-1-empower-users-to-create-debt-elimination-plans)
+   - 2.2. [Objective 2: Develop a MERN stack Portfolio](#22-objective-2-develop-a-mern-stack-portfolio)
+3. [Background](#3-background)
+   - 3.1. [Problem Statement](#31-problem-statement)
+   - 3.2. [Planned Features](#32-planned-features)
+     - 3.2.1. [On the Roadmap](#321-on-the-roadmap)
+     - 3.2.2. [Future Considerations](#322-future-considerations)
+   - 3.3. [Competitive Landscape](#33-competitive-landscape)
+     - 3.3.1. [Direct Competitors](#331-direct-competitors)
+     - 3.3.2. [Indirect Competitors](#332-indirect-competitors)
+   - 3.4. [Out of Scope](#34-out-of-scope)
+     - 3.4.1. [Budgeting and Expense Tracking](#341-budgeting-and-expense-tracking)
+     - 3.4.2. [Non-Conventional Loan Types](#342-non-conventional-loan-types)
+     - 3.4.3. [Advanced Loan Features](#343-advanced-loan-features)
+   - 3.5. [Assumptions and Limitations](#35-assumptions-and-limitations)
+     - 3.5.1. [Assumptions](#351-assumptions)
+     - 3.5.2. [Constraints](#352-constraints)
+     - 3.5.3. [Risks](#353-risks)
+   - 3.6. [User Personas](#36-user-personas)
+4. [Jobs-to-be-Done (JTBD)](#4-jobs-to-be-done-jtbd)
+   - 4.1. [Core Jobs](#41-core-jobs)
+   - 4.2. [Supporting Jobs](#42-supporting-jobs)
+5. [User Interface and User Experience (UI/UX)](#5-user-interface-and-user-experience-uiux)
+   - 5.1. [User Flows](#51-user-flows)
+   - 5.2. [Wireframes/Mockups](#52-wireframesmockups)
+6. [User Stories](#6-user-stories)
+   - 6.1. [User Stories](#61-user-stories)
+7. [Legal and Compliance](#7-legal-and-compliance)
+   - 7.1. [Data Privacy](#71-data-privacy)
+   - 7.2. [Regulatory Compliance](#72-regulatory-compliance)
+   - 7.3. [International Regulations](#73-international-regulations)
+   - 7.4. [Terms of Service & User Agreements](#74-terms-of-service--user-agreements)
+   - 7.5. [Record Keeping and Audit Trails](#75-record-keeping-and-audit-trails)
+   - 7.6. [Legal Risk Management](#76-legal-risk-management)
+   - 7.7. [Protection of Intellectual Property (IP)](#77-protection-of-intellectual-property-ip)
+8. [Shared Appendix](#8-shared-appendix)
+9. [Related Documents](#9-related-documents)
 ---
 
 ## 1. Executive Summary
@@ -88,58 +93,62 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 ### 3.1. Problem Statement
 Individuals struggle to manage multiple debts, leading to prolonged financial strain. This challenge arises from a lack of tools and knowledge that support practical debt management strategies such as Snowball, Avalanche, and Snowflake, as well as multicurrency support. Loan recipients need resources to create debt repayment plans that reduce the interest paid and increase their amortization, thereby shortening the time required to become debt-free.
 
-### 3.3. Proposed Solution
-A web-based debt repayment calculator and planner with the following key features:
-
+#### 3.2.1. **On the Roadmap**
 - **Multiple Repayment Strategies:** Supports the Snowball, Avalanche, Debt-to-Interest Ratio, Cash Flow Index (CFI), Highest Monthly Payment, and Custom Strategies, allowing users to select the approach that best aligns with their financial goals.
+
+- **Snowflake Payments:** Allows users to make small, irregular payments towards their debts whenever extra funds are available. This strategy helps reduce the principal faster, decreasing the overall interest paid and shortening the repayment period.
 
 - **Multicurrency Support:** With automatic exchange rate updates to meet global needs.
 
-- **Data-Driven Reports:** In the future, the application will feature reports that use data storytelling techniques to help users understand their debt repayment journey.
+- **Reporting:** Will generate reports to help users understand their debt repayment journey.
 
 - **Integration with YNAB:** The application will integrate with YNAB (You Need A Budget) and possibly Firefly III, facilitating updates to users’ plans.
 
-- **Multi-User Support:** In the future, DebtFreePlanner will include multi-user support, allowing households or financial advisors to manage multiple users’ debts under a single account.
+#### 3.2.2. **Future Considerations**
+The following features are planned for future updates:
 
-- **Multi-Device Support:** In the future, DebtFreePlanner will support seamless use across various devices, including Web, Android, and iOS platforms.
+- **Multi-User Support:** DebtFreePlanner will include multi-user support, allowing households or financial advisors to manage multiple users’ debts under a single account.
 
+- **AI-Driven Reports:** Will use artificial intelligence (AI) to create reports that use data storytelling techniques to help users understand their debt repayment journey.
 
-### 3.2. Competitive Landscape
-- **Direct Competitors:** [Debt Payoff Planner](https://www.debtpayoffplanner.com/), [Undebt.it](https://undebt.it/), [unbury.me](https://unbury.me/), and [Vertex42 Debt Reduction Calculator](https://www.vertex42.com/Calculators/debt-reduction-calculator.html) help users manage and pay down debt using strategies like Snowball and Avalanche. However, these tools lack multicurrency support and the ability to customize debt repayment plans as extensively as DebtFreePlanner.
+- **Multi-Device Support:** DebtFreePlanner will support seamless use across various devices, including Web, Android, and iOS platforms.
 
-- **Indirect  Competitors:** Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) offer a broad range of financial management features, including budgeting and expense tracking, but do not support creating a debt repayment plans.
-Notably, YNAB offers a well-documented official API that can be used to pull the loans into DebtFreePlanner. While Mint does not have an official public API, unofficial third-party APIs are available. These API can be leverage to create a symbiotic relationship.
+### 3.3. Competitive Landscape
+#### 3.3.1. **Direct Competitors:** 
+[Debt Payoff Planner](https://www.debtpayoffplanner.com/), [Undebt.it](https://undebt.it/), [unbury.me](https://unbury.me/), and [Vertex42 Debt Reduction Calculator](https://www.vertex42.com/Calculators/debt-reduction-calculator.html) help users manage and pay down debt using strategies like Snowball and Avalanche. However, these tools lack multicurrency support and the ability to customize debt repayment plans as extensively as DebtFreePlanner.
+
+### 3.3.2. **Indirect Competitors:**
+ Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) offer a broad range of financial management features, including budgeting and expense tracking, but do not support creating debt repayment plans. Notably, YNAB offers a well-documented official API that can be used to pull the loans into DebtFreePlanner. While Mint does not have an official public API, unofficial third-party APIs are available. These APIs can be leveraged to create a symbiotic relationship.
 
 ### 3.4. **Out of Scope**
-
-#### 3.4.1. **Budgeting and Expense Tracking**
+##### 3.4.1. **Budgeting and Expense Tracking**
 - The DebtFreePlanner will not include features for general budgeting or expense tracking. This also includes loan payment history tracking, which will not be maintained within the application. 
 - **Integration with YNAB:** To satisfy users' needs for budgeting and tracking expenses, including detailed loan payment histories, the DebtFreePlanner will integrate with YNAB (You Need A Budget), a well-established tool that excels in these areas. However, it should be noted that this integration does not fully align with YNAB's philosophy, as they emphasize a different approach to debt management.
 
-#### 3.4.2. **Non-Conventional Loan Types**
+##### 3.4.2. **Non-Conventional Loan Types**
 - The scope is limited to traditional conventional loans that are:
   - Paid on a monthly basis.
   - Have interest rates compounded monthly.
   - Do not include balloon payments or penalties for early repayment.
 - **Exclusions:** Loans with variable interest rates, interest-only payments, or those with irregular payment schedules will not be supported. Additionally, complex loan types like mortgages with balloon payments or lines of credit are out of scope for this project.
 
-#### 3.4.3. **Advanced Loan Features**
+##### 3.4.3. **Advanced Loan Features**
 - The application will not support:
   - Refinancing or consolidation of existing loans.
   - Handling of overpayments beyond the scheduled extra payment configurations.
   - Detailed amortization schedules beyond simple monthly breakdowns.
 
-### 4.5. Assumptions and Limitations
+### 3.5. Assumptions and Limitations
 
-- **Assumptions**:
+##### 3.5.1. **Assumptions**:
   - Users have a basic understanding of personal finance.
   - The application will primarily be used on a laptop with internet access.
   
-- **Constraints**:
+##### 3.5.2. **Constraints**:
   - The application must comply with GDPR and CCPA regulations.
   - The GitHub repository needs to be public so that recruiters can access it.
 
-- **Risks**:
+##### 3.5.3. **Risks**:
   - Because the repository is public, there is an increased likelihood of a successful attack.
   - Since financial data is managed, the app is an attractive target (honeypot).
 
@@ -191,9 +200,11 @@ Notably, YNAB offers a well-documented official API that can be used to pull the
 - **Needs:** A cloud-based tool with a mobile-friendly interface that allows her to easily manage and track her debt repayment, offers budgeting tools tailored to variable income, and provides insights into achieving her financial goals.
 
 
-## 5. Jobs-to-be-Done (JTBD)
+---
 
-### 5.1. Core Jobs
+## 4. Jobs-to-be-Done (JTBD)
+
+### 4.1. Core Jobs
 - **Core Job 1: Create and manage a debt repayment plan.**
   - **Description:** Users need to generate a personalized debt repayment plan that suits their financial situation. This includes selecting the best strategy (e.g., Snowball or Avalanche), customizing payment schedules, and adapting the plan as circumstances change.
 
@@ -203,7 +214,7 @@ Notably, YNAB offers a well-documented official API that can be used to pull the
 - **Core Job 3: Track progress towards financial goals.**
   - **Description:** Users need a clear way to monitor their progress as they work toward becoming debt-free. This includes tracking payments, visualizing reductions in debt over time, and receiving updates on milestones.
 
-### 5.2. Supporting Jobs
+### 4.2. Supporting Jobs
 - **Supporting Job 1: Visualize debt repayment timelines.**
   - **Description:** Users benefit from visual tools that help them understand the impact of their payments over time, such as charts and graphs that show how their debt will decrease.
 
@@ -225,9 +236,9 @@ Notably, YNAB offers a well-documented official API that can be used to pull the
 ---
 
 
-## 6. User Interface and User Experience (UI/UX)
+## 5. User Interface and User Experience (UI/UX)
 
-### 6.1. User Flows
+### 5.1. User Flows
 
 1. **Session Management:**
    - Users create an account or log in to access their debt repayment plans.
@@ -296,13 +307,13 @@ Notably, YNAB offers a well-documented official API that can be used to pull the
    - Users view, print, and gain insights from their reports on debt repayment progress and strategies.
 
 
-### 6.2. Wireframes/Mockups
+### 5.2. Wireframes/Mockups
 - **Dashboard:** Displays key metrics, repayment progress, and quick actions.
 - **Plan Creation:** Forms for entering debt details and selecting repayment strategies.
 - **Plan Customization:** Interface for adjusting repayment priorities and adding extra payments.
 - **Progress Tracking:** Visual representations of repayment progress and milestones.
 
-## 7. User Stories
+## 6. User Stories
 
 User stories should be:
 - User-Centric Focus
@@ -310,7 +321,7 @@ User stories should be:
 - Have an Acceptance Criteria
 - Prioritization
 
-### 7.1. User Stories
+### 6.1. User Stories
 
 
 - **As a user, I want to create a debt repayment plan using the Snowball strategy so that I can pay off my smallest debts first and gain motivation.**
@@ -321,9 +332,9 @@ User stories should be:
 ---
 
 
-## 8. Legal and Compliance
+## 7. Legal and Compliance
 
-### 8.1. Data Privacy
+### 7.1. Data Privacy
 - **Overview**: Outline the commitment to protecting user data and complying with relevant data privacy regulations.
 - **Key Regulations**:
   - **GDPR (General Data Protection Regulation)**: Describe how the product will ensure compliance with GDPR, including data collection, processing, storage, and user rights.
@@ -333,14 +344,14 @@ User stories should be:
   - **Data Deletion**: Describe the process for users to request the deletion of their data.
   - **Data Portability**: Outline the mechanisms for providing users with their data in a portable format.
 
-### 8.2. Regulatory Compliance
+### 7.2. Regulatory Compliance
 - **Industry-Specific Regulations**: 
   - **Financial Regulations**: If applicable, discuss any financial regulations that must be adhered to, such as anti-money laundering (AML) or Know Your Customer (KYC) guidelines.
   - **Health Regulations**: If the product deals with health data, outline compliance with regulations like HIPAA (Health Insurance Portability and Accountability Act).
 - **Compliance Monitoring**: Describe how ongoing compliance will be monitored and maintained throughout the product lifecycle.
 - **Audit and Reporting**: Explain any auditing mechanisms that will be in place to ensure compliance and to report on compliance status.
 
-### 8.3. International Regulations
+### 7.3. International Regulations
 - **Global Compliance Strategy**: 
   - Describe the approach to ensuring the product complies with legal requirements in all countries where it will be available.
 - **Local Data Privacy Laws**: 
@@ -348,13 +359,13 @@ User stories should be:
 - **Cross-Border Data Transfers**: 
   - Discuss how data will be handled when transferring across borders, particularly in compliance with regulations like GDPR's data transfer restrictions.
 
-### 8.4. Terms of Service & User Agreements
+### 7.4. Terms of Service & User Agreements
 - **User Agreements**: 
   - Outline the key terms that will be included in the end-user agreements, such as acceptable use policies, limitations of liability, and dispute resolution processes.
 - **Terms of Service**: 
   - Provide an overview of the terms of service that users must agree to when using the product. This should include disclaimers, intellectual property notices, and the governing law.
 
-### 8.5. Record Keeping and Audit Trails
+### 7.5. Record Keeping and Audit Trails
 - **Record Keeping Requirements**: 
   - Detail the types of records that must be maintained for compliance purposes, including user consent records, transaction logs, and access records.
 - **Audit Trails**: 
@@ -362,7 +373,7 @@ User stories should be:
 - **Retention Policies**: 
   - Explain the data retention policies, including how long different types of data will be stored and when they will be purged or anonymized.
 
-### 8.6. Legal Risk Management
+### 7.6. Legal Risk Management
 - **Risk Identification**: 
   - Identify potential legal risks associated with the product, such as non-compliance with data privacy laws, intellectual property disputes, or liability issues.
 - **Mitigation Strategies**: 
@@ -370,7 +381,7 @@ User stories should be:
 - **Legal Reviews**: 
   - Describe the process for regular legal reviews of the product to ensure ongoing compliance with evolving laws and regulations.
 
-### 8.7. Protection of Intellectual Property (IP)
+### 7.7. Protection of Intellectual Property (IP)
 - **Overview**: 
   - Describe the steps that will be taken to protect the intellectual property associated with the product, particularly in preparation for potential monetization.
 - **Patents**: 
@@ -378,13 +389,13 @@ User stories should be:
 
 ---
 
-## 7. Shared Appendix
+## 8. Shared Appendix
 
 The glossary, data dictionary, and additional references are available in the [Shared Appendix](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Shared%20Appendix.md) document.
 
 ---
 
-## 8. Related Documents
+## 9. Related Documents
 
 - [Product Requirements Document (PRD)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md)
 - [Software Requirements Specification (SRS)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Software%20Requirements%20Specification%20(SRS).md)
