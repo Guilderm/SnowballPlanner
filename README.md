@@ -5,7 +5,7 @@ _A MERN stack application for strategic debt payoff planning using Snowball and 
 - [Introduction](#introduction)
 - [Key Features](#key-features)
 - [Documentation](#documentation)
-  - [Product Specification Document (PSD)](#product-specification-document-psd)
+  - [Product Requirements Document (PRD)](#product-requirements-document-prd)
   - [Software Requirements Specification (SRS)](#software-requirements-specification-srs)
   - [Software Design Document (SDD)](#software-design-document-sdd)
   - [Software Test Document (STD)](#software-test-document-std)
