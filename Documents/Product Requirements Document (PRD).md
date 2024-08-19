@@ -170,57 +170,49 @@ Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com
 - Because the repository is public, there is an increased likelihood of a successful attack.
 - Since financial data is managed, the app is an attractive target (honeypot).
 
-### 3.6. User Personas
+### 3.6.1. Taylor, The Debt-Strapped Professional
+- **Age:** Millennial (Gen Y)
+- **Occupation:** Mid-Level Manager in IT
+- **Economic Status:** Upper Middle Class
+- **Region:** Western Europe
+- **Financial Status:** Living paycheck to paycheck
+- **Financial Goals:** Pay off student loans and credit card debt within five years and a mortgage within ten years.
+- **Challenges:**
+  - Struggles with multiple high-interest loans and credit card debts.
+  - Finds it challenging to prioritize payments and manage cash flow effectively.
+- **Behavior:**
+  - Uses YNAB to manage personal finances.
+  - Regularly visits financial advice blogs and YouTube channels for tips on managing debt.
+- **Needs:**
+  - A simple, user-friendly tool that assists in planning a debt-free journey.
+  - Guidance on how to prioritize payments to reduce overall interest.
+  - Integration with existing budgeting tools, like YNAB.
+- **Motivations:**
+  - Desire to become debt-free within a reasonable time frame.
+  - Seeking a sense of control over financial future.
+  - Aims to avoid late fees and interest hikes.
 
-#### Emily Thompson - Young Professional
-
-- **Occupation:** Marketing Coordinator at a tech startup
-- **Location:** Austin, Texas, USA (North America)
-- **Life Stage:** Early in her career, dealing with student loans and other early debts.
-- **Financial Goals:** Manage her student loan debt efficiently while beginning to save for future goals like purchasing a home and starting a family.
-- **Behavior:** Financially engaged and tech-savvy, Emily uses various apps to track her spending and savings. She’s looking for a tool that can help her create a clear path to debt repayment while allowing her to save for her future.
-- **Challenges:** Balancing debt repayment with other financial priorities, such as building an emergency fund and saving for a down payment.
-- **Needs:** A tool that offers personalized debt repayment plans, integrates with her existing financial accounts, and provides clear insights into how different strategies (e.g., Avalanche vs. Snowball) affect her long-term financial health.
-
-#### Michael Harris - Pre-Retiree
-
-- **Occupation:** Senior Manager at a manufacturing company
-- **Location:** Toronto, Canada (North America)
-- **Life Stage:** Approaching retirement, focused on paying off the remaining mortgage and small personal loans.
-- **Financial Goals:** Achieve a debt-free retirement in the next five years while maintaining a comfortable lifestyle.
-- **Behavior:** Financially engaged but prefers straightforward, user-friendly tools that don’t require too much technical know-how.
-- **Challenges:** Managing multiple types of debt, including a mortgage, car loan, and credit card debt, while preparing for retirement.
-- **Needs:** A clear, easy-to-use tool that can help him create a debt repayment strategy aligned with his retirement timeline, with minimal technical complexity.
-
-#### Sofia Ramirez - Debt Consolidation Seeker
-
-- **Occupation:** Small Business Owner
-- **Location:** Mexico City, Mexico (North America)
-- **Life Stage:** Managing multiple business and personal loans that need to be consolidated into a single, manageable payment.
-- **Financial Goals:** Simplify her financial obligations by consolidating debt and improving cash flow management.
-- **Behavior:** Financially engaged and moderately tech-savvy, Sofia uses mobile banking apps and online tools but prefers simple interfaces due to her busy schedule.
-- **Challenges:** Juggling multiple financial obligations with inconsistent business income, requiring flexible and localized solutions.
-- **Needs:** A tool that offers debt consolidation options, tailored to the Mexican market, with support for local currency and language, helping her streamline her finances and reduce financial stress.
-
-#### Javier García - Financially Engaged User
-
-- **Occupation:** Software Engineer
-- **Location:** Barcelona, Spain (Europe)
-- **Life Stage:** Mid-career professional with a mortgage and a car loan, looking to optimize debt repayment and investments.
-- **Financial Goals:** Optimize his debt repayment while also investing in long-term financial goals like retirement and education funds for his children.
-- **Behavior:** Highly financially engaged and tech-savvy, Javier enjoys using advanced financial tools to track and optimize his finances.
-- **Challenges:** Balancing debt repayment with investments, managing currency fluctuations for international investments.
-- **Needs:** A customizable, data-driven tool that integrates with his existing financial tools, supports multiple currencies, and offers advanced analytics for debt repayment and investment strategies.
-
-#### Lucia Torres - Tech-Savvy User
-
-- **Occupation:** Freelance Graphic Designer
-- **Location:** Buenos Aires, Argentina (South America)
-- **Life Stage:** Early career, dealing with student loans and some credit card debt, looking to manage her finances more effectively.
-- **Financial Goals:** Pay off her student loans and credit card debt while saving for future goals like traveling and potentially buying a home.
-- **Behavior:** Tech-savvy, Lucia prefers mobile-friendly solutions that allow her to manage her finances on the go. She uses various apps for budgeting and financial tracking but needs a more comprehensive solution for debt management.
-- **Challenges:** Managing inconsistent income as a freelancer while staying on top of debt repayment and savings goals.
-- **Needs:** A cloud-based tool with a mobile-friendly interface that allows her to easily manage and track her debt repayment, offers budgeting tools tailored to variable income, and provides insights into achieving her financial goals.
+### 3.6.2. Casey, The Organized Homemaker
+- **Age:** Generation Z
+- **Occupation:** Stay-at-Home Parent
+- **Economic Status:** Middle Class
+- **Region:** North America
+- **Financial Status:** In debt but managing
+- **Financial Goals:** Improve cash flow by paying off credit cards and car loans ahead of schedule to start saving for a home down payment.
+- **Challenges:**
+  - Manages multiple loans, including car loans, credit cards, student loans, and a personal loan.
+  - Balancing loan repayments with household expenses, such as groceries, utilities, and children’s education, is a challenge.
+- **Behavior:**
+  - Uses an online banking app to monitor spending.
+  - Manages the budget in Excel.
+  - Frequently compares financial products to ensure access to the best rates.
+- **Needs:**
+  - A streamlined tool to manage and optimize loan payments, with clear insights into interest savings from additional payments.
+  - The ability to project future loan payments and the impact of different payment strategies.
+- **Motivations:**
+  - Seeks to reduce financial stress by managing debts efficiently.
+  - Aims to achieve financial freedom and security for the family.
+  - Values simplicity and reliability in financial tools.
 
 ---
 
