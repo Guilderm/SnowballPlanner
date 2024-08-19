@@ -1,15 +1,18 @@
 # Product Requirements Document (PRD)
 
-This PRD lays the groundwork for the DebtFreePlanner by clearly defining the product’s purpose and target audience. The structure and content of this document are guided by the principles and methodologies outlined in [*Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation*](https://designabetterbusiness.com/) by Pijl, Lokitz, and Solomon (2016). Additionally, insights from the [Product Mastery Now](https://productmasterynow.com/mastery/) podcast shape the approach, particularly within the "design and development" knowledge area of the "product innovation management" framework.
+This PRD lays the groundwork for the DebtFreePlanner by clearly defining the product’s purpose and target audience. The structure and content of this document are guided by the principles and methodologies outlined in [_Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation_](https://designabetterbusiness.com/) by Pijl, Lokitz, and Solomon (2016). Additionally, insights from the [Product Mastery Now](https://productmasterynow.com/mastery/) podcast shape the approach, particularly within the "design and development" knowledge area of the "product innovation management" framework.
 
 ## Table of Contents
+
+## Table of Contents
+
 1. [Executive Summary](#1-executive-summary)
 2. [Objectives and Key Results (OKRs)](#2-objectives-and-key-results-okrs)
    - 2.1. [Objective 1: Empower users to create debt elimination plans](#21-objective-1-empower-users-to-create-debt-elimination-plans)
    - 2.2. [Objective 2: Develop a MERN stack Portfolio](#22-objective-2-develop-a-mern-stack-portfolio)
 3. [Background](#3-background)
    - 3.1. [Problem Statement](#31-problem-statement)
-   - 3.2. [Planned Features](#32-planned-features)
+   - 3.2. [Proposed Solution](#32-proposed-solution)
      - 3.2.1. [On the Roadmap](#321-on-the-roadmap)
      - 3.2.2. [Future Considerations](#322-future-considerations)
    - 3.3. [Competitive Landscape](#33-competitive-landscape)
@@ -40,7 +43,8 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
    - 7.5. [Record Keeping and Audit Trails](#75-record-keeping-and-audit-trails)
    - 7.6. [Legal Risk Management](#76-legal-risk-management)
    - 7.7. [Protection of Intellectual Property (IP)](#77-protection-of-intellectual-property-ip)
-8. [Related Documents](#9-related-documents)
+8. [Related Documents](#8-related-documents)
+
 ---
 
 ## 1. Executive Summary
@@ -49,32 +53,35 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 **Product Motto:** Precision Planning for Debt-Free Living
 
 **Product Vision**  
-   DebtFreePlanner aims to empower individuals and families to achieve financial freedom by providing a user-friendly tool for managing and paying off debt using the Snowball and Avalanche strategies.
+ DebtFreePlanner aims to empower individuals and families to achieve financial freedom by providing a user-friendly tool for managing and paying off debt using the Snowball and Avalanche strategies.
 
-**Key Objectives**  
-   - Enable users to create and manage debt repayment plans with various strategies.
-   - Develop a robust MERN stack portfolio project that demonstrates full-stack development, security, and DevOps capabilities.
+**Key Objectives**
+
+- Enable users to create and manage debt repayment plans with various strategies.
+- Develop a robust MERN stack portfolio project that demonstrates full-stack development, security, and DevOps capabilities.
 
 **Target Audience**  
-   Individuals and families seeking to creatre a debt repayment plan with varying levels of financial literacy.
+ Individuals and families seeking to creatre a debt repayment plan with varying levels of financial literacy.
 
 **Problem Statement**  
-   Many individuals struggle with managing multiple debts, leading to prolonged financial strain due to a lack of effective tools and knowledge.
+ Many individuals struggle with managing multiple debts, leading to prolonged financial strain due to a lack of effective tools and knowledge.
 
 **Proposed Solution**  
-   DebtFreePlanner provides a web-based application for users to organize their debts and choose between various repayment methods, including Snowball, Avalanche, and Snowflake strategies.
+ DebtFreePlanner provides a web-based application for users to organize their debts and choose between various repayment methods, including Snowball, Avalanche, and Snowflake strategies.
 
 ---
 
 ## 2. Objectives and Key Results (OKRs)
 
 ### 2.1. Objective 1: Empower users to create debt elimination plans.
+
 - **Key Result 2.1.1:** Implement the Snowball and Avalanche strategies.
 - **Key Result 2.1.2:** Enable users to create custom debt repayment strategies.
 - **Key Result 2.1.3:** Integrate multicurrency support.
 - **Key Result 2.1.4:** Implement the Snowflake strategy, allowing users to apply one-time or recurring extra payments to their debt plan.
 
 ### 2.2. Objective 2: Develop a MERN stack Portfolio.
+
 - **Key Result 2.2.1:** Demonstrate advanced front-end development skills by delivering a polished, user-friendly interface.
 - **Key Result 2.2.2:** Implement security measures to protect against common web vulnerabilities, showcasing SecOps skills.
 - **Key Result 2.2.3:** Set up CI/CD pipelines to automate testing, deployment, and monitoring, demonstrating DevOps skills.
@@ -87,9 +94,11 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 ## 3. Background
 
 ### 3.1. Problem Statement
+
 Individuals struggle to manage multiple debts, leading to prolonged financial strain. This challenge arises from a lack of tools and knowledge that support practical debt management strategies such as Snowball, Avalanche, and Snowflake, as well as multicurrency support. Loan recipients need resources to create debt repayment plans that reduce the interest paid and increase their amortization, thereby shortening the time required to become debt-free.
 
-#### 3.2.1. **On the Roadmap**
+#### 3.2. **Proposed Solution**
+
 - **Multiple Repayment Strategies:** Supports the Snowball, Avalanche, Debt-to-Interest Ratio, Cash Flow Index (CFI), Highest Monthly Payment, and Custom Strategies, allowing users to select the approach that best aligns with their financial goals.
 
 - **Snowflake Payments:** Allows users to make small, irregular payments towards their debts whenever extra funds are available. This strategy helps reduce the principal faster, decreasing the overall interest paid and shortening the repayment period.
@@ -101,6 +110,7 @@ Individuals struggle to manage multiple debts, leading to prolonged financial st
 - **Integration with YNAB:** The application will integrate with YNAB (You Need A Budget) and possibly Firefly III, facilitating updates to users’ plans.
 
 #### 3.2.2. **Future Considerations**
+
 The following features are planned for future updates:
 
 - **Multi-User Support:** DebtFreePlanner will include multi-user support, allowing households or financial advisors to manage multiple users’ debts under a single account.
@@ -110,18 +120,22 @@ The following features are planned for future updates:
 - **Multi-Device Support:** DebtFreePlanner will support seamless use across various devices, including Web, Android, and iOS platforms.
 
 ### 3.3. Competitive Landscape
-#### 3.3.1. **Direct Competitors:** 
+
+#### 3.3.1. **Direct Competitors:**
+
 [Debt Payoff Planner](https://www.debtpayoffplanner.com/), [Undebt.it](https://undebt.it/), [unbury.me](https://unbury.me/), and [Vertex42 Debt Reduction Calculator](https://www.vertex42.com/Calculators/debt-reduction-calculator.html) help users manage and pay down debt using strategies like Snowball and Avalanche. However, these tools lack multicurrency support and the ability to customize debt repayment plans as extensively as DebtFreePlanner.
 
 ### 3.3.2. **Indirect Competitors:**
- Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) offer a broad range of financial management features, including budgeting and expense tracking, but do not support creating debt repayment plans. Notably, YNAB offers a well-documented official API that can be used to pull the loans into DebtFreePlanner. While Mint does not have an official public API, unofficial third-party APIs are available. These APIs can be leveraged to create a symbiotic relationship.
+
+Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) offer a broad range of financial management features, including budgeting and expense tracking, but do not support creating debt repayment plans. Notably, YNAB offers a well-documented official API that can be used to pull the loans into DebtFreePlanner. While Mint does not have an official public API, unofficial third-party APIs are available. These APIs can be leveraged to create a symbiotic relationship.
 
 ### 3.4. **Out of Scope**
+
 ##### 3.4.1. **Budgeting and Expense Tracking**
-- The DebtFreePlanner will not include features for general budgeting or expense tracking. This also includes loan payment history tracking, which will not be maintained within the application. 
+- The DebtFreePlanner will not include features for general budgeting or expense tracking. This also includes loan payment history tracking, which will not be maintained within the application.
 - **Integration with YNAB:** To satisfy users' needs for budgeting and tracking expenses, including detailed loan payment histories, the DebtFreePlanner will integrate with YNAB (You Need A Budget), a well-established tool that excels in these areas. However, it should be noted that this integration does not fully align with YNAB's philosophy, as they emphasize a different approach to debt management.
 
-##### 3.4.2. **Non-Conventional Loan Types**
+##### 3.4.2. **Non-Conventional Loan**
 - The scope is limited to traditional conventional loans that are:
   - Paid on a monthly basis.
   - Have interest rates compounded monthly.
@@ -134,23 +148,32 @@ The following features are planned for future updates:
   - Handling of overpayments beyond the scheduled extra payment configurations.
   - Detailed amortization schedules beyond simple monthly breakdowns.
 
+##### 3.4.3. **Business-Oriented Features**
+- The app will not offer features designed for business owners or provide little benefit in the context of personal finances.
+
+
 ### 3.5. Assumptions and Limitations
 
-##### 3.5.1. **Assumptions**:
-  - Users have a basic understanding of personal finance.
-  - The application will primarily be used on a laptop with internet access.
-  
+### 3.5.1. Assumptions
+
+- **Basic Financial Literacy:** Users are expected to have a basic understanding of personal finance, including compound interest, but they are not expected to be financial experts.
+- **Basic Technology Proficiency:** Users are expected to be comfortable using online banking and personal finance apps and are not expected to be tech-savvy or have advanced technical knowledge.
+- **Basic Computer Setup:** The application will primarily be used on a laptop with internet access, though it should be simple enough to use on other devices like tablets.
+
 ##### 3.5.2. **Constraints**:
-  - The application must comply with GDPR and CCPA regulations.
-  - The GitHub repository needs to be public so that recruiters can access it.
+
+- The application must comply with GDPR and CCPA regulations.
+- The GitHub repository needs to be public so that recruiters can access it.
 
 ##### 3.5.3. **Risks**:
-  - Because the repository is public, there is an increased likelihood of a successful attack.
-  - Since financial data is managed, the app is an attractive target (honeypot).
+
+- Because the repository is public, there is an increased likelihood of a successful attack.
+- Since financial data is managed, the app is an attractive target (honeypot).
 
 ### 3.6. User Personas
 
 #### Emily Thompson - Young Professional
+
 - **Occupation:** Marketing Coordinator at a tech startup
 - **Location:** Austin, Texas, USA (North America)
 - **Life Stage:** Early in her career, dealing with student loans and other early debts.
@@ -160,6 +183,7 @@ The following features are planned for future updates:
 - **Needs:** A tool that offers personalized debt repayment plans, integrates with her existing financial accounts, and provides clear insights into how different strategies (e.g., Avalanche vs. Snowball) affect her long-term financial health.
 
 #### Michael Harris - Pre-Retiree
+
 - **Occupation:** Senior Manager at a manufacturing company
 - **Location:** Toronto, Canada (North America)
 - **Life Stage:** Approaching retirement, focused on paying off the remaining mortgage and small personal loans.
@@ -169,6 +193,7 @@ The following features are planned for future updates:
 - **Needs:** A clear, easy-to-use tool that can help him create a debt repayment strategy aligned with his retirement timeline, with minimal technical complexity.
 
 #### Sofia Ramirez - Debt Consolidation Seeker
+
 - **Occupation:** Small Business Owner
 - **Location:** Mexico City, Mexico (North America)
 - **Life Stage:** Managing multiple business and personal loans that need to be consolidated into a single, manageable payment.
@@ -178,6 +203,7 @@ The following features are planned for future updates:
 - **Needs:** A tool that offers debt consolidation options, tailored to the Mexican market, with support for local currency and language, helping her streamline her finances and reduce financial stress.
 
 #### Javier García - Financially Engaged User
+
 - **Occupation:** Software Engineer
 - **Location:** Barcelona, Spain (Europe)
 - **Life Stage:** Mid-career professional with a mortgage and a car loan, looking to optimize debt repayment and investments.
@@ -187,6 +213,7 @@ The following features are planned for future updates:
 - **Needs:** A customizable, data-driven tool that integrates with his existing financial tools, supports multiple currencies, and offers advanced analytics for debt repayment and investment strategies.
 
 #### Lucia Torres - Tech-Savvy User
+
 - **Occupation:** Freelance Graphic Designer
 - **Location:** Buenos Aires, Argentina (South America)
 - **Life Stage:** Early career, dealing with student loans and some credit card debt, looking to manage her finances more effectively.
@@ -195,35 +222,43 @@ The following features are planned for future updates:
 - **Challenges:** Managing inconsistent income as a freelancer while staying on top of debt repayment and savings goals.
 - **Needs:** A cloud-based tool with a mobile-friendly interface that allows her to easily manage and track her debt repayment, offers budgeting tools tailored to variable income, and provides insights into achieving her financial goals.
 
-
 ---
 
 ## 4. Jobs-to-be-Done (JTBD)
 
 ### 4.1. Core Jobs
+
 - **Core Job 1: Create and manage a debt repayment plan.**
+
   - **Description:** Users need to generate a personalized debt repayment plan that suits their financial situation. This includes selecting the best strategy (e.g., Snowball or Avalanche), customizing payment schedules, and adapting the plan as circumstances change.
 
 - **Core Job 2: Compare different debt repayment strategies.**
+
   - **Description:** Users need to evaluate different repayment strategies to determine the most efficient path to debt freedom. This involves analyzing interest rates, payment timelines, and total costs associated with each strategy.
 
 - **Core Job 3: Track progress towards financial goals.**
   - **Description:** Users need a clear way to monitor their progress as they work toward becoming debt-free. This includes tracking payments, visualizing reductions in debt over time, and receiving updates on milestones.
 
 ### 4.2. Supporting Jobs
+
 - **Supporting Job 1: Visualize debt repayment timelines.**
+
   - **Description:** Users benefit from visual tools that help them understand the impact of their payments over time, such as charts and graphs that show how their debt will decrease.
 
 - **Supporting Job 2: Receive recommendations and insights.**
+
   - **Description:** Users need guidance on optimizing their debt repayment strategy. This could include automated suggestions for extra payments, alerts for upcoming deadlines, or tips on how to stay motivated.
 
 - **Supporting Job 3: Multicurrency support and global considerations.**
+
   - **Description:** For users in different financial regions, the ability to manage debt in multiple currencies and understand the impact of exchange rates is crucial. This job ensures that the DebtFreePlanner is adaptable to a global audience.
 
 - **Supporting Job 4: Generate detailed reports and export data.**
+
   - **Description:** Users might require the ability to generate detailed reports on their debt repayment progress for personal records, financial advisors, or lenders. This includes exporting data in various formats (e.g., PDF, CSV).
 
 - **Supporting Job 5: Sync with external financial accounts.**
+
   - **Description:** To streamline data entry and ensure accuracy, users may benefit from the ability to sync the DebtFreePlanner with their bank accounts or other financial institutions. This job ensures that payment records, balances, and transaction histories are automatically updated.
 
 - **Supporting Job 6: Provide educational resources and financial literacy tools.**
@@ -231,12 +266,12 @@ The following features are planned for future updates:
 
 ---
 
-
 ## 5. User Interface and User Experience (UI/UX)
 
 ### 5.1. User Flows
 
 1. **Session Management:**
+
    - Users create an account or log in to access their debt repayment plans.
 
    ![alt text](image.png)
@@ -268,42 +303,46 @@ The following features are planned for future updates:
     endif
 
     @enduml
-
+   ```
 
 ### 2. **Plan Management:**
 
 #### 2.1. **Debt Management:**
-   - The Debt Management sub-flow allows users to manage their debts, including the following aspects:
-     - **Loan Amount (Remaining Principal):** The total remaining balance that needs to be repaid.
-     - **Interest Rate:** The annual percentage rate (APR) charged on the remaining principal.
-     - **Loan Term:** The length of time over which the loan will be repaid, typically expressed in years or months.
-     - **Repayment Frequency:** The schedule for payments (e.g., monthly, bi-weekly).
-     - **Start Date:** The date when the loan was disbursed or when the repayment schedule began.
-     - **Interest Type:** Indicates whether the interest rate is fixed (remains constant) or variable (can change over time).
-     - **Amortization Type:** Specifies whether the loan is fully amortizing, interest-only, or includes a balloon payment at the end.
-     - **Fees and Penalties:** Any additional charges, such as origination fees, prepayment penalties, or late payment fees.
+
+- The Debt Management sub-flow allows users to manage their debts, including the following aspects:
+  - **Loan Amount (Remaining Principal):** The total remaining balance that needs to be repaid.
+  - **Interest Rate:** The annual percentage rate (APR) charged on the remaining principal.
+  - **Loan Term:** The length of time over which the loan will be repaid, typically expressed in years or months.
+  - **Repayment Frequency:** The schedule for payments (e.g., monthly, bi-weekly).
+  - **Start Date:** The date when the loan was disbursed or when the repayment schedule began.
+  - **Interest Type:** Indicates whether the interest rate is fixed (remains constant) or variable (can change over time).
+  - **Amortization Type:** Specifies whether the loan is fully amortizing, interest-only, or includes a balloon payment at the end.
+  - **Fees and Penalties:** Any additional charges, such as origination fees, prepayment penalties, or late payment fees.
 
 #### 2.2. **Snowflake Management:**
-   - The Snowflake Management sub-flow enables users to manage their snowflake payments, focusing on:
-     - **Extra Payment Amount:** Any additional payments made beyond the regularly scheduled payments.
-     - **Payment Frequency:** How often these extra payments are made (e.g., monthly, bi-weekly).
-     - **Start Date:** The date when the extra payments begin.
+
+- The Snowflake Management sub-flow enables users to manage their snowflake payments, focusing on:
+  - **Extra Payment Amount:** Any additional payments made beyond the regularly scheduled payments.
+  - **Payment Frequency:** How often these extra payments are made (e.g., monthly, bi-weekly).
+  - **Start Date:** The date when the extra payments begin.
 
 #### 2.3. **Payment Management:**
-   - The Payment Management sub-flow is where users define their minimum global monthly payments. This involves setting the total amount they are willing to allocate each month towards debt repayment, which will then be distributed according to their chosen debt reduction strategy (e.g., snowball method).
 
+- The Payment Management sub-flow is where users define their minimum global monthly payments. This involves setting the total amount they are willing to allocate each month towards debt repayment, which will then be distributed according to their chosen debt reduction strategy (e.g., snowball method).
 
 3. **Profile Management:**
+
    - Users update their personal information, change passwords, adjust notification preferences, and delete their account if desired.
 
 4. **Data Management:**
+
    - Users export and import their debt repayment data for personal records or to share with financial advisors.
 
 5. **Report Management:**
    - Users view, print, and gain insights from their reports on debt repayment progress and strategies.
 
-
 ### 5.2. Wireframes/Mockups
+
 - **Dashboard:** Displays key metrics, repayment progress, and quick actions.
 - **Plan Creation:** Forms for entering debt details and selecting repayment strategies.
 - **Plan Customization:** Interface for adjusting repayment priorities and adding extra payments.
@@ -312,13 +351,13 @@ The following features are planned for future updates:
 ## 6. User Stories
 
 User stories should be:
+
 - User-Centric Focus
 - INVEST Criteria
 - Have an Acceptance Criteria
 - Prioritization
 
 ### 6.1. User Stories
-
 
 - **As a user, I want to create a debt repayment plan using the Snowball strategy so that I can pay off my smallest debts first and gain motivation.**
 - **As a user, I want to see a summary of my debt repayment progress so that I can track my achievements and stay motivated.**
@@ -327,10 +366,10 @@ User stories should be:
 
 ---
 
-
 ## 7. Legal and Compliance
 
 ### 7.1. Data Privacy
+
 - **Overview**: Outline the commitment to protecting user data and complying with relevant data privacy regulations.
 - **Key Regulations**:
   - **GDPR (General Data Protection Regulation)**: Describe how the product will ensure compliance with GDPR, including data collection, processing, storage, and user rights.
@@ -341,57 +380,63 @@ User stories should be:
   - **Data Portability**: Outline the mechanisms for providing users with their data in a portable format.
 
 ### 7.2. Regulatory Compliance
-- **Industry-Specific Regulations**: 
+
+- **Industry-Specific Regulations**:
   - **Financial Regulations**: If applicable, discuss any financial regulations that must be adhered to, such as anti-money laundering (AML) or Know Your Customer (KYC) guidelines.
   - **Health Regulations**: If the product deals with health data, outline compliance with regulations like HIPAA (Health Insurance Portability and Accountability Act).
 - **Compliance Monitoring**: Describe how ongoing compliance will be monitored and maintained throughout the product lifecycle.
 - **Audit and Reporting**: Explain any auditing mechanisms that will be in place to ensure compliance and to report on compliance status.
 
 ### 7.3. International Regulations
-- **Global Compliance Strategy**: 
+
+- **Global Compliance Strategy**:
   - Describe the approach to ensuring the product complies with legal requirements in all countries where it will be available.
-- **Local Data Privacy Laws**: 
+- **Local Data Privacy Laws**:
   - Highlight any country-specific data privacy laws that go beyond GDPR and CCPA, and how the product will adhere to these regulations.
-- **Cross-Border Data Transfers**: 
+- **Cross-Border Data Transfers**:
   - Discuss how data will be handled when transferring across borders, particularly in compliance with regulations like GDPR's data transfer restrictions.
 
 ### 7.4. Terms of Service & User Agreements
-- **User Agreements**: 
+
+- **User Agreements**:
   - Outline the key terms that will be included in the end-user agreements, such as acceptable use policies, limitations of liability, and dispute resolution processes.
-- **Terms of Service**: 
+- **Terms of Service**:
   - Provide an overview of the terms of service that users must agree to when using the product. This should include disclaimers, intellectual property notices, and the governing law.
 
 ### 7.5. Record Keeping and Audit Trails
-- **Record Keeping Requirements**: 
+
+- **Record Keeping Requirements**:
   - Detail the types of records that must be maintained for compliance purposes, including user consent records, transaction logs, and access records.
-- **Audit Trails**: 
+- **Audit Trails**:
   - Describe how audit trails will be maintained to track access to sensitive data, changes in data, and compliance with regulatory requirements.
-- **Retention Policies**: 
+- **Retention Policies**:
   - Explain the data retention policies, including how long different types of data will be stored and when they will be purged or anonymized.
 
 ### 7.6. Legal Risk Management
-- **Risk Identification**: 
+
+- **Risk Identification**:
   - Identify potential legal risks associated with the product, such as non-compliance with data privacy laws, intellectual property disputes, or liability issues.
-- **Mitigation Strategies**: 
+- **Mitigation Strategies**:
   - Outline strategies to mitigate identified risks, including insurance, legal reviews, and contingency plans.
-- **Legal Reviews**: 
+- **Legal Reviews**:
   - Describe the process for regular legal reviews of the product to ensure ongoing compliance with evolving laws and regulations.
 
 ### 7.7. Protection of Intellectual Property (IP)
-- **Overview**: 
+
+- **Overview**:
   - Describe the steps that will be taken to protect the intellectual property associated with the product, particularly in preparation for potential monetization.
-- **Patents**: 
+- **Patents**:
   - Discuss any patentable inventions or processes that are part of the product and outline the strategy for securing patents.
 
 ---
 
 ## 8. Related Documents
 
-- [Product Requirements Document (PRD)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md)
-- [Software Requirements Specification (SRS)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Software%20Requirements%20Specification%20(SRS).md)
-- [Software Design Document (SDD)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Software%20Design%20Document%20(SDD).md)
-- [Software Test Document (STD)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Software%20Test%20Document%20(STD).md)
+- [Product Requirements Document (PRD)](<https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md>)
+- [Software Requirements Specification (SRS)](<https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Software%20Requirements%20Specification%20(SRS).md>)
+- [Software Design Document (SDD)](<https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Software%20Design%20Document%20(SDD).md>)
+- [Software Test Document (STD)](<https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Software%20Test%20Document%20(STD).md>)
 - [User Guide](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/User%20Guide.md)
-- [Architecture Decision Record (ADR)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Architecture%20Decision%20Record%20(ADR).md)
+- [Architecture Decision Record (ADR)](<https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Architecture%20Decision%20Record%20(ADR).md>)
 - [README](https://github.com/Guilderm/DebtFreePlanner/blob/main/README.md)
 - [Shared Appendix](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Shared%20Appendix.md)

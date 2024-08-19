@@ -63,6 +63,5 @@ This project was developed by [Guilder W. Millner](https://www.linkedin.com/in/g
 Currently completing a BA in Software Engineering, Guilder is passionate about building tools that make a difference. Connect with Guilder on [LinkedIn](https://www.linkedin.com/in/guilder/) or via email at [guilderw@gmail.com](mailto:guilderw@gmail.com) to learn more about his journey into software development.
 
 
-
 ## License
 This project is licensed under the terms of the [MIT License](https://github.com/Guilderm/DebtFreePlanner/blob/main/LICENSE) file.

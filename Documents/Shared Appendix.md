@@ -75,6 +75,7 @@ This section includes references to external resources, standards, and other imp
 Resources that were helpful in the creation of the project. Note that this is not an exhaustive list.
 
 - [Design a Better Business](https://designabetterbusiness.com): *Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation*.
-
+- [Strategyzer](https://www.strategyzer.com): Innovation Strategy & Training for Future-Ready Organizations
+ 
 ## 5. Placeholders
 This section serves as a temporary placeholder for items that are looking for a home.
