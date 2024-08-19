@@ -3,10 +3,8 @@
 ## Table of Contents
 
 1. [Glossary of Terms](#1-glossary-of-terms)
-2. [Acronyms](#2-acronyms)
 3. [References](#3-references)
-5. [Assumptions and Constraints](#5-assumptions-and-constraints)
-6. [Additional Resources](#6-additional-resources)
+6. [Resources](#6-additional-resources)
 
 
 ## 1. Glossary of Terms
@@ -33,7 +31,7 @@ This section includes references to external resources, standards, and other imp
 - Pijl, P. van der, Lokitz, J., & Solomon, L. K. (2016). *Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation* (1st ed.).
 
 
-## 6. Additional Resources
+## 6. Resources
 This section can include any additional resources that might be useful to the user or developer.
 
 - **User Guides and Tutorials**: Links to helpful guides or tutorials related to the technologies used in this project.
@@ -44,3 +42,8 @@ This section can include any additional resources that might be useful to the us
 List of references or related documents.
 
 [Design a Better Business](https://designabetterbusiness.com): Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation.
+
+
+Place holders
+6. **Product Principles**  
+   > **Note:** The 'Product Principles' section was identified as potentially redundant, as the principles surfaced during the review felt either generic or unnecessary. It will be kept as a placeholder for now, in case a more meaningful principle emerges in the future.

@@ -40,8 +40,7 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
    - 7.5. [Record Keeping and Audit Trails](#75-record-keeping-and-audit-trails)
    - 7.6. [Legal Risk Management](#76-legal-risk-management)
    - 7.7. [Protection of Intellectual Property (IP)](#77-protection-of-intellectual-property-ip)
-8. [Shared Appendix](#8-shared-appendix)
-9. [Related Documents](#9-related-documents)
+8. [Related Documents](#9-related-documents)
 ---
 
 ## 1. Executive Summary
@@ -49,24 +48,21 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 **Product Name:** DebtFreePlanner  
 **Product Motto:** Precision Planning for Debt-Free Living
 
-1. **Product Vision**  
+**Product Vision**  
    DebtFreePlanner aims to empower individuals and families to achieve financial freedom by providing a user-friendly tool for managing and paying off debt using the Snowball and Avalanche strategies.
 
-2. **Key Objectives**  
+**Key Objectives**  
    - Enable users to create and manage debt repayment plans with various strategies.
    - Develop a robust MERN stack portfolio project that demonstrates full-stack development, security, and DevOps capabilities.
 
-3. **Target Audience**  
+**Target Audience**  
    Individuals and families seeking to creatre a debt repayment plan with varying levels of financial literacy.
 
-4. **Problem Statement**  
+**Problem Statement**  
    Many individuals struggle with managing multiple debts, leading to prolonged financial strain due to a lack of effective tools and knowledge.
 
-5. **Proposed Solution**  
+**Proposed Solution**  
    DebtFreePlanner provides a web-based application for users to organize their debts and choose between various repayment methods, including Snowball, Avalanche, and Snowflake strategies.
-
-6. **Product Principles**  
-   > **Note:** The 'Product Principles' section was identified as potentially redundant, as the principles surfaced during the review felt either generic or unnecessary. It will be kept as a placeholder for now, in case a more meaningful principle emerges in the future.
 
 ---
 
@@ -389,13 +385,7 @@ User stories should be:
 
 ---
 
-## 8. Shared Appendix
-
-The glossary, data dictionary, and additional references are available in the [Shared Appendix](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Shared%20Appendix.md) document.
-
----
-
-## 9. Related Documents
+## 8. Related Documents
 
 - [Product Requirements Document (PRD)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md)
 - [Software Requirements Specification (SRS)](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Software%20Requirements%20Specification%20(SRS).md)
