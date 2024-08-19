@@ -16,7 +16,7 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
    - 4.2. [Market Opportunity](#market-opportunity)
    - 4.3. [Value Proposition](#value-proposition)
    - 4.4. [Competitive Landscape](#competitive-landscape)
-   - 4.5. [Assumptions and Risks](#assumptions-and-risks)
+   - 4.5. [Assumptions and Limitations](#assumptions-and-risks)
    - 4.6. [User Personas](#user-personas)
 5. [Jobs-to-be-Done (JTBD)](#jobs-to-get-done)
    - 5.1. [Core Jobs](#core-jobs)
@@ -88,28 +88,21 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 ### 3.1. Problem Statement
 Individuals struggle to manage multiple debts, leading to prolonged financial strain. This challenge arises from a lack of tools and knowledge that support practical debt management strategies such as Snowball, Avalanche, and Snowflake, as well as multicurrency support. Loan recipients need resources to create debt repayment plans that reduce the interest paid and increase their amortization, thereby shortening the time required to become debt-free.
 
-### 3.2. Competitive Landscape
-The DebtFreePlanner faces competition from both general financial management apps and dedicated debt repayment tools.
-Individuals managing multiple debts often struggle to estimate their debt-free date or the total interest their debts will incur due to inadequate tools and education.
-
-### 2.2. Market Opportunity
-Existing personal financial management applications primarily focus on general budgeting and expense tracking, neglecting the specific needs of loan recipients who require a structured debt repayment plan. The DebtFreePlanner app addresses this gap and captures a niche market of users motivated to optimize their debt repayment process. By offering a tool that leverages popular strategies like Snowball, Avalanche, and Snowflake, and provides multicurrency support, the DebtFreePlanner enables users to create a tailored debt repayment plan.
-
-- **Direct Competitors:** [Debt Payoff Planner](https://www.debtpayoffplanner.com/), [Undebt.it](https://undebt.it/), [unbury.me](https://unbury.me/), and [Vertex42 Debt Reduction Calculator](https://www.vertex42.com/Calculators/debt-reduction-calculator.html) are focused on helping users manage and pay down debt using popular strategies like Snowball and Avalanche. However, none of these tools offer multicurrency support or the ability to customize debt repayment plans as extensively as the DebtFreePlanner. These tools primarily cater to users who want straightforward debt repayment solutions but lack the advanced features that the DebtFreePlanner provides.
-
-- **General Competitors:** Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) are popular tools that offer a wide range of financial management features, including budgeting, expense tracking, and investment management. However, they do not provide features that support the creation of debt repayment strategies. Among these, YNAB is the only tool that offers an official, well-documented API that could be used to pull data into the DebtFreePlanner. While Mint does not officially offer a public API, there are unofficial third-party APIs that have been developed to interact with Mint’s data.
-
-- **Differentiation:** The DebtFreePlanner stands out in this competitive landscape by offering a highly specialized tool that caters directly to the needs of loan recipients. Its focus on advanced debt repayment strategies, including the unique Hybrid Debt Repayment Strategy, multicurrency support, and customizable debt plans, provides a unique value proposition that is not fully addressed by any existing mainstream financial management tools. This specialization positions the DebtFreePlanner as the go-to solution for users serious about optimizing their debt repayment process and achieving financial freedom.
-
-
-### 3.3. Solution and Value Proposition
-Unlike general budgeting apps, the DebtFreePlanner focuses exclusively on debt repayment, combining advanced features that are rarely found together:
+### 3.3. Proposed Solution
+A web-based debt repayment calculator and planner with the following key features:
 
 - **Multiple Repayment Strategies:** The tool includes the Snowball, Avalanche, and Snowflake strategies, allowing users to select the approach that best aligns with their financial goals. This flexibility ensures users can adopt a strategy that maximizes their debt repayment efficiency.
   
-- **Multicurrency Support:** Recognizing the global nature of debt, the DebtFreePlanner provides multicurrency support, making it suitable for users with loans in various currencies. This feature is especially valuable for expatriates, international students, and professionals managing debts across borders.
+- **Multicurrency Support:** Recognizing the global nature of debt, DebtFreePlanner provides multicurrency support, making it suitable for users with loans in various currencies. This feature is especially valuable for expatriates, international students, and professionals managing debts across borders.
   
 - **Customizable Debt Plans:** Users can create and modify debt repayment plans according to their specific needs. The tool allows for one-time or recurring extra payments, adjustment of repayment priorities, and real-time progress tracking.
+
+
+### 3.2. Competitive Landscape
+- **Direct Competitors:** [Debt Payoff Planner](https://www.debtpayoffplanner.com/), [Undebt.it](https://undebt.it/), [unbury.me](https://unbury.me/), and [Vertex42 Debt Reduction Calculator](https://www.vertex42.com/Calculators/debt-reduction-calculator.html) help users manage and pay down debt using strategies like Snowball and Avalanche. However, these tools lack multicurrency support and the ability to customize debt repayment plans as extensively as DebtFreePlanner.
+
+- **Indirect  Competitors:** Mint, [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) offer a broad range of financial management features, including budgeting and expense tracking, but do not support creating a debt repayment plans.
+Notably, YNAB offers a well-documented official API that can be used to pull the loans into DebtFreePlanner. While Mint does not have an official public API, unofficial third-party APIs are available. These API can be leverage to create a symbiotic relationship.
 
 ### 3.4. **Out of Scope**
 
@@ -130,8 +123,21 @@ Unlike general budgeting apps, the DebtFreePlanner focuses exclusively on debt r
   - Handling of overpayments beyond the scheduled extra payment configurations.
   - Detailed amortization schedules beyond simple monthly breakdowns.
 
+### 4.5. Assumptions and Limitations
 
-### 2.6. User Personas
+- **Assumptions**:
+  - Users have a basic understanding of personal finance.
+  - The application will primarily be used on a laptop with internet access.
+  
+- **Constraints**:
+  - The application must comply with GDPR and CCPA regulations.
+  - The GitHub repository needs to be public so that recruiters can access it.
+
+- **Risks**:
+  - Because the repository is public, there is an increased likelihood of a successful attack.
+  - Since financial data is managed, the app is an attractive target (honeypot).
+
+### 3.6. User Personas
 
 #### Emily Thompson - Young Professional
 - **Occupation:** Marketing Coordinator at a tech startup
@@ -177,10 +183,6 @@ Unlike general budgeting apps, the DebtFreePlanner focuses exclusively on debt r
 - **Behavior:** Tech-savvy, Lucia prefers mobile-friendly solutions that allow her to manage her finances on the go. She uses various apps for budgeting and financial tracking but needs a more comprehensive solution for debt management.
 - **Challenges:** Managing inconsistent income as a freelancer while staying on top of debt repayment and savings goals.
 - **Needs:** A cloud-based tool with a mobile-friendly interface that allows her to easily manage and track her debt repayment, offers budgeting tools tailored to variable income, and provides insights into achieving her financial goals.
-
-### 4.5. Assumptions and Risks
-
-Note: The 'Assumptions and Risks' section was identified as potentially redundant, as the principles surfaced during the review felt either generic or unnecessary. It will be kept as a placeholder for now, in case a more meaningful principle emerges in the future.
 
 
 ## 5. Jobs-to-be-Done (JTBD)
