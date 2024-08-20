@@ -50,24 +50,20 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 ## 1. Executive Summary
 
 **Product Name:** DebtFreePlanner  
-**Product Motto:** Precision Planning for Debt-Free Living
+**Product Motto:** Strategically plan your journey to a Debt-Free Living
 
 **Problem Statement**  
- Many individuals struggle with managing multiple debts, leading to prolonged financial strain due to a lack of effective tools and knowledge.
+Loan recipients struggle to manage debts efficiently, leading to a prolonged financial burden.
 
 **Value Proposition**  
-DebtFreePlanner loan recipients to achieve debt freedom by creating tailored repayment plan that leverage proven strategies like the Snowball method.
+DebtFreePlanner provides loan recipients with a web-based tool to manage debt repayment plans, helping them achieve a Debt-Free Life faster.
 
 **Target Audience**  
- Individuals and families with multiple loans.
+ Individuals and families managing multiple loans, especially those who would benefit from an online debt repayment planner with multicurrency support
 
 **Key Objectives**
-- Enable loan recipients to create and manage debt repayment plans with various strategies.
+- Empower loan recipients to effectively manage their debt repayment plans.
 - Develop a robust MERN stack portfolio project that demonstrates full-stack development, security, and DevOps capabilities.
-
-**Proposed Solution**  
- DebtFreePlanner provides a web-based application for users to organize their debts and choose between various repayment methods, including Snowball, Avalanche, and Snowflake strategies.
-
 
 
 ## 2. Objectives and Key Results (OKRs)
