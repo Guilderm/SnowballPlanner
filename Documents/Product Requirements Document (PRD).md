@@ -52,19 +52,18 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 **Product Name:** DebtFreePlanner  
 **Product Motto:** Precision Planning for Debt-Free Living
 
-**Product Vision**  
- DebtFreePlanner aims to empower individuals and families to achieve financial freedom by providing a user-friendly tool for managing and paying off debt using the Snowball and Avalanche strategies.
-
-**Key Objectives**
-
-- Enable users to create and manage debt repayment plans with various strategies.
-- Develop a robust MERN stack portfolio project that demonstrates full-stack development, security, and DevOps capabilities.
-
-**Target Audience**  
- Individuals and families seeking to creatre a debt repayment plan with varying levels of financial literacy.
-
 **Problem Statement**  
  Many individuals struggle with managing multiple debts, leading to prolonged financial strain due to a lack of effective tools and knowledge.
+
+**Value Proposition**  
+DebtFreePlanner loan recipients to achieve debt freedom by creating tailored repayment plan that leverage proven strategies like the Snowball method.
+
+**Target Audience**  
+ Individuals and families with multiple loans.
+
+**Key Objectives**
+- Enable loan recipients to create and manage debt repayment plans with various strategies.
+- Develop a robust MERN stack portfolio project that demonstrates full-stack development, security, and DevOps capabilities.
 
 **Proposed Solution**  
  DebtFreePlanner provides a web-based application for users to organize their debts and choose between various repayment methods, including Snowball, Avalanche, and Snowflake strategies.
@@ -98,6 +97,7 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 Individuals struggle to manage multiple debts, leading to prolonged financial strain. This challenge arises from a lack of tools and knowledge that support practical debt management strategies such as Snowball, Avalanche, and Snowflake, as well as multicurrency support. Loan recipients need resources to create debt repayment plans that reduce the interest paid and increase their amortization, thereby shortening the time required to become debt-free.
 
 #### 3.2. **Proposed Solution**
+A web-based tool for managing a debt repayment plan.
 
 - **Multiple Repayment Strategies:** Supports the Snowball, Avalanche, Debt-to-Interest Ratio, Cash Flow Index (CFI), Highest Monthly Payment, and Custom Strategies, allowing users to select the approach that best aligns with their financial goals.
 
