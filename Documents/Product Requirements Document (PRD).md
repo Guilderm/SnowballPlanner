@@ -148,41 +148,41 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 ### 4.2. Jobs-to-be-Done (JTBD)
 
 #### 4.2.1. Functional Jobs
- - Prioritize which debt to pay off first.
+ - Identify the most beneficial debt repayment strategy.
  - Minimize the total interest paid across all debts.
  - Estimate the timeline for becoming completely debt-free.
 
 #### 4.2.2. Emotional Jobs
 
-- Reduce stress and anxiety associated with managing multiple debts.
-- Feel empowered and in control of financial future.
+- Be empowered and in control of financial future.
 - Gain peace of mind by having a clear path to becoming debt-free.
+- Reduce stress and anxiety by providing practical guidance on managing multiple debts.
 
 #### 4.2.3. Social Jobs
 
-- Maintain a positive financial image among peers and loved ones.
-- Support and influence loved ones in their own financial journeys.
+- Enhance financial reputation among peers and loved ones.
+- Serve as a financial role model influencing financial behaviors.
 
 ### 4.3. User Pains
 
-- Difficulty managing multiple high-interest loans and credit card debts.
-- Lack of tools to effectively prioritize payments and manage cash flow.
-- Overwhelm and stress related to financial instability and debt management.
+- Lack of clarity and confidence in devising an effective debt repayment strategy.
+- Persistent anxiety and stress due to the uncertainty of managing multiple debts.
 
 ### 4.4. User Gains
 
+- Gain control over finances with clear, actionable repayment plans.
+- Integrates with budgeting tools like YNAB for a seamless data entry.
 - Achieving financial independence by becoming debt-free within a reasonable time frame.
-- Gaining a sense of control over finances with clear, actionable repayment plans.
-- Using a user-friendly tool that integrates seamlessly with existing budgeting tools like YNAB.
 
 ---
 
+
 ## 5. Personas
 
-> **Note:** At a later stage, we will create a user persona in [Figma](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
-
+> **Note:** At a later stage, we will create a user persona in [Figma Template](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
 
 ### 5.1. Taylor, The Debt-Strapped Professional
+
 - **Age:** Millennial (Gen Y)
 - **Occupation:** Mid-Level Manager in IT
 - **Economic Status:** Upper Middle Class
@@ -190,19 +190,19 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 - **Financial Status:** Living paycheck to paycheck
 
 - **Jobs to Be Done:**
-  - Manage and prioritize multiple debt payments effectively.
-  - Reduce overall interest paid on loans and credit card debts.
-  - Achieve financial independence by becoming debt-free.
+  - Identify the most beneficial debt repayment strategy.
+  - Minimize the total interest paid across all debts.
+  - Estimate the timeline for becoming completely debt-free.
 
 - **Pains:**
-  - Struggles with managing multiple high-interest loans and credit card debts.
-  - Finds it difficult to prioritize payments and effectively manage cash flow.
-  - Experiences stress and anxiety related to financial instability.
+  - Lack of clarity and confidence in prioritizing debt payments.
+  - Persistent stress and anxiety due to uncertainty in managing multiple debts.
+  - Difficulty in finding practical tools to streamline debt management.
 
 - **Gains:**
+  - Regaining control over finances with clear, actionable repayment plans.
   - Achieving financial independence by becoming debt-free within a reasonable time frame.
-  - Feeling in control of financial future.
-  - Using a user-friendly tool that integrates with existing budgeting tools like YNAB.
+  - Seamless integration with budgeting tools like YNAB for efficient data management.
 
 - **Behavior:**
   - Recently started using YNAB to manage personal finances.
@@ -210,14 +210,14 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
   - Prefers using financial tools on a laptop but occasionally uses mobile devices for quick checks.
 
 - **Needs:**
-  - A tool to assist in planning a debt-free journey.
-  - Clear guidance on prioritizing payments to reduce overall interest.
+  - A tool that provides clear guidance on debt prioritization and repayment strategies.
+  - Features that minimize interest paid and accurately project debt-free dates.
   - Seamless integration with existing budgeting tools like YNAB.
 
 - **Quote:** "I want to be in control of my finances, not the other way around."
 
-
 ### 5.2. Casey, The Organized Homemaker
+
 - **Age:** Generation Z
 - **Occupation:** Stay-at-Home Parent
 - **Economic Status:** Middle Class
@@ -226,18 +226,18 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 
 - **Jobs to Be Done:**
   - Manage multiple loans while balancing household expenses.
+  - Minimize the total interest paid across all debts.
   - Optimize loan payments to improve cash flow.
-  - Save for a home down payment.
 
 - **Pains:**
-  - Juggles multiple loans, including car loans, credit cards, student loans, and a personal loan.
-  - Struggles to balance loan repayments with household expenses such as groceries, utilities, and children's education.
-  - Experiences stress over financial decisions impacting the family's long-term security.
+  - Overwhelm and stress from juggling multiple loans and household expenses.
+  - Uncertainty in how to effectively manage debt repayment alongside daily financial obligations.
+  - Anxiety over financial decisions impacting the family's long-term security.
 
 - **Gains:**
   - Reducing financial stress and achieving financial freedom for the family.
   - Successfully managing debts to save for a home down payment.
-  - Using a simple, reliable tool that offers clear insights into interest savings and payment strategies.
+  - Using a tool that integrates with other financial tools, providing clear insights into interest savings and payment strategies.
 
 - **Behavior:**
   - Regularly uses an online banking app to monitor spending and manage finances.
@@ -257,45 +257,73 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 
 ---
 
-
 ## 6. Value Proposition
+
+DebtFreePlanner offers a web-based solution for loan recipients to create debt repayment plans that accelerate their journey to financial freedom.
 
 ### 6.1. Feature Set
 
 #### 6.1.1. Primary Features
 
 - **Multiple Repayment Strategies**
+  - Supports a variety of debt repayment methods, including Snowball, Avalanche, Debt-to-Interest Ratio, Cash Flow Index (CFI), Highest Monthly Payment, and Custom Strategies.
+
 - **Snowflake Payments**
+  - Enables small, irregular payments towards debts whenever extra funds are available, helping to reduce the principal faster.
+
 - **Multicurrency Support**
-- **Reporting**
+  - Provides seamless handling of multiple currencies with automatic exchange rate updates, catering to a global user base.
+
+- **Basic Reporting**
+  - Generates essential reports and visualizations to help loan recipients understand and track their repayment plans.
 
 #### 6.1.2. Secondary Features
 
 - **Integration with Financial Tools**
+  - Synchronizes with budgeting applications like YNAB and possibly Firefly III for seamless data management.
+
+- **Advanced Reporting**
+  - Offers enhanced reporting and visualizations that incorporate data storytelling techniques to provide deeper insights.
 
 #### 6.1.3. Potential Features
+The following features are under consideration for future development but are not yet confirmed or scheduled for implementation.
 
 - **Multi-User Support**
+  - Allows collaboration on debt management under a single account, ideal for households and financial advisors.
+
 - **AI-Driven Insights**
+  - Provides personalized recommendations and predictive analytics to optimize repayment strategies.
+
 - **Cross-Platform Accessibility**
+  - Ensures accessibility across multiple devices, enhancing usability and engagement wherever the user is.
 
 #### 6.1.4. Excluded Features
+To ensure DebtFreePlanner remains focused on fulfilling its intended purpose, the following features and functionalities were deemed unviable due to the complexity of their implementation or specific market needs.
 
 - **Budgeting and Expense Tracking**
+  - DebtFreePlanner will not include general budgeting or expense tracking features, including loan payment history tracking. These functionalities are excluded because many established applications already perform them well, and these features are complementary rather than central to the problem DebtFreePlanner is addressing. Users are encouraged to use tools like YNAB (You Need A Budget) or Firefly III, which may be integrated with DebtFreePlanner in the future.
+
 - **Non-Conventional Loan Types**
+  - DebtFreePlanner will only support the most common loan types (e.g., mortgages, student loans, and credit card debt). Non-conventional loan types, such as payday loans, interest-only loans, or cryptocurrency loans, are not supported due to a lack of market demand.
+
 - **Advanced Loan Features**
+  - Advanced loan features, such as variable interest rates and early termination fees, are out of scope due to the complexity of accommodating all possible business rules of financial institutions. Users will need to update loan terms manually when they change.
+
+- **Business-Oriented Features**
+  - DebtFreePlanner will not offer features intended primarily for business owners, given that large businesses would likely not trust this tool, and features targeting personal finances can typically meet the needs of small business owners.
 
 ### 6.2. Gain Creators
 
-- Features that allow users to reduce interest payments and accelerate their journey to becoming debt-free.
-- Tools that provide insights into debt repayment progress and strategies for improving financial health.
+- Reduce interest payments, accelerating the journey to financial independence.
+- Provide clear, actionable insights to improve financial health.
 
 ### 6.3. Pain Relievers
 
-- Solutions that simplify managing multiple debts and reduce the stress associated with financial instability.
-- Integration with existing tools to ensure a cohesive financial management experience.
+- Simplify the process of managing multiple debts, reducing financial stress.
+- Integrate with existing financial tools for a seamless user experience.
 
 ---
+
 
 ## 7. Value Proposition Canvas Summary
 
