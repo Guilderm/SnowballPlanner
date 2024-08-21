@@ -69,6 +69,8 @@ DebtFreePlanner provides loan recipients with a web-based tool to manage debt re
 - Empower loan recipients to effectively manage their debt repayment plans.
 - Develop a robust MERN stack portfolio project that demonstrates full-stack development, security, and DevOps capabilities.
 
+---
+
 
 ## 2. Objectives and Key Results (OKRs)
 
@@ -90,84 +92,24 @@ DebtFreePlanner provides loan recipients with a web-based tool to manage debt re
 
 ---
 
-## 3. Project Overview and Context
+
+## 3. Market and Context
 
 ### 3.1. Problem Statement
 
 Loan recipients struggle to manage multiple debts, leading to prolonged financial strain. This challenge arises from a lack of tools and knowledge that support practical debt management strategies such as Snowball, Avalanche, and Snowflake, as well as multicurrency support.
 
+### 3.2. Market Analysis
 
-#### 3.2. **Value Proposition**
-DebtFreePlanner provides loan recipients with a web-based tool to create a debt repayment plan that reduces interest paid and increases amortization, thereby shortening the time needed to become debt-free.
+#### 3.2.1. Direct Competitors
 
-##### 3.2.1. **Planned Features**
-The following features are confirmed and scheduled for development as part of the current product roadmap.
+Direct competitors like [Debt Payoff Planner](https://www.debtpayoffplanner.com/), [Undebt.it](https://undebt.it/), [unbury.me](https://unbury.me/), and [Vertex42 Debt Reduction Calculator](https://www.vertex42.com/Calculators/debt-reduction-calculator.html) help users manage and pay down debt using strategies like Snowball and Avalanche. However, these tools lack multicurrency support and the ability to customize debt repayment plans as extensively as DebtFreePlanner.
 
-- **Multiple Repayment Strategies:**
-  - Support for various debt repayment methods including Snowball, Avalanche, Debt-to-Interest Ratio, Cash Flow Index (CFI), Highest Monthly Payment, and Custom Strategies.
-  - Enables loan recipients to select and customize the approach that best aligns with their financial goals and circumstances.
+#### 3.2.2. Indirect Competitors
 
-- **Snowflake Payments:**
-  - Allows loan recipients to make small, irregular payments towards their debts whenever extra funds are available.
-  - Helps reduce principal balances faster, decreasing overall interest paid and shortening the debt repayment period.
+Indirect competitors such as [Mint](https://www.mint.com/), [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) offer a broad range of financial management features, including budgeting and expense tracking, but do not support creating debt repayment plans.
 
-- **Multicurrency Support:**
-  - Provides seamless handling of multiple currencies with automatic exchange rate updates.
-  - Caters to a global user base, ensuring accurate and up-to-date financial calculations regardless of currency.
-
-- **Reporting:**
-  - Generates detailed reports and visualizations to help loan recipients track and understand their debt repayment progress over time.
-  - Offers insights into payment history, interest savings, and projected debt-free dates.
-
-- **Integration with Financial Tools:**
-  - Integrates with popular budgeting applications like YNAB (You Need A Budget) and posibly Firefly III.
-  - Facilitates automatic updates and synchronization of users’ financial data, providing a cohesive financial management experience.
-
-##### 3.2.2. **Potential Features**
-The following features are under consideration for future development but are not yet confirmed or scheduled for implementation.
-
-- **Multi-User Support:**
-  - Introduces capabilities for multiple users to collaborate under a single account, ideal for households and financial advisors managing collective debts.
-  - Includes permission settings and shared dashboards to streamline joint financial planning and monitoring.
-
-- **AI-Driven Insights:**
-  - Utilizes artificial intelligence to provide personalized recommendations and predictive analytics.
-  - Offers data-driven storytelling through dynamic reports that help loan recipients make informed decisions and adapt their repayment strategies effectively.
-
-- **Cross-Platform Accessibility:**
-  - Expands availability across various devices and platforms, including dedicated applications for Web, Android, and iOS.
-  - Ensures users can access and manage their debt repayment plans conveniently from any device, enhancing usability and engagement.
-
-
-### 3.3. **Excluded Features**
-
-To ensure DebtFreePlanner remains focused on solving its defined [problem statement](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md#31-problem-statement), the following features and functionalities were deemed unviable due to the complexity of implementation or specific market needs.
-
-#### 3.3.1. **Budgeting and Expense Tracking**
-DebtFreePlanner will not include general budgeting or expense tracking features, including loan payment history tracking. These functionalities are excluded because many established applications already perform them well, and these features are complementary rather than central to the problem DebtFreePlanner is addressing. Users are encouraged to use tools like YNAB (You Need A Budget) or Firefly III, which may be integrated with DebtFreePlanner in the future.
-
-#### 3.34.2. **Non-Conventional Loan Types**
-DebtFreePlanner will only support the most common loan types (e.g., mortgages, student loans, and credit card debt). Non-conventional loan types, such as payday loans, interest-only loans, or cryptocurrency loans, are not supported due to a lack of market demand.
-
-#### 3.3.3. **Advanced Loan Features**
-Advanced loan features, such as variable interest rates and early termination fees, are out of scope due to the complexity of accommodating all possible business rules of financial institutions. Users will need to update loan terms manually when they change.
-
-#### 3.3.4. **Business-Oriented Features**
-DebtFreePlanner will not offer features intended for business owners, given that large businesses would likely not trust this tool and that features targeting personal finances can typically meet small business owners’ needs.
-
-### 3.3. **Market Analysis**
-
-#### 3.4.1. **Direct Competitors**
-
-[Debt Payoff Planner](https://www.debtpayoffplanner.com/), [Undebt.it](https://undebt.it/), [unbury.me](https://unbury.me/), and [Vertex42 Debt Reduction Calculator](https://www.vertex42.com/Calculators/debt-reduction-calculator.html) help users manage and pay down debt using strategies like Snowball and Avalanche. However, these tools lack multicurrency support and the ability to customize debt repayment plans as extensively as DebtFreePlanner.
-
-#### 3.4.2. **Indirect Competitors**
-
-[Mint](https://www.mint.com/), [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) offer a broad range of financial management features, including budgeting and expense tracking, but do not support creating debt repayment plans.
-
-#### 3.4.3. **Strategic Opportunities**
-
-After analyzing the direct and indirect competitors, the following market gaps and strategic opportunities were identified:
+#### 3.2.3. Strategic Opportunities
 
 1. **Multicurrency Support**: None of the direct competitors offer multicurrency support or localization. DebtFreePlanner addresses this gap, making it uniquely suited for a global user base and providing a significant advantage in catering to diverse financial needs across different regions.
 
@@ -175,32 +117,74 @@ After analyzing the direct and indirect competitors, the following market gaps a
 
 3. **API Integrations**: YNAB offers a well-documented official API that can be used to pull loans into DebtFreePlanner. This integration can be leveraged to create a symbiotic relationship, enhancing the overall user experience and data synchronization between the two tools.
 
+### 3.3. Assumptions and Limitations
 
-### 3.5. Assumptions and Limitations
-
-#### 3.5.1. Assumptions
+#### 3.3.1. Assumptions
 
 - **Basic Financial Literacy:** Users have a basic understanding of financial concepts, such as compound interest and loan terms.
 - **Basic Technology Proficiency:** Users are comfortable using online banking and personal finance apps.
 - **Basic Computer Setup:** The application is primarily used on a laptop with an internet connection.
 - **Data Accuracy:** Users will input correct financial information to ensure accurate calculations.
 
-#### 3.5.2. Limitations
+#### 3.3.2. Limitations
+
 - **Data Privacy:** In addition to standard data privacy measures, DebtFreePlanner must implement GDPR and CCPA.
 - **Platform Limitations:** DebtFreePlanner is designed as a web-based tool, which may limit its functionality on certain devices or when used offline.
 
-#### 3.5.3. Risks
- - **External Service Dependency Risks:** The tool may face challenges with the integration and reliability of third-party APIs and services.
+#### 3.3.3. Risks
+
+- **External Service Dependency Risks:** The tool may face challenges with the integration and reliability of third-party APIs and services.
 - **Public Repository Exposure:** Because this is a portfolio project, the repository is public, increasing the likelihood of a successful cyberattack.
 - **Attractiveness as a Target:** Since the app manages financial data, it is an attractive target (honeypot) for cybercriminals.
 
+---
 
-### 3.6. User Personas
+## 4. User Profiles
+
+### 4.1. Market Segmentation
+
+DebtFreePlanner targets individuals burdened with multiple loans, including mortgages, student loans, and credit card debt. The primary users are financially literate individuals who are motivated to pay off their debts efficiently. This includes both middle-class professionals managing significant debt loads and younger individuals looking to build a stable financial future.
+
+### 4.2. Jobs-to-be-Done (JTBD)
+
+#### 4.2.1. Functional Jobs
+
+- Manage and prioritize multiple debt payments effectively.
+- Reduce overall interest paid on loans and credit card debts.
+- Track debt repayment progress and adjust plans as needed.
+
+#### 4.2.2. Emotional Jobs
+
+- Reduce stress and anxiety associated with managing multiple debts.
+- Feel empowered and in control of financial future.
+- Gain peace of mind by having a clear path to becoming debt-free.
+
+#### 4.2.3. Social Jobs
+
+- Achieve financial independence to secure a stable future for oneself and loved ones.
+- Maintain a positive financial image among peers and within the community.
+- Leverage financial stability to enhance social status and opportunities.
+
+### 4.3. User Pains
+
+- Difficulty managing multiple high-interest loans and credit card debts.
+- Lack of tools to effectively prioritize payments and manage cash flow.
+- Overwhelm and stress related to financial instability and debt management.
+
+### 4.4. User Gains
+
+- Achieving financial independence by becoming debt-free within a reasonable time frame.
+- Gaining a sense of control over finances with clear, actionable repayment plans.
+- Using a user-friendly tool that integrates seamlessly with existing budgeting tools like YNAB.
+
+---
+
+## 5. Personas
 
 > **Note:** At a later stage, we will create a user persona in [Figma](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
 
 
-### 3.6.1. Taylor, The Debt-Strapped Professional
+### 5.1. Taylor, The Debt-Strapped Professional
 - **Age:** Millennial (Gen Y)
 - **Occupation:** Mid-Level Manager in IT
 - **Economic Status:** Upper Middle Class
@@ -235,7 +219,7 @@ After analyzing the direct and indirect competitors, the following market gaps a
 - **Quote:** "I want to be in control of my finances, not the other way around."
 
 
-### 3.6.2. Casey, The Organized Homemaker
+### 5.2. Casey, The Organized Homemaker
 - **Age:** Generation Z
 - **Occupation:** Stay-at-Home Parent
 - **Economic Status:** Middle Class
@@ -275,50 +259,52 @@ After analyzing the direct and indirect competitors, the following market gaps a
 
 ---
 
-## 4. Value Proposition Canvas
+
+## 6. Value Proposition
+
+### 6.1. Feature Set
+
+#### 6.1.1. Primary Features
+
+- **Multiple Repayment Strategies**
+- **Snowflake Payments**
+- **Multicurrency Support**
+- **Reporting**
+
+#### 6.1.2. Secondary Features
+
+- **Integration with Financial Tools**
+
+#### 6.1.3. Potential Features
+
+- **Multi-User Support**
+- **AI-Driven Insights**
+- **Cross-Platform Accessibility**
+
+#### 6.1.4. Excluded Features
+
+- **Budgeting and Expense Tracking**
+- **Non-Conventional Loan Types**
+- **Advanced Loan Features**
+
+### 6.2. Gain Creators
+
+- Features that allow users to reduce interest payments and accelerate their journey to becoming debt-free.
+- Tools that provide insights into debt repayment progress and strategies for improving financial health.
+
+### 6.3. Pain Relievers
+
+- Solutions that simplify managing multiple debts and reduce the stress associated with financial instability.
+- Integration with existing tools to ensure a cohesive financial management experience.
+
+---
+
+## 7. Value Proposition Canvas Summary
 
 > **Note:** At a later stage, we will create a Value Proposition Canvas in [Figma](https://www.figma.com/community/search?resource_type=mixed&sort_by=relevancy&query=Value+Proposition+Canvas).
 
-Jobs-to-be-Done (JTBD)
-### 4.1. Core Jobs
-
-- **Core Job 1: Create and manage a debt repayment plan.**
-
-  - **Description:** Users need to generate a personalized debt repayment plan that suits their financial situation. This includes selecting the best strategy (e.g., Snowball or Avalanche), customizing payment schedules, and adapting the plan as circumstances change.
-
-- **Core Job 2: Compare different debt repayment strategies.**
-
-  - **Description:** Users need to evaluate different repayment strategies to determine the most efficient path to debt freedom. This involves analyzing interest rates, payment timelines, and total costs associated with each strategy.
-
-- **Core Job 3: Track progress towards financial goals.**
-  - **Description:** Users need a clear way to monitor their progress as they work toward becoming debt-free. This includes tracking payments, visualizing reductions in debt over time, and receiving updates on milestones.
-
-### 4.2. Supporting Jobs
-
-- **Supporting Job 1: Visualize debt repayment timelines.**
-
-  - **Description:** Users benefit from visual tools that help them understand the impact of their payments over time, such as charts and graphs that show how their debt will decrease.
-
-- **Supporting Job 2: Receive recommendations and insights.**
-
-  - **Description:** Users need guidance on optimizing their debt repayment strategy. This could include automated suggestions for extra payments, alerts for upcoming deadlines, or tips on how to stay motivated.
-
-- **Supporting Job 3: Multicurrency support and global considerations.**
-
-  - **Description:** For users in different financial regions, the ability to manage debt in multiple currencies and understand the impact of exchange rates is crucial. This job ensures that the DebtFreePlanner is adaptable to a global audience.
-
-- **Supporting Job 4: Generate detailed reports and export data.**
-
-  - **Description:** Users might require the ability to generate detailed reports on their debt repayment progress for personal records, financial advisors, or lenders. This includes exporting data in various formats (e.g., PDF, CSV).
-
-- **Supporting Job 5: Sync with external financial accounts.**
-
-  - **Description:** To streamline data entry and ensure accuracy, users may benefit from the ability to sync the DebtFreePlanner with their bank accounts or other financial institutions. This job ensures that payment records, balances, and transaction histories are automatically updated.
-
-- **Supporting Job 6: Provide educational resources and financial literacy tools.**
-  - **Description:** Users might appreciate access to educational content, such as articles, videos, or interactive tools, that help them better understand debt management, budgeting, and personal finance.
-
 ---
+
 
 ## 5. User Interface and User Experience (UI/UX)
 
