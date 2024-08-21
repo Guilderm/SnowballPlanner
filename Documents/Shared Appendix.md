@@ -117,6 +117,17 @@ Domain-Driven Design (DDD) is an approach to software development that emphasize
 
 - **Context Mapping**: Create context maps to visualize the relationships and interactions between different bounded contexts. Use context maps to manage dependencies and integration points between contexts.
 
+### 2.6 Consistent Terminology
+
+#### Overview
+Consistency in terminology is crucial for clear communication across the project. This section outlines the standard terms to be used when referring to key concepts, roles, and entities in all project documentation.
+
+#### Standards
+
+- **End User Terminology**: 
+  - The term **"loan recipients"** should be used consistently when referring to the end users of the application. 
+  - Alternatively, when discussing specific user scenarios or use cases, refer to the end user by the name of the relevant **persona** (e.g., Taylor, The Debt-Strapped Professional).
+  
 
 
 

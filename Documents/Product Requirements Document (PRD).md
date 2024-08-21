@@ -90,7 +90,8 @@ DebtFreePlanner provides loan recipients with a web-based tool to manage debt re
 
 ### 3.1. Problem Statement
 
-Individuals struggle to manage multiple debts, leading to prolonged financial strain. This challenge arises from a lack of tools and knowledge that support practical debt management strategies such as Snowball, Avalanche, and Snowflake, as well as multicurrency support. Loan recipients need resources to create debt repayment plans that reduce the interest paid and increase their amortization, thereby shortening the time required to become debt-free.
+Loan recipients struggle to manage multiple debts, leading to prolonged financial strain. This challenge arises from a lack of tools and knowledge that support practical debt management strategies such as Snowball, Avalanche, and Snowflake, as well as multicurrency support.
+Loan recipients need resources to create debt repayment plans that reduce interest payments and increase amortization, Thereby reducing the time it takes to become debt-free.
 
 #### 3.2. **Proposed Solution**
 A web-based tool for managing a debt repayment plan.
