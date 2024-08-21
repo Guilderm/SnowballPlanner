@@ -172,24 +172,6 @@ After analyzing the direct and indirect competitors, the following market gaps a
 3. **API Integrations**: YNAB offers a well-documented official API that can be used to pull loans into DebtFreePlanner. This integration can be leveraged to create a symbiotic relationship, enhancing the overall user experience and data synchronization between the two tools.
 
 
-### 3.4. **Excluded Features**
-
-To ensure DebtFreePlanner remains focused on solving its defined [problem statement](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md#31-problem-statement), the following features and functionalities were deemed unviable due to the complexity of implementation or specific market needs.
-
-#### 3.4.1. **Budgeting and Expense Tracking**
-DebtFreePlanner will not include general budgeting or expense tracking features, including loan payment history tracking. These functionalities are excluded because many established applications already perform them well, and these features are complementary rather than central to the problem DebtFreePlanner is addressing. Users are encouraged to use tools like YNAB (You Need A Budget) or Firefly III, which may be integrated with DebtFreePlanner in the future.
-
-#### 3.4.2. **Non-Conventional Loan Types**
-DebtFreePlanner will only support the most common loan types (e.g., mortgages, student loans, and credit card debt). Non-conventional loan types, such as payday loans, interest-only loans, or cryptocurrency loans, are not supported due to a lack of market demand.
-
-#### 3.4.3. **Advanced Loan Features**
-Advanced loan features, such as variable interest rates and early termination fees, are out of scope due to the complexity of accommodating all possible business rules of financial institutions. Users will need to update loan terms manually when they change.
-
-#### 3.4.4. **Business-Oriented Features**
-DebtFreePlanner will not offer features intended for business owners, given that large businesses would likely not trust this tool and that features targeting personal finances can typically meet small business owners’ needs.
-
-
-
 ### 3.5. Assumptions and Limitations
 
 ### 3.5.1. Assumptions
