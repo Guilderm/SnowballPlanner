@@ -3,51 +3,62 @@
 This PRD lays the groundwork for the DebtFreePlanner by clearly defining the product’s purpose and target audience. The structure and content of this document are guided by the principles and methodologies outlined in [_Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation_](https://designabetterbusiness.com/) by Pijl, Lokitz, and Solomon (2016). Additionally, insights from the [Product Mastery Now](https://productmasterynow.com/mastery/) podcast shape the approach, particularly within the "design and development" knowledge area of the "product innovation management" framework.
 
 ## Table of Contents
-
-## Table of Contents
-
 1. [Executive Summary](#1-executive-summary)
 2. [Objectives and Key Results (OKRs)](#2-objectives-and-key-results-okrs)
    - 2.1. [Objective 1: Empower users to create debt elimination plans](#21-objective-1-empower-users-to-create-debt-elimination-plans)
    - 2.2. [Objective 2: Develop a MERN stack Portfolio](#22-objective-2-develop-a-mern-stack-portfolio)
-3. [Project Overview and Context](#3-project-overview-and-context)
+3. [Market and Context](#3-market-and-context)
    - 3.1. [Problem Statement](#31-problem-statement)
-   - 3.2. [Value Proposition](#32-value-proposition)
-     - 3.2.1. [Planned Features](#321-planned-features)
-     - 3.2.2. [Potential Features](#322-potential-features)
-   - 3.3. [Excluded Features](#33-excluded-features)
-     - 3.3.1. [Budgeting and Expense Tracking](#331-budgeting-and-expense-tracking)
-     - 3.3.2. [Non-Conventional Loan Types](#332-non-conventional-loan-types)
-     - 3.3.3. [Advanced Loan Features](#333-advanced-loan-features)
-     - 3.3.4. [Business-Oriented Features](#334-business-oriented-features)
-   - 3.4. [Market Analysis](#34-market-analysis)
-     - 3.4.1. [Direct Competitors](#341-direct-competitors)
-     - 3.4.2. [Indirect Competitors](#342-indirect-competitors)
-     - 3.4.3. [Strategic Opportunities](#343-strategic-opportunities)
-   - 3.5. [Assumptions and Limitations](#35-assumptions-and-limitations)
-     - 3.5.1. [Assumptions](#351-assumptions)
-     - 3.5.2. [Limitations](#352-limitations)
-     - 3.5.3. [Risks](#353-risks)
-   - 3.6. [User Personas](#36-user-personas)
-     - 3.6.1. [Taylor, The Debt-Strapped Professional](#361-taylor-the-debt-strapped-professional)
-     - 3.6.2. [Casey, The Organized Homemaker](#362-casey-the-organized-homemaker)
-4. [Jobs-to-be-Done (JTBD)](#4-jobs-to-be-done-jtbd)
-   - 4.1. [Core Jobs](#41-core-jobs)
-   - 4.2. [Supporting Jobs](#42-supporting-jobs)
-5. [User Interface and User Experience (UI/UX)](#5-user-interface-and-user-experience-uiux)
-   - 5.1. [User Flows](#51-user-flows)
-   - 5.2. [Wireframes/Mockups](#52-wireframesmockups)
-6. [User Stories](#6-user-stories)
-   - 6.1. [User Stories](#61-user-stories)
-7. [Legal and Compliance](#7-legal-and-compliance)
-   - 7.1. [Data Privacy](#71-data-privacy)
-   - 7.2. [Regulatory Compliance](#72-regulatory-compliance)
-   - 7.3. [International Regulations](#73-international-regulations)
-   - 7.4. [Terms of Service & User Agreements](#74-terms-of-service--user-agreements)
-   - 7.5. [Record Keeping and Audit Trails](#75-record-keeping-and-audit-trails)
-   - 7.6. [Legal Risk Management](#76-legal-risk-management)
-   - 7.7. [Protection of Intellectual Property (IP)](#77-protection-of-intellectual-property-ip)
-8. [Related Documents](#8-related-documents)
+   - 3.2. [Market Analysis](#32-market-analysis)
+     - 3.2.1. [Direct Competitors](#321-direct-competitors)
+     - 3.2.2. [Indirect Competitors](#322-indirect-competitors)
+     - 3.2.3. [Strategic Opportunities](#323-strategic-opportunities)
+   - 3.3. [Assumptions and Limitations](#33-assumptions-and-limitations)
+     - 3.3.1. [Assumptions](#331-assumptions)
+     - 3.3.2. [Limitations](#332-limitations)
+     - 3.3.3. [Risks](#333-risks)
+4. [User Profiles](#4-user-profiles)
+   - 4.1. [Market Segmentation](#41-market-segmentation)
+   - 4.2. [Jobs-to-be-Done (JTBD)](#42-jobs-to-be-done-jtbd)
+     - 4.2.1. [Functional Jobs](#421-functional-jobs)
+     - 4.2.2. [Emotional Jobs](#422-emotional-jobs)
+     - 4.2.3. [Social Jobs](#423-social-jobs)
+   - 4.3. [User Pains](#43-user-pains)
+   - 4.4. [User Gains](#44-user-gains)
+5. [Personas](#5-personas)
+   - 5.1. [Taylor, The Debt-Strapped Professional](#51-taylor-the-debt-strapped-professional)
+   - 5.2. [Casey, The Organized Homemaker](#52-casey-the-organized-homemaker)
+6. [Value Proposition](#6-value-proposition)
+   - 6.1. [Feature Set](#61-feature-set)
+     - 6.1.1. [Primary Features](#611-primary-features)
+     - 6.1.2. [Secondary Features](#612-secondary-features)
+     - 6.1.3. [Potential Features](#613-potential-features)
+     - 6.1.4. [Excluded Features](#614-excluded-features)
+   - 6.2. [Gain Creators](#62-gain-creators)
+   - 6.3. [Pain Relievers](#63-pain-relievers)
+7. [Value Proposition Canvas Summary](#7-value-proposition-canvas-summary)
+8. [User Interface and User Experience (UI/UX)](#8-user-interface-and-user-experience-uiux)
+   - 8.1. [User Flows](#81-user-flows)
+     - 8.1.1. [Session Management](#811-session-management)
+     - 8.1.2. [Plan Management](#812-plan-management)
+     - 8.1.3. [Debt Management](#813-debt-management)
+     - 8.1.4. [Snowflake Management](#814-snowflake-management)
+     - 8.1.5. [Payment Management](#815-payment-management)
+     - 8.1.6. [Profile Management](#816-profile-management)
+     - 8.1.7. [Data Management](#817-data-management)
+     - 8.1.8. [Report Management](#818-report-management)
+   - 8.2. [Wireframes/Mockups](#82-wireframesmockups)
+9. [User Stories](#9-user-stories)
+   - 9.1. [User Stories](#91-user-stories)
+10. [Legal and Compliance](#10-legal-and-compliance)
+   - 10.1. [Data Privacy](#101-data-privacy)
+   - 10.2. [Regulatory Compliance](#102-regulatory-compliance)
+   - 10.3. [International Regulations](#103-international-regulations)
+   - 10.4. [Terms of Service & User Agreements](#104-terms-of-service--user-agreements)
+   - 10.5. [Record Keeping and Audit Trails](#105-record-keeping-and-audit-trails)
+   - 10.6. [Legal Risk Management](#106-legal-risk-management)
+   - 10.7. [Protection of Intellectual Property (IP)](#107-protection-of-intellectual-property-ip)
+11. [Related Documents](#11-related-documents)
 
 ---
 
@@ -327,16 +338,16 @@ To ensure DebtFreePlanner remains focused on fulfilling its intended purpose, th
 
 ## 7. Value Proposition Canvas Summary
 
-> **Note:** At a later stage, we will create a Value Proposition Canvas in [Figma](https://www.figma.com/community/search?resource_type=mixed&sort_by=relevancy&query=Value+Proposition+Canvas).
+> **Note:** At a later stage, we will create a Value Proposition Canvas in [Figma Template](https://www.figma.com/community/search?resource_type=mixed&sort_by=relevancy&query=Value+Proposition+Canvas).
 
 ---
 
 
-## 5. User Interface and User Experience (UI/UX)
+## 8. User Interface and User Experience (UI/UX)
 
-### 5.1. User Flows
+### 8.1. User Flows
 
-1. **Session Management:**
+### 8.1.1. **Session Management:**
 
    - Users create an account or log in to access their debt repayment plans.
 
@@ -371,9 +382,9 @@ To ensure DebtFreePlanner remains focused on fulfilling its intended purpose, th
     @enduml
    ```
 
-### 2. **Plan Management:**
+### 8.1.2. **Plan Management:**
 
-#### 2.1. **Debt Management:**
+### 8.1.3. **Debt Management:**
 
 - The Debt Management sub-flow allows users to manage their debts, including the following aspects:
   - **Loan Amount (Remaining Principal):** The total remaining balance that needs to be repaid.
@@ -385,36 +396,36 @@ To ensure DebtFreePlanner remains focused on fulfilling its intended purpose, th
   - **Amortization Type:** Specifies whether the loan is fully amortizing, interest-only, or includes a balloon payment at the end.
   - **Fees and Penalties:** Any additional charges, such as origination fees, prepayment penalties, or late payment fees.
 
-#### 2.2. **Snowflake Management:**
+### 8.1.4. **Snowflake Management:**
 
 - The Snowflake Management sub-flow enables users to manage their snowflake payments, focusing on:
   - **Extra Payment Amount:** Any additional payments made beyond the regularly scheduled payments.
   - **Payment Frequency:** How often these extra payments are made (e.g., monthly, bi-weekly).
   - **Start Date:** The date when the extra payments begin.
 
-#### 2.3. **Payment Management:**
+### 8.1.5. **Payment Management:**
 
 - The Payment Management sub-flow is where users define their minimum global monthly payments. This involves setting the total amount they are willing to allocate each month towards debt repayment, which will then be distributed according to their chosen debt reduction strategy (e.g., snowball method).
 
-3. **Profile Management:**
+### 8.1.6. **Profile Management:**
 
    - Users update their personal information, change passwords, adjust notification preferences, and delete their account if desired.
 
-4. **Data Management:**
+### 8.1.7. **Data Management:**
 
    - Users export and import their debt repayment data for personal records or to share with financial advisors.
 
-5. **Report Management:**
+### 8.1.8. **Report Management:**
    - Users view, print, and gain insights from their reports on debt repayment progress and strategies.
 
-### 5.2. Wireframes/Mockups
+### 8.2. Wireframes/Mockups
 
 - **Dashboard:** Displays key metrics, repayment progress, and quick actions.
 - **Plan Creation:** Forms for entering debt details and selecting repayment strategies.
 - **Plan Customization:** Interface for adjusting repayment priorities and adding extra payments.
 - **Progress Tracking:** Visual representations of repayment progress and milestones.
 
-## 6. User Stories
+## 9. User Stories
 
 User stories should be:
 
@@ -423,7 +434,7 @@ User stories should be:
 - Have an Acceptance Criteria
 - Prioritization
 
-### 6.1. User Stories
+### 9.1. User Stories
 
 - **As a user, I want to create a debt repayment plan using the Snowball strategy so that I can pay off my smallest debts first and gain motivation.**
 - **As a user, I want to see a summary of my debt repayment progress so that I can track my achievements and stay motivated.**
@@ -432,9 +443,9 @@ User stories should be:
 
 ---
 
-## 7. Legal and Compliance
+## 10. Legal and Compliance
 
-### 7.1. Data Privacy
+### 10.1. Data Privacy
 
 - **Overview**: Outline the commitment to protecting user data and complying with relevant data privacy regulations.
 - **Key Regulations**:
@@ -445,7 +456,7 @@ User stories should be:
   - **Data Deletion**: Describe the process for users to request the deletion of their data.
   - **Data Portability**: Outline the mechanisms for providing users with their data in a portable format.
 
-### 7.2. Regulatory Compliance
+### 10.2. Regulatory Compliance
 
 - **Industry-Specific Regulations**:
   - **Financial Regulations**: If applicable, discuss any financial regulations that must be adhered to, such as anti-money laundering (AML) or Know Your Customer (KYC) guidelines.
@@ -453,7 +464,7 @@ User stories should be:
 - **Compliance Monitoring**: Describe how ongoing compliance will be monitored and maintained throughout the product lifecycle.
 - **Audit and Reporting**: Explain any auditing mechanisms that will be in place to ensure compliance and to report on compliance status.
 
-### 7.3. International Regulations
+### 10.3. International Regulations
 
 - **Global Compliance Strategy**:
   - Describe the approach to ensuring the product complies with legal requirements in all countries where it will be available.
@@ -462,14 +473,14 @@ User stories should be:
 - **Cross-Border Data Transfers**:
   - Discuss how data will be handled when transferring across borders, particularly in compliance with regulations like GDPR's data transfer restrictions.
 
-### 7.4. Terms of Service & User Agreements
+### 10.4. Terms of Service & User Agreements
 
 - **User Agreements**:
   - Outline the key terms that will be included in the end-user agreements, such as acceptable use policies, limitations of liability, and dispute resolution processes.
 - **Terms of Service**:
   - Provide an overview of the terms of service that users must agree to when using the product. This should include disclaimers, intellectual property notices, and the governing law.
 
-### 7.5. Record Keeping and Audit Trails
+### 10.5. Record Keeping and Audit Trails
 
 - **Record Keeping Requirements**:
   - Detail the types of records that must be maintained for compliance purposes, including user consent records, transaction logs, and access records.
@@ -478,7 +489,7 @@ User stories should be:
 - **Retention Policies**:
   - Explain the data retention policies, including how long different types of data will be stored and when they will be purged or anonymized.
 
-### 7.6. Legal Risk Management
+### 10.6. Legal Risk Management
 
 - **Risk Identification**:
   - Identify potential legal risks associated with the product, such as non-compliance with data privacy laws, intellectual property disputes, or liability issues.
@@ -487,7 +498,7 @@ User stories should be:
 - **Legal Reviews**:
   - Describe the process for regular legal reviews of the product to ensure ongoing compliance with evolving laws and regulations.
 
-### 7.7. Protection of Intellectual Property (IP)
+### 10.7. Protection of Intellectual Property (IP)
 
 - **Overview**:
   - Describe the steps that will be taken to protect the intellectual property associated with the product, particularly in preparation for potential monetization.
@@ -496,7 +507,7 @@ User stories should be:
 
 ---
 
-## 8. Related Documents
+## 11. Related Documents
 
 - [Product Requirements Document (PRD)](<https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md>)
 - [Software Requirements Specification (SRS)](<https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Software%20Requirements%20Specification%20(SRS).md>)
