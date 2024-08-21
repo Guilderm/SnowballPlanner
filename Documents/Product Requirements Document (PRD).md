@@ -174,21 +174,22 @@ After analyzing the direct and indirect competitors, the following market gaps a
 
 ### 3.5. Assumptions and Limitations
 
-### 3.5.1. Assumptions
+#### 3.5.1. Assumptions
 
-- **Basic Financial Literacy:** Users are expected to have a basic understanding of personal finance, including compound interest, but they are not expected to be financial experts.
-- **Basic Technology Proficiency:** Users are expected to be comfortable using online banking and personal finance apps and are not expected to be tech-savvy or have advanced technical knowledge.
-- **Basic Computer Setup:** The application will primarily be used on a laptop with internet access, though it should be simple enough to use on other devices like tablets.
+- **Basic Financial Literacy:** Users have a basic understanding of financial concepts, such as compound interest and loan terms.
+- **Basic Technology Proficiency:** Users are comfortable using online banking and personal finance apps.
+- **Basic Computer Setup:** The application is primarily used on a laptop with an internet connection.
+- **Data Accuracy:** Users will input correct financial information to ensure accurate calculations.
 
-##### 3.5.2. **Constraints**:
+#### 3.5.2. Limitations
+- **Data Privacy:** In addition to standard data privacy measures, DebtFreePlanner must implement GDPR and CCPA.
+- **Platform Limitations:** DebtFreePlanner is designed as a web-based tool, which may limit its functionality on certain devices or when used offline.
 
-- The application must comply with GDPR and CCPA regulations.
-- The GitHub repository needs to be public so that recruiters can access it.
+#### 3.5.3. Risks
+ - **External Service Dependency Risks:** The tool may face challenges with the integration and reliability of third-party APIs and services.
+- **Public Repository Exposure:** Because this is a portfolio project, the repository is public, increasing the likelihood of a successful cyberattack.
+- **Attractiveness as a Target:** Since the app manages financial data, it is an attractive target (honeypot) for cybercriminals.
 
-##### 3.5.3. **Risks**:
-
-- Because the repository is public, there is an increased likelihood of a successful attack.
-- Since financial data is managed, the app is an attractive target (honeypot).
 
 
 ### 3.6. User Personas
