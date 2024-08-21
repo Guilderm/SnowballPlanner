@@ -116,7 +116,7 @@ The following features are confirmed and scheduled for development as part of th
   - Offers insights into payment history, interest savings, and projected debt-free dates.
 
 - **Integration with Financial Tools:**
-  - Integrates with popular budgeting applications like YNAB (You Need A Budget) and Firefly III.
+  - Integrates with popular budgeting applications like YNAB (You Need A Budget) and posibly Firefly III.
   - Facilitates automatic updates and synchronization of users’ financial data, providing a cohesive financial management experience.
 
 ##### 3.2.2. **Potential Features**
@@ -135,17 +135,33 @@ The following features are under consideration for future development but are no
   - Ensures users can access and manage their debt repayment plans conveniently from any device, enhancing usability and engagement.
 
 
+### 3.3. **Excluded Features**
+
+To ensure DebtFreePlanner remains focused on solving its defined [problem statement](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md#31-problem-statement), the following features and functionalities were deemed unviable due to the complexity of implementation or specific market needs.
+
+#### 3.3.1. **Budgeting and Expense Tracking**
+DebtFreePlanner will not include general budgeting or expense tracking features, including loan payment history tracking. These functionalities are excluded because many established applications already perform them well, and these features are complementary rather than central to the problem DebtFreePlanner is addressing. Users are encouraged to use tools like YNAB (You Need A Budget) or Firefly III, which may be integrated with DebtFreePlanner in the future.
+
+#### 3.34.2. **Non-Conventional Loan Types**
+DebtFreePlanner will only support the most common loan types (e.g., mortgages, student loans, and credit card debt). Non-conventional loan types, such as payday loans, interest-only loans, or cryptocurrency loans, are not supported due to a lack of market demand.
+
+#### 3.3.3. **Advanced Loan Features**
+Advanced loan features, such as variable interest rates and early termination fees, are out of scope due to the complexity of accommodating all possible business rules of financial institutions. Users will need to update loan terms manually when they change.
+
+#### 3.3.4. **Business-Oriented Features**
+DebtFreePlanner will not offer features intended for business owners, given that large businesses would likely not trust this tool and that features targeting personal finances can typically meet small business owners’ needs.
+
 ### 3.3. **Market Analysis**
 
-#### 3.3.1. **Direct Competitors**
+#### 3.4.1. **Direct Competitors**
 
 [Debt Payoff Planner](https://www.debtpayoffplanner.com/), [Undebt.it](https://undebt.it/), [unbury.me](https://unbury.me/), and [Vertex42 Debt Reduction Calculator](https://www.vertex42.com/Calculators/debt-reduction-calculator.html) help users manage and pay down debt using strategies like Snowball and Avalanche. However, these tools lack multicurrency support and the ability to customize debt repayment plans as extensively as DebtFreePlanner.
 
-#### 3.3.2. **Indirect Competitors**
+#### 3.4.2. **Indirect Competitors**
 
 [Mint](https://www.mint.com/), [YNAB](https://www.youneedabudget.com/), [Quicken](https://www.quicken.com/), [Personal Capital](https://www.personalcapital.com/), and [Simplifi](https://www.quicken.com/simplifi) offer a broad range of financial management features, including budgeting and expense tracking, but do not support creating debt repayment plans.
 
-#### 3.3.3. **Strategic Opportunities**
+#### 3.4.3. **Strategic Opportunities**
 
 After analyzing the direct and indirect competitors, the following market gaps and strategic opportunities were identified:
 
@@ -156,28 +172,22 @@ After analyzing the direct and indirect competitors, the following market gaps a
 3. **API Integrations**: YNAB offers a well-documented official API that can be used to pull loans into DebtFreePlanner. This integration can be leveraged to create a symbiotic relationship, enhancing the overall user experience and data synchronization between the two tools.
 
 
-### 3.4. **Out of Scope**
+### 3.4. **Excluded Features**
 
-##### 3.4.1. **Budgeting and Expense Tracking**
-- The DebtFreePlanner will not include features for general budgeting or expense tracking. This also includes loan payment history tracking, which will not be maintained within the application.
-- **Integration with YNAB:** To satisfy users' needs for budgeting and tracking expenses, including detailed loan payment histories, the DebtFreePlanner will integrate with YNAB (You Need A Budget), a well-established tool that excels in these areas. However, it should be noted that this integration does not fully align with YNAB's philosophy, as they emphasize a different approach to debt management.
+To ensure DebtFreePlanner remains focused on solving its defined [problem statement](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md#31-problem-statement), the following features and functionalities were deemed unviable due to the complexity of implementation or specific market needs.
 
-##### 3.4.2. **Non-Conventional Loan**
-- The scope is limited to traditional conventional loans that are:
-  - Paid on a monthly basis.
-  - Have interest rates compounded monthly.
-  - Do not have penalties for early repayment.
-  - Do not include balloon payments.
-- **Exclusions:** Loans with variable interest rates, interest-only payments, or those with irregular payment schedules will not be supported. Additionally, complex loan types like mortgages with balloon payments or lines of credit are out of scope for this project.
+#### 3.4.1. **Budgeting and Expense Tracking**
+DebtFreePlanner will not include general budgeting or expense tracking features, including loan payment history tracking. These functionalities are excluded because many established applications already perform them well, and these features are complementary rather than central to the problem DebtFreePlanner is addressing. Users are encouraged to use tools like YNAB (You Need A Budget) or Firefly III, which may be integrated with DebtFreePlanner in the future.
 
-##### 3.4.3. **Advanced Loan Features**
-- The application will not support:
-  - Refinancing or consolidation of existing loans.
-  - Handling of overpayments beyond the scheduled extra payment configurations.
-  - Detailed amortization schedules beyond simple monthly breakdowns.
+#### 3.4.2. **Non-Conventional Loan Types**
+DebtFreePlanner will only support the most common loan types (e.g., mortgages, student loans, and credit card debt). Non-conventional loan types, such as payday loans, interest-only loans, or cryptocurrency loans, are not supported due to a lack of market demand.
 
-##### 3.4.3. **Business-Oriented Features**
-- The app will not offer features designed for business owners or provide little benefit in the context of personal finances.
+#### 3.4.3. **Advanced Loan Features**
+Advanced loan features, such as variable interest rates and early termination fees, are out of scope due to the complexity of accommodating all possible business rules of financial institutions. Users will need to update loan terms manually when they change.
+
+#### 3.4.4. **Business-Oriented Features**
+DebtFreePlanner will not offer features intended for business owners, given that large businesses would likely not trust this tool and that features targeting personal finances can typically meet small business owners’ needs.
+
 
 
 ### 3.5. Assumptions and Limitations
