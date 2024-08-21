@@ -142,16 +142,15 @@ Indirect competitors such as [Mint](https://www.mint.com/), [YNAB](https://www.y
 ## 4. User Profiles
 
 ### 4.1. Market Segmentation
+DebtFreePlanner targets retail loan recipients who are motivated to pay off their debts efficiently. This audience includes [established professionals managing significant debt loads](#51-taylor-the-debt-strapped-professional) and [younger individuals focused on building a stable financial future](#52-casey-the-organized-homemaker).
 
-DebtFreePlanner targets individuals burdened with multiple loans, including mortgages, student loans, and credit card debt. The primary users are financially literate individuals who are motivated to pay off their debts efficiently. This includes both middle-class professionals managing significant debt loads and younger individuals looking to build a stable financial future.
 
 ### 4.2. Jobs-to-be-Done (JTBD)
 
 #### 4.2.1. Functional Jobs
-
-- Manage and prioritize multiple debt payments effectively.
-- Reduce overall interest paid on loans and credit card debts.
-- Track debt repayment progress and adjust plans as needed.
+ - Prioritize which debt to pay off first.
+ - Minimize the total interest paid across all debts.
+ - Estimate the timeline for becoming completely debt-free.
 
 #### 4.2.2. Emotional Jobs
 
@@ -161,9 +160,8 @@ DebtFreePlanner targets individuals burdened with multiple loans, including mort
 
 #### 4.2.3. Social Jobs
 
-- Achieve financial independence to secure a stable future for oneself and loved ones.
-- Maintain a positive financial image among peers and within the community.
-- Leverage financial stability to enhance social status and opportunities.
+- Maintain a positive financial image among peers and loved ones.
+- Support and influence loved ones in their own financial journeys.
 
 ### 4.3. User Pains
 
