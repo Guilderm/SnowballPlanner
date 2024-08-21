@@ -10,7 +10,7 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 2. [Objectives and Key Results (OKRs)](#2-objectives-and-key-results-okrs)
    - 2.1. [Objective 1: Empower users to create debt elimination plans](#21-objective-1-empower-users-to-create-debt-elimination-plans)
    - 2.2. [Objective 2: Develop a MERN stack Portfolio](#22-objective-2-develop-a-mern-stack-portfolio)
-3. [Context and Overview](#3-Context-and-Overview)
+3. [Project Overview and Context](#3-Context-and-Overview)
    - 3.1. [Problem Statement](#31-problem-statement)
    - 3.2. [Proposed Solution](#32-proposed-solution)
      - 3.2.1. [On the Roadmap](#321-on-the-roadmap)
@@ -86,7 +86,7 @@ DebtFreePlanner provides loan recipients with a web-based tool to manage debt re
 
 ---
 
-## 3. Context and Overview
+## 3. Project Overview and Context
 
 ### 3.1. Problem Statement
 

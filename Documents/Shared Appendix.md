@@ -79,6 +79,46 @@ We will incorporate Feedback Driven Development (FDD) as a core practice by the 
 - **Data-Driven Decisions:** Use quantitative feedback and analytics to inform feature prioritization and refinements.
 - **Collaboration:** Ensure effective communication among all team members to act upon feedback appropriately and maintain alignment with the product vision.
 
+### 2.4 User-Centered Design (UCD) Principles
+
+#### Overview
+User-Centered Design (UCD) is a methodology that prioritizes the needs, preferences, and limitations of the end-users throughout the development process. The goal is to create solutions that are not only functional but also intuitive, accessible, and satisfying to use.
+
+#### Standards
+
+- **User Personas**: Develop user personas that represent key segments of the target audience. These personas should be referenced throughout the development process to ensure that the application meets the needs of the intended users.
+
+- **Iterative Design Process**: Employ an iterative design process that includes prototyping, usability testing, and feedback loops. Adjustments should be made based on user feedback to continuously improve the user experience.
+
+- **Usability Testing**: Perform usability testing with real users at various stages of development. The findings should directly inform design improvements to enhance the overall user experience.
+
+- **Accessibility**: Adhere to accessibility standards (e.g., WCAG) to ensure the application is usable by all individuals, including those with disabilities.
+
+- **User Experience Metrics**: Establish and monitor key UX metrics such as task completion rates, error rates, time-on-task, and user satisfaction scores. These metrics should be used to assess the effectiveness of the design and identify areas for further improvement.
+
+### 2.5 Domain-Driven Design (DDD) Principles
+
+#### Overview
+Domain-Driven Design (DDD) is an approach to software development that emphasizes the importance of aligning the software model with the core business domain. It focuses on understanding the business domain deeply and using that knowledge to drive the design and architecture of the application.
+
+#### Standards
+
+- **Domain Modeling**: Collaborate closely with domain experts to create a shared understanding of the business domain. Develop a domain model that accurately reflects the core concepts and relationships within the domain.
+
+- **Ubiquitous Language**: Establish and use a common, consistent language that is shared between developers and domain experts. This language should be used in code, documentation, and discussions to ensure clear communication and reduce misunderstandings.
+
+- **Bounded Contexts**: Identify and define bounded contexts within the application, where a particular domain model is applied. Each bounded context should have clearly defined boundaries, responsibilities, and interfaces.
+
+- **Entities, Value Objects, and Aggregates**: Use the concepts of entities, value objects, and aggregates to model the domain. Entities should have a unique identity, value objects should be immutable, and aggregates should enforce consistency within their boundaries.
+
+- **Repositories**: Implement repositories to manage the persistence of aggregates. Repositories should provide an interface for accessing and managing aggregates while abstracting the underlying data storage.
+
+- **Domain Events**: Capture and model significant events within the domain as domain events. These events should be used to communicate changes within and across bounded contexts.
+
+- **Context Mapping**: Create context maps to visualize the relationships and interactions between different bounded contexts. Use context maps to manage dependencies and integration points between contexts.
+
+
+
 
 ## 3. References
 
