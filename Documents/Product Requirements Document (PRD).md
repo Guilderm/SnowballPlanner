@@ -12,7 +12,7 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
    - 2.2. [Objective 2: Develop a MERN stack Portfolio](#22-objective-2-develop-a-mern-stack-portfolio)
 3. [Project Overview and Context](#3-Context-and-Overview)
    - 3.1. [Problem Statement](#31-problem-statement)
-   - 3.2. [Proposed Solution](#32-proposed-solution)
+   - 3.2. [Value Proposition](#32-proposed-solution)
      - 3.2.1. [On the Roadmap](#321-on-the-roadmap)
      - 3.2.2. [Future Considerations](#322-future-considerations)
    - 3.3. [Competitive Landscape](#33-competitive-landscape)
@@ -91,30 +91,49 @@ DebtFreePlanner provides loan recipients with a web-based tool to manage debt re
 ### 3.1. Problem Statement
 
 Loan recipients struggle to manage multiple debts, leading to prolonged financial strain. This challenge arises from a lack of tools and knowledge that support practical debt management strategies such as Snowball, Avalanche, and Snowflake, as well as multicurrency support.
-Loan recipients need resources to create debt repayment plans that reduce interest payments and increase amortization, Thereby reducing the time it takes to become debt-free.
 
-#### 3.2. **Proposed Solution**
-A web-based tool for managing a debt repayment plan.
 
-- **Multiple Repayment Strategies:** Supports the Snowball, Avalanche, Debt-to-Interest Ratio, Cash Flow Index (CFI), Highest Monthly Payment, and Custom Strategies, allowing users to select the approach that best aligns with their financial goals.
+#### 3.2. **Value Proposition**
+DebtFreePlanner provides loan recipients with a web-based tool to create a debt repayment plan that reduces interest paid and increases amortization, thereby shortening the time needed to become debt-free.
 
-- **Snowflake Payments:** Allows users to make small, irregular payments towards their debts whenever extra funds are available. This strategy helps reduce the principal faster, decreasing the overall interest paid and shortening the repayment period.
+##### 3.2.1. **Planned Features**
+The following features are confirmed and scheduled for development as part of the current product roadmap.
 
-- **Multicurrency Support:** With automatic exchange rate updates to meet global needs.
+- **Multiple Repayment Strategies:**
+  - Support for various debt repayment methods including Snowball, Avalanche, Debt-to-Interest Ratio, Cash Flow Index (CFI), Highest Monthly Payment, and Custom Strategies.
+  - Enables loan recipients to select and customize the approach that best aligns with their financial goals and circumstances.
 
-- **Reporting:** Will generate reports to help users understand their debt repayment journey.
+- **Snowflake Payments:**
+  - Allows loan recipients to make small, irregular payments towards their debts whenever extra funds are available.
+  - Helps reduce principal balances faster, decreasing overall interest paid and shortening the debt repayment period.
 
-- **Integration with YNAB:** The application will integrate with YNAB (You Need A Budget) and possibly Firefly III, facilitating updates to users’ plans.
+- **Multicurrency Support:**
+  - Provides seamless handling of multiple currencies with automatic exchange rate updates.
+  - Caters to a global user base, ensuring accurate and up-to-date financial calculations regardless of currency.
 
-#### 3.2.2. **Future Considerations**
+- **Reporting:**
+  - Generates detailed reports and visualizations to help loan recipients track and understand their debt repayment progress over time.
+  - Offers insights into payment history, interest savings, and projected debt-free dates.
 
-The following features are planned for future updates:
+- **Integration with Financial Tools:**
+  - Integrates with popular budgeting applications like YNAB (You Need A Budget) and Firefly III.
+  - Facilitates automatic updates and synchronization of users’ financial data, providing a cohesive financial management experience.
 
-- **Multi-User Support:** DebtFreePlanner will include multi-user support, allowing households or financial advisors to manage multiple users’ debts under a single account.
+##### 3.2.2. **Potential Features**
+The following features are under consideration for future development but are not yet confirmed or scheduled for implementation.
 
-- **AI-Driven Reports:** Will use artificial intelligence (AI) to create reports that use data storytelling techniques to help users understand their debt repayment journey.
+- **Multi-User Support:**
+  - Introduces capabilities for multiple users to collaborate under a single account, ideal for households and financial advisors managing collective debts.
+  - Includes permission settings and shared dashboards to streamline joint financial planning and monitoring.
 
-- **Multi-Device Support:** DebtFreePlanner will support seamless use across various devices, including Web, Android, and iOS platforms.
+- **AI-Driven Insights:**
+  - Utilizes artificial intelligence to provide personalized recommendations and predictive analytics.
+  - Offers data-driven storytelling through dynamic reports that help loan recipients make informed decisions and adapt their repayment strategies effectively.
+
+- **Cross-Platform Accessibility:**
+  - Expands availability across various devices and platforms, including dedicated applications for Web, Android, and iOS.
+  - Ensures users can access and manage their debt repayment plans conveniently from any device, enhancing usability and engagement.
+
 
 ### 3.3. Competitive Landscape
 
