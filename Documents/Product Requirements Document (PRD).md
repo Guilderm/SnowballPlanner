@@ -191,7 +191,6 @@ After analyzing the direct and indirect competitors, the following market gaps a
 - **Attractiveness as a Target:** Since the app manages financial data, it is an attractive target (honeypot) for cybercriminals.
 
 
-
 ### 3.6. User Personas
 
 > **Note:** At a later stage, we will create a user persona in [Figma](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
@@ -203,21 +202,34 @@ After analyzing the direct and indirect competitors, the following market gaps a
 - **Economic Status:** Upper Middle Class
 - **Region:** Western Europe
 - **Financial Status:** Living paycheck to paycheck
-- **Financial Goals:** Pay off student loans and credit card debt within five years and a mortgage within ten years.
-- **Challenges:**
-  - Struggles with multiple high-interest loans and credit card debts.
-  - Finds it challenging to prioritize payments and manage cash flow effectively.
+
+- **Jobs to Be Done:**
+  - Manage and prioritize multiple debt payments effectively.
+  - Reduce overall interest paid on loans and credit card debts.
+  - Achieve financial independence by becoming debt-free.
+
+- **Pains:**
+  - Struggles with managing multiple high-interest loans and credit card debts.
+  - Finds it difficult to prioritize payments and effectively manage cash flow.
+  - Experiences stress and anxiety related to financial instability.
+
+- **Gains:**
+  - Achieving financial independence by becoming debt-free within a reasonable time frame.
+  - Feeling in control of financial future.
+  - Using a user-friendly tool that integrates with existing budgeting tools like YNAB.
+
 - **Behavior:**
-  - Uses YNAB to manage personal finances.
-  - Regularly visits financial advice blogs and YouTube channels for tips on managing debt.
+  - Recently started using YNAB to manage personal finances.
+  - Frequently visits financial advice blogs and YouTube channels for tips on debt management.
+  - Prefers using financial tools on a laptop but occasionally uses mobile devices for quick checks.
+
 - **Needs:**
-  - A simple, user-friendly tool that assists in planning a debt-free journey.
-  - Guidance on how to prioritize payments to reduce overall interest.
-  - Integration with existing budgeting tools, like YNAB.
-- **Motivations:**
-  - Desire to become debt-free within a reasonable time frame.
-  - Seeking a sense of control over financial future.
-  - Aims to avoid late fees and interest hikes.
+  - A tool to assist in planning a debt-free journey.
+  - Clear guidance on prioritizing payments to reduce overall interest.
+  - Seamless integration with existing budgeting tools like YNAB.
+
+- **Quote:** "I want to be in control of my finances, not the other way around."
+
 
 ### 3.6.2. Casey, The Organized Homemaker
 - **Age:** Generation Z
@@ -225,21 +237,37 @@ After analyzing the direct and indirect competitors, the following market gaps a
 - **Economic Status:** Middle Class
 - **Region:** North America
 - **Financial Status:** In debt but managing
-- **Financial Goals:** Improve cash flow by paying off credit cards and car loans ahead of schedule to start saving for a home down payment.
-- **Challenges:**
-  - Manages multiple loans, including car loans, credit cards, student loans, and a personal loan.
-  - Balancing loan repayments with household expenses, such as groceries, utilities, and children’s education, is a challenge.
+
+- **Jobs to Be Done:**
+  - Manage multiple loans while balancing household expenses.
+  - Optimize loan payments to improve cash flow.
+  - Save for a home down payment.
+
+- **Pains:**
+  - Juggles multiple loans, including car loans, credit cards, student loans, and a personal loan.
+  - Struggles to balance loan repayments with household expenses such as groceries, utilities, and children's education.
+  - Experiences stress over financial decisions impacting the family's long-term security.
+
+- **Gains:**
+  - Reducing financial stress and achieving financial freedom for the family.
+  - Successfully managing debts to save for a home down payment.
+  - Using a simple, reliable tool that offers clear insights into interest savings and payment strategies.
+
 - **Behavior:**
-  - Uses an online banking app to monitor spending.
-  - Manages the budget in Excel.
-  - Frequently compares financial products to ensure access to the best rates.
+  - Regularly uses an online banking app to monitor spending and manage finances.
+  - Maintains the household budget in Excel.
+  - Actively compares financial products online to ensure access to the best interest rates and terms.
+
 - **Needs:**
-  - A streamlined tool to manage and optimize loan payments, with clear insights into interest savings from additional payments.
-  - The ability to project future loan payments and the impact of different payment strategies.
+  - A streamlined tool to manage and optimize loan payments, providing clear insights into interest savings from additional payments.
+  - The ability to project future loan payments and visualize the impact of different payment strategies.
+
 - **Motivations:**
-  - Seeks to reduce financial stress by managing debts efficiently.
+  - Seeks to reduce financial stress by managing debts efficiently and ensuring the family's financial stability.
   - Aims to achieve financial freedom and security for the family.
-  - Values simplicity and reliability in financial tools.
+  - Values simplicity, reliability, and transparency in financial tools.
+
+- **Quote:** "I need a tool that helps me see the bigger picture and ensures our family's financial well-being."
 
 ---
 
