@@ -4,6 +4,16 @@ _A MERN stack application for strategic debt payoff planning using Snowball and 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Key Features](#key-features)
+- [Learn More](#learn-more)
+- [Objectives and Key Results (OKRs)](#objectives-and-key-results-okrs)
+  - [Objective 1: Full-Stack Development](#objective-1-full-stack-development)
+  - [Objective 2: Engineering Best Practices](#objective-2-engineering-best-practices)
+  - [Objective 3: Advanced Frontend Skills](#objective-3-advanced-frontend-skills)
+  - [Objective 4: Security and Data Protection](#objective-4-security-and-data-protection)
+  - [Objective 5: Technical Writing](#objective-5-technical-writing)
+  - [Objective 6: DevOps Practices](#objective-6-devops-practices)
+  - [Objective 7: Software Architecture](#objective-7-software-architecture)
+  - [Keymap](#keymap)
 - [Documentation](#documentation)
   - [Product Requirements Document (PRD)](#product-requirements-document-prd)
   - [Software Requirements Specification (SRS)](#software-requirements-specification-srs)
@@ -13,6 +23,8 @@ _A MERN stack application for strategic debt payoff planning using Snowball and 
 - [Installation](#installation)
 - [Meet the Developer](#meet-the-developer)
 - [License](#license)
+
+---
 
 ## Introduction
 This is a portfolio project showcasing a web app built with MongoDB, Express, React, and Node.js (MERN). DebtFreePlanner offers a web-based solution for loan recipients to create debt repayment plans that accelerate their journey to financial freedom.

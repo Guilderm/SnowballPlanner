@@ -127,8 +127,6 @@ Consistency in terminology is crucial for clear communication across the project
 - **End User Terminology**: 
   - The term **"loan recipients"** should be used consistently when referring to the end users of the application. 
   - Alternatively, when discussing specific user scenarios or use cases, refer to the end user by the name of the relevant **persona** (e.g., Taylor, The Debt-Strapped Professional).
-  
-
 
 
 ## 3. References
