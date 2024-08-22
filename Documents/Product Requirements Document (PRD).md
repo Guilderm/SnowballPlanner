@@ -173,6 +173,8 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
  - Identify the most beneficial debt repayment strategy.
  - Minimize the total interest paid across all debts.
  - Estimate the timeline for becoming completely debt-free.
+ - Automatically update amounts in foreign currencies using up-to-date exchange rates.
+ - Export data for external manipulation and re-import it.
 
 #### 4.2.2. Emotional Jobs
 

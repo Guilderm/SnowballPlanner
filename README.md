@@ -109,6 +109,17 @@ These OKRs are aspirational and are not in any particular order.
 - **Key Result 7.6 [🔜]:** Use client-side rendering to improve user experience by delivering faster page loads and more interactive UIs.
 - **Revised Key Result 7.7 [🔜]:** Ensure that the Software Design Document (SDD) comprehensively covers the modular monolithic architecture, including detailed component diagrams, data flow diagrams, and explanations of the MVC and n-layer patterns.
 
+### Objective 8:
+**Develop a public API to enable third-party developers to integrate with DebtFreePlanner.**
+
+- **Key Result 8.1:** Develop API endpoints that enable full CRUD (Create, Read, Update, Delete) operations.
+- **Key Result 8.2:** Implement a system that authenticates developer applications and allows for revocation.
+- **Key Result 8.3:** Implement authorization mechanisms that enable end-users to authorize and revoke access for the developer applications.
+- **Key Result 8.4:** Implement access control mechanisms to ensure developers only access accounts for which users have provided consent.
+- **Key Result 8.5:** Implement rate limiting to prevent abuse, including improperly configured applications and DOS attacks.
+- **Key Result 8.6:** Properly document the API, including usage examples and best practice recommendations.
+
+
 **Keymap:**
 - **✔️** Completed
 - **⏳** In Progress
