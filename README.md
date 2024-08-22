@@ -1,5 +1,5 @@
-# Debt Free Planner
-_A MERN stack application for strategic debt payoff planning using Snowball and Avalanche methods._
+# DebtFreePlanner
+_A MERN stack application for strategic debt payoff planning using Snowball and other methods._
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -15,12 +15,96 @@ _A MERN stack application for strategic debt payoff planning using Snowball and 
 - [License](#license)
 
 ## Introduction
-This portfolio project showcases a debt payoff planner built with MongoDB, Express, React, and Node.js (MERN). It helps users develop personalized debt repayment plans, compare strategies, and track their progress toward being debt-free.
+This is a portfolio project showcasing a web app built with MongoDB, Express, React, and Node.js (MERN). DebtFreePlanner offers a web-based solution for loan recipients to create debt repayment plans that accelerate their journey to financial freedom.
 
-## Key Features
-- **Multiple Debt Repayment Strategies**: Supports Snowball, Avalanche, Snowflake, and Hybrid strategies.
-- **Multicurrency Support**: Manage debts in different currencies with ease.
-- **Customizable Debt Plans**: Tailor repayment plans to meet individual financial goals.
+### Key Features
+- **[Multiple Repayment Strategies](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md#multiple-repayment-strategies)**: Choose from several debt repayment methods to find the one that best suits your financial goals.
+- **[Snowflake Payments](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md#snowflake-payments)**: Make small, irregular payments whenever extra funds are available.
+- **[Multicurrency Support](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md#multicurrency-support)**: Manage debts in different currencies with automatic exchange rate updates.
+- **[Reporting](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md#reporting)**: Generate reports to track your progress and understand your repayment plans.
+- **[Secure Data Handling](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md#secure-data-handling)**: All sensitive user data is encrypted both at rest and in transit.
+
+### Learn More
+To see how DebtFreePlanner works in detail, visit the [project documentation](https://github.com/Guilderm/DebtFreePlanner/blob/main/README.md#documentation) for a comprehensive overview of features, architecture, and implementation.
+
+
+## Objectives and Key Results (OKRs)
+
+These OKRs are aspirational and are not in any particular order.
+
+### Objective 1: 
+**Develop a MERN Stack Application to Demonstrate Full-Stack Development Capabilities**
+
+- **Key Result 1.1 [🔜]:** Achieve 90% code coverage with unit tests across both backend and frontend components.
+- **Key Result 1.2 [🔜]:** Implement CI/CD pipelines using GitHub Actions for automated testing and deployment.
+- **Key Result 1.3 [🔜]:** Optimize the application to handle at least 100 concurrent users with no significant performance degradation, verified through load testing.
+- **Key Result 1.4 [🔜]:** Integrate at least two third-party financial APIs to enhance functionality.
+
+### Objective 2:
+**Adhere to Best Engineering Practices to Ensure a Maintainable, Scalable, and High-Quality Codebase**
+
+- **Key Result 2.1 [🔜]:** Design a modular system architecture with clear boundaries for independent development and testing.
+- **Key Result 2.2 [🔜]:** Ensure each module has a single, well-defined responsibility, leading to a cohesive codebase.
+- **Key Result 2.3 [🔜]:** Implement application layers to separate concerns, reducing overlap and enhancing maintainability.
+- **Key Result 2.4 [🔜]:** Encapsulate implementation details within modules, exposing only necessary interfaces to enhance abstraction and reduce complexity.
+- **Key Result 2.5 [🔜]:** Minimize dependencies between modules by implementing loose coupling, ensuring flexibility and resilience.
+
+### Objective 3:
+**Demonstrate Advanced Frontend Development Skills by Delivering a Polished, User-Friendly Interface**
+
+- **Key Result 3.1 [🔜]:** Develop and deploy accessible UI components using React and Tailwind CSS, adhering to WCAG 2.1 standards.
+- **Key Result 3.2 [🔜]:** Ensure full responsiveness of the application across mobile devices, tablets, small laptops, and large desktops.
+- **Key Result 3.3 [🔜]:** Implement a real-time, interactive dashboard using React, D3.js, or Chart.js.
+- **Key Result 3.4 [🔜]:** Achieve a Lighthouse performance score of 90 or above on both mobile and desktop.
+
+### Objective 4:
+**Ensure the Application is Secure and Protects User Data by Implementing Robust Security Practices**
+
+- **Key Result 4.1 [🔜]:** Implement Content Security Policy (CSP) headers to mitigate XSS attacks, achieving a CSP rating of "A" using tools like Mozilla Observatory.
+- **Key Result 4.2 [🔜]:** Conduct a security audit with tools like Zed Attack Proxy and Qualys Web Application Scanning, fixing 100% of identified critical vulnerabilities.
+- **Key Result 4.3 [🔜]:** Encrypt sensitive user data at rest (e.g., passwords, financial information) using AES-256.
+- **Key Result 4.4 [🔜]:** Ensure all sensitive data in transit is encrypted using HTTPS/TLS.
+- **Key Result 4.5 [🔜]:** Implement multi-factor authentication (MFA) for user accounts.
+- **Key Result 4.6 [🔜]:** Implement a cloud-based identity and access management (IAM) platform like Auth0 for secure user authentication and authorization.
+- **Key Result 4.7 [🔜]:** Integrate static application security testing (SAST) into the CI/CD pipeline to detect and fix vulnerabilities before deployment.
+- **Key Result 4.8 [🔜]:** Implement security best practices for dependencies using tools like Dependabot or Snyk.
+
+### Objective 5:
+**Demonstrate Expertise in Technical Writing by Creating Comprehensive and Clear Documentation for the Debt-Free Planner Project**
+
+- **Key Result 5.1 [🔜]:** Develop a Product Requirements Document (PRD) detailing the business case, product vision, and roadmap.
+- **Key Result 5.2 [🔜]:** Develop a Software Requirements Specification (SRS) translating the PRD into functional and non-functional requirements.
+- **Key Result 5.3 [🔜]:** Develop a Software Design Document (SDD) outlining software architecture, design patterns, and data structures.
+- **Key Result 5.4 [🔜]:** Develop a Software Test Document (STD) detailing the testing strategy, including test plans, test cases, and results.
+- **Key Result 5.5 [🔜]:** Develop a User Guide that provides a detailed explanation of how to use the Debt-Free Planner application, ensuring clarity and accessibility for end users.
+
+### Objective 6:
+**Exhibit Proficiency in DevOps Practices to Ensure Continuous Integration, Delivery, and Infrastructure Automation**
+
+- **Key Result 6.1 [🔜]:** Implement infrastructure as code (IaC) using Terraform to automate the provisioning of cloud resources.
+- **Key Result 6.2 [🔜]:** Achieve automated monitoring and logging setup using tools like Prometheus and Grafana, ensuring real-time visibility into system performance and uptime.
+- **Key Result 6.3 [🔜]:** Implement automated scaling policies for the application, ensuring seamless handling of traffic spikes without manual intervention.
+- **Key Result 6.4 [🔜]:** Ensure the deployment pipeline supports blue-green deployments or canary releases to minimize downtime and risk during updates.
+
+### Objective 7:
+**Demonstrate Advanced Software Architecture Skills by Designing a Scalable, Maintainable, and Extensible Modular Monolithic System**
+
+- **Key Result 7.1 [🔜]:** Develop a modular monolithic architecture, ensuring that each module is self-contained and can be independently developed, tested, and maintained.
+- **Key Result 7.2 [🔜]:** Implement a Model-View-Controller (MVC) pattern on the frontend to separate concerns and enhance maintainability, ensuring a clean separation between the user interface, business logic, and data handling.
+- **Key Result 7.3 [🔜]:** Design the backend using an n-layer architecture, including layers for presentation, business logic, and data access, to promote separation of concerns and make the system easier to scale and maintain.
+- **Key Result 7.4 [🔜]:** Implement a three-tier architecture to further separate the user interface, application processing, and data management, enhancing scalability and flexibility.
+- **Key Result 7.5 [🔜]:** Develop RESTful APIs to facilitate communication between the frontend and backend, ensuring that the APIs are well-documented, versioned, and follow best practices for security and performance.
+- **Key Result 7.6 [🔜]:** Use client-side rendering to improve user experience by delivering faster page loads and more interactive UIs.
+- **Revised Key Result 7.7 [🔜]:** Ensure that the Software Design Document (SDD) comprehensively covers the modular monolithic architecture, including detailed component diagrams, data flow diagrams, and explanations of the MVC and n-layer patterns.
+
+**Keymap:**
+- **✔️** Completed
+- **⏳** In Progress
+- **🔜** Not Started
+- **❌** No Longer Considered
+
+---
+
 
 ## Documentation
 This project prioritizes "working software over comprehensive documentation" in accordance with Agile principles while also recognizing the important role that documentation plays in creating a "shared understanding," especially in the context of a portfolio project.

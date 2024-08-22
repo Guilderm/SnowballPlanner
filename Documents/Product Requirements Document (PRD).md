@@ -101,6 +101,15 @@ DebtFreePlanner provides loan recipients with a web-based tool to manage debt re
 - **Key Result 2.2.5:** Create clear, comprehensive, and professional documentation for all aspects of the project, showcasing documentation skills.
 - **Key Result 2.2.6:** Demonstrate testing and quality assurance skills through comprehensive unit, integration, and end-to-end testing coverage.
 
+
+
+
+Objective 1: Empower Users to Create Personalized Debt Elimination Plans
+Key Result 1.1: Implement the Snowball and Avalanche strategies.
+Key Result 1.2: Develop a feature that enables users to create custom debt repayment plans.
+Key Result 1.3: Integrate multicurrency support.
+Key Result 1.4: Implement the Snowflake strategy, allowing users to apply one-time or recurring extra payments.
+
 ---
 
 
@@ -190,7 +199,7 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 
 ## 5. Personas
 
-> **Note:** At a later stage, we will create a user persona in [Figma Template](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
+> **Note:** At a later stage, we will create a user persona in [Figma](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
 
 ### 5.1. Taylor, The Debt-Strapped Professional
 
@@ -288,6 +297,10 @@ DebtFreePlanner offers a web-based solution for loan recipients to create debt r
 - **Basic Reporting**
   - Generates essential reports and visualizations to help loan recipients understand and track their repayment plans.
 
+- **Secure Data Handling:**
+   - The application ensures that all sensitive user data is encrypted both at rest and in transit.
+
+
 #### 6.1.2. Secondary Features
 
 - **Integration with Financial Tools**
@@ -295,6 +308,9 @@ DebtFreePlanner offers a web-based solution for loan recipients to create debt r
 
 - **Advanced Reporting**
   - Offers enhanced reporting and visualizations that incorporate data storytelling techniques to provide deeper insights.
+
+- **Data Portability:**
+   - Users can export and import their data, allowing them to maintain control over their information and use it in other financial tools or reports.
 
 #### 6.1.3. Potential Features
 The following features are under consideration for future development but are not yet confirmed or scheduled for implementation.
@@ -338,7 +354,7 @@ To ensure DebtFreePlanner remains focused on fulfilling its intended purpose, th
 
 ## 7. Value Proposition Canvas Summary
 
-> **Note:** At a later stage, we will create a Value Proposition Canvas in [Figma Template](https://www.figma.com/community/search?resource_type=mixed&sort_by=relevancy&query=Value+Proposition+Canvas).
+> **Note:** At a later stage, we will create a Value Proposition Canvas in [Figma](https://www.figma.com/community/search?resource_type=mixed&sort_by=relevancy&query=Value+Proposition+Canvas).
 
 ---
 
