@@ -5,8 +5,9 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 ## Table of Contents
 1. [Executive Summary](#1-executive-summary)
 2. [Objectives and Key Results (OKRs)](#2-objectives-and-key-results-okrs)
-   - 2.1. [Objective 1: Empower users to create debt elimination plans](#21-objective-1-empower-users-to-create-debt-elimination-plans)
-   - 2.2. [Objective 2: Develop a MERN stack Portfolio](#22-objective-2-develop-a-mern-stack-portfolio)
+   - 2.1. [Objective 1: Deliver a web-based solution for creating debt repayment plans](#21-objective-1-deliver-a-web-based-solution-for-creating-debt-repayment-plans)
+   - 2.2. [Objective 2: Ensure accessibility, usability, and security for all users](#22-objective-2-ensure-accessibility-usability-and-security-for-all-users)
+   - 2.3. [Objective 3: Provide comprehensive user education and support features](#23-objective-3-provide-comprehensive-user-education-and-support-features)
 3. [Market and Context](#3-market-and-context)
    - 3.1. [Problem Statement](#31-problem-statement)
    - 3.2. [Market Analysis](#32-market-analysis)
@@ -85,30 +86,31 @@ DebtFreePlanner provides loan recipients with a web-based tool to manage debt re
 
 ## 2. Objectives and Key Results (OKRs)
 
-### 2.1. Objective 1: Empower users to create debt elimination plans.
+## 2.1. Objective 1: Deliver a web-based solution that loan recipients can use to create debt repayment plans.
 
-- **Key Result 2.1.1:** Implement the Snowball and Avalanche strategies.
-- **Key Result 2.1.2:** Enable users to create custom debt repayment strategies.
-- **Key Result 2.1.3:** Integrate multicurrency support.
-- **Key Result 2.1.4:** Implement the Snowflake strategy, allowing users to apply one-time or recurring extra payments to their debt plan.
+- **Key Result 2.1.1:** Implement the Snowball, Avalanche, and Highest Monthly Payment strategies.
+- **Key Result 2.1.2:** Implement the Debt-to-Interest Ratio, Cash Flow Index (CFI), and custom strategies.
+- **Key Result 2.1.3:** Implement Snowflake payments.
+- **Key Result 2.1.4:** Implement multicurrency support.
+- **Key Result 2.1.5:** Implement basic reporting features.
+- **Key Result 2.1.6:** Integrate with financial tools.
+- **Key Result 2.1.7:** Implement advanced reporting features.
+- **Key Result 2.1.8:** Ensure data portability across different platforms.
 
-### 2.2. Objective 2: Develop a MERN stack Portfolio.
+### 2.2. Objective 2: Ensure accessibility, usability, and security for all users.
 
-- **Key Result 2.2.1:** Demonstrate advanced front-end development skills by delivering a polished, user-friendly interface.
-- **Key Result 2.2.2:** Implement security measures to protect against common web vulnerabilities, showcasing SecOps skills.
-- **Key Result 2.2.3:** Set up CI/CD pipelines to automate testing, deployment, and monitoring, demonstrating DevOps skills.
-- **Key Result 2.2.4:** Showcase software architecture skills through the successful design and implementation of a modular, scalable application structure.
-- **Key Result 2.2.5:** Create clear, comprehensive, and professional documentation for all aspects of the project, showcasing documentation skills.
-- **Key Result 2.2.6:** Demonstrate testing and quality assurance skills through comprehensive unit, integration, and end-to-end testing coverage.
+- **Key Result 2.2.1:** Achieve WCAG 2.1 AA compliance for accessibility across all major user interfaces.
+- **Key Result 2.2.2:** Implement a responsive design that works seamlessly on mobile, tablet, and desktop devices.
+- **Key Result 2.2.3:** Conduct usability testing with at least 10 users and incorporate findings into the final design.
+- **Key Result 2.2.4:** Implement security features, including user authentication and data encryption.
+- **Key Result 2.2.5:** Ensure GDPR compliance for data handling and user privacy.
 
+### 2.3. Objective 3: Provide comprehensive user education and support features.
 
-
-
-Objective 1: Empower Users to Create Personalized Debt Elimination Plans
-Key Result 1.1: Implement the Snowball and Avalanche strategies.
-Key Result 1.2: Develop a feature that enables users to create custom debt repayment plans.
-Key Result 1.3: Integrate multicurrency support.
-Key Result 1.4: Implement the Snowflake strategy, allowing users to apply one-time or recurring extra payments.
+- **Key Result 2.3.1:** Develop an in-app tutorial or onboarding guide for new users.
+- **Key Result 2.3.2:** Create a help center with FAQs, user guides, and video tutorials.
+- **Key Result 2.3.3:** Implement in-app tooltips and contextual help for key features.
+- **Key Result 2.3.4:** Collect and analyze user feedback to improve educational materials in future iterations.
 
 ---
 
@@ -279,7 +281,7 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 
 ## 6. Value Proposition
 
-DebtFreePlanner offers a web-based solution for loan recipients to create debt repayment plans that accelerate their journey to financial freedom.
+DebtFreePlanner offers a web-based solution that loan recipients can use to create a debt repayment plans that accelerate their journey to financial freedom.
 
 ### 6.1. Feature Set
 
@@ -303,14 +305,15 @@ DebtFreePlanner offers a web-based solution for loan recipients to create debt r
 
 #### 6.1.2. Secondary Features
 
+- **Data Portability:**
+   - Users can export and import their data, allowing them to maintain control over their information and use it in other financial tools or reports.
+
 - **Integration with Financial Tools**
   - Synchronizes with budgeting applications like YNAB and possibly Firefly III for seamless data management.
 
 - **Advanced Reporting**
   - Offers enhanced reporting and visualizations that incorporate data storytelling techniques to provide deeper insights.
 
-- **Data Portability:**
-   - Users can export and import their data, allowing them to maintain control over their information and use it in other financial tools or reports.
 
 #### 6.1.3. Potential Features
 The following features are under consideration for future development but are not yet confirmed or scheduled for implementation.
