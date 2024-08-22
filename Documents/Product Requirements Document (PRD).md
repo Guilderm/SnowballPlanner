@@ -63,6 +63,7 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 
 ---
 
+
 ## 1. Executive Summary
 
 **Product Name:** DebtFreePlanner  
@@ -77,16 +78,15 @@ DebtFreePlanner provides loan recipients with a web-based tool to manage debt re
 **Target Audience**  
  Individuals and families managing multiple loans, especially those who would benefit from an online debt repayment planner with multicurrency support
 
-**Key Objectives**
-- Empower loan recipients to effectively manage their debt repayment plans.
-- Develop a robust MERN stack portfolio project that demonstrates full-stack development, security, and DevOps capabilities.
+**Key Objective**
+Provide loan recipients with a tool that optimizes their debt repayment plans through informed decision-making.
 
 ---
 
 
 ## 2. Objectives and Key Results (OKRs)
 
-## 2.1. Objective 1: Deliver a web-based solution that loan recipients can use to create debt repayment plans.
+### 2.1. Objective 1: Deliver a web-based solution that loan recipients can use to create debt repayment plans.
 
 - **Key Result 2.1.1:** Implement the Snowball, Avalanche, and Highest Monthly Payment strategies.
 - **Key Result 2.1.2:** Implement the Debt-to-Interest Ratio, Cash Flow Index (CFI), and custom strategies.
