@@ -37,7 +37,7 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
      - 6.1.4. [Excluded Features](#614-excluded-features)
    - 6.2. [Gain Creators](#62-gain-creators)
    - 6.3. [Pain Relievers](#63-pain-relievers)
-7. [Value Proposition Canvas Summary](#7-value-proposition-canvas-summary)
+7. [Value Proposition Canvas](#7-value-proposition-canvas)
 8. [User Interface and User Experience (UI/UX)](#8-user-interface-and-user-experience-uiux)
    - 8.1. [User Flows](#81-user-flows)
      - 8.1.1. [Session Management](#811-session-management)
@@ -364,9 +364,15 @@ To ensure DebtFreePlanner remains focused on fulfilling its intended purpose, th
 ---
 
 
-## 7. Value Proposition Canvas Summary
+## 7. Value Proposition Canvas
 
 > **Note:** At a later stage, we will create a Value Proposition Canvas in [Figma](https://www.figma.com/community/search?resource_type=mixed&sort_by=relevancy&query=Value+Proposition+Canvas).
+
+
+### 7.1.  Value Proposition Canvas
+ValuePropositionCanvas.png
+
+![Value Proposition Canvas](Medias/ValuePropositionCanvas.png)
 
 ---
 
@@ -380,10 +386,10 @@ To ensure DebtFreePlanner remains focused on fulfilling its intended purpose, th
 #### Key Map:
 
 - **Arrow**: Indicates the sequence or direction of flow.
-- **Capsule / Pill**:  Represents the start or end of a process, or the initiation of a different user flow.
-- **<<task>>**: Denotes a specific task or process within the flow.
-- **input sqare**: Represents an input operation, typically user-provided data.
-- **output q**: Represents an output operation, such as displaying results.
+- **Capsule/Pill**:  Represents the start or end of a process, or the initiation of a different user flow.
+- **Sqare**: Denotes a specific task or process within the flow.
+- **Input Sqare**: Represents an input operation, typically user-provided data.
+- **Output Sqare**: Represents an output operation, such as displaying results.
 - **Diamond**: Represents a decision point.
 
 
@@ -404,42 +410,65 @@ endif
 @enduml
 ```
 
-![User Flows Key Map](Medias/UserFlows-KeyMap.png)
+![User Flow's Key Map](Medias/UserFlows-KeyMap.png)
 
 ### 8.1.1. **Session Management:**
 
-   - Users create an account or log in to access their debt repayment plans.
+   - Users create an account or log in.
 
-![User Flow for Session Management](Medias/UserFlows-SessionManagement.png)
+```plantuml:
+@startuml
+title User Login Process
 
-   ```plantuml:
-    @startuml
-    title Session Management User Flow
+start
+:Open Application;
 
-    start
-    :Open Application;
-
-    if (Existing Account?) then (Yes)
-      :Login;
-      :Enter Credentials;
-      :Submit Login Form;
-      if (Authentication Successful?) then (Yes)
-        :Access Dashboard;
-      else (No)
-        :Show Error Message;
-      endif
+while (Is user logged in?) is (No)
+  if (User has account?) then (Yes)
+    :Choose Login Method; <<task>>
+    
+    if (Will log in via Identity Provider?) then (Yes)
+      :Redirect to Identity Provider; <<task>>
     else (No)
-      :Sign Up;
-      :Enter Email and Password;
-      :Submit Sign Up Form;
-      :Confirmation Email Sent;
-      :Click Confirmation Link;
-      :Account Created;
-      :Access Dashboard;
+      :Enter Email and Password; <<input>>
     endif
 
-    @enduml
-   ```
+    :Process Login; <<task>>
+    if (Authentication Successful?) then (Yes)
+      :Display Welcome Message; <<output>>
+    else (No)
+      :Show Error Message; <<output>>
+    endif
+
+  else (No)
+    if (Sign Up via Identity Provider?) then (Yes)
+      :Redirect to Identity Provider; <<task>>
+      if (Is account created?) then (Yes)
+        :Show Account Created; <<output>>
+      else (No)
+        :Show Error Message; <<output>>
+      endif
+    else (No)
+      :Enter Email, Password, and Confirm Password; <<input>>
+      :Process Sign Up Form; <<task>>
+      :Confirmation Email Sent; <<output>>
+      :Click Confirmation Link; <<task>>
+      if (Is account created?) then (Yes)
+        :Show Account Created; <<output>>
+      else (No)
+        :Show Error Message; <<output>>
+      endif
+    endif
+  endif
+
+endwhile (Yes)
+
+:Grant Access; <<task>>
+stop
+@enduml
+```
+
+![User Flow for Session Management](Medias/UserFlows-SessionManagement.png)
 
 ### 8.1.2. **Plan Management:**
 
