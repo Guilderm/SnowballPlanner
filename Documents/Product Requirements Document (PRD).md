@@ -587,10 +587,7 @@ stop
 
 ### 8.1.3. **User Profile**
 
-**Purpose:** This flow allows users to manage their personal information and account settings, ensuring a personalized and consistent experience across the application.
-
-- **8.1.2.1. Single-User Context:** Supports the management of personal data, preferences, and settings for a single user.
-- **8.1.2.2. 🚧 Multi-User Context:** Extends to manage multiple profiles within a single account, facilitating role assignment, profile switching, and permissions management.
+**Purpose:** This flow allows users to manage their personal information and account settings.
 
 **Implemented under module:** Profile Management
 
@@ -607,19 +604,57 @@ title TBD
 
 ### 8.1.3. **Debt Plan**
 
-**Purpose:** Centralized flow for managing debt repayment plans, enabling users to create, modify, and monitor their debt reduction strategies.
+**Purpose:** This flow outlines how users can create and manage multiple debt repayment plans and collaborate with others.
+
+8.1.X.1. Multiple Plan Support: Users can create multiple debt repayment plans, each with unique strategies and debts.
+
+8.1.X.2. Multi-User Support: Users can invite others to collaborate on specific plans, granting them read or write permissions. Admins can manage user roles, including revoking access or granting admin status to others.
+
 
 - **8.1.3.1. Debt Management:** Focuses on managing individual debts, including loan amounts, interest rates, and repayment terms.
 
   **Implemented under module:** Debt Management
 
+```plantuml
+@startuml
+title TBD
+
+@enduml
+```
+
+
 - **8.1.3.2. Snowflake Management:** Manages irregular payments (snowflake payments) to help users reduce their debt faster.
 
   **Implemented under module:** Snowflake Management
 
+```plantuml
+@startuml
+title TBD
+
+@enduml
+```
+
+
 - **8.1.3.3. Payment Management:** Manages the overall allocation of payments across debts, ensuring users stay on track  with their repayment goals.
 
   **Implemented under module:** Payment Management
+
+```plantuml
+@startuml
+title TBD
+
+@enduml
+```
+
+
+ **Implemented under module:** Plan Management
+
+```plantuml
+@startuml
+title TBD
+
+@enduml
+```
 
 ---
 
