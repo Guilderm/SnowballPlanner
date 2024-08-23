@@ -1,6 +1,7 @@
 # Product Requirements Document (PRD)
-
 This PRD lays the groundwork for the DebtFreePlanner by clearly defining the product’s purpose and target audience. The structure and content of this document are guided by the principles and methodologies outlined in [_Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation_](https://designabetterbusiness.com/) by Pijl, Lokitz, and Solomon (2016). Additionally, insights from the [Product Mastery Now](https://productmasterynow.com/mastery/) podcast shape the approach, particularly within the "design and development" knowledge area of the "product innovation management" framework.
+
+
 ## Table of Contents
 1. [Executive Summary](#1-executive-summary)
 2. [Objectives and Key Results (OKRs)](#2-objectives-and-key-results-okrs)
@@ -383,7 +384,7 @@ ValuePropositionCanvas.png
 ---
 
 
-### User Interface and User Experience (UI/UX)
+## 8. User Interface and User Experience (UI/UX)
 
 ### 8.1. User Flows
 
@@ -394,6 +395,9 @@ ValuePropositionCanvas.png
 - **Input Square**: Represents an input operation, typically user-provided data.
 - **Output Square**: Represents an output operation, such as displaying results.
 - **Diamond**: Represents a decision point where the user may be presented with options or branching paths.
+
+
+For a Guide refer to [PlantUML Activity Diagram](https://plantuml.com/activity-diagram-beta)
 
 
 ```plantuml:
@@ -593,9 +597,40 @@ stop
 
 ```plantuml
 @startuml
-title TBD
+start
 
+repeat
+    :User navigates from the main dashboard or menu \n to the Profile Management page; <<task>>
+
+    if (Select Section?) then (General Information)
+        :Display General Information: \n Name \n Email \n Base Currency \n Subscription Status; <<output>>
+        
+        repeat
+            :User inputs changes to personal information; <<input>>
+            :System validates inputs; <<task>>
+      
+backward: Display error message; <<output>>
+        repeat while (Are inputs valid?) is (No)
+->Yes;
+
+        :Save changes to selected section; <<task>>
+        :Display confirmation toast; <<output>>
+
+    elseif (Security Settings)
+        :Display Security Settings: \n Reset Password \n Set up MFA; <<output>>
+        :User inputs changes to security settings; <<input>>
+    elseif (Privacy Management)
+        :Display Privacy Management: \n Delete Data \n Delete Account; <<output>>
+        :User inputs changes to privacy settings; <<input>>
+    else
+        :Display other sections as needed; <<output>>
+        :User inputs changes to other sections; <<input>>
+    endif
+
+repeat while (User wants to make more changes?)
+stop
 @enduml
+
 ```
 
 ![User Login Process (Single-User)](Medias/UserFlows-UserLoginProcess-SingleUser.png)
