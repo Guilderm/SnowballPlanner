@@ -417,13 +417,13 @@ endif
 
 ---
 
-### 8.1.1. **Session Management:**
 
 ### 8.1.1. **User Session**
 
 **Purpose:** This flow outlines how users navigate the authentication process, ensuring a smooth and secure login experience.
 
-- **8.1.1.1. Single-User Context:** Focuses on managing individual user sessions, including login, logout, and maintaining session continuity.
+#### 8.1.1.1. **Single-User Context:**
+Focuses on managing individual user sessions, including login, logout, and maintaining session continuity.
 
 ```plantuml:
 @startuml
@@ -476,7 +476,9 @@ stop
 
 ![User Login Process (Single-User)](Medias/UserFlows-UserLoginProcess-SingleUser.png)
 
-- **8.1.1.2. 🚧 Multi-User Context:** Expands to manage multiple user sessions under a single account, supporting role-based access control and seamless switching between user profiles.
+#### 8.1.1.2. 🚧 **Multi-User Context:**
+ Expands to manage multiple user sessions under a single account, supporting role-based access control and seamless switching between user profiles.
+
 ```plantuml:
 @startuml
 title User Login Process (Multi-User with Plan Selection)
@@ -538,16 +540,18 @@ stop
 **Implemented under module:** Session Management
 
 
-### 8.1.3. **subscription Process**
-Note: 
-The application will not store bank card information to reduce the app's attractiveness to criminals.
+### 8.1.2. **Subscription Process**
+>**Note:**  
+The application will not store bank card information to reduce the app's attractiveness to criminals.  
 The subscription model includes a free trial followed by an annual subscription payment.
 
-This flow outlines how users subscription process to the paid tier. 
+This flow outlines how users go through the subscription process for the paid tier.
 
-```plantuml:
+**Implemented under module:** Subscription Management
+
+```plantuml
 @startuml
-title Billing Process
+title Subscription Process
 
 start
 :Access Subscription Page;
@@ -573,9 +577,15 @@ repeat while (Is Payment Successful?) is (No)
 stop
 
 @enduml
+```
+
+![Subscription Process](Medias/UserFlows-SubscriptionProcess.png)
+
+
 ---
 
-### 8.1.2. **User Profile**
+
+### 8.1.3. **User Profile**
 
 **Purpose:** This flow allows users to manage their personal information and account settings, ensuring a personalized and consistent experience across the application.
 
@@ -584,21 +594,16 @@ stop
 
 **Implemented under module:** Profile Management
 
+```plantuml
+@startuml
+title TBD
 
-
-### 8.1.3. Billing Process
-
-> **Note:**  
-The application will not store bank card information to reduce the app's attractiveness to criminals.  
-The subscription model includes a free trial followed by an annual subscription payment.
-
-
+@enduml
 ```
 
-**Implemented under module:** subscription Management
+![User Login Process (Single-User)](Medias/UserFlows-UserLoginProcess-SingleUser.png)
 
 ---
-
 
 ### 8.1.3. **Debt Plan**
 
@@ -612,7 +617,7 @@ The subscription model includes a free trial followed by an annual subscription 
 
   **Implemented under module:** Snowflake Management
 
-- **8.1.3.3. Payment Management:** Manages the overall allocation of payments across debts, ensuring users stay on track with their repayment goals.
+- **8.1.3.3. Payment Management:** Manages the overall allocation of payments across debts, ensuring users stay on track  with their repayment goals.
 
   **Implemented under module:** Payment Management
 
