@@ -1,7 +1,6 @@
 # Product Requirements Document (PRD)
 
 This PRD lays the groundwork for the DebtFreePlanner by clearly defining the product’s purpose and target audience. The structure and content of this document are guided by the principles and methodologies outlined in [_Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation_](https://designabetterbusiness.com/) by Pijl, Lokitz, and Solomon (2016). Additionally, insights from the [Product Mastery Now](https://productmasterynow.com/mastery/) podcast shape the approach, particularly within the "design and development" knowledge area of the "product innovation management" framework.
-
 ## Table of Contents
 1. [Executive Summary](#1-executive-summary)
 2. [Objectives and Key Results (OKRs)](#2-objectives-and-key-results-okrs)
@@ -41,13 +40,20 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 8. [User Interface and User Experience (UI/UX)](#8-user-interface-and-user-experience-uiux)
    - 8.1. [User Flows](#81-user-flows)
      - 8.1.1. [Session Management](#811-session-management)
-     - 8.1.2. [Plan Management](#812-plan-management)
-     - 8.1.3. [Debt Management](#813-debt-management)
-     - 8.1.4. [Snowflake Management](#814-snowflake-management)
-     - 8.1.5. [Payment Management](#815-payment-management)
-     - 8.1.6. [Profile Management](#816-profile-management)
-     - 8.1.7. [Data Management](#817-data-management)
-     - 8.1.8. [Report Management](#818-report-management)
+     - 8.1.2. [User Profile](#812-user-profile)
+     - 8.1.3. [Debt Plan](#813-debt-plan)
+       - 8.1.3.1. [Debt Management](#8131-debt-management)
+       - 8.1.3.2. [Snowflake Management](#8132-snowflake-management)
+       - 8.1.3.3. [Payment Management](#8133-payment-management)
+     - 8.1.4. [Debt Analyst](#814-debt-analyst)
+       - 🚧 8.1.4.1. [Advanced Reporting Context](#8141-advanced-reporting-context)
+       - 🚧 8.1.4.2. [AI-Driven Insights](#8142-ai-driven-insights)
+     - 8.1.5. [Data Management](#815-data-management)
+       - 8.1.5.1. [Import Management](#8151-import-management)
+       - 8.1.5.2. [Export Management](#8152-export-management)
+     - 8.1.6. [PFS Integration Management](#816-pfs-integration-management)
+       - 🚧 8.1.6.1. [YNAB Management](#8161-ynab-management)
+       - 🚧 8.1.6.2. [Firefly III Management](#8162-firefly-iii-management)
    - 8.2. [Wireframes/Mockups](#82-wireframesmockups)
 9. [User Stories](#9-user-stories)
    - 9.1. [User Stories](#91-user-stories)
@@ -60,9 +66,6 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
    - 10.6. [Legal Risk Management](#106-legal-risk-management)
    - 10.7. [Protection of Intellectual Property (IP)](#107-protection-of-intellectual-property-ip)
 11. [Related Documents](#11-related-documents)
-
----
-
 
 ## 1. Executive Summary
 
@@ -377,20 +380,17 @@ ValuePropositionCanvas.png
 ---
 
 
-## 8. User Interface and User Experience (UI/UX)
+### User Interface and User Experience (UI/UX)
 
 ### 8.1. User Flows
 
-### 8.1. User Flows
-
-#### Key Map:
-
+> **Key Map:**
 - **Arrow**: Indicates the sequence or direction of flow.
-- **Capsule/Pill**:  Represents the start or end of a process, or the initiation of a different user flow.
-- **Sqare**: Denotes a specific task or process within the flow.
-- **Input Sqare**: Represents an input operation, typically user-provided data.
-- **Output Sqare**: Represents an output operation, such as displaying results.
-- **Diamond**: Represents a decision point.
+- **Capsule/Pill**: Represents the start or end of a process, or the initiation of a different user flow.
+- **Square**: Denotes a specific task or process within the flow.
+- **Input Square**: Represents an input operation, typically user-provided data.
+- **Output Square**: Represents an output operation, such as displaying results.
+- **Diamond**: Represents a decision point where the user may be presented with options or branching paths.
 
 
 ```plantuml:
@@ -412,9 +412,15 @@ endif
 
 ![User Flow's Key Map](Medias/UserFlows-KeyMap.png)
 
+---
+
 ### 8.1.1. **Session Management:**
 
-   - Users create an account or log in.
+### 8.1.1. **User Session**
+
+**Purpose:** This flow outlines how users navigate the authentication process, ensuring a smooth and secure login experience.
+
+- **8.1.1.1. Single-User Context:** Focuses on managing individual user sessions, including login, logout, and maintaining session continuity.
 
 ```plantuml:
 @startuml
@@ -441,23 +447,21 @@ while (Is user logged in?) is (No)
     endif
 
   else (No)
+    :Choose Sign Up Method; <<task>>
+
     if (Sign Up via Identity Provider?) then (Yes)
       :Redirect to Identity Provider; <<task>>
-      if (Is account created?) then (Yes)
-        :Show Account Created; <<output>>
-      else (No)
-        :Show Error Message; <<output>>
-      endif
     else (No)
       :Enter Email, Password, and Confirm Password; <<input>>
       :Process Sign Up Form; <<task>>
       :Confirmation Email Sent; <<output>>
-      :Click Confirmation Link; <<task>>
-      if (Is account created?) then (Yes)
-        :Show Account Created; <<output>>
-      else (No)
-        :Show Error Message; <<output>>
-      endif
+      :Click Confirmation Link; <<input>>
+    endif
+    
+    if (Is account created?) then (Yes)
+      :Show Account Created; <<output>>
+    else (No)
+      :Show Error Message; <<output>>
     endif
   endif
 
@@ -470,41 +474,77 @@ stop
 
 ![User Flow for Session Management](Medias/UserFlows-SessionManagement.png)
 
-### 8.1.2. **Plan Management:**
+- **8.1.1.2. 🚧 Multi-User Context:** Expands to manage multiple user sessions under a single account, supporting role-based access control and seamless switching between user profiles.
 
-### 8.1.3. **Debt Management:**
+**Implemented under module:** Session Management
 
-- The Debt Management sub-flow allows users to manage their debts, including the following aspects:
-  - **Loan Amount (Remaining Principal):** The total remaining balance that needs to be repaid.
-  - **Interest Rate:** The annual percentage rate (APR) charged on the remaining principal.
-  - **Loan Term:** The length of time over which the loan will be repaid, typically expressed in years or months.
-  - **Repayment Frequency:** The schedule for payments (e.g., monthly, bi-weekly).
-  - **Start Date:** The date when the loan was disbursed or when the repayment schedule began.
-  - **Interest Type:** Indicates whether the interest rate is fixed (remains constant) or variable (can change over time).
-  - **Amortization Type:** Specifies whether the loan is fully amortizing, interest-only, or includes a balloon payment at the end.
-  - **Fees and Penalties:** Any additional charges, such as origination fees, prepayment penalties, or late payment fees.
+---
 
-### 8.1.4. **Snowflake Management:**
+### 8.1.2. **User Profile**
 
-- The Snowflake Management sub-flow enables users to manage their snowflake payments, focusing on:
-  - **Extra Payment Amount:** Any additional payments made beyond the regularly scheduled payments.
-  - **Payment Frequency:** How often these extra payments are made (e.g., monthly, bi-weekly).
-  - **Start Date:** The date when the extra payments begin.
+**Purpose:** This flow allows users to manage their personal information and account settings, ensuring a personalized and consistent experience across the application.
 
-### 8.1.5. **Payment Management:**
+- **8.1.2.1. Single-User Context:** Supports the management of personal data, preferences, and settings for a single user.
+- **8.1.2.2. 🚧 Multi-User Context:** Extends to manage multiple profiles within a single account, facilitating role assignment, profile switching, and permissions management.
 
-- The Payment Management sub-flow is where users define their minimum global monthly payments. This involves setting the total amount they are willing to allocate each month towards debt repayment, which will then be distributed according to their chosen debt reduction strategy (e.g., snowball method).
+**Implemented under module:** Profile Management
 
-### 8.1.6. **Profile Management:**
+---
 
-   - Users update their personal information, change passwords, adjust notification preferences, and delete their account if desired.
+### 8.1.3. **Debt Plan**
 
-### 8.1.7. **Data Management:**
+**Purpose:** Centralized flow for managing debt repayment plans, enabling users to create, modify, and monitor their debt reduction strategies.
 
-   - Users export and import their debt repayment data for personal records or to share with financial advisors.
+- **8.1.3.1. Debt Management:** Focuses on managing individual debts, including loan amounts, interest rates, and repayment terms.
 
-### 8.1.8. **Report Management:**
-   - Users view, print, and gain insights from their reports on debt repayment progress and strategies.
+  **Implemented under module:** Debt Management
+
+- **8.1.3.2. Snowflake Management:** Manages irregular payments (snowflake payments) to help users reduce their debt faster.
+
+  **Implemented under module:** Snowflake Management
+
+- **8.1.3.3. Payment Management:** Manages the overall allocation of payments across debts, ensuring users stay on track with their repayment goals.
+
+  **Implemented under module:** Payment Management
+
+---
+
+### 8.1.4. **Debt Analyst**
+
+**Purpose:** Provides users with insightful reports and visualizations to track their debt repayment progress, enabling informed decision-making and maintaining motivation.
+
+- **Basic Reporting Context:** Delivers standard reports that help users monitor their debt reduction efforts.
+- **🚧 Advanced Reporting Context:** Offers enhanced reporting capabilities with deeper insights and sophisticated visualizations, allowing users to drill down into their debt repayment data.
+- **🚧 AI-Driven Insights:** Leverages AI to provide users with personalized recommendations and predictive analytics, helping them optimize their debt repayment strategies.
+
+**Implemented under module:** Reporting Management
+
+---
+
+### 8.1.5. **Data Management**
+
+**Purpose:** Manages the processes for importing and exporting user data, ensuring that users have full control over their information.
+
+- **8.1.5.1. Import Management:** Facilitates the importing of data from external sources, ensuring that users can seamlessly integrate external financial data.
+- **8.1.5.2. Export Management:** Allows users to export their data for use in other financial tools or for backup, ensuring data portability and user control.
+
+**Implemented under module:** Data Management
+
+---
+
+### 8.1.6. **PFS Integration Management**
+
+**Purpose:** Manages the integration of the application with external personal finance software (PFS), allowing users to synchronize their data for a more comprehensive financial overview.
+
+- **🚧 8.1.6.1. YNAB Management:** Handles integration with YNAB, allowing users to import or export budget data.
+- **🚧 8.1.6.2. Firefly III Management:** Manages the connection with Firefly III, enabling data synchronization between the two platforms.
+
+**Implemented under module:** Integration Management
+
+---
+
+> **🚧 Note:** Features marked with 🚧 are still under consideration and have not yet been added to the roadmap. The diagrams for these features are rough drafts or do not exist. If the feature is ultimately included, it will be further detailed in this document; otherwise, it will be removed.
+
 
 ### 8.2. Wireframes/Mockups
 
