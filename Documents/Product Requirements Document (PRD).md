@@ -205,23 +205,29 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 
 > **Note:** At a later stage, we will create a user persona in [Figma](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
 
+## 5. Personas
+
+> **Note:** At a later stage, we will create a user persona in [Figma](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
+
 ### 5.1. Taylor, The Debt-Strapped Professional
 
 - **Age:** Millennial (Gen Y)
 - **Occupation:** Mid-Level Manager in IT
 - **Economic Status:** Upper Middle Class
 - **Region:** Western Europe
-- **Financial Status:** Living paycheck to paycheck
+- **Financial Status:** Struggling with cash flow despite a comfortable income
 
 - **Jobs to Be Done:**
   - Identify the most beneficial debt repayment strategy.
   - Minimize the total interest paid across all debts.
+  - Automatically update loan in foreign currencies.
   - Estimate the timeline for becoming completely debt-free.
 
 - **Pains:**
   - Lack of clarity and confidence in prioritizing debt payments.
   - Persistent stress and anxiety due to uncertainty in managing multiple debts.
   - Difficulty in finding practical tools to streamline debt management.
+  - The burden of manually converting foreign currency loans to the base currency.
 
 - **Gains:**
   - Regaining control over finances with clear, actionable repayment plans.
@@ -230,11 +236,12 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 
 - **Behavior:**
   - Recently started using YNAB to manage personal finances.
-  - Frequently visits financial advice blogs and YouTube channels for tips on debt management.
+  - Strapped for time, so prefers solutions that integrate well and just works.
   - Prefers using financial tools on a laptop but occasionally uses mobile devices for quick checks.
 
 - **Needs:**
   - A tool that provides clear guidance on debt prioritization and repayment strategies.
+  - Ability to manage debts in multiple currencies.
   - Features that minimize interest paid and accurately project debt-free dates.
   - Seamless integration with existing budgeting tools like YNAB.
 
@@ -266,7 +273,8 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 - **Behavior:**
   - Regularly uses an online banking app to monitor spending and manage finances.
   - Maintains the household budget in Excel.
-  - Actively compares financial products online to ensure access to the best interest rates and terms.
+  - Is very privacy-focused and prefers doing things manually to maintain a sense of control.
+  - Is very budget-conscious and actively seeks out deals and discounts.
 
 - **Needs:**
   - A streamlined tool to manage and optimize loan payments, providing clear insights into interest savings from additional payments.
@@ -277,9 +285,8 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
   - Aims to achieve financial freedom and security for the family.
   - Values simplicity, reliability, and transparency in financial tools.
 
-- **Quote:** "I need a tool that helps me see the bigger picture and ensures our family's financial well-being."
+- **Quote:** "I need a tool that helps me see the bigger picture so that I can ensure our family's financial well-being in the long term."
 
----
 
 ## 6. Value Proposition
 
@@ -368,11 +375,42 @@ To ensure DebtFreePlanner remains focused on fulfilling its intended purpose, th
 
 ### 8.1. User Flows
 
+### 8.1. User Flows
+
+#### Key Map:
+
+- **Arrow**: Indicates the sequence or direction of flow.
+- **Capsule / Pill**:  Represents the start or end of a process, or the initiation of a different user flow.
+- **<<task>>**: Denotes a specific task or process within the flow.
+- **input sqare**: Represents an input operation, typically user-provided data.
+- **output q**: Represents an output operation, such as displaying results.
+- **Diamond**: Represents a decision point.
+
+
+```plantuml:
+@startuml
+title Key Map
+
+: Represents the start or end of flow;
+: Represents a task or procedure; <<task>>
+: Represents an input operation; <<input>>
+: Represents an output operation; <<output>>
+
+if (Represents a decision point) then (Yes)
+  :Process Action 1; <<task>>
+else (No)
+  :Process Action 2; <<task>>
+endif
+@enduml
+```
+
+![User Flows Key Map](Medias/UserFlows-KeyMap.png)
+
 ### 8.1.1. **Session Management:**
 
    - Users create an account or log in to access their debt repayment plans.
 
-   ![alt text](image.png)
+![User Flow for Session Management](Medias/UserFlows-SessionManagement.png)
 
    ```plantuml:
     @startuml
