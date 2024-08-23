@@ -387,7 +387,7 @@ ValuePropositionCanvas.png
 
 ### 8.1. User Flows
 
-> **Key Map:**
+**Key Map:**
 - **Arrow**: Indicates the sequence or direction of flow.
 - **Capsule/Pill**: Represents the start or end of a process, or the initiation of a different user flow.
 - **Square**: Denotes a specific task or process within the flow.
@@ -537,6 +537,42 @@ stop
 
 **Implemented under module:** Session Management
 
+
+### 8.1.3. **subscription Process**
+Note: 
+The application will not store bank card information to reduce the app's attractiveness to criminals.
+The subscription model includes a free trial followed by an annual subscription payment.
+
+This flow outlines how users subscription process to the paid tier. 
+
+```plantuml:
+@startuml
+title Billing Process
+
+start
+:Access Subscription Page;
+
+note
+The app does not store 
+bank card information.
+end note
+
+repeat :Enter Payment Information; <<input>>
+
+:Submit Payment Details; <<task>>
+:Process Payment via Secure Gateway; <<task>>
+
+backward :Retry Payment;
+repeat while (Is Payment Successful?) is (No)
+  -> Yes;
+
+:Show Confirmation Screen; <<output>>
+:Send Confirmation Email; <<output>>
+:Update Account Status; <<task>>
+
+stop
+
+@enduml
 ---
 
 ### 8.1.2. **User Profile**
@@ -548,7 +584,21 @@ stop
 
 **Implemented under module:** Profile Management
 
+
+
+### 8.1.3. Billing Process
+
+> **Note:**  
+The application will not store bank card information to reduce the app's attractiveness to criminals.  
+The subscription model includes a free trial followed by an annual subscription payment.
+
+
+```
+
+**Implemented under module:** subscription Management
+
 ---
+
 
 ### 8.1.3. **Debt Plan**
 
