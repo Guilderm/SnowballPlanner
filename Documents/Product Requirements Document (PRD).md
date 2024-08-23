@@ -431,7 +431,6 @@ start
 
 while (Is user logged in?) is (No)
   if (User has account?) then (Yes)
-    :Choose Login Method; <<task>>
     
     if (Will log in via Identity Provider?) then (Yes)
       :Redirect to Identity Provider; <<task>>
@@ -472,9 +471,66 @@ stop
 @enduml
 ```
 
-![User Flow for Session Management](Medias/UserFlows-SessionManagement.png)
+![User Login Process (Single-User)](Medias/UserFlows-UserLoginProcess-SingleUser.png)
 
 - **8.1.1.2. 🚧 Multi-User Context:** Expands to manage multiple user sessions under a single account, supporting role-based access control and seamless switching between user profiles.
+```plantuml:
+@startuml
+title User Login Process (Multi-User with Plan Selection)
+
+start
+:Open Application;
+
+while (Is user logged in?) is (No)
+  if (User has account?) then (Yes)
+    
+    if (Will log in via Identity Provider?) then (Yes)
+      :Redirect to Identity Provider; <<task>>
+    else (No)
+      :Enter Email and Password; <<input>>
+    endif
+
+    :Process Login; <<task>>
+    if (Authenticated successfully?) then (Yes)
+
+      if (Has Multiple Plans?) then (Yes)
+        :User chooses their plan; <<input>>
+      else (No)
+    endif
+
+    else (No)
+      :Show Error Message; <<output>>
+    endif
+
+  else (No)
+    :Choose Sign Up Method; <<task>>
+
+    if (Sign Up via Identity Provider?) then (Yes)
+      :Redirect to Identity Provider; <<task>>
+    else (No)
+      :Enter Email, Password, and Confirm Password; <<input>>
+      :Process Sign Up Form; <<task>>
+      :Confirmation Email Sent; <<output>>
+      :Click Confirmation Link; <<input>>
+    endif
+
+    if (Is account created?) then (Yes)
+      :Show Account Created; <<output>>
+    else (No)
+      :Show Error Message; <<output>>
+    endif
+  endif
+
+endwhile (Yes)
+
+:Grant Access; <<task>>
+stop
+@enduml
+
+@enduml
+```
+
+![User Login Process (Multi-User with Plan Selection)](Medias/UserFlows-UserLoginProcess-MultiUser.png)
 
 **Implemented under module:** Session Management
 
