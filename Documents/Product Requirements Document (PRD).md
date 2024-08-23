@@ -326,12 +326,15 @@ DebtFreePlanner offers a web-based solution that loan recipients can use to crea
 - **Advanced Reporting**
   - Offers enhanced reporting and visualizations that incorporate data storytelling techniques to provide deeper insights.
 
+- **Multiple Plan Support**: Users can create and manage multiple debt repayment plans, each with its own strategy and set of debts. This feature allows for the separate management of different financial goals or scenarios.
+
+- **Multi-User Support**:
+  - Users can invite others to collaborate on specific debt repayment plans, granting them either read-only or write permissions.
+  - Admins can manage user roles within each plan, including the ability to revoke access or elevate users to admin status..
+
 
 #### 6.1.3. Potential Features
 The following features are under consideration for future development but are not yet confirmed or scheduled for implementation.
-
-- **Multi-User Support**
-  - Allows collaboration on debt management under a single account, ideal for households and financial advisors.
 
 - **AI-Driven Insights**
   - Provides personalized recommendations and predictive analytics to optimize repayment strategies.
