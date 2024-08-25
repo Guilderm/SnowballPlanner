@@ -330,9 +330,10 @@ DebtFreePlanner offers a web-based solution that loan recipients can use to crea
 - **Advanced Reporting**
   - Offers enhanced reporting and visualizations that incorporate data storytelling techniques to provide deeper insights.
 
-- **Multiple Plan Support**: Users can create and manage multiple debt repayment plans, each with its own strategy and set of debts. This feature allows for the separate management of different financial goals or scenarios.
+- **Multiple Plan Support**
+ - Users can create and manage multiple debt repayment plans, each with its own strategy and set of debts. This feature allows for the separate management of different financial goals or scenarios.
 
-- **Multi-User Support**:
+- **Multi-User Support**
   - Users can invite others to collaborate on specific debt repayment plans, granting them either read-only or write permissions.
   - Admins can manage user roles within each plan, including the ability to revoke access or elevate users to admin status..
 
@@ -425,7 +426,7 @@ endif
 ---
 
 
-### 8.1.1. **User Session**
+#### 8.1.1. **User Session**
 
 **Purpose:** This flow outlines how users navigate the authentication process, ensuring a smooth and secure login experience.
 
@@ -547,12 +548,12 @@ stop
 **Implemented under module:** Session Management
 
 
-### 8.1.2. **Subscription Process**
+#### 8.1.2. **Subscription Process**
 >**Note:**  
 The application will not store bank card information to reduce the app's attractiveness to criminals.  
 The subscription model includes a free trial followed by an annual subscription payment.
 
-This flow outlines how users go through the subscription process for the paid tier.
+This flow outlines how users go through the process of subscribin the paid tier.
 
 **Implemented under module:** Subscription Management
 
@@ -592,7 +593,7 @@ stop
 ---
 
 
-### 8.1.3. **User Profile**
+#### 8.1.3. **User Profile**
 
 **Purpose:** This flow allows users to manage their personal information and account settings.
 
@@ -696,23 +697,47 @@ stop
 
 ---
 
-### 8.1.3. **Debt Plan**
+#### 8.1.3. **Debt-Free Strategy**
 
-**Purpose:** This flow outlines how users can create and manage multiple debt repayment plans and collaborate with others.
-
-8.1.X.1. Multiple Plan Support: Users can create multiple debt repayment plans, each with unique strategies and debts.
-
-8.1.X.2. Multi-User Support: Users can invite others to collaborate on specific plans, granting them read or write permissions. Admins can manage user roles, including revoking access or granting admin status to others.
-
-
-- **8.1.3.1. Debt Management:** Focuses on managing individual debts, including loan amounts, interest rates, and repayment terms.
-
-  **Implemented under module:** Debt Management
+**Purpose:** This flow details how users can create, manage, and collaborate on multiple debt repayment plans effectively.
 
 ```plantuml
 @startuml
-title TBD
+title Debt Plan Management Flow
 
+start
+
+repeat
+  :User navigates to Debt-Free Strategy Page;  <<task>>
+
+  if (Create or modify a New Debt Plan?) then (Yes)
+    repeat
+      :User enters the name of the new plan; <<input>>
+
+      backward :System shows an error message;
+    repeat while (Is name valid?) is (No)
+    ->Yes;
+
+    if (Add Collaborators?) then (Yes)
+      repeat
+        :User enters the name and email of the Collaborator;  <<output>>
+
+        backward :System shows an error message;  <<output>>
+      repeat while (Is name and EMail valid?) is (No)
+      ->Yes;
+      
+      :User selects permission levels \n(read-only, edit, admin); <<input>>
+
+      :System sends email invitations to collaborators;  <<task>>
+    else (no)
+    endif
+    
+  else (No)
+    :User chooses an existing debt plan; <<input>>
+  endif
+
+repeat while ()
+stop
 @enduml
 ```
 
@@ -752,7 +777,7 @@ title TBD
 
 ---
 
-### 8.1.4. **Debt Analyst**
+#### 8.1.4. **Debt Analyst**
 
 **Purpose:** Provides users with insightful reports and visualizations to track their debt repayment progress, enabling informed decision-making and maintaining motivation.
 
@@ -764,7 +789,7 @@ title TBD
 
 ---
 
-### 8.1.5. **Data Management**
+#### 8.1.5. **Data Management**
 
 **Purpose:** Manages the processes for importing and exporting user data, ensuring that users have full control over their information.
 
@@ -775,7 +800,7 @@ title TBD
 
 ---
 
-### 8.1.6. **PFS Integration Management**
+#### 8.1.6. **PFS Integration Management**
 
 **Purpose:** Manages the integration of the application with external personal finance software (PFS), allowing users to synchronize their data for a more comprehensive financial overview.
 
