@@ -296,6 +296,9 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 
 DebtFreePlanner offers a web-based solution that loan recipients can use to create a debt repayment plans that accelerate their journey to financial freedom.
 
+[The Kano Model: A Step-By-Step Guide for Doing a Kano Analysis](https://leanscape.io/kano-model-customer-needs/)
+
+
 ### 6.1. Feature Set
 
 #### 6.1.1. Primary Features
@@ -597,12 +600,15 @@ stop
 
 ```plantuml
 @startuml
+@startuml
 start
+
+!pragma useVerticalIf on
 
 repeat
     :User navigates from the main dashboard or menu \n to the Profile Management page; <<task>>
 
-    if (Select Section?) then (General Information)
+    if (General Information)
         :Display General Information: \n Name \n Email \n Base Currency \n Subscription Status; <<output>>
         
         repeat
@@ -611,17 +617,68 @@ repeat
       
 backward: Display error message; <<output>>
         repeat while (Are inputs valid?) is (No)
-->Yes;
 
         :Save changes to selected section; <<task>>
         :Display confirmation toast; <<output>>
 
     elseif (Security Settings)
-        :Display Security Settings: \n Reset Password \n Set up MFA; <<output>>
-        :User inputs changes to security settings; <<input>>
+        :Display Security Settings: \n Reset Password \n Set up MFA \n Use Google as IdP \n Use Facebook as IdP; <<output>>
+
+        if (Choose Action?) then (Reset Password)
+            repeat
+                :User enters:\n current password\n new password\n confirmation password; <<input>>
+                :System validates inputs; <<task>>
+      
+backward: Display error message; <<output>>
+            repeat while (Are inputs valid?) is (No)
+
+            :Save new password; <<task>>
+            :Display password reset confirmation; <<output>>
+
+        elseif (Set up MFA)
+            :Prompt user to select MFA method:\n SMS, Authenticator App, Email; <<output>>
+            :User selects preferred MFA method; <<input>>
+            :System sends verification code; <<task>>
+            :User enters verification code; <<input>>
+            :System validates code and enables MFA; <<task>>
+            :Display MFA setup confirmation; <<output>>
+
+        elseif (Use Google as IdP)
+            :Redirect user to Google login; <<task>>
+            :User authenticates with Google; <<input>>
+            :System links Google account as IdP; <<task>>
+            :Display Google IdP setup confirmation; <<output>>
+
+        elseif (Use Facebook as IdP)
+            :Redirect user to Facebook login; <<task>>
+            :User authenticates with Facebook; <<input>>
+            :System links Facebook account as IdP; <<task>>
+            :Display Facebook IdP setup confirmation; <<output>>
+
+        endif
+
     elseif (Privacy Management)
-        :Display Privacy Management: \n Delete Data \n Delete Account; <<output>>
-        :User inputs changes to privacy settings; <<input>>
+        :Display Privacy Management Options: \n Manage Data \n Export Data \n Delete Account; <<output>>
+
+        if (Choose Action?) then (Manage Data)
+            :Display data management options; <<output>>
+            :User selects data to manage; <<input>>
+            :System processes data management request; <<task>>
+            :Display data management confirmation; <<output>>
+            
+        elseif (Export Data)
+            :User requests data export; <<input>>
+            :System prepares data export file; <<task>>
+            :System notifies user when export is ready; <<output>>
+            :User downloads data export file; <<task>>
+
+        elseif (Delete Account)
+            :User confirms account deletion; <<input>>
+            :System verifies request; <<task>>
+            :System deletes user account and associated data; <<task>>
+            :Display account deletion confirmation; <<output>>
+        endif
+        
     else
         :Display other sections as needed; <<output>>
         :User inputs changes to other sections; <<input>>
@@ -631,9 +688,11 @@ repeat while (User wants to make more changes?)
 stop
 @enduml
 
+@enduml
+
 ```
 
-![User Login Process (Single-User)](Medias/UserFlows-UserLoginProcess-SingleUser.png)
+![User flow for User Profile)](Medias/UserFlows-UserProfile.png)
 
 ---
 
