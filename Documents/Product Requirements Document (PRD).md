@@ -157,13 +157,41 @@ Indirect competitors such as [Mint](https://www.mint.com/), [YNAB](https://www.y
 - **Data Privacy:** In addition to standard data privacy measures, DebtFreePlanner must implement GDPR and CCPA.
 - **Platform Limitations:** DebtFreePlanner is designed as a web-based tool, which may limit its functionality on certain devices or when used offline.
 
-#### 3.3.3. Risks
+### 3.4 Risks
 
-- **External Service Dependency Risks:** The tool may face challenges with the integration and reliability of third-party APIs and services.
-- **Public Repository Exposure:** Because this is a portfolio project, the repository is public, increasing the likelihood of a successful cyberattack.
-- **Attractiveness as a Target:** Since the app manages financial data, it is an attractive target (honeypot) for cybercriminals.
+#### 3.4.1 Risk of Low User Adoption Due to Intention-Action Gap
+Loan recipients often intend to manage their finances better but fail to act on this intention due to several psychological factors:
+- **Procrastination**: The overwhelming nature of financial management or uncertainty about where to begin can cause significant delays in starting the process.
+- **Behavioral Inertia**: Users may struggle to break free from existing habits and routines, even when those habits are detrimental to their financial well-being.
+- **Self-Regulation Challenges**: Users may initially be motivated to use the product, but as "Motivational Decline" sets in, maintaining discipline becomes difficult, leading to inconsistent use.
+- **Cognitive Dissonance**: Users might avoid creating their debt reduction plan to sidestep confronting uncomfortable financial realities, resulting in disengagement.
+
+**Mitigation Strategies:**
+- The product will incorporate features that encourage continuous user engagement, such as progress tracking, personalized reminders, and gamification.
+- The UI/UX will implement "embedded learning" and offer tutorials to help users overcome initial barriers and stay committed to their financial goals.
+
+#### 3.4.2 External Service Dependency Risks
+The application may encounter challenges with the integration and reliability of third-party APIs and services.
+
+**Mitigation Strategies:**
+- Create a Proof of Concept (PoC) to validate technical feasibility before full-scale implementation.
+- Design the software to be "fault-tolerant" and use vendor-agnostic development techniques to avoid being locked into a vendor that did not meet our needs.
+
+#### 3.4.3 Public Repository Exposure
+Because this is a portfolio project, the repository is public, increasing the likelihood of a successful cyberattack.
+
+**Mitigation Strategies:**
+- Implement the NIST Cybersecurity Framework and other SecOps best practices.
+
+#### 3.4.4 Attractiveness as a Target
+Since the app manages financial data, it is an attractive target (honeypot) for cybercriminals.
+
+**Mitigation Strategies:**
+- Reduce the amount of Personal Identifiable Information (PII) that is collected, such as not collecting bank account numbers, Social Security numbers, or full names.
+- Comply with SOC 2 and other SecOps best practices.
 
 ---
+
 
 ## 4. User Profiles
 
