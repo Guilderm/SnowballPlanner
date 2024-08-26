@@ -52,6 +52,7 @@ These OKRs are aspirational and are not in any particular order.
 - **Key Result 1.3 [🔜]:** Optimize the application to handle at least 100 concurrent users with no significant performance degradation, verified through load testing.
 - **Key Result 1.4 [🔜]:** Integrate at least two third-party financial APIs to enhance functionality.
 
+
 ### Objective 2:
 **Adhere to Best Engineering Practices to Ensure a Maintainable, Scalable, and High-Quality Codebase**
 
@@ -60,6 +61,9 @@ These OKRs are aspirational and are not in any particular order.
 - **Key Result 2.3 [🔜]:** Implement application layers to separate concerns, reducing overlap and enhancing maintainability.
 - **Key Result 2.4 [🔜]:** Encapsulate implementation details within modules, exposing only necessary interfaces to enhance abstraction and reduce complexity.
 - **Key Result 2.5 [🔜]:** Minimize dependencies between modules by implementing loose coupling, ensuring flexibility and resilience.
+Key Result 2.6 [🔜]: Design fault-tolerant architectures to maintain security and reliability, even during third-party service failures.
+Key Result 2.7 [🔜]: vendor-agnostic development techniques to avoid being locked into a vendor that did not meet our needs.
+
 
 ### Objective 3:
 **Demonstrate Advanced Frontend Development Skills by Delivering a Polished, User-Friendly Interface**
@@ -68,18 +72,17 @@ These OKRs are aspirational and are not in any particular order.
 - **Key Result 3.2 [🔜]:** Ensure full responsiveness of the application across mobile devices, tablets, small laptops, and large desktops.
 - **Key Result 3.3 [🔜]:** Implement a real-time, interactive dashboard using React, D3.js, or Chart.js.
 - **Key Result 3.4 [🔜]:** Achieve a Lighthouse performance score of 90 or above on both mobile and desktop.
+- **Key Result 3.5 [🔜]:** Incorporate features to mitigate the intention-action gap, such as progress tracking, personalized reminders, and gamification.
+- **Key Result 3.6 [🔜]:** Provide tutorials and embedded learning to help users overcome initial barriers.
+
 
 ### Objective 4:
 **Ensure the Application is Secure and Protects User Data by Implementing Robust Security Practices**
 
-- **Key Result 4.1 [🔜]:** Implement Content Security Policy (CSP) headers to mitigate XSS attacks, achieving a CSP rating of "A" using tools like Mozilla Observatory.
-- **Key Result 4.2 [🔜]:** Conduct a security audit with tools like Zed Attack Proxy and Qualys Web Application Scanning, fixing 100% of identified critical vulnerabilities.
-- **Key Result 4.3 [🔜]:** Encrypt sensitive user data at rest (e.g., passwords, financial information) using AES-256.
-- **Key Result 4.4 [🔜]:** Ensure all sensitive data in transit is encrypted using HTTPS/TLS.
-- **Key Result 4.5 [🔜]:** Implement multi-factor authentication (MFA) for user accounts.
-- **Key Result 4.6 [🔜]:** Implement a cloud-based identity and access management (IAM) platform like Auth0 for secure user authentication and authorization.
-- **Key Result 4.7 [🔜]:** Integrate static application security testing (SAST) into the CI/CD pipeline to detect and fix vulnerabilities before deployment.
-- **Key Result 4.8 [🔜]:** Implement security best practices for dependencies using tools like Dependabot or Snyk.
+- **Key Result 4.1 [🔜]:** Implement the NIST Cybersecurity Framework to enhance overall security posture.
+- **Key Result 4.2 [🔜]:** Minimize the collection of Personal Identifiable Information (PII) by avoiding unnecessary data such as bank account numbers and Social Security numbers.
+- **Key Result 4.3 [🔜]:** Integrate security into the CI/CD pipeline (DevSecOps) to ensure that security checks are automated at every stage of development, from code commits to production deployments.
+
 
 ### Objective 5:
 **Demonstrate Expertise in Technical Writing by Creating Comprehensive and Clear Documentation for the Debt-Free Planner Project**

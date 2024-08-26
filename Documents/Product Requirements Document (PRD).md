@@ -188,7 +188,6 @@ Since the app manages financial data, it is an attractive target (honeypot) for 
 
 **Mitigation Strategies:**
 - Reduce the amount of Personal Identifiable Information (PII) that is collected, such as not collecting bank account numbers, Social Security numbers, or full names.
-- Comply with SOC 2 and other SecOps best practices.
 
 ---
 
