@@ -724,7 +724,7 @@ stop
 
 ---
 
-#### 8.1.3. **Debt-Free Strategy**
+#### 8.1.3. **Debt-Free Planning**
 
 **Purpose:** This flow details how users can create, manage, and collaborate on multiple debt repayment plans effectively.
 
@@ -760,7 +760,7 @@ repeat
     endif
     
   else (No)
-    :User chooses an existing debt plan; <<input>>
+    :User chooses an existing debt plan; <<task>>
   endif
 
 repeat while ()
@@ -768,6 +768,48 @@ stop
 @enduml
 ```
 
+
+- **8.1.3.1. Debt Management:** Focuses on managing individual debts, including loan amounts, interest rates, and repayment terms.
+
+  **Implemented under module:** Snowflake Management
+
+
+```plantuml
+@startuml
+title Debt Management Flow
+
+:Start (User Accesses Debt Management section); 
+
+:View Existing Debts; <<task>>
+
+if (User selects a specific debt?) then (Yes)
+  :Display detailed debt information; <<output>>
+endif
+
+if (User chooses to add a new debt?) then (Yes)
+  :Present 'Add New Debt' form; <<input>>
+  :User enters debt details (Loan amount, Interest rate, Repayment terms, etc.); <<input>>
+  :Save new debt record; <<task>>
+endif
+
+if (User chooses to edit an existing debt?) then (Yes)
+  :Present debt details in editable form; <<input>>
+  :User modifies debt details; <<input>>
+  :Save updated debt record; <<task>>
+endif
+
+if (User chooses to remove a debt?) then (Yes)
+  :Prompt for confirmation; <<output>>
+  if (User confirms removal?) then (Yes)
+    :Delete debt record; <<task>>
+  endif
+endif
+
+:End (Return to main dashboard);
+
+@enduml
+
+```
 
 - **8.1.3.2. Snowflake Management:** Manages irregular payments (snowflake payments) to help users reduce their debt faster.
 
