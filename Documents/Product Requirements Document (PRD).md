@@ -187,7 +187,7 @@ Because this is a portfolio project, the repository is public, increasing the li
 Since the app manages financial data, it is an attractive target (honeypot) for cybercriminals.
 
 **Mitigation Strategies:**
-- Reduce the amount of Personal Identifiable Information (PII) that is collected, such as not collecting bank account numbers, Social Security numbers, or full names.
+- Minimize the collection of Personal Identifiable Information (PII) by avoiding unnecessary data such as bank account numbers, Social Security numbers, or full names, reducing the application's attractiveness as a target for cybercriminals.
 
 ---
 

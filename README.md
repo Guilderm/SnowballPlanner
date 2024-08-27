@@ -77,11 +77,15 @@ Key Result 2.7 [🔜]: vendor-agnostic development techniques to avoid being loc
 
 
 ### Objective 4:
-**Ensure the Application is Secure and Protects User Data by Implementing Robust Security Practices**
+**Demonstrate DevSec by Implementing NIST Cybersecurity Framework (CSF) 2.0 and other Industry Best security Practices**
 
-- **Key Result 4.1 [🔜]:** Implement the NIST Cybersecurity Framework to enhance overall security posture.
-- **Key Result 4.2 [🔜]:** Minimize the collection of Personal Identifiable Information (PII) by avoiding unnecessary data such as bank account numbers and Social Security numbers.
-- **Key Result 4.3 [🔜]:** Integrate security into the CI/CD pipeline (DevSecOps) to ensure that security checks are automated at every stage of development, from code commits to production deployments.
+- **Key Result 4.1 [🔜]:** **GOVERN**: Establish robust governance to enforce security policies, ensure compliance, and manage risks effectively.
+- **Key Result 4.2 [🔜]:** **IDENTIFY**: Conduct comprehensive risk assessments to identify vulnerabilities, assets, and threats within the application environment.
+- **Key Result 4.3 [🔜]:** **PROTECT**: Implement proactive measures to safeguard against threats, including data encryption, access control, and secure coding practices.
+- **Key Result 4.4 [🔜]:** **DETECT**: Deploy continuous monitoring and anomaly detection systems to quickly identify and respond to security incidents.
+- **Key Result 4.5 [🔜]:** **RESPOND**: Develop and maintain incident response plans to effectively mitigate and manage security breaches or attacks.
+- **Key Result 4.6 [🔜]:** **RECOVER**: Establish recovery strategies to restore services and minimize downtime following a security incident.
+- **Key Result 4.7 [🔜]:** Minimize the collection of Personal Identifiable Information (PII) by avoiding unnecessary data such as bank account numbers, Social Security numbers, or full names, reducing the application's attractiveness as a target for cybercriminals.
 
 
 ### Objective 5:
