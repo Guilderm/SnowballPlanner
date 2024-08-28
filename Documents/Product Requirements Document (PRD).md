@@ -730,12 +730,12 @@ stop
 
 ```plantuml
 @startuml
-title Debt Plan Management Flow
+title Plan Management Flow
 
 start
 
 repeat
-  :User navigates to Debt-Free Strategy Page;  <<task>>
+  :User navigates to Debt-Free Strategy Page; <<task>>
 
   if (Create or modify a New Debt Plan?) then (Yes)
     repeat
@@ -747,20 +747,31 @@ repeat
 
     if (Add Collaborators?) then (Yes)
       repeat
-        :User enters the name and email of the Collaborator;  <<output>>
+        :User enters the name and email of the collaborator; <<output>>
 
-        backward :System shows an error message;  <<output>>
-      repeat while (Is name and EMail valid?) is (No)
+        backward :System shows an error message; <<output>>
+      repeat while (Is name and email valid?) is (No)
       ->Yes;
       
       :User selects permission levels \n(read-only, edit, admin); <<input>>
-
-      :System sends email invitations to collaborators;  <<task>>
-    else (no)
+      :System sends email invitations to collaborators; <<task>>
+      :Invited user clicks on the link in the email; <<input>>
+      :System adds the user to the plan; <<task>>
+    else (No)
     endif
     
   else (No)
     :User chooses an existing debt plan; <<task>>
+
+    if (Modify Plan?) then (Yes)
+      repeat
+        :User enters the modifications; <<input>>
+
+        backward :System shows an error message; <<output>>
+      repeat while (Are modifications valid?) is (No)
+      ->Yes;
+
+    endif
   endif
 
 repeat while ()
@@ -768,6 +779,7 @@ stop
 @enduml
 ```
 
+![Plan Management Flow](Medias/UserFlows-PlanManagement.png)
 
 - **8.1.3.1. Debt Management:** Focuses on managing individual debts, including loan amounts, interest rates, and repayment terms.
 
@@ -808,7 +820,6 @@ endif
 :End (Return to main dashboard);
 
 @enduml
-
 ```
 
 - **8.1.3.2. Snowflake Management:** Manages irregular payments (snowflake payments) to help users reduce their debt faster.
