@@ -431,7 +431,7 @@ ValuePropositionCanvas.png
 For a Guide refer to [PlantUML Activity Diagram](https://plantuml.com/activity-diagram-beta)
 
 
-```plantuml:
+```plantuml
 @startuml
 title Key Map
 
@@ -724,17 +724,25 @@ stop
 
 ---
 
-#### 8.1.3. **Debt-Free Planning**
+#### 8.1.3. **Debt-Free Plan Management Flow**
 
+#####
 **Purpose:** This flow details how users can create, manage, and collaborate on multiple debt repayment plans effectively.
+
+ **Implemented under module:** Plan Management
 
 ```plantuml
 @startuml
 title Plan Management Flow
 
-start
+  :User navigates to Debt-Free Strategy Page;
+  :User manages their Debt;
+  :User manages their Snowflake;
+  :User manages their Payment;
+  :User views their Debt Analyst;
 
-repeat
+
+repeat 
   :User navigates to Debt-Free Strategy Page; <<task>>
 
   if (Create or modify a New Debt Plan?) then (Yes)
@@ -781,6 +789,7 @@ stop
 
 ![Plan Management Flow](Medias/UserFlows-PlanManagement.png)
 
+#####
 - **8.1.3.1. Debt Management:** Focuses on managing individual debts, including loan amounts, interest rates, and repayment terms.
 
   **Implemented under module:** Snowflake Management
@@ -788,52 +797,72 @@ stop
 
 ```plantuml
 @startuml
-title Debt Management Flow
+title Debt Management - User Flow
 
-:Start (User Accesses Debt Management section); 
+:User navigates to Debt-Free Strategy Page;
 
-:View Existing Debts; <<task>>
+repeat :User navigates to the Debt Management section; <<input>>
 
-if (User selects a specific debt?) then (Yes)
-  :Display detailed debt information; <<output>>
-endif
-
-if (User chooses to add a new debt?) then (Yes)
-  :Present 'Add New Debt' form; <<input>>
-  :User enters debt details (Loan amount, Interest rate, Repayment terms, etc.); <<input>>
-  :Save new debt record; <<task>>
-endif
-
-if (User chooses to edit an existing debt?) then (Yes)
-  :Present debt details in editable form; <<input>>
-  :User modifies debt details; <<input>>
-  :Save updated debt record; <<task>>
-endif
-
-if (User chooses to remove a debt?) then (Yes)
-  :Prompt for confirmation; <<output>>
-  if (User confirms removal?) then (Yes)
-    :Delete debt record; <<task>>
+if (Are there existing debts?) then (Yes)
+  :System shows existing debts and the options to edit or delete; <<output>>
+  
+  if (User wants to edit or delete?) then (Yes)
+    :User edits the debt details; <<input>>
+    :System updates debt details in the system; <<task>>
   endif
+else (No)
+  :Display option to add a new debt; <<output>>
+  :User adds a new debt; <<input>>
+  :System saves the new debt details; <<task>>
 endif
 
-:End (Return to main dashboard);
+repeat while (Has the user completed managing debts?) is (No)
+  -> Yes;
+
+:User navigates to manage their Snowflakes;
+:User navigates to manage their Payment;
+:User views their Debt Analyst;
 
 @enduml
 ```
 
+#####
 - **8.1.3.2. Snowflake Management:** Manages irregular payments (snowflake payments) to help users reduce their debt faster.
 
   **Implemented under module:** Snowflake Management
 
 ```plantuml
 @startuml
-title TBD
+title Snowflake Management - User Flow
+
+:User navigates to Debt-Free Strategy Page;
+:User manages their Debt;
+
+repeat :User navigates to the Snowflake section; <<input>>
+
+if (Are there existing snowflake payments?) then (Yes)
+  :system shows Snowflakes and the options to edit or delete; <<output>>
+  
+  if (User wants to edit or delete?) then (Yes)
+    :User edits the Snowflake details; <<input>>
+    :System updates Snowflake details in the system; <<task>>
+  endif
+else (No)
+  :Display option to add a new snowflake payment; <<output>>
+  :User adds a new snowflake payment; <<input>>
+  :System saves the new Snowflake payment; <<task>>
+endif
+
+repeat while (Has the user completed managing Snowflakes?) is (No)
+  -> Yes;
+
+:User navigates to manage their Payment;
+:User views their Debt Analyst;
 
 @enduml
 ```
 
-
+#####
 - **8.1.3.3. Payment Management:** Manages the overall allocation of payments across debts, ensuring users stay on track  with their repayment goals.
 
   **Implemented under module:** Payment Management
@@ -851,6 +880,13 @@ title TBD
 ```plantuml
 @startuml
 title TBD
+
+
+  :User navigates to Debt-Free Strategy Page;
+  :User manages their Debt;
+  :User manages their Snowflake;
+  :User manages their Payment;
+  :User views their Debt Analyst;
 
 @enduml
 ```
