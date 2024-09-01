@@ -726,8 +726,8 @@ stop
 
 #### 8.1.3. **Debt-Free Plan Management Flow**
 
-#####
-**Purpose:** This flow details how users can create, manage, and collaborate on multiple debt repayment plans effectively.
+##### **Purpose:**
+ This flow details how users can create, manage, and collaborate on multiple debt repayment plans effectively.
 
  **Implemented under module:** Plan Management
 
@@ -789,8 +789,9 @@ stop
 
 ![Plan Management Flow](Medias/UserFlows-PlanManagement.png)
 
-#####
-- **8.1.3.1. Debt Management:** Focuses on managing individual debts, including loan amounts, interest rates, and repayment terms.
+
+##### **8.1.3.1. Debt Management:**
+ Focuses on managing individual debts, including loan amounts, interest rates, and repayment terms.
 
   **Implemented under module:** Snowflake Management
 
@@ -826,8 +827,9 @@ repeat while (Has the user completed managing debts?) is (No)
 @enduml
 ```
 
-#####
-- **8.1.3.2. Snowflake Management:** Manages irregular payments (snowflake payments) to help users reduce their debt faster.
+
+##### **8.1.3.2. Snowflake Management:**
+Manages irregular payments (snowflake payments) to help users reduce their debt faster.
 
   **Implemented under module:** Snowflake Management
 
@@ -836,7 +838,9 @@ repeat while (Has the user completed managing debts?) is (No)
 title Snowflake Management - User Flow
 
 :User navigates to Debt-Free Strategy Page;
-:User manages their Debt;
+repeat :User manages their Debts;
+repeat while (User has debts?) is (No)
+  -> Yes;
 
 repeat :User navigates to the Snowflake section; <<input>>
 
@@ -862,31 +866,40 @@ repeat while (Has the user completed managing Snowflakes?) is (No)
 @enduml
 ```
 
-#####
-- **8.1.3.3. Payment Management:** Manages the overall allocation of payments across debts, ensuring users stay on track  with their repayment goals.
+
+##### **8.1.3.3. Payment Management:**
+Manages the overall allocation of payments across debts, ensuring users stay on track  with their repayment goals.
 
   **Implemented under module:** Payment Management
 
 ```plantuml
 @startuml
-title TBD
+title Payment Management - User Flow
 
-@enduml
-```
-
-
- **Implemented under module:** Plan Management
-
-```plantuml
-@startuml
-title TBD
+:User navigates to Debt-Free Strategy Page;
 
 
-  :User navigates to Debt-Free Strategy Page;
-  :User manages their Debt;
-  :User manages their Snowflake;
-  :User manages their Payment;
-  :User views their Debt Analyst;
+repeat :User manages their Debts;
+repeat while (User has debts?) is (No)
+  -> Yes;
+
+repeat :User manages their Snowflakes;
+
+:User navigates to the Payment Management section; <<input>>
+
+:System calculates and displays existing payments based on debts; <<task>>
+
+if (User wants to increase their payment?) then (Yes)
+  repeat :User enters a new amount; <<input>>
+  repeat while (Is the entered amount larger than \nthe sum of the debts' minimum payments?) is (No)
+    -> Yes;
+  :System updates payment details in the system; <<task>>
+endif
+
+repeat while (Has the user completed managing payments?) is (No)
+  -> Yes;
+
+:User views their Debt Analyst;
 
 @enduml
 ```
