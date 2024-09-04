@@ -1,8 +1,9 @@
 # Product Requirements Document (PRD)
+
 This PRD lays the groundwork for the DebtFreePlanner by clearly defining the product’s purpose and target audience. The structure and content of this document are guided by the principles and methodologies outlined in [_Design a Better Business: New Tools, Skills, and Mindset for Strategy and Innovation_](https://designabetterbusiness.com/) by Pijl, Lokitz, and Solomon (2016). Additionally, insights from the [Product Mastery Now](https://productmasterynow.com/mastery/) podcast shape the approach, particularly within the "design and development" knowledge area of the "product innovation management" framework.
 
-
 ## Table of Contents
+
 1. [Executive Summary](#1-executive-summary)
 2. [Objectives and Key Results (OKRs)](#2-objectives-and-key-results-okrs)
    - 2.1. [Objective 1: Deliver a web-based solution for creating debt repayment plans](#21-objective-1-deliver-a-web-based-solution-for-creating-debt-repayment-plans)
@@ -59,13 +60,15 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 9. [User Stories](#9-user-stories)
    - 9.1. [User Stories](#91-user-stories)
 10. [Legal and Compliance](#10-legal-and-compliance)
-   - 10.1. [Data Privacy](#101-data-privacy)
-   - 10.2. [Regulatory Compliance](#102-regulatory-compliance)
-   - 10.3. [International Regulations](#103-international-regulations)
-   - 10.4. [Terms of Service & User Agreements](#104-terms-of-service--user-agreements)
-   - 10.5. [Record Keeping and Audit Trails](#105-record-keeping-and-audit-trails)
-   - 10.6. [Legal Risk Management](#106-legal-risk-management)
-   - 10.7. [Protection of Intellectual Property (IP)](#107-protection-of-intellectual-property-ip)
+
+- 10.1. [Data Privacy](#101-data-privacy)
+- 10.2. [Regulatory Compliance](#102-regulatory-compliance)
+- 10.3. [International Regulations](#103-international-regulations)
+- 10.4. [Terms of Service & User Agreements](#104-terms-of-service--user-agreements)
+- 10.5. [Record Keeping and Audit Trails](#105-record-keeping-and-audit-trails)
+- 10.6. [Legal Risk Management](#106-legal-risk-management)
+- 10.7. [Protection of Intellectual Property (IP)](#107-protection-of-intellectual-property-ip)
+
 11. [Related Documents](#11-related-documents)
 
 ## 1. Executive Summary
@@ -87,10 +90,9 @@ Provide loan recipients with a tool that optimizes their debt repayment plans th
 
 ---
 
-
 ## 2. Objectives and Key Results (OKRs)
 
-### 2.1. Objective 1: Deliver a web-based solution that loan recipients can use to create debt repayment plans.
+### 2.1. Objective 1: Deliver a web-based solution that loan recipients can use to create debt repayment plans
 
 - **Key Result 2.1.1:** Implement the Snowball, Avalanche, and Highest Monthly Payment strategies.
 - **Key Result 2.1.2:** Implement the Debt-to-Interest Ratio, Cash Flow Index (CFI), and custom strategies.
@@ -101,7 +103,7 @@ Provide loan recipients with a tool that optimizes their debt repayment plans th
 - **Key Result 2.1.7:** Implement advanced reporting features.
 - **Key Result 2.1.8:** Ensure data portability across different platforms.
 
-### 2.2. Objective 2: Ensure accessibility, usability, and security for all users.
+### 2.2. Objective 2: Ensure accessibility, usability, and security for all users
 
 - **Key Result 2.2.1:** Achieve WCAG 2.1 AA compliance for accessibility across all major user interfaces.
 - **Key Result 2.2.2:** Implement a responsive design that works seamlessly on mobile, tablet, and desktop devices.
@@ -109,7 +111,7 @@ Provide loan recipients with a tool that optimizes their debt repayment plans th
 - **Key Result 2.2.4:** Implement security features, including user authentication and data encryption.
 - **Key Result 2.2.5:** Ensure GDPR compliance for data handling and user privacy.
 
-### 2.3. Objective 3: Provide comprehensive user education and support features.
+### 2.3. Objective 3: Provide comprehensive user education and support features
 
 - **Key Result 2.3.1:** Develop an in-app tutorial or onboarding guide for new users.
 - **Key Result 2.3.2:** Create a help center with FAQs, user guides, and video tutorials.
@@ -117,7 +119,6 @@ Provide loan recipients with a tool that optimizes their debt repayment plans th
 - **Key Result 2.3.4:** Collect and analyze user feedback to improve educational materials in future iterations.
 
 ---
-
 
 ## 3. Market and Context
 
@@ -160,52 +161,61 @@ Indirect competitors such as [Mint](https://www.mint.com/), [YNAB](https://www.y
 ### 3.4 Risks
 
 #### 3.4.1 Risk of Low User Adoption Due to Intention-Action Gap
+
 Loan recipients often intend to manage their finances better but fail to act on this intention due to several psychological factors:
+
 - **Procrastination**: The overwhelming nature of financial management or uncertainty about where to begin can cause significant delays in starting the process.
 - **Behavioral Inertia**: Users may struggle to break free from existing habits and routines, even when those habits are detrimental to their financial well-being.
 - **Self-Regulation Challenges**: Users may initially be motivated to use the product, but as "Motivational Decline" sets in, maintaining discipline becomes difficult, leading to inconsistent use.
 - **Cognitive Dissonance**: Users might avoid creating their debt reduction plan to sidestep confronting uncomfortable financial realities, resulting in disengagement.
 
 **Mitigation Strategies:**
+
 - The product will incorporate features that encourage continuous user engagement, such as progress tracking, personalized reminders, and gamification.
 - The UI/UX will implement "embedded learning" and offer tutorials to help users overcome initial barriers and stay committed to their financial goals.
 
 #### 3.4.2 External Service Dependency Risks
+
 The application may encounter challenges with the integration and reliability of third-party APIs and services.
 
 **Mitigation Strategies:**
+
 - Create a Proof of Concept (PoC) to validate technical feasibility before full-scale implementation.
 - Design the software to be "fault-tolerant" and use vendor-agnostic development techniques to avoid being locked into a vendor that did not meet our needs.
 
 #### 3.4.3 Public Repository Exposure
+
 Because this is a portfolio project, the repository is public, increasing the likelihood of a successful cyberattack.
 
 **Mitigation Strategies:**
+
 - Implement the NIST Cybersecurity Framework and other SecOps best practices.
 
 #### 3.4.4 Attractiveness as a Target
+
 Since the app manages financial data, it is an attractive target (honeypot) for cybercriminals.
 
 **Mitigation Strategies:**
+
 - Minimize the collection of Personal Identifiable Information (PII) by avoiding unnecessary data such as bank account numbers, Social Security numbers, or full names, reducing the application's attractiveness as a target for cybercriminals.
 
 ---
 
-
 ## 4. User Profiles
 
 ### 4.1. Market Segmentation
-DebtFreePlanner targets retail loan recipients who are motivated to pay off their debts efficiently. This audience includes [established professionals managing significant debt loads](#51-taylor-the-debt-strapped-professional) and [younger individuals focused on building a stable financial future](#52-casey-the-organized-homemaker).
 
+DebtFreePlanner targets retail loan recipients who are motivated to pay off their debts efficiently. This audience includes [established professionals managing significant debt loads](#51-taylor-the-debt-strapped-professional) and [younger individuals focused on building a stable financial future](#52-casey-the-organized-homemaker).
 
 ### 4.2. Jobs-to-be-Done (JTBD)
 
 #### 4.2.1. Functional Jobs
- - Identify the most beneficial debt repayment strategy.
- - Minimize the total interest paid across all debts.
- - Estimate the timeline for becoming completely debt-free.
- - Automatically update amounts in foreign currencies using up-to-date exchange rates.
- - Export data for external manipulation and re-import it.
+
+- Identify the most beneficial debt repayment strategy.
+- Minimize the total interest paid across all debts.
+- Estimate the timeline for becoming completely debt-free.
+- Automatically update amounts in foreign currencies using up-to-date exchange rates.
+- Export data for external manipulation and re-import it.
 
 #### 4.2.2. Emotional Jobs
 
@@ -231,7 +241,6 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 
 ---
 
-
 ## 5. Personas
 
 > **Note:** At a later stage, we will create a user persona in [Figma](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
@@ -249,28 +258,33 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 - **Financial Status:** Struggling with cash flow despite a comfortable income
 
 - **Jobs to Be Done:**
+
   - Identify the most beneficial debt repayment strategy.
   - Minimize the total interest paid across all debts.
   - Automatically update loan in foreign currencies.
   - Estimate the timeline for becoming completely debt-free.
 
 - **Pains:**
+
   - Lack of clarity and confidence in prioritizing debt payments.
   - Persistent stress and anxiety due to uncertainty in managing multiple debts.
   - Difficulty in finding practical tools to streamline debt management.
   - The burden of manually converting foreign currency loans to the base currency.
 
 - **Gains:**
+
   - Regaining control over finances with clear, actionable repayment plans.
   - Achieving financial independence by becoming debt-free within a reasonable time frame.
   - Seamless integration with budgeting tools like YNAB for efficient data management.
 
 - **Behavior:**
+
   - Recently started using YNAB to manage personal finances.
   - Strapped for time, so prefers solutions that integrate well and just works.
   - Prefers using financial tools on a laptop but occasionally uses mobile devices for quick checks.
 
 - **Needs:**
+
   - A tool that provides clear guidance on debt prioritization and repayment strategies.
   - Ability to manage debts in multiple currencies.
   - Features that minimize interest paid and accurately project debt-free dates.
@@ -287,37 +301,42 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 - **Financial Status:** In debt but managing
 
 - **Jobs to Be Done:**
+
   - Manage multiple loans while balancing household expenses.
   - Minimize the total interest paid across all debts.
   - Optimize loan payments to improve cash flow.
 
 - **Pains:**
+
   - Overwhelm and stress from juggling multiple loans and household expenses.
   - Uncertainty in how to effectively manage debt repayment alongside daily financial obligations.
   - Anxiety over financial decisions impacting the family's long-term security.
 
 - **Gains:**
+
   - Reducing financial stress and achieving financial freedom for the family.
   - Successfully managing debts to save for a home down payment.
   - Using a tool that integrates with other financial tools, providing clear insights into interest savings and payment strategies.
 
 - **Behavior:**
+
   - Regularly uses an online banking app to monitor spending and manage finances.
   - Maintains the household budget in Excel.
   - Is very privacy-focused and prefers doing things manually to maintain a sense of control.
   - Is very budget-conscious and actively seeks out deals and discounts.
 
 - **Needs:**
+
   - A streamlined tool to manage and optimize loan payments, providing clear insights into interest savings from additional payments.
   - The ability to project future loan payments and visualize the impact of different payment strategies.
 
 - **Motivations:**
+
   - Seeks to reduce financial stress by managing debts efficiently and ensuring the family's financial stability.
   - Aims to achieve financial freedom and security for the family.
   - Values simplicity, reliability, and transparency in financial tools.
 
 - **Quote:** "I need a tool that helps me see the bigger picture so that I can ensure our family's financial well-being in the long term."
-
 
 ## 6. Value Proposition
 
@@ -325,65 +344,75 @@ DebtFreePlanner offers a web-based solution that loan recipients can use to crea
 
 [The Kano Model: A Step-By-Step Guide for Doing a Kano Analysis](https://leanscape.io/kano-model-customer-needs/)
 
-
 ### 6.1. Feature Set
 
 #### 6.1.1. Primary Features
 
 - **Multiple Repayment Strategies**
+
   - Supports a variety of debt repayment methods, including Snowball, Avalanche, Debt-to-Interest Ratio, Cash Flow Index (CFI), Highest Monthly Payment, and Custom Strategies.
 
 - **Snowflake Payments**
+
   - Enables small, irregular payments towards debts whenever extra funds are available, helping to reduce the principal faster.
 
 - **Multicurrency Support**
+
   - Provides seamless handling of multiple currencies with automatic exchange rate updates, catering to a global user base.
 
 - **Basic Reporting**
+
   - Generates essential reports and visualizations to help loan recipients understand and track their repayment plans.
 
 - **Secure Data Handling:**
-   - The application ensures that all sensitive user data is encrypted both at rest and in transit.
-
+  - The application ensures that all sensitive user data is encrypted both at rest and in transit.
 
 #### 6.1.2. Secondary Features
 
 - **Data Portability:**
-   - Users can export and import their data, allowing them to maintain control over their information and use it in other financial tools or reports.
+
+  - Users can export and import their data, allowing them to maintain control over their information and use it in other financial tools or reports.
 
 - **Integration with Financial Tools**
+
   - Synchronizes with budgeting applications like YNAB and possibly Firefly III for seamless data management.
 
 - **Advanced Reporting**
+
   - Offers enhanced reporting and visualizations that incorporate data storytelling techniques to provide deeper insights.
 
 - **Multiple Plan Support**
- - Users can create and manage multiple debt repayment plans, each with its own strategy and set of debts. This feature allows for the separate management of different financial goals or scenarios.
+- Users can create and manage multiple debt repayment plans, each with its own strategy and set of debts. This feature allows for the separate management of different financial goals or scenarios.
 
 - **Multi-User Support**
   - Users can invite others to collaborate on specific debt repayment plans, granting them either read-only or write permissions.
   - Admins can manage user roles within each plan, including the ability to revoke access or elevate users to admin status..
 
-
 #### 6.1.3. Potential Features
+
 The following features are under consideration for future development but are not yet confirmed or scheduled for implementation.
 
 - **AI-Driven Insights**
+
   - Provides personalized recommendations and predictive analytics to optimize repayment strategies.
 
 - **Cross-Platform Accessibility**
   - Ensures accessibility across multiple devices, enhancing usability and engagement wherever the user is.
 
 #### 6.1.4. Excluded Features
+
 To ensure DebtFreePlanner remains focused on fulfilling its intended purpose, the following features and functionalities were deemed unviable due to the complexity of their implementation or specific market needs.
 
 - **Budgeting and Expense Tracking**
+
   - DebtFreePlanner will not include general budgeting or expense tracking features, including loan payment history tracking. These functionalities are excluded because many established applications already perform them well, and these features are complementary rather than central to the problem DebtFreePlanner is addressing. Users are encouraged to use tools like YNAB (You Need A Budget) or Firefly III, which may be integrated with DebtFreePlanner in the future.
 
 - **Non-Conventional Loan Types**
+
   - DebtFreePlanner will only support the most common loan types (e.g., mortgages, student loans, and credit card debt). Non-conventional loan types, such as payday loans, interest-only loans, or cryptocurrency loans, are not supported due to a lack of market demand.
 
 - **Advanced Loan Features**
+
   - Advanced loan features, such as variable interest rates and early termination fees, are out of scope due to the complexity of accommodating all possible business rules of financial institutions. Users will need to update loan terms manually when they change.
 
 - **Business-Oriented Features**
@@ -401,25 +430,24 @@ To ensure DebtFreePlanner remains focused on fulfilling its intended purpose, th
 
 ---
 
-
 ## 7. Value Proposition Canvas
 
 > **Note:** At a later stage, we will create a Value Proposition Canvas in [Figma](https://www.figma.com/community/search?resource_type=mixed&sort_by=relevancy&query=Value+Proposition+Canvas).
 
+### 7.1. Value Proposition Canvas
 
-### 7.1.  Value Proposition Canvas
 ValuePropositionCanvas.png
 
 ![Value Proposition Canvas](Medias/ValuePropositionCanvas.png)
 
 ---
 
-
 ## 8. User Interface and User Experience (UI/UX)
 
 ### 8.1. User Flows
 
 **Key Map:**
+
 - **Arrow**: Indicates the sequence or direction of flow.
 - **Capsule/Pill**: Represents the start or end of a process, or the initiation of a different user flow.
 - **Square**: Denotes a specific task or process within the flow.
@@ -427,9 +455,7 @@ ValuePropositionCanvas.png
 - **Output Square**: Represents an output operation, such as displaying results.
 - **Diamond**: Represents a decision point where the user may be presented with options or branching paths.
 
-
 For a Guide refer to [PlantUML Activity Diagram](https://plantuml.com/activity-diagram-beta)
-
 
 ```plantuml
 @startuml
@@ -452,12 +478,12 @@ endif
 
 ---
 
-
 #### 8.1.1. **User Session**
 
 **Purpose:** This flow outlines how users navigate the authentication process, ensuring a smooth and secure login experience.
 
 #### 8.1.1.1. **Single-User Context:**
+
 Focuses on managing individual user sessions, including login, logout, and maintaining session continuity.
 
 ```plantuml:
@@ -469,7 +495,7 @@ start
 
 while (Is user logged in?) is (No)
   if (User has account?) then (Yes)
-    
+
     if (Will log in via Identity Provider?) then (Yes)
       :Redirect to Identity Provider; <<task>>
     else (No)
@@ -494,7 +520,7 @@ while (Is user logged in?) is (No)
       :Confirmation Email Sent; <<output>>
       :Click Confirmation Link; <<input>>
     endif
-    
+
     if (Is account created?) then (Yes)
       :Show Account Created; <<output>>
     else (No)
@@ -512,7 +538,8 @@ stop
 ![User Login Process (Single-User)](Medias/UserFlows-UserLoginProcess-SingleUser.png)
 
 #### 8.1.1.2. 🚧 **Multi-User Context:**
- Expands to manage multiple user sessions under a single account, supporting role-based access control and seamless switching between user profiles.
+
+Expands to manage multiple user sessions under a single account, supporting role-based access control and seamless switching between user profiles.
 
 ```plantuml:
 @startuml
@@ -523,7 +550,7 @@ start
 
 while (Is user logged in?) is (No)
   if (User has account?) then (Yes)
-    
+
     if (Will log in via Identity Provider?) then (Yes)
       :Redirect to Identity Provider; <<task>>
     else (No)
@@ -574,11 +601,11 @@ stop
 
 **Implemented under module:** Session Management
 
-
 #### 8.1.2. **Subscription Process**
->**Note:**  
-The application will not store bank card information to reduce the app's attractiveness to criminals.  
-The subscription model includes a free trial followed by an annual subscription payment.
+
+> **Note:**  
+> The application will not store bank card information to reduce the app's attractiveness to criminals.  
+> The subscription model includes a free trial followed by an annual subscription payment.
 
 This flow outlines how users go through the process of subscribin the paid tier.
 
@@ -592,7 +619,7 @@ start
 :Access Subscription Page;
 
 note
-The app does not store 
+The app does not store
 bank card information.
 end note
 
@@ -616,9 +643,7 @@ stop
 
 ![Subscription Process](Medias/UserFlows-SubscriptionProcess.png)
 
-
 ---
-
 
 #### 8.1.3. **User Profile**
 
@@ -638,11 +663,11 @@ repeat
 
     if (General Information)
         :Display General Information: \n Name \n Email \n Base Currency \n Subscription Status; <<output>>
-        
+
         repeat
             :User inputs changes to personal information; <<input>>
             :System validates inputs; <<task>>
-      
+
 backward: Display error message; <<output>>
         repeat while (Are inputs valid?) is (No)
 
@@ -656,7 +681,7 @@ backward: Display error message; <<output>>
             repeat
                 :User enters:\n current password\n new password\n confirmation password; <<input>>
                 :System validates inputs; <<task>>
-      
+
 backward: Display error message; <<output>>
             repeat while (Are inputs valid?) is (No)
 
@@ -693,7 +718,7 @@ backward: Display error message; <<output>>
             :User selects data to manage; <<input>>
             :System processes data management request; <<task>>
             :Display data management confirmation; <<output>>
-            
+
         elseif (Export Data)
             :User requests data export; <<input>>
             :System prepares data export file; <<task>>
@@ -706,7 +731,7 @@ backward: Display error message; <<output>>
             :System deletes user account and associated data; <<task>>
             :Display account deletion confirmation; <<output>>
         endif
-        
+
     else
         :Display other sections as needed; <<output>>
         :User inputs changes to other sections; <<input>>
@@ -727,9 +752,10 @@ stop
 #### 8.1.3. **Debt-Free Plan Management Flow**
 
 ##### **Purpose:**
- This flow details how users can create, manage, and collaborate on multiple debt repayment plans effectively.
 
- **Implemented under module:** Plan Management
+This flow details how users can create, manage, and collaborate on multiple debt repayment plans effectively.
+
+**Implemented under module:** Plan Management
 
 ```plantuml
 @startuml
@@ -742,7 +768,7 @@ title Plan Management Flow
   :User views their Debt Analyst;
 
 
-repeat 
+repeat
   :User navigates to Debt-Free Strategy Page; <<task>>
 
   if (Create or modify a New Debt Plan?) then (Yes)
@@ -760,14 +786,14 @@ repeat
         backward :System shows an error message; <<output>>
       repeat while (Is name and email valid?) is (No)
       ->Yes;
-      
+
       :User selects permission levels \n(read-only, edit, admin); <<input>>
       :System sends email invitations to collaborators; <<task>>
       :Invited user clicks on the link in the email; <<input>>
       :System adds the user to the plan; <<task>>
     else (No)
     endif
-    
+
   else (No)
     :User chooses an existing debt plan; <<task>>
 
@@ -789,12 +815,11 @@ stop
 
 ![Plan Management Flow](Medias/UserFlows-PlanManagement.png)
 
-
 ##### **8.1.3.1. Debt Management:**
- Focuses on managing individual debts, including loan amounts, interest rates, and repayment terms.
 
-  **Implemented under module:** Snowflake Management
+Focuses on managing individual debts, including loan amounts, interest rates, and repayment terms.
 
+**Implemented under module:** Snowflake Management
 
 ```plantuml
 @startuml
@@ -806,7 +831,7 @@ repeat :User navigates to the Debt Management section; <<input>>
 
 if (Are there existing debts?) then (Yes)
   :System shows existing debts and the options to edit or delete; <<output>>
-  
+
   if (User wants to edit or delete?) then (Yes)
     :User edits the debt details; <<input>>
     :System updates debt details in the system; <<task>>
@@ -827,11 +852,11 @@ repeat while (Has the user completed managing debts?) is (No)
 @enduml
 ```
 
-
 ##### **8.1.3.2. Snowflake Management:**
+
 Manages irregular payments (snowflake payments) to help users reduce their debt faster.
 
-  **Implemented under module:** Snowflake Management
+**Implemented under module:** Snowflake Management
 
 ```plantuml
 @startuml
@@ -846,7 +871,7 @@ repeat :User navigates to the Snowflake section; <<input>>
 
 if (Are there existing snowflake payments?) then (Yes)
   :system shows Snowflakes and the options to edit or delete; <<output>>
-  
+
   if (User wants to edit or delete?) then (Yes)
     :User edits the Snowflake details; <<input>>
     :System updates Snowflake details in the system; <<task>>
@@ -866,11 +891,11 @@ repeat while (Has the user completed managing Snowflakes?) is (No)
 @enduml
 ```
 
-
 ##### **8.1.3.3. Payment Management:**
-Manages the overall allocation of payments across debts, ensuring users stay on track  with their repayment goals.
 
-  **Implemented under module:** Payment Management
+Manages the overall allocation of payments across debts, ensuring users stay on track with their repayment goals.
+
+**Implemented under module:** Payment Management
 
 ```plantuml
 @startuml
@@ -941,7 +966,6 @@ repeat while (Has the user completed managing payments?) is (No)
 ---
 
 > **🚧 Note:** Features marked with 🚧 are still under consideration and have not yet been added to the roadmap. The diagrams for these features are rough drafts or do not exist. If the feature is ultimately included, it will be further detailed in this document; otherwise, it will be removed.
-
 
 ### 8.2. Wireframes/Mockups
 

@@ -1,0 +1,19 @@
+{
+  "name": "deathfeeplanner",
+  "version": "1.0.0",
+  "description": "_A MERN stack application for strategic debt payoff planning using Snowball and other methods._",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write .",
+    "lint-md": "markdownlint --fix \"**/*.md\"",
+    "all": "npm run format && npm run lint-md"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "markdownlint-cli": "^0.41.0",
+    "prettier": "^2.8.0"
+  }
+}
