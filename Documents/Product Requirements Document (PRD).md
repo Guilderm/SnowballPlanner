@@ -1018,12 +1018,30 @@ repeat while (User has further import/export tasks?) is (Yes)
 
 > **🚧 Note:** Features marked with 🚧 are still under consideration and have not yet been added to the roadmap. The diagrams for these features are rough drafts or do not exist. If the feature is ultimately included, it will be further detailed in this document; otherwise, it will be removed.
 
-### 8.2. Wireframes/Mockups
+### 8.2. Wireframes
 
-- **Dashboard:** Displays key metrics, repayment progress, and quick actions.
-- **Plan Creation:** Forms for entering debt details and selecting repayment strategies.
-- **Plan Customization:** Interface for adjusting repayment priorities and adding extra payments.
-- **Progress Tracking:** Visual representations of repayment progress and milestones.
+#### 8.2.1. **Debt-Free Plan Management**
+- **8.2.1.1. Plan Overview**  
+  Displays a list of debt plans with quick actions such as "Create New Plan," "Edit," or "Delete."
+- **8.2.1.2. Plan Details**  
+  Shows details of a selected plan, allowing users to manage debts, adjust repayment strategies, and add collaborators.
+- **8.2.1.3. Debt Management**  
+  Interface for adding, editing, or deleting debts, including inputs for loan amount, interest rate, minimum payment, and due dates.
+- **8.2.1.4. Snowflake Management**  
+  Interface for managing irregular payments, allowing users to add or edit payments and visualize their impact on debt reduction.
+- **8.2.1.5. Plan Collaboration**  
+  A form for adding collaborators to the plan, setting permission levels, and sending invitations to others.
+
+#### 8.2.2. **Debt Analyst**
+- **8.2.2.1. Overview Dashboard**  
+  Displays key metrics such as total debt, repayment progress, and upcoming payments, with visual progress bars and charts.
+- **8.2.2.2. Progress Visualization**  
+  Graphs and charts showing the user’s repayment journey over time, with milestones like "50% of debt paid off."
+- **8.2.2.3. Detailed Reporting**  
+  Allows users to drill down into specific debts, repayment strategies, and payment history for better analysis.
+- **8.2.2.4. AI-Driven Insights (Optional)**  
+  Provides users with personalized recommendations for optimizing their repayment strategies.
+
 
 ## 9. User Stories
 
