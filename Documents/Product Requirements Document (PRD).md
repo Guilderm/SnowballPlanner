@@ -245,7 +245,6 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 
 > **Note:** At a later stage, we will create a user persona in [Figma](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
 
-## 5. Personas
 
 > **Note:** At a later stage, we will create a user persona in [Figma](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
 
@@ -445,6 +444,8 @@ ValuePropositionCanvas.png
 ## 8. User Interface and User Experience (UI/UX)
 
 ### 8.1. User Flows
+
+The following diagrams and descriptions outline the primary user flows within the **DebtFreePlanner** system. These flows are intended to provide a high-level understanding of how different user types interact with the platform. They are not exhaustive but serve as a general guide to illustrate key interactions and decision points.
 
 **Key Map:**
 
@@ -941,6 +942,25 @@ repeat while (Has the user completed managing payments?) is (No)
 
 **Implemented under module:** Reporting Management
 
+```plantuml
+@startuml
+title Plan Management Flow
+
+repeat : User creates a debt repayment plan;
+repeat while (Does the user have a plan?) is (No)
+  -> Yes;
+
+repeat : User manages their debts;
+repeat while (Does the user have debts?) is (No)
+  -> Yes;
+
+: User manages their snowflakes;
+
+: System generates and shows the analysis of their debt; <<output>>
+
+@enduml
+```
+
 ---
 
 #### 8.1.5. **Data Management**
@@ -952,11 +972,42 @@ repeat while (Has the user completed managing payments?) is (No)
 
 **Implemented under module:** Data Management
 
+```plantuml
+@startuml
+title Data Management Flow
+
+repeat :User navigates to Data Management section;
+
+if (Select Import or Export?) then (Import)
+  repeat :User selects data source (CSV or JSON); <<input>>
+    :System validates the data in the source; <<task>>
+
+    backward :System informs of the problems \n with the data source; <<output>>
+
+    repeat while (Does the data source have problems?) is (Yes)
+    -> No;
+
+      :System shows summary of import; <<output>>
+else (Export)
+  :User chooses which plan to export; <<input>>
+  :User selects export format (CSV, JSON, PDF); <<input>>
+  :System processes the export request; <<task>>
+  :System provides export confirmation; <<output>>
+endif
+
+repeat while (User has further import/export tasks?) is (Yes)
+  -> No;
+
+@enduml
+```
+
 ---
 
 #### 8.1.6. **PFS Integration Management**
 
 **Purpose:** Manages the integration of the application with external personal finance software (PFS), allowing users to synchronize their data for a more comprehensive financial overview.
+
+**Note:** The integration with external personal finance software (PFS), such as YNAB and Firefly III, is still under consideration and has not yet been added to the project roadmap. For this reason, a user flow will not be created at this stage. When the integration is addressed, virtually all aspects will be dictated by the APIs of these platforms, reducing the need for custom user flow.
 
 - **🚧 8.1.6.1. YNAB Management:** Handles integration with YNAB, allowing users to import or export budget data.
 - **🚧 8.1.6.2. Firefly III Management:** Manages the connection with Firefly III, enabling data synchronization between the two platforms.
