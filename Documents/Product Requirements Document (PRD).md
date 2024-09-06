@@ -6,69 +6,60 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 
 1. [Executive Summary](#1-executive-summary)
 2. [Objectives and Key Results (OKRs)](#2-objectives-and-key-results-okrs)
-   - 2.1. [Objective 1: Deliver a web-based solution for creating debt repayment plans](#21-objective-1-deliver-a-web-based-solution-for-creating-debt-repayment-plans)
-   - 2.2. [Objective 2: Ensure accessibility, usability, and security for all users](#22-objective-2-ensure-accessibility-usability-and-security-for-all-users)
-   - 2.3. [Objective 3: Provide comprehensive user education and support features](#23-objective-3-provide-comprehensive-user-education-and-support-features)
+   - [Objective 1: Deliver a web-based solution](#21-objective-1-deliver-a-web-based-solution-that-loan-recipients-can-use-to-create-debt-repayment-plans)
+   - [Objective 2: Ensure accessibility, usability, and security](#22-objective-2-ensure-accessibility-usability-and-security-for-all-users)
+   - [Objective 3: Provide comprehensive user education and support](#23-objective-3-provide-comprehensive-user-education-and-support-features)
 3. [Market and Context](#3-market-and-context)
-   - 3.1. [Problem Statement](#31-problem-statement)
-   - 3.2. [Market Analysis](#32-market-analysis)
-     - 3.2.1. [Direct Competitors](#321-direct-competitors)
-     - 3.2.2. [Indirect Competitors](#322-indirect-competitors)
-     - 3.2.3. [Strategic Opportunities](#323-strategic-opportunities)
-   - 3.3. [Assumptions and Limitations](#33-assumptions-and-limitations)
-     - 3.3.1. [Assumptions](#331-assumptions)
-     - 3.3.2. [Limitations](#332-limitations)
-     - 3.3.3. [Risks](#333-risks)
+   - [Problem Statement](#31-problem-statement)
+   - [Market Analysis](#32-market-analysis)
+     - [Direct Competitors](#321-direct-competitors)
+     - [Indirect Competitors](#322-indirect-competitors)
+     - [Strategic Opportunities](#323-strategic-opportunities)
+   - [Assumptions and Limitations](#33-assumptions-and-limitations)
+   - [Risks](#34-risks)
 4. [User Profiles](#4-user-profiles)
-   - 4.1. [Market Segmentation](#41-market-segmentation)
-   - 4.2. [Jobs-to-be-Done (JTBD)](#42-jobs-to-be-done-jtbd)
-     - 4.2.1. [Functional Jobs](#421-functional-jobs)
-     - 4.2.2. [Emotional Jobs](#422-emotional-jobs)
-     - 4.2.3. [Social Jobs](#423-social-jobs)
-   - 4.3. [User Pains](#43-user-pains)
-   - 4.4. [User Gains](#44-user-gains)
+   - [Market Segmentation](#41-market-segmentation)
+   - [Jobs-to-be-Done (JTBD)](#42-jobs-to-be-done-jtbd)
+   - [User Pains](#43-user-pains)
+   - [User Gains](#44-user-gains)
 5. [Personas](#5-personas)
-   - 5.1. [Taylor, The Debt-Strapped Professional](#51-taylor-the-debt-strapped-professional)
-   - 5.2. [Casey, The Organized Homemaker](#52-casey-the-organized-homemaker)
+   - [Taylor, The Debt-Strapped Professional](#51-taylor-the-debt-strapped-professional)
+   - [Casey, The Organized Homemaker](#52-casey-the-organized-homemaker)
 6. [Value Proposition](#6-value-proposition)
-   - 6.1. [Feature Set](#61-feature-set)
-     - 6.1.1. [Primary Features](#611-primary-features)
-     - 6.1.2. [Secondary Features](#612-secondary-features)
-     - 6.1.3. [Potential Features](#613-potential-features)
-     - 6.1.4. [Excluded Features](#614-excluded-features)
-   - 6.2. [Gain Creators](#62-gain-creators)
-   - 6.3. [Pain Relievers](#63-pain-relievers)
+   - [Feature Set](#61-feature-set)
+     - [Primary Features](#611-primary-features)
+     - [Secondary Features](#612-secondary-features)
+     - [Potential Features](#613-potential-features)
+     - [Excluded Features](#614-excluded-features)
+   - [Gain Creators](#62-gain-creators)
+   - [Pain Relievers](#63-pain-relievers)
 7. [Value Proposition Canvas](#7-value-proposition-canvas)
+   - [Value Proposition Canvas](#71-value-proposition-canvas)
 8. [User Interface and User Experience (UI/UX)](#8-user-interface-and-user-experience-uiux)
-   - 8.1. [User Flows](#81-user-flows)
-     - 8.1.1. [Session Management](#811-session-management)
-     - 8.1.2. [User Profile](#812-user-profile)
-     - 8.1.3. [Debt Plan](#813-debt-plan)
-       - 8.1.3.1. [Debt Management](#8131-debt-management)
-       - 8.1.3.2. [Snowflake Management](#8132-snowflake-management)
-       - 8.1.3.3. [Payment Management](#8133-payment-management)
-     - 8.1.4. [Debt Analyst](#814-debt-analyst)
-       - 🚧 8.1.4.1. [Advanced Reporting Context](#8141-advanced-reporting-context)
-       - 🚧 8.1.4.2. [AI-Driven Insights](#8142-ai-driven-insights)
-     - 8.1.5. [Data Management](#815-data-management)
-       - 8.1.5.1. [Import Management](#8151-import-management)
-       - 8.1.5.2. [Export Management](#8152-export-management)
-     - 8.1.6. [PFS Integration Management](#816-pfs-integration-management)
-       - 🚧 8.1.6.1. [YNAB Management](#8161-ynab-management)
-       - 🚧 8.1.6.2. [Firefly III Management](#8162-firefly-iii-management)
-   - 8.2. [Wireframes/Mockups](#82-wireframesmockups)
+   - [User Flows](#81-user-flows)
+     - [Key Map](#key-map)
+     - [User Session](#811-user-session)
+       - [Single-User Context](#8111-single-user-context)
+       - [Multi-User Context](#8112-multi-user-context)
+     - [Subscription Process](#812-subscription-process)
+     - [User Profile](#813-user-profile)
+     - [Plan Management Flow](#813-plan-management-flow)
+       - [Debt Management](#8131-debt-management)
+       - [Snowflake Management](#8132-snowflake-management)
+       - [Payment Management](#8133-payment-management)
+     - [Debt Analyst](#814-debt-analyst)
+     - [Data Management](#815-data-management)
+   - [Wireframes](#82-wireframes)
 9. [User Stories](#9-user-stories)
-   - 9.1. [User Stories](#91-user-stories)
+   - [User Stories](#91-user-stories)
 10. [Legal and Compliance](#10-legal-and-compliance)
-
-- 10.1. [Data Privacy](#101-data-privacy)
-- 10.2. [Regulatory Compliance](#102-regulatory-compliance)
-- 10.3. [International Regulations](#103-international-regulations)
-- 10.4. [Terms of Service & User Agreements](#104-terms-of-service--user-agreements)
-- 10.5. [Record Keeping and Audit Trails](#105-record-keeping-and-audit-trails)
-- 10.6. [Legal Risk Management](#106-legal-risk-management)
-- 10.7. [Protection of Intellectual Property (IP)](#107-protection-of-intellectual-property-ip)
-
+    - [Data Privacy](#101-data-privacy)
+    - [Regulatory Compliance](#102-regulatory-compliance)
+    - [International Regulations](#103-international-regulations)
+    - [Terms of Service & User Agreements](#104-terms-of-service--user-agreements)
+    - [Record Keeping and Audit Trails](#105-record-keeping-and-audit-trails)
+    - [Legal Risk Management](#106-legal-risk-management)
+    - [Protection of Intellectual Property (IP)](#107-protection-of-intellectual-property-ip)
 11. [Related Documents](#11-related-documents)
 
 ## 1. Executive Summary
@@ -244,8 +235,6 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 ## 5. Personas
 
 > **Note:** At a later stage, we will create a user persona in [Figma](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
-
-
 > **Note:** At a later stage, we will create a user persona in [Figma](https://www.figma.com/community/search?resource_type=files&sort_by=relevancy&query=user+persona).
 
 ### 5.1. Taylor, The Debt-Strapped Professional
@@ -483,7 +472,7 @@ title: User Login Process
 ---
 flowchart TD
     OpenApp(["Open Application"])
-    
+
     OpenApp --> isLoggedIn{"Is user logged in?"}
 
     isLoggedIn -- Yes --> GrantAccess["Grant Access"]
@@ -553,7 +542,7 @@ flowchart TD
     EnterSignUp --> ProcessSignUp["Process Sign Up Form"]
     ProcessSignUp --> ConfirmEmailSent[\Confirmation Email Sent\]
     ConfirmEmailSent --> ClickLink[/Click Confirmation Link/]
-    
+
     ClickLink --> AccountCreated{"Is account created?"}
     AccountCreated -- Yes --> AccountCreatedMsg[\Show Account Created\]
     AccountCreated -- No --> ErrorMsg2[\Show Error Message\]
@@ -619,72 +608,72 @@ flowchart TD
     Start(["Start"])
 
     Start --> NavigateToProfilePage["User navigates to the Profile Management page"]
-    
+
     subgraph GeneralInfo["General Information"]
         DisplayGeneralInfo["Display General Information:\n Name, Email, Base Currency, Subscription Status"]
         DisplayGeneralInfo --> InputChangesGeneralInfo["User inputs changes to personal information"]
         InputChangesGeneralInfo --> ValidateGeneralInfo["System validates inputs"]
-        
+
         ValidateGeneralInfo --> IsValidGeneralInfo{"Are inputs valid?"}
         IsValidGeneralInfo -- No --> DisplayErrorGeneralInfo["Display error message"]
         DisplayErrorGeneralInfo --> InputChangesGeneralInfo
         IsValidGeneralInfo -- Yes --> SaveChangesGeneralInfo["Save changes"]
         SaveChangesGeneralInfo --> ConfirmationToastGeneralInfo["Display confirmation toast"]
     end
-    
+
     subgraph SecuritySettings["Security Settings"]
         DisplaySecuritySettings["Display Security Settings:\n Reset Password, Set up MFA, Use Google as IdP, Use Facebook as IdP"]
-        
+
         DisplaySecuritySettings --> ChooseActionSecurity{"Choose Action?"}
-        
+
         ChooseActionSecurity -- "Reset Password" --> InputPassword["User enters: current password, new password, confirmation password"]
         InputPassword --> ValidatePassword["System validates inputs"]
-        
+
         ValidatePassword --> IsValidPassword{"Are inputs valid?"}
         IsValidPassword -- No --> DisplayErrorPassword["Display error message"]
         DisplayErrorPassword --> InputPassword
         IsValidPassword -- Yes --> SaveNewPassword["Save new password"]
         SaveNewPassword --> PasswordResetConfirmation["Display password reset confirmation"]
-        
+
         ChooseActionSecurity -- "Set up MFA" --> SelectMFAMethod["Prompt user to select MFA method:\n SMS, Authenticator App, Email"]
         SelectMFAMethod --> UserSelectsMFA["User selects preferred MFA method"]
         UserSelectsMFA --> SendVerificationCode["System sends verification code"]
         SendVerificationCode --> UserEntersCode["User enters verification code"]
         UserEntersCode --> ValidateCode["System validates code and enables MFA"]
         ValidateCode --> MFASetupConfirmation["Display MFA setup confirmation"]
-        
+
         ChooseActionSecurity -- "Use Google as IdP" --> RedirectGoogle["Redirect user to Google login"]
         RedirectGoogle --> AuthenticateGoogle["User authenticates with Google"]
         AuthenticateGoogle --> LinkGoogle["System links Google account as IdP"]
         LinkGoogle --> GoogleSetupConfirmation["Display Google IdP setup confirmation"]
-        
+
         ChooseActionSecurity -- "Use Facebook as IdP" --> RedirectFacebook["Redirect user to Facebook login"]
         RedirectFacebook --> AuthenticateFacebook["User authenticates with Facebook"]
         AuthenticateFacebook --> LinkFacebook["System links Facebook account as IdP"]
         LinkFacebook --> FacebookSetupConfirmation["Display Facebook IdP setup confirmation"]
     end
-    
+
     subgraph PrivacyManagement["Privacy Management"]
         DisplayPrivacyOptions["Display Privacy Management Options: \n Manage Data, Export Data, Delete Account"]
-        
+
         DisplayPrivacyOptions --> ChooseActionPrivacy{"Choose Action?"}
-        
+
         ChooseActionPrivacy -- "Manage Data" --> DisplayDataOptions["Display data management options"]
         DisplayDataOptions --> UserSelectsData["User selects data to manage"]
         UserSelectsData --> ProcessDataRequest["System processes data management request"]
         ProcessDataRequest --> DataManagementConfirmation["Display data management confirmation"]
-        
+
         ChooseActionPrivacy -- "Export Data" --> RequestDataExport["User requests data export"]
         RequestDataExport --> PrepareDataExport["System prepares data export file"]
         PrepareDataExport --> NotifyUserDataReady["System notifies user when export is ready"]
         NotifyUserDataReady --> DownloadDataExport["User downloads data export file"]
-        
+
         ChooseActionPrivacy -- "Delete Account" --> ConfirmAccountDeletion["User confirms account deletion"]
         ConfirmAccountDeletion --> VerifyDeletion["System verifies request"]
         VerifyDeletion --> DeleteAccount["System deletes user account and associated data"]
         DeleteAccount --> DeletionConfirmation["Display account deletion confirmation"]
     end
-    
+
     NavigateToProfilePage --> GeneralInfo
     GeneralInfo --> SecuritySettings
     SecuritySettings --> PrivacyManagement
@@ -997,6 +986,7 @@ flowchart TD
 ### 8.2. Wireframes
 
 #### 8.2.1. **Debt-Free Plan Management**
+
 - **8.2.1.1. Plan Overview**  
   Displays a list of debt plans with quick actions such as "Create New Plan," "Edit," or "Delete."
 - **8.2.1.2. Plan Details**  
@@ -1009,6 +999,7 @@ flowchart TD
   A form for adding collaborators to the plan, setting permission levels, and sending invitations to others.
 
 #### 8.2.2. **Debt Analyst**
+
 - **8.2.2.1. Overview Dashboard**  
   Displays key metrics such as total debt, repayment progress, and upcoming payments, with visual progress bars and charts.
 - **8.2.2.2. Progress Visualization**  
@@ -1017,7 +1008,6 @@ flowchart TD
   Allows users to drill down into specific debts, repayment strategies, and payment history for better analysis.
 - **8.2.2.4. AI-Driven Insights (Optional)**  
   Provides users with personalized recommendations for optimizing their repayment strategies.
-
 
 ## 9. User Stories
 
