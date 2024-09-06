@@ -992,9 +992,9 @@ Additionally, [user flow diagrams](#81-user-flows) have already been established
 In line with the Agile principle of creating **just enough** documentation, wireframes for these standard sections will not be created.
 
 #### 8.2.1. **Debt-Free Plan Management**
+
 - **8.2.1.1. Plan Overview**  
   Displays a list of existing debt plans with quick actions such as "Create New Plan," "Edit," or "Delete." This gives users an overview of their progress and the ability to manage multiple plans.
-  
 - **8.2.1.2. Plan Details**  
   Shows comprehensive details of a selected plan, including debt breakdowns, repayment strategies, and a timeline. Users can adjust the plan dynamically, modify strategies, and track their progress in real-time.
 
@@ -1011,67 +1011,22 @@ In line with the Agile principle of creating **just enough** documentation, wire
 
 ## 9. User Stories
 
-### User Story Guidelines:
-
-#### User-Centric Approach:
-Ensure each story is written from the user's perspective, focusing on their needs and goals. The format should be:
-
-- **As a [type of user], I want to [perform an action] so that [I achieve a goal].**
-
-This ensures that stories are focused on delivering value to the user.  
-For example:  
-- *As a user, I want to delete a debt from my repayment plan so that I can keep my plan accurate.*
-
-#### INVEST Principle:
-When breaking down stories, follow the **INVEST** criteria:
-
-- **I**ndependent: Each story should be self-contained, without dependencies on other stories.
-- **N**egotiable: Stories should be open to discussion and refinement with the team.
-- **V**aluable: Each story should deliver clear value to the user.
-- **E**stimable: The team should be able to estimate the effort required to complete the story.
-- **S**mall: The story should be small enough to complete within a sprint or be further divided.
-- **T**estable: The story should have clear acceptance criteria to ensure it can be tested and verified when completed.
-
-This approach ensures that stories are clear, actionable, and easy to prioritize.
-
-### 9.2. Sample Stories Showcasing the INVEST Principle
-
-#### 1. **As a user, I want to edit a debt so that I can update it with the latest information.**
-
-- **I**ndependent: The story stands on its own, not requiring other stories (like adding or deleting debts) to be completed.
-- **N**egotiable: The specific details, such as what can be edited (interest rate, loan amount), can be discussed with the team.
-- **V**aluable: It provides value by allowing users to keep their debt information accurate and up-to-date.
-- **E**stimable: The team can estimate how long it will take to allow editing of debt information based on existing code.
-- **S**mall: This task is small enough to be completed within a sprint and isn't too large or complex.
-- **T**estable: Clear acceptance criteria can be defined (e.g., the user can successfully edit and save debt details, and the changes reflect correctly in the plan).
-
-#### 2. **As a user, I want to delete a debt from my plan so that I can remove debts that are no longer active.**
-
-- **I**ndependent: This story is self-contained and doesn't depend on adding or editing debts.
-- **N**egotiable: Specific rules about when and how a debt can be deleted can be discussed (e.g., do we allow deletion of debts that have a balance?).
-- **V**aluable: Deleting old or irrelevant debts keeps the user’s plan up-to-date and accurate, which is key for debt management.
-- **E**stimable: The development team can estimate the work required based on CRUD operations and UI interactions.
-- **S**mall: Deleting a debt is a straightforward, small action that can be completed in a single sprint.
-- **T**estable: The test for this story would involve verifying that a user can delete a debt and that the debt is removed from the plan without causing errors elsewhere.
-
 ### 9.1. User Stories
 
 - **Debt-Free Plan Management**  
-  *As a user, I want to create a new debt-free plan so that I can track my progress toward becoming debt-free.*
+  _As a user, I want to create a new debt-free plan so that I can track my progress toward becoming debt-free._
 
 - **Debt Management**  
-  *As a user, I want to add a new debt to my plan so that I can include it in my repayment strategy.*
+  _As a user, I want to add a new debt to my plan so that I can include it in my repayment strategy._
 
 - **Plan Overview**  
-  *As a user, I want to view all my debt plans in a list so that I can quickly see and manage them.*
+  _As a user, I want to view all my debt plans in a list so that I can quickly see and manage them._
 
 - **Snowflake Management**  
-  *As a user, I want to add irregular payments so that I can see how they impact my debt repayment timeline.*
+  _As a user, I want to add irregular payments so that I can see how they impact my debt repayment timeline._
 
 - **Plan Collaboration**  
-  *As a user, I want to invite collaborators to my plan so that I can manage debts with others.*
-
-
+  _As a user, I want to invite collaborators to my plan so that I can manage debts with others._
 
 ## 10. Legal and Compliance
 
