@@ -477,118 +477,93 @@ For a guide, refer to the [Flowcharts Syntax](https://mermaid.js.org/syntax/flow
 
 Focuses on managing individual user sessions, including login, logout, and maintaining session continuity.
 
-```plantuml:
-@startuml
-title User Login Process
+```mermaid
+---
+title: User Login Process
+---
+flowchart TD
+    OpenApp(["Open Application"])
+    
+    OpenApp --> isLoggedIn{"Is user logged in?"}
 
-start
-:Open Application;
+    isLoggedIn -- Yes --> GrantAccess["Grant Access"]
+    isLoggedIn -- No --> HasAccount{"User has account?"}
 
-while (Is user logged in?) is (No)
-  if (User has account?) then (Yes)
+    ErrorMsg --> HasAccount
 
-    if (Will log in via Identity Provider?) then (Yes)
-      :Redirect to Identity Provider; <<task>>
-    else (No)
-      :Enter Email and Password; <<input>>
-    endif
+    HasAccount -- Yes --> LoginMethod{"Will log in via Identity Provider?"}
+    LoginMethod -- No --> EnterLogin[/Enter Email and Password/]
+    LoginMethod -- Yes --> RedirectIdP[[Redirect to Identity Provider]]
 
-    :Process Login; <<task>>
-    if (Authentication Successful?) then (Yes)
-      :Display Welcome Message; <<output>>
-    else (No)
-      :Show Error Message; <<output>>
-    endif
+    EnterLogin --> ProcessLogin["Process Login"]
+    RedirectIdP --> ProcessLogin
 
-  else (No)
-    :Choose Sign Up Method; <<task>>
+    ProcessLogin --> AuthSuccess{"Authentication Successful?"}
+    AuthSuccess -- Yes --> WelcomeMsg[\Display Welcome Message\]
+    AuthSuccess -- No --> ErrorMsg[\Show Error Message\]
 
-    if (Sign Up via Identity Provider?) then (Yes)
-      :Redirect to Identity Provider; <<task>>
-    else (No)
-      :Enter Email, Password, and Confirm Password; <<input>>
-      :Process Sign Up Form; <<task>>
-      :Confirmation Email Sent; <<output>>
-      :Click Confirmation Link; <<input>>
-    endif
+    HasAccount -- No --> SignUpMethod{"Will signup via Identity Provider?"}
+    SignUpMethod -- Yes --> RedirectIdP
+    SignUpMethod -- No --> EnterSignUp[/Enter Email, Password, and Confirm Password/]
 
-    if (Is account created?) then (Yes)
-      :Show Account Created; <<output>>
-    else (No)
-      :Show Error Message; <<output>>
-    endif
-  endif
+    EnterSignUp --> ProcessSignUp["Process Sign Up Form"]
+    ProcessSignUp --> ConfirmEmailSent[\Confirmation Email Sent\]
+    ConfirmEmailSent --> ClickLink[/Confirmation Link is Clicked/]
+    ClickLink --> AccountCreatedMsg[\Show Account Created\]
+    AccountCreatedMsg --> GrantAccess
 
-endwhile (Yes)
-
-:Grant Access; <<task>>
-stop
-@enduml
+    WelcomeMsg --> GrantAccess
 ```
-
-![User Login Process (Single-User)](Medias/UserFlows-UserLoginProcess-SingleUser.png)
 
 #### 8.1.1.2. 🚧 **Multi-User Context:**
 
 Expands to manage multiple user sessions under a single account, supporting role-based access control and seamless switching between user profiles.
 
-```plantuml:
-@startuml
-title User Login Process (Multi-User with Plan Selection)
+```mermaid
+---
+title: User Login Process (Multi-User with Plan Selection)
+---
+flowchart TD
+    OpenApp(["Open Application"])
 
-start
-:Open Application;
+    OpenApp --> isLoggedIn{"Is user logged in?"}
+    isLoggedIn -- Yes --> GrantAccess["Grant Access"]
+    isLoggedIn -- No --> HasAccount{"User has account?"}
 
-while (Is user logged in?) is (No)
-  if (User has account?) then (Yes)
+    ErrorMsg --> HasAccount
 
-    if (Will log in via Identity Provider?) then (Yes)
-      :Redirect to Identity Provider; <<task>>
-    else (No)
-      :Enter Email and Password; <<input>>
-    endif
+    HasAccount -- Yes --> LoginMethod{"Will log in via Identity Provider?"}
+    LoginMethod -- No --> EnterLogin[/Enter Email and Password/]
+    LoginMethod -- Yes --> RedirectIdP[[Redirect to Identity Provider]]
 
-    :Process Login; <<task>>
-    if (Authenticated successfully?) then (Yes)
+    EnterLogin --> ProcessLogin["Process Login"]
+    RedirectIdP --> ProcessLogin
 
-      if (Has Multiple Plans?) then (Yes)
-        :User chooses their plan; <<input>>
-      else (No)
-    endif
+    ProcessLogin --> AuthSuccess{"Authenticated successfully?"}
+    AuthSuccess -- Yes --> HasMultiplePlans{"Has Multiple Plans?"}
+    AuthSuccess -- No --> ErrorMsg1[\Show Error Message\]
 
-    else (No)
-      :Show Error Message; <<output>>
-    endif
+    HasMultiplePlans -- Yes --> ChoosePlan[/User chooses their plan/]
+    HasMultiplePlans -- No --> GrantAccess
 
-  else (No)
-    :Choose Sign Up Method; <<task>>
+    HasAccount -- No --> SignUpMethod{"Choose Sign Up Method"}
+    SignUpMethod -- Yes --> RedirectIdP
+    SignUpMethod -- No --> EnterSignUp[/Enter Email, Password, and Confirm Password/]
 
-    if (Sign Up via Identity Provider?) then (Yes)
-      :Redirect to Identity Provider; <<task>>
-    else (No)
-      :Enter Email, Password, and Confirm Password; <<input>>
-      :Process Sign Up Form; <<task>>
-      :Confirmation Email Sent; <<output>>
-      :Click Confirmation Link; <<input>>
-    endif
+    EnterSignUp --> ProcessSignUp["Process Sign Up Form"]
+    ProcessSignUp --> ConfirmEmailSent[\Confirmation Email Sent\]
+    ConfirmEmailSent --> ClickLink[/Click Confirmation Link/]
+    
+    ClickLink --> AccountCreated{"Is account created?"}
+    AccountCreated -- Yes --> AccountCreatedMsg[\Show Account Created\]
+    AccountCreated -- No --> ErrorMsg2[\Show Error Message\]
 
-    if (Is account created?) then (Yes)
-      :Show Account Created; <<output>>
-    else (No)
-      :Show Error Message; <<output>>
-    endif
-  endif
+    GrantAccess --> stop([Stop])
+    AccountCreatedMsg --> GrantAccess
+    ErrorMsg1 --> isLoggedIn
+    ErrorMsg2 --> SignUpMethod
 
-endwhile (Yes)
-
-:Grant Access; <<task>>
-stop
-@enduml
-
-@enduml
 ```
-
-![User Login Process (Multi-User with Plan Selection)](Medias/UserFlows-UserLoginProcess-MultiUser.png)
 
 **Implemented under module:** Session Management
 
@@ -602,37 +577,31 @@ This flow outlines how users go through the process of subscribin the paid tier.
 
 **Implemented under module:** Subscription Management
 
-```plantuml
-@startuml
-title Subscription Process
+```mermaid
+---
+title: Subscription Process
+---
+flowchart TD
+    AccessPage["Access Subscription Page"]
 
-start
-:Access Subscription Page;
+    AccessPage --> EnterPayment[/Enter Payment Information/]
+    EnterPayment --> SubmitPayment["Submit Payment Details"]
+    SubmitPayment --> ProcessPayment["Process Payment via Secure Gateway"]
 
-note
-The app does not store
-bank card information.
-end note
+    ProcessPayment --> IsPaymentSuccessful{"Is Payment Successful?"}
+    IsPaymentSuccessful -- No --> RetryPayment["Retry Payment"]
+    RetryPayment --> EnterPayment
 
-repeat :Enter Payment Information; <<input>>
+    IsPaymentSuccessful -- Yes --> ShowConfirmation[\Show Confirmation Screen\]
+    ShowConfirmation --> SendEmail[\Send Confirmation Email\]
+    SendEmail --> UpdateStatus["Update Account Status"]
 
-:Submit Payment Details; <<task>>
-:Process Payment via Secure Gateway; <<task>>
-
-backward :Retry Payment;
-repeat while (Is Payment Successful?) is (No)
-  -> Yes;
-
-:Show Confirmation Screen; <<output>>
-:Send Confirmation Email; <<output>>
-:Update Account Status; <<task>>
-
-stop
-
-@enduml
+    %% Note for informational purposes
+    subgraph Note["Note"]
+      direction LR
+      NoteText["The app does not store bank card information."]
+    end
 ```
-
-![Subscription Process](Medias/UserFlows-SubscriptionProcess.png)
 
 ---
 
@@ -642,101 +611,86 @@ stop
 
 **Implemented under module:** Profile Management
 
-```plantuml
-@startuml
-@startuml
-start
+```mermaid
+---
+title: Profile Management Process
+---
+flowchart TD
+    Start(["Start"])
 
-!pragma useVerticalIf on
-
-repeat
-    :User navigates from the main dashboard or menu \n to the Profile Management page; <<task>>
-
-    if (General Information)
-        :Display General Information: \n Name \n Email \n Base Currency \n Subscription Status; <<output>>
-
-        repeat
-            :User inputs changes to personal information; <<input>>
-            :System validates inputs; <<task>>
-
-backward: Display error message; <<output>>
-        repeat while (Are inputs valid?) is (No)
-
-        :Save changes to selected section; <<task>>
-        :Display confirmation toast; <<output>>
-
-    elseif (Security Settings)
-        :Display Security Settings: \n Reset Password \n Set up MFA \n Use Google as IdP \n Use Facebook as IdP; <<output>>
-
-        if (Choose Action?) then (Reset Password)
-            repeat
-                :User enters:\n current password\n new password\n confirmation password; <<input>>
-                :System validates inputs; <<task>>
-
-backward: Display error message; <<output>>
-            repeat while (Are inputs valid?) is (No)
-
-            :Save new password; <<task>>
-            :Display password reset confirmation; <<output>>
-
-        elseif (Set up MFA)
-            :Prompt user to select MFA method:\n SMS, Authenticator App, Email; <<output>>
-            :User selects preferred MFA method; <<input>>
-            :System sends verification code; <<task>>
-            :User enters verification code; <<input>>
-            :System validates code and enables MFA; <<task>>
-            :Display MFA setup confirmation; <<output>>
-
-        elseif (Use Google as IdP)
-            :Redirect user to Google login; <<task>>
-            :User authenticates with Google; <<input>>
-            :System links Google account as IdP; <<task>>
-            :Display Google IdP setup confirmation; <<output>>
-
-        elseif (Use Facebook as IdP)
-            :Redirect user to Facebook login; <<task>>
-            :User authenticates with Facebook; <<input>>
-            :System links Facebook account as IdP; <<task>>
-            :Display Facebook IdP setup confirmation; <<output>>
-
-        endif
-
-    elseif (Privacy Management)
-        :Display Privacy Management Options: \n Manage Data \n Export Data \n Delete Account; <<output>>
-
-        if (Choose Action?) then (Manage Data)
-            :Display data management options; <<output>>
-            :User selects data to manage; <<input>>
-            :System processes data management request; <<task>>
-            :Display data management confirmation; <<output>>
-
-        elseif (Export Data)
-            :User requests data export; <<input>>
-            :System prepares data export file; <<task>>
-            :System notifies user when export is ready; <<output>>
-            :User downloads data export file; <<task>>
-
-        elseif (Delete Account)
-            :User confirms account deletion; <<input>>
-            :System verifies request; <<task>>
-            :System deletes user account and associated data; <<task>>
-            :Display account deletion confirmation; <<output>>
-        endif
-
-    else
-        :Display other sections as needed; <<output>>
-        :User inputs changes to other sections; <<input>>
-    endif
-
-repeat while (User wants to make more changes?)
-stop
-@enduml
-
-@enduml
+    Start --> NavigateToProfilePage["User navigates to the Profile Management page"]
+    
+    subgraph GeneralInfo["General Information"]
+        DisplayGeneralInfo["Display General Information:\n Name, Email, Base Currency, Subscription Status"]
+        DisplayGeneralInfo --> InputChangesGeneralInfo["User inputs changes to personal information"]
+        InputChangesGeneralInfo --> ValidateGeneralInfo["System validates inputs"]
+        
+        ValidateGeneralInfo --> IsValidGeneralInfo{"Are inputs valid?"}
+        IsValidGeneralInfo -- No --> DisplayErrorGeneralInfo["Display error message"]
+        DisplayErrorGeneralInfo --> InputChangesGeneralInfo
+        IsValidGeneralInfo -- Yes --> SaveChangesGeneralInfo["Save changes"]
+        SaveChangesGeneralInfo --> ConfirmationToastGeneralInfo["Display confirmation toast"]
+    end
+    
+    subgraph SecuritySettings["Security Settings"]
+        DisplaySecuritySettings["Display Security Settings:\n Reset Password, Set up MFA, Use Google as IdP, Use Facebook as IdP"]
+        
+        DisplaySecuritySettings --> ChooseActionSecurity{"Choose Action?"}
+        
+        ChooseActionSecurity -- "Reset Password" --> InputPassword["User enters: current password, new password, confirmation password"]
+        InputPassword --> ValidatePassword["System validates inputs"]
+        
+        ValidatePassword --> IsValidPassword{"Are inputs valid?"}
+        IsValidPassword -- No --> DisplayErrorPassword["Display error message"]
+        DisplayErrorPassword --> InputPassword
+        IsValidPassword -- Yes --> SaveNewPassword["Save new password"]
+        SaveNewPassword --> PasswordResetConfirmation["Display password reset confirmation"]
+        
+        ChooseActionSecurity -- "Set up MFA" --> SelectMFAMethod["Prompt user to select MFA method:\n SMS, Authenticator App, Email"]
+        SelectMFAMethod --> UserSelectsMFA["User selects preferred MFA method"]
+        UserSelectsMFA --> SendVerificationCode["System sends verification code"]
+        SendVerificationCode --> UserEntersCode["User enters verification code"]
+        UserEntersCode --> ValidateCode["System validates code and enables MFA"]
+        ValidateCode --> MFASetupConfirmation["Display MFA setup confirmation"]
+        
+        ChooseActionSecurity -- "Use Google as IdP" --> RedirectGoogle["Redirect user to Google login"]
+        RedirectGoogle --> AuthenticateGoogle["User authenticates with Google"]
+        AuthenticateGoogle --> LinkGoogle["System links Google account as IdP"]
+        LinkGoogle --> GoogleSetupConfirmation["Display Google IdP setup confirmation"]
+        
+        ChooseActionSecurity -- "Use Facebook as IdP" --> RedirectFacebook["Redirect user to Facebook login"]
+        RedirectFacebook --> AuthenticateFacebook["User authenticates with Facebook"]
+        AuthenticateFacebook --> LinkFacebook["System links Facebook account as IdP"]
+        LinkFacebook --> FacebookSetupConfirmation["Display Facebook IdP setup confirmation"]
+    end
+    
+    subgraph PrivacyManagement["Privacy Management"]
+        DisplayPrivacyOptions["Display Privacy Management Options: \n Manage Data, Export Data, Delete Account"]
+        
+        DisplayPrivacyOptions --> ChooseActionPrivacy{"Choose Action?"}
+        
+        ChooseActionPrivacy -- "Manage Data" --> DisplayDataOptions["Display data management options"]
+        DisplayDataOptions --> UserSelectsData["User selects data to manage"]
+        UserSelectsData --> ProcessDataRequest["System processes data management request"]
+        ProcessDataRequest --> DataManagementConfirmation["Display data management confirmation"]
+        
+        ChooseActionPrivacy -- "Export Data" --> RequestDataExport["User requests data export"]
+        RequestDataExport --> PrepareDataExport["System prepares data export file"]
+        PrepareDataExport --> NotifyUserDataReady["System notifies user when export is ready"]
+        NotifyUserDataReady --> DownloadDataExport["User downloads data export file"]
+        
+        ChooseActionPrivacy -- "Delete Account" --> ConfirmAccountDeletion["User confirms account deletion"]
+        ConfirmAccountDeletion --> VerifyDeletion["System verifies request"]
+        VerifyDeletion --> DeleteAccount["System deletes user account and associated data"]
+        DeleteAccount --> DeletionConfirmation["Display account deletion confirmation"]
+    end
+    
+    NavigateToProfilePage --> GeneralInfo
+    GeneralInfo --> SecuritySettings
+    SecuritySettings --> PrivacyManagement
+    PrivacyManagement --> Stop(["Stop"])
 
 ```
-
-![User flow for User Profile)](Medias/UserFlows-UserProfile.png)
 
 ---
 
@@ -749,62 +703,48 @@ This flow details how users can create, manage, and collaborate on multiple debt
 **Implemented under module:** Plan Management
 
 ```plantuml
-@startuml
-title Plan Management Flow
+---
+title: Plan Management Flow
+---
+flowchart TD
+    UserNavigates["User navigates to Debt-Free Strategy Page"] --> ManageDebt["User manages their Debt"]
+    ManageDebt --> ManageSnowflake["User manages their Snowflake"]
+    ManageSnowflake --> ManagePayment["User manages their Payment"]
+    ManagePayment --> ViewDebtAnalyst["User views their Debt Analyst"]
 
-  :User navigates to Debt-Free Strategy Page;
-  :User manages their Debt;
-  :User manages their Snowflake;
-  :User manages their Payment;
-  :User views their Debt Analyst;
+    subgraph DebtPlanFlow["Debt Plan Management Flow"]
+        NavigateToDebtPage["User navigates to Debt-Free Strategy Page"]
 
+        NavigateToDebtPage --> CreateOrModifyPlan{"Create or modify a New Debt Plan?"}
 
-repeat
-  :User navigates to Debt-Free Strategy Page; <<task>>
+        CreateOrModifyPlan -- Yes --> EnterPlanName["User enters the name of the new plan"]
+        EnterPlanName --> IsNameValid{"Is name valid?"}
+        IsNameValid -- No --> ShowErrorMessage1["System shows an error message"]
+        ShowErrorMessage1 --> EnterPlanName
+        IsNameValid -- Yes --> AddCollaborators{"Add Collaborators?"}
 
-  if (Create or modify a New Debt Plan?) then (Yes)
-    repeat
-      :User enters the name of the new plan; <<input>>
+        AddCollaborators -- Yes --> EnterCollaboratorInfo["User enters the name and email of the collaborator"]
+        EnterCollaboratorInfo --> IsCollaboratorValid{"Is name and email valid?"}
+        IsCollaboratorValid -- No --> ShowErrorMessage2["System shows an error message"]
+        ShowErrorMessage2 --> EnterCollaboratorInfo
+        IsCollaboratorValid -- Yes --> SelectPermissionLevel["User selects permission levels (read-only, edit, admin)"]
+        SelectPermissionLevel --> SendEmailInvites["System sends email invitations to collaborators"]
+        SendEmailInvites --> ClickInvitationLink["Invited user clicks on the link in the email"]
+        ClickInvitationLink --> AddUserToPlan["System adds the user to the plan"]
 
-      backward :System shows an error message;
-    repeat while (Is name valid?) is (No)
-    ->Yes;
+        AddCollaborators -- No --> ExistingPlan["User chooses an existing debt plan"]
 
-    if (Add Collaborators?) then (Yes)
-      repeat
-        :User enters the name and email of the collaborator; <<output>>
+        ExistingPlan --> ModifyPlan{"Modify Plan?"}
+        ModifyPlan -- Yes --> EnterModifications["User enters the modifications"]
+        EnterModifications --> AreModificationsValid{"Are modifications valid?"}
+        AreModificationsValid -- No --> ShowErrorMessage3["System shows an error message"]
+        ShowErrorMessage3 --> EnterModifications
+        AreModificationsValid -- Yes --> EndModification
+    end
 
-        backward :System shows an error message; <<output>>
-      repeat while (Is name and email valid?) is (No)
-      ->Yes;
-
-      :User selects permission levels \n(read-only, edit, admin); <<input>>
-      :System sends email invitations to collaborators; <<task>>
-      :Invited user clicks on the link in the email; <<input>>
-      :System adds the user to the plan; <<task>>
-    else (No)
-    endif
-
-  else (No)
-    :User chooses an existing debt plan; <<task>>
-
-    if (Modify Plan?) then (Yes)
-      repeat
-        :User enters the modifications; <<input>>
-
-        backward :System shows an error message; <<output>>
-      repeat while (Are modifications valid?) is (No)
-      ->Yes;
-
-    endif
-  endif
-
-repeat while ()
-stop
-@enduml
+    ManageDebt --> DebtPlanFlow
+    DebtPlanFlow --> End(["Stop"])
 ```
-
-![Plan Management Flow](Medias/UserFlows-PlanManagement.png)
 
 ##### **8.1.3.1. Debt Management:**
 
@@ -812,35 +752,41 @@ Focuses on managing individual debts, including loan amounts, interest rates, an
 
 **Implemented under module:** Snowflake Management
 
-```plantuml
-@startuml
-title Debt Management - User Flow
+```mermaid
+---
+title: Debt Management - User Flow
+---
+flowchart TD
+    UserNavigatesToStrategy["User navigates to Debt-Free Strategy Page"]
 
-:User navigates to Debt-Free Strategy Page;
+    subgraph DebtManagementFlow["Debt Management"]
+        UserNavigatesToDebtSection["User navigates to the Debt Management section"]
 
-repeat :User navigates to the Debt Management section; <<input>>
+        UserNavigatesToDebtSection --> AreThereDebts{"Are there existing debts?"}
 
-if (Are there existing debts?) then (Yes)
-  :System shows existing debts and the options to edit or delete; <<output>>
+        AreThereDebts -- Yes --> ShowDebts["System shows existing debts and options to edit or delete"]
+        ShowDebts --> WantsToEditDelete{"User wants to edit or delete?"}
 
-  if (User wants to edit or delete?) then (Yes)
-    :User edits the debt details; <<input>>
-    :System updates debt details in the system; <<task>>
-  endif
-else (No)
-  :Display option to add a new debt; <<output>>
-  :User adds a new debt; <<input>>
-  :System saves the new debt details; <<task>>
-endif
+        WantsToEditDelete -- Yes --> EditDebt["User edits the debt details"]
+        EditDebt --> UpdateDebt["System updates debt details in the system"]
+        WantsToEditDelete -- No --> EndEdit
 
-repeat while (Has the user completed managing debts?) is (No)
-  -> Yes;
+        AreThereDebts -- No --> DisplayAddDebt["Display option to add a new debt"]
+        DisplayAddDebt --> AddDebt["User adds a new debt"]
+        AddDebt --> SaveNewDebt["System saves the new debt details"]
 
-:User navigates to manage their Snowflakes;
-:User navigates to manage their Payment;
-:User views their Debt Analyst;
+        ManageDebtLoop{"Has the user completed managing debts?"}
+        SaveNewDebt --> ManageDebtLoop
+        UpdateDebt --> ManageDebtLoop
+        ManageDebtLoop -- No --> UserNavigatesToDebtSection
+    end
 
-@enduml
+    ManageDebtLoop -- Yes --> ManageSnowflakes["User navigates to manage their Snowflakes"]
+    ManageSnowflakes --> ManagePayment["User navigates to manage their Payment"]
+    ManagePayment --> ViewDebtAnalyst["User views their Debt Analyst"]
+
+    UserNavigatesToStrategy --> DebtManagementFlow
+    ViewDebtAnalyst --> Stop(["End"])
 ```
 
 ##### **8.1.3.2. Snowflake Management:**
@@ -849,37 +795,50 @@ Manages irregular payments (snowflake payments) to help users reduce their debt 
 
 **Implemented under module:** Snowflake Management
 
-```plantuml
-@startuml
-title Snowflake Management - User Flow
+```mermaid
+---
+title: Snowflake Management - User Flow
+---
 
-:User navigates to Debt-Free Strategy Page;
-repeat :User manages their Debts;
-repeat while (User has debts?) is (No)
-  -> Yes;
+flowchart TD
+    UserNavigatesToStrategy["User navigates to Debt-Free Strategy Page"]
 
-repeat :User navigates to the Snowflake section; <<input>>
+    subgraph DebtManagement["Debt Management"]
+        UserManagesDebts["User manages their Debts"]
+        HasDebts{"User has debts?"}
+        UserManagesDebts --> HasDebts
+        HasDebts -- No --> EndDebtManagement
+    end
 
-if (Are there existing snowflake payments?) then (Yes)
-  :system shows Snowflakes and the options to edit or delete; <<output>>
+    UserNavigatesToSnowflake["User navigates to the Snowflake section"]
 
-  if (User wants to edit or delete?) then (Yes)
-    :User edits the Snowflake details; <<input>>
-    :System updates Snowflake details in the system; <<task>>
-  endif
-else (No)
-  :Display option to add a new snowflake payment; <<output>>
-  :User adds a new snowflake payment; <<input>>
-  :System saves the new Snowflake payment; <<task>>
-endif
+    subgraph SnowflakeManagement["Snowflake Management"]
+        AreThereSnowflakes{"Are there existing snowflake payments?"}
+        UserNavigatesToSnowflake --> AreThereSnowflakes
 
-repeat while (Has the user completed managing Snowflakes?) is (No)
-  -> Yes;
+        AreThereSnowflakes -- Yes --> ShowSnowflakes["System shows Snowflakes and options to edit or delete"]
+        ShowSnowflakes --> WantsToEditSnowflake{"User wants to edit or delete?"}
 
-:User navigates to manage their Payment;
-:User views their Debt Analyst;
+        WantsToEditSnowflake -- Yes --> EditSnowflake["User edits the Snowflake details"]
+        EditSnowflake --> UpdateSnowflake["System updates Snowflake details in the system"]
+        WantsToEditSnowflake -- No --> EndSnowflakeEdit
 
-@enduml
+        AreThereSnowflakes -- No --> DisplayAddSnowflake["Display option to add a new snowflake payment"]
+        DisplayAddSnowflake --> AddSnowflake["User adds a new snowflake payment"]
+        AddSnowflake --> SaveSnowflake["System saves the new Snowflake payment"]
+
+        ManageSnowflakeLoop{"Has the user completed managing Snowflakes?"}
+        SaveSnowflake --> ManageSnowflakeLoop
+        UpdateSnowflake --> ManageSnowflakeLoop
+        ManageSnowflakeLoop -- No --> UserNavigatesToSnowflake
+    end
+
+    ManageSnowflakeLoop -- Yes --> ManagePayments["User navigates to manage their Payment"]
+    ManagePayments --> ViewDebtAnalyst["User views their Debt Analyst"]
+
+    UserNavigatesToStrategy --> DebtManagement
+    EndDebtManagement --> SnowflakeManagement
+    ViewDebtAnalyst --> Stop(["End"])
 ```
 
 ##### **8.1.3.3. Payment Management:**
@@ -888,36 +847,51 @@ Manages the overall allocation of payments across debts, ensuring users stay on 
 
 **Implemented under module:** Payment Management
 
-```plantuml
-@startuml
-title Payment Management - User Flow
+```mermaid
+---
+title: Payment Management - User Flow
+---
+flowchart TD
+    UserNavigatesToStrategy["User navigates to Debt-Free Strategy Page"]
 
-:User navigates to Debt-Free Strategy Page;
+    subgraph DebtManagement["Debt Management"]
+        UserManagesDebts["User manages their Debts"]
+        HasDebts{"User has debts?"}
+        UserManagesDebts --> HasDebts
+        HasDebts -- No --> EndDebtManagement
+    end
 
+    subgraph SnowflakeManagement["Snowflake Management"]
+        UserManagesSnowflakes["User manages their Snowflakes"]
+    end
 
-repeat :User manages their Debts;
-repeat while (User has debts?) is (No)
-  -> Yes;
+    UserNavigatesToPayment["User navigates to the Payment Management section"]
 
-repeat :User manages their Snowflakes;
+    subgraph PaymentManagement["Payment Management"]
+        SystemDisplaysPayments["System calculates and displays existing payments based on debts"]
 
-:User navigates to the Payment Management section; <<input>>
+        UserNavigatesToPayment --> SystemDisplaysPayments
 
-:System calculates and displays existing payments based on debts; <<task>>
+        IncreasePayment{"User wants to increase their payment?"}
+        SystemDisplaysPayments --> IncreasePayment
 
-if (User wants to increase their payment?) then (Yes)
-  repeat :User enters a new amount; <<input>>
-  repeat while (Is the entered amount larger than \nthe sum of the debts' minimum payments?) is (No)
-    -> Yes;
-  :System updates payment details in the system; <<task>>
-endif
+        IncreasePayment -- Yes --> EnterNewAmount["User enters a new amount"]
+        EnterNewAmount --> AmountLargerThanMinimum{"Is the entered amount larger than the sum of the debts' minimum payments?"}
+        AmountLargerThanMinimum -- No --> EnterNewAmount
+        AmountLargerThanMinimum -- Yes --> UpdatePayment["System updates payment details in the system"]
 
-repeat while (Has the user completed managing payments?) is (No)
-  -> Yes;
+        ManagePaymentsLoop{"Has the user completed managing payments?"}
+        UpdatePayment --> ManagePaymentsLoop
+        ManagePaymentsLoop -- No --> UserNavigatesToPayment
+    end
 
-:User views their Debt Analyst;
+    ManagePaymentsLoop -- Yes --> ViewDebtAnalyst["User views their Debt Analyst"]
 
-@enduml
+    UserNavigatesToStrategy --> DebtManagement
+    EndDebtManagement --> SnowflakeManagement
+    SnowflakeManagement --> PaymentManagement
+    ViewDebtAnalyst --> Stop(["End"])
+
 ```
 
 ---
@@ -932,23 +906,32 @@ repeat while (Has the user completed managing payments?) is (No)
 
 **Implemented under module:** Reporting Management
 
-```plantuml
-@startuml
-title Plan Management Flow
+```mermaid
+---
+title: Plan Management Flow
+---
+flowchart TD
+    subgraph PlanCreation["Plan Creation"]
+        UserCreatesPlan["User creates a debt repayment plan"]
+        DoesUserHavePlan{"Does the user have a plan?"}
+        UserCreatesPlan --> DoesUserHavePlan
+        DoesUserHavePlan -- No --> UserCreatesPlan
+    end
 
-repeat : User creates a debt repayment plan;
-repeat while (Does the user have a plan?) is (No)
-  -> Yes;
+    subgraph DebtManagement["Debt Management"]
+        UserManagesDebts["User manages their debts"]
+        DoesUserHaveDebts{"Does the user have debts?"}
+        UserManagesDebts --> DoesUserHaveDebts
+        DoesUserHaveDebts -- No --> UserManagesDebts
+    end
 
-repeat : User manages their debts;
-repeat while (Does the user have debts?) is (No)
-  -> Yes;
+    UserManagesSnowflakes["User manages their snowflakes"]
+    SystemGeneratesAnalysis["System generates and shows the analysis of their debt"]
 
-: User manages their snowflakes;
-
-: System generates and shows the analysis of their debt; <<output>>
-
-@enduml
+    PlanCreation --> DebtManagement
+    DebtManagement --> UserManagesSnowflakes
+    UserManagesSnowflakes --> SystemGeneratesAnalysis
+    SystemGeneratesAnalysis --> End(["End"])
 ```
 
 ---
@@ -962,33 +945,36 @@ repeat while (Does the user have debts?) is (No)
 
 **Implemented under module:** Data Management
 
-```plantuml
-@startuml
-title Data Management Flow
+```mermaid
+---
+title: Data Management Flow
+---
+flowchart TD
+    UserNavigates["User navigates to Data Management section"]
 
-repeat :User navigates to Data Management section;
+    subgraph ImportExportFlow["Data Management"]
+        SelectImportOrExport{"Select Import or Export?"}
 
-if (Select Import or Export?) then (Import)
-  repeat :User selects data source (CSV or JSON); <<input>>
-    :System validates the data in the source; <<task>>
+        SelectImportOrExport -- Import --> SelectDataSource["User selects data source (CSV or JSON)"]
+        SelectDataSource --> ValidateData["System validates the data in the source"]
+        ValidateData --> DataSourceProblems{"Does the data source have problems?"}
 
-    backward :System informs of the problems \n with the data source; <<output>>
+        DataSourceProblems -- Yes --> InformProblems["System informs of the problems with the data source"]
+        InformProblems --> SelectDataSource
+        DataSourceProblems -- No --> ShowImportSummary["System shows summary of import"]
 
-    repeat while (Does the data source have problems?) is (Yes)
-    -> No;
+        SelectImportOrExport -- Export --> ChoosePlan["User chooses which plan to export"]
+        ChoosePlan --> SelectExportFormat["User selects export format (CSV, JSON, PDF)"]
+        SelectExportFormat --> ProcessExport["System processes the export request"]
+        ProcessExport --> ExportConfirmation["System provides export confirmation"]
+    end
 
-      :System shows summary of import; <<output>>
-else (Export)
-  :User chooses which plan to export; <<input>>
-  :User selects export format (CSV, JSON, PDF); <<input>>
-  :System processes the export request; <<task>>
-  :System provides export confirmation; <<output>>
-endif
+    FurtherTasks{"User has further import/export tasks?"}
+    ShowImportSummary --> FurtherTasks
+    ExportConfirmation --> FurtherTasks
 
-repeat while (User has further import/export tasks?) is (Yes)
-  -> No;
-
-@enduml
+    FurtherTasks -- Yes --> UserNavigates
+    FurtherTasks -- No --> End(["End"])
 ```
 
 ---
