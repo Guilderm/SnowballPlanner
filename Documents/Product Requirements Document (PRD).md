@@ -1135,3 +1135,19 @@ User stories should be:
 - [Architecture Decision Record (ADR)](<https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Architecture%20Decision%20Record%20(ADR).md>)
 - [README](https://github.com/Guilderm/DebtFreePlanner/blob/main/README.md)
 - [Shared Appendix](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Shared%20Appendix.md)
+
+### Basic Plan Overview Diagram
+
+```mermaid
+graph TD
+    A[Dashboard] --> B[Plan Overview]
+    B --> C[Plan A]
+    B --> D[Plan B]
+    B --> E[Plan C]
+    C --> |Edit| F[Edit Plan A]
+    C --> |Delete| G[Delete Plan A]
+    D --> |Edit| H[Edit Plan B]
+    D --> |Delete| I[Delete Plan B]
+    E --> |Edit| J[Edit Plan C]
+    E --> |Delete| K[Delete Plan C]
+    B --> L[+ Create New Plan]
