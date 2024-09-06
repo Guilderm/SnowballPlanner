@@ -437,7 +437,7 @@ To ensure DebtFreePlanner remains focused on fulfilling its intended purpose, th
 
 ValuePropositionCanvas.png
 
-![Value Proposition Canvas](Medias/ValuePropositionCanvas.png)
+![Value Proposition Canvas](Media/ValuePropositionCanvas.png)
 
 ---
 
@@ -449,33 +449,23 @@ The following diagrams and descriptions outline the primary user flows within th
 
 **Key Map:**
 
-- **Arrow**: Indicates the sequence or direction of flow.
-- **Capsule/Pill**: Represents the start or end of a process, or the initiation of a different user flow.
-- **Square**: Denotes a specific task or process within the flow.
-- **Input Square**: Represents an input operation, typically user-provided data.
-- **Output Square**: Represents an output operation, such as displaying results.
-- **Diamond**: Represents a decision point where the user may be presented with options or branching paths.
-
-For a Guide refer to [PlantUML Activity Diagram](https://plantuml.com/activity-diagram-beta)
-
-```plantuml
-@startuml
-title Key Map
-
-: Represents the start or end of flow;
-: Represents a task or procedure; <<task>>
-: Represents an input operation; <<input>>
-: Represents an output operation; <<output>>
-
-if (Represents a decision point) then (Yes)
-  :Process Action 1; <<task>>
-else (No)
-  :Process Action 2; <<task>>
-endif
-@enduml
+```mermaid
+---
+title: Key Map
+---
+flowchart TD
+    Start(["Stadium: Represents the start or end of flow"]) --> Rectangle
+    Rectangle["Rectangle: Represents a task or procedure"] --> Subroutine
+    Subroutine[[Subroutine: Represents a subflow]] --> Decision
+    Decision{"Rhombus: Represents a decision point"}
+    Decision -- Yes --> Input[/Left Parallelogram: Represents an input/]
+    Decision -- No --> Output[\Right Parallelogram: Represents an output\]
+    Input --> End
+    Output --> End
+    End(["End of flow"])
 ```
 
-![User Flow's Key Map](Medias/UserFlows-KeyMap.png)
+For a guide, refer to the [Flowcharts Syntax](https://mermaid.js.org/syntax/flowchart)
 
 ---
 
@@ -1151,3 +1141,5 @@ graph TD
     E --> |Edit| J[Edit Plan C]
     E --> |Delete| K[Delete Plan C]
     B --> L[+ Create New Plan]
+    B --> L[+ Create New Plan]
+```
