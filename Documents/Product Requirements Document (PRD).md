@@ -1013,20 +1013,130 @@ In line with the Agile principle of creating **just enough** documentation, wire
 
 ### 9.1. User Stories
 
-- **Debt-Free Plan Management**  
-  _As a user, I want to create a new debt-free plan so that I can track my progress toward becoming debt-free._
+#### Epic 1: Technical Prototype & Architecture Validation
+This epic focuses on setting up the foundational technical components of the project, including:
+- Setting up the 3-tier architecture (presentation, business logic, and data).
+- Establishing CI/CD pipelines for automated builds, tests, and deployment.
+- Deploying the app to the chosen hosting platform.
+- Setting up essential testing frameworks (unit, integration, performance, and observability).
+- Secondary technologies or things that are not critical to the application will not be tested.
 
-- **Debt Management**  
-  _As a user, I want to add a new debt to my plan so that I can include it in my repayment strategy._
+#### Epic 2: Core Web Pages and Authentication Setup
+This epic covers the development of the key web pages and initial user-facing components:
+- Creating core pages:
+  - DebtFreePlanner (plan selection and creation).
+  - Coming Soon Page (email capture and integration with email marketing platforms).
+  - User Profile Page (basic user management interface).
+  - Admin Dashboard (for admins).
+- Implementing user authentication and authorization for user/admin roles.
 
-- **Plan Overview**  
-  _As a user, I want to view all my debt plans in a list so that I can quickly see and manage them._
+#### Epic 3: DebtFreePlanner Data Inputs & Basic Data Validation
+This epic focuses on gathering the necessary user inputs to create a debt-free plan:
+- Enhancing the DebtFreePlanner page to support the creation of multiple plans.
+- Gathering key data such as base currency, debt details (balance, interest rate, monthly payments), snowflake payments, and desired monthly payments.
+- Establishing basic input validation and error handling for user data.
 
-- **Snowflake Management**  
-  _As a user, I want to add irregular payments so that I can see how they impact my debt repayment timeline._
+#### Epic 4: DebtFreePlanner Initial Calculations & Advanced Data Validation
+This epic handles the initial calculations and more advanced validation of user input data:
+- Converting all debts to the base currency, integrating with an exchange rate API.
+- Formatting currency and numeric fields properly across the application.
+- Validating that monthly payments can be calculated based on the provided data.
+- Adding an inline calculator popup for number and currency fields.
+- Automatically calculate missing fields when sufficient data is available.
 
-- **Plan Collaboration**  
-  _As a user, I want to invite collaborators to my plan so that I can manage debts with others._
+#### Epic 5: DebtFreePlanner Final Calculations
+This epic covers the implementation of the final debt repayment calculations:
+- Implementing the calculation logic for different repayment methods (Snowball, Avalanche, etc.).
+- Allowing users to choose the order in which debts will be paid off.
+- Allowing users to choose their debt repayment strategy.
+
+#### Epic 6: DebtFreePlanner Reporting and Data Visualization
+This epic focuses on building reporting and data visualization features:
+- Developing visualizations (charts, graphs) to help users understand their debt repayment plans.
+- Providing summaries of savings (total interest saved) and timelines for each repayment strategy.
+
+#### Epic 7: Collaboration and Multi-User Support
+This epic enables collaboration within the platform, allowing for multiple users and role-based access:
+- Allowing users to invite others to collaborate on their debt repayment plans.
+- Setting up roles and permissions (read-only, editor) for collaborators.
+- Implementing admin controls for managing users, revoking access, and promoting users.
+
+#### Epic 8: Complete User Profile Management
+This epic focuses on completing the user profile feature:
+- Allowing users to fully manage their profiles, including updating personal details (name, email, password).
+- Adding preferences for notifications and currency.
+- Integrating user data with third-party platforms (e.g., email marketing, analytics).
+
+#### Epic 9: Complete Admin Dashboard
+This epic covers finalizing the admin dashboard:
+- Adding administrative controls for managing users, plans, and site configurations.
+- Implementing tools for monitoring user activity, managing site content, and handling support requests.
+- Including reporting features for admins to monitor system performance and user engagement.
+
+#### Epic 10: Public-Facing Pages
+This epic covers creating necessary public-facing pages:
+- Creating a landing page for product introduction.
+- Creating a blog page for content updates.
+- Developing a wiki or user guide page to help users understand the platform.
+
+#### Epic 11: In-App Help and Assistance
+This epic focuses on providing in-app help and support:
+- Implementing in-app help sections and tooltips for key features.
+- Providing a knowledge base or FAQ section.
+- Creating onboarding guides to help new users navigate the platform.
+
+#### Epic 12: Export Capabilities
+This epic focuses on adding data export functionality:
+- Implementing export capabilities for debt plans and reports in various formats (e.g., PDF, CSV).
+- Ensuring exported files are accessible and easy to read.
+
+#### Epic 13: Import Capabilities
+This epic covers the ability to import data into the platform:
+- Allowing users to import data from other financial tools or spreadsheets.
+- Ensuring compatibility with common formats (CSV, Excel).
+- Validating imported data to avoid formatting or calculation errors.
+
+#### Epic 14: Security Enhancements
+This epic focuses on implementing security measures to protect user data:
+- Implementing two-factor authentication (2FA) for added security.
+- Encrypting sensitive user data both in transit and at rest.
+- Adding rate limiting to prevent brute-force attacks.
+- Ensuring compliance with GDPR or other relevant data protection regulations.
+- Conducting security audits and testing (e.g., penetration testing).
+
+#### Epic 15: Performance Optimization
+This epic aims to optimize the performance of the application:
+- Optimizing database queries for handling large datasets.
+- Implementing lazy loading for data-heavy pages.
+- Using caching to reduce load times for frequently accessed data.
+- Monitoring and optimizing API response times and frontend performance.
+
+#### Epic 16: Mobile Responsiveness and PWA Support
+This epic ensures mobile compatibility and potential offline usage:
+- Ensuring all pages are mobile-responsive.
+- Implementing a progressive web app (PWA) for offline access to key features.
+- Adding push notifications for payment reminders and plan updates.
+
+#### Epic 17: Documentation & Developer Support
+This epic covers creating internal documentation for future developers or open-source contributors:
+- Creating a developer guide for setting up the project, running tests, and deploying the app.
+- Documenting the API structure and key integration points.
+- Adding code comments for complex logic and workflows.
+- Maintaining a changelog to track updates and bug fixes.
+
+#### Epic 18: User Feedback and Analytics
+This epic focuses on gathering user feedback and platform analytics:
+- Integrating analytics tools to track user behavior and identify usage patterns.
+- Adding feedback mechanisms within the app (e.g., feedback forms).
+- Tracking feature usage and improving based on user behavior data.
+- Implementing A/B testing for UI changes or feature adjustments.
+
+#### Epic 19: Notifications and Alerts System
+This epic focuses on adding notifications for user updates:
+- Adding email notifications for payment reminders, plan changes, or milestones.
+- Implementing in-app notifications for key updates or alerts.
+- Allowing users to set custom alerts based on debt repayment progress.
+
 
 ## 10. Legal and Compliance
 
