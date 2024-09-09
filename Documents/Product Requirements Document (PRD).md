@@ -50,6 +50,40 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
    - [Data Management](#815-data-management)
    - [Wireframes](#82-wireframes)
 9. [User Stories](#9-user-stories)
+   - [9.1 User Types](#91-user-types)
+     - [9.1.1 Admin](#911-admin)
+     - [9.1.2 Users](#912-users)
+     - [9.1.3 Collaborator](#913-collaborator)
+     - [9.1.4 Guest](#914-guest)
+   - [9.2 Initiative 1: Foundation and Architecture](#92-initiative-1-foundation-and-architecture)
+     - [9.2.1 Epic 1: Technical Prototype & Architecture Validation](#921-epic-1-technical-prototype--architecture-validation)
+     - [9.2.2 Epic 2: Product Ideation Validation](#922-epic-2-product-ideation-validation)
+   - [9.3 Initiative 2: Core Features and Functionality](#93-initiative-2-core-features-and-functionality)
+     - [9.3.1 Epic 3: Core Web Pages](#931-epic-3-core-web-pages)
+     - [9.3.2 Epic 4: DebtFreePlanner Data Inputs & Basic Data Validation](#932-epic-4-debtfreeplanner-data-inputs--basic-data-validation)
+     - [9.3.3 Epic 5: DebtFreePlanner Initial Calculations & Advanced Data Validation](#933-epic-5-debtfreeplanner-initial-calculations--advanced-data-validation)
+     - [9.3.4 Epic 6: DebtFreePlanner Engine](#934-epic-6-debtfreeplanner-engine)
+     - [9.3.5 Epic 7: DebtFreePlanner Reporting and Data Visualization](#935-epic-7-debtfreeplanner-reporting-and-data-visualization)
+     - [9.3.6 Epic 8: Security Enhancements](#936-epic-8-security-enhancements)
+     - [9.3.7 Epic 9: End User Testing (First Round)](#937-epic-9-end-user-testing-first-round)
+     - [9.3.8 Epic 10: Technical Debt Payment](#938-epic-10-technical-debt-payment)
+   - [9.4 Initiative 3: User Experience and Secondary Features](#94-initiative-3-user-experience-and-secondary-features)
+     - [9.4.1 Epic 11: Collaboration and Multi-User Support](#941-epic-11-collaboration-and-multi-user-support)
+     - [9.4.2 Epic 12: Complete User Profile Management](#942-epic-12-complete-user-profile-management)
+     - [9.4.3 Epic 13: Complete Admin Dashboard](#943-epic-13-complete-admin-dashboard)
+     - [9.4.4 Epic 14: Public-Facing Pages](#944-epic-14-public-facing-pages)
+     - [9.4.5 Epic 15: Branding, Style Guide & Marketing](#945-epic-15-branding-style-guide--marketing)
+     - [9.4.6 Epic 16: End User Testing (Second Round)](#946-epic-16-end-user-testing-second-round)
+     - [9.4.7 Epic 17: Technical Debt Payment](#947-epic-17-technical-debt-payment)
+     - [9.5 Initiative 4: Tertiary Features and Application Optimization](#95-initiative-4-tertiary-features-and-application-optimization)
+     - [9.5.1 Epic 18: Performance Optimization](#951-epic-18-performance-optimization)
+     - [9.5.2 Epic 19: Technical Debt Payment](#952-epic-19-technical-debt-payment)
+     - [9.5.3 Epic 20: In-App Help and Assistance](#953-epic-20-in-app-help-and-assistance)
+     - [9.5.4 Epic 21: Export Capabilities](#954-epic-21-export-capabilities)
+     - [9.5.5 Epic 22: Import Capabilities](#955-epic-22-import-capabilities)
+     - [9.5.6 Epic 23: User Feedback and Analytics](#956-epic-23-user-feedback-and-analytics)
+     - [9.5.7 Epic 24: Architecture Review and Extensive Testing](#957-epic-24-architecture-review-and-extensive-testing)
+     - [9.5.8 Epic 25: Final End-User Testing](#958-epic-25-final-end-user-testing)
 10. [Legal and Compliance](#10-legal-and-compliance)
     - [Data Privacy](#101-data-privacy)
     - [Regulatory Compliance](#102-regulatory-compliance)
@@ -1007,53 +1041,51 @@ In line with the Agile principle of creating **just enough** documentation, wire
 
 ---
 
-## 9 User Stories
+## 9. User Stories
 
-### User Types
+### 9.1 User Types
 
-#### 1. Admin
+#### 9.1.1 Admin
 
-**Description**: Admin users manage the overall system and have control over user management, settings, and reporting. They ensure the platform operates smoothly and securely.
+Admin users manage the overall system and have control over user management, settings, and reporting. They ensure the platform operates smoothly and securely.
 
-- **Permissions**: Can manage users, assign roles, monitor site activity, and configure system settings.
-- **Goals**: Ensure system security and performance, manage users, and monitor activity to maintain system integrity.
+- **Permissions**: Manage users, assign roles, monitor activity, and configure system settings.
 
-#### 2. Regular User
+#### 9.1.2 Users
 
-**Description**: Regular users are the primary users of the DebtFreePlanner platform. They use the platform to input debt details, calculate repayment plans, and track their progress over time.
+Users are the primary users of the DebtFreePlanner platform. They input debt details, calculate repayment plans, and track their progress over time.
 
-- **Permissions**: Can create and manage their own debt repayment plans, update their user profile, and visualize their progress.
-- **Goals**: Reduce debt efficiently by using the repayment strategies provided (Snowball, Avalanche, etc.).
+- **Permissions**: Create, update, and manage their debt repayment plans. Access profile settings and visualizations.
 
-#### 3. Collaborator
+#### 9.1.3 Collaborator
 
-**Description**: Collaborators are users who are invited by a Regular User to assist in managing specific debt plans. They may have limited access and roles based on permissions set by the Regular User.
+Collaborators are users who are invited to assist in managing specific debt plans. They may have limited access and roles based on permissions set by the User.
 
-- **Permissions**: Can view or edit specific debt repayment plans based on the permissions granted (e.g., read-only, editor).
-- **Goals**: Help the primary user manage and optimize debt repayment plans.
+- **Permissions**: View or edit specific debt repayment plans based on permissions (read-only, editor).
 
-#### 4. Guest (Future Feature)
+#### 9.1.4 Guest
 
-**Description**: Guest users are those who visit the public-facing parts of the website, such as the landing page or blog. They may be potential users interested in learning more about the platform.
+Guests are users who visit the public-facing parts of the website, such as the landing page or blog. They may be potential users interested in learning more about the platform.
 
-- **Permissions**: Can access only public pages, such as the blog and landing page.
-- **Goals**: Learn more about the platform before signing up.
+- **Permissions**: View only public pages like the blog or product information.
 
-### Initiative 1: Foundation and Architecture
+---
 
-This initiative focuses on laying the technical groundwork for the project, including CI/CD, initial deployments, and validation of key architectural elements. It ensures that the project's core structure is in place before progressing to user-facing features.
+### 9.2 Initiative 1: Foundation and Architecture
 
-#### Epic 1: Technical Prototype & Architecture Validation
+This initiative focuses on laying the technical groundwork for the project by performing the initial deployments to validate key architectural elements. It includes reviewing key documents to ensure a strong foundation for future development.
+
+#### 9.2.1 Epic 1: Technical Prototype & Architecture Validation
 
 - Deploying the app to the chosen hosting platform.
 - Establishing CI/CD pipelines for automated builds, tests, and deployment.
 - Basic IdP platform setup.
 - Setting up essential testing frameworks (unit, integration, performance, and observability).
-- Secondary technologies or things that are not critical to the application will not be tested.
+- Secondary technologies or non-essential components will not be tested.
 
-#### Epic 2: Product Ideation Validation
+#### 9.2.2 Epic 2: Product Ideation Validation
 
-Gather feedback regarding the various documents to validate the product's strategic direction:
+Gather feedback regarding the key documents to validate the product's strategic direction:
 
 - Brand Identity Guidelines (BIG).MD
 - Development and Documentation Standards.md
@@ -1063,11 +1095,13 @@ Gather feedback regarding the various documents to validate the product's strate
 - Software Requirements Specification (SRS).md
 - Software Test Document (STD).md
 
-### Initiative 2: Core Features and Functionality
+---
 
-This initiative covers the core feature set that forms the foundation of the product. The focus is on user-facing functionality and the technical logic that powers the DebtFreePlanner. This includes the initial web pages, security, input handling, and debt calculations.
+### 9.3 Initiative 2: Core Features and Functionality
 
-#### Epic 3: Core Web Pages
+This initiative focuses on delivering a **Minimum Viable Product (MVP)** with core features that can be marketed.
+
+#### 9.3.1 Epic 3: Core Web Pages
 
 - **DebtFreePlanner**: Page where a user chooses to create or select a plan (authenticated users only).
 - **Coming Soon Page**: Page displaying a coming soon message (email capture and integration with email marketing platforms).
@@ -1075,15 +1109,7 @@ This initiative covers the core feature set that forms the foundation of the pro
 - **Admin Dashboard** (for admins only).
 - Implementing user authorization for user/admin roles.
 
-#### Epic 4: Security Enhancements
-
-- Implementing two-factor authentication (2FA) for added security.
-- Encrypting sensitive user data both in transit and at rest.
-- Adding rate limiting to prevent brute-force attacks.
-- Ensuring compliance with GDPR or other relevant data protection regulations.
-- Conducting security audits and testing (e.g., penetration testing).
-
-#### Epic 5: DebtFreePlanner Data Inputs & Basic Data Validation
+#### 9.3.2 Epic 4: DebtFreePlanner Data Inputs & Basic Data Validation
 
 - Enhancing the DebtFreePlanner page to support the creation of multiple plans.
 - Collecting all necessary data to create a plan:
@@ -1093,128 +1119,140 @@ This initiative covers the core feature set that forms the foundation of the pro
   - Desired minimum monthly payments.
 - Establishing input validation and error handling for user data.
 
-#### Epic 6: DebtFreePlanner Initial Calculations & Advanced Data Validation
+#### 9.3.3 Epic 5: DebtFreePlanner Initial Calculations & Advanced Data Validation
 
 - Integrating with an exchange rate API.
 - Converting all debts to the base currency.
 - Formatting currency and numeric fields properly across the application.
 - Validating that monthly payments can be calculated based on the provided data.
 - Adding an inline calculator popup for number and currency fields.
-- Automatically calculate missing fields when sufficient data is available.
+- Automatically calculating missing fields when sufficient data is available.
 
-#### Epic 7: DebtFreePlanner Engine
+#### 9.3.4 Epic 6: DebtFreePlanner Engine
 
 - Implementing the calculation logic for different repayment methods from the validated input (Snowball, Avalanche, etc.).
 
-#### Epic 8: DebtFreePlanner Reporting and Data Visualization
+#### 9.3.5 Epic 7: DebtFreePlanner Reporting and Data Visualization
 
 - Allowing users to choose the order in which debts will be paid off.
 - Allowing users to choose their debt repayment strategy.
 - Developing visualizations (charts, graphs) to help users understand their debt repayment plans.
 - Providing summaries of savings (total interest saved) and timelines for each repayment strategy.
 
-#### Epic 9: End User Testing (First Round)
+#### 9.3.6 Epic 8: Security Enhancements
+
+- Implementing two-factor authentication (2FA) for added security.
+- Encrypting sensitive user data both in transit and at rest.
+- Adding rate limiting to prevent brute-force attacks.
+- Ensuring compliance with GDPR or other relevant data protection regulations.
+- Conducting security audits and testing (e.g., penetration testing).
+
+#### 9.3.7 Epic 9: End User Testing (First Round)
 
 - Creating an end-user test plan.
 - Performing a live test with about 5 users and gathering their feedback.
 
-#### Epic 10: Technical Debt Payment
+#### 9.3.8 Epic 10: Technical Debt Payment
 
 - Review code and resolve outstanding technical debt.
 - Incorporating user feedback.
 
-### Initiative 3: User Experience and Secondary Features
+---
 
-This initiative focuses on user experience improvements and secondary features. It builds on the core functionality by adding collaboration features, profile management, and tools to enhance user interaction with the platform.
+### 9.4 Initiative 3: User Experience and Secondary Features
 
-#### Epic 11: Collaboration and Multi-User Support
+This initiative focuses on enhancing user experience and adding secondary features that improve collaboration and user management.
+
+#### 9.4.1 Epic 11: Collaboration and Multi-User Support
 
 - Allowing users to invite others to collaborate on their debt repayment plans.
 - Setting up roles and permissions (read-only, editor) for collaborators.
 - Implementing admin controls for managing users, revoking access, and promoting users.
 
-#### Epic 12: Complete User Profile Management
+#### 9.4.2 Epic 12: Complete User Profile Management
 
 - Allowing users to fully manage their profiles, including updating personal details (name, email, password).
 - Adding preferences for notifications and currency.
 - Integrating user data with third-party platforms (e.g., email marketing, analytics).
 
-#### Epic 13: Complete Admin Dashboard
+#### 9.4.3 Epic 13: Complete Admin Dashboard
 
 - Adding administrative controls for managing users, plans, and site configurations.
 - Implementing tools for monitoring user activity, managing site content, and handling support requests.
 - Including reporting features for admins to monitor system performance and user engagement.
 
-#### Epic 14: Public-Facing Pages
+#### 9.4.4 Epic 14: Public-Facing Pages
 
 - Creating a landing page for product introduction.
 - Creating a blog page for content updates.
 - Developing a wiki or user guide page to help users understand the platform.
 
-#### Epic 15: Branding, Style Guide & Marketing
+#### 9.4.5 Epic 15: Branding, Style Guide & Marketing
 
 - Finalizing the Market Requirements Document (MRD).
 - Finalizing the Brand Identity Guidelines (BIG).
 - Ensuring that all pages comply with the brand style guide.
 - Setting up end-to-end testing to validate consistency and UX.
 
-#### Epic 16: End User Testing (Second Round)
+#### 9.4.6 Epic 16: End User Testing (Second Round)
 
 - Revising the end-user test plan based on prior feedback.
 - Performing a second live test with about 5 users and gathering feedback.
 
-#### Epic 17: Technical Debt Payment
+#### 9.4.7 Epic 17: Technical Debt Payment
 
 - Review code and resolve outstanding technical debt.
 - Incorporating user feedback.
 
-### Initiative 4: Tertiary Features and Application Optimization
+---
 
-This initiative ensures the platform's ongoing stability, performance, and ease of use by adding advanced features like in-app help, performance optimization, and import/export capabilities. It also ensures that user feedback is incorporated into iterative improvements.
+### 9.5 Initiative 4: Tertiary Features and Application Optimization
 
-#### Epic 18: Performance Optimization
+This initiative focuses on platform stability, performance optimization, and adding tertiary features.
+
+#### 9.5.1 Epic 18: Performance Optimization
 
 - Optimizing page load times, especially for the DebtFreePlanner.
 - Implementing caching for frequently accessed data.
 - Minimizing external API requests and improving API response times.
 - Ensuring all heavy computations (e.g., calculations) are efficiently processed.
 
-#### Epic 19: Technical Debt Payment
+#### 9.5.2 Epic 19: Technical Debt Payment
 
 - Review code and resolve outstanding technical debt.
 - Incorporating user feedback for performance and stability improvements.
 
-#### Epic 20: In-App Help and Assistance
+#### 9.5.3 Epic 20: In-App Help and Assistance
 
 - Implementing in-app help sections and tooltips for key features.
 - Providing a knowledge base or FAQ section.
 - Creating onboarding guides to help new users navigate the platform.
 
-#### Epic 21: Export Capabilities
+#### 9.5.4 Epic 21: Export Capabilities
 
 - Implementing export capabilities for debt plans and reports in various formats (e.g., PDF, CSV).
 - Ensuring exported files are accessible and easy to read.
 
-#### Epic 22: Import Capabilities
+#### 9.5.5 Epic 22: Import Capabilities
 
 - Allowing users to import data from other financial tools or spreadsheets.
 - Ensuring compatibility with common formats (CSV, Excel).
 - Validating imported data to avoid formatting or calculation errors.
 
-#### Epic 23: User Feedback and Analytics
+#### 9.5.6 Epic 23: User Feedback and Analytics
 
 - Integrating analytics tools to track user behavior and identify usage patterns.
 - Adding feedback mechanisms within the app (e.g., feedback forms).
 - Tracking feature usage and improving based on user behavior data.
 - Implementing A/B testing for UI changes or feature adjustments.
 
-#### Epic 24: Architecture Review and Extensive Testing
+#### 9.5.7 Epic 24: Architecture Review and Extensive Testing
 
 - Review the entire codebase and identify technical debt.
 - Validating the app's performance, security, and extensibility.
 - Ensuring the site follows the brand style guide, is fully responsive, and accessible.
 
-#### Epic 25: Final End-User Testing
+#### 9.5.8 Epic 25: Final End-User Testing
 
 - Performing a final live test with about 5 users.
 - Gathering feedback and finalizing any necessary adjustments.
