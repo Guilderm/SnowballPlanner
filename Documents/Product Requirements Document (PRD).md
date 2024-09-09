@@ -50,43 +50,41 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
    - [Data Management](#815-data-management)
    - [Wireframes](#82-wireframes)
 9. [User Stories](#9-user-stories)
-
-- [9.1 User Types](#91-user-types)
-  - [9.1.1 Admin](#911-admin)
-  - [9.1.2 Users](#912-users)
-  - [9.1.3 Collaborator](#913-collaborator)
-  - [9.1.4 Guest](#914-guest)
-- [9.2 Initiative 1: Foundation and Architecture](#92-initiative-1-foundation-and-architecture)
-  - [9.2.1 Epic 1: Technical Prototype & Architecture Validation](#921-epic-1-technical-prototype--architecture-validation)
-  - [9.2.2 Epic 2: Product Ideation Validation](#922-epic-2-product-ideation-validation)
-- [9.3 Initiative 2: Core Features and Functionality](#93-initiative-2-core-features-and-functionality)
-  - [9.3.1 Epic 3: Core Web Pages](#931-epic-3-core-web-pages)
-  - [9.3.2 Epic 4: DebtFreePlanner Data Inputs & Basic Data Validation](#932-epic-4-debtfreeplanner-data-inputs--basic-data-validation)
-  - [9.3.3 Epic 5: DebtFreePlanner Initial Calculations & Advanced Data Validation](#933-epic-5-debtfreeplanner-initial-calculations--advanced-data-validation)
-  - [9.3.4 Epic 6: DebtFreePlanner Engine](#934-epic-6-debtfreeplanner-engine)
-  - [9.3.5 Epic 7: DebtFreePlanner Reporting and Data Visualization](#935-epic-7-debtfreeplanner-reporting-and-data-visualization)
-  - [9.3.6 Epic 8: Security Enhancements](#936-epic-8-security-enhancements)
-  - [9.3.7 Epic 9: End User Testing](#937-epic-9-end-user-testing)
-- [9.4 Initiative 3: User Experience and Secondary Features](#94-initiative-3-user-experience-and-secondary-features)
-  - [9.4.1 Epic 11: Collaboration and Multi-User Support](#941-epic-11-collaboration-and-multi-user-support)
-  - [9.4.2 Epic 12: Complete User Profile Management](#942-epic-12-complete-user-profile-management)
-  - [9.4.3 Epic 13: Complete Admin Dashboard](#943-epic-13-complete-admin-dashboard)
-  - [9.4.4 Epic 14: Branding, Style Guide & Marketing](#944-epic-14-branding-style-guide--marketing)
-  - [9.4.5 Epic 15: Public-Facing Pages](#945-epic-15-public-facing-pages)
-  - [9.4.6 Epic 16: UX GUI Optimization](#946-epic-16-ux-gui-optimization)
-- [9.5 Initiative 4: Tertiary Features and Application Optimization](#95-initiative-4-tertiary-features-and-application-optimization)
-  - [9.5.1 Epic 19: Performance Optimization](#951-epic-19-performance-optimization)
-  - [9.5.2 Epic 20: In-App Help and Help Center](#952-epic-20-in-app-help-and-help-center)
-- [9.6 Initiative 5: B2B Functionality and Niche Features](#96-initiative-5-b2b-functionality-and-niche-features)
-  - [9.6.1 Epic 25: License Enforcement](#961-epic-25-license-enforcement)
-  - [9.6.2 Epic 26: Multi-User Account Management](#962-epic-26-multi-user-account-management)
-  - [9.6.3 Epic 27: Export Capabilities](#963-epic-27-export-capabilities)
-  - [9.6.4 Epic 28: Import Capabilities](#964-epic-28-import-capabilities)
-  - [9.6.5 Epic 29: Integration with Financial Tools](#965-epic-29-integration-with-financial-tools)
-  - [9.6.6 Epic 30: API Development for Third-Party Integration](#966-epic-30-api-development-for-third-party-integration)
-  - [9.6.7 Epic 31: End User Testing](#967-epic-31-end-user-testing)
-  - [9.6.8 Epic 32: Technical Debt Payment](#968-epic-32-technical-debt-payment)
-
+   - [9.1 User Types](#91-user-types)
+     - [9.1.1 Admin](#911-admin)
+     - [9.1.2 Users](#912-users)
+     - [9.1.3 Collaborator](#913-collaborator)
+     - [9.1.4 Guest](#914-guest)
+   - [9.2 Initiative 1: Foundation and Architecture](#92-initiative-1-foundation-and-architecture)
+     - [9.2.1 Epic 1: Technical Prototype & Architecture Validation](#921-epic-1-technical-prototype--architecture-validation)
+     - [9.2.2 Epic 2: Product Ideation Validation](#922-epic-2-product-ideation-validation)
+     - [9.3 Initiative 2: Core Features and Functionality](#93-initiative-2-core-features-and-functionality)
+     - [9.3.1 Epic 3: Core Web Pages](#931-epic-3-core-web-pages)
+     - [9.3.2 Epic 4: DebtFreePlanner Data Inputs & Basic Data Validation](#932-epic-4-debtfreeplanner-data-inputs--basic-data-validation)
+     - [9.3.3 Epic 5: DebtFreePlanner Initial Calculations & Advanced Data Validation](#933-epic-5-debtfreeplanner-initial-calculations--advanced-data-validation)
+     - [9.3.4 Epic 6: DebtFreePlanner Engine](#934-epic-6-debtfreeplanner-engine)
+     - [9.3.5 Epic 7: DebtFreePlanner Reporting and Data Visualization](#935-epic-7-debtfreeplanner-reporting-and-data-visualization)
+     - [9.3.6 Epic 8: Security Enhancements](#936-epic-8-security-enhancements)
+     - [9.3.7 Epic 9: End User Testing](#937-epic-9-end-user-testing)
+     - [9.4 Initiative 3: User Experience and Secondary Features](#94-initiative-3-user-experience-and-secondary-features)
+     - [9.4.1 Epic 11: Collaboration and Multi-User Support](#941-epic-11-collaboration-and-multi-user-support)
+     - [9.4.2 Epic 12: Complete User Profile Management](#942-epic-12-complete-user-profile-management)
+     - [9.4.3 Epic 13: Complete Admin Dashboard](#943-epic-13-complete-admin-dashboard)
+     - [9.4.4 Epic 14: Branding, Style Guide & Marketing](#944-epic-14-branding-style-guide--marketing)
+     - [9.4.5 Epic 15: Public-Facing Pages](#945-epic-15-public-facing-pages)
+     - [9.4.6 Epic 16: UX GUI Optimization](#946-epic-16-ux-gui-optimization)
+   - [9.5 Initiative 4: Tertiary Features and Application Optimization](#95-initiative-4-tertiary-features-and-application-optimization)
+     - [9.5.1 Epic 19: Performance Optimization](#951-epic-19-performance-optimization)
+     - [9.5.2 Epic 20: In-App Help and Help Center](#952-epic-20-in-app-help-and-help-center)
+   - [9.6 Initiative 5: B2B Functionality and Niche Features](#96-initiative-5-b2b-functionality-and-niche-features)
+     - [9.6.1 Epic 25: License Enforcement](#961-epic-25-license-enforcement)
+     - [9.6.2 Epic 26: Multi-User Account Management](#962-epic-26-multi-user-account-management)
+     - [9.6.3 Epic 27: Export Capabilities](#963-epic-27-export-capabilities)
+     - [9.6.4 Epic 28: Import Capabilities](#964-epic-28-import-capabilities)
+     - [9.6.5 Epic 29: Integration with Financial Tools](#965-epic-29-integration-with-financial-tools)
+     - [9.6.6 Epic 30: API Development for Third-Party Integration](#966-epic-30-api-development-for-third-party-integration)
+     - [9.6.7 Epic 31: End User Testing](#967-epic-24-end-user-testing)
+     - [9.6.8 Epic 25: Technical Debt Payment](#968-epic-25-technical-debt-payment)
 10. [Legal and Compliance](#10-legal-and-compliance)
     - [Data Privacy](#101-data-privacy)
     - [Regulatory Compliance](#102-regulatory-compliance)
@@ -1048,6 +1046,8 @@ In line with the Agile principle of creating **just enough** documentation, wire
 
 ### 9.1 User Types
 
+This is the User sections
+
 #### 9.1.1 Admin
 
 Admin users manage the overall system and have control over user management, settings, and reporting. They ensure the platform operates smoothly and securely.
@@ -1193,7 +1193,7 @@ Gather feedback regarding the key documents to validate the product's strategic 
 - Ensure that all pages comply with the brand style guide.
 - Set up end-to-end testing to validate consistency and UX.
 
-#### 9.4.5 Epic 15: Public-Facing Pages
+#### 9.4.5 Epic 15: Public Facing Pages
 
 - Create a landing page for product introduction.
 - Create a blog page for content updates.
@@ -1277,7 +1277,7 @@ Integrate with external financial tools like **YNAB** and **Firefly III** to all
 - **Re-architect Backend for API Integration** to support CRUD operations.
 - **Create API Documentation** covering authentication, endpoints, and error handling.
 
-#### 9.6.7 Epic 31: End User Testing
+#### 9.6.7 Epic 24: End User Testing
 
 This epic focuses on conducting a third round of end-user testing after incorporating feedback from earlier test rounds, to ensure that the platform is functioning as expected and is user-friendly.
 
@@ -1293,15 +1293,12 @@ This epic focuses on conducting a third round of end-user testing after incorpor
 - **Analyze Feedback**:
   - Analyze the feedback from the round of testing and adjust the product backlog accordingly to address any remaining concerns.
 
----
+#### 9.6.8 Epic 25: Technical Debt Payment
 
-#### 9.6.8 Epic 32: Technical Debt Payment
-
-This epic focuses on reviewing the codebase, resolving technical debt, and incorporating user feedback to improve performance and stability.
-
-- **Review and Refactor Code**:
-  - Identify areas of technical debt, including outdated libraries, redundant code, or non-performant algorithms.
-  - Refactor and optimize code to improve
+- Review the archetecture
+- Identify technical debt, including outdated libraries, redundant code, or non-performant algorithms.
+- incorporating user feedback
+- Refactor and optimize code to improve performance and stability.
 
 ## 10. Legal and Compliance
 
