@@ -50,7 +50,7 @@ These OKRs are aspirational and are not in any particular order.
 
 ### Objective 1
 
-**Develop a MERN Stack Application to Demonstrate Full-Stack Development Capabilities**
+## Develop a MERN Stack Application to Demonstrate Full-Stack Development Capabilities
 
 - **Key Result 1.1 [🔜]:** Achieve 90% code coverage with unit tests across both backend and frontend components.
 - **Key Result 1.2 [🔜]:** Implement CI/CD pipelines using GitHub Actions for automated testing and deployment.
