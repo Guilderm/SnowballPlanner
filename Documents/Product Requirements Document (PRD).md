@@ -436,7 +436,7 @@ ValuePropositionCanvas.png
 
 The following diagrams and descriptions outline the primary user flows within the **DebtFreePlanner** system. These flows are intended to provide a high-level understanding of how different user types interact with the platform. They are not exhaustive but serve as a general guide to illustrate key interactions and decision points.
 
-**Key Map:**
+#### Key Map
 
 ```mermaid
 ---
@@ -504,9 +504,9 @@ flowchart TD
     WelcomeMsg --> GrantAccess
 ```
 
-#### 8.1.1.2. 🚧 **Multi-User Context:**
+#### 8.1.1.2. **Multi-User Context**
 
-Expands to manage multiple user sessions under a single account, supporting role-based access control and seamless switching between user profiles.
+🚧 Expands to manage multiple user sessions under a single account, supporting role-based access control and seamless switching between user profiles.
 
 ```Mermaid
 ---
