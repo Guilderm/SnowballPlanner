@@ -1009,6 +1009,36 @@ In line with the Agile principle of creating **just enough** documentation, wire
 
 ## 9 User Stories
 
+### User Types
+
+#### 1. Admin
+
+**Description**: Admin users manage the overall system and have control over user management, settings, and reporting. They ensure the platform operates smoothly and securely.
+
+- **Permissions**: Can manage users, assign roles, monitor site activity, and configure system settings.
+- **Goals**: Ensure system security and performance, manage users, and monitor activity to maintain system integrity.
+
+#### 2. Regular User
+
+**Description**: Regular users are the primary users of the DebtFreePlanner platform. They use the platform to input debt details, calculate repayment plans, and track their progress over time.
+
+- **Permissions**: Can create and manage their own debt repayment plans, update their user profile, and visualize their progress.
+- **Goals**: Reduce debt efficiently by using the repayment strategies provided (Snowball, Avalanche, etc.).
+
+#### 3. Collaborator
+
+**Description**: Collaborators are users who are invited by a Regular User to assist in managing specific debt plans. They may have limited access and roles based on permissions set by the Regular User.
+
+- **Permissions**: Can view or edit specific debt repayment plans based on the permissions granted (e.g., read-only, editor).
+- **Goals**: Help the primary user manage and optimize debt repayment plans.
+
+#### 4. Guest (Future Feature)
+
+**Description**: Guest users are those who visit the public-facing parts of the website, such as the landing page or blog. They may be potential users interested in learning more about the platform.
+
+- **Permissions**: Can access only public pages, such as the blog and landing page.
+- **Goals**: Learn more about the platform before signing up.
+
 ### Initiative 1: Foundation and Architecture
 
 This initiative focuses on laying the technical groundwork for the project, including CI/CD, initial deployments, and validation of key architectural elements. It ensures that the project's core structure is in place before progressing to user-facing features.
