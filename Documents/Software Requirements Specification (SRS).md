@@ -238,3 +238,6 @@ The glossary, data dictionary, and additional references are available in the [S
 - [Shared Appendix](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Shared%20Appendix.md)
 
 ---
+
+Atomic Design Pattern: Structuring Your React Application
+read://https_rjroopal.medium.com/
