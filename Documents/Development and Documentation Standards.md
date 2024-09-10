@@ -160,6 +160,14 @@ This approach ensures that stories are clear, actionable, and easy to prioritize
 
 ## 10. User Story Template
 
-**As a** [type of user],  
-**I want to** [perform an action],  
-**so that** [I achieve a goal].
+### User Story
+
+    **As a** [type of user],
+    **I want to** [perform an action],
+    **so that** [I achieve a goal]
+
+### Acceptance Criteria
+
+    **Given** [context or precondition],
+    **When** [specific action taken],
+    **Then** [expected outcome]
