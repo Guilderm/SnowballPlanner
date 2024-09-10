@@ -80,15 +80,12 @@ so that the app can be built, tested, and deployed automatically.
 - **Given** a new commit is pushed to the main branch,  
   **When** the CI/CD pipeline is triggered,  
   **Then** the application should be built, tested, and deployed automatically.
-  
 - **Given** the deployment is complete,  
   **When** I access the app via the provided URL,  
   **Then** the core features (e.g., homepage, login page) should be accessible and functioning correctly.
-  
 - **Given** the pipeline includes unit, integration, and performance tests,  
   **When** tests are run,  
   **Then** results should show all tests passing or highlight failures with feedback.
-  
 - **Given** the deployment is complete,  
   **When** I review the monitoring and performance metrics,  
   **Then** no critical errors should appear, and performance should be within acceptable thresholds.
@@ -108,11 +105,9 @@ so that users can securely authenticate and access protected resources.
 - **Given** the IdP platform is integrated,  
   **When** a user logs in with valid credentials,  
   **Then** they should be authenticated.
-  
 - **Given** invalid credentials,  
   **When** the user attempts to log in,  
   **Then** access should be denied, and an error message should appear.
-  
 - **Given** a successful login,  
   **When** the user accesses protected resources,  
   **Then** they should have proper authorization to view or modify them.
@@ -132,15 +127,12 @@ so that the application's code is of high quality, secure, and reliable.
 - **Given** unit testing is in place,  
   **When** I run tests,  
   **Then** all critical functions should pass.
-  
 - **Given** integration tests are set up,  
   **When** I run them,  
   **Then** components should work together as expected.
-  
 - **Given** performance tests are needed,  
   **When** load and response times are tested,  
   **Then** the application should meet performance benchmarks under typical and peak loads.
-  
 - **Given** observability tools are integrated,  
   **When** I review logs and metrics,  
   **Then** I should identify potential performance bottlenecks or errors.
@@ -285,12 +277,11 @@ so that the application's code is of high quality, secure, and reliable.
   **When** the STD is updated,  
   **Then** the document should reflect the test strategies and cases for those new features.
 
-
 ---
 
 ## 3. Initiative 2: Core Features and Functionality
 
-### 3.1 Epic 3:  Core Web Pages stubs
+### 3.1 Epic 3: Core Web Pages stubs
 
 #### 3.1.1. User Story 11: DebtFreePlanner Page
 
@@ -632,33 +623,363 @@ so that the application's code is of high quality, secure, and reliable.
 
 ### 3.4 Epic 6: DebtFreePlanner Engine
 
-- Implementing the calculation logic for different repayment methods from the validated input:
-  - Snowball
-  - Avalanche
-  - Debt-to-Interest Ratio
-  - Cash Flow Index (CFI)
-  - Highest Monthly Payment
-  - Custom Strategies.
+#### 3.4.1. User Story 28: Implement Snowball Repayment Method
+
+**Story Points:** 15
+
+**As a** user,  
+**I want to** use the Snowball repayment method,  
+**so that** I can prioritize paying off my smallest debts first to gain momentum in my debt repayment journey.
+
+**Acceptance Criteria:**
+
+- **Given** a user selects the Snowball repayment method,  
+  **When** they input their debt details,  
+  **Then** the system should calculate the repayment schedule by prioritizing debts with the smallest balances first.
+
+- **Given** a user completes the repayment of a small debt,  
+  **When** the Snowball method is applied,  
+  **Then** the extra amount should be automatically applied to the next smallest debt.
+
+---
+
+#### 3.4.2. User Story 29: Implement Avalanche Repayment Method
+
+**Story Points:** 3
+
+**As a** user,  
+**I want to** use the Avalanche repayment method,  
+**so that** I can prioritize paying off debts with the highest interest rates first to reduce the total interest paid over time.
+
+**Acceptance Criteria:**
+
+- **Given** a user selects the Avalanche repayment method,  
+  **When** they input their debt details,  
+  **Then** the system should calculate the repayment schedule by prioritizing debts with the highest interest rates first.
+
+- **Given** a debt with the highest interest rate is paid off,  
+  **When** the Avalanche method is applied,  
+  **Then** the extra amount should be applied to the debt with the next highest interest rate.
+
+---
+
+#### 3.4.3. User Story 30: Implement Debt-to-Interest Ratio Method
+
+**Story Points:** 3
+
+**As a** user,  
+**I want to** use the Debt-to-Interest Ratio repayment method,  
+**so that** I can prioritize debts based on the balance-to-interest ratio for more effective repayment.
+
+**Acceptance Criteria:**
+
+- **Given** a user selects the Debt-to-Interest Ratio repayment method,  
+  **When** they input their debt details,  
+  **Then** the system should calculate the repayment schedule by prioritizing debts with the highest debt-to-interest ratio.
+
+- **Given** the ratio for a debt changes due to a payment,  
+  **When** the system recalculates the schedule,  
+  **Then** the debt with the highest updated ratio should be prioritized next.
+
+---
+
+#### 3.4.4. User Story 31: Implement Cash Flow Index (CFI) Repayment Method
+
+**Story Points:** 3
+
+**As a** user,  
+**I want to** use the Cash Flow Index (CFI) repayment method,  
+**so that** I can prioritize debts based on the debt-to-payment ratio to improve my cash flow.
+
+**Acceptance Criteria:**
+
+- **Given** a user selects the Cash Flow Index (CFI) repayment method,  
+  **When** they input their debt details,  
+  **Then** the system should calculate the repayment schedule by prioritizing debts with the highest CFI value.
+
+- **Given** the CFI value for a debt changes due to a payment,  
+  **When** the system recalculates the schedule,  
+  **Then** the debt with the next highest CFI value should be prioritized.
+
+---
+
+#### 3.4.5. User Story 32: Implement Highest Monthly Payment Method
+
+**Story Points:** 3
+
+**As a** user,  
+**I want to** use the Highest Monthly Payment repayment method,  
+**so that** I can focus on paying off the debts with the highest monthly payment first to reduce my monthly financial obligations.
+
+**Acceptance Criteria:**
+
+- **Given** a user selects the Highest Monthly Payment repayment method,  
+  **When** they input their debt details,  
+  **Then** the system should calculate the repayment schedule by prioritizing debts with the highest monthly payment amounts.
+
+- **Given** a debt with the highest monthly payment is paid off,  
+  **When** the system recalculates the schedule,  
+  **Then** the debt with the next highest monthly payment should be prioritized.
+
+---
+
+#### 3.4.6. User Story 33: Implement Custom Repayment Strategies
+
+**Story Points:** 3
+
+**As a** user,  
+**I want to** create a custom repayment strategy,  
+**so that** I can tailor the debt repayment plan to my specific financial goals and preferences.
+
+**Acceptance Criteria:**
+
+- **Given** a user opts for a custom strategy,  
+  **When** they input their custom preferences (e.g., prioritize based on specific debt attributes),  
+  **Then** the system should calculate the repayment schedule according to the user-defined strategy.
+
+- **Given** a user modifies their custom strategy,  
+  **When** they save the changes,  
+  **Then** the system should recalculate the repayment schedule based on the updated preferences.
 
 ### 3.5 Epic 7: DebtFreePlanner Reporting and Data Visualization
 
-- Allowing users to choose the order in which debts will be paid off.
-- Allowing users to choose their debt repayment strategy.
-- Developing visualizations (charts, graphs) to help users understand their debt repayment plans.
-- Providing summaries of savings (total interest saved) and timelines for each repayment strategy.
+#### 3.5.1. User Story 34: Choose Debt Repayment Strategy
+
+**Story Points:** 4
+
+**As a** user,  
+**I want to** choose a debt repayment strategy (e.g., Snowball, Avalanche, CFI),  
+**so that** I can pay off my debts in a way that aligns with my financial priorities.
+
+**Acceptance Criteria:**
+
+- **Given** a user is editing a debt repayment plan,  
+  **When** they select a repayment strategy,  
+  **Then** the system should offer options such as Snowball, Avalanche, or a custom strategy.
+
+- **Given** a strategy is selected,  
+  **When** the user saves the plan,  
+  **Then** the system should use the selected strategy in the repayment calculations.
+
+---
+
+#### 3.5.3. User Story 35: Visualize Debt Repayment Plan
+
+**Story Points:** 6
+
+**As a** user,  
+**I want to** see visual representations (charts, graphs) of my debt repayment plan,  
+**so that** I can easily understand my progress and financial situation.
+
+**Acceptance Criteria:**
+
+- **Given** a user selects or modifies a debt repayment plan,  
+  **When** they view their plan details,  
+  **Then** the system should display visualizations such as a repayment timeline graph and a debt payoff progress chart.
+
+- **Given** the user inputs new data or changes the plan,  
+  **When** the plan is saved,  
+  **Then** the visualizations should update automatically to reflect the changes.
+
+---
+
+#### 3.5.4. User Story 36: Provide Savings Summary
+
+**Story Points:** 5
+
+**As a** user,  
+**I want to** see a summary of savings (e.g., total interest saved) for each repayment strategy,  
+**so that** I can compare the effectiveness of different strategies and choose the most beneficial one.
+
+**Acceptance Criteria:**
+
+- **Given** a user selects a repayment strategy,  
+  **When** the strategy is applied,  
+  **Then** the system should calculate and display a summary showing total interest saved and the expected timeline for debt repayment.
+
+- **Given** multiple strategies are available,  
+  **When** the user compares them,  
+  **Then** the system should display the savings and timeline for each strategy in a side-by-side comparison.
 
 ### 3.6 Epic 8: Security Enhancements
 
-- Comply with NIST Cybersecurity Framework (CSF):
-  - **GOVERN**: Establish governance to enforce security policies, ensure compliance, and manage risks.
-  - **IDENTIFY**: Conduct risk assessments to identify vulnerabilities, assets, and threats.
-  - **PROTECT**: Implement measures like data encryption, access control, and secure coding practices.
-  - **DETECT**: Deploy monitoring and anomaly detection systems to identify security incidents.
-  - **RECOVER**: Establish recovery strategies to restore services after a security incident.
-  - **RESPOND**: Implement incident response plans and conduct security audits.
-- Implementing two-factor authentication (2FA) for added security.
-- Adding rate limiting to prevent brute-force attacks.
-- Ensuring compliance with GDPR or other relevant data protection regulations.
+#### 3.6.1. User Story 37: Establish Governance for Security Policies (GOVERN)
+
+**Story Points:** 5
+
+**As a** security officer,  
+**I want to** establish governance to enforce security policies,  
+**so that** the organization can ensure compliance and manage security risks effectively.
+
+**Acceptance Criteria:**
+
+- **Given** the need for security governance,  
+  **When** governance policies are defined,  
+  **Then** the system should enforce security controls such as user roles, access restrictions, and audit logging.
+
+- **Given** a security policy violation,  
+  **When** it is detected,  
+  **Then** the system should notify the appropriate personnel and log the event for further review.
+
+---
+
+#### 3.6.2. User Story 38: Conduct Risk Assessments (IDENTIFY)
+
+**Story Points:** 6
+
+**As a** security officer,  
+**I want to** conduct regular risk assessments,  
+**so that** vulnerabilities, assets, and threats can be identified and mitigated.
+
+**Acceptance Criteria:**
+
+- **Given** the system's security assets and infrastructure,  
+  **When** a risk assessment is conducted,  
+  **Then** the system should generate a report detailing vulnerabilities, threats, and asset exposure.
+
+- **Given** the completion of a risk assessment,  
+  **When** vulnerabilities are identified,  
+  **Then** the system should provide actionable recommendations for mitigating the risks.
+
+---
+
+#### 3.6.3. User Story 39: Implement Data Protection Measures (PROTECT)
+
+**Story Points:** 8
+
+**As a** developer,  
+**I want to** implement data protection measures such as encryption and access control,  
+**so that** sensitive information remains secure and unauthorized access is prevented.
+
+**Acceptance Criteria:**
+
+- **Given** a user's sensitive data (e.g., personal information, financial details),  
+  **When** data is transmitted or stored,  
+  **Then** it should be encrypted using secure algorithms and accessible only by authorized users.
+
+- **Given** an unauthorized access attempt,  
+  **When** it is detected,  
+  **Then** the system should block access and notify the system administrators.
+
+---
+
+#### 3.6.4. User Story 40: Deploy Monitoring and Anomaly Detection Systems (DETECT)
+
+**Story Points:** 7
+
+**As a** security officer,  
+**I want to** deploy monitoring and anomaly detection systems,  
+**so that** potential security incidents can be identified in real time.
+
+**Acceptance Criteria:**
+
+- **Given** the monitoring system is deployed,  
+  **When** an anomaly or suspicious activity is detected,  
+  **Then** the system should alert security personnel and log the incident for further investigation.
+
+- **Given** the detection of a potential threat,  
+  **When** the system identifies irregular behavior,  
+  **Then** it should automatically trigger predefined security protocols (e.g., limiting access, generating alerts).
+
+---
+
+#### 3.6.5. User Story 41: Establish Recovery Strategies (RECOVER)
+
+**Story Points:** 6
+
+**As a** system administrator,  
+**I want to** establish recovery strategies,  
+**so that** the system can restore services quickly after a security incident or system failure.
+
+**Acceptance Criteria:**
+
+- **Given** a security incident that disrupts services,  
+  **When** the recovery strategy is triggered,  
+  **Then** the system should restore services and notify users once the recovery process is complete.
+
+- **Given** a failure in the system's recovery process,  
+  **When** the system fails to recover automatically,  
+  **Then** administrators should be notified, and manual recovery procedures should be implemented.
+
+---
+
+#### 3.6.6. User Story 42: Implement Incident Response Plans (RESPOND)
+
+**Story Points:** 5
+
+**As a** security officer,  
+**I want to** implement incident response plans,  
+**so that** the system can respond to security incidents effectively and minimize damage.
+
+**Acceptance Criteria:**
+
+- **Given** a security incident,  
+  **When** the incident response plan is triggered,  
+  **Then** the system should follow predefined procedures (e.g., isolating affected systems, notifying personnel, conducting a post-incident review).
+
+- **Given** a completed incident response,  
+  **When** the incident is resolved,  
+  **Then** the system should log the event, document the response, and provide a summary for security audits.
+
+---
+
+#### 3.6.7. User Story 43: Implement Two-Factor Authentication (2FA)
+
+**Story Points:** 4
+
+**As a** user,  
+**I want to** enable two-factor authentication (2FA),  
+**so that** my account is more secure against unauthorized access.
+
+**Acceptance Criteria:**
+
+- **Given** a user is logging in,  
+  **When** they have enabled 2FA,  
+  **Then** the system should prompt them to enter a second authentication factor (e.g., SMS code or authentication app).
+
+- **Given** a failed second factor authentication,  
+  **When** the user cannot provide the correct second factor,  
+  **Then** the system should deny access and log the attempt.
+
+---
+
+#### 3.6.8. User Story 44: Add Rate Limiting to Prevent Brute-Force Attacks
+
+**Story Points:** 5
+
+**As a** developer,  
+**I want to** add rate limiting to login attempts,  
+**so that** brute-force attacks can be mitigated, and system security is enhanced.
+
+**Acceptance Criteria:**
+
+- **Given** multiple failed login attempts from the same IP address,  
+  **When** the number of attempts exceeds the rate limit,  
+  **Then** the system should temporarily block login attempts from that IP and notify the security team.
+
+- **Given** a legitimate user exceeds the rate limit,  
+  **When** they try to log in,  
+  **Then** they should be notified of the temporary block and allowed to try again after the cooldown period.
+
+---
+
+#### 3.6.9. User Story 45: Ensure GDPR Compliance
+
+**Story Points:** 6
+
+**As a** developer,  
+**I want to** ensure that the system complies with GDPR (or other relevant data protection regulations),  
+**so that** user data is handled securely and lawfully.
+
+**Acceptance Criteria:**
+
+- **Given** a user provides personal data,  
+  **When** their data is stored or processed,  
+  **Then** the system should comply with GDPR requirements, including obtaining consent, securing data, and providing data access and deletion requests.
+
+- **Given** a GDPR violation occurs,  
+  **When** the system detects non-compliance,  
+  **Then** it should notify the compliance team and log the violation for immediate corrective actions.
 
 ### 3.7 Epic 9: End User Testing
 
