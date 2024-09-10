@@ -67,7 +67,7 @@ Guests are users who visit the public-facing parts of the website, such as the l
 
 ### 2.1 Epic 1: Technical Prototype & Architecture Validation
 
-### 2.1.1. User Story 1: CI/CD Pipeline Setup and Deployment
+#### 2.1.1. User Story 1: CI/CD Pipeline Setup and Deployment
 
 **Story Points:** 8
 
@@ -95,7 +95,7 @@ so that the app can be built, tested, and deployed automatically.
 
 ---
 
-### 2.1.2. User Story 2: Basic Identity Provider (IdP) Setup
+#### 2.1.2. User Story 2: Basic Identity Provider (IdP) Setup
 
 **Story Points:** 3
 
@@ -119,7 +119,7 @@ so that users can securely authenticate and access protected resources.
 
 ---
 
-### 2.1.3. User Story 3: Set Up Essential Testing Frameworks
+#### 2.1.3. User Story 3: Set Up Essential Testing Frameworks
 
 **Story Points:** 5
 
@@ -145,33 +145,250 @@ so that the application's code is of high quality, secure, and reliable.
   **When** I review logs and metrics,  
   **Then** I should identify potential performance bottlenecks or errors.
 
-
-
-
-
 ## 2.2 Epic 2: Product Ideation Validation
 
-Gather feedback regarding the key documents to validate the product's strategic direction:
+### 2.2.1. User Story 4: Validate Brand Identity Guidelines (BIG)
 
-- Brand Identity Guidelines (BIG).md
-- Development and Documentation Standards.md
-- Market Requirements Document (MRD).md
-- Product Requirements Document (PRD).md
-- Software Design Document (SDD).md
-- Software Requirements Specification (SRS).md
-- Software Test Document (STD).md
+**Story Points:** 3
+
+**As a** Product Manager,  
+**I want to** gather feedback on the Brand Identity Guidelines (BIG),  
+**so that** I can ensure the visual and communicative elements align with the product's market position.
+
+**Acceptance Criteria:**
+
+- **Given** the Brand Identity Guidelines are shared with the stakeholders,  
+  **When** feedback is collected,  
+  **Then** the guidelines should be adjusted based on stakeholder input to ensure brand consistency.
+
+- **Given** feedback from marketing and design teams,  
+  **When** I review their suggestions,  
+  **Then** the BIG document should reflect the unified brand voice and visual identity.
 
 ---
 
-## 3 Initiative 2: Core Features and Functionality
+### 2.2.2. User Story 5: Validate Development and Documentation Standards
 
-### 3.1 Epic 3: Core Web Pages
+**Story Points:** 3
 
-- **DebtFreePlanner**: Page where a user chooses to create or select a plan (authenticated users only).
-- **Coming Soon Page**: Page displaying a coming soon message (email capture and integration with email marketing platforms).
-- **User Profile Page** (authenticated users only).
-- **Admin Dashboard** (for admins only).
-- Implementing user authorization for user/admin roles.
+**As a** Lead Developer,  
+**I want to** collect feedback on the Development and Documentation Standards,  
+**so that** the team can ensure consistency in coding practices, documentation, and project maintainability.
+
+**Acceptance Criteria:**
+
+- **Given** the Development and Documentation Standards are reviewed by the development team,  
+  **When** feedback is provided,  
+  **Then** the standards should be updated to address any issues or improvements for better team adherence.
+
+- **Given** a new member joins the development team,  
+  **When** they review the standards,  
+  **Then** they should easily understand the documentation and follow the established processes without confusion.
+
+---
+
+### 2.2.3. User Story 6: Validate Market Requirements Document (MRD)
+
+**Story Points:** 4
+
+**As a** Product Manager,  
+**I want to** validate the Market Requirements Document (MRD) with stakeholders,  
+**so that** I can confirm that the product meets market needs and addresses the target audience effectively.
+
+**Acceptance Criteria:**
+
+- **Given** the MRD is reviewed by key stakeholders (sales, marketing, product teams),  
+  **When** feedback is gathered,  
+  **Then** the document should reflect necessary updates or enhancements to align with market demand.
+
+- **Given** significant changes in market conditions,  
+  **When** I revisit the MRD,  
+  **Then** the document should be adaptable to reflect evolving customer needs and market opportunities.
+
+---
+
+### 2.2.4. User Story 7: Validate Product Requirements Document (PRD)
+
+**Story Points:** 5
+
+**As a** Product Owner,  
+**I want to** validate the Product Requirements Document (PRD) with stakeholders,  
+**so that** I can ensure the product features and scope align with user expectations and business goals.
+
+**Acceptance Criteria:**
+
+- **Given** the PRD is shared with cross-functional teams (development, design, and marketing),  
+  **When** feedback is gathered,  
+  **Then** the document should be revised to address concerns regarding product features, scope, and priorities.
+
+- **Given** changes in business strategy or customer feedback,  
+  **When** the PRD is updated,  
+  **Then** the revised document should still align with long-term product vision and objectives.
+
+---
+
+### 2.2.5. User Story 8: Validate Software Design Document (SDD)
+
+**Story Points:** 4
+
+**As a** Software Architect,  
+**I want to** gather feedback on the Software Design Document (SDD),  
+**so that** I can ensure the design is scalable, maintainable, and aligned with the product's technical requirements.
+
+**Acceptance Criteria:**
+
+- **Given** the SDD is reviewed by development and architecture teams,  
+  **When** feedback is provided,  
+  **Then** the design should be refined to address scalability, performance, and maintainability concerns.
+
+- **Given** new technology or design patterns emerge,  
+  **When** I review the SDD,  
+  **Then** the document should be adaptable to incorporate these improvements.
+
+---
+
+### 2.2.6. User Story 9: Validate Software Requirements Specification (SRS)
+
+**Story Points:** 4
+
+**As a** Business Analyst,  
+**I want to** validate the Software Requirements Specification (SRS) with stakeholders,  
+**so that** the software requirements are clear, concise, and meet the product's functional needs.
+
+**Acceptance Criteria:**
+
+- **Given** the SRS is reviewed by the development and QA teams,  
+  **When** feedback is provided,  
+  **Then** the document should be updated to clarify any ambiguous or incomplete requirements.
+
+- **Given** changes in feature scope,  
+  **When** the SRS is revisited,  
+  **Then** it should accurately reflect the updated product requirements.
+
+---
+
+### 2.2.7. User Story 10: Validate Software Test Document (STD)
+
+**Story Points:** 3
+
+**As a** QA Lead,  
+**I want to** validate the Software Test Document (STD) with the QA team,  
+**so that** I can ensure the test coverage is comprehensive and aligns with the product's quality goals.
+
+**Acceptance Criteria:**
+
+- **Given** the STD is reviewed by the QA team,  
+  **When** feedback is gathered,  
+  **Then** the document should be updated to include additional test cases or scenarios as needed.
+
+- **Given** new features are added to the product,  
+  **When** the STD is updated,  
+  **Then** the document should reflect the test strategies and cases for those new features.
+
+
+---
+
+## 3. Initiative 2: Core Features and Functionality
+
+### 3.1 Epic 3:  Core Web Pages stubs
+
+### 3.1.1. User Story 11: DebtFreePlanner Page
+
+**Story Points:** 3
+
+**As a** user,  
+**I want to** access the DebtFreePlanner page,  
+**so that** I can create or select a debt repayment plan.
+
+**Acceptance Criteria:**
+
+- **Given** a user is authenticated,  
+  **When** they navigate to the DebtFreePlanner page,  
+  **Then** they should be able to create a new debt repayment plan or select an existing plan.
+
+- **Given** a user has multiple debt plans,  
+  **When** they view the page,  
+  **Then** they should see a list of all available debt plans and be able to select one.
+
+---
+
+### 3.1.2. User Story 12: Coming Soon Page
+
+**Story Points:** 5
+
+**As a** visitor,  
+**I want to** see a "Coming Soon" page,  
+**so that** I can sign up for email updates and stay informed about the product launch.
+
+**Acceptance Criteria:**
+
+- **Given** a user visits the site,  
+  **When** they land on the Coming Soon page,  
+  **Then** they should see a message indicating the upcoming launch and be able to provide their email for updates.
+
+- **Given** an email capture field,  
+  **When** a user submits their email,  
+  **Then** the email should be integrated with the email marketing platform for future campaigns.
+
+---
+
+### 3.1.3. User Story 13: User Profile Page
+
+**Story Points:** 3
+
+**As an** authenticated user,  
+**I want to** access my user profile page,  
+**so that** I can manage my account information and preferences.
+
+**Acceptance Criteria:**
+
+- **Given** a user is logged in,  
+  **When** they navigate to their profile page,  
+  **Then** they should be able to view and update their account details (e.g., name, email, password).
+
+- **Given** a user makes changes to their profile,  
+  **When** they save the updates,  
+  **Then** the system should reflect the updated information and display a confirmation message.
+
+---
+
+### 3.1.4. User Story 14: Admin Dashboard
+
+**Story Points:** 3
+
+**As an** admin,  
+**I want to** access the Admin Dashboard,  
+**so that** I can manage users, settings, and platform-wide reports.
+
+**Acceptance Criteria:**
+
+- **Given** an admin is authenticated,  
+  **When** they access the Admin Dashboard,  
+  **Then** they should have access to administrative functions such as user management, settings configuration, and report generation.
+
+- **Given** an admin performs an action (e.g., updating settings or managing users),  
+  **When** they save the changes,  
+  **Then** the updates should be reflected across the platform, and the admin should receive a confirmation message.
+
+---
+
+### 3.1.5. User Story 15: Implement User Authorization
+
+**Story Points:** 5
+
+**As a** developer,  
+**I want to** implement user authorization for different roles,  
+**so that** users with specific roles (user/admin) can access their respective pages and functionalities.
+
+**Acceptance Criteria:**
+
+- **Given** different user roles (admin, user),  
+  **When** a user attempts to access restricted pages,  
+  **Then** only users with appropriate roles should be able to view or modify those pages (e.g., Admin Dashboard for admins only).
+
+- **Given** an unauthorized user tries to access admin-only pages,  
+  **When** they attempt to navigate to those pages,  
+  **Then** they should be denied access and redirected to an appropriate page (e.g., 403 error page or homepage).
 
 ### 3.2 Epic 4: DebtFreePlanner Data Inputs & Basic Data Validation
 
