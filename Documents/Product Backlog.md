@@ -145,9 +145,9 @@ so that the application's code is of high quality, secure, and reliable.
   **When** I review logs and metrics,  
   **Then** I should identify potential performance bottlenecks or errors.
 
-## 2.2 Epic 2: Product Ideation Validation
+### 2.2 Epic 2: Product Ideation Validation
 
-### 2.2.1. User Story 4: Validate Brand Identity Guidelines (BIG)
+#### 2.2.1. User Story 4: Validate Brand Identity Guidelines (BIG)
 
 **Story Points:** 3
 
@@ -167,7 +167,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ---
 
-### 2.2.2. User Story 5: Validate Development and Documentation Standards
+#### 2.2.2. User Story 5: Validate Development and Documentation Standards
 
 **Story Points:** 3
 
@@ -187,7 +187,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ---
 
-### 2.2.3. User Story 6: Validate Market Requirements Document (MRD)
+#### 2.2.3. User Story 6: Validate Market Requirements Document (MRD)
 
 **Story Points:** 4
 
@@ -207,7 +207,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ---
 
-### 2.2.4. User Story 7: Validate Product Requirements Document (PRD)
+#### 2.2.4. User Story 7: Validate Product Requirements Document (PRD)
 
 **Story Points:** 5
 
@@ -227,7 +227,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ---
 
-### 2.2.5. User Story 8: Validate Software Design Document (SDD)
+#### 2.2.5. User Story 8: Validate Software Design Document (SDD)
 
 **Story Points:** 4
 
@@ -247,7 +247,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ---
 
-### 2.2.6. User Story 9: Validate Software Requirements Specification (SRS)
+#### 2.2.6. User Story 9: Validate Software Requirements Specification (SRS)
 
 **Story Points:** 4
 
@@ -267,7 +267,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ---
 
-### 2.2.7. User Story 10: Validate Software Test Document (STD)
+#### 2.2.7. User Story 10: Validate Software Test Document (STD)
 
 **Story Points:** 3
 
@@ -292,7 +292,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ### 3.1 Epic 3:  Core Web Pages stubs
 
-### 3.1.1. User Story 11: DebtFreePlanner Page
+#### 3.1.1. User Story 11: DebtFreePlanner Page
 
 **Story Points:** 3
 
@@ -312,7 +312,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ---
 
-### 3.1.2. User Story 12: Coming Soon Page
+#### 3.1.2. User Story 12: Coming Soon Page
 
 **Story Points:** 5
 
@@ -332,7 +332,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ---
 
-### 3.1.3. User Story 13: User Profile Page
+#### 3.1.3. User Story 13: User Profile Page
 
 **Story Points:** 3
 
@@ -352,7 +352,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ---
 
-### 3.1.4. User Story 14: Admin Dashboard
+#### 3.1.4. User Story 14: Admin Dashboard
 
 **Story Points:** 3
 
@@ -372,7 +372,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ---
 
-### 3.1.5. User Story 15: Implement User Authorization
+#### 3.1.5. User Story 15: Implement User Authorization
 
 **Story Points:** 5
 
@@ -390,25 +390,245 @@ so that the application's code is of high quality, secure, and reliable.
   **When** they attempt to navigate to those pages,  
   **Then** they should be denied access and redirected to an appropriate page (e.g., 403 error page or homepage).
 
-### 3.2 Epic 4: DebtFreePlanner Data Inputs & Basic Data Validation
+### 3.2 Epic 4: Data Inputs for the DebtFreePlanner Engine
 
-- Enhancing the DebtFreePlanner page to support the creation of multiple plans.
-- Collecting all necessary data to create a plan:
-  - Base currency.
-  - Debt details (balance, interest rate, monthly payments, bank fees, and insurance).
-  - Snowflake payments.
-  - Desired minimum monthly payments.
-- Standard input validation and error handling for user data.
-- Drag-and-Drop or other methods to create/customize the order in which debts will be paid off.
+#### 3.2.1. User Story 16: Support Multiple Debt Plans Creation
 
-### 3.3 Epic 5: DebtFreePlanner Initial Calculations & Advanced Data Validation
+**Story Points:** 5
 
-- Integrating with an exchange rate API.
-- Converting all debts to the base currency.
-- Formatting currency and numeric fields properly across the application.
-- Validating that monthly payments can be calculated based on the provided data.
-- Adding an inline calculator popup for number and currency fields.
-- Automatically calculating missing fields when sufficient data is available.
+**As a** user,  
+**I want to** create and manage multiple debt repayment plans,  
+**so that** I can track and compare different strategies for paying off my debts.
+
+**Acceptance Criteria:**
+
+- **Given** a user is authenticated,  
+  **When** they navigate to the DebtFreePlanner page,  
+  **Then** they should have the option to create a new debt plan or manage existing ones.
+
+- **Given** a user has multiple plans,  
+  **When** they view the DebtFreePlanner page,  
+  **Then** they should see a list of all their debt repayment plans with options to view, edit, or delete each one.
+
+---
+
+#### 3.2.2. User Story 17: Collect Necessary Plan Data
+
+**Story Points:** 8
+
+**As a** user,  
+**I want to** input all required debt details for a debt repayment plan,  
+**so that** the system can accurately calculate repayment strategies.
+
+**Acceptance Criteria:**
+
+- **Given** a user is creating or editing a debt repayment plan,  
+  **When** they input data such as base currency, balance, interest rate, monthly payments, bank fees, and insurance,  
+  **Then** the system should accept and store this data for use in repayment calculations.
+
+- **Given** a debt repayment plan with missing required data,  
+  **When** the user attempts to save the plan,  
+  **Then** the system should notify the user of any missing fields and prevent submission until all required data is provided.
+
+---
+
+#### 3.2.3. User Story 18: Snowflake Payments Data Collection
+
+**Story Points:** 4
+
+**As a** user,  
+**I want to** enter and manage snowflake payments (extra one-time payments),  
+**so that** I can track these payments separately from my regular monthly payments.
+
+**Acceptance Criteria:**
+
+- **Given** a user is editing a debt repayment plan,  
+  **When** they input data for snowflake payments,  
+  **Then** the system should allow them to add and manage these one-time payments alongside their regular monthly payments.
+
+- **Given** a user inputs a snowflake payment,  
+  **When** they attempt to save the plan,  
+  **Then** the system should include the snowflake payment in future repayment calculations.
+
+---
+
+#### 3.2.4. User Story 19: Set Desired Minimum Monthly Payment
+
+**Story Points:** 3
+
+**As a** user,  
+**I want to** set my desired minimum monthly payment for my debt repayment plan,  
+**so that** I can ensure that I make at least the minimum payment required to stay on track with my plan.
+
+**Acceptance Criteria:**
+
+- **Given** a user is creating or editing a debt repayment plan,  
+  **When** they input their desired minimum monthly payment,  
+  **Then** the system should store this data and use it to ensure repayment calculations align with the user's preferences.
+
+- **Given** the user inputs a minimum payment that conflicts with other plan details (e.g., too low),  
+  **When** they attempt to save the plan,  
+  **Then** the system should warn the user and suggest a valid amount.
+
+---
+
+#### 3.2.5. User Story 20: Standard Input Validation and Error Handling
+
+**Story Points:** 4
+
+**As a** developer,  
+**I want to** implement standard input validation and error handling for all user-entered debt data,  
+**so that** the system can prevent invalid or incomplete data from being submitted.
+
+**Acceptance Criteria:**
+
+- **Given** a user is entering data into a debt repayment plan form,  
+  **When** the data is invalid (e.g., non-numeric input in numeric fields),  
+  **Then** the system should display a clear error message and prevent the user from submitting the form until the error is resolved.
+
+- **Given** a user submits data with all fields properly filled out,  
+  **When** they save the plan,  
+  **Then** the system should store the data and proceed without errors.
+
+---
+
+#### 3.2.6. User Story 21: Drag-and-Drop Debt Payoff Order
+
+**Story Points:** 6
+
+**As a** user,  
+**I want to** customize the order in which my debts are paid off using drag-and-drop functionality,  
+**so that** I can prioritize which debts I want to pay off first.
+
+**Acceptance Criteria:**
+
+- **Given** a user is editing their debt repayment plan,  
+  **When** they interact with the list of debts,  
+  **Then** they should be able to drag and drop debts to reorder them based on their preferred repayment order.
+
+- **Given** the user customizes the debt payoff order,  
+  **When** they save the plan,  
+  **Then** the system should store the new order and use it in future repayment calculations.
+
+### 3.3 Epic 5: DebtFreePlanner Advanced Data Validation
+
+#### 3.3.1. User Story 22: Validate Monthly Payments Calculation
+
+**Story Points:** 5
+
+**As a** user,  
+**I want to** validate that my monthly payments are calculated correctly based on the debt details I provide,  
+**so that** I can ensure my repayment plan is accurate and aligned with my financial situation.
+
+**Acceptance Criteria:**
+
+- **Given** a user has provided debt details (e.g., balance, interest rate, and term),  
+  **When** they calculate their monthly payment,  
+  **Then** the system should validate that the calculation is based on the provided data and notify the user if the result seems inconsistent with the input.
+
+- **Given** invalid or incomplete debt details,  
+  **When** the user attempts to calculate the monthly payment,  
+  **Then** the system should provide clear feedback on what data is missing or incorrect.
+
+---
+
+#### 3.3.2. User Story 23: Convert Debts to Base Currency
+
+**Story Points:** 4
+
+**As a** user,  
+**I want to** have all my debts converted into a base currency,  
+**so that** I can view a consistent total debt amount across multiple currencies.
+
+**Acceptance Criteria:**
+
+- **Given** debts in various currencies,  
+  **When** the exchange rate is applied,  
+  **Then** the system should convert all debts into the base currency based on the latest available exchange rates.
+
+- **Given** a change in exchange rates,  
+  **When** a user updates their debt details,  
+  **Then** the system should automatically recalculate the amounts in the base currency.
+
+---
+
+#### 3.3.3. User Story 24: Auto-Calculate Missing Fields
+
+**Story Points:** 6
+
+**As a** user,  
+**I want to** have missing debt-related fields automatically calculated when sufficient data is provided,  
+**so that** I can avoid manual calculations and ensure my repayment plan is accurate.
+
+**Acceptance Criteria:**
+
+- **Given** a user provides sufficient debt data (e.g., balance, interest rate, term),  
+  **When** the system detects missing fields (e.g., monthly payment or total payment),  
+  **Then** the system should automatically calculate and populate those fields.
+
+- **Given** insufficient data,  
+  **When** the user attempts to submit the form,  
+  **Then** the system should notify the user about the missing data required for auto-calculation.
+
+---
+
+#### 3.3.4. User Story 25: Validate Data Consistency for Advanced Calculations
+
+**Story Points:** 5
+
+**As a** developer,  
+**I want to** implement advanced validation logic to ensure data consistency for calculations,  
+**so that** the system can identify and correct any inconsistencies in user input.
+
+**Acceptance Criteria:**
+
+- **Given** the user provides data for complex debt scenarios (e.g., snowflake payments or additional fees),  
+  **When** the system performs advanced calculations,  
+  **Then** it should validate that all data is logically consistent (e.g., monthly payments cannot exceed total debt).
+
+- **Given** an inconsistency is detected,  
+  **When** the user submits the data,  
+  **Then** the system should flag the error and prevent submission until the inconsistency is resolved.
+
+---
+
+#### 3.3.5. User Story 26: Format Currency and Numeric Fields Across Application
+
+**Story Points:** 3
+
+**As a** user,  
+**I want to** see all currency and numeric fields properly formatted across the application,  
+**so that** I can easily read and understand the amounts.
+
+**Acceptance Criteria:**
+
+- **Given** a numeric or currency field,  
+  **When** the user inputs or views data,  
+  **Then** the system should format the value according to standard currency formats (e.g., including commas for large numbers).
+
+- **Given** a large debt amount,  
+  **When** the system displays the debt,  
+  **Then** it should use proper formatting for readability.
+
+---
+
+#### 3.3.6. User Story 27: Inline Calculator for Number and Currency Fields
+
+**Story Points:** 4
+
+**As a** user,  
+**I want to** use an inline calculator for number and currency fields,  
+**so that** I can quickly perform calculations directly within the form.
+
+**Acceptance Criteria:**
+
+- **Given** a user interacts with a number or currency field,  
+  **When** they click on the field,  
+  **Then** an inline calculator should appear for performing quick calculations.
+
+- **Given** the user performs a calculation in the inline calculator,  
+  **When** they close the calculator,  
+  **Then** the result should be automatically inserted into the field.
 
 ### 3.4 Epic 6: DebtFreePlanner Engine
 
