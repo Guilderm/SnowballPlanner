@@ -4,60 +4,156 @@ The Product Backlog serves as the central repository for all user stories. It is
 
 For the guidelines refer to [**Development and Documentation Standards**](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Development%20and%20Documentation%20Standards.md).
 
-1. [User Stories](#1-user-stories)
-   - [1.1 User Types](#11-user-types)
-     - [1.1.1 Admin](#111-admin)
-     - [1.1.2 Users](#112-users)
-     - [1.1.3 Collaborator](#113-collaborator)
-     - [1.1.4 Guest](#114-guest)
-   - [1.2 Initiative 1: Foundation and Architecture](#12-initiative-1-foundation-and-architecture)
-     - [1.2.1 Epic 1: Technical Prototype & Architecture Validation](#121-epic-1-technical-prototype--architecture-validation)
-     - [1.2.2 Epic 2: Product Ideation Validation](#122-epic-2-product-ideation-validation)
-     - [1.3 Initiative 2: Core Features and Functionality](#13-initiative-2-core-features-and-functionality)
-     - [1.3.1 Epic 3: Core Web Pages](#131-epic-3-core-web-pages)
-     - [1.3.2 Epic 4: DebtFreePlanner Data Inputs & Basic Data Validation](#132-epic-4-debtfreeplanner-data-inputs--basic-data-validation)
-     - [1.3.3 Epic 5: DebtFreePlanner Initial Calculations & Advanced Data Validation](#133-epic-5-debtfreeplanner-initial-calculations--advanced-data-validation)
-     - [1.3.4 Epic 6: DebtFreePlanner Engine](#134-epic-6-debtfreeplanner-engine)
-     - [1.3.5 Epic 7: DebtFreePlanner Reporting and Data Visualization](#135-epic-7-debtfreeplanner-reporting-and-data-visualization)
-     - [1.3.6 Epic 8: Security Enhancements](#136-epic-8-security-enhancements)
-     - [1.3.7 Epic 9: End User Testing](#137-epic-9-end-user-testing)
-     - [1.4 Initiative 3: User Experience and Secondary Features](#14-initiative-3-user-experience-and-secondary-features)
-     - [1.4.1 Epic 11: Collaboration and Multi-User Support](#141-epic-11-collaboration-and-multi-user-support)
-     - [1.4.2 Epic 12: Complete User Profile Management](#142-epic-12-complete-user-profile-management)
-     - [1.4.3 Epic 13: Complete Admin Dashboard](#143-epic-13-complete-admin-dashboard)
-     - [1.4.4 Epic 14: Branding, Style Guide & Marketing](#144-epic-14-branding-style-guide--marketing)
-     - [1.4.5 Epic 15: Public-Facing Pages](#145-epic-15-public-facing-pages)
-     - [1.4.6 Epic 16: UX GUI Optimization](#146-epic-16-ux-gui-optimization)
-   - [1.5 Initiative 4: Tertiary Features and Application Optimization](#15-initiative-4-tertiary-features-and-application-optimization)
-     - [1.5.1 Epic 19: Performance Optimization](#151-epic-19-performance-optimization)
-     - [1.5.2 Epic 20: In-App Help and Help Center](#152-epic-20-in-app-help-and-help-center)
-   - [1.6 Initiative 5: B2B Functionality and Niche Features](#16-initiative-5-b2b-functionality-and-niche-features)
-     - [1.6.1 Epic 25: License Enforcement](#161-epic-25-license-enforcement)
-     - [1.6.2 Epic 26: Multi-User Account Management](#162-epic-26-multi-user-account-management)
-     - [1.6.3 Epic 27: Export Capabilities](#163-epic-27-export-capabilities)
-     - [1.6.4 Epic 28: Import Capabilities](#164-epic-28-import-capabilities)
-     - [1.6.5 Epic 29: Integration with Financial Tools](#165-epic-29-integration-with-financial-tools)
-     - [1.6.6 Epic 30: API Development for Third-Party Integration](#166-epic-30-api-development-for-third-party-integration)
-     - [1.6.7 Epic 31: End User Testing](#167-epic-24-end-user-testing)
-     - [1.6.8 Epic 25: Technical Debt Payment](#168-epic-25-technical-debt-payment)
+## Table of Contents
+
+- [1. User Types](#1-user-types)
+  - [1.1. Admin](#11-admin)
+  - [1.2. Users](#12-users)
+  - [1.3. Collaborator](#13-collaborator)
+  - [1.4. Guest](#14-guest)
+- [2. Initiative 1: Foundation and Architecture](#2-initiative-1-foundation-and-architecture)
+  - [2.1 Epic 1: Technical Prototype & Architecture Validation](#21-epic-1-technical-prototype--architecture-validation)
+    - [2.1.1. User Story 1: CI/CD Pipeline Setup and Deployment](#211-user-story-1-cicd-pipeline-setup-and-deployment)
+    - [2.1.2. User Story 2: Basic Identity Provider (IdP) Setup](#212-user-story-2-basic-identity-provider-idp-setup)
+    - [2.1.3. User Story 3: Set Up Essential Testing Frameworks](#213-user-story-3-set-up-essential-testing-frameworks)
+  - [2.2 Epic 2: Product Ideation Validation](#22-epic-2-product-ideation-validation)
+    - [2.2.1. User Story 4: Validate Brand Identity Guidelines (BIG)](#221-user-story-4-validate-brand-identity-guidelines-big)
+    - [2.2.2. User Story 5: Validate Development and Documentation Standards](#222-user-story-5-validate-development-and-documentation-standards)
+    - [2.2.3. User Story 6: Validate Market Requirements Document (MRD)](#223-user-story-6-validate-market-requirements-document-mrd)
+    - [2.2.4. User Story 7: Validate Product Requirements Document (PRD)](#224-user-story-7-validate-product-requirements-document-prd)
+    - [2.2.5. User Story 8: Validate Software Design Document (SDD)](#225-user-story-8-validate-software-design-document-sdd)
+    - [2.2.6. User Story 9: Validate Software Requirements Specification (SRS)](#226-user-story-9-validate-software-requirements-specification-srs)
+    - [2.2.7. User Story 10: Validate Software Test Document (STD)](#227-user-story-10-validate-software-test-document-std)
+- [3. Initiative 2: Core Features and Functionality](#3-initiative-2-core-features-and-functionality)
+  - [3.1 Epic 3: Core Web Pages stubs](#31-epic-3-core-web-pages-stubs)
+    - [3.1.1. User Story 11: DebtFreePlanner Page](#311-user-story-11-debtfreeplanner-page)
+    - [3.1.2. User Story 12: Coming Soon Page](#312-user-story-12-coming-soon-page)
+    - [3.1.3. User Story 13: User Profile Page](#313-user-story-13-user-profile-page)
+    - [3.1.4. User Story 14: Admin Dashboard](#314-user-story-14-admin-dashboard)
+    - [3.1.5. User Story 15: Implement User Authorization](#315-user-story-15-implement-user-authorization)
+  - [3.2 Epic 4: Data Inputs for the DebtFreePlanner Engine](#32-epic-4-data-inputs-for-the-debtfreeplanner-engine)
+    - [3.2.1. User Story 16: Support Multiple Debt Plans Creation](#321-user-story-16-support-multiple-debt-plans-creation)
+    - [3.2.2. User Story 17: Collect Necessary Plan Data](#322-user-story-17-collect-necessary-plan-data)
+    - [3.2.3. User Story 18: Snowflake Payments Data Collection](#323-user-story-18-snowflake-payments-data-collection)
+    - [3.2.4. User Story 19: Set Desired Minimum Monthly Payment](#324-user-story-19-set-desired-minimum-monthly-payment)
+    - [3.2.5. User Story 20: Standard Input Validation and Error Handling](#325-user-story-20-standard-input-validation-and-error-handling)
+    - [3.2.6. User Story 21: Drag-and-Drop Debt Payoff Order](#326-user-story-21-drag-and-drop-debt-payoff-order)
+  - [3.3 Epic 5: DebtFreePlanner Advanced Data Validation](#33-epic-5-debtfreeplanner-advanced-data-validation)
+    - [3.3.1. User Story 22: Validate Monthly Payments Calculation](#331-user-story-22-validate-monthly-payments-calculation)
+    - [3.3.2. User Story 23: Convert Debts to Base Currency](#332-user-story-23-convert-debts-to-base-currency)
+    - [3.3.3. User Story 24: Auto-Calculate Missing Fields](#333-user-story-24-auto-calculate-missing-fields)
+    - [3.3.4. User Story 25: Validate Data Consistency for Advanced Calculations](#334-user-story-25-validate-data-consistency-for-advanced-calculations)
+    - [3.3.5. User Story 26: Format Currency and Numeric Fields Across Application](#335-user-story-26-format-currency-and-numeric-fields-across-application)
+    - [3.3.6. User Story 27: Inline Calculator for Number and Currency Fields](#336-user-story-27-inline-calculator-for-number-and-currency-fields)
+  - [3.4 Epic 6: DebtFreePlanner Engine](#34-epic-6-debtfreeplanner-engine)
+    - [3.4.1. User Story 28: Implement Snowball Repayment Method](#341-user-story-28-implement-snowball-repayment-method)
+    - [3.4.2. User Story 29: Implement Avalanche Repayment Method](#342-user-story-29-implement-avalanche-repayment-method)
+    - [3.4.3. User Story 30: Implement Debt-to-Interest Ratio Method](#343-user-story-30-implement-debt-to-interest-ratio-method)
+    - [3.4.4. User Story 31: Implement Cash Flow Index (CFI) Repayment Method](#344-user-story-31-implement-cash-flow-index-cfi-repayment-method)
+    - [3.4.5. User Story 32: Implement Highest Monthly Payment Method](#345-user-story-32-implement-highest-monthly-payment-method)
+    - [3.4.6. User Story 33: Implement Custom Repayment Strategies](#346-user-story-33-implement-custom-repayment-strategies)
+  - [3.5 Epic 7: DebtFreePlanner Reporting and Data Visualization](#35-epic-7-debtfreeplanner-reporting-and-data-visualization)
+    - [3.5.1. User Story 34: Choose Debt Repayment Strategy](#351-user-story-34-choose-debt-repayment-strategy)
+    - [3.5.2. User Story 35: Visualize Debt Repayment Plan](#352-user-story-35-visualize-debt-repayment-plan)
+    - [3.5.3. User Story 36: Provide Savings Summary](#353-user-story-36-provide-savings-summary)
+  - [3.6 Epic 8: Security Enhancements](#36-epic-8-security-enhancements)
+    - [3.6.1. User Story 37: Establish Governance for Security Policies (GOVERN)](#361-user-story-37-establish-governance-for-security-policies-govern)
+    - [3.6.2. User Story 38: Conduct Risk Assessments (IDENTIFY)](#362-user-story-38-conduct-risk-assessments-identify)
+    - [3.6.3. User Story 39: Implement Data Protection Measures (PROTECT)](#363-user-story-39-implement-data-protection-measures-protect)
+    - [3.6.4. User Story 40: Deploy Monitoring and Anomaly Detection Systems (DETECT)](#364-user-story-40-deploy-monitoring-and-anomaly-detection-systems-detect)
+    - [3.6.5. User Story 41: Establish Recovery Strategies (RECOVER)](#365-user-story-41-establish-recovery-strategies-recover)
+    - [3.6.6. User Story 42: Implement Incident Response Plans (RESPOND)](#366-user-story-42-implement-incident-response-plans-respond)
+    - [3.6.7. User Story 43: Implement Two-Factor Authentication (2FA)](#367-user-story-43-implement-two-factor-authentication-2fa)
+    - [3.6.8. User Story 44: Add Rate Limiting to Prevent Brute-Force Attacks](#368-user-story-44-add-rate-limiting-to-prevent-brute-force-attacks)
+    - [3.6.9. User Story 45: Ensure GDPR Compliance](#369-user-story-45-ensure-gdpr-compliance)
+- [4 Initiative 3: User Experience and Secondary Features](#4-initiative-3-user-experience-and-secondary-features)
+  - [4.1 Epic 11: Collaboration and Multi-User Support](#41-epic-11-collaboration-and-multi-user-support)
+    - [4.1.1. User Story 49: Invite Collaborators to Debt Repayment Plans](#411-user-story-49-invite-collaborators-to-debt-repayment-plans)
+    - [4.1.2. User Story 50: Set Roles and Permissions for Collaborators](#412-user-story-50-set-roles-and-permissions-for-collaborators)
+    - [4.1.3. User Story 51: Admin Controls for User Management](#413-user-story-51-admin-controls-for-user-management)
+  - [4.2 Epic 12: Complete User Profile Management](#42-epic-12-complete-user-profile-management)
+    - [4.2.1. User Story 52: Complete User Profile](#421-user-story-52-complete-user-profile)
+    - [4.2.2. User Story 53: Set Notification Preferences](#422-user-story-53-set-notification-preferences)
+    - [4.2.3. User Story 54: Integrate User Data with Third-Party Platforms](#423-user-story-54-integrate-user-data-with-third-party-platforms)
+  - [4.3 Epic 13: Complete Admin Dashboard](#43-epic-13-complete-admin-dashboard)
+    - [4.3.1. User Story 55: Admin Control for User and Plan Management](#431-user-story-55-admin-control-for-user-and-plan-management)
+    - [4.3.2. User Story 56: Monitor User Activity and System Performance](#432-user-story-56-monitor-user-activity-and-system-performance)
+    - [4.3.3. User Story 57: Provide Admin Reporting Features](#433-user-story-57-provide-admin-reporting-features)
+  - [4.4 Epic 14: Branding, Style Guide & Marketing](#44-epic-14-branding-style-guide--marketing)
+    - [4.4.1. User Story 58: Finalize Market Requirements Document (MRD)](#441-user-story-58-finalize-market-requirements-document-mrd)
+    - [4.4.2. User Story 59: Finalize Brand Identity Guidelines (BIG)](#442-user-story-59-finalize-brand-identity-guidelines-big)
+    - [4.4.3. User Story 60: Ensure Compliance with Brand Style Guide](#443-user-story-60-ensure-compliance-with-brand-style-guide)
+    - [4.4.4. User Story 61: End-to-End Testing for UX Consistency](#444-user-story-61-end-to-end-testing-for-ux-consistency)
+  - [4.5 Epic 15: Public Facing Pages](#45-epic-15-public-facing-pages)
+    - [4.5.1. User Story 62: Create Product Landing Page](#451-user-story-62-create-product-landing-page)
+    - [4.5.2. User Story 63: Create Blog Page for Content Updates](#452-user-story-63-create-blog-page-for-content-updates)
+    - [4.5.3. User Story 64: Create Wiki or User Guide Page](#453-user-story-64-create-wiki-or-user-guide-page)
+  - [4.6 Epic 16: UX GUI Optimization](#46-epic-16-ux-gui-optimization)
+    - [4.6.1. User Story 65: Validate Responsiveness and UX Compliance](#461-user-story-65-validate-responsiveness-and-ux-compliance)
+    - [4.6.2. User Story 66: Ensure WCAG 2.1 AA Compliance](#462-user-story-66-ensure-wcag-21-aa-compliance)
+  - [4.7 Epic 17: End User Testing](#47-epic-17-end-user-testing)
+    - [4.7.1. User Story 67: Revise End-User Test Plan](#471-user-story-67-revise-end-user-test-plan)
+    - [4.7.2. User Story 68: Conduct Live User Testing with 5 Users](#472-user-story-68-conduct-live-user-testing-with-5-users)
+    - [4.7.3. User Story 69: Analyze User Feedback and Adjust Product Backlog](#473-user-story-69-analyze-user-feedback-and-adjust-product-backlog)
+  - [4.8 Epic 18: Technical Debt Payment](#48-epic-18-technical-debt-payment)
+    - [4.8.1. User Story 70: Review Architecture for Technical Debt](#481-user-story-70-review-architecture-for-technical-debt)
+    - [4.8.2. User Story 71: Identify Technical Debt](#482-user-story-71-identify-technical-debt)
+    - [4.8.3. User Story 72: Incorporate User Feedback into Technical Debt Review](#483-user-story-72-incorporate-user-feedback-into-technical-debt-review)
+  - [4.8.4. User Story 73: Refactor and Optimize Code](#484-user-story-73-refactor-and-optimize-code)
+- [5 Initiative 4: Tertiary Features and Application Optimization](#5-initiative-4-tertiary-features-and-application-optimization)
+  - [5.1 Epic 19: Performance Optimization](#51-epic-19-performance-optimization)
+    - [5.1.1. User Story 74: Optimize Page Load Times](#511-user-story-74-optimize-page-load-times)
+    - [5.1.2. User Story 75: Implement Caching for Frequently Accessed Data](#512-user-story-75-implement-caching-for-frequently-accessed-data)
+    - [5.1.3. User Story 76: Minimize External API Requests](#513-user-story-76-minimize-external-api-requests)
+    - [5.1.4. User Story 78: Optimize Heavy Calculations](#514-user-story-78-optimize-heavy-calculations)
+  - [5.2 Epic 20: In-App Help and Help Center](#52-epic-20-in-app-help-and-help-center)
+    - [5.2.1. User Story 75: Implement In-App Help Sections and Tooltips](#521-user-story-75-implement-in-app-help-sections-and-tooltips)
+    - [5.2.2. User Story 76: Provide a Knowledge Base or FAQ Section](#522-user-story-76-provide-a-knowledge-base-or-faq-section)
+    - [5.2.3. User Story 77: Embed Learning Features for New Users](#523-user-story-77-embed-learning-features-for-new-users)
+    - [5.2.4. User Story 78: Create Onboarding Guides for New Users](#524-user-story-78-create-onboarding-guides-for-new-users)
+    - [5.2.5. User Story 79: Formalize Ticket Creation and Management System](#525-user-story-79-formalize-ticket-creation-and-management-system)
+  - [5.3 Epic 21: End User Testing](#53-epic-21-end-user-testing)
+    - [5.3.1. User Story 80: Revise End-User Test Plan](#531-user-story-80-revise-end-user-test-plan)
+    - [5.3.2. User Story 81: Conduct Live User Testing with 5 Users](#532-user-story-81-conduct-live-user-testing-with-5-users)
+    - [5.3.3. User Story 82: Analyze User Feedback and Adjust Product Backlog](#533-user-story-82-analyze-user-feedback-and-adjust-product-backlog)
+  - [5.4 Epic 22: Technical Debt Payment](#54-epic-22-technical-debt-payment)
+    - [5.4.1. User Story 83: Review Architecture for Technical Debt](#541-user-story-83-review-architecture-for-technical-debt)
+    - [5.4.2. User Story 84: Identify Technical Debt](#542-user-story-84-identify-technical-debt)
+    - [5.4.3. User Story 85: Incorporate User Feedback into Technical Debt Review](#543-user-story-85-incorporate-user-feedback-into-technical-debt-review)
+    - [5.4.4. User Story 86: Refactor and Optimize Code](#544-user-story-86-refactor-and-optimize-code)
+- [6 Initiative 5: B2B Functionality and Niche Features](#6-initiative-5-b2b-functionality-and-niche-features)
+  - [6.1 Epic 21: B2B User Account Management](#61-epic-21-b2b-user-account-management)
+    - [6.1.1. User Story 87: Allow Businesses to Create Accounts](#611-user-story-87-allow-businesses-to-create-accounts)
+    - [6.1.2. User Story 88: Set Permissions for Business Users](#612-user-story-88-set-permissions-for-business-users)
+  - [6.2 Epic 22: B2B Billing and Subscription Management](#62-epic-22-b2b-billing-and-subscription-management)
+    - [6.2.1. User Story 89: Implement Tiered Pricing for Business Accounts](#621-user-story-89-implement-tiered-pricing-for-business-accounts)
+    - [6.2.2. User Story 90: Manage Subscription and Billing Information](#622-user-story-90-manage-subscription-and-billing-information)
+  - [6.3 Epic 23: Niche Features for B2B Users](#63-epic-23-niche-features-for-b2b-users)
+    - [6.3.1. User Story 91: White Label Solution for Business Accounts](#631-user-story-91-white-label-solution-for-business-accounts)
+    - [6.3.2. User Story 92: Custom Analytics Dashboard for Business Accounts](#632-user-story-92-custom-analytics-dashboard-for-business-accounts)
+    - [6.3.3. User Story 93: Bulk Import and Export of Debt Plans](#633-user-story-93-bulk-import-and-export-of-debt-plans)
+    - [4.8.1. User Story 70: Review Architecture for Technical Debt](#481-user-story-70-review-architecture-for-technical-debt)
+    - [4.8.2. User Story 71: Identify Technical Debt](#482-user-story-71-identify-technical-debt)
+    - [4.8.3. User Story 72: Incorporate User Feedback into Technical Debt Review](#483-user-story-72-incorporate-user-feedback-into-technical-debt-review)
+    - [4.8.4. User Story 73: Refactor and Optimize Code](#484-user-story-73-refactor-and-optimize-code)
 
 ## 1. User Types
 
 We contemplate the following users:
 
-### 1. Admin
+### 1.1. Admin
 
 Admin users manage the overall system and have control over user management, settings, and reporting. They ensure the platform operates smoothly and securely.
 
-### 2. Users
+### 1.2. Users
 
 Users are the primary users of the DebtFreePlanner platform. They input debt details, calculate repayment plans, and track their progress over time.
 
-### 3. Collaborator
+### 1.3. Collaborator
 
 Collaborators are users who are invited to assist in managing specific debt plans. They may have limited access and roles based on permissions set by the User.
 
-### 4. Guest
+### 1.4. Guest
 
 Guests are users who visit the public-facing parts of the website, such as the landing page or blog. They may be potential users interested in learning more about the platform.
 
@@ -763,7 +859,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ---
 
-#### 3.5.3. User Story 35: Visualize Debt Repayment Plan
+#### 3.5.2. User Story 35: Visualize Debt Repayment Plan
 
 **Story Points:** 6
 
@@ -783,7 +879,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ---
 
-#### 3.5.4. User Story 36: Provide Savings Summary
+#### 3.5.3. User Story 36: Provide Savings Summary
 
 **Story Points:** 5
 
@@ -1041,7 +1137,6 @@ so that the application's code is of high quality, secure, and reliable.
   **When** the product backlog is updated,  
   **Then** it should include new stories or improvements that address the top concerns identified during testing.
 
-
 ---
 
 ### 3.8 Epic 10: Technical Debt Payment
@@ -1182,7 +1277,7 @@ so that the application's code is of high quality, secure, and reliable.
 
 ### 4.2 Epic 12: Complete User Profile Management
 
-#### 4.2.1. User Story 52: MaComplite User Profile
+#### 4.2.1. User Story 52: Complete User Profile
 
 **Story Points:** 4
 
@@ -1487,7 +1582,6 @@ so that the application's code is of high quality, secure, and reliable.
 - **Given** feedback analysis is complete,  
   **When** the product backlog is updated,  
   **Then** it should include new stories or improvements that address the top concerns identified during testing.
-
 
 ---
 
@@ -1885,7 +1979,6 @@ so that the application's code is of high quality, secure, and reliable.
   **When** the team updates the technical debt list,  
   **Then** user-reported issues should be flagged as higher priority for resolution.
 
-
 #### 5.4.4. User Story 86: Refactor and Optimize Code
 
 **Story Points:** 15
@@ -1910,72 +2003,150 @@ so that the application's code is of high quality, secure, and reliable.
 
 ## 6 Initiative 5: B2B Functionality and Niche Features
 
-### 6.1 Epic 25: License Enforcement
+### 6.1 Epic 21: B2B User Account Management
 
-- Finalize the Pricing Model and Packaging in the Market Requirements Document (MRD).
-- Create a pricing page.
-- Create a subscription payment mechanism.
-- Enforce license restrictions based on the subscription tier.
+#### 6.1.1. User Story 87: Allow Businesses to Create Accounts
 
-### 6.2 Epic 26: Multi-User Account Management
+**Story Points:** 6
 
-- Enable users to buy a subscription where they can distribute licenses to other users.
+**As a** business user,  
+**I want to** create a business account,  
+**so that** I can manage debt plans for my company or organization.
 
-### 6.3 Epic 27: Export Capabilities
+**Acceptance Criteria:**
 
-- Implement export capabilities for debt plans and reports in various formats (e.g., PDF, CSV).
-- Ensure exported files are accessible and easy to read.
+- **Given** a business user is signing up,  
+  **When** they register for a business account,  
+  **Then** the system should collect information such as business name, tax ID, and primary contact details.
 
-### 6.4 Epic 28: Import Capabilities
-
-- Allow users to import data from other financial tools or spreadsheets.
-- Ensure compatibility with common formats (CSV, Excel).
-- Validate imported data to avoid formatting or calculation errors.
-
-### 6.5 Epic 29: Integration with Financial Tools
-
-Integrate with external financial tools like **YNAB** and **Firefly III** to allow seamless syncing and data flow.
-
-- **User Story 21.1: YNAB Integration**:
-  - Set up OAuth to allow users to securely connect their YNAB accounts.
-  - Retrieve debt balances, monthly payments, and budgets from YNAB.
-  - Map YNAB data to DebtFreePlanner’s internal structures.
-  - Allow users to set a sync schedule or perform manual syncs.
-  - Provide notifications for successful syncs or errors.
-- **User Story 21.2: Firefly III Integration**:
-  - Implement API key-based authentication for Firefly III users.
-  - Retrieve debt balances, payment history, and interest rates from Firefly III.
-  - Map Firefly III data to DebtFreePlanner’s debt and transaction history.
-  - Allow for manual and scheduled syncing with clear notifications.
-  - Handle errors and provide feedback on sync success or failure.
+- **Given** a business account is created,  
+  **When** the business user accesses the platform,  
+  **Then** they should have access to features tailored for B2B users, such as team management and plan delegation.
 
 ---
 
-### 6.6 Epic 30: API Development for Third-Party Integration
+#### 6.1.2. User Story 88: Set Permissions for Business Users
 
-- **Create Key Management Systems** for API keys.
-- **Re-architect Backend for API Integration** to support CRUD operations.
-- **Create API Documentation** covering authentication, endpoints, and error handling.
+**Story Points:** 5
 
-### 6.7 Epic 24: End User Testing
+**As a** business admin,  
+**I want to** assign roles and permissions to my team,  
+**so that** I can control what my employees can access and modify within the platform.
 
-This epic focuses on conducting a third round of end-user testing after incorporating feedback from earlier test rounds, to ensure that the platform is functioning as expected and is user-friendly.
+**Acceptance Criteria:**
 
-- **Revise the End-User Test Plan**:
+- **Given** a business account is active,  
+  **When** the admin is managing team members,  
+  **Then** they should be able to assign roles (e.g., viewer, editor, admin) and control access to debt plans and data.
 
-  - Update the test plan based on previous feedback, focusing on areas that had issues or needed improvement.
+- **Given** a team member’s role is updated,  
+  **When** they next log in,  
+  **Then** their permissions should reflect their new role, limiting or expanding their access accordingly.
 
-- **Conduct Live User Testing**:
+---
 
-  - Perform a live test with 5 users, focusing on key features like debt input, repayment calculations, and syncing with financial tools.
-  - Gather detailed feedback on usability, performance, and any remaining issues.
+### 6.2 Epic 22: B2B Billing and Subscription Management
 
-- **Analyze Feedback**:
-  - Analyze the feedback from the round of testing and adjust the product backlog accordingly to address any remaining concerns.
+---
 
-### 6.8 Epic 25: Technical Debt Payment
+#### 6.2.1. User Story 89: Implement Tiered Pricing for Business Accounts
 
-- Review the archetecture
-- Identify technical debt, including outdated libraries, redundant code, or non-performant algorithms.
-- incorporating user feedback
-- Refactor and optimize code to improve performance and stability.
+**Story Points:** 7
+
+**As a** business user,  
+**I want to** choose from tiered pricing plans,  
+**so that** I can select a subscription model that suits my company’s needs based on the number of users and features.
+
+**Acceptance Criteria:**
+
+- **Given** a business user is viewing pricing options,  
+  **When** they are selecting a plan,  
+  **Then** the system should offer different tiers (e.g., Basic, Professional, Enterprise) with corresponding features and pricing.
+
+- **Given** a business user selects a pricing tier,  
+  **When** they subscribe,  
+  **Then** the system should process the subscription and apply the selected features and limits to their account.
+
+---
+
+#### 6.2.2. User Story 90: Manage Subscription and Billing Information
+
+**Story Points:** 5
+
+**As a** business admin,  
+**I want to** manage my company's subscription and billing information,  
+**so that** I can keep payment details up to date and control subscription settings.
+
+**Acceptance Criteria:**
+
+- **Given** a business user is subscribed to a plan,  
+  **When** they access their account settings,  
+  **Then** they should be able to update payment methods, view billing history, and modify their subscription tier.
+
+- **Given** a billing issue occurs (e.g., expired credit card),  
+  **When** the user logs in,  
+  **Then** the system should notify them of the issue and prompt them to update their payment details.
+
+---
+
+### 6.3 Epic 23: Niche Features for B2B Users
+
+---
+
+#### 6.3.1. User Story 91: White Label Solution for Business Accounts
+
+**Story Points:** 8
+
+**As a** business admin,  
+**I want to** offer a white-labeled version of the platform,  
+**so that** my company’s brand is reflected, and the platform feels integrated into my company’s services.
+
+**Acceptance Criteria:**
+
+- **Given** a business account has subscribed to a white-label plan,  
+  **When** the admin configures branding options,  
+  **Then** they should be able to upload their company’s logo, colors, and styles, which will be reflected across the platform.
+
+- **Given** a business customer uses the platform,  
+  **When** they access the white-labeled version,  
+  **Then** the user interface should display the custom branding without showing DebtFreePlanner’s branding.
+
+---
+
+#### 6.3.2. User Story 92: Custom Analytics Dashboard for Business Accounts
+
+**Story Points:** 7
+
+**As a** business admin,  
+**I want to** view custom analytics about my team’s debt management performance,  
+**so that** I can track key metrics and assess how effectively we are managing debts.
+
+**Acceptance Criteria:**
+
+- **Given** a business account is active,  
+  **When** the admin accesses the analytics dashboard,  
+  **Then** they should see key metrics such as total debt managed, repayment timelines, and team performance.
+
+- **Given** custom analytics are configured,  
+  **When** the admin adjusts filters or views data,  
+  **Then** the dashboard should dynamically update to reflect the chosen parameters.
+
+---
+
+#### 6.3.3. User Story 93: Bulk Import and Export of Debt Plans
+
+**Story Points:** 6
+
+**As a** business user,  
+**I want to** bulk import and export debt plans,  
+**so that** I can manage large datasets efficiently for multiple clients or internal purposes.
+
+**Acceptance Criteria:**
+
+- **Given** a business account is active,  
+  **When** the user needs to import debt plans,  
+  **Then** they should be able to upload a standardized file format (e.g., CSV) containing multiple plans for quick processing.
+
+- **Given** the user needs to export debt plans,  
+  **When** they select the export option,  
+  **Then** the system should generate a file containing the selected plans in a downloadable format.
