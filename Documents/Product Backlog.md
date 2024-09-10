@@ -1428,24 +1428,485 @@ so that the application's code is of high quality, secure, and reliable.
   **When** accessibility tests are run,  
   **Then** the platform should meet **WCAG 2.1 AA** standards for all key features.
 
+### 4.7 Epic 17: End User Testing
+
+#### 4.7.1. User Story 67: Revise End-User Test Plan
+
+**Story Points:** 3
+
+**As a** QA Lead,  
+**I want to** revise the end-user test plan based on previous feedback,  
+**so that** the test plan addresses the critical areas for improvement and ensures thorough testing.
+
+**Acceptance Criteria:**
+
+- **Given** feedback from previous testing sessions,  
+  **When** the test plan is revised,  
+  **Then** it should include updated scenarios, tasks, and objectives that reflect user feedback and product changes.
+
+- **Given** revisions to the test plan,  
+  **When** the QA team reviews it,  
+  **Then** they should confirm that the test plan covers key user workflows, including debt input, repayment calculations, and financial tool integrations.
+
+---
+
+#### 4.7.2. User Story 68: Conduct Live User Testing with 5 Users
+
+**Story Points:** 5
+
+**As a** product owner,  
+**I want to** conduct live user testing with 5 users,  
+**so that** I can gather real-time feedback on debt input, repayment calculations, and syncing with financial tools.
+
+**Acceptance Criteria:**
+
+- **Given** a group of 5 users,  
+  **When** live testing is conducted,  
+  **Then** users should interact with the DebtFreePlanner system to input debts, perform repayment calculations, and sync their financial tools.
+
+- **Given** users encounter issues during testing,  
+  **When** feedback is collected,  
+  **Then** the team should log the issues and observations for further analysis and product adjustments.
+
+---
+
+#### 4.7.3. User Story 69: Analyze User Feedback and Adjust Product Backlog
+
+**Story Points:** 4
+
+**As a** product manager,  
+**I want to** analyze the feedback from live user testing,  
+**so that** I can adjust the product backlog to address any remaining concerns or improvements.
+
+**Acceptance Criteria:**
+
+- **Given** feedback from live user testing,  
+  **When** the feedback is analyzed,  
+  **Then** the product team should identify key concerns, usability issues, and suggestions for product enhancements.
+
+- **Given** feedback analysis is complete,  
+  **When** the product backlog is updated,  
+  **Then** it should include new stories or improvements that address the top concerns identified during testing.
+
+
+---
+
+### 4.8 Epic 18: Technical Debt Payment
+
+#### 4.8.1. User Story 70: Review Architecture for Technical Debt
+
+**Story Points:** 5
+
+**As a** software architect,  
+**I want to** review the existing architecture,  
+**so that** I can identify areas of technical debt and plan for improvements in performance and maintainability.
+
+**Acceptance Criteria:**
+
+- **Given** the current architecture is in place,  
+  **When** the architecture review is conducted,  
+  **Then** the team should identify outdated components, non-performant structures, and opportunities for optimization.
+
+- **Given** the architecture review is completed,  
+  **When** the findings are documented,  
+  **Then** a prioritized list of technical debt items should be created for future refactoring.
+
+---
+
+#### 4.8.2. User Story 71: Identify Technical Debt
+
+**Story Points:** 6
+
+**As a** developer,  
+**I want to** identify areas of technical debt,  
+**so that** the team can address outdated libraries, redundant code, or non-performant algorithms.
+
+**Acceptance Criteria:**
+
+- **Given** the current codebase,  
+  **When** an assessment of technical debt is performed,  
+  **Then** the system should flag outdated libraries, unused dependencies, and inefficient algorithms that impact performance or security.
+
+- **Given** the technical debt list is generated,  
+  **When** the team reviews it,  
+  **Then** they should prioritize which areas of debt need immediate attention based on their impact on stability, performance, and future scalability.
+
+---
+
+#### 4.8.3. User Story 72: Incorporate User Feedback into Technical Debt Review
+
+**Story Points:** 4
+
+**As a** product manager,  
+**I want to** incorporate user feedback into the technical debt review,  
+**so that** I can ensure that user concerns are addressed alongside the internal technical improvements.
+
+**Acceptance Criteria:**
+
+- **Given** feedback from users regarding system performance or stability,  
+  **When** technical debt items are reviewed,  
+  **Then** user feedback should be cross-referenced to identify any user-reported issues that align with the technical debt.
+
+- **Given** user feedback identifies performance bottlenecks,  
+  **When** the team updates the technical debt list,  
+  **Then** user-reported issues should be flagged as higher priority for resolution.
+
+---
+
+#### 4.8.4. User Story 73: Refactor and Optimize Code
+
+**Story Points:** 15
+
+**As a** developer,  
+**I want to** refactor and optimize the code,  
+**so that** the system's performance and stability are improved, reducing future technical debt.
+
+**Acceptance Criteria:**
+
+- **Given** a prioritized list of technical debt,  
+  **When** the team begins refactoring,  
+  **Then** the code should be optimized by removing redundant code, upgrading libraries, and improving algorithm performance.
+
+- **Given** the codebase is refactored,  
+  **When** the system is tested,  
+  **Then** performance benchmarks should show noticeable improvements in response times and resource usage.
+
+- **Given** the refactor includes security updates,  
+  **When** the changes are deployed,  
+  **Then** the system should pass all security and performance tests.
+
 ## 5 Initiative 4: Tertiary Features and Application Optimization
 
 ### 5.1 Epic 19: Performance Optimization
 
-- Optimize page load times, especially for the DebtFreePlanner.
-- Implement caching for frequently accessed data.
-- Minimize external API requests and improve API response times.
-- Ensure all heavy computations (e.g., calculations) are efficiently processed.
+#### 5.1.1. User Story 74: Optimize Page Load Times
+
+**Story Points:** 6
+
+**As a** developer,  
+**I want to** optimize page load times, particularly for the DebtFreePlanner page,  
+**so that** users can interact with the platform quickly and without delays.
+
+**Acceptance Criteria:**
+
+- **Given** the DebtFreePlanner page,  
+  **When** users navigate to it,  
+  **Then** the system should load all necessary resources efficiently, with a load time of under 2 seconds.
+
+- **Given** assets like scripts, images, or stylesheets,  
+  **When** they are loaded,  
+  **Then** they should be optimized for performance, such as using lazy loading for non-essential elements.
+
+---
+
+#### 5.1.2. User Story 75: Implement Caching for Frequently Accessed Data
+
+**Story Points:** 5
+
+**As a** developer,  
+**I want to** implement caching for frequently accessed data,  
+**so that** users experience faster load times for data that doesn't frequently change.
+
+**Acceptance Criteria:**
+
+- **Given** user data that is accessed repeatedly (e.g., user profiles, debt plans),  
+  **When** the system retrieves the data,  
+  **Then** it should use cached versions of the data when possible to reduce server load and speed up responses.
+
+- **Given** the data changes,  
+  **When** it is updated,  
+  **Then** the cache should be invalidated and updated with the new data.
+
+---
+
+#### 5.1.3. User Story 76: Minimize External API Requests
+
+**Story Points:** 6
+
+**As a** developer,  
+**I want to** minimize the number of external API requests,  
+**so that** the platform’s response time is faster and more efficient.
+
+**Acceptance Criteria:**
+
+- **Given** the platform makes external API calls,  
+  **When** the same data is requested multiple times,  
+  **Then** the system should reduce API requests by caching responses or using batching techniques.
+
+- **Given** an API response is needed,  
+  **When** a request is made,  
+  **Then** the system should ensure response times are within acceptable thresholds (e.g., under 1 second).
+
+---
+
+#### 5.1.4. User Story 78: Optimize Heavy Calculations
+
+**Story Points:** 7
+
+**As a** developer,  
+**I want to** optimize heavy computations,  
+**so that** users experience minimal delays when performing calculations, such as debt repayment planning.
+
+**Acceptance Criteria:**
+
+- **Given** a user inputs data requiring calculations (e.g., repayment schedules),  
+  **When** the system processes this data,  
+  **Then** it should complete the calculations efficiently, with minimal delays for the user.
+
+- **Given** a complex calculation scenario,  
+  **When** the system processes it,  
+  **Then** background processing or asynchronous methods should be used to avoid blocking the user interface.
+
+---
 
 ### 5.2 Epic 20: In-App Help and Help Center
 
-- Implement in-app help sections and tooltips for key features.
-- Provide a knowledge base or FAQ section.
-- Embed learning features for new users.
-- Create onboarding guides to help new users navigate the platform.
-- Formalize a ticket creation and management system.
+#### 5.2.1. User Story 75: Implement In-App Help Sections and Tooltips
+
+**Story Points:** 5
+
+**As a** user,  
+**I want to** access in-app help sections and tooltips for key features,  
+**so that** I can quickly understand how to use different parts of the platform.
+
+**Acceptance Criteria:**
+
+- **Given** a user is interacting with a complex feature (e.g., debt repayment settings),  
+  **When** they hover over or click on help icons,  
+  **Then** tooltips should provide concise explanations of the feature.
+
+- **Given** the user needs more detailed help,  
+  **When** they click on the in-app help section,  
+  **Then** they should be redirected to more comprehensive resources or FAQs.
 
 ---
+
+#### 5.2.2. User Story 76: Provide a Knowledge Base or FAQ Section
+
+**Story Points:** 6
+
+**As a** user,  
+**I want to** access a knowledge base or FAQ section,  
+**so that** I can find answers to common questions and troubleshoot issues without contacting support.
+
+**Acceptance Criteria:**
+
+- **Given** the user accesses the Help Center,  
+  **When** they search for a topic,  
+  **Then** the system should return relevant articles or FAQs that provide step-by-step instructions or answers.
+
+- **Given** a frequently asked question,  
+  **When** the user reads the article,  
+  **Then** it should be comprehensive, covering common issues, with examples if necessary.
+
+---
+
+#### 5.2.3. User Story 77: Embed Learning Features for New Users
+
+**Story Points:** 7
+
+**As a** user,  
+**I want to** access embedded learning features,  
+**so that** I can understand how to use the platform’s core features as a new user.
+
+**Acceptance Criteria:**
+
+- **Given** a new user has signed up,  
+  **When** they navigate through the platform,  
+  **Then** the system should guide them with step-by-step walkthroughs or tutorials explaining core features.
+
+- **Given** the user completes the learning guide,  
+  **When** they finish,  
+  **Then** they should feel confident in using the key platform features (e.g., creating a debt repayment plan).
+
+---
+
+#### 5.2.4. User Story 78: Create Onboarding Guides for New Users
+
+**Story Points:** 6
+
+**As a** new user,  
+**I want to** follow an onboarding guide,  
+**so that** I can easily learn how to navigate the platform and set up my account.
+
+**Acceptance Criteria:**
+
+- **Given** a new user signs up,  
+  **When** they access the onboarding guide,  
+  **Then** it should provide a series of tasks or tutorials that help them set up their profile, understand key features, and start using the platform.
+
+- **Given** the user completes onboarding,  
+  **When** they follow the guide,  
+  **Then** they should be ready to use the core features of the platform independently.
+
+---
+
+#### 5.2.5. User Story 79: Formalize Ticket Creation and Management System
+
+**Story Points:** 7
+
+**As a** user,  
+**I want to** create and manage support tickets,  
+**so that** I can report issues and track their resolution within the platform.
+
+**Acceptance Criteria:**
+
+- **Given** a user encounters an issue,  
+  **When** they create a ticket in the Help Center,  
+  **Then** the system should allow them to describe the issue, attach relevant files, and submit it for support review.
+
+- **Given** the ticket has been submitted,  
+  **When** the user checks the status,  
+  **Then** the system should display real-time updates on the progress of the issue and any responses from the support team.
+
+### 5.3 Epic 21: End User Testing
+
+---
+
+#### 5.3.1. User Story 80: Revise End-User Test Plan
+
+**Story Points:** 3
+
+**As a** QA Lead,  
+**I want to** revise the end-user test plan based on previous feedback,  
+**so that** the test plan addresses the critical areas for improvement and ensures thorough testing.
+
+**Acceptance Criteria:**
+
+- **Given** feedback from previous testing sessions,  
+  **When** the test plan is revised,  
+  **Then** it should include updated scenarios, tasks, and objectives that reflect user feedback and product changes.
+
+- **Given** revisions to the test plan,  
+  **When** the QA team reviews it,  
+  **Then** they should confirm that the test plan covers key user workflows, including debt input, repayment calculations, and financial tool integrations.
+
+---
+
+#### 5.3.2. User Story 81: Conduct Live User Testing with 5 Users
+
+**Story Points:** 5
+
+**As a** product owner,  
+**I want to** conduct live user testing with 5 users,  
+**so that** I can gather real-time feedback on debt input, repayment calculations, and syncing with financial tools.
+
+**Acceptance Criteria:**
+
+- **Given** a group of 5 users,  
+  **When** live testing is conducted,  
+  **Then** users should interact with the DebtFreePlanner system to input debts, perform repayment calculations, and sync their financial tools.
+
+- **Given** users encounter issues during testing,  
+  **When** feedback is collected,  
+  **Then** the team should log the issues and observations for further analysis and product adjustments.
+
+---
+
+#### 5.3.3. User Story 82: Analyze User Feedback and Adjust Product Backlog
+
+**Story Points:** 4
+
+**As a** product manager,  
+**I want to** analyze the feedback from live user testing,  
+**so that** I can adjust the product backlog to address any remaining concerns or improvements.
+
+**Acceptance Criteria:**
+
+- **Given** feedback from live user testing,  
+  **When** the feedback is analyzed,  
+  **Then** the product team should identify key concerns, usability issues, and suggestions for product enhancements.
+
+- **Given** feedback analysis is complete,  
+  **When** the product backlog is updated,  
+  **Then** it should include new stories or improvements that address the top concerns identified during testing.
+
+---
+
+### 5.4 Epic 22: Technical Debt Payment
+
+---
+
+#### 5.4.1. User Story 83: Review Architecture for Technical Debt
+
+**Story Points:** 5
+
+**As a** software architect,  
+**I want to** review the existing architecture,  
+**so that** I can identify areas of technical debt and plan for improvements in performance and maintainability.
+
+**Acceptance Criteria:**
+
+- **Given** the current architecture is in place,  
+  **When** the architecture review is conducted,  
+  **Then** the team should identify outdated components, non-performant structures, and opportunities for optimization.
+
+- **Given** the architecture review is completed,  
+  **When** the findings are documented,  
+  **Then** a prioritized list of technical debt items should be created for future refactoring.
+
+---
+
+#### 5.4.2. User Story 84: Identify Technical Debt
+
+**Story Points:** 6
+
+**As a** developer,  
+**I want to** identify areas of technical debt,  
+**so that** the team can address outdated libraries, redundant code, or non-performant algorithms.
+
+**Acceptance Criteria:**
+
+- **Given** the current codebase,  
+  **When** an assessment of technical debt is performed,  
+  **Then** the system should flag outdated libraries, unused dependencies, and inefficient algorithms that impact performance or security.
+
+- **Given** the technical debt list is generated,  
+  **When** the team reviews it,  
+  **Then** they should prioritize which areas of debt need immediate attention based on their impact on stability, performance, and future scalability.
+
+---
+
+#### 5.4.3. User Story 85: Incorporate User Feedback into Technical Debt Review
+
+**Story Points:** 4
+
+**As a** product manager,  
+**I want to** incorporate user feedback into the technical debt review,  
+**so that** I can ensure that user concerns are addressed alongside the internal technical improvements.
+
+**Acceptance Criteria:**
+
+- **Given** feedback from users regarding system performance or stability,  
+  **When** technical debt items are reviewed,  
+  **Then** user feedback should be cross-referenced to identify any user-reported issues that align with the technical debt.
+
+- **Given** user feedback identifies performance bottlenecks,  
+  **When** the team updates the technical debt list,  
+  **Then** user-reported issues should be flagged as higher priority for resolution.
+
+
+#### 5.4.4. User Story 86: Refactor and Optimize Code
+
+**Story Points:** 15
+
+**As a** developer,  
+**I want to** refactor and optimize the code,  
+**so that** the system's performance and stability are improved, reducing future technical debt.
+
+**Acceptance Criteria:**
+
+- **Given** a prioritized list of technical debt,  
+  **When** the team begins refactoring,  
+  **Then** the code should be optimized by removing redundant code, upgrading libraries, and improving algorithm performance.
+
+- **Given** the codebase is refactored,  
+  **When** the system is tested,  
+  **Then** performance benchmarks should show noticeable improvements in response times and resource usage.
+
+- **Given** the refactor includes security updates,  
+  **When** the changes are deployed,  
+  **Then** the system should pass all security and performance tests.
 
 ## 6 Initiative 5: B2B Functionality and Niche Features
 
