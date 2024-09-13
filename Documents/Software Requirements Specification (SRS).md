@@ -1,4 +1,4 @@
-# Software Requirements Specification (SRS) for DebtFreePlanner
+# Software Requirements Specification (SRS)
 
 ## Table of Contents
 
