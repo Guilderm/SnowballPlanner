@@ -176,7 +176,7 @@ Currently completing a BA in Software Engineering, Guilder is passionate about b
 
 This project is licensed under the terms of the [MIT License](https://github.com/Guilderm/DebtFreePlanner/blob/main/LICENSE) file.
 
-## Documentation  v2
+## Documentation v2
 
 This project prioritizes "working software over comprehensive documentation" in accordance with Agile principles while also recognizing the important role that documentation plays in creating a "shared understanding," especially in the context of a portfolio project.
 
