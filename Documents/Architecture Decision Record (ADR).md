@@ -1,43 +1,46 @@
 # Architecture Decision Record (ADR)
 
 - [Introduction](#introduction)
-- [Purpose of ADRs](#purpose-of-adrs)
-- [ADR Folder Structure](#adr-folder-structure)
-  - [Folder Example](#folder-example)
-- [ADR Naming and Numbering Convention](#adr-naming-and-numbering-convention)
+- [File Structure](#file-structure)
+  - [ADR Contents](#adr-contents)
+  - [ADR Folder Structure](#adr-folder-structure)
   - [Naming Convention](#naming-convention)
   - [Numbering](#numbering)
   - [Title](#title)
 - [When to Create an ADR](#when-to-create-an-adr)
-- [Using the ADR Template](#using-the-adr-template)
-- [How to Fill Out the Template](#how-to-fill-out-the-template)
+- [Lifecycle of an ADR](#lifecycle-of-an-adr)
+  - [Statuses](#statuses)
+  - [Modifying an ADR](#modifying-an-adr)
+- [ADR Template](#adr-template)
+- [ADR Example](#adr-example)
+- [References](#refences)
+
+---
 
 ## Introduction
 
 An [Architecture Decision Record (ADR)](https://en.wikipedia.org/wiki/Architectural_decision) captures [Architecturally Significant Requirements (ASRs)](https://en.wikipedia.org/wiki/Architecturally_significant_requirements) along with the context, rationale, and consequences of each decision. The primary goal of ADRs is to maintain a clear, accessible history of ASRs and the reasoning behind them.
 
-## This document outlines how to create, maintain, and use ADRs
+## File structure
 
-## Core Sections of an ADR
+### ADR Contents
 
-### Contents of an ADR
+Each ADR focuses on one specific decision, documenting its context, rationale, consequences, and any alternatives considered. uring the [ADR Template](#adr-template)
 
-Each ADR focuses on one specific decision, documenting its context, rationale, consequences, and any alternatives considered. uring the [ADR Template]()
+### ADR Folder Structure
 
-### ADR location
-
-Each ADRs will live in it's own makrdown file in the 'Documents/Architecture Decision Records/' directory
+Each ADR will live in its own markdown file in the `Documents/Architecture Decision Records/` directory.
 
 ### Naming Convention
 
 The file name for each ADR should follow this format:
 
-ADR-<number>-<decision-title>.md
+`ADR-<number>-decision-title.md`
 
 ### Numbering
 
 - Each ADR should have a unique number, incrementing from `001`.
-- Numbers are assigned sequentially and should not be reused, even if an ADR is deprecated or replaced by another decision, refrence [Lifecycle of an ADR]().
+- Numbers are assigned sequentially and should not be reused, even if an ADR is replaced by another decision. See [Lifecycle of an ADR](#lifecycle-of-an-adr).
 
 ### Title
 
@@ -45,8 +48,6 @@ ADR-<number>-<decision-title>.md
 - Keep the title concise but descriptive.
 
 #### Examples
-
-'Documents/Architecture Decision Records/'
 
 - `ADR-001-database-choice.md`
 - `ADR-002-authentication-strategy.md`
@@ -56,7 +57,7 @@ ADR-<number>-<decision-title>.md
 
 ## When to Create an ADR
 
-An ADR should be created whenever an [Architecturally Significant Requirements (ASRs)](https://en.wikipedia.org/wiki/Architecturally_significant_requirements) is made. An ASRs is any decision that affects the system’s structure, non-functional requirements (such as performance, scalability, or security), or the team's ability to deliver value efficiently.
+An ADR should be created whenever an [Architecturally Significant Requirement (ASR)](https://en.wikipedia.org/wiki/Architecturally_significant_requirements) is made. An ASR is any decision that affects the system’s structure, non-functional requirements (such as performance, scalability, or security).
 
 Some examples of decisions that require ADRs:
 
@@ -73,14 +74,16 @@ Some examples of decisions that require ADRs:
 
 Each ADR has a lifecycle that follows the development process of the project.
 
-Statuses
-Proposed: The decision has been documented, but it has not yet been finalized.
-Accepted: The decision has been reviewed and accepted.
-Deprecated: The decision is no longer valid but remains in the record for historical reference.
-Superseded: The decision has been replaced by another ADR (reference the new ADR).
+### Statuses
 
-**Modifying an ADR**
-ADRs are to be kept immutable after acceptance. If a decision requires updates, supersed it by the new ADR. both the new and old ADR shuld refrence each other fasiltating a historical chan of refrence.
+- **Proposed**: The decision has been documented, but it has not yet been finalized.
+- **Accepted**: The decision has been reviewed and accepted.
+- **Deprecated**: The decision is no longer valid but remains in the record for historical reference.
+- **Superseded**: The decision has been replaced by another ADR (reference the new ADR).
+
+### Modifying an ADR
+
+ADRs are to be kept immutable after acceptance. If a decision requires updating, supersede it with a new ADR. Both the new and old ADR should reference each other, facilitating a historical chain of reference.
 
 ---
 
@@ -139,13 +142,13 @@ Each ADR follows a standardized format. Below is the template you should use for
 ### Notes
 
 - Any additional comments, follow-ups, or caveats.
+```
 
----
+## ADR Example
 
-## Example ADR
+Here’s an example of an ADR for database selection:
 
-Here's an example of an ADR for database selection:
-
+```markdown
 # Database Choice: MongoDB vs. PostgreSQL
 
 - Date: 2024-09-20
@@ -196,3 +199,8 @@ Here's an example of an ADR for database selection:
 
 - We will monitor performance as the user base grows and may reevaluate this decision if performance degrades.
 ```
+
+## Refences
+
+[Architectural Decision Records](https://adr.github.io/)
+[Architectural Decision Records](https://github.com/joelparkerhenderson/architecture-decision-record)
