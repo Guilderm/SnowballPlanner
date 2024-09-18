@@ -35,7 +35,7 @@ Each ADR will live in its own markdown file in the `Documents/Architecture Decis
 
 The file name for each ADR should follow this format:
 
-`ADR-<number>-decision-title.md`
+`ADR-<number>_<Abreciated-_decision-title>.md`
 
 ### Numbering
 
