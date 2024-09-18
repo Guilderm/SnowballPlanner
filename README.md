@@ -4,7 +4,7 @@ _A MERN stack application for strategic debt payoff planning using Snowball and 
 
 ## Note to Hiring Teams
 
-Interested in assessing my technical expertise? The [About this Project](Documents/About%20this%20Project.md) document was written to highlight my development journey, the technologies implemented, and the methodologies applied throughout this project.
+Interested in assessing my technical expertise? The [About DebtFreePlanner and My Development Journey](Documents/About%20this%20Project.md) document was written to highlight my development journey, the technologies implemented, and the methodologies applied throughout this project.
 
 ## Table of Contents
 
