@@ -175,3 +175,30 @@ Currently completing a BA in Software Engineering, Guilder is passionate about b
 ## License
 
 This project is licensed under the terms of the [MIT License](https://github.com/Guilderm/DebtFreePlanner/blob/main/LICENSE) file.
+
+## Documentation  v2
+
+This project prioritizes "working software over comprehensive documentation" in accordance with Agile principles while also recognizing the important role that documentation plays in creating a "shared understanding," especially in the context of a portfolio project.
+
+To this end, the project includes documents that explain the "why," "what," and "how" of the application, showcasing not only programming expertise but also the ability to convey a shared understanding—a skill critical in software development.
+
+The project's documentation is guided by the book _Docs for Developers: An Engineer's Field Guide to Technical Writing_ by Jared Bhatti and others, alongside other industry standards.
+
+### [Product Requirements Document (PRD)](<Documents/Product%20Requirements%20Document%20(PRD).md>)
+
+The PRD details the "why" of the project by providing an overview of the business case, product vision, and roadmap. It demonstrates product management skills, including market analysis, vision setting, and strategic thinking.
+
+### [Product Backlog](Documents/Product%20Backlog.md)
+
+The Product Backlog contains all the user stories and tasks planned for the development of DebtFreePlanner. It outlines the functional requirements, detailing what the software should do. **Note**: The Product Backlog serves as the Agile alternative to the traditional Software Requirements Specification (SRS).
+
+### [Software Design Document (SDD)](<Documents/Software%20Design%20Document%20(SDD).md>)
+
+The SDD explains the project's "how" by outlining the software architecture, design patterns, and data structures. It illustrates software architecture and design skills, focusing on creating robust, scalable, and maintainable systems.
+
+### Key Features v2
+
+- **Multiple Repayment Strategies**: Choose from various debt repayment methods, including Snowball, Avalanche, Debt-to-Interest Ratio, Cash Flow Index (CFI), Highest Monthly Payment, and custom strategies.
+- **Multi-User Support**: Collaborate with others by sharing your debt repayment plans, allowing for joint management and accountability.
+- **Multicurrency Support**: Manage debts in different currencies with automatic exchange rate updates.
+- **Snowflake Payments**: Make small, irregular payments whenever extra funds are available to reduce your principal faster.
