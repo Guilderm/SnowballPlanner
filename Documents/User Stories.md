@@ -1,4 +1,4 @@
-# Product Backlog
+# User Stories
 
 The Product Backlog serves as the central repository for all user stories. It is a dynamic document and will be continuously refined and updated as new requirements emerge, or priorities shift based on user feedback and business needs.
 

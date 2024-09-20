@@ -14,7 +14,7 @@
 
 - **Problem**:
   - Our product, DebtFreePlanner, collects user input related to financial data. However, storing Personally Identifiable Information (PII), including Social Security Numbers (SSNs), full names, and bank account details, introduces significant compliance and security risks.
-  - DebtFreePlanner, also has fiels that leand themself to the tentering of these information, such as 'loan name' and 'notes'.
+  - DebtFreePlanner also has fields, such as "loan name" and "notes," that could unintentionally lead to the entry of sensitive PII.
   - To comply with **GDPR**, **CCPA**, and other privacy regulations, we must ensure that the system does not store or process any unnecessary PII.
 - **Need**:
   - We do **not need most of this sensitive data** (e.g., SSNs, bank account numbers, full names) to effectively create debt-free plans. The essential information for a debt repayment strategy, such as debts, interest rates, and payment schedules, does not require storing personally identifiable information.
