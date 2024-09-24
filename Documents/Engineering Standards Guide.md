@@ -36,7 +36,7 @@ We have opted not to create dedicated Non-Functional Requirements (NFR) document
 15. [Application Security](#15-application-security)
 16. [Observability](#16-observability)
 17. [Compliance Requirements](#17-compliance-requirements)
-18. [References](#18-references)
+18. [References](#19-references)
 
 ## 2. Product Management
 
@@ -612,7 +612,14 @@ Adhering to compliance requirements is crucial for protecting user data, maintai
 
   - [ISO/IEC 27001 Information Security Management](https://www.iso.org/isoiec-27001-information-security.html)
 
-## 18. References
+## **18. Coding Standards**
+
+- **Airbnb JavaScript Style Guide**
+  - Primary reference for JavaScript coding standards.
+
+- **React Key Concepts: An in-depth guide to React's core features 2nd Edition by Maximilian Schwarzmüller**
+
+## 19. References
 
 ### 18.1 Books and Publications
 
