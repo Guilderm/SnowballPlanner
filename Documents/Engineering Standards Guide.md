@@ -1,7 +1,5 @@
 # **Engineering Standards Guide**
 
----
-
 ## **Introduction**
 
 The **Engineering Standards Guide** serves as a comprehensive reference for developers working on the **DebtFreePlanner** project. It outlines best practices, coding standards, design principles, and methodologies to ensure consistency, maintainability, and quality across the codebase and documentation.
@@ -18,8 +16,6 @@ We have opted not to create a dedicated Non-Functional Requirements (NFR) docume
 
 - **Documentation of Deviations:**  
   Any deviations from standard practices are documented using Architectural Decision Records (ADRs), providing clear rationales for alternative approaches.
-
----
 
 ## **Table of Contents**
 
@@ -44,57 +40,49 @@ We have opted not to create a dedicated Non-Functional Requirements (NFR) docume
 19. [Contributing](#contributing)
 20. [Acknowledgments](#acknowledgments)
 
----
-
-## **ADR Guidelines**
+## **1. ADR Guidelines**
 
 _For comprehensive guidelines on creating effective ADR, please refer to the [ADR Guidelines](./docs/ADR.md) document._
 
----
-
-## **User Story Guidelines**
+## **2. User Story Guidelines**
 
 _For comprehensive guidelines on creating effective user stories, please refer to the [User Story Guidelines](./docs/user-story-guidelines.md) document._
 
----
-
-## **Documentation Style Guide**
+## **3. Documentation Style Guide**
 
 _For comprehensive guidelines on creating effective Documentation, please refer to the [Documentation Style Guide](./docs/Documentation Style Guide.md) document._
 
----
-
-## **Feedback-Driven Development (FDD)**
+## **4. Feedback-Driven Development (FDD)**
 
 Feedback-Driven Development ensures that the **DebtFreePlanner** project remains aligned with user needs and business objectives through continuous feedback and iterative improvements. This approach fosters a responsive and adaptive development process, enhancing product quality and user satisfaction.
 
-**Key Concepts**
+### 4.1 Key Concepts
 
-1. **Continuous Feedback Loop:**
-   
-   - Regularly collect feedback through user testing, analytics, and stakeholder meetings.
+4.1.1. **Continuous Feedback Loop:**
 
-2. **Iterative Improvement:**
-   
-   - Use feedback to make incremental enhancements to features and user experience.
+- Regularly collect feedback through user testing, analytics, and stakeholder meetings.
 
-3. **User-Centered Focus:**
-   
-   - Prioritize changes that improve user satisfaction and align with user needs.
+4.1.2. **Iterative Improvement:**
 
-4. **Rapid Prototyping:**
-   
-   - Develop prototypes or Minimum Viable Products (MVPs) to validate concepts early.
+- Use feedback to make incremental enhancements to features and user experience.
 
-5. **Data-Driven Decisions:**
-   
-   - Leverage analytics to inform feature prioritization and design choices.
+4.1.3. **User-Centered Focus:**
 
-6. **Collaboration:**
-   
-   - Encourage open communication among developers, designers, and stakeholders.
+- Prioritize changes that improve user satisfaction and align with user needs.
 
-**Authoritative Resources**
+4.1.4. **Rapid Prototyping:**
+
+- Develop prototypes or Minimum Viable Products (MVPs) to validate concepts early.
+
+4.1.5. **Data-Driven Decisions:**
+
+- Leverage analytics to inform feature prioritization and design choices.
+
+4.1.6. **Collaboration:**
+
+- Encourage open communication among developers, designers, and stakeholders.
+
+### 4.2 ### .2. Authoritative Resources
 
 - _"The Lean Startup" by Eric Ries_  
   Introduces the Lean Startup methodology, emphasizing rapid experimentation, validated learning, and iterative product releases.
@@ -102,44 +90,42 @@ Feedback-Driven Development ensures that the **DebtFreePlanner** project remains
 - _"Lean Analytics: Use Data to Build a Better Startup Faster" by Ben Yoskovitz and Alistair Croll_  
   Explores how to use data effectively to drive decisions and measure progress in startups and product development.
 
----
-
-## **Domain-Driven Design (DDD) Principles**
+## 5. **Domain-Driven Design (DDD) Principles**
 
 Domain-Driven Design focuses on modeling software that accurately reflects the complex realities of the business domain. This approach promotes a deep understanding of the subject matter, ensuring that the software design aligns with business needs and facilitates effective communication among stakeholders.
 
-**Key Concepts**
+### 5.1. Key Concepts
 
 1. **Ubiquitous Language:**
-   
+
    - Use consistent terminology across code, documentation, and discussions.
 
 2. **Bounded Contexts:**
-   
+
    - Define clear boundaries within the domain model to manage complexity.
 
 3. **Entities and Value Objects:**
-   
+
    - **Entities:** Objects with a unique identity that persists over time (e.g., `User`, `DebtItem`).
    - **Value Objects:** Immutable objects that describe certain aspects (e.g., `Currency`, `Amount`).
 
 4. **Aggregates:**
-   
+
    - Cluster related entities and value objects for data consistency.
 
 5. **Repositories:**
-   
+
    - Implement repositories to abstract data access and persistence.
 
 6. **Domain Events:**
-   
+
    - Capture significant events to facilitate communication within the system.
 
 7. **Context Mapping:**
-   
+
    - Visualize relationships between different bounded contexts.
 
-**Authoritative Resources**
+### 5.2. Authoritative Resources
 
 - _"Implementing Domain-Driven Design" by Vaughn Vernon_  
   Provides practical guidance on applying Domain-Driven Design principles to real-world projects.
@@ -150,13 +136,11 @@ Domain-Driven Design focuses on modeling software that accurately reflects the c
 - _"Modern Software Engineering" by Raju Gandhi, Mark Richards, Neal Ford_  
   Discusses contemporary methodologies and best practices in software engineering, including DDD principles.
 
----
+## **6. Product Management**
 
-## **Product Management**
+Effective product management is crucial for the success of the **DebtFreePlanner** project. It ensures that the product delivers significant value to users, aligns with business objectives, and adapts to market uncertainties. This section outlines the core concepts derived from _"Product Roadmaps Relaunched"_ by C. Todd Lombardo et al., and _"The Lean Product Playbook"_ by Dan Olsen.
 
-Effective product management is crucial for the success of the **DebtFreePlanner** project. It ensures that the product delivers significant value to users, aligns with business objectives, and adapts to market uncertainties. This section outlines the core concepts derived from *"Product Roadmaps Relaunched"* by C. Todd Lombardo et al., and *"The Lean Product Playbook"* by Dan Olsen.
-
-**Key Concepts**
+### 6.1. Key Concepts
 
 ### **1. Product Vision and Strategy**
 
@@ -164,7 +148,7 @@ A clear product vision and strategy provide direction and align the team’s eff
 
 - **Vision Statement:**  
   Defines the ultimate goal of the product.  
-  *Example:* "DebtFreePlanner aims to empower individuals to achieve financial freedom by providing intuitive and customizable debt repayment strategies, enhancing financial literacy, and fostering responsible financial management."
+  _Example:_ "DebtFreePlanner aims to empower individuals to achieve financial freedom by providing intuitive and customizable debt repayment strategies, enhancing financial literacy, and fostering responsible financial management."
 
 - **Strategic Objectives:**  
   Long-term goals that align with business objectives and market needs.
@@ -210,8 +194,8 @@ Understanding user needs, behaviors, and motivations is essential for creating a
 
 - **Personas:**  
   Creating representative user profiles that embody the characteristics of target user segments.  
-  *Example Personas:*  
-  - **Taylor, the Debt-Strapped Professional:** A mid-level professional with multiple student loans and credit card debts seeking efficient repayment plans.  
+  _Example Personas:_
+  - **Taylor, the Debt-Strapped Professional:** A mid-level professional with multiple student loans and credit card debts seeking efficient repayment plans.
   - **Alex, the Financial Planner:** A financial advisor managing clients' debt repayment strategies and tracking progress.
 
 ### **5. Product Requirements and OKRs**
@@ -219,22 +203,26 @@ Understanding user needs, behaviors, and motivations is essential for creating a
 Clearly defined product requirements and Objectives and Key Results (OKRs) ensure that the development efforts are focused, measurable, and aligned with the product vision. They provide a roadmap for what needs to be built and the outcomes that define success, facilitating accountability and progress tracking.
 
 - **OKRs (Objectives and Key Results):**
+
   - **Objective:** Enhance user engagement and satisfaction.
     - **Key Result 1:** Achieve a user satisfaction score of 4.5/5 through usability improvements.
     - **Key Result 2:** Increase active monthly users by 25%.
 
 - **Product Requirements Document (PRD):**
-  - **Functional Requirements:**  
+
+  - **Functional Requirements:**
+
     - Debt entry and management.
     - Repayment strategy selection.
     - Progress tracking.
-  
-  - **Non-Functional Requirements:**  
+
+  - **Non-Functional Requirements:**
     - Performance standards.
     - Security protocols.
     - Scalability considerations.
 
 - **Acceptance Criteria:**
+
   - Clear conditions that must be met for a feature to be considered complete and ready for release.
 
 - **Feature Specifications:**
@@ -245,21 +233,24 @@ Clearly defined product requirements and Objectives and Key Results (OKRs) ensur
 Effective prioritization frameworks ensure that the most valuable and feasible features are developed first, optimizing resource utilization and maximizing user value. They help in making informed decisions about what to build next, balancing short-term gains with long-term strategic goals.
 
 - **MoSCoW Method:**
+
   - **Must-have:** Core repayment strategies (Snowball, Avalanche).
   - **Should-have:** Multicurrency support.
   - **Could-have:** Collaborative debt management features.
   - **Won’t-have:** Advanced AI-driven financial advice (future consideration).
 
 - **Kano Model:**
+
   - Classifying features based on user satisfaction and functionality.
 
 - **Weighted Scoring:**
+
   - Assigning weights to various criteria (e.g., impact, effort) to score and rank features.
 
 - **Value vs. Effort Matrix:**
   - Plotting features based on their value and the effort required to implement them, prioritizing high-value, low-effort items.
 
-**Authoritative Resources**
+### 6.2. Authoritative Resources
 
 - _"Product Roadmaps Relaunched: How to Set Direction while Embracing Uncertainty" by C. Todd Lombardo, Bruce McCarthy, Evan Ryan, and Michael Connors_  
   Redefines traditional product roadmapping approaches, emphasizing flexibility, collaboration, and strategic alignment to guide product development.
@@ -270,13 +261,11 @@ Effective prioritization frameworks ensure that the most valuable and feasible f
 - **"Agile Product Management with Scrum" by Roman Pichler**  
   Offers strategies for integrating Agile methodologies with product management practices, focusing on delivering value through iterative development.
 
----
-
-## **Diagrams as Code (DaC)**
+## **7. Diagrams as Code (DaC)**
 
 Maintaining diagrams and charts as part of the codebase ensures that visual documentation is version-controlled, easily maintainable, and collaboratively editable. This approach enhances consistency and integration between code and visual representations of the system.
 
-**Key Concepts**
+### 7.1. Key Concepts
 
 1. **Version Control:**  
    Ensures visual elements are version-controlled alongside code.
@@ -287,30 +276,30 @@ Maintaining diagrams and charts as part of the codebase ensures that visual docu
 3. **Collaboration:**  
    Facilitates collaboration by allowing diagrams to be edited as code.
 
-**Authoritative Resources**
+### .2. Authoritative Resources
 
 - **Mermaid:** [Mermaid Official Website](https://mermaid.js.org/)  
   A JavaScript-based diagramming and charting tool that uses Markdown-inspired text definitions to create and maintain diagrams as code.
 
----
-
 ## **User Experience (UX) Design**
 
-### **Brief Description of Importance**
 
 User Experience (UX) Design is essential for creating an intuitive and satisfying experience for **DebtFreePlanner** users. It focuses on understanding user needs, behaviors, and motivations to design features and interactions that are both effective and enjoyable. Good UX design enhances user satisfaction, increases engagement, and ensures that the application effectively meets its users' financial management goals.
 
-**Key Concepts**
+### 7.1. Key Concepts
 
 1. **Actionable Design Principles:**
+
    - Apply cognitive psychology principles to create intuitive and user-friendly interfaces.
    - Utilize heuristics such as consistency, feedback, and error prevention to guide design decisions.
 
 2. **User Research and Personas:**
+
    - Conduct surveys, interviews, and usability tests to gather insights into user needs and challenges.
    - Develop detailed personas to represent key user segments and guide design choices.
 
 3. **Journey Mapping:**
+
    - Map out the user’s journey to identify pain points and opportunities for improvement.
    - Ensure seamless navigation and task completion throughout the application.
 
@@ -318,7 +307,7 @@ User Experience (UX) Design is essential for creating an intuitive and satisfyin
    - Implement continuous usability testing to refine and enhance the user experience.
    - Incorporate user feedback into design iterations to ensure the application evolves with user needs.
 
-### **Authoritative Resources**
+### 7.2. Authoritative Resources
 
 - **"The Laws of UX" by Jon Yablonski**  
   Actionable design principles based on cognitive psychology that guide the creation of user-centered designs.
@@ -329,25 +318,24 @@ User Experience (UX) Design is essential for creating an intuitive and satisfyin
 - **"Don't Make Me Think" by Steve Krug**  
   Practical insights on web usability and user-centered design, focusing on simplicity and intuitive navigation.
 
----
-
-## **User Interface (UI/GUI) Design**
-
-### **Brief Description of Importance**
+## **8. User Interface (UI/GUI) Design**
 
 User Interface (UI) Design is crucial for the visual and interactive aspects of the **DebtFreePlanner** application. It involves designing the layout, visual elements, and interactive components that users engage with. Effective UI design ensures that the application is aesthetically pleasing, easy to navigate, and consistent across different devices and platforms. Good UI design not only enhances the overall user experience but also reinforces the brand’s credibility and professionalism.
 
-**Key Concepts**
+### 8.1. Key Concepts
 
 1. **Visual Aesthetics:**
+
    - Focus on clean, modern design to enhance visual appeal and usability.
    - Use a consistent color palette, typography, and iconography to create a cohesive look and feel.
 
 2. **Responsive Design:**
+
    - Ensure the application is accessible and functional across various devices and screen sizes.
    - Implement fluid layouts and flexible images to provide a seamless experience on desktops, tablets, and mobile devices.
 
 3. **Component Library:**
+
    - Develop a reusable set of UI components (buttons, forms, modals) to maintain consistency and improve development efficiency.
    - Utilize design systems or frameworks like Tailwind CSS to streamline the design process.
 
@@ -355,7 +343,7 @@ User Interface (UI) Design is crucial for the visual and interactive aspects of 
    - Adhere to accessibility standards to make the application usable by individuals with diverse abilities.
    - Implement features such as keyboard navigation, sufficient color contrast, and screen reader compatibility.
 
-### **Authoritative Resources**
+### 8.2. Authoritative Resources
 
 - **"Refactoring UI" by Adam Wathan and Steve Schoger**  
   Practical tips for improving visual aesthetics and UI design, focusing on design principles that enhance user interfaces.
@@ -367,34 +355,32 @@ User Interface (UI) Design is crucial for the visual and interactive aspects of 
   [Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG21/)  
   International standards for web accessibility that ensure applications are usable by individuals with diverse abilities.
 
----
-
-## **Application Security**
+## **9. Application Security**
 
 Ensuring robust application security is vital to protect user data, maintain trust, and comply with regulatory standards. Implementing security best practices safeguards the application against vulnerabilities and potential threats.
 
-**Key Concepts**
+### 9.1. Key Concepts
 
 1. **Risk Management:**
-   
+
    - Identify, assess, and mitigate security risks.
 
 2. **Secure Coding Practices:**
-   
+
    - Implement coding standards that prevent common vulnerabilities.
 
 3. **Access Control:**
-   
+
    - Manage user permissions and authentication mechanisms.
 
 4. **Data Protection:**
-   
+
    - Ensure data is securely stored, transmitted, and processed.
 
 5. **Incident Response:**
    - Develop plans for responding to security breaches or incidents.
 
-**Authoritative Resources**
+### 9.2. Authoritative Resources
 
 - **NIST Cybersecurity Framework (CSF)**  
   Guidelines for managing cybersecurity risk, providing a policy framework of computer security guidance for how organizations can assess and improve their ability to prevent, detect, and respond to cyber attacks.  
@@ -407,55 +393,53 @@ Ensuring robust application security is vital to protect user data, maintain tru
 - **"Security Engineering" by Ross Anderson**  
   A comprehensive guide to designing secure systems, covering a wide range of security-related topics from cryptography to policy-making.
 
----
+## **10. Software Architecture - Logical Concerns**
 
-## **Software Architecture - Logical Concerns**
+Logical concerns focus on the internal organization and structure of the software, ensuring that methods, classes, modules, and components are modular, encapsulated, abstracted, and separated according to their responsibilities. Adhering to these principles, as outlined by Martin Fowler in _Modern Software Engineering_, enhances maintainability, scalability, and comprehensibility of the **DebtFreePlanner** application.
 
-Logical concerns focus on the internal organization and structure of the software, ensuring that methods, classes, modules, and components are modular, encapsulated, abstracted, and separated according to their responsibilities. Adhering to these principles, as outlined by Martin Fowler in *Modern Software Engineering*, enhances maintainability, scalability, and comprehensibility of the **DebtFreePlanner** application.
-
-**Key Concepts**
+### 10.1. Key Concepts
 
 1. **Coupling**
-   
+
    - **Definition:**  
      Coupling refers to the degree of interdependence between software modules. Low coupling is desirable as it minimizes the impact of changes in one module on others.
-   
+
    - **Importance:**  
      Reduces the risk of changes causing widespread issues, making the system more robust and easier to maintain.
 
 2. **Information Hiding and Abstraction**
-   
+
    - **Definition:**  
      Information hiding involves concealing the internal workings of a module from other modules, exposing only what is necessary through well-defined interfaces. Abstraction simplifies complex systems by modeling classes appropriate to the problem.
-   
+
    - **Importance:**  
      Enhances modularity and reduces complexity by limiting the knowledge each module has about others.
 
 3. **Separation of Concerns**
-   
+
    - **Definition:**  
      Separation of Concerns is the practice of dividing a software system into distinct sections, each addressing a separate concern or aspect of the system’s functionality.
-   
+
    - **Importance:**  
      Improves maintainability and scalability by ensuring that changes in one area have minimal impact on others.
 
 4. **Cohesion**
-   
+
    - **Definition:**  
      Cohesion refers to how closely related and focused the responsibilities of a single module are. High cohesion means that a module has a well-defined, singular purpose.
-   
+
    - **Importance:**  
      High cohesion within modules enhances clarity, maintainability, and reusability of code.
 
 5. **Modularity in Object-Oriented Programming (OOP)**
-   
+
    - **Definition:**  
      Modularity in OOP involves designing software using discrete modules or objects that encapsulate both data and behavior related to specific functionalities.
-   
+
    - **Importance:**  
      Facilitates reuse, simplifies testing, and makes the system easier to understand and modify.
 
-**Authoritative Resources**
+### 10.2. Authoritative Resources
 
 - _"Head First Software Architecture" by Raju Gandhi, Mark Richards, Neal Ford_  
   An engaging guide that introduces software architecture concepts through a visually rich format, emphasizing practical application of architecture principles.
@@ -463,15 +447,11 @@ Logical concerns focus on the internal organization and structure of the softwar
 - _"Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software 2nd Edition" by Eric Freeman, Elisabeth Robson_  
   A comprehensive introduction to design patterns, explaining how to apply them to build flexible and maintainable software systems.
 
----
-
-## **Software Architecture - Technical Concerns**
-
-### **Brief Description of Importance**
+## **11. Software Architecture - Technical Concerns**
 
 Technical concerns involve the organization and design of the infrastructure to meet performance, reliability, and scalability requirements. Addressing these concerns ensures that the **DebtFreePlanner** application can handle growth, maintain high availability, and deliver a responsive user experience. This alignment with non-functional requirements is critical for the application's long-term success and user satisfaction.
 
-**Key Concepts**
+### 11.1. Key Concepts
 
 1. **Operational Excellence:**  
    Focuses on efficiently deploying, operating, monitoring, and managing cloud workloads to ensure smooth and reliable application performance.
@@ -488,7 +468,7 @@ Technical concerns involve the organization and design of the infrastructure to 
 5. **Performance Optimization:**  
    Provides guidance on designing and tuning cloud resources for optimal performance, ensuring the application remains responsive and efficient under varying load conditions.
 
-**Authoritative Resources**
+### 11.2. Authoritative Resources
 
 - **"Solutions Architect’s Handbook: Kick-start Your Career with Architecture Design Principles, Strategies, and Generative AI Techniques" (3rd Edition) by Saurabh Shrivastava and Neelanjali Srivastav**  
   Covers fundamentals and design patterns for solutions architecture, including the latest techniques such as generative AI, providing practical strategies for designing scalable and efficient systems.
@@ -500,23 +480,21 @@ Technical concerns involve the organization and design of the infrastructure to 
 - **"Designing Data-Intensive Applications" by Martin Kleppmann**  
   Explores data systems and architecture, focusing on scalability, reliability, and maintainability of data-intensive applications.
 
----
-
-## **Software Development and Methodology**
+## **12. Software Development and Methodology**
 
 Adopting effective software development methodologies ensures that the **DebtFreePlanner** project is delivered efficiently, meets quality standards, and remains adaptable to changing requirements. This section outlines the methodologies that guide our development processes.
 
-**Key Concepts**
+### 12.1. Key Concepts
 
 1. **Agile Methodologies:**
-   
+
    - Implement iterative and incremental development practices, promoting flexibility and rapid response to change.
 
 2. **Continuous Integration/Continuous Deployment (CI/CD):**
-   
+
    - Automate testing and deployment processes to enhance productivity, ensure code quality, and facilitate reliable releases.
 
-**Authoritative Resources**
+### 12.2. Authoritative Resources
 
 - **"Software Engineering at Google" by Titus Winters, Tom Manshreck, and Hyrum Wright**  
   Offers insights into Google's software engineering practices, emphasizing code quality, scalability, and effective team collaboration.
@@ -527,31 +505,29 @@ Adopting effective software development methodologies ensures that the **DebtFre
 - **"The Lean Startup" by Eric Ries**  
   Introduces the Lean Startup methodology, emphasizing rapid experimentation, validated learning, and iterative product releases to build successful products.
 
----
-
-## **Monitoring and Logging**
+## **13. Monitoring and Logging**
 
 Effective monitoring and logging are essential for maintaining the reliability, performance, and security of the **DebtFreePlanner** application. These practices enable proactive issue detection, performance optimization, and comprehensive auditing.
 
-**Key Concepts**
+### 13.1. Key Concepts
 
 1. **Error Tracking:**
-   
+
    - Monitor and log errors in production to identify and resolve issues promptly.
 
 2. **Performance Monitoring:**
-   
+
    - Track system health and performance metrics to ensure optimal operation.
 
 3. **Log Management:**
-   
+
    - Implement strategies for collecting, storing, and analyzing logs to gain insights into system behavior.
 
 4. **Alerting Mechanisms:**
-   
+
    - Set up alerts to notify the team of critical issues in real-time, enabling swift responses to potential problems.
 
-**Authoritative Resources**
+### 13.2. Authoritative Resources
 
 - **"Observability Engineering: Achieving Production Excellence" by Charity Majors, Liz Fong-Jones, and George Miranda**  
   A comprehensive guide to building observable systems, covering practices and tools that enhance system monitoring and debugging.
@@ -560,53 +536,43 @@ Effective monitoring and logging are essential for maintaining the reliability, 
   A standard for collecting telemetry data, facilitating consistent and comprehensive monitoring across different services and components.  
   [OpenTelemetry Official Website](https://opentelemetry.io/)
 
----
-
-## **Compliance Requirements**
+## **14. Compliance Requirements**
 
 Adhering to compliance requirements is crucial for protecting user data, maintaining trust, and avoiding legal penalties. This section outlines the global regulations and standards that the **DebtFreePlanner** project must comply with.
 
-**Key Concepts**
+### 14.1. Key Concepts
 
 1. **Data Protection:**
-   
+
    - Ensure user data is handled securely and in compliance with relevant regulations.
 
 2. **Privacy Policies:**
-   
+
    - Implement clear privacy policies that inform users about data collection and usage.
 
 3. **Regulatory Standards:**
-   
+
    - Align with industry-specific standards to meet legal obligations.
 
 4. **Auditing and Reporting:**
    - Maintain records and reports to demonstrate compliance and facilitate audits.
 
-**Authoritative Resources**
+### 14.2. Authoritative Resources
 
 - **General Data Protection Regulation (GDPR):**
-  
+
   - European Union regulation for data protection and privacy, providing guidelines on the handling of personal data to protect the privacy of EU citizens.  
-  [GDPR Official Text](https://gdpr.eu/)
+    [GDPR Official Text](https://gdpr.eu/)
 
 - **California Consumer Privacy Act (CCPA):**
-  
+
   - California state law enhancing privacy rights and consumer protection, granting California residents new rights regarding their personal information.  
-  [CCPA Official Text](https://oag.ca.gov/privacy/ccpa)
+    [CCPA Official Text](https://oag.ca.gov/privacy/ccpa)
 
 - **ISO/IEC 27001:**
-  
+
   - International standard for information security management systems, outlining best practices for managing and protecting sensitive company information.  
-  [ISO/IEC 27001 Information Security Management](https://www.iso.org/isoiec-27001-information-security.html)
-
----
-
-## **Conclusion**
-
-This **Engineering Standards Guide** empowers developers to make informed decisions within a flexible, standards-driven framework, ensuring we maintain high software quality while adhering to Agile principles. By referencing authoritative standards and texts, we foster a culture of continuous learning and excellence.
-
----
+    [ISO/IEC 27001 Information Security Management](https://www.iso.org/isoiec-27001-information-security.html)
 
 ## **References**
 
@@ -688,21 +654,3 @@ This **Engineering Standards Guide** empowers developers to make informed decisi
 
 - **NIST SP 800-92:** [NIST SP 800-92](https://csrc.nist.gov/publications/detail/sp/800-92/final)  
   Guide to Computer Security Log Management, providing comprehensive instructions on log management practices to support security monitoring and compliance.
-
----
-
-## **Contributing**
-
-Developers are encouraged to contribute to this guide. For significant changes, please open an issue or submit an ADR outlining the proposed modification.
-
----
-
-## **Acknowledgments**
-
-We acknowledge the valuable contributions of the development community and the authors of the referenced books and standards, whose work has greatly influenced this guide.
-
----
-
-# **End of Document**
-
----
