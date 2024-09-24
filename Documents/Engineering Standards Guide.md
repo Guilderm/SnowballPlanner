@@ -32,7 +32,7 @@ We have opted not to create dedicated Non-Functional Requirements (NFR) document
 11. [Testing and Quality Assurance](#11-testing-and-quality-assurance)
 12. [Diagrams as Code (DaC)](#12-diagrams-as-code-dac)
 13. [User Experience (UX) Design](#13-user-experience-ux-design)
-14. [User Interface (UI/GUI) Design](#14-user-interface-ui-design)
+14. [User Interface (UI) Design](#14-user-interface-ui-design)
 15. [Application Security](#15-application-security)
 16. [Observability](#16-observability)
 17. [Compliance Requirements](#17-compliance-requirements)
