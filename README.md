@@ -51,15 +51,15 @@ DebtFreePlanner is built with the following core technologies:
 - **Test-Driven Development (TDD)**: Ensured code quality and reliability by writing tests before implementing features.
 - **Domain-Driven Design (DDD)**: Modeled the domain to ensure that the software aligns with business goals and logic.
 
-_For a detailed explanation of the methodologies used, please refer to the [About this Project](Documents/About%20this%20Project.md) document._
+_For a detailed explanation of the methodologies used, please refer to the [About this Project](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/About%20this%20Project.md#technologies-used) document._
 
 ## Supporting Documents
 
-- [Product Requirements Document (PRD)](<Documents/Product%20Requirements%20Document%20(PRD).md>)
-- [Software Design Document (SDD)](<Documents/Software%20Design%20Document%20(SDD).md>)
-- [Product Backlog](Documents/Product%20Backlog.md)
-- [Threat Model Document (TMD)](<Documents/Threat%20Model%20Document%20(TMD).md>)
-- [Architecture Decision Records (ADRs)](Documents/Architecture%20Decision%20Records)
+- [Product Requirements Document (PRD)](<https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Product%20Requirements%20Document%20(PRD).md>)
+- [Software Design Document (SDD)](<https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Software%20Design%20Document%20(SDD).md>)
+- [Engineering Standards Guide](https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Engineering%20Standards%20Guide.md)
+- [Threat Model Document (TMD)](<https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Threat%20Model%20Document%20(TMD).md>)
+- [Architecture Decision Records (ADRs)](<https://github.com/Guilderm/DebtFreePlanner/blob/main/Documents/Architecture%20Decision%20Record%20(ADR).md>)
 
 _For detailed descriptions of these documents, please refer to the 'Documentation' section in the [About this Project](Documents/About%20this%20Project.md) document._
 
