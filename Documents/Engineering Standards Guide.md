@@ -615,6 +615,7 @@ Adhering to compliance requirements is crucial for protecting user data, maintai
 ## **18. Coding Standards**
 
 - **Airbnb JavaScript Style Guide**
+
   - Primary reference for JavaScript coding standards.
 
 - **React Key Concepts: An in-depth guide to React's core features 2nd Edition by Maximilian Schwarzmüller**
