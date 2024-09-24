@@ -24,6 +24,12 @@ This section defines key terms used throughout the project's documentation that 
   - **GDPR**: General Data Protection Regulation
   - **CCPA**: California Consumer Privacy Act
 
+Technical Terms
+Debt Item: A single debt entered by the user.
+Repayment Strategy: The method selected by the user for debt repayment (e.g., Snowball, Avalanche).
+Snowflake Payment: Extra, irregular payments made toward debt reduction.
+Multicurrency Support: The application's ability to handle debts in different currencies.
+
 ## 2. References
 
 This section includes references to external resources, standards, and other important documentation.

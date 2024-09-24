@@ -6,11 +6,6 @@ For the guidelines refer to [**Development and Documentation Standards**](https:
 
 ## Table of Contents
 
-- [1. User Types](#1-user-types)
-  - [1.1. Admin](#11-admin)
-  - [1.2. Users](#12-users)
-  - [1.3. Collaborator](#13-collaborator)
-  - [1.4. Guest](#14-guest)
 - [2. Initiative 1: Foundation and Architecture](#2-initiative-1-foundation-and-architecture)
   - [2.1 Epic 1: Technical Prototype & Architecture Validation](#21-epic-1-technical-prototype--architecture-validation)
     - [2.1.1. User Story 1: CI/CD Pipeline Setup and Deployment](#211-user-story-1-cicd-pipeline-setup-and-deployment)
@@ -136,28 +131,6 @@ For the guidelines refer to [**Development and Documentation Standards**](https:
     - [4.8.2. User Story 71: Identify Technical Debt](#482-user-story-71-identify-technical-debt)
     - [4.8.3. User Story 72: Incorporate User Feedback into Technical Debt Review](#483-user-story-72-incorporate-user-feedback-into-technical-debt-review)
     - [4.8.4. User Story 73: Refactor and Optimize Code](#484-user-story-73-refactor-and-optimize-code)
-
-## 1. User Types
-
-We contemplate the following users:
-
-### 1.1. Admin
-
-Admin users manage the overall system and have control over user management, settings, and reporting. They ensure the platform operates smoothly and securely.
-
-### 1.2. Users
-
-Users are the primary users of the DebtFreePlanner platform. They input debt details, calculate repayment plans, and track their progress over time.
-
-### 1.3. Collaborator
-
-Collaborators are users who are invited to assist in managing specific debt plans. They may have limited access and roles based on permissions set by the User.
-
-### 1.4. Guest
-
-Guests are users who visit the public-facing parts of the website, such as the landing page or blog. They may be potential users interested in learning more about the platform.
-
----
 
 ## 2. Initiative 1: Foundation and Architecture
 
