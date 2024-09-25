@@ -7,18 +7,20 @@ After each initiative, except Initiative 1, there is a dedicated epic for Compre
 ## Table of Contents
 
 - [Initiative 1: Foundation and Architecture](#initiative-1-foundation-and-architecture)
+
   - [Epic 1: Technical Prototype & Architecture Validation](#epic-1-technical-prototype--architecture-validation)
     - [User Story 1: CI/CD Pipeline Setup and Deployment](#user-story-1-cicd-pipeline-setup-and-deployment)
     - [User Story 2: Basic Identity Provider (IdP) Setup](#user-story-2-basic-identity-provider-idp-setup)
     - [User Story 3: Set Up Essential Testing Frameworks](#user-story-3-set-up-essential-testing-frameworks)
   - [Epic 2: Product Ideation Validation](#epic-2-product-ideation-validation)
     - [User Story 4: Validate Brand Identity Guidelines (BIG)](#user-story-4-validate-brand-identity-guidelines-big)
-    - [User Story 5: Validate Development and Documentation Standards](#user-story-5-validate-development-and-documentation-standards)
+    - [User Story 5: Validate Engineering Standards Guide](#user-story-5-validate-engineering-standards-guide)
     - [User Story 6: Validate Market Requirements Document (MRD)](#user-story-6-validate-market-requirements-document-mrd)
     - [User Story 7: Validate Product Requirements Document (PRD)](#user-story-7-validate-product-requirements-document-prd)
     - [User Story 8: Validate Software Design Document (SDD)](#user-story-8-validate-software-design-document-sdd)
     - [User Story 9: Validate Software Requirements Specification (SRS)](#user-story-9-validate-software-requirements-specification-srs)
     - [User Story 10: Validate Software Test Document (STD)](#user-story-10-validate-software-test-document-std)
+
 - [Initiative 2: Core Features and Functionality](#initiative-2-core-features-and-functionality)
 
   - [Epic 3: Core Web Pages](#epic-3-core-web-pages)
@@ -183,17 +185,23 @@ After each initiative, except Initiative 1, there is a dedicated epic for Compre
 - Given the BIG is shared with stakeholders, when feedback is collected, then the guidelines should be adjusted based on stakeholder input to ensure brand consistency.
 - Given feedback from marketing and design teams, when I review their suggestions, then the BIG document should reflect the unified brand voice and visual identity.
 
-#### User Story 5: Validate Development and Documentation Standards
+#### User Story 5: Validate Engineering Standards Guide
 
-**Story Points:** 5  
-**As a** Lead Developer,  
-**I want** to collect feedback on the Development and Documentation Standards,  
-**so that** the team can ensure consistency in coding practices, documentation, and project maintainability.
+**Story Points:** 5
+
+**As a** Software Engineer,  
+**I want to** validate the Engineering Standards Guide,  
+**so that** the development process follows established best practices and documentation is consistent across the project.
 
 **Acceptance Criteria:**
 
-- Given the standards are reviewed by the development team, when feedback is provided, then the standards should be updated to address any issues or improvements for better team adherence.
-- Given a new member joins the development team, when they review the standards, then they should easily understand the documentation and follow the established processes without confusion.
+- **Given** the Engineering Standards Guide,  
+  **When** I review the guide,  
+  **Then** it should provide clear standards on code quality, testing practices, architectural principles, and documentation guidelines.
+
+- **Given** the review is complete,  
+  **When** standards are finalized,  
+  **Then** all new development tasks and documentation should adhere to the Engineering Standards Guide.
 
 #### User Story 6: Validate Market Requirements Document (MRD)
 
