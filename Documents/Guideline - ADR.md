@@ -1,4 +1,4 @@
-# Architecture Decision Record (ADR)
+# Architecture Decision Record (ADR) Guidelines
 
 - [Introduction](#introduction)
 - [File Structure](#file-structure)

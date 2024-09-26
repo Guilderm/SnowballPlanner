@@ -620,7 +620,16 @@ Adhering to compliance requirements is crucial for protecting user data, maintai
 
 - **React Key Concepts: An in-depth guide to React's core features 2nd Edition by Maximilian Schwarzmüller**
 
-## 19. References
+## 19. Physiological Approach
+
+- **Fail Optimistically**
+- **Optimistic updates**
+- **plan for what is probable, and not for what is posible**
+- **Occam's Razor**
+The simplest solution is usually the right one
+
+
+## 20. References
 
 ### 18.1 Books and Publications
 
