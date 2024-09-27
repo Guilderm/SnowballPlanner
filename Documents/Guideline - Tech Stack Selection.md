@@ -100,9 +100,6 @@ Ensures compatibility with and support from a wide range of development tools, s
 
 Allows for customization and adaptability to meet specific project needs without excessive constraints.
 
-
-
-
 Performance and Scalability: Consider adding a section that explicitly addresses the performance characteristics and scalability potential of technologies. This ensures that the chosen stack can handle the expected load and future growth.
 
 Integration Capabilities: Include criteria for how well a technology integrates with other systems and services, especially considering potential future integrations like third-party APIs or services.

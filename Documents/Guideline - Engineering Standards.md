@@ -626,8 +626,7 @@ Adhering to compliance requirements is crucial for protecting user data, maintai
 - **Optimistic updates**
 - **plan for what is probable, and not for what is posible**
 - **Occam's Razor**
-The simplest solution is usually the right one
-
+  The simplest solution is usually the right one
 
 ## 20. References
 

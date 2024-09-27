@@ -1,27 +1,138 @@
 # Software Design Document (SDD)
 
+## Technology Stack
 
-decicion that we has been taken
-System Architecture:	3-Tier Architecture
- design philosophy: Local-First Approach
-Frontend Framework:	React
-Frontend Design Methodology:	Atomic Design
-UI Libraries and Tools: Tailwind CSS
-Backend Framework:	Node.js with Express.js
-Backend Design Methodology: layered architecture
-API Design Style: RESTfull
-Database Choice:	MongoDB
-Cloud Provider:	Google Cloud Platform (GCP)
-Deployment Architecture:	Serverless
-CI/CD Tools:	GitHub Actions
-Testing Frameworks:	Jest
-Autenticaton: Auth0
+### Infrastructure
 
-Authentication and Authorization:	JWT with OAuth 2.0 Enhancements
-Version Control and Collaboration:	GitHub
-Monitoring and Logging:	Prometheus and Grafana
+#### Compute
 
-# Conflict Detection, Resolution, and Prevention Strategy
+- **Compute Service:** **Google App Engine (GAE)**
+  - Utilizing GAE's built-in load balancing and auto-scaling features.
+  - **Infrastructure as Code (IaC):** **Google Cloud Deployment Manager**
+    - Keeps IaC templates version-controlled using GitHub.
+  - **Budget Monitoring:** Utilizes GCP's budget monitoring tools to prevent unexpected costs.
+
+#### Secrets Management
+
+- **Tool:** **Google Cloud Secret Manager**
+  - Integrated into GitHub Actions for CI/CD pipelines.
+  - Ensures secrets are securely managed and access is restricted via IAM roles.
+
+### Networking
+
+#### DNS and Content Delivery
+
+- **DNS Hosting, CDN, and WAF:** **Cloudflare**
+  - Provides DNS management, caching, security features, and SSL certificates.
+- **SSL Certificates:** Cloudflare (with fallback to Let's Encrypt)
+
+### Monitoring, Logging, and Alerting
+
+- **Monitoring Dashboard:** **Grafana Cloud**
+  - Centralizes logs, telemetry, and tracing from Cloudflare, GCP, and GitHub Actions.
+- **Error Tracking and Performance Monitoring:** **Sentry**
+  - Integrated into Grafana Cloud for comprehensive monitoring.
+- **Alerting and Incident Management:** **PagerDuty**
+  - For alerting and potentially hosting a status page.
+
+### Databases
+
+- **NoSQL Database:** **MongoDB Atlas (Free Tier)**
+  - For unstructured data and document storage.
+- **SQL Database:** **Oracle Free Tier**
+  - For structured data requiring relational database features.
+
+### Version Control and CI/CD
+
+- **Version Control:** **GitHub**
+- **CI/CD Pipelines:** **GitHub Actions**
+  - Automated builds, tests, and deployments.
+- **Infrastructure as Code (IaC):** **Google Cloud Deployment Manager**
+  - Manages infrastructure configurations declaratively.
+
+### Email Service
+
+- **Transactional Emails:** **Mailjet**
+  - Chosen for its generous free tier in the long run.
+  - Ensures proper email authentication (SPF, DKIM, DMARC) is set up.
+
+### Authentication and Authorization
+
+- **Identity Provider (IdP):** **Auth0**
+  - Provides robust authentication and authorization features.
+  - Utilizes security features like anomaly detection and enables Multi-Factor Authentication (MFA).
+
+### Application Frameworks and Languages
+
+#### System Architecture and Design
+
+- **System Architecture:** **3-Tier Architecture**
+- **Design Philosophy:** **Local-First Approach**
+
+#### Frontend
+
+- **Language:** **JavaScript**
+- **Framework:** **React**
+- **Design Methodology:** **Atomic Design**
+- **UI Libraries and Tools:** **Tailwind CSS**
+- **State Management:** **Redux** or **Context API** (as needed)
+
+#### Backend
+
+- **Language:** **JavaScript**
+- **Framework:** **Node.js with Express.js**
+- **Design Methodology:** **Layered Architecture**
+- **API Design Style:** **RESTful**
+
+### Testing and Code Quality
+
+- **Testing Frameworks:** **Jest**
+  - For unit and integration testing.
+- **Linting and Formatting:** **ESLint**, **Prettier**
+- **Code Quality Analysis:** **SonarQube**
+- **Security Testing:**
+  - **Tools:** **npm audit**, **Snyk**, **GitHub Dependabot**
+    - To identify and fix vulnerabilities in dependencies.
+- **Content Moderation and PII Detection:**
+  - **Libraries/Services:**
+    - **PII Detection Library:** **`pii-detector`** npm package or similar.
+    - **Alternative:** **Google Cloud Data Loss Prevention (DLP) API**
+  - **Purpose:** To detect and prevent accidental submission of PII in user inputs.
+  - **Implementation:**
+    - Integrate PII detection in both frontend and backend validation processes.
+    - Provide user warnings and prevent storage of sensitive data.
+
+### Web Analytics
+
+- **Web Analytics:** **Google Analytics**
+  - To track user interactions and gather insights.
+  - Ensures compliance with privacy regulations by implementing consent mechanisms.
+
+### Static Asset Hosting
+
+- **Current Hosting:** **Google App Engine**
+  - For serving frontend assets.
+- **Future Consideration:** Potentially move static asset hosting to **Cloudflare** for CDN benefits.
+
+### Backup and Disaster Recovery
+
+- **Strategy:** Back up repositories and databases to local storage (old computer) via scripts or tools yet to be defined.
+  - **Repositories:** Regularly clone or pull updates to local storage using scripts or tools like `git cron jobs`.
+  - **Databases:** Schedule backups and download snapshots.
+    - **MongoDB Atlas:** Use built-in backup tools or schedule exports.
+    - **Oracle Free Tier:** Utilize Oracle's backup features or export data regularly.
+- **Automation Tools:** Consider using automation tools or scripts to schedule and manage backups.
+
+### Project Management
+
+- **Issue Tracking and Roadmapping:** Managed using [**Linear.app**](https://linear.app/)
+  - **Purpose:** Organize user stories, manage the product backlog, and plan sprints effectively.
+  - **Features Used:**
+    - User Story Management
+    - Sprint Planning
+    - Roadmap Visualization
+
+## Conflict Detection, Resolution, and Prevention Strategy
 
 ## 1. Initial Synchronization
 
@@ -120,3 +231,8 @@ Monitoring and Logging:	Prometheus and Grafana
 
 - **Focus Area:** This strategy exclusively addresses Conflict Detection, Resolution, and Prevention.
 - **Other Processes:** Other critical processes, such as data sanitation and validation, are covered in the Data Management Strategy.
+
+erorr log if manual sync results in a documente that needed synking, or a row with a more updated version
+apps coming on line that has a data entry older than 45 days in restpect to the on that is on the database, that data will be soft deleted and the user notifyed, given that it is not likely that the user intented for this data to still be use. only delte those that have a difence
+
+[Optimistic concurrency control](https://en.wikipedia.org/wiki/Optimistic_concurrency_control)
