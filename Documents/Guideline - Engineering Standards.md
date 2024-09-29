@@ -19,25 +19,6 @@ We have opted not to create dedicated Non-Functional Requirements (NFR) document
 
 ## Table of Contents
 
-1. [Introduction](#1-introduction)
-2. [Product Management](#2-product-management)
-3. [User Story Guidelines](#3-user-story-guidelines)
-4. [ADR Guidelines](#4-adr-guidelines)
-5. [Documentation Style Guide](#5-documentation-style-guide)
-6. [Software Development and Methodology](#6-software-development-and-methodology)
-7. [Feedback-Driven Development (FDD)](#7-feedback-driven-development-fdd)
-8. [Domain-Driven Design (DDD) Principles](#8-domain-driven-design-ddd-principles)
-9. [Software Architecture - Logical Concerns](#9-software-architecture---logical-concerns)
-10. [Software Architecture - Technical Concerns](#10-software-architecture---technical-concerns)
-11. [Testing and Quality Assurance](#11-testing-and-quality-assurance)
-12. [Diagrams as Code (DaC)](#12-diagrams-as-code-dac)
-13. [User Experience (UX) Design](#13-user-experience-ux-design)
-14. [User Interface (UI) Design](#14-user-interface-ui-design)
-15. [Application Security](#15-application-security)
-16. [Observability](#16-observability)
-17. [Compliance Requirements](#17-compliance-requirements)
-18. [References](#19-references)
-
 ## 2. Product Management
 
 Effective product management is crucial for the success of projects within our organization. It ensures that products deliver significant value to users, align with business objectives, and adapt to market uncertainties. This section outlines the core concepts derived from _"Product Roadmaps Relaunched"_ by C. Todd Lombardo et al., and _"The Lean Product Playbook"_ by Dan Olsen.
