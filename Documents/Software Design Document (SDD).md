@@ -451,12 +451,78 @@ Conflicting record versions are displayed side by side, with differences highlig
 
 ## 6. Architecture Diagrams
 
-### 6.1 Context Diagram
+### C4 Level 1 Context Diagram
 
-Illustrates the system's scope and interactions with users and external systems, such as:
+The C4 Level 1 Context Diagram provides a high-level overview of the DebtFreePlanner system, illustrating its interactions with primary users, administrators, and external systems. This diagram serves as an entry point to understand the system's environment and its key relationships.
 
-- **Users:** Loan Recipients, Administrators
-- **External Systems:** Auth0, Mailjet, Cloudinary, MongoDB Atlas, Oracle Free Tier
+### Key Components
+
+#### Users/Actors
+
+- **Loan Recipient**  
+  **Description**: Registered users who utilize the DebtFreePlanner platform to manage and plan their debt repayments.  
+  **Interaction**: Directly uses the DebtFreePlanner system to create and manage debt repayment plans.
+
+- **Anonymous User**  
+  **Description**: Visitors or prospectors who browse the DebtFreePlanner website without registering.  
+  **Interaction**: Visits the platform to learn about its features, potentially signing up for updates or more information.
+
+- **Admin**  
+  **Description**: Administrators encompassing roles such as developers, DevOps engineers, Security Officers, QA Leads, and other administrative personnel.  
+  **Interaction**: Manages the DebtFreePlanner system, including user management, system configurations, monitoring, and maintenance tasks.
+
+#### DebtFreePlanner System
+
+**Description**: The core application platform that enables users to create, manage, and visualize debt repayment plans. It encompasses both frontend and backend functionalities, handling user interactions, data processing, and integrations.  
+**Interactions**:
+- **Uses**: Leverages various external services to enhance functionality, security, and performance.
+- **Integrates with**: Connects with third-party tools and services to provide extended features and interoperability.
+
+#### External Systems
+
+- **Cloudflare**  
+  **Purpose**: Provides CDN services, DNS management, security features like WAF (Web Application Firewall), and SSL certificates to ensure the platform is secure, fast, and reliable.
+
+- **Cloudinary**  
+  **Purpose**: Manages image and media storage, enabling efficient handling and delivery of visual content within the application.
+
+- **Auth0**  
+  **Purpose**: Serves as the Identity Provider (IdP) handling user authentication, authorization, and secure access management.
+
+- **Mailjet**  
+  **Purpose**: Manages transactional and marketing emails, facilitating communication with users for notifications, updates, and support.
+
+- **YNAB (You Need A Budget)**  
+  **Purpose**: Integrates financial management tools to provide users with comprehensive budgeting and debt tracking capabilities.
+
+- **Firefly III**  
+  **Purpose**: Offers additional financial tracking and reporting features, enhancing the platform's ability to manage and visualize user debts and repayments.
+
+### Interaction Flows
+
+- **Loan Recipients** actively use the DebtFreePlanner system to input their debt details, choose repayment strategies, and monitor their progress. Their interactions are central to the platform's core functionality.
+
+- **Anonymous Users** engage with the platform primarily through the website, gaining information about the service and potentially converting to registered users.
+
+- **Admins** oversee the system's operations, ensuring that the platform remains secure, up-to-date, and responsive to user needs. They interact with various backend components and external systems to maintain system integrity and performance.
+
+The **DebtFreePlanner system** relies on external services like Cloudflare for security and performance enhancements, Cloudinary for media management, Auth0 for secure user authentication, and Mailjet for email communications. Additionally, integrations with YNAB and Firefly III provide users with robust financial management tools.
+
+```mermaid
+graph LR
+    %% Users
+    LoanRecipient[Loan Recipient] -->|Uses| DebtFreePlanner
+    AnonymousUser[Anonymous User] -->|Visits| DebtFreePlanner
+    Admin[Admin] -->|Manages| DebtFreePlanner
+
+    %% External Systems with Notes
+    DebtFreePlanner -->|Uses| Cloudflare[Cloudflare<br/><sub>CDN, DNS, WAF, SSL Certificates</sub>]
+    DebtFreePlanner -->|Uses| Cloudinary[Cloudinary<br/><sub>Image & Media Storage</sub>]
+    DebtFreePlanner -->|Uses| Auth0[Auth0<br/><sub>Authentication & Authorization</sub>]
+    DebtFreePlanner -->|Uses| Mailjet[Mailjet<br/><sub>Transactional & Marketing Emails</sub>]
+    DebtFreePlanner -->|Integrates with| YNAB[YNAB<br/><sub>Financial Management Integration</sub>]
+    DebtFreePlanner -->|Integrates with| FireflyIII[Firefly III<br/><sub>Financial Tracking Integration</sub>]
+```
 
 ### 6.2 Container Diagram
 
