@@ -57,7 +57,7 @@ Architecturally significant decisions are documented in an Architecture Decision
     - [5.1.3. Professional Tier](#513-professional-tier)
   - [5.2. Additional Notes](#52-additional-notes)
 - [6. Architecture Diagrams](#6-architecture-diagrams)
-  - [6.1. Context Diagram](#61-context-diagram)
+  - [6.1. Context Diagram](#61-c4-context-diagram)
   - [6.2. Container Diagram](#62-container-diagram)
   - [6.3. Component Diagram](#63-component-diagram)
   - [6.4. Code Diagram](#64-code-diagram)
@@ -126,9 +126,11 @@ Architecturally significant decisions are documented in an Architecture Decision
 
 **Automated Testing and Code Quality Tools:**
 
-- Unit and Integration Testing: Jest
-- Linting and Formatting: ESLint, Prettier
-- Code Quality Analysis: SonarQube, Snyk
+- **Unit and Integration Testing:** Jest
+- **UI Component Testing:** Storybook
+- **End-to-End (E2E) Testing:** Playwright
+- **Linting and Formatting:** ESLint, Prettier
+- **Code Quality Analysis:** SonarQube, Snyk
 
 **Dependency Management Tools:** `npm audit` and GitHub Dependabot
 
@@ -451,77 +453,97 @@ Conflicting record versions are displayed side by side, with differences highlig
 
 ## 6. Architecture Diagrams
 
-### C4 Level 1 Context Diagram
+### 6.1 C4 Context Diagram
 
-The C4 Level 1 Context Diagram provides a high-level overview of the DebtFreePlanner system, illustrating its interactions with primary users, administrators, and external systems. This diagram serves as an entry point to understand the system's environment and its key relationships.
+The C4 Context Diagram provides a high-level overview of the DebtFreePlanner system, illustrating its interactions with primary users and external systems. This diagram serves as an entry point to understand the system's environment, key stakeholders, and its relationships with other components.
 
-### Key Components
+#### People (Actors)
 
-#### Users/Actors
-
-- **Loan Recipient**  
-  **Description**: Registered users who utilize the DebtFreePlanner platform to manage and plan their debt repayments.  
-  **Interaction**: Directly uses the DebtFreePlanner system to create and manage debt repayment plans.
-
-- **Anonymous User**  
-  **Description**: Visitors or prospectors who browse the DebtFreePlanner website without registering.  
-  **Interaction**: Visits the platform to learn about its features, potentially signing up for updates or more information.
-
-- **Admin**  
-  **Description**: Administrators encompassing roles such as developers, DevOps engineers, Security Officers, QA Leads, and other administrative personnel.  
-  **Interaction**: Manages the DebtFreePlanner system, including user management, system configurations, monitoring, and maintenance tasks.
+- **Loan Recipient**: Registered users who use DebtFreePlanner to manage their debt repayment plans.
+- **Anonymous User**: Users and prospectors who browse publicly accessible pages of the DebtFreePlanner website, including user guides and marketing materials.
+- **Admin**: Administrators responsible for user management, settings configuration, monitoring, and maintenance of the system.
 
 #### DebtFreePlanner System
 
-**Description**: The core application platform that enables users to create, manage, and visualize debt repayment plans. It encompasses both frontend and backend functionalities, handling user interactions, data processing, and integrations.  
-**Interactions**:
-- **Uses**: Leverages various external services to enhance functionality, security, and performance.
-- **Integrates with**: Connects with third-party tools and services to provide extended features and interoperability.
+- **DebtFreePlannerSystem**: The core application that enables users to create, manage, and visualize debt repayment plans.
 
 #### External Systems
 
-- **Cloudflare**  
-  **Purpose**: Provides CDN services, DNS management, security features like WAF (Web Application Firewall), and SSL certificates to ensure the platform is secure, fast, and reliable.
+- **Auth0**: Manages authentication and authorization processes.
+- **Cloudflare**: Provides CDN services, DNS management, WAF, and SSL certificates for security and performance.
+- **Mailjet**: Handles transactional and marketing emails sent from the application.
+- **Cloudinary**: Manages image and media storage for the application.
+- **YNAB**: Integrates financial management tools to enhance user budgeting capabilities.
+- **Firefly III**: Offers financial tracking and reporting features.
+- **Grafana Cloud**: Centralizes monitoring dashboards for system metrics.
+- **Sentry**: Provides error tracking and performance monitoring.
+- **GitHub Actions**: Facilitates CI/CD pipelines for automated builds, tests, and deployments.
 
-- **Cloudinary**  
-  **Purpose**: Manages image and media storage, enabling efficient handling and delivery of visual content within the application.
+#### Relationships
 
-- **Auth0**  
-  **Purpose**: Serves as the Identity Provider (IdP) handling user authentication, authorization, and secure access management.
-
-- **Mailjet**  
-  **Purpose**: Manages transactional and marketing emails, facilitating communication with users for notifications, updates, and support.
-
-- **YNAB (You Need A Budget)**  
-  **Purpose**: Integrates financial management tools to provide users with comprehensive budgeting and debt tracking capabilities.
-
-- **Firefly III**  
-  **Purpose**: Offers additional financial tracking and reporting features, enhancing the platform's ability to manage and visualize user debts and repayments.
-
-### Interaction Flows
-
-- **Loan Recipients** actively use the DebtFreePlanner system to input their debt details, choose repayment strategies, and monitor their progress. Their interactions are central to the platform's core functionality.
-
-- **Anonymous Users** engage with the platform primarily through the website, gaining information about the service and potentially converting to registered users.
-
-- **Admins** oversee the system's operations, ensuring that the platform remains secure, up-to-date, and responsive to user needs. They interact with various backend components and external systems to maintain system integrity and performance.
-
-The **DebtFreePlanner system** relies on external services like Cloudflare for security and performance enhancements, Cloudinary for media management, Auth0 for secure user authentication, and Mailjet for email communications. Additionally, integrations with YNAB and Firefly III provide users with robust financial management tools.
+- **LoanRecipient → DebtFreePlannerSystem**: Uses the application over HTTPS to manage debts.
+- **AnonymousUser → DebtFreePlannerSystem**: Browses the website over HTTPS to access public content.
+- **Admin → DebtFreePlannerSystem**: Manages the system over HTTPS.
+- **DebtFreePlannerSystem → External Systems**: Interacts with various external services for authentication, security, email communication, media storage, financial integrations, monitoring, error tracking, and CI/CD pipelines.
 
 ```mermaid
-graph LR
-    %% Users
-    LoanRecipient[Loan Recipient] -->|Uses| DebtFreePlanner
-    AnonymousUser[Anonymous User] -->|Visits| DebtFreePlanner
-    Admin[Admin] -->|Manages| DebtFreePlanner
+C4Context
+title DebtFreePlanner System Context Diagram
 
-    %% External Systems with Notes
-    DebtFreePlanner -->|Uses| Cloudflare[Cloudflare<br/><sub>CDN, DNS, WAF, SSL Certificates</sub>]
-    DebtFreePlanner -->|Uses| Cloudinary[Cloudinary<br/><sub>Image & Media Storage</sub>]
-    DebtFreePlanner -->|Uses| Auth0[Auth0<br/><sub>Authentication & Authorization</sub>]
-    DebtFreePlanner -->|Uses| Mailjet[Mailjet<br/><sub>Transactional & Marketing Emails</sub>]
-    DebtFreePlanner -->|Integrates with| YNAB[YNAB<br/><sub>Financial Management Integration</sub>]
-    DebtFreePlanner -->|Integrates with| FireflyIII[Firefly III<br/><sub>Financial Tracking Integration</sub>]
+%% People (Actors)
+Person(LoanRecipient, "Loan Recipient", "Registered users who utilize DebtFreePlanner to manage their debt repayment plans.")
+Person(AnonymousUser, "Anonymous User", "Users and prospectors who browse the DebtFreePlanner website's publicly accessible pages, including user guides and marketing material.")
+Person(Admin, "Admin", "Administrators who manage the system, including user management, settings configuration, monitoring, and maintenance.")
+
+%% DebtFreePlanner System
+System_Boundary(DebtFreePlannerBoundary, "DebtFreePlanner") {
+    System(DebtFreePlannerSystem, "DebtFreePlanner Application", "Enables users to create, manage, and visualize debt repayment plans.")
+}
+
+%% External Systems
+System_Ext(Auth0, "Auth0", "Authentication & Authorization")
+System_Ext(Cloudflare, "Cloudflare", "CDN, DNS, WAF, SSL Certificates")
+System_Ext(Mailjet, "Mailjet", "Transactional & Marketing Emails")
+System_Ext(Cloudinary, "Cloudinary", "Image & Media Storage")
+System_Ext(YNAB, "YNAB", "Financial Management Integration")
+System_Ext(FireflyIII, "Firefly III", "Financial Tracking Integration")
+System_Ext(GrafanaCloud, "Grafana Cloud", "Monitoring Dashboard")
+System_Ext(Sentry, "Sentry", "Error Tracking & Performance Monitoring")
+System_Ext(GitHubActions, "GitHub Actions", "CI/CD Pipelines")
+
+%% Relationships
+Rel(LoanRecipient, DebtFreePlannerSystem, "Uses", "HTTPS")
+Rel(AnonymousUser, DebtFreePlannerSystem, "Browses", "HTTPS")
+Rel(Admin, DebtFreePlannerSystem, "Manages", "HTTPS")
+
+Rel(DebtFreePlannerSystem, Auth0, "Authenticates with", "OAuth 2.0")
+Rel(DebtFreePlannerSystem, Cloudflare, "Utilizes", "CDN & Security")
+Rel(DebtFreePlannerSystem, Mailjet, "Sends Emails via", "SMTP API")
+Rel(DebtFreePlannerSystem, Cloudinary, "Stores Media on", "API")
+Rel(DebtFreePlannerSystem, YNAB, "Integrates with", "API")
+Rel(DebtFreePlannerSystem, FireflyIII, "Integrates with", "API")
+Rel(DebtFreePlannerSystem, GrafanaCloud, "Sends Metrics to", "Monitoring")
+Rel(DebtFreePlannerSystem, Sentry, "Reports Errors to", "Logging")
+Rel(DebtFreePlannerSystem, GitHubActions, "CI/CD via", "Pipeline")
+
+%% Visual Enhancements
+UpdateElementStyle(LoanRecipient, $bgColor="#ADD8E6", $borderColor="#000080", $fontColor="#000000")
+UpdateElementStyle(AnonymousUser, $bgColor="#D3D3D3", $borderColor="#696969", $fontColor="#000000")
+UpdateElementStyle(Admin, $bgColor="#F5DEB3", $borderColor="#8B4513", $fontColor="#000000")
+UpdateElementStyle(DebtFreePlannerSystem, $bgColor="#FFFFFF", $borderColor="#00008B", $fontColor="#000000")
+UpdateElementStyle(Auth0, $bgColor="#FF4500", $fontColor="#FFFFFF")
+UpdateElementStyle(Cloudflare, $bgColor="#F08080", $fontColor="#000000")
+UpdateElementStyle(Mailjet, $bgColor="#FFA500", $fontColor="#000000")
+UpdateElementStyle(Cloudinary, $bgColor="#87CEEB", $fontColor="#000000")
+UpdateElementStyle(YNAB, $bgColor="#3CB371", $fontColor="#FFFFFF")
+UpdateElementStyle(FireflyIII, $bgColor="#FFD700", $fontColor="#000000")
+UpdateElementStyle(GrafanaCloud, $bgColor="#FF6347", $fontColor="#FFFFFF")
+UpdateElementStyle(Sentry, $bgColor="#9400D3", $fontColor="#FFFFFF")
+UpdateElementStyle(GitHubActions, $bgColor="#000000", $fontColor="#FFFFFF")
+
+UpdateRelStyle(LoanRecipient, DebtFreePlannerSystem, $lineColor="#000080", $textColor="#000080")
+UpdateRelStyle(AnonymousUser, DebtFreePlannerSystem, $lineColor="#696969", $textColor="#696969")
+UpdateRelStyle(Admin, DebtFreePlannerSystem, $lineColor="#8B4513", $textColor="#8B4513")
 ```
 
 ### 6.2 Container Diagram
