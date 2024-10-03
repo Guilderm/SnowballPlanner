@@ -58,9 +58,10 @@ Architecturally significant decisions are documented in an Architecture Decision
   - [5.2. Additional Notes](#52-additional-notes)
 - [6. Architecture Diagrams](#6-architecture-diagrams)
   - [6.1. Context Diagram](#61-c4-context-diagram)
-  - [6.2. Container Diagram](#62-container-diagram)
-  - [6.3. Component Diagram](#63-component-diagram)
-  - [6.4. Code Diagram](#64-code-diagram)
+  - [6.2. Container Diagram](#62-c4-container-diagram)
+  - [6.3. Component Diagram](#63-c4-component-diagram)
+  - [6.4. Code Diagram](#63-c4-component-diagram)
+    - [6.5 Deployment Diagram](#65-c4-deployment-diagram)
 - [7. Data Design](#7-data-design)
   - [7.1. Database Schemas](#71-database-schemas)
     - [Loans Data Storage](#loans-data-storage)
@@ -457,34 +458,33 @@ Conflicting record versions are displayed side by side, with differences highlig
 
 The C4 Context Diagram provides a high-level overview of the DebtFreePlanner system, illustrating its interactions with primary users and external systems. This diagram serves as an entry point to understand the system's environment, key stakeholders, and its relationships with other components.
 
-#### People (Actors)
+- **People (Actors)**
+  - **Loan Recipient**: Registered users who use DebtFreePlanner to manage their debt repayment plans.
+  - **Anonymous User**: Users and prospectors who browse publicly accessible pages of the DebtFreePlanner website, including user guides and marketing materials.
+  - **Admin**: Administrators responsible for user management, settings configuration, monitoring, and maintenance of the system.
 
-- **Loan Recipient**: Registered users who use DebtFreePlanner to manage their debt repayment plans.
-- **Anonymous User**: Users and prospectors who browse publicly accessible pages of the DebtFreePlanner website, including user guides and marketing materials.
-- **Admin**: Administrators responsible for user management, settings configuration, monitoring, and maintenance of the system.
-
-#### DebtFreePlanner System
+- **DebtFreePlanner System**
 
 - **DebtFreePlannerSystem**: The core application that enables users to create, manage, and visualize debt repayment plans.
 
-#### External Systems
+- **External Systems**
 
-- **Auth0**: Manages authentication and authorization processes.
-- **Cloudflare**: Provides CDN services, DNS management, WAF, and SSL certificates for security and performance.
-- **Mailjet**: Handles transactional and marketing emails sent from the application.
-- **Cloudinary**: Manages image and media storage for the application.
-- **YNAB**: Integrates financial management tools to enhance user budgeting capabilities.
-- **Firefly III**: Offers financial tracking and reporting features.
-- **Grafana Cloud**: Centralizes monitoring dashboards for system metrics.
-- **Sentry**: Provides error tracking and performance monitoring.
-- **GitHub Actions**: Facilitates CI/CD pipelines for automated builds, tests, and deployments.
+  - **Auth0**: Manages authentication and authorization processes.
+  - **Cloudflare**: Provides CDN services, DNS management, WAF, and SSL certificates for security and performance.
+  - **Mailjet**: Handles transactional and marketing emails sent from the application.
+  - **Cloudinary**: Manages image and media storage for the application.
+  - **YNAB**: Integrates financial management tools to enhance user budgeting capabilities.
+  - **Firefly III**: Offers financial tracking and reporting features.
+  - **Grafana Cloud**: Centralizes monitoring dashboards for system metrics.
+  - **Sentry**: Provides error tracking and performance monitoring.
+  - **GitHub Actions**: Facilitates CI/CD pipelines for automated builds, tests, and deployments.
 
-#### Relationships
+- **Relationships**
 
-- **LoanRecipient → DebtFreePlannerSystem**: Uses the application over HTTPS to manage debts.
-- **AnonymousUser → DebtFreePlannerSystem**: Browses the website over HTTPS to access public content.
-- **Admin → DebtFreePlannerSystem**: Manages the system over HTTPS.
-- **DebtFreePlannerSystem → External Systems**: Interacts with various external services for authentication, security, email communication, media storage, financial integrations, monitoring, error tracking, and CI/CD pipelines.
+  - **LoanRecipient → DebtFreePlannerSystem**: Uses the application over HTTPS to manage debts.
+  - **AnonymousUser → DebtFreePlannerSystem**: Browses the website over HTTPS to access public content.
+  - **Admin → DebtFreePlannerSystem**: Manages the system over HTTPS.
+  - **DebtFreePlannerSystem → External Systems**: Interacts with various external services for authentication, security, email communication, media storage, financial integrations, monitoring, error tracking, and CI/CD pipelines.
 
 ```mermaid
 C4Context
@@ -550,61 +550,61 @@ UpdateRelStyle(Admin, DebtFreePlannerSystem, $lineColor="#8B4513", $textColor="#
 
 The C4 Container Diagram provides a high-level overview of the software architecture for DebtFreePlanner, showing the major containers (applications, data stores, etc.) and how they interact. This diagram illustrates the internal structure of the DebtFreePlanner system and its interactions with external systems.
 
-#### Actors
+- **Actors**
 
-- **LoanRecipient**: Uses the frontend application to manage debt repayment plans.
-- **AnonymousUser**: Browses the publicly accessible pages via the frontend application.
-- **Admin**: Interacts directly with the backend API for management tasks.
+  - **LoanRecipient**: Uses the frontend application to manage debt repayment plans.
+  - **AnonymousUser**: Browses the publicly accessible pages via the frontend application.
+  - **Admin**: Interacts directly with the backend API for management tasks.
 
-#### Containers within DebtFreePlanner
+- **Containers within DebtFreePlanner**
 
-- **Frontend Application (FrontendApp)**:
+  - **Frontend Application (FrontendApp)**:
 
-  - Built with React.
-  - Provides the user interface and runs in the user's browser.
-  - Communicates with the backend API via HTTPS.
-  - Fetches media assets from Cloudinary.
+    - Built with React.
+    - Provides the user interface and runs in the user's browser.
+    - Communicates with the backend API via HTTPS.
+    - Fetches media assets from Cloudinary.
 
-- **Backend API (BackendAPI)**:
+  - **Backend API (BackendAPI)**:
 
-  - Built with Node.js and Express.js.
-  - Handles business logic and processes API requests.
-  - Interacts with databases and external services.
+    - Built with Node.js and Express.js.
+    - Handles business logic and processes API requests.
+    - Interacts with databases and external services.
 
-- **MongoDB Atlas (MongoDB)**:
+  - **MongoDB Atlas (MongoDB)**:
 
-  - Stores unstructured data like loan details.
-  - NoSQL database accessed via MongoDB protocol.
+    - Stores unstructured data like loan details.
+    - NoSQL database accessed via MongoDB protocol.
 
-- **Oracle Database (OracleDB)**:
-  - Stores structured data requiring relational features.
-  - Accessed via SQL\*Net protocol.
+  - **Oracle Database (OracleDB)**:
+    - Stores structured data requiring relational features.
+    - Accessed via SQL\*Net protocol.
 
-#### External Systems
+- **External Systems**
 
-- **Auth0**: Manages user authentication and authorization.
-- **Cloudflare**: Provides CDN services and security features.
-- **Mailjet**: Handles sending emails.
-- **Cloudinary**: Manages media storage and delivery.
-- **YNAB and Firefly III**: Financial tools integrated via REST APIs.
-- **Grafana Cloud**: Collects monitoring metrics.
-- **Sentry**: Receives error logs and performance data.
-- **GitHub Actions**: Automates CI/CD pipelines for deployment.
+  - **Auth0**: Manages user authentication and authorization.
+  - **Cloudflare**: Provides CDN services and security features.
+  - **Mailjet**: Handles sending emails.
+  - **Cloudinary**: Manages media storage and delivery.
+  - **YNAB and Firefly III**: Financial tools integrated via REST APIs.
+  - **Grafana Cloud**: Collects monitoring metrics.
+  - **Sentry**: Receives error logs and performance data.
+  - **GitHub Actions**: Automates CI/CD pipelines for deployment.
 
-#### Relationships
+  #### Relationships
 
-- **LoanRecipient** interacts with the **FrontendApp** over HTTPS.
-- **AnonymousUser** browses the **FrontendApp** over HTTPS.
-- **Admin** manages the system via the **BackendAPI**.
-- **FrontendApp** communicates with **BackendAPI** using JSON over HTTPS.
-- **BackendAPI** reads from and writes to both **MongoDB** and **OracleDB**.
-- **BackendAPI** authenticates users via **Auth0**.
-- **BackendAPI** sends emails through **Mailjet**.
-- **FrontendApp** fetches media assets from **Cloudinary**.
-- **BackendAPI** integrates with **YNAB** and **Firefly III**.
-- **BackendAPI** sends metrics to **Grafana Cloud** and errors to **Sentry**.
-- **GitHub Actions** deploys updates to both **BackendAPI** and **FrontendApp**.
-- **FrontendApp** is served through **Cloudflare** for CDN and security.
+  - **LoanRecipient** interacts with the **FrontendApp** over HTTPS.
+  - **AnonymousUser** browses the **FrontendApp** over HTTPS.
+  - **Admin** manages the system via the **BackendAPI**.
+  - **FrontendApp** communicates with **BackendAPI** using JSON over HTTPS.
+  - **BackendAPI** reads from and writes to both **MongoDB** and **OracleDB**.
+  - **BackendAPI** authenticates users via **Auth0**.
+  - **BackendAPI** sends emails through **Mailjet**.
+  - **FrontendApp** fetches media assets from **Cloudinary**.
+  - **BackendAPI** integrates with **YNAB** and **Firefly III**.
+  - **BackendAPI** sends metrics to **Grafana Cloud** and errors to **Sentry**.
+  - **GitHub Actions** deploys updates to both **BackendAPI** and **FrontendApp**.
+  - **FrontendApp** is served through **Cloudflare** for CDN and security.
 
 ```mermaid
 C4Container
@@ -672,13 +672,222 @@ UpdateRelStyle(BackendAPI, OracleDB, $lineColor="#4B0082", $textColor="#4B0082")
 
 **Backend:** This diagram will detail the backend's internal structure, showcasing controllers, services, repositories, and external systems. It will give more insight into the logic, data persistence, and communication with other services.
 
-### 6.4 C4 Code Diagram
+```mermaid
+C4Component
+    title DebtFreePlanner Component Diagram
+
+    System_Boundary(DebtFreePlanner, "DebtFreePlanner") {
+        
+        %% Frontend Container
+        Container_Boundary(FrontendApp, "Frontend Application", "React", "Provides the user interface for DebtFreePlanner") {
+            
+            %% Presentation Layer
+            Boundary(FrontendPresentationLayer, "Presentation Layer") {
+                
+                %% Pages
+                Boundary(PagesBoundary, "Pages") {
+                    Component(HomePage, "Home Page", "Page", "Landing page for visitors")
+                    Component(AboutPage, "About Page", "Page", "Information about the application")
+                    Component(ContactPage, "Contact Page", "Page", "Contact information and form")
+                    Component(DashboardPage, "Dashboard Page", "Page", "Displays user-specific information")
+                    Component(ProfilePage, "Profile Page", "Page", "Manage user profile and settings")
+                    Component(AdminPage, "Admin Page", "Page", "Administrative interface")
+
+                    %% Templates
+                    Boundary(TemplatesBoundary, "Templates") {
+                        Component(MainLayout, "Main Layout", "UI Template", "Layout for main pages")
+                        Component(DashboardLayout, "Dashboard Layout", "UI Template", "Layout for user dashboard")
+                                
+                        %% Organisms
+                        Boundary(OrganismsBoundary, "Organisms") {
+                            Component(Header, "Header", "UI Organism", "Header section with navigation")
+                            Component(Footer, "Footer", "UI Organism", "Footer section with links")
+                            Component(LoginForm, "Login Form", "UI Organism", "Form for user authentication")
+
+                            %% Molecules
+                            Boundary(MoleculesBoundary, "Molecules") {
+                                Component(FormField, "Form Field", "UI Molecule", "Combines label and input field")
+                                Component(NavBar, "Navigation Bar", "UI Molecule", "Combines logo and menu items")
+                                Component(Card, "Card", "UI Molecule", "Displays content in card format")
+
+                                %% Atoms
+                                Boundary(AtomsBoundary, "Atoms") {
+                                    Component(ButtonAtom, "Button", "UI Atom", "Basic button component")
+                                    Component(InputFieldAtom, "Input Field", "UI Atom", "Basic input field component")
+                                    Component(IconAtom, "Icon", "UI Atom", "Basic icon component")
+                                    Component(LabelAtom, "Label", "UI Atom", "Basic label component")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            %% Business Logic Layer
+            Boundary(FrontendBusinessLogicBoundary, "Business Logic Layer") {
+                Component(AuthenticationModuleFrontend, "Authentication Module", "Auth0 SDK", "Handles user authentication")
+                Component_Ext(Auth0Frontend, "Auth0 (Frontend)", "Auth0", "Handles frontend authentication")
+                Component(DebtPlanEngine, "DebtPlan Engine", "Service", "Calculates debt repayment plans")
+                
+                %% DebtPlan Engine Components
+                Boundary(DebtPlanEngineBoundary, "DebtPlan Engine Components") {
+                    Component(PlanFactory, "Plan Factory", "Factory", "Creates repayment plans")
+                    Component(LoanAmortization, "Loan Amortization", "Utility", "Calculates loan amortization schedules")
+                    Component(PaymentCalculator, "Payment Calculator", "Utility", "Calculates payment installments")
+                                
+                %% Relationships within Business Logic Layer
+                Rel(DebtPlanEngine, PlanFactory, "Uses")
+                Rel(PlanFactory, LoanAmortization, "Uses")
+                Rel(LoanAmortization, PaymentCalculator, "Uses")
+                }
+
+                %% Relationships 
+                Rel(AuthenticationModuleFrontend, Auth0Frontend, "Authenticates via", "OAuth 2.0")
+            }
+
+            %% Service Logic Layer
+            Boundary(ServiceLogicLayer, "Service Logic Layer") {
+                Component(APIService, "API Service", "Factory", "Creates repayment plans")
+            }
+        }
+        
+        %% Backend Container
+        Container_Boundary(Backend, "Backend", "Node.js with Express.js", "Handles business logic and API requests") {
+            
+            %% Presentation Layer
+            Boundary(BackendPresentationLayer, "Presentation Layer") {
+                Component(APIRouter, "API Router", "Express Router", "Defines API endpoints")
+                Component(AuthController, "Auth Controller", "Controller", "Handles authentication requests")
+                Component(UserController, "User Controller", "Controller", "Handles user-related requests")
+                Component(LoanController, "Loan Controller", "Controller", "Handles loan-related requests")
+                Component(PlanController, "Plan Controller", "Controller", "Handles plan-related requests")
+                Component(AdminController, "Admin Controller", "Controller", "Handles administrative tasks")
+                
+                %% Relationships within Presentation Layer
+                Rel(APIRouter, AuthController, "Routes to")
+                Rel(APIRouter, UserController, "Routes to")
+                Rel(APIRouter, LoanController, "Routes to")
+                Rel(APIRouter, PlanController, "Routes to")
+                Rel(APIRouter, AdminController, "Routes to")
+            }
+            
+            %% Business Logic Layer
+            Boundary(BackendBusinessLogicLayer, "Business Logic Layer") {
+                Component(AuthService, "Auth Service", "Service", "Manages authentication logic")
+                Component(UserService, "User Service", "Service", "Manages user profiles")
+                Component(LoanService, "Loan Service", "Service", "Handles loan operations")
+                Component(PlanService, "Plan Service", "Service", "Processes repayment plans")
+                Component(AdminService, "Admin Service", "Service", "Provides admin functionalities")
+                Component(BusinessRules, "Business Rules", "Utility", "Contains business validations")
+                
+                %% Relationships within Business Logic Layer
+                Rel(AuthController, AuthService, "Uses")
+                Rel(UserController, UserService, "Uses")
+                Rel(LoanController, LoanService, "Uses")
+                Rel(PlanController, PlanService, "Uses")
+                Rel(AdminController, AdminService, "Uses")
+                
+                %% Rel(AuthService, Auth0BackendComponent, "Authenticates via", "OAuth 2.0")
+                Rel(PlanService, PlanRepository, "Uses")
+                Rel(AdminService, BusinessRules, "Uses")
+            }
+            
+            %% Data Access Layer
+            Boundary(DataAccessLayer, "Data Access Layer") {
+                Component(UserRepository, "User Repository", "Repository", "Accesses user data")
+                Component(LoanRepository, "Loan Repository", "Repository", "Accesses loan data")
+                Component(PlanRepository, "Plan Repository", "Repository", "Accesses plan data")
+                Component(DatabaseContext, "Database Context", "Utility", "Manages database connections")
+                
+                %% Relationships within Data Access Layer
+                Rel(UserRepository, DatabaseContext, "Uses")
+                Rel(LoanRepository, DatabaseContext, "Uses")
+                Rel(PlanRepository, DatabaseContext, "Uses")
+            }
+            
+            %% Utilities Layer
+            Boundary(BackendUtilitiesLayer, "Utilities Layer") {
+                Component(ValidationUtility, "Validation Utility", "Utility", "Validates data")
+                Component(LoggingUtility, "Logging Utility", "Utility", "Logs application activities")
+                Component(MonitoringUtility, "Monitoring Utility", "Utility", "Monitors system performance")
+                Component(IntegrationUtility, "Integration Utility", "Utility", "Handles external integrations")
+            }
+            
+            %% Relationships within Utilities Layer
+           %%  Rel(IntegrationUtility, YNABComponent, "Integrates with", "API")
+          %%  Rel(IntegrationUtility, FireflyIIIComponent, "Integrates with", "API")
+           %% Rel(MonitoringUtility, GrafanaCloudComponent, "Sends metrics to", "HTTPS")
+           %% Rel(LoggingUtility, SentryComponent, "Reports errors to", "HTTPS")
+            
+            
+            %% Relationships to Shared Utilities
+
+
+        }
+        
+        %% Shared Utilities Container
+        Container_Boundary(SharedUtilities, "Shared Utilities", "Utility", "Provides foundational services") {
+            Component(ValidationLibrary, "Validation Library", "Utility", "Reusable validation functions")
+            Component(CalculationLibrary, "Calculation Library", "Utility", "Reusable calculation functions")
+            Component(ConflictDetectionLibrary, "Conflict Detection Library", "Utility", "Handles data conflicts")
+            
+            %% Relationships within Shared Utilities
+
+            Rel(DebtPlanEngine, CalculationLibrary, "Uses")
+        }
+    
+        %% External Databases Boundary
+        Boundary(ExternalDatabasesBoundary, "External Databases") {
+            ComponentDb_Ext(MongoDBComponent, "MongoDB Atlas", "NoSQL Database", "Stores unstructured data")
+            ComponentDb_Ext(OracleDBComponent, "Oracle Database", "SQL Database", "Stores structured data")
+        
+            %% Relationships 
+            Rel(DatabaseContext, MongoDBComponent, "Connects to", "MongoDB Protocol")
+            Rel(DatabaseContext, OracleDBComponent, "Connects to", "SQL*Net")
+            Rel(ValidationUtility, ValidationLibrary, "Uses")
+        }
+
+        }
+    
+    %% External Systems Boundary
+    Container_Boundary(ExternalSystemsBoundary, "External Systems") {
+        
+        Component_Ext(Auth0Backend, "Auth0 (Backend)", "Auth0", "Handles backend authentication")
+        Component_Ext(Mailjet, "Mailjet", "Email Service", "Sends transactional emails")
+        Component_Ext(YNAB, "YNAB", "Financial Integration", "Integrates budgeting tools")
+        Component_Ext(FireflyIII, "Firefly III", "Financial Tracking", "Tracks financial data")
+        Component_Ext(GrafanaCloud, "Grafana Cloud", "Monitoring Dashboard", "Visualizes system metrics")
+        Component_Ext(Sentry, "Sentry", "Error Tracking", "Monitors errors and performance")
+        Component_Ext(Cloudinary, "Cloudinary", "Media Storage", "Stores and serves media assets")
+    }
+    
+    %% Define Relationships - Frontend to External Systems
+
+    
+    %% Define Relationships - Backend to External Systems
+    Rel(AuthService, Auth0Backend, "Authenticates via", "OAuth 2.0")
+    Rel(IntegrationUtility, Mailjet, "Sends emails via", "SMTP API")
+    Rel(IntegrationUtility, YNAB, "Integrates with", "API")
+    Rel(IntegrationUtility, FireflyIII, "Integrates with", "API")
+    Rel(MonitoringUtility, GrafanaCloud, "Sends metrics to", "HTTPS")
+    Rel(LoggingUtility, Sentry, "Reports errors to", "HTTPS")
+    
+    %% Additional Relationships
+    Rel(DebtPlanEngine, CalculationLibrary, "Uses")
+
+                Rel(DebtPlanEngine, CalculationLibrary, "Uses")
+
+
+ UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+```
+
+### 6.3 C4 Code Diagram
 
 Shows classes, interfaces, and their relationships within the codebase.
 
 ### 6.5 C4 Deployment Diagram
 
-Shows
+Shows the deployment
 
 ## 7. Data Design
 
