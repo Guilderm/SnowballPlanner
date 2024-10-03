@@ -546,22 +546,139 @@ UpdateRelStyle(AnonymousUser, DebtFreePlannerSystem, $lineColor="#696969", $text
 UpdateRelStyle(Admin, DebtFreePlannerSystem, $lineColor="#8B4513", $textColor="#8B4513")
 ```
 
-### 6.2 Container Diagram
+### 6.2 C4 Container Diagram
 
-Depicts the high-level technical architecture, including:
+The C4 Container Diagram provides a high-level overview of the software architecture for DebtFreePlanner, showing the major containers (applications, data stores, etc.) and how they interact. This diagram illustrates the internal structure of the DebtFreePlanner system and its interactions with external systems.
 
-- **Frontend:** React application in the user's browser.
-- **Backend:** Node.js with Express.js on Google App Engine.
-- **Databases:** MongoDB Atlas and Oracle.
-- **External Services:** Auth0, Mailjet, Cloudinary.
+#### Actors
 
-### 6.3 Component Diagram
+- **LoanRecipient**: Uses the frontend application to manage debt repayment plans.
+- **AnonymousUser**: Browses the publicly accessible pages via the frontend application.
+- **Admin**: Interacts directly with the backend API for management tasks.
 
-Details the components within each container, focusing on backend services and frontend modules.
+#### Containers within DebtFreePlanner
 
-### 6.4 Code Diagram
+- **Frontend Application (FrontendApp)**:
+
+  - Built with React.
+  - Provides the user interface and runs in the user's browser.
+  - Communicates with the backend API via HTTPS.
+  - Fetches media assets from Cloudinary.
+
+- **Backend API (BackendAPI)**:
+
+  - Built with Node.js and Express.js.
+  - Handles business logic and processes API requests.
+  - Interacts with databases and external services.
+
+- **MongoDB Atlas (MongoDB)**:
+
+  - Stores unstructured data like loan details.
+  - NoSQL database accessed via MongoDB protocol.
+
+- **Oracle Database (OracleDB)**:
+  - Stores structured data requiring relational features.
+  - Accessed via SQL\*Net protocol.
+
+#### External Systems
+
+- **Auth0**: Manages user authentication and authorization.
+- **Cloudflare**: Provides CDN services and security features.
+- **Mailjet**: Handles sending emails.
+- **Cloudinary**: Manages media storage and delivery.
+- **YNAB and Firefly III**: Financial tools integrated via REST APIs.
+- **Grafana Cloud**: Collects monitoring metrics.
+- **Sentry**: Receives error logs and performance data.
+- **GitHub Actions**: Automates CI/CD pipelines for deployment.
+
+#### Relationships
+
+- **LoanRecipient** interacts with the **FrontendApp** over HTTPS.
+- **AnonymousUser** browses the **FrontendApp** over HTTPS.
+- **Admin** manages the system via the **BackendAPI**.
+- **FrontendApp** communicates with **BackendAPI** using JSON over HTTPS.
+- **BackendAPI** reads from and writes to both **MongoDB** and **OracleDB**.
+- **BackendAPI** authenticates users via **Auth0**.
+- **BackendAPI** sends emails through **Mailjet**.
+- **FrontendApp** fetches media assets from **Cloudinary**.
+- **BackendAPI** integrates with **YNAB** and **Firefly III**.
+- **BackendAPI** sends metrics to **Grafana Cloud** and errors to **Sentry**.
+- **GitHub Actions** deploys updates to both **BackendAPI** and **FrontendApp**.
+- **FrontendApp** is served through **Cloudflare** for CDN and security.
+
+```mermaid
+C4Container
+title DebtFreePlanner Container Diagram
+
+%% People (Actors)
+Person(LoanRecipient, "Loan Recipient", "Registered users who utilize DebtFreePlanner to manage their debt repayment plans.")
+Person(AnonymousUser, "Anonymous User", "Users and prospectors who browse publicly accessible pages.")
+Person(Admin, "Admin", "Administrators who manage the system.")
+
+%% System Boundary
+System_Boundary(DebtFreePlannerBoundary, "DebtFreePlanner") {
+
+    %% Containers within DebtFreePlanner
+    Container(FrontendApp, "Frontend Application", "React", "Provides the user interface for DebtFreePlanner.")
+    Container(BackendAPI, "Backend API", "Node.js with Express.js", "Handles business logic and API requests.")
+    ContainerDb(MongoDB, "MongoDB Atlas", "NoSQL Database", "Stores unstructured data like loan details.")
+    ContainerDb(OracleDB, "Oracle Database", "SQL Database", "Stores structured data requiring relational features.")
+}
+
+%% External Systems
+System_Ext(Auth0, "Auth0", "Authentication & Authorization")
+System_Ext(Cloudflare, "Cloudflare", "CDN, DNS, WAF, SSL Certificates")
+System_Ext(Mailjet, "Mailjet", "Transactional & Marketing Emails")
+System_Ext(Cloudinary, "Cloudinary", "Image & Media Storage")
+System_Ext(YNAB, "YNAB", "Financial Management Integration")
+System_Ext(FireflyIII, "Firefly III", "Financial Tracking Integration")
+System_Ext(GrafanaCloud, "Grafana Cloud", "Monitoring Dashboard")
+System_Ext(Sentry, "Sentry", "Error Tracking & Performance Monitoring")
+System_Ext(GitHubActions, "GitHub Actions", "CI/CD Pipelines")
+
+%% Relationships
+Rel(LoanRecipient, FrontendApp, "Uses", "HTTPS")
+Rel(AnonymousUser, FrontendApp, "Browses", "HTTPS")
+Rel(Admin, BackendAPI, "Manages", "HTTPS")
+
+Rel(FrontendApp, BackendAPI, "API Requests", "JSON/HTTPS")
+Rel(BackendAPI, MongoDB, "Reads/Writes", "MongoDB Protocol")
+Rel(BackendAPI, OracleDB, "Reads/Writes", "SQL*Net")
+Rel(BackendAPI, Auth0, "Authenticates via", "OAuth 2.0")
+Rel(BackendAPI, Mailjet, "Sends Emails via", "SMTP API")
+Rel(FrontendApp, Cloudinary, "Fetches Media from", "HTTPS")
+Rel(BackendAPI, YNAB, "Integrates with", "REST API")
+Rel(BackendAPI, FireflyIII, "Integrates with", "REST API")
+Rel(BackendAPI, GrafanaCloud, "Sends Metrics to", "HTTPS")
+Rel(BackendAPI, Sentry, "Reports Errors to", "HTTPS")
+Rel(GitHubActions, BackendAPI, "Deploys to", "CI/CD Pipeline")
+Rel(GitHubActions, FrontendApp, "Deploys to", "CI/CD Pipeline")
+Rel(FrontendApp, Cloudflare, "Served through", "HTTPS")
+
+%% Visual Enhancements
+UpdateElementStyle(FrontendApp, $bgColor="#FFFAF0", $borderColor="#000080", $fontColor="#000000")
+UpdateElementStyle(BackendAPI, $bgColor="#FFFACD", $borderColor="#000080", $fontColor="#000000")
+UpdateElementStyle(MongoDB, $bgColor="#98FB98", $borderColor="#006400", $fontColor="#000000")
+UpdateElementStyle(OracleDB, $bgColor="#E6E6FA", $borderColor="#4B0082", $fontColor="#000000")
+
+UpdateRelStyle(FrontendApp, BackendAPI, $lineColor="#000080", $textColor="#000080")
+UpdateRelStyle(BackendAPI, MongoDB, $lineColor="#006400", $textColor="#006400")
+UpdateRelStyle(BackendAPI, OracleDB, $lineColor="#4B0082", $textColor="#4B0082")
+```
+
+### 6.3 C4 Component Diagram
+
+**Frontend:** This diagram will focus on the user experience, how components interact with each other and the backend API, and how external integrations like Cloudinary work.
+
+**Backend:** This diagram will detail the backend's internal structure, showcasing controllers, services, repositories, and external systems. It will give more insight into the logic, data persistence, and communication with other services.
+
+### 6.4 C4 Code Diagram
 
 Shows classes, interfaces, and their relationships within the codebase.
+
+### 6.5 C4 Deployment Diagram
+
+Shows
 
 ## 7. Data Design
 
