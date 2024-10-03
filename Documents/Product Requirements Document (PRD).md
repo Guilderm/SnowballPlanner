@@ -77,8 +77,6 @@ DebtFreePlanner provides loan recipients with a web-based tool to manage debt re
 **Key Objective**
 Provide loan recipients with a tool that optimizes their debt repayment plans through informed decision-making.
 
----
-
 ## 2. Objectives and Key Results (OKRs)
 
 ### 2.1. Objective 1: Deliver a web-based solution that loan recipients can use to create debt repayment plans
@@ -106,8 +104,6 @@ Provide loan recipients with a tool that optimizes their debt repayment plans th
 - **Key Result 2.3.2:** Create a help center with FAQs, user guides, and video tutorials.
 - **Key Result 2.3.3:** Implement in-app tooltips and contextual help for key features.
 - **Key Result 2.3.4:** Collect and analyze user feedback to improve educational materials in future iterations.
-
----
 
 ## 3. Market and Context
 
@@ -188,8 +184,6 @@ Since the app manages financial data, it is an attractive target (honeypot) for 
 
 - Minimize the collection of Personal Identifiable Information (PII) by avoiding unnecessary data such as bank account numbers, Social Security numbers, or full names, reducing the application's attractiveness as a target for cybercriminals.
 
----
-
 ## 4. User Profiles
 
 ### 4.1. Market Segmentation
@@ -227,8 +221,6 @@ DebtFreePlanner targets retail loan recipients who are motivated to pay off thei
 - Gain control over finances with clear, actionable repayment plans.
 - Integrates with budgeting tools like YNAB for a seamless data entry.
 - Achieving financial independence by becoming debt-free within a reasonable time frame.
-
----
 
 ## 5. Personas
 
@@ -414,8 +406,6 @@ To ensure DebtFreePlanner remains focused on fulfilling its intended purpose, th
 - Simplify the process of managing multiple debts, reducing financial stress.
 - Integrate with existing financial tools for a seamless user experience.
 
----
-
 ## 7. Value Proposition Canvas
 
 > **Note:** At a later stage, we will create a Value Proposition Canvas in [Figma](https://www.figma.com/community/search?resource_type=mixed&sort_by=relevancy&query=Value+Proposition+Canvas).
@@ -426,8 +416,6 @@ ValuePropositionCanvas.png
 
 ![Value Proposition Canvas](Media/ValuePropositionCanvas.png)
 
----
-
 ## 8. User Interface and User Experience (UI/UX)
 
 ### 8.1. User Flows
@@ -437,9 +425,7 @@ The following diagrams and descriptions outline the primary user flows within th
 #### Key Map
 
 ```mermaid
----
 title: Key Map
----
 flowchart TD
     Start(["Stadium: Represents the start or end of flow"]) --> Rectangle
     Rectangle["Rectangle: Represents a task or procedure"] --> Subroutine
@@ -454,8 +440,6 @@ flowchart TD
 
 For a guide, refer to the [Flowcharts Syntax](https://mermaid.js.org/syntax/flowchart)
 
----
-
 #### 8.1.1. **User Session**
 
 **Purpose:** This flow outlines how users navigate the authentication process, ensuring a smooth and secure login experience.
@@ -465,9 +449,7 @@ For a guide, refer to the [Flowcharts Syntax](https://mermaid.js.org/syntax/flow
 Focuses on managing individual user sessions, including login, logout, and maintaining session continuity.
 
 ```mermaid
----
 title: User Login Process
----
 flowchart TD
     OpenApp(["Open Application"])
 
@@ -507,9 +489,7 @@ flowchart TD
 🚧 Expands to manage multiple user sessions under a single account, supporting role-based access control and seamless switching between user profiles.
 
 ```Mermaid
----
 title: User Login Process (Multi-User with Plan Selection)
----
 flowchart TD
     OpenApp(["Open Application"])
 
@@ -565,9 +545,7 @@ This flow outlines how users go through the process of subscribin the paid tier.
 **Implemented under module:** Subscription Management
 
 ```mermaid
----
 title: Subscription Process
----
 flowchart TD
     AccessPage["Access Subscription Page"]
 
@@ -590,8 +568,6 @@ flowchart TD
     end
 ```
 
----
-
 #### 8.1.3. **User Profile**
 
 **Purpose:** This flow allows users to manage their personal information and account settings.
@@ -599,9 +575,7 @@ flowchart TD
 **Implemented under module:** Profile Management
 
 ```mermaid
----
 title: Profile Management Process
----
 flowchart TD
     Start(["Start"])
 
@@ -679,8 +653,6 @@ flowchart TD
 
 ```
 
----
-
 #### 8.1.3. **Plan Management Flow**
 
 ##### **Purpose:**
@@ -690,9 +662,7 @@ This flow details how users can create, manage, and collaborate on multiple debt
 **Implemented under module:** Plan Management
 
 ```plantuml
----
 title: Plan Management Flow
----
 flowchart TD
     UserNavigates["User navigates to Debt-Free Strategy Page"] --> ManageDebt["User manages their Debt"]
     ManageDebt --> ManageSnowflake["User manages their Snowflake"]
@@ -740,9 +710,7 @@ Focuses on managing individual debts, including loan amounts, interest rates, an
 **Implemented under module:** Snowflake Management
 
 ```mermaid
----
 title: Debt Management - User Flow
----
 flowchart TD
     UserNavigatesToStrategy["User navigates to Debt-Free Strategy Page"]
 
@@ -783,9 +751,7 @@ Manages irregular payments (snowflake payments) to help users reduce their debt 
 **Implemented under module:** Snowflake Management
 
 ```mermaid
----
 title: Snowflake Management - User Flow
----
 
 flowchart TD
     UserNavigatesToStrategy["User navigates to Debt-Free Strategy Page"]
@@ -835,9 +801,7 @@ Manages the overall allocation of payments across debts, ensuring users stay on 
 **Implemented under module:** Payment Management
 
 ```mermaid
----
 title: Payment Management - User Flow
----
 flowchart TD
     UserNavigatesToStrategy["User navigates to Debt-Free Strategy Page"]
 
@@ -881,8 +845,6 @@ flowchart TD
 
 ```
 
----
-
 #### 8.1.4. **Debt Analyst**
 
 **Purpose:** Provides users with insightful reports and visualizations to track their debt repayment progress, enabling informed decision-making and maintaining motivation.
@@ -894,9 +856,7 @@ flowchart TD
 **Implemented under module:** Reporting Management
 
 ```mermaid
----
 title: Plan Management Flow
----
 flowchart TD
     subgraph PlanCreation["Plan Creation"]
         UserCreatesPlan["User creates a debt repayment plan"]
@@ -921,8 +881,6 @@ flowchart TD
     SystemGeneratesAnalysis --> End(["End"])
 ```
 
----
-
 #### 8.1.5. **Data Management**
 
 **Purpose:** Manages the processes for importing and exporting user data, ensuring that users have full control over their information.
@@ -933,9 +891,7 @@ flowchart TD
 **Implemented under module:** Data Management
 
 ```mermaid
----
 title: Data Management Flow
----
 flowchart TD
     UserNavigates["User navigates to Data Management section"]
 
@@ -964,8 +920,6 @@ flowchart TD
     FurtherTasks -- No --> End(["End"])
 ```
 
----
-
 #### 8.1.6. **PFS Integration Management**
 
 **Purpose:** Manages the integration of the application with external personal finance software (PFS), allowing users to synchronize their data for a more comprehensive financial overview.
@@ -976,8 +930,6 @@ flowchart TD
 - **🚧 8.1.6.2. Firefly III Management:** Manages the connection with Firefly III, enabling data synchronization between the two platforms.
 
 **Implemented under module:** Integration Management
-
----
 
 > **🚧 Note:** Features marked with 🚧 are still under consideration and have not yet been added to the roadmap. The diagrams for these features are rough drafts or do not exist. If the feature is ultimately included, it will be further detailed in this document; otherwise, it will be removed.
 
@@ -1004,8 +956,6 @@ In line with the Agile principle of creating **just enough** documentation, wire
 
 - **8.2.1.5. Plan Collaboration**  
   Allows users to invite collaborators to their debt repayment plan, set permission levels (e.g., read-only, edit, admin), and manage roles. Invitations are sent via email, and the system tracks collaborator activity within the plan.
-
----
 
 ## 9. User Stories
 
@@ -1072,8 +1022,6 @@ Given that this document is gettting long, user storys has been moved to [**Prod
   - Describe the steps that will be taken to protect the intellectual property associated with the product, particularly in preparation for potential monetization.
 - **Patents**:
   - Discuss any patentable inventions or processes that are part of the product and outline the strategy for securing patents.
-
----
 
 ## 11. Related Documents
 

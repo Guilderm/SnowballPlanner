@@ -61,7 +61,7 @@ Architecturally significant decisions are documented in an Architecture Decision
   - [6.2. Container Diagram](#62-c4-container-diagram)
   - [6.3. Component Diagram](#63-c4-component-diagram)
   - [6.4. Code Diagram](#63-c4-component-diagram)
-    - [6.5 Deployment Diagram](#65-c4-deployment-diagram)
+  - [6.5 Deployment Diagram](#65-c4-deployment-diagram)
 - [7. Data Design](#7-data-design)
   - [7.1. Database Schemas](#71-database-schemas)
     - [Loans Data Storage](#loans-data-storage)
@@ -459,6 +459,7 @@ Conflicting record versions are displayed side by side, with differences highlig
 The C4 Context Diagram provides a high-level overview of the DebtFreePlanner system, illustrating its interactions with primary users and external systems. This diagram serves as an entry point to understand the system's environment, key stakeholders, and its relationships with other components.
 
 - **People (Actors)**
+
   - **Loan Recipient**: Registered users who use DebtFreePlanner to manage their debt repayment plans.
   - **Anonymous User**: Users and prospectors who browse publicly accessible pages of the DebtFreePlanner website, including user guides and marketing materials.
   - **Admin**: Administrators responsible for user management, settings configuration, monitoring, and maintenance of the system.
@@ -591,7 +592,7 @@ The C4 Container Diagram provides a high-level overview of the software architec
   - **Sentry**: Receives error logs and performance data.
   - **GitHub Actions**: Automates CI/CD pipelines for deployment.
 
-  #### Relationships
+- **Relationships**
 
   - **LoanRecipient** interacts with the **FrontendApp** over HTTPS.
   - **AnonymousUser** browses the **FrontendApp** over HTTPS.
@@ -677,83 +678,63 @@ C4Component
     title DebtFreePlanner Component Diagram
 
     System_Boundary(DebtFreePlanner, "DebtFreePlanner") {
-        
+
         %% Frontend Container
         Container_Boundary(FrontendApp, "Frontend Application", "React", "Provides the user interface for DebtFreePlanner") {
-            
+
             %% Presentation Layer
-            Boundary(FrontendPresentationLayer, "Presentation Layer") {
-                
-                %% Pages
-                Boundary(PagesBoundary, "Pages") {
+            Boundary(FrontendPresentationLayer, "Presentation Layer", "Handles user interactions and UI rendering") {
+
+                %% Public Pages
+                Boundary(PublicPagesBoundary, "Public Pages") {
                     Component(HomePage, "Home Page", "Page", "Landing page for visitors")
                     Component(AboutPage, "About Page", "Page", "Information about the application")
                     Component(ContactPage, "Contact Page", "Page", "Contact information and form")
-                    Component(DashboardPage, "Dashboard Page", "Page", "Displays user-specific information")
-                    Component(ProfilePage, "Profile Page", "Page", "Manage user profile and settings")
-                    Component(AdminPage, "Admin Page", "Page", "Administrative interface")
-
-                    %% Templates
-                    Boundary(TemplatesBoundary, "Templates") {
-                        Component(MainLayout, "Main Layout", "UI Template", "Layout for main pages")
-                        Component(DashboardLayout, "Dashboard Layout", "UI Template", "Layout for user dashboard")
-                                
-                        %% Organisms
-                        Boundary(OrganismsBoundary, "Organisms") {
-                            Component(Header, "Header", "UI Organism", "Header section with navigation")
-                            Component(Footer, "Footer", "UI Organism", "Footer section with links")
-                            Component(LoginForm, "Login Form", "UI Organism", "Form for user authentication")
-
-                            %% Molecules
-                            Boundary(MoleculesBoundary, "Molecules") {
-                                Component(FormField, "Form Field", "UI Molecule", "Combines label and input field")
-                                Component(NavBar, "Navigation Bar", "UI Molecule", "Combines logo and menu items")
-                                Component(Card, "Card", "UI Molecule", "Displays content in card format")
-
-                                %% Atoms
-                                Boundary(AtomsBoundary, "Atoms") {
-                                    Component(ButtonAtom, "Button", "UI Atom", "Basic button component")
-                                    Component(InputFieldAtom, "Input Field", "UI Atom", "Basic input field component")
-                                    Component(IconAtom, "Icon", "UI Atom", "Basic icon component")
-                                    Component(LabelAtom, "Label", "UI Atom", "Basic label component")
-                                }
-                            }
-                        }
-                    }
+                    Component(PricePage, "Price Page", "Page", "Price information")
                 }
+
+                %% Private Pages
+                Boundary(PrivatePagesBoundary, "Private Pages") {
+                    Component(AdminPage, "Admin Page", "Page", "Admin-specific functionalities")
+                    Component(AdminDashboardPage, "Dashboard Page", "Page", "Displays user-specific information")
+                    Component(ProfilePage, "Profile Page", "Page", "Manage user profile and settings")
+                    Component(AuthenticationPage, "Authentication Page", "Page", "Handles user authentication")
+                    Component(PlanPage, "Plan Page", "Page", "Manage Plans")
+                    Component(PlanDetailPage, "Plan Detail Page", "Page", "Manage Plan Details")
+                }
+
+                %% Relationships
+                Rel(AuthenticationPage, UserManagementService, "Authenticates via", "OAuth 2.0")
             }
-            
+
             %% Business Logic Layer
             Boundary(FrontendBusinessLogicBoundary, "Business Logic Layer") {
-                Component(AuthenticationModuleFrontend, "Authentication Module", "Auth0 SDK", "Handles user authentication")
-                Component_Ext(Auth0Frontend, "Auth0 (Frontend)", "Auth0", "Handles frontend authentication")
-                Component(DebtPlanEngine, "DebtPlan Engine", "Service", "Calculates debt repayment plans")
-                
-                %% DebtPlan Engine Components
-                Boundary(DebtPlanEngineBoundary, "DebtPlan Engine Components") {
+                Component(UserManagementService, "User Management Service", "Service", "Handles user authentication and account management")
+                Component(DebtPlanEngine, "Debt Plan Engine", "Service", "Calculates debt repayment plans")
+
+                %% Debt Plan Engine Components
+                Boundary(DebtPlanEngineBoundary, "Debt Plan Engine Components") {
                     Component(PlanFactory, "Plan Factory", "Factory", "Creates repayment plans")
                     Component(LoanAmortization, "Loan Amortization", "Utility", "Calculates loan amortization schedules")
                     Component(PaymentCalculator, "Payment Calculator", "Utility", "Calculates payment installments")
-                                
-                %% Relationships within Business Logic Layer
-                Rel(DebtPlanEngine, PlanFactory, "Uses")
-                Rel(PlanFactory, LoanAmortization, "Uses")
-                Rel(LoanAmortization, PaymentCalculator, "Uses")
+
+                    %% Relationships within Debt Plan Engine
+                    Rel(DebtPlanEngine, PlanFactory, "Uses")
+                    Rel(PlanFactory, LoanAmortization, "Uses")
+                    Rel(LoanAmortization, PaymentCalculator, "Uses")
                 }
 
-                %% Relationships 
-                Rel(AuthenticationModuleFrontend, Auth0Frontend, "Authenticates via", "OAuth 2.0")
             }
 
             %% Service Logic Layer
-            Boundary(ServiceLogicLayer, "Service Logic Layer") {
-                Component(APIService, "API Service", "Factory", "Creates repayment plans")
+            Boundary(FrontendServiceLogicLayer, "Service Logic Layer") {
+                Component(APIService, "API Service", "Service", "Handles API requests and data fetching")
             }
         }
-        
+
         %% Backend Container
         Container_Boundary(Backend, "Backend", "Node.js with Express.js", "Handles business logic and API requests") {
-            
+
             %% Presentation Layer
             Boundary(BackendPresentationLayer, "Presentation Layer") {
                 Component(APIRouter, "API Router", "Express Router", "Defines API endpoints")
@@ -762,7 +743,7 @@ C4Component
                 Component(LoanController, "Loan Controller", "Controller", "Handles loan-related requests")
                 Component(PlanController, "Plan Controller", "Controller", "Handles plan-related requests")
                 Component(AdminController, "Admin Controller", "Controller", "Handles administrative tasks")
-                
+
                 %% Relationships within Presentation Layer
                 Rel(APIRouter, AuthController, "Routes to")
                 Rel(APIRouter, UserController, "Routes to")
@@ -770,115 +751,231 @@ C4Component
                 Rel(APIRouter, PlanController, "Routes to")
                 Rel(APIRouter, AdminController, "Routes to")
             }
-            
+
             %% Business Logic Layer
             Boundary(BackendBusinessLogicLayer, "Business Logic Layer") {
                 Component(AuthService, "Auth Service", "Service", "Manages authentication logic")
+                Component_Ext(Auth0BackendComponent, "Auth0 (Backend)", "Auth0", "Handles backend authentication")
                 Component(UserService, "User Service", "Service", "Manages user profiles")
                 Component(LoanService, "Loan Service", "Service", "Handles loan operations")
                 Component(PlanService, "Plan Service", "Service", "Processes repayment plans")
                 Component(AdminService, "Admin Service", "Service", "Provides admin functionalities")
                 Component(BusinessRules, "Business Rules", "Utility", "Contains business validations")
-                
+
                 %% Relationships within Business Logic Layer
+                Rel(AuthService, Auth0BackendComponent, "Authenticates via", "OAuth 2.0")
                 Rel(AuthController, AuthService, "Uses")
                 Rel(UserController, UserService, "Uses")
                 Rel(LoanController, LoanService, "Uses")
                 Rel(PlanController, PlanService, "Uses")
                 Rel(AdminController, AdminService, "Uses")
-                
-                %% Rel(AuthService, Auth0BackendComponent, "Authenticates via", "OAuth 2.0")
+                Rel(AdminService, BusinessRules, "Uses")
+
                 Rel(PlanService, PlanRepository, "Uses")
                 Rel(AdminService, BusinessRules, "Uses")
             }
-            
+
             %% Data Access Layer
             Boundary(DataAccessLayer, "Data Access Layer") {
-                Component(UserRepository, "User Repository", "Repository", "Accesses user data")
-                Component(LoanRepository, "Loan Repository", "Repository", "Accesses loan data")
                 Component(PlanRepository, "Plan Repository", "Repository", "Accesses plan data")
+                Component(LoanRepository, "Loan Repository", "Repository", "Accesses loan data")
+                Component(UserRepository, "User Repository", "Repository", "Accesses user data")
                 Component(DatabaseContext, "Database Context", "Utility", "Manages database connections")
-                
+
                 %% Relationships within Data Access Layer
-                Rel(UserRepository, DatabaseContext, "Uses")
-                Rel(LoanRepository, DatabaseContext, "Uses")
                 Rel(PlanRepository, DatabaseContext, "Uses")
+                Rel(LoanRepository, DatabaseContext, "Uses")
+                Rel(UserRepository, DatabaseContext, "Uses")
             }
-            
+
             %% Utilities Layer
             Boundary(BackendUtilitiesLayer, "Utilities Layer") {
                 Component(ValidationUtility, "Validation Utility", "Utility", "Validates data")
                 Component(LoggingUtility, "Logging Utility", "Utility", "Logs application activities")
                 Component(MonitoringUtility, "Monitoring Utility", "Utility", "Monitors system performance")
                 Component(IntegrationUtility, "Integration Utility", "Utility", "Handles external integrations")
+
+                %% Relationships within Utilities Layer
+                Rel(ValidationUtility, ValidationLibrary, "Uses")
             }
-            
-            %% Relationships within Utilities Layer
-           %%  Rel(IntegrationUtility, YNABComponent, "Integrates with", "API")
-          %%  Rel(IntegrationUtility, FireflyIIIComponent, "Integrates with", "API")
-           %% Rel(MonitoringUtility, GrafanaCloudComponent, "Sends metrics to", "HTTPS")
-           %% Rel(LoggingUtility, SentryComponent, "Reports errors to", "HTTPS")
-            
-            
-            %% Relationships to Shared Utilities
-
-
         }
-        
+
         %% Shared Utilities Container
-        Container_Boundary(SharedUtilities, "Shared Utilities", "Utility", "Provides foundational services") {
+        Container_Boundary(SharedUtilitiesBoundary, "Shared Utilities", "Utility", "Provides foundational services") {
             Component(ValidationLibrary, "Validation Library", "Utility", "Reusable validation functions")
             Component(CalculationLibrary, "Calculation Library", "Utility", "Reusable calculation functions")
             Component(ConflictDetectionLibrary, "Conflict Detection Library", "Utility", "Handles data conflicts")
-            
-            %% Relationships within Shared Utilities
 
+            %% Relationships within Shared Utilities
             Rel(DebtPlanEngine, CalculationLibrary, "Uses")
+            Rel(DebtPlanEngine, ConflictDetectionLibrary, "Uses")
         }
-    
+
         %% External Databases Boundary
         Boundary(ExternalDatabasesBoundary, "External Databases") {
             ComponentDb_Ext(MongoDBComponent, "MongoDB Atlas", "NoSQL Database", "Stores unstructured data")
             ComponentDb_Ext(OracleDBComponent, "Oracle Database", "SQL Database", "Stores structured data")
-        
-            %% Relationships 
+
+            %% Relationships
             Rel(DatabaseContext, MongoDBComponent, "Connects to", "MongoDB Protocol")
             Rel(DatabaseContext, OracleDBComponent, "Connects to", "SQL*Net")
-            Rel(ValidationUtility, ValidationLibrary, "Uses")
         }
 
+        %% External Systems Boundary
+       %% Container_Ext(ExternalSystemsBoundary, "External Systems") {
+
+            Component_Ext(MailjetBackendComponent, "Mailjet", "Email Service", "Sends transactional emails")
+            Component_Ext(YNABBackendComponent, "YNAB", "Financial Integration", "Integrates budgeting tools")
+            Component_Ext(FireflyIIIBackendComponent, "Firefly III", "Financial Tracking", "Tracks financial data")
+            Component_Ext(GrafanaCloudBackendComponent, "Grafana Cloud", "Monitoring Dashboard", "Visualizes system metrics")
+            Component_Ext(SentryBackendComponent, "Sentry", "Error Tracking", "Monitors errors and performance")
+       %% }
+
+        %% Define Relationships - Backend to External Systems
+
+        Rel(IntegrationUtility, MailjetBackendComponent, "Sends emails via", "SMTP API")
+        Rel(IntegrationUtility, YNABBackendComponent, "Integrates with", "API")
+        Rel(IntegrationUtility, FireflyIIIBackendComponent, "Integrates with", "API")
+        Rel(MonitoringUtility, GrafanaCloudBackendComponent, "Sends metrics to", "HTTPS")
+        Rel(LoggingUtility, SentryBackendComponent, "Reports errors to", "HTTPS")
+        Rel(DebtPlanEngine, CalculationLibrary, "Uses")
+        Rel(DebtPlanEngine, ConflictDetectionLibrary, "Uses")
+
+        %% Define Manager and Related Services/Utilities
+        %% Plan Management
+        Boundary(PlanManagementBoundary, "Plan Management") {
+            Component(PlanManager, "Plan Manager", "Manager", "Coordinates plan-related operations")
+            Component(PlanValidationService, "Plan Validation Service", "Service", "Validates plan data")
+            Component(PlanSynchronizationService, "Plan Synchronization Service", "Service", "Handles synchronization of plans")
+
+            Rel(PlanManager, PlanService, "Uses")
+            Rel(PlanManager, PlanValidationService, "Uses")
+            Rel(PlanManager, PlanSynchronizationService, "Uses")
         }
-    
-    %% External Systems Boundary
-    Container_Boundary(ExternalSystemsBoundary, "External Systems") {
-        
-        Component_Ext(Auth0Backend, "Auth0 (Backend)", "Auth0", "Handles backend authentication")
-        Component_Ext(Mailjet, "Mailjet", "Email Service", "Sends transactional emails")
-        Component_Ext(YNAB, "YNAB", "Financial Integration", "Integrates budgeting tools")
-        Component_Ext(FireflyIII, "Firefly III", "Financial Tracking", "Tracks financial data")
-        Component_Ext(GrafanaCloud, "Grafana Cloud", "Monitoring Dashboard", "Visualizes system metrics")
-        Component_Ext(Sentry, "Sentry", "Error Tracking", "Monitors errors and performance")
-        Component_Ext(Cloudinary, "Cloudinary", "Media Storage", "Stores and serves media assets")
+
+        %% Debt Management
+        Boundary(DebtManagementBoundary, "Debt Management") {
+            Component(DebtManager, "Debt Manager", "Manager", "Coordinates debt-related operations")
+            Component(DebtValidationService, "Debt Validation Service", "Service", "Validates debt data")
+            Component(DebtSynchronizationService, "Debt Synchronization Service", "Service", "Handles synchronization of debts")
+
+            Rel(DebtManager, LoanService, "Uses")
+            Rel(DebtManager, DebtValidationService, "Uses")
+            Rel(DebtManager, DebtSynchronizationService, "Uses")
+        }
+
+        %% Snowflake Management
+        Boundary(SnowflakeManagementBoundary, "Snowflake Management") {
+            Component(SnowflakeManager, "Snowflake Manager", "Manager", "Coordinates snowflake payment operations")
+            Component(SnowflakeValidationService, "Snowflake Validation Service", "Service", "Validates snowflake payment data")
+            Component(SnowflakeSynchronizationService, "Snowflake Synchronization Service", "Service", "Handles synchronization of snowflake payments")
+
+            Rel(SnowflakeManager, PlanService, "Uses")
+            Rel(SnowflakeManager, SnowflakeValidationService, "Uses")
+            Rel(SnowflakeManager, SnowflakeSynchronizationService, "Uses")
+        }
+
+        %% Payment Management
+        Boundary(PaymentManagementBoundary, "Payment Management") {
+            Component(PaymentManager, "Payment Manager", "Manager", "Coordinates payment operations")
+            Component(PaymentProcessingService, "Payment Processing Service", "Service", "Processes payments")
+            Component(PaymentValidationService, "Payment Validation Service", "Service", "Validates payment data")
+
+            Rel(PaymentManager, PaymentProcessingService, "Uses")
+            Rel(PaymentManager, PaymentValidationService, "Uses")
+        }
+
+        %% Data Management
+        Boundary(DataManagementBoundary, "Data Management") {
+            Component(DataManager, "Data Manager", "Manager", "Coordinates data operations")
+            Component(DataValidationService, "Data Validation Service", "Service", "Validates general data")
+            Component(DataSynchronizationService, "Data Synchronization Service", "Service", "Handles data synchronization")
+
+            Rel(DataManager, DataValidationService, "Uses")
+            Rel(DataManager, DataSynchronizationService, "Uses")
+        }
+
+        %% Session Management
+        Boundary(SessionManagementBoundary, "Session Management") {
+            Component(SessionManager, "Session Manager", "Manager", "Handles user sessions")
+            Component(SessionValidationService, "Session Validation Service", "Service", "Validates session data")
+            Component(SessionSynchronizationService, "Session Synchronization Service", "Service", "Handles session synchronization")
+
+            Rel(SessionManager, AuthService, "Uses")
+            Rel(SessionManager, SessionValidationService, "Uses")
+            Rel(SessionManager, SessionSynchronizationService, "Uses")
+        }
+
+        %% Subscription Management
+        Boundary(SubscriptionManagementBoundary, "Subscription Management") {
+            Component(SubscriptionManager, "Subscription Manager", "Manager", "Coordinates subscription operations")
+            Component(SubscriptionValidationService, "Subscription Validation Service", "Service", "Validates subscription data")
+            Component(SubscriptionSynchronizationService, "Subscription Synchronization Service", "Service", "Handles subscription synchronization")
+
+            Rel(SubscriptionManager, PlanService, "Uses")
+            Rel(SubscriptionManager, SubscriptionValidationService, "Uses")
+            Rel(SubscriptionManager, SubscriptionSynchronizationService, "Uses")
+        }
+
+        %% Profile Management
+        Boundary(ProfileManagementBoundary, "Profile Management") {
+            Component(ProfileManager, "Profile Manager", "Manager", "Coordinates profile operations")
+            Component(ProfileValidationService, "Profile Validation Service", "Service", "Validates profile data")
+            Component(ProfileSynchronizationService, "Profile Synchronization Service", "Service", "Handles profile synchronization")
+
+            Rel(ProfileManager, UserService, "Uses")
+            Rel(ProfileManager, ProfileValidationService, "Uses")
+            Rel(ProfileManager, ProfileSynchronizationService, "Uses")
+        }
+
+        %% Reporting Management
+        Boundary(ReportingManagementBoundary, "Reporting Management") {
+            Component(ReportingManager, "Reporting Manager", "Manager", "Coordinates reporting operations")
+            Component(ReportingService, "Reporting Service", "Service", "Generates reports")
+            Component(ReportingSynchronizationService, "Reporting Synchronization Service", "Service", "Handles report synchronization")
+
+            Rel(ReportingManager, ReportingService, "Uses")
+            Rel(ReportingManager, ReportingSynchronizationService, "Uses")
+        }
+
+        %% Integration Management
+        Boundary(IntegrationManagementBoundary, "Integration Management") {
+            Component(IntegrationManager, "Integration Manager", "Manager", "Coordinates external integrations")
+            Component(IntegrationService, "Integration Service", "Service", "Manages integrations with external systems")
+            Component(IntegrationSynchronizationService, "Integration Synchronization Service", "Service", "Handles integration synchronization")
+
+            Rel(IntegrationManager, IntegrationService, "Uses")
+            Rel(IntegrationManager, IntegrationSynchronizationService, "Uses")
+        }
+
+        %% Synchronization Management
+        Boundary(SynchronizationManagementBoundary, "Synchronization Management") {
+            Component(SynchronizationManager, "Synchronization Manager", "Manager", "Coordinates data synchronization across systems")
+            Component(SynchronizationService, "Synchronization Service", "Service", "Handles data synchronization processes")
+            Component(SynchronizationUtility, "Synchronization Utility", "Utility", "Provides synchronization helper functions")
+
+            Rel(SynchronizationManager, SynchronizationService, "Uses")
+            Rel(SynchronizationManager, SynchronizationUtility, "Uses")
+        }
+
+        %% Define Relationships to Shared Utilities
+        Rel(PlanService, ValidationUtility, "Validates data with")
+        Rel(LoanService, ValidationUtility, "Validates data with")
+        Rel(UserService, ValidationUtility, "Validates data with")
+        Rel(PlanService, CalculationLibrary, "Calculates repayment plans with")
+        Rel(LoanService, CalculationLibrary, "Calculates loan schedules with")
+        Rel(UserService, CalculationLibrary, "Calculates user data with")
+        Rel(DebtPlanEngine, ConflictDetectionLibrary, "Uses")
+
+        %% Define Relationships to External Systems
+        Rel(IntegrationUtility, MailjetBackendComponent, "Sends emails via", "SMTP API")
+        Rel(IntegrationUtility, YNABBackendComponent, "Integrates with", "API")
+        Rel(IntegrationUtility, FireflyIIIBackendComponent, "Integrates with", "API")
+        Rel(MonitoringUtility, GrafanaCloudBackendComponent, "Sends metrics to", "HTTPS")
+        Rel(LoggingUtility, SentryBackendComponent, "Reports errors to", "HTTPS")
     }
-    
-    %% Define Relationships - Frontend to External Systems
 
-    
-    %% Define Relationships - Backend to External Systems
-    Rel(AuthService, Auth0Backend, "Authenticates via", "OAuth 2.0")
-    Rel(IntegrationUtility, Mailjet, "Sends emails via", "SMTP API")
-    Rel(IntegrationUtility, YNAB, "Integrates with", "API")
-    Rel(IntegrationUtility, FireflyIII, "Integrates with", "API")
-    Rel(MonitoringUtility, GrafanaCloud, "Sends metrics to", "HTTPS")
-    Rel(LoggingUtility, Sentry, "Reports errors to", "HTTPS")
-    
-    %% Additional Relationships
-    Rel(DebtPlanEngine, CalculationLibrary, "Uses")
-
-                Rel(DebtPlanEngine, CalculationLibrary, "Uses")
-
-
- UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
 ```
 
 ### 6.3 C4 Code Diagram
