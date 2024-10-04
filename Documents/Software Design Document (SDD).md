@@ -673,6 +673,10 @@ UpdateRelStyle(BackendAPI, OracleDB, $lineColor="#4B0082", $textColor="#4B0082")
 
 **Backend:** This diagram will detail the backend's internal structure, showcasing controllers, services, repositories, and external systems. It will give more insight into the logic, data persistence, and communication with other services.
 
+**Note** The presentation layer is built using atomic desing, however given how intrikate this integration is not represeted as the amount of line would not make it proctical to lead, and the amount of work needed to keep them in skyc woul defiet the perpose of having dynomic system.
+
+Telemetry and abserbability are are so intervoven that they as well will not be represented as well
+
 ```mermaid
 C4Component
     title DebtFreePlanner Component Diagram

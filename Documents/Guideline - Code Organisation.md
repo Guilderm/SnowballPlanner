@@ -150,15 +150,23 @@ Functional organization categorizes code based on the specific tasks or function
 
 - **Purpose:** Deliver specific business capabilities aligned with organizational objectives.
 - **Characteristics:** Modular, stateless, mostly domain-specific, mid-level components.
-- **Size:** Typically a single class; break parts into utilities if needed.
+- **Size:** A small class; break parts into utilities if needed.
 - **Examples:** User authentication, payment processing, notification services.
 
-#### Managers
+### Managers
 
-- **Purpose:** Coordinate interactions between services and utilities to execute complex business processes.
-- **Characteristics:** State-altering, decision-making, centralized control, stateful, high-level components, strictly domain-specific.
-- **Size:** Typically a single class or module; break parts into utilities and services if needed.
-- **Examples:** Orchestration tools, API gateways, workflow managers.
+- **Purpose:** Handles specific tasks, resources, and functionalities within a domain, supporting the workflows of a Orchestrator.
+- **Characteristics:** State-altering, decision-making, state aware, high-level components, strictly domain-specific.
+- **Size:** A lasrge class; break parts into utilities and services if needed.
+- **Examples:** OrderManagers, SubcriptionManagers, UserManagers.
+
+### Orchestrators
+
+- **Purpose:** Coordinate and manage interactions between various Managers, thus Oversees business processes that span multiple functionalities and services.
+- **Characteristics:** State-altering, decision-making, centralized control, stateful, high-level components, Single Instance per Domain.
+- **Naming Convention:** Typically ends with "Orchestrator" (e.g., `OrderOrchestrator`).
+- **Size:** Cordinates all things at a module level; to prevent a God objest, break parts into Managers.
+- **Examples:** OrderOrchestrator, UserOrchestrator.
 
 #### Engines
 
