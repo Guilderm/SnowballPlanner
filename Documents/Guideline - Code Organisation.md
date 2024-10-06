@@ -141,31 +141,31 @@ Functional organization categorizes code based on the specific tasks or function
 
 #### Utilities
 
-- **Purpose:** Perform specific tasks, often referred to as helpers.
+- **Purpose:** Perform small specific tasks, often referred to as helpers.
 - **Characteristics:** Domain-independent, stateless, low-level components.
-- **Size:** A handful of functions.
+- **Size:** A handful of functions, that lives in a class.
 - **Examples:** Logging, input validation.
 
 #### Services
 
-- **Purpose:** Deliver specific business capabilities aligned with organizational objectives.
+- **Purpose:** Perform specific tasks, often aided by a utility.
 - **Characteristics:** Modular, stateless, mostly domain-specific, mid-level components.
-- **Size:** A small class; break parts into utilities if needed.
+- **Size:** A small class; break parts into utilities as needed.
 - **Examples:** User authentication, payment processing, notification services.
 
 ### Managers
 
-- **Purpose:** Handles specific tasks, resources, and functionalities within a domain, supporting the workflows of a Orchestrator.
+- **Purpose:** Manages services and utilites, supporting the workflows of a Orchestrator.
 - **Characteristics:** State-altering, decision-making, state aware, high-level components, strictly domain-specific.
-- **Size:** A lasrge class; break parts into utilities and services if needed.
+- **Size:** A large class; break parts into utilities and services as needed.
 - **Examples:** OrderManagers, SubcriptionManagers, UserManagers.
 
 ### Orchestrators
 
-- **Purpose:** Coordinate and manage interactions between various Managers, thus Oversees business processes that span multiple functionalities and services.
+- **Purpose:** Coordinate interactions between Managers, thus Oversing all processes withing a domaind.
 - **Characteristics:** State-altering, decision-making, centralized control, stateful, high-level components, Single Instance per Domain.
 - **Naming Convention:** Typically ends with "Orchestrator" (e.g., `OrderOrchestrator`).
-- **Size:** Cordinates all things at a module level; to prevent a God objest, break parts into Managers.
+- **Size:** Cordinates all things at a module level; to prevent a God objest, funtions into Managers.
 - **Examples:** OrderOrchestrator, UserOrchestrator.
 
 #### Engines
