@@ -598,6 +598,8 @@ Manages manual data import/export processes.
 
 Imports and updates loan information from third-party sources such as YNAB.
 
+### Mangement Domain
+
 ## Architecture Diagrams
 
 ### C4 Context Diagram
