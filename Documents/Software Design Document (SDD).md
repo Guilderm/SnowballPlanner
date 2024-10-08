@@ -166,7 +166,7 @@ Architecturally significant decisions are documented in an Architecture Decision
 - CI/CD Pipelines: GitHub Actions
   - Automated builds, testing, and deployments.
 - Automated Testing and Code Quality Tools:
-  - Unit and Integration Testing: Vitest
+  - Unit and Integration Testing: Jest
   - UI Component Testing: Storybook
   - End-to-End (E2E) Testing: Playwright
   - Linting and Formatting: ESLint, Prettier
@@ -217,7 +217,7 @@ Architecturally significant decisions are documented in an Architecture Decision
 ### Frontend
 
 - Language: JavaScript
-- Framework: Vue
+- Framework: React
 - Hosting Platform: Cloudflare Pages
 
 **Rationale**:
@@ -229,6 +229,7 @@ Architecturally significant decisions are documented in an Architecture Decision
 - Design Methodology: Layered Architecture with Atomic Design
 
 - UI Libraries and Tools: Tailwind CSS
+- Routing: React Router
 
 **Key Features**:
 
