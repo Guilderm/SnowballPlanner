@@ -86,6 +86,10 @@ Avoids technologies marked as end-of-life or those experiencing declining commun
 
 Favors technologies that offer long-term service releases or have a mature, stable codebase.
 
+### 4.4 Technical Debt
+
+How well do they remove there legagy code and outdated ways of doing things
+
 ## 5. UX
 
 ### 5.1 Ergonomics
