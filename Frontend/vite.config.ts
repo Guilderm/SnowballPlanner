@@ -4,12 +4,9 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-  ],
+  plugins: [vue()],
   resolve: {
     alias: {
-      // Simplifies imports by allowing '@' to map to the /src folder
       '@': path.resolve(__dirname, './src'),
     },
   },
