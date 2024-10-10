@@ -185,3 +185,4 @@ prisma/.env
 *.old
 *.tmp
 *.temp
+*storybook.log
