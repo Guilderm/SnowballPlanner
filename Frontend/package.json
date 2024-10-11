@@ -15,6 +15,7 @@
     "backup": "npm run cleanup && powershell -ExecutionPolicy Bypass -File ../Utilities/Backup/Repository_CleanAndBackup.ps1"
   },
   "dependencies": {
+    "@primevue/themes": "^4.1.0",
     "axios": "^1.7.7",
     "pinia": "^2.2.4",
     "primeicons": "^7.0.0",
