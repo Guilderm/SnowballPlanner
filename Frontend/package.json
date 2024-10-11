@@ -9,10 +9,10 @@
     "preview": "vite preview",
     "sonar": "sonar-scanner",
     "format": "prettier --write .",
-    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx,vue}\"",
-    "lint:fix": "eslint --fix \"src/**/*.{ts,tsx,js,jsx,vue}\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "test": "vitest",
-    "cleanup": "npm run format && npm run lint:fix && npm run sonar",
+    "cleanup": "npm run lint:fix && npm run format && npm run sonar",
     "backup": "npm run cleanup && powershell -ExecutionPolicy Bypass -File ../Utilities/Backup/Repository_CleanAndBackup.ps1"
   },
   "dependencies": {
@@ -27,10 +27,11 @@
     "@eslint/js": "^9.12.0",
     "@pinia/testing": "^0.1.6",
     "@vitejs/plugin-vue": "^5.1.4",
-    "@vue/eslint-config-typescript": "^14.0.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "eslint": "^8.57.1",
+    "eslint-plugin-vue": "^9.29.0",
     "globals": "^15.11.0",
     "jsdom": "^25.0.1",
-    "prettier": "^3.3.3",
     "sonarqube-scanner": "^4.2.3",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.8.1",
@@ -38,6 +39,5 @@
     "vite-plugin-eslint": "^1.8.1",
     "vitest": "^2.1.2",
     "vue-tsc": "^2.1.6"
-  },
-  "eslintConfig": {}
+  }
 }
