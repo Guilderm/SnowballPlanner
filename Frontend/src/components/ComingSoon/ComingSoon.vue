@@ -29,8 +29,8 @@
 import ProgressBar from './ProgressBar.vue';
 import CountdownTimer from './CountdownTimer.vue';
 import EmailForm from './EmailForm.vue';
-import HamburgerMenu from './HamburgerMenu.vue';
 import SocialMediaLinks from './SocialMediaLinks.vue';
+import HamburgerMenu from '../HamburgerMenu.vue';
 
 export default {
   name: 'ComingSoon',

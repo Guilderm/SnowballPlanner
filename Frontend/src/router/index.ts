@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import ComingSoon from '@/components/ComingSoon.vue';
+import ComingSoon from '@/components/ComingSoon/ComingSoon.vue';
 
 const routes = [
   {

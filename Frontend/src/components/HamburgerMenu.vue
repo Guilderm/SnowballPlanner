@@ -4,11 +4,10 @@
       <span class="bar" v-for="n in 3" :key="n"></span>
     </button>
     <div class="menu" v-if="menuOpen">
-      <!-- Menu items can be added here -->
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Beta Sign-Up</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/about">About</router-link></li>
+        <li><router-link to="/contact">Contact</router-link></li>
       </ul>
     </div>
   </div>
@@ -16,7 +15,6 @@
 
 <script>
 export default {
-  name: 'HamburgerMenu',
   data() {
     return {
       menuOpen: false,
@@ -49,7 +47,7 @@ export default {
   width: 25px;
   height: 3px;
   margin: 4px;
-  background-color: white;
+  background-color: black;
 }
 
 .menu {
