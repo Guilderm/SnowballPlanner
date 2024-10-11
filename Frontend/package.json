@@ -7,12 +7,11 @@
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "sonar": "sonar-scanner",
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "vitest",
-    "cleanup": "npm run lint:fix && npm run format && npm run sonar",
+    "cleanup": "npm run lint:fix && npm run format",
     "backup": "npm run cleanup && powershell -ExecutionPolicy Bypass -File ../Utilities/Backup/Repository_CleanAndBackup.ps1"
   },
   "dependencies": {
@@ -35,7 +34,6 @@
     "globals": "^15.11.0",
     "jsdom": "^25.0.1",
     "prettier": "3.3.3",
-    "sonarqube-scanner": "^4.2.3",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.8.1",
     "vite": "^5.4.8",
