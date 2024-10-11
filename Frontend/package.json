@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@primevue/themes": "^4.1.0",
+    "@vue/compiler-sfc": "^3.5.12",
     "axios": "^1.7.7",
     "pinia": "^2.2.4",
     "primeicons": "^7.0.0",

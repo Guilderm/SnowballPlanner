@@ -1,18 +1,21 @@
+<!-- src/App.vue -->
 <template>
   <div id="app">
-    <Toast />
-    <router-view />
+    <PrimeToast />
+    <ComingSoon />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Toast from 'primevue/toast';
+import ComingSoon from './components/ComingSoon.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    Toast,
+    PrimeToast: Toast,
+    ComingSoon,
   },
 });
 </script>
