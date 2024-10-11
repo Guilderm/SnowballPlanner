@@ -11,7 +11,8 @@
     "format": "prettier --write .",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx,.vue src",
     "lint:fix": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src",
-    "test": "vitest"
+    "test": "vitest",
+    "Backup": "powershell -ExecutionPolicy Bypass -File ./Utilities/Backup/Repository_CleanAndBackup.ps1"
   },
   "dependencies": {
     "axios": "^1.7.7",
@@ -39,5 +40,6 @@
     "vite-plugin-eslint": "^1.8.1",
     "vitest": "^2.1.2",
     "vue-tsc": "^2.1.6"
-  }
+  },
+  "eslintConfig": {}
 }
