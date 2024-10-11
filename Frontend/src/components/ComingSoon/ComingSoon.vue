@@ -15,7 +15,10 @@
       <SocialMediaLinks />
 
       <div class="contact-email">
-        <p>Contact us at: <a href="mailto:info@DebtFreePlanner.app">info@DebtFreePlanner.app</a></p>
+        <p>
+          Contact us at:
+          <a href="mailto:info@DebtFreePlanner.app">info@DebtFreePlanner.app</a>
+        </p>
       </div>
 
       <div class="cta">
@@ -44,7 +47,9 @@ export default {
   methods: {
     signUpForBeta() {
       // Implement the signup logic or navigation here
-      alert('Thank you for your interest! We will notify you when the beta program is available.');
+      alert(
+        'Thank you for your interest! We will notify you when the beta program is available.',
+      );
     },
   },
 };
@@ -91,7 +96,7 @@ h1 {
 }
 
 .cta button {
-  background-color: #007BFF; /* Blue */
+  background-color: #007bff; /* Blue */
   color: white;
   padding: 10px 20px;
   border: none;

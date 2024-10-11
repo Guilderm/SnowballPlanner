@@ -1,5 +1,5 @@
 {
-  "name": "deathfreeplanner-frontend",
+  "name": "debtfreeplanner-frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,10 +9,9 @@
     "preview": "vite preview",
     "sonar": "sonar-scanner",
     "format": "prettier --write .",
-    "lint": "eslint --ext .ts,.vue src",
-    "test": "vitest",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "lint": "eslint --ext .ts,.tsx,.js,.jsx,.vue src",
+    "lint:fix": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src",
+    "test": "vitest"
   },
   "dependencies": {
     "axios": "^1.7.7",
@@ -23,36 +22,22 @@
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.9.0",
     "@pinia/testing": "^0.1.6",
-    "@storybook/addon-essentials": "^8.3.5",
-    "@storybook/addon-interactions": "^8.3.5",
-    "@storybook/addon-links": "^8.3.5",
-    "@storybook/addon-onboarding": "^8.3.5",
-    "@storybook/blocks": "^8.3.5",
-    "@storybook/test": "^8.3.5",
-    "@storybook/vue3": "^8.3.5",
-    "@storybook/vue3-vite": "^8.3.5",
+    "@typescript-eslint/eslint-plugin": "^8.8.1",
+    "@typescript-eslint/parser": "^8.8.1",
     "@vitejs/plugin-vue": "^5.1.4",
     "@vue/eslint-config-typescript": "^14.0.0",
     "eslint": "^9.12.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-storybook": "^0.9.0",
     "eslint-plugin-vue": "^9.28.0",
     "jsdom": "^25.0.1",
     "prettier": "^3.3.3",
     "sonarqube-scanner": "^4.2.3",
-    "storybook": "^8.3.5",
     "typescript": "^5.5.3",
     "vite": "^5.4.8",
     "vite-plugin-eslint": "^1.8.1",
     "vitest": "^2.1.2",
     "vue-tsc": "^2.1.6"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
   }
 }

@@ -79,7 +79,7 @@ export default {
 
 .number {
   font-size: 2em;
-  color: #007BFF; /* Blue */
+  color: #007bff; /* Blue */
 }
 
 .label {

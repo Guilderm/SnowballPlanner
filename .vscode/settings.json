@@ -1,4 +1,14 @@
+// Frontend\eslint.config.js
 {
-  "pieces.cloudCapabilities": "Blended",
-  "pieces.telemetry": true
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ]
 }

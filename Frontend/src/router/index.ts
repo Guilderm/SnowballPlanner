@@ -1,3 +1,5 @@
+//Frontend\src\router\index.ts
+
 import { createRouter, createWebHistory } from 'vue-router';
 import ComingSoon from '@/components/ComingSoon/ComingSoon.vue';
 
