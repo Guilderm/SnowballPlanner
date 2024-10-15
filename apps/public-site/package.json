@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.1.0",
     "@headlessui/react": "^2.1.10",
     "@heroicons/react": "^2.1.5",
     "clsx": "^2.1.1",

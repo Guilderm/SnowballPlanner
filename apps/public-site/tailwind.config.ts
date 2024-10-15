@@ -1,5 +1,4 @@
 // apps/public-site/tailwind.config.ts
-
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -15,7 +14,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ['"Inter Variable"', "sans-serif"],
+        sans: ["var(--font-inter)", "sans-serif"],
       },
     },
   },

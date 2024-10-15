@@ -1,8 +1,5 @@
 /* src/styles/globals.css */
 
-/* Import the Inter variable font */
-@import "@fontsource/inter/variable.css";
-
 /* Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
@@ -25,7 +22,6 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Inter Variable', sans-serif;
 }
 
 @layer utilities {
