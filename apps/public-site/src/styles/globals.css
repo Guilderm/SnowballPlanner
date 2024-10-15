@@ -1,7 +1,14 @@
+/* src/styles/globals.css */
+
+/* Import the Inter variable font */
+@import "@fontsource/inter/variable.css";
+
+/* Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom CSS variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -14,10 +21,11 @@
   }
 }
 
+/* Global styles */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter Variable', sans-serif;
 }
 
 @layer utilities {
