@@ -501,6 +501,162 @@ Conflicting record versions are displayed side by side, with differences highlig
 
 DebtFreePlanner offers a tiered licensing model to accommodate the varying needs of loan recipients. The licensing is structured to provide essential features in the free version while offering enhanced capabilities in the paid tiers. This section outlines the limitations and features associated with each licensing level.
 
+### Monorepo Structure
+
+#### 4.1 Overview
+
+The DebtFreePlanner application adopts a monorepo (monolithic repository) architecture to manage its codebase. Following this structure:
+
+debtfreeplanner/
+├── apps/
+│   ├── public-site/
+│   │   ├── src/
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── ... (config files)
+│   ├── web-app/
+│   │   ├── src/
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── ... (config files)
+│   ├── api-server/
+│   │   ├── src/
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   └── ... (config files)
+│   └── ... (additional apps or services)
+├── libs/
+│   ├── ui-components/
+│   ├── types/
+│   ├── utils/
+│   └── ... (additional libraries)
+├── tools/
+├── scripts/
+├── config/
+├── package.json
+├── tsconfig.base.json
+├── .gitignore
+└── README.md
+
+#### 4.2 Directory Details
+
+##### 4.2.1 `apps/` Directory
+
+The `apps/` directory houses all deployable applications and services.
+
+- **public-site/**
+
+  - **Purpose**: Hosts the static marketing website, including landing pages, blog posts, and documentation.
+  - **Technology Stack**: Implemented using a Static Site Generator (e.g., VuePress) and hosted on Cloudflare Pages.
+  - **Structure**:
+    - `src/`: Source code for the static site.
+    - `package.json`: Defines dependencies and scripts specific to the public site.
+    - `README.md`: Documentation and setup instructions for the public site.
+    - Config Files: Configuration for the static site generator and deployment settings.
+
+- **web-app/**
+
+  - **Purpose**: Contains the private frontend, a Progressive Web App (PWA) that users interact with for debt management and planning.
+  - **Technology Stack**: Built with Next.js and hosted on Google Cloud Platform (GCP) App Engine.
+  - **Structure**:
+    - `src/`: Source code for the PWA.
+    - `package.json`: Defines dependencies and scripts specific to the web app.
+    - `README.md`: Documentation and setup instructions for the web app.
+    - Config Files: Configuration for Next.js, environment variables, and deployment settings.
+
+- **api-server/**
+
+  - **Purpose**: Manages backend RESTful APIs that handle business logic, data processing, and interactions with databases.
+  - **Technology Stack**: Developed using Node.js with Express or Deno, deployed on Google Cloud Run.
+  - **Structure**:
+    - `src/`: Source code for the backend API.
+    - `package.json`: Defines dependencies and scripts specific to the API server.
+    - `README.md`: Documentation and setup instructions for the API server.
+    - Config Files: Configuration for the server environment, Dockerfile for containerization, and deployment settings.
+
+- **... (Additional Apps or Services)**: Future applications or microservices can be added as separate subdirectories within `apps/`, ensuring scalability and organized growth.
+
+##### 4.2.2 `libs/` Directory
+
+The `libs/` directory contains shared libraries and modules that promote code reuse across different applications and services. By centralizing common functionalities, the monorepo enhances maintainability and reduces duplication.
+
+- **ui-components/**
+
+  - **Purpose**: Stores reusable UI components (e.g., buttons, forms, modals) that can be utilized by both the `public-site` and `web-app`.
+  - **Structure**:
+    - `src/`: Source code for UI components.
+    - Exports: Centralized exports for easy import into applications.
+    - `package.json`: Defines dependencies and export configurations.
+
+- **types/**
+
+  - **Purpose**: Houses shared TypeScript type definitions and interfaces to ensure type safety and consistency across the codebase.
+  - **Structure**:
+    - `src/`: Type definitions.
+    - `package.json`: Minimal configuration for type sharing.
+
+- **utils/**
+
+  - **Purpose**: Contains utility functions and helpers (e.g., date formatting, data validation) that can be leveraged by multiple applications and services.
+  - **Structure**:
+    - `src/`: Source code for utility functions.
+    - `package.json`: Defines dependencies and export configurations.
+
+- **... (Additional Libraries)**: Additional shared libraries (e.g., `shared-services/`, `shared-hooks/`) can be added to support evolving application needs.
+
+##### 4.2.3 `tools/` Directory
+
+The `tools/` directory is designated for custom development tools, generators, or plugins that assist in building, maintaining, and enhancing the monorepo. This may include scripts for code generation, linters, or other development utilities.
+
+##### 4.2.4 `scripts/` Directory
+
+The `scripts/` directory contains automation scripts for various tasks such as deployment, database migrations, data seeding, or other repetitive operations. Centralizing scripts promotes consistency and ease of use across the development team.
+
+##### 4.2.5 `config/` Directory
+
+The `config/` directory holds centralized configuration files for various tools and services, ensuring uniformity and consistency across all applications and libraries.
+
+- **Configuration Examples**:
+  - ESLint: Linting rules and settings.
+  - Prettier: Code formatting rules.
+  - Jest: Testing configurations.
+  - TypeScript: Base TypeScript configurations.
+
+##### 4.2.6 Root-Level Files
+
+- **package.json**
+
+  - **Purpose**: Defines root-level dependencies, scripts, and workspace configurations. It often includes shared dependencies and scripts that affect the entire monorepo.
+
+- **.gitignore**
+
+  - **Purpose**: Specifies files and directories to be ignored by Git, ensuring that unnecessary or sensitive files are not tracked.
+
+- **README.md**
+  - **Purpose**: Provides an overview of the monorepo.
+
+#### 4.3 Rationale and Benefits
+
+##### 4.3.1 Clear Separation of Concerns
+
+- **Isolation of Applications and Services**: By segregating frontend applications (`public-site`, `web-app`) and backend services (`api-server`), each component can be developed, tested, and deployed independently, enhancing modularity.
+- **Shared Libraries**: Centralizing shared code in `libs/` promotes reuse and reduces duplication, leading to a more maintainable codebase.
+
+##### 4.3.2 Scalability and Maintainability
+
+- **Ease of Expansion**: The flat structure within `apps/` allows for straightforward addition of new applications or microservices without deep nesting, facilitating scalability as the application grows.
+- **Consistent Naming Conventions**: Descriptive and uniform naming across directories and projects improves clarity, making it easier for developers to navigate and understand the repository.
+
+##### 4.3.3 Streamlined Development Processes
+
+- **Unified Tooling**: Centralized configurations in the `config/` directory ensure that all projects adhere to the same development standards, simplifying tooling management.
+- **Efficient Dependency Management**: A monorepo allows for easier management of dependencies across projects, reducing version conflicts and simplifying updates.
+
+##### 4.3.4 Enhanced Collaboration
+
+- **Single Source of Truth**: Having all projects within a single repository fosters better collaboration among team members, as changes across different parts of the application can be managed cohesively.
+- **Consistent Coding Standards**: Shared configurations and libraries enforce consistent coding practices, improving code quality and reducing the learning curve for new developers.
+
 ### Licensing Tiers
 
 #### Free Tier
