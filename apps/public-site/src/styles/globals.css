@@ -1,4 +1,4 @@
-/* src/styles/globals.css */
+/* apps/public-site/src/styles/globals.css */
 
 /* Tailwind CSS directives */
 @tailwind base;
@@ -24,6 +24,7 @@ body {
   background: var(--background);
 }
 
+/* Custom utility */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
