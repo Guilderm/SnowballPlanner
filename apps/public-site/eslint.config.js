@@ -1,71 +1,53 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
-import pluginVue from "eslint-plugin-vue";
-import pluginPrettier from "eslint-plugin-prettier";
-import prettierConfig from "eslint-config-prettier";
-import tailwindcss from "eslint-plugin-tailwindcss";
-import vueAccessibility from "eslint-plugin-vuejs-accessibility";
+// eslint.config.js
+import globals from 'globals'
+import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin'
+import tsParser from '@typescript-eslint/parser'
+import pluginVue from 'eslint-plugin-vue'
+import pluginPrettier from 'eslint-plugin-prettier'
+import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
+import vueAccessibilityPlugin from 'eslint-plugin-vuejs-accessibility'
+import vitestPlugin from 'eslint-plugin-vitest'
 
 export default [
-  // Specify file extensions to target
-  { files: ["**/*.{js,mjs,cjs,ts,vue}"] },
-
-  // Set global variables for the browser environment
-  { languageOptions: { globals: globals.browser } },
-
-  // JavaScript recommended config
-  pluginJs.configs.recommended,
-
-  // TypeScript recommended config
-  ...tseslint.configs.recommended,
-
-  // Vue 3 config
-  ...pluginVue.configs["flat/essential"],
-
-  // Vue.js accessibility plugin
-  vueAccessibility.configs.recommended,
-
-  // Add Prettier plugin for formatting
   {
+    // Ignore built files and node_modules
+    ignores: ['**/dist/**', '**/node_modules/**'],
+  },
+  {
+    // Base configuration
+    files: ['**/*.{js,mjs,cjs,ts,vue}'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+    },
     plugins: {
+      '@typescript-eslint': typescriptEslintPlugin,
+      vue: pluginVue,
+      'vuejs-accessibility': vueAccessibilityPlugin,
+      tailwindcss: tailwindcssPlugin,
+      vitest: vitestPlugin,
       prettier: pluginPrettier,
     },
     rules: {
-      "prettier/prettier": "error", // Ensure Prettier takes precedence over conflicting rules
+      // Include recommended rules from plugins directly
+      ...typescriptEslintPlugin.configs.recommended.rules,
+      ...pluginVue.configs['vue3-essential'].rules,
+      ...vueAccessibilityPlugin.configs.recommended.rules,
+      ...tailwindcssPlugin.configs.recommended.rules,
+      ...vitestPlugin.configs.recommended.rules,
+      'prettier/prettier': 'error',
+      'tailwindcss/classnames-order': 'warn',
+      'tailwindcss/no-custom-classname': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_' },
+      ],
     },
   },
-
-  // Tailwind CSS plugin
-  {
-    plugins: {
-      tailwindcss,
-    },
-    rules: {
-      "tailwindcss/classnames-order": "warn",
-      "tailwindcss/no-custom-classname": "off", // Optionally enable this if you want to enforce strict Tailwind usage
-    },
-  },
-
-  // Parsing for Vue files with TypeScript
-  {
-    files: ["**/*.vue"],
-    languageOptions: {
-      parserOptions: {
-        parser: tsParser,
-      },
-    },
-  },
-
-  // Add specific rules or overrides for TypeScript files if needed
-  {
-    files: ["**/*.ts"],
-    rules: {
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
-        { argsIgnorePattern: "^_" },
-      ], // Customize this rule to avoid unused var errors
-    },
-  },
-];
+]

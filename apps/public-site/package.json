@@ -7,7 +7,12 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "cleanup": "npm run lint:fix && npm run format",
+    "backup": "npm run cleanup && powershell -ExecutionPolicy Bypass -File ../Utilities/Backup/Repository_CleanAndBackup.ps1"
   },
   "dependencies": {
     "nuxt": "^3.13.0",
@@ -20,6 +25,8 @@
     "@tailwindcss/typography": "^0.5.15",
     "@typescript-eslint/eslint-plugin": "^8.9.0",
     "@typescript-eslint/parser": "^8.9.0",
+    "@vitest/ui": "^2.1.3",
+    "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.12.0",
     "eslint-config-prettier": "^9.1.0",
@@ -29,9 +36,11 @@
     "eslint-plugin-vue": "^9.29.0",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
     "globals": "^15.11.0",
+    "jsdom": "^25.0.1",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwindcss": "^3.4.14",
-    "typescript-eslint": "^8.9.0"
+    "vitest": "^2.1.3"
   }
 }

@@ -1,3 +1,6 @@
+/*apps\public-site\assets\style\global.css*/
+
+/* assets/style/global.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
