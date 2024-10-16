@@ -1,10 +1,10 @@
 {
-  "name": "nuxt-app",
+  "name": "public-site",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "npm run cleanup && nuxt dev -- -o",
+    "dev": "npm run format && nuxt dev",
     "test": "vitest run",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
