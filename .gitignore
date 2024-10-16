@@ -100,6 +100,9 @@ out/
 # Nuxt.js build / generate output
 .nuxt/
 dist/
+.output
+.data
+.nitro
 
 # Gatsby files
 .cache/
@@ -144,6 +147,10 @@ dist/
 .yarn/install-state.gz
 .pnp.*
 
+# IDE specific
+.fleet
+.idea
+
 # Office temporary files
 ~$*
 Documents/~$Product Backlog.xlsx
@@ -186,3 +193,10 @@ prisma/.env
 *.tmp
 *.temp
 *storybook.log
+
+# =========================
+# Local environment files
+# =========================
+.env
+.env.*
+!.env.example
