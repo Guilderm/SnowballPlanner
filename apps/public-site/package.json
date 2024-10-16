@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "cleanup": "npm run lint:fix && npm run format",
-    "backup": "npm run cleanup && powershell -ExecutionPolicy Bypass -File ../Utilities/Backup/Repository_CleanAndBackup.ps1"
+    "backup": "npm run cleanup && powershell -ExecutionPolicy Bypass -File ../scripts/Backup/Repository_CleanAndBackup.ps1"
   },
   "dependencies": {
     "nuxt": "^3.13.0",

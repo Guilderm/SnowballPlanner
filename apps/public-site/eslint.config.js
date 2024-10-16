@@ -11,7 +11,7 @@ import vitestPlugin from 'eslint-plugin-vitest'
 export default [
   {
     // Ignore built files and node_modules
-    ignores: ['**/dist/**', '**/node_modules/**'],
+    ignores: ['**/dist/**', '**/node_modules/**', '**/.nuxt/**'],
   },
   {
     // Base configuration
