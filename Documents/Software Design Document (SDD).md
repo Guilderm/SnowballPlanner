@@ -509,27 +509,27 @@ The DebtFreePlanner application adopts a monorepo (monolithic repository) archit
 
 debtfreeplanner/
 ├── apps/
-│   ├── public-site/
-│   │   ├── src/
-│   │   ├── package.json
-│   │   ├── README.md
-│   │   └── ... (config files)
-│   ├── web-app/
-│   │   ├── src/
-│   │   ├── package.json
-│   │   ├── README.md
-│   │   └── ... (config files)
-│   ├── api-server/
-│   │   ├── src/
-│   │   ├── package.json
-│   │   ├── README.md
-│   │   └── ... (config files)
-│   └── ... (additional apps or services)
+│ ├── public-site/
+│ │ ├── src/
+│ │ ├── package.json
+│ │ ├── README.md
+│ │ └── ... (config files)
+│ ├── web-app/
+│ │ ├── src/
+│ │ ├── package.json
+│ │ ├── README.md
+│ │ └── ... (config files)
+│ ├── api-server/
+│ │ ├── src/
+│ │ ├── package.json
+│ │ ├── README.md
+│ │ └── ... (config files)
+│ └── ... (additional apps or services)
 ├── libs/
-│   ├── ui-components/
-│   ├── types/
-│   ├── utils/
-│   └── ... (additional libraries)
+│ ├── ui-components/
+│ ├── types/
+│ ├── utils/
+│ └── ... (additional libraries)
 ├── tools/
 ├── scripts/
 ├── config/
