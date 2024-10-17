@@ -1,12 +1,13 @@
 // C:\Repository\DebtFreePlanner\apps\public-site\nuxt.config.ts
 
 export default defineNuxtConfig({
-  rootDir: 'ui/', // Specifies that the 'ui' folder is the root of the Nuxt app
-  css: ['@/assets/style/global.css'], // Ensure the path is correct relative to 'ui/'
+  srcDir: 'ui/', // Use srcDir instead of rootDir
+  css: ['@/assets/style/global.css'],
 
   app: {
     head: {
-      title: 'DebtFreePlanner - Strategically Plan Your Journey to a Debt-Free Living',
+      title:
+        'DebtFreePlanner - Strategically Plan Your Journey to a Debt-Free Living',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -20,35 +21,23 @@ export default defineNuxtConfig({
         },
         {
           name: 'keywords',
-          content: 'Debt management, Debt repayment, Financial planning, Multicurrency support',
-        },
-        {
-          property: 'og:title',
-          content: 'DebtFreePlanner - Strategically Plan Your Journey to a Debt-Free Living',
-        },
-        {
-          property: 'og:description',
-          content: 'Manage and accelerate your debt repayment plans with DebtFreePlanner.',
-        },
-        {
-          property: 'og:image',
-          content: '/images/og-image.png', // Ensure this image exists in your static assets
-        },
-        {
-          property: 'og:url',
-          content: 'https://yourdomain.com', // Replace with your actual domain
+          content:
+            'Debt management, Debt repayment, Financial planning, Multicurrency support',
         },
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }, // Correct favicon path
-        // You can add more link tags if needed
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }, // Ensure favicon exists in ui/public/favicon.ico
       ],
     },
   },
 
-  compatibilityDate: '2024-10-17', // Future-proofing with compatibility date
-
   modules: ['@nuxtjs/tailwindcss'], // Include Tailwind CSS module
-
-  // Other configurations can be added here as needed
-});
+  devtools: { enabled: true },
+  compatibilityDate: '2024-10-17',
+  tailwindcss: {
+    viewer: true,
+  },
+  nitro: {
+    logLevel: 4, // 0: none, 1: error, 2: warn, 3: info, 4: debug
+  },
+})

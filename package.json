@@ -17,6 +17,7 @@
     "prettier": "^2.8.0"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.1.5",
     "nuxt": "^3.13.2"
   }
 }

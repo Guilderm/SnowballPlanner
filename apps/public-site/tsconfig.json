@@ -1,10 +1,11 @@
+// C:\Repository\DebtFreePlanner\apps\public-site\tsconfig.json
+
 {
-  "extends": "./ui/tsconfig.json",
   "compilerOptions": {
-    "types": ["@nuxt/types"],
-    "baseUrl": ".",
+    "types": ["@types/node"],
+    "baseUrl": "ui/",
     "paths": {
-      "@/*": ["ui/*"]
+      "@/*": ["./*"]
     }
   },
   "include": [
@@ -14,5 +15,6 @@
     "api/**/*.ts",
     "libs/**/*.ts",
     "types/**/*.ts"
-  ]
+  ],
+  "exclude": ["node_modules", ".nuxt", "dist"]
 }
