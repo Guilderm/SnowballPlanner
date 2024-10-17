@@ -2,12 +2,9 @@
   "name": "public-site",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": "^23"
-  },
   "scripts": {
     "build": "nuxt build",
-    "dev": "npm run format && nuxt dev",
+    "dev": "nuxt dev",
     "test": "vitest run",
     "generate": "nuxt generate",
     "preview": "nuxt preview",

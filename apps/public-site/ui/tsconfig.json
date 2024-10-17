@@ -1,0 +1,19 @@
+// C:\Repository\DebtFreePlanner\apps\public-site\ui\tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "types": ["@nuxt/types", "@types/node"]
+  },
+  "exclude": ["node_modules", ".nuxt", "dist"],
+  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue"]
+}

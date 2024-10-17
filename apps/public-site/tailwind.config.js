@@ -1,20 +1,21 @@
-// tailwind.config.js
+// C:\Repository\DebtFreePlanner\apps\public-site\tailwind.config.js
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './components/**/*.{vue,js,ts}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './composables/**/*.{js,ts}',
-    './plugins/**/*.{js,ts}',
-    './app.vue',
-    './error.vue',
+    './ui/components/**/*.{vue,js,ts}',
+    './ui/layouts/**/*.{vue,js,ts}',
+    './ui/pages/**/*.{vue,js,ts}',
+    './ui/app.vue',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#1E40AF', // Example: blue color
+        accent: '#10B981', // Example: green color
+        neutral: '#6B7280', // Example: gray color
+      },
+    },
   },
-  plugins: [
-    require('@tailwindcss/forms'), // For better form styling
-    require('@tailwindcss/typography'), // For rich text formatting
-    // Add other plugins if needed
-  ],
+  plugins: [],
 }

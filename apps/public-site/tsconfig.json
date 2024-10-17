@@ -1,6 +1,19 @@
-// https://nuxt.com/docs/guide/concepts/typescript
+// C:\Repository\DebtFreePlanner\apps\public-site\tsconfig.json
 {
-  "extends": "./.nuxt/tsconfig.json",
-  "include": ["**/*.ts", "**/*.d.ts", "test/**/*.ts"],
-  "exclude": ["node_modules", ".nuxt"]
+  "extends": "./ui/tsconfig.json",
+  "compilerOptions": {
+    "types": ["@nuxt/types"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["ui/*"]
+    }
+  },
+  "include": [
+    "ui/**/*.ts",
+    "ui/**/*.d.ts",
+    "ui/**/*.vue",
+    "api/**/*.ts",
+    "libs/**/*.ts",
+    "types/**/*.ts"
+  ]
 }

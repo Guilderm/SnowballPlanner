@@ -1,3 +1,4 @@
+<!-- \ui\app.vue -->
 <template>
   <div>
     <NuxtRouteAnnouncer />
@@ -8,7 +9,7 @@
 </template>
 
 <script setup>
-/* No additional script needed  */
+// No additional script needed
 </script>
 
 <style>
