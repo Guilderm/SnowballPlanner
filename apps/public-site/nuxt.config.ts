@@ -12,13 +12,6 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
-    // Optional: Configure PostCSS preset options if needed
-    // preset: {
-    //   autoprefixer: {
-    //     grid: true,
-    //   },
-    // },
   },
-
   // Additional Nuxt Configurations (if any)
 })
