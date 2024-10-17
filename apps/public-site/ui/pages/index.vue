@@ -87,6 +87,27 @@ const submitEmail = async () => {
 };
 </script>
 
+<script>
+export default {
+  head() {
+    return {
+      title: 'Home - DebtFreePlanner',
+      meta: [
+        {
+          name: 'description',
+          content: 'Welcome to DebtFreePlanner. Strategically plan your journey to a debt-free life.',
+        },
+        {
+          name: 'author',
+          content: 'Guilder W. Milliner',
+        },
+        // Add any other page-specific meta tags here
+      ],
+    };
+  },
+};
+</script>
+
 <style scoped>
 /* Add page-specific styles here if necessary */
 </style>

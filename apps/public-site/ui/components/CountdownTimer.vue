@@ -1,4 +1,3 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\CountdownTimer.vue -->
 <template>
   <div class="flex space-x-4 justify-center mt-8">
     <div class="text-center">
@@ -20,7 +19,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const targetDate = new Date('2024-12-01T00:00:00'); // Set your launch date here
@@ -30,7 +29,7 @@ const hours = ref(0);
 const minutes = ref(0);
 const seconds = ref(0);
 
-let timer: number;
+let timer: number | undefined; // Changed this to allow possible 'undefined'
 
 const updateCountdown = () => {
   const now = new Date();
@@ -43,7 +42,9 @@ const updateCountdown = () => {
     seconds.value = Math.floor((timeRemaining / 1000) % 60);
   } else {
     days.value = hours.value = minutes.value = seconds.value = 0;
-    clearInterval(timer);
+    if (timer !== undefined) {
+      clearInterval(timer);
+    }
   }
 };
 
@@ -53,7 +54,9 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  clearInterval(timer);
+  if (timer !== undefined) {
+    clearInterval(timer);
+  }
 });
 </script>
 
