@@ -24,6 +24,8 @@ export default [
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
+        project: './tsconfig.json', // Ensures compatibility with TypeScript
+        extraFileExtensions: ['.vue'], // Support for Vue 3 single-file components (SFC)
       },
     },
     plugins: {
@@ -34,6 +36,12 @@ export default [
       vitest: vitestPlugin,
       prettier: pluginPrettier,
     },
+    extends: [
+      'eslint:recommended',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:vue/vue3-recommended',
+      'plugin:prettier/recommended',
+    ],
     rules: {
       // Include recommended rules from plugins directly
       ...typescriptEslintPlugin.configs.recommended.rules,
@@ -41,12 +49,12 @@ export default [
       ...vueAccessibilityPlugin.configs.recommended.rules,
       ...tailwindcssPlugin.configs.recommended.rules,
       ...vitestPlugin.configs.recommended.rules,
-      'prettier/prettier': 'error',
+      'prettier/prettier': 'error', // Ensure Prettier formatting
       'tailwindcss/classnames-order': 'warn',
-      'tailwindcss/no-custom-classname': 'off',
+      'tailwindcss/no-custom-classname': 'off', // Disable custom class check
       '@typescript-eslint/no-unused-vars': [
         'warn',
-        { argsIgnorePattern: '^_' },
+        { argsIgnorePattern: '^_' }, // Ignore unused variables starting with _
       ],
     },
   },

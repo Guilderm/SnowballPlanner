@@ -1,19 +1,23 @@
+<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\CountdownTimer.vue -->
 <template>
   <div class="flex space-x-4 justify-center mt-8">
     <div class="text-center">
-      <p class="text-4xl font-bold">{{ days }}</p>
+      <p class="text-4xl font-bold text-gray-800">{{ days }}</p>
       <p class="text-sm text-gray-600">Days</p>
     </div>
+    <span class="text-4xl font-bold text-gray-600">:</span>
     <div class="text-center">
-      <p class="text-4xl font-bold">{{ hours }}</p>
+      <p class="text-4xl font-bold text-gray-800">{{ hours }}</p>
       <p class="text-sm text-gray-600">Hours</p>
     </div>
+    <span class="text-4xl font-bold text-gray-600">:</span>
     <div class="text-center">
-      <p class="text-4xl font-bold">{{ minutes }}</p>
+      <p class="text-4xl font-bold text-gray-800">{{ minutes }}</p>
       <p class="text-sm text-gray-600">Minutes</p>
     </div>
+    <span class="text-4xl font-bold text-gray-600">:</span>
     <div class="text-center">
-      <p class="text-4xl font-bold">{{ seconds }}</p>
+      <p class="text-4xl font-bold text-gray-800">{{ seconds }}</p>
       <p class="text-sm text-gray-600">Seconds</p>
     </div>
   </div>
@@ -29,7 +33,7 @@ const hours = ref(0);
 const minutes = ref(0);
 const seconds = ref(0);
 
-let timer: number | undefined; // Changed this to allow possible 'undefined'
+let timer: number | undefined;
 
 const updateCountdown = () => {
   const now = new Date();

@@ -16,6 +16,7 @@
     "backup": "npm run cleanup && powershell -ExecutionPolicy Bypass -File ../scripts/Backup/Repository_CleanAndBackup.ps1"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.1.5",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "nuxt": "^3.13.0",
     "vue": "latest",
