@@ -29,18 +29,11 @@ const message = ref('');
 
 const submitEmail = async () => {
   // Placeholder for email submission logic
-  // Integrate with a backend API or a service like Mailchimp
-  // Example:
-  // await fetch('/api/subscribe', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify({ email: email.value }),
-  // });
   message.value = `Thank you! We will notify you at ${email.value}`;
   email.value = '';
 };
 </script>
 
 <style scoped>
-/* Add component-specific styles here if necessary */
+/* No additional styles needed */
 </style>

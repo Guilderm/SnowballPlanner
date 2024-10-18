@@ -21,5 +21,5 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <style scoped>
-/* Add component-specific styles here if necessary */
+/* No additional styles needed */
 </style>

@@ -1,3 +1,4 @@
+<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\coming-soon\Features.vue -->
 <template>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
     <div class="text-center">
@@ -19,10 +20,9 @@
 </template>
 
 <script setup>
-// Import Heroicons v2 icons
 import { CreditCardIcon, CurrencyDollarIcon, RocketLaunchIcon } from '@heroicons/vue/24/outline';
 </script>
 
 <style scoped>
-/* Add any component-specific styles if necessary */
+/* No additional styles needed */
 </style>

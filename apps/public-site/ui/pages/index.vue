@@ -1,78 +1,71 @@
 <!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\pages\index.vue -->
 <template>
-  <section class="bg-gray-50">
-    <!-- Hero Section -->
-    <div class="container mx-auto px-4 py-12">
-      <!-- Headline -->
-      <div class="text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-800">
-          Strategically Plan Your Journey to a Debt-Free Living
-        </h1>
-        <p class="mt-4 text-lg text-gray-600">
-          Coming soon: A powerful web-based tool to manage and accelerate your debt repayment plans.
-        </p>
-      </div>
+  <section class="coming-soon-section">
+    <!-- Main content with parallax background -->
+    <div class="content-wrapper">
+      <div class="container flex flex-col items-center mx-auto px-4 py-12">
+        <!-- Launch Announcement Component -->
+        <LaunchAnnouncement />
 
-      <!-- Hero Image -->
-      <div class="mt-8 flex justify-center">
-        <img
-          src="/images/hero-image.svg"
-          alt="DebtFreePlanner Illustration"
-          class="w-full max-w-md"
-        />
-      </div>
+        <!-- Countdown Timer -->
+        <CountdownTimer />
 
-      <!-- Launch Date -->
-      <div class="mt-4 text-center">
-        <p class="text-gray-700 text-lg">Launching on December 1st, 2024</p>
-      </div>
+        <!-- Email Signup Form -->
+        <EmailSignupForm />
 
-      <!-- Countdown Timer -->
-      <CountdownTimer />
-
-      <!-- Email Signup Form -->
-      <EmailSignupForm />
-    </div>
-
-    <!-- Features Section -->
-    <div class="bg-white py-12">
-      <div class="container mx-auto px-4">
-        <Features />
+        <!-- Features Section -->
+        <div class="features mt-12">
+          <Features />
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-// Correcting the path for components to reflect your structure
+import LaunchAnnouncement from '@/components/coming-soon/LaunchAnnouncement.vue';
 import CountdownTimer from '@/components/coming-soon/CountdownTimer.vue';
 import EmailSignupForm from '@/components/coming-soon/EmailSignupForm.vue';
 import Features from '@/components/coming-soon/Features.vue';
 </script>
 
-<script>
-export default {
-  head() {
-    return {
-      title: 'Home - DebtFreePlanner',
-      meta: [
-        {
-          name: 'description',
-          content:
-            'Welcome to DebtFreePlanner. Strategically plan your journey to a debt-free life.',
-        },
-        {
-          name: 'author',
-          content: 'Guilder W. Milliner',
-        },
-        // Additional meta tags can be added here if needed
-      ],
-    };
-  },
-};
-</script>
-
 <style scoped>
+.coming-soon-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.coming-soon-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/coming-soon-background.jpg');
+  background-size: cover;
+  background-attachment: fixed; /* Parallax effect */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.features {
+  width: 100%;
+}
+
+.features > div {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
 .container {
   max-width: 1200px;
 }

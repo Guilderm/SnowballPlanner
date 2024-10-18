@@ -1,24 +1,24 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\CountdownTimer.vue -->
+<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\coming-soon\CountdownTimer.vue -->
 <template>
   <div class="flex space-x-4 justify-center mt-8">
     <div class="text-center">
-      <p class="text-4xl font-bold text-gray-800">{{ days }}</p>
-      <p class="text-sm text-gray-600">Days</p>
+      <p class="text-4xl font-bold text-white">{{ days }}</p>
+      <p class="text-sm text-white">Days</p>
     </div>
-    <span class="text-4xl font-bold text-gray-600">:</span>
+    <span class="text-4xl font-bold text-white">:</span>
     <div class="text-center">
-      <p class="text-4xl font-bold text-gray-800">{{ hours }}</p>
-      <p class="text-sm text-gray-600">Hours</p>
+      <p class="text-4xl font-bold text-white">{{ hours }}</p>
+      <p class="text-sm text-white">Hours</p>
     </div>
-    <span class="text-4xl font-bold text-gray-600">:</span>
+    <span class="text-4xl font-bold text-white">:</span>
     <div class="text-center">
-      <p class="text-4xl font-bold text-gray-800">{{ minutes }}</p>
-      <p class="text-sm text-gray-600">Minutes</p>
+      <p class="text-4xl font-bold text-white">{{ minutes }}</p>
+      <p class="text-sm text-white">Minutes</p>
     </div>
-    <span class="text-4xl font-bold text-gray-600">:</span>
+    <span class="text-4xl font-bold text-white">:</span>
     <div class="text-center">
-      <p class="text-4xl font-bold text-gray-800">{{ seconds }}</p>
-      <p class="text-sm text-gray-600">Seconds</p>
+      <p class="text-4xl font-bold text-white">{{ seconds }}</p>
+      <p class="text-sm text-white">Seconds</p>
     </div>
   </div>
 </template>
@@ -26,7 +26,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
 
-const targetDate = new Date('2024-12-01T00:00:00'); // Set your launch date here
+const targetDate = new Date('2024-12-01T00:00:00');
 
 const days = ref(0);
 const hours = ref(0);
@@ -65,5 +65,5 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Add component-specific styles here if necessary */
+/* No additional styles needed */
 </style>

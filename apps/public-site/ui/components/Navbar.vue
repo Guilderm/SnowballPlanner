@@ -1,12 +1,11 @@
-<!-- apps/public-site/ui/components/Navbar.vue -->
-
+<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\Navbar.vue -->
 <template>
   <Disclosure as="nav" class="bg-white shadow" v-slot="{ open }">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-          <!-- Mobile menu button -->
-          <DisclosureButton class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+          <!-- Mobile menu button-->
+          <DisclosureButton class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
             <span class="sr-only">Open main menu</span>
             <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
             <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
@@ -23,7 +22,7 @@
           <template v-if="isAuthenticated">
             <Menu as="div" class="relative ml-3">
               <div>
-                <MenuButton class="relative flex items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                <MenuButton class="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                   <span class="sr-only">Open user menu</span>
                   <img class="h-8 w-8 rounded-full" :src="user?.picture || '/default-avatar.png'" alt="User Avatar" />
                 </MenuButton>
@@ -52,7 +51,7 @@
           </template>
           <template v-else>
             <!-- Login button -->
-            <button @click="login" class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-3 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <button @click="login" class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
               Log in
             </button>
           </template>
@@ -70,36 +69,36 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useAuth0 } from '@auth0/auth0-vue'
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { ref, onMounted } from 'vue';
+import { useAuth0 } from '@auth0/auth0-vue';
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
+import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
 
-// Define refs to hold authentication state
-const isAuthenticated = ref(false)
-const user = ref(null)
-const loginWithRedirect = ref<Function>(() => {})
-const logout = ref<Function>(() => {})
+const isAuthenticated = ref(false);
+const user = ref(null);
+const loginWithRedirect = ref<Function>(() => {});
+const logout = ref<Function>(() => {});
 
-// Initialize Auth0 only on client side
 onMounted(() => {
-  const auth = useAuth0()
+  const auth = useAuth0();
 
-  // Guard against undefined Auth0 instance
   if (auth) {
-    isAuthenticated.value = auth.isAuthenticated.value
-    user.value = auth.user.value
-    loginWithRedirect.value = auth.loginWithRedirect
-    logout.value = auth.logout
+    isAuthenticated.value = auth.isAuthenticated.value;
+    user.value = auth.user.value;
+    loginWithRedirect.value = auth.loginWithRedirect;
+    logout.value = auth.logout;
   }
-})
+});
 
-// Define login and logout functions
 const login = () => {
-  loginWithRedirect.value()
-}
+  loginWithRedirect.value();
+};
 
 const logoutUser = () => {
-  logout.value({ logoutParams: { returnTo: window.location.origin } })
-}
+  logout.value({ logoutParams: { returnTo: window.location.origin } });
+};
 </script>
+
+<style scoped>
+/* No additional styles needed */
+</style>
