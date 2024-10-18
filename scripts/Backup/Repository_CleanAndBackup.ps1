@@ -13,7 +13,7 @@ $tempDir = "C:\Repository\DebtFreePlanner_Backup_$timestamp"
 
 # Define output ZIP file paths
 $outputZip1 = "C:\Repository\DebtFreePlanner_$timestamp.zip"
-$outputZip2 = "C:\Repository\DebtFreePlanner\Utilities\Backup\DebtFreePlanner_$timestamp.zip"
+$outputZip2 = "C:\Repository\DebtFreePlanner\scripts\backup\DebtFreePlanner_$timestamp.zip"
 
 # Print starting message
 Write-Host "Starting backup of DebtFreePlanner repository..."
@@ -151,7 +151,7 @@ foreach ($pattern in $patterns) {
 Write-Host "Compressing the cleaned directory into ZIP file..."
 
 # Ensure the Utilities\Backup directory exists
-$backupDir = "C:\Repository\DebtFreePlanner\Utilities\Backup"
+$backupDir = "scripts\backup"
 if (-not (Test-Path $backupDir)) {
     New-Item -ItemType Directory -Path $backupDir -Force | Out-Null
 }
