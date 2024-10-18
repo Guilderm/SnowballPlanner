@@ -199,4 +199,5 @@ prisma/.env
 # =========================
 .env
 .env.*
+apps/*/.env
 !.env.example

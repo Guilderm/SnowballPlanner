@@ -1,7 +1,7 @@
-// C:\Repository\DebtFreePlanner\apps\public-site\nuxt.config.ts
+// apps/public-site/ui/nuxt.config.ts
 
 export default defineNuxtConfig({
-  srcDir: 'ui/', // Use srcDir instead of rootDir
+  srcDir: 'ui/',
   css: ['@/assets/style/global.css'],
 
   app: {
@@ -39,5 +39,12 @@ export default defineNuxtConfig({
   },
   nitro: {
     logLevel: 4, // 0: none, 1: error, 2: warn, 3: info, 4: debug
+  },
+
+  runtimeConfig: {
+    public: {
+      auth0Domain: process.env.AUTH0_DOMAIN,
+      auth0ClientId: process.env.AUTH0_CLIENT_ID,
+    },
   },
 })
