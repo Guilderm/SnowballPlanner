@@ -8,7 +8,7 @@
     "test": "vitest run",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "postinstall": "npm install -g npm@10.9.0 && nuxt prepare",
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
