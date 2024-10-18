@@ -2,23 +2,19 @@
 <template>
   <Disclosure as="nav" class="bg-white shadow" v-slot="{ open }">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-      <div class="relative flex h-16 justify-between">
-        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-          <!-- Mobile menu button-->
-          <DisclosureButton class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-            <span class="sr-only">Open main menu</span>
-            <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
-            <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
-          </DisclosureButton>
-        </div>
-        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-          <div class="flex flex-shrink-0 items-center">
+      <div class="relative flex h-16 justify-between items-center">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 flex items-center">
             <img class="h-8 w-auto" src="/images/logo.svg" alt="DebtFreePlanner Logo" />
+            <span class="hidden sm:block ml-2 text-xl font-semibold text-gray-800">DebtFreePlanner</span>
           </div>
-          <!-- Add navigation links here -->
         </div>
-        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-          <!-- Profile dropdown or Login button -->
+
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <!-- Add navigation links here if needed -->
+        </div>
+
+        <div class="flex items-center">
           <template v-if="isAuthenticated">
             <Menu as="div" class="relative ml-3">
               <div>
@@ -50,16 +46,22 @@
             </Menu>
           </template>
           <template v-else>
-            <!-- Login button -->
             <button @click="login" class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
               Log in
             </button>
           </template>
         </div>
+
+        <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+          <DisclosureButton class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <span class="sr-only">Open main menu</span>
+            <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
+            <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
+          </DisclosureButton>
+        </div>
       </div>
     </div>
 
-    <!-- Mobile menu -->
     <DisclosurePanel class="sm:hidden">
       <div class="space-y-1 pb-4 pt-2">
         <!-- Add mobile navigation links here -->
@@ -98,7 +100,3 @@ const logoutUser = () => {
   logout.value({ logoutParams: { returnTo: window.location.origin } });
 };
 </script>
-
-<style scoped>
-/* No additional styles needed */
-</style>

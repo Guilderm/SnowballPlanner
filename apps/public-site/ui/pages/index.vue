@@ -6,8 +6,10 @@
       <!-- Launch Announcement Component -->
       <LaunchAnnouncement />
 
-      <!-- Countdown Timer -->
-      <CountdownTimer />
+      <!-- Countdown Timer with margin-top for space -->
+      <div class="mt-6">
+        <CountdownTimer />
+      </div>
 
       <!-- Email Signup Form -->
       <EmailSignupForm />
@@ -58,6 +60,6 @@ import Features from '@/components/coming-soon/Features.vue';
   background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
   padding: 2rem;
   border-radius: 0.5rem;
-  shadow: lg;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* Replaced shadow utility */
 }
 </style>

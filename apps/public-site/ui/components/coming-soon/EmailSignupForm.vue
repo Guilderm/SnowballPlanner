@@ -1,4 +1,3 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\coming-soon\EmailSignupForm.vue -->
 <template>
   <div class="mt-8 w-full max-w-md mx-auto">
     <form @submit.prevent="submitEmail" class="flex">
@@ -17,20 +16,43 @@
         Notify Me
       </button>
     </form>
-    <p v-if="message" class="mt-4 text-center text-green-600">{{ message }}</p>
+    <p v-if="message" :class="{'text-green-600': success, 'text-red-600': !success}" class="mt-4 text-center">
+      {{ message }}
+    </p>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import axios from 'axios';
 
 const email = ref('');
 const message = ref('');
+const success = ref(true);
 
 const submitEmail = async () => {
-  // Placeholder for email submission logic
-  message.value = `Thank you! We will notify you at ${email.value}`;
-  email.value = '';
+  if (!email.value) {
+    message.value = 'Please enter a valid email address';
+    success.value = false;
+    return;
+  }
+
+  const data = {
+    email_address: email.value,
+    status: 'subscribed',
+  };
+
+  try {
+    // Make the API call to your backend route for handling MailChimp requests
+const response = await axios.post('/api/services/newsletter_subscription', data);
+    message.value = 'Thank you! We will notify you at ' + email.value;
+    success.value = true;
+    email.value = ''; // Reset the email input after successful submission
+  } catch (error) {
+    console.error(error);
+    message.value = 'There was an error subscribing. Please try again.';
+    success.value = false;
+  }
 };
 </script>
 
