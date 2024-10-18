@@ -6,7 +6,6 @@ import pluginVue from 'eslint-plugin-vue'
 import pluginPrettier from 'eslint-plugin-prettier'
 import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
 import vueAccessibilityPlugin from 'eslint-plugin-vuejs-accessibility'
-import vitestPlugin from 'eslint-plugin-vitest'
 
 export default [
   {
@@ -33,7 +32,6 @@ export default [
       vue: pluginVue,
       'vuejs-accessibility': vueAccessibilityPlugin,
       tailwindcss: tailwindcssPlugin,
-      vitest: vitestPlugin,
       prettier: pluginPrettier,
     },
     extends: [
@@ -48,10 +46,9 @@ export default [
       ...pluginVue.configs['vue3-essential'].rules,
       ...vueAccessibilityPlugin.configs.recommended.rules,
       ...tailwindcssPlugin.configs.recommended.rules,
-      ...vitestPlugin.configs.recommended.rules,
-      'prettier/prettier': 'error', // Ensure Prettier formatting
+      'prettier/prettier': 'error',
       'tailwindcss/classnames-order': 'warn',
-      'tailwindcss/no-custom-classname': 'off', // Disable custom class check
+      'tailwindcss/no-custom-classname': 'off',
       '@typescript-eslint/no-unused-vars': [
         'warn',
         { argsIgnorePattern: '^_' }, // Ignore unused variables starting with _
