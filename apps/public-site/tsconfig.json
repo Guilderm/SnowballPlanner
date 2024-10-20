@@ -1,11 +1,15 @@
-// C:\Repository\DebtFreePlanner\apps\public-site\tsconfig.json
-
 {
+  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "types": ["@types/node"],
-    "baseUrl": "ui/",
+    "types": ["@types/node", "nuxt"],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./ui/*"],
+      "~/*": ["./ui/*"],
+      "#app": ["./.nuxt/types/app/index.d.ts"],
+      "#build": ["./.nuxt/types/app/build.d.ts"],
+      "#imports": ["./.nuxt/types/imports.d.ts"],
+      "#vue": ["./.nuxt/types/vue-shim.d.ts"]
     }
   },
   "include": [
@@ -14,7 +18,8 @@
     "ui/**/*.vue",
     "api/**/*.ts",
     "libs/**/*.ts",
-    "types/**/*.ts"
+    "types/**/*.ts",
+    ".nuxt/**/*.ts"
   ],
-  "exclude": ["node_modules", ".nuxt", "dist"]
+  "exclude": ["node_modules", ".output", "dist"]
 }

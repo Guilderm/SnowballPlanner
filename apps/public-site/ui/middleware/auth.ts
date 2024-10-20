@@ -1,3 +1,5 @@
+// C:\Repository\DebtFreePlanner\apps\public-site\ui\middleware\auth.ts
+
 import { defineNuxtRouteMiddleware } from '#app'
 import { useAuth0 } from '@auth0/auth0-vue'
 
@@ -10,6 +12,6 @@ export default defineNuxtRouteMiddleware(() => {
   }
 
   if (!isAuthenticated.value) {
-    return loginWithRedirect()
+    loginWithRedirect()
   }
 })

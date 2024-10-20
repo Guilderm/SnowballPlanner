@@ -1,4 +1,4 @@
-// apps/public-site/ui/nuxt.config.ts
+// C:\Repository\DebtFreePlanner\apps\public-site\nuxt.config.ts
 
 export default defineNuxtConfig({
   srcDir: 'ui/',
@@ -15,23 +15,18 @@ export default defineNuxtConfig({
           name: 'description',
           content: 'Strategically Plan Your Journey to a Debt-Free Living.',
         },
-        {
-          name: 'author',
-          content: 'Guilder W. Milliner',
-        },
+        { name: 'author', content: 'Guilder W. Milliner' },
         {
           name: 'keywords',
           content:
             'Debt management, Debt repayment, Financial planning, Multicurrency support',
         },
       ],
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }, // Ensure favicon exists in ui/public/favicon.ico
-      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
 
-  modules: ['@nuxtjs/tailwindcss'], // Include Tailwind CSS module
+  modules: ['@nuxtjs/tailwindcss'],
   devtools: { enabled: true },
   compatibilityDate: '2024-10-17',
   tailwindcss: {
@@ -41,10 +36,25 @@ export default defineNuxtConfig({
     logLevel: 4, // 0: none, 1: error, 2: warn, 3: info, 4: debug
   },
 
+  plugins: ['~/plugins/auth0.client.ts'],
+
   runtimeConfig: {
     public: {
       auth0Domain: process.env.AUTH0_DOMAIN,
       auth0ClientId: process.env.AUTH0_CLIENT_ID,
+    },
+  },
+
+  typescript: {
+    strict: false, // Temporarily set to false, set to true later
+    typeCheck: false, // Temporarily set to false
+  },
+
+  // Optional: Add hooks for debugging environment variables
+  hooks: {
+    ready: () => {
+      console.log('AUTH0_DOMAIN:', process.env.AUTH0_DOMAIN)
+      console.log('AUTH0_CLIENT_ID:', process.env.AUTH0_CLIENT_ID)
     },
   },
 })

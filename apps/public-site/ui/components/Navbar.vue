@@ -1,8 +1,10 @@
 <!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\Navbar.vue -->
+
 <template>
   <Disclosure as="nav" class="bg-white shadow" v-slot="{ open }">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 justify-between items-center">
+        <!-- Logo Section -->
         <div class="flex items-center">
           <div class="flex-shrink-0 flex items-center">
             <img class="h-8 w-auto" src="/images/logo.svg" alt="DebtFreePlanner Logo" />
@@ -10,10 +12,7 @@
           </div>
         </div>
 
-        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-          <!-- Add navigation links here if needed -->
-        </div>
-
+        <!-- Authentication Buttons -->
         <div class="flex items-center">
           <template v-if="isAuthenticated">
             <Menu as="div" class="relative ml-3">
@@ -52,6 +51,7 @@
           </template>
         </div>
 
+        <!-- Mobile Menu Button -->
         <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
           <DisclosureButton class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
             <span class="sr-only">Open main menu</span>
@@ -62,6 +62,7 @@
       </div>
     </div>
 
+    <!-- Mobile Menu Panel -->
     <DisclosurePanel class="sm:hidden">
       <div class="space-y-1 pb-4 pt-2">
         <!-- Add mobile navigation links here -->
@@ -71,32 +72,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
 import { useAuth0 } from '@auth0/auth0-vue';
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
 
-const isAuthenticated = ref(false);
-const user = ref(null);
-const loginWithRedirect = ref<Function>(() => {});
-const logout = ref<Function>(() => {});
-
-onMounted(() => {
-  const auth = useAuth0();
-
-  if (auth) {
-    isAuthenticated.value = auth.isAuthenticated.value;
-    user.value = auth.user.value;
-    loginWithRedirect.value = auth.loginWithRedirect;
-    logout.value = auth.logout;
-  }
-});
+const { isAuthenticated, user, loginWithRedirect, logout } = useAuth0();
 
 const login = () => {
-  loginWithRedirect.value();
+  loginWithRedirect();
 };
 
 const logoutUser = () => {
-  logout.value({ logoutParams: { returnTo: window.location.origin } });
+  logout({ logoutParams: { returnTo: window.location.origin } });
 };
 </script>
