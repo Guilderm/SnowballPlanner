@@ -51,7 +51,7 @@ export default defineNuxtConfig({
   },
 
   typescript: {
-    strict: false, // Temporarily set to false; enable later
+    strict: true,
     typeCheck: false, // Temporarily set to false
   },
 
