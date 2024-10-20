@@ -1,6 +1,13 @@
 // C:\Repository\DebtFreePlanner\apps\public-site\nuxt.config.ts
 
-export default defineNuxtConfig({
+import { defineNuxtConfig, NuxtConfig } from 'nuxt/config'
+import * as dotenv from 'dotenv'
+import * as path from 'path'
+
+// Load .env from the monorepo root
+dotenv.config({ path: path.resolve(__dirname, '../../.env') })
+
+const config: NuxtConfig = {
   srcDir: 'ui/',
   css: ['@/assets/style/global.css'],
 
@@ -46,15 +53,16 @@ export default defineNuxtConfig({
   },
 
   typescript: {
-    strict: false, // Temporarily set to false, set to true later
+    strict: false, // Temporarily set to false; enable later
     typeCheck: false, // Temporarily set to false
   },
 
-  // Optional: Add hooks for debugging environment variables
   hooks: {
     ready: () => {
       console.log('AUTH0_DOMAIN:', process.env.AUTH0_DOMAIN)
       console.log('AUTH0_CLIENT_ID:', process.env.AUTH0_CLIENT_ID)
     },
   },
-})
+}
+
+export default defineNuxtConfig(config)

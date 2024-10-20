@@ -18,8 +18,6 @@ export default defineNuxtPlugin((nuxtApp) => {
       authorizationParams: {
         redirect_uri: window.location.origin,
       },
-      cacheLocation: 'localstorage', // Optional: Persist tokens in local storage
-      useRefreshTokens: true, // Optional: Enable refresh tokens
     })
   )
 })
