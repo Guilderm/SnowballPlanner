@@ -1,28 +1,35 @@
 <!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\coming-soon\Features.vue -->
 <template>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
-    <div class="text-center">
+    <!-- Multi-User Support Feature -->
+    <div class="text-center bg-gray-50 bg-opacity-60 p-6 rounded-lg shadow-lg">
       <UserGroupIcon class="mx-auto h-12 w-12 text-blue-600" />
       <h3 class="mt-4 text-lg font-semibold text-gray-800">Multi-User Support</h3>
       <p class="mt-2 text-gray-600">
         Collaborate with others on debt repayment plans, with customizable permissions.
       </p>
     </div>
-    <div class="text-center">
+    
+    <!-- Multiple Repayment Strategies Feature -->
+    <div class="text-center bg-gray-50 bg-opacity-60 p-6 rounded-lg shadow-lg">
       <ChartPieIcon class="mx-auto h-12 w-12 text-blue-600" />
       <h3 class="mt-4 text-lg font-semibold text-gray-800">Multiple Repayment Strategies</h3>
       <p class="mt-2 text-gray-600">
         Supports Snowball, Avalanche, Debt-to-Interest Ratio, CFI, and custom strategies.
       </p>
     </div>
-    <div class="text-center">
+
+    <!-- Snowflake Payments Feature -->
+    <div class="text-center bg-gray-50 bg-opacity-60 p-6 rounded-lg shadow-lg">
       <SparklesIcon class="mx-auto h-12 w-12 text-blue-600" />
       <h3 class="mt-4 text-lg font-semibold text-gray-800">Snowflake Payments</h3>
       <p class="mt-2 text-gray-600">
         Apply extra funds to debts whenever they're available.
       </p>
     </div>
-    <div class="text-center">
+
+    <!-- Multicurrency Support Feature -->
+    <div class="text-center bg-gray-50 bg-opacity-60 p-6 rounded-lg shadow-lg">
       <GlobeAltIcon class="mx-auto h-12 w-12 text-blue-600" />
       <h3 class="mt-4 text-lg font-semibold text-gray-800">Multicurrency Support</h3>
       <p class="mt-2 text-gray-600">
@@ -42,5 +49,10 @@ import {
 </script>
 
 <style scoped>
-/* No additional styles needed */
+.text-center {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
 </style>

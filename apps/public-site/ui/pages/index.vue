@@ -57,9 +57,8 @@ import Features from '@/components/coming-soon/Features.vue';
 }
 
 .features > div {
-  background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
   padding: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* Replaced shadow utility */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* Keep subtle shadow */
 }
 </style>
