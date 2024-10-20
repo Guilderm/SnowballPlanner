@@ -1,4 +1,5 @@
 <!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\Footer.vue -->
+ 
 <template>
   <footer class="bg-gray-800 text-white py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
