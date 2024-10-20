@@ -1,13 +1,13 @@
 // C:\Repository\DebtFreePlanner\apps\public-site\nuxt.config.ts
 
-import { defineNuxtConfig, NuxtConfig } from 'nuxt/config'
+import { defineNuxtConfig } from 'nuxt/config'
 import * as dotenv from 'dotenv'
 import * as path from 'path'
 
 // Load .env from the monorepo root
 dotenv.config({ path: path.resolve(__dirname, '../../.env') })
 
-const config: NuxtConfig = {
+export default defineNuxtConfig({
   srcDir: 'ui/',
   css: ['@/assets/style/global.css'],
 
@@ -36,9 +36,7 @@ const config: NuxtConfig = {
   modules: ['@nuxtjs/tailwindcss'],
   devtools: { enabled: true },
   compatibilityDate: '2024-10-17',
-  tailwindcss: {
-    viewer: true,
-  },
+
   nitro: {
     logLevel: 4, // 0: none, 1: error, 2: warn, 3: info, 4: debug
   },
@@ -63,6 +61,4 @@ const config: NuxtConfig = {
       console.log('AUTH0_CLIENT_ID:', process.env.AUTH0_CLIENT_ID)
     },
   },
-}
-
-export default defineNuxtConfig(config)
+})
