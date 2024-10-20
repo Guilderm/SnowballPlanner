@@ -1,7 +1,7 @@
 // C:\Repository\DebtFreePlanner\apps\public-site\tailwind.config.js
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     './ui/components/**/*.{vue,js,ts}',
     './ui/layouts/**/*.{vue,js,ts}',
