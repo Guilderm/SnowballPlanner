@@ -1,4 +1,5 @@
 <!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\pages\index.vue -->
+ 
 <template>
   <section class="coming-soon-section relative">
     <!-- Main content with parallax background -->
