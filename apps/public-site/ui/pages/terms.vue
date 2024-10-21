@@ -1,27 +1,27 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\pages\privacy.vue -->
+<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\pages\terms.vue -->
 
 <template>
   <div class="min-h-screen bg-gray-100">
     <main class="max-w-4xl mx-auto px-4 py-8">
-      <h1 class="text-3xl font-bold mb-4">Privacy Policy</h1>
+      <h1 class="text-3xl font-bold mb-4">Terms of Service</h1>
       <p class="mb-4">Last updated: {{ lastUpdated }}</p>
 
-      <!-- Privacy Policy Sections -->
+      <!-- Terms of Service Sections -->
       <section class="mb-6">
         <h2 class="text-2xl font-semibold mb-2">1. Introduction</h2>
         <p>
-          Welcome to DebtFreePlanner. We value your privacy and are committed to
-          protecting your personal information.
+          Welcome to DebtFreePlanner. By accessing or using our service, you agree
+          to be bound by these Terms of Service. If you do not agree with any part
+          of the terms, you must not use our service.
         </p>
       </section>
 
       <!-- Add additional sections here -->
 
       <section class="mb-6">
-        <h2 class="text-2xl font-semibold mb-2">8. Contact Us</h2>
+        <h2 class="text-2xl font-semibold mb-2">10. Contact Us</h2>
         <p>
-          If you have any questions about this Privacy Policy, please contact us
-          at
+          If you have any questions about these Terms, please contact us at
           <a href="mailto:support@debtfreeplanner.com" class="text-blue-600 underline"
             >support@debtfreeplanner.com</a
           >.
@@ -39,19 +39,19 @@ const lastUpdated = 'October 21, 2024';
 export default {
   head() {
     return {
-      title: 'Privacy Policy - DebtFreePlanner',
+      title: 'Terms of Service - DebtFreePlanner',
       meta: [
         {
           hid: 'description',
           name: 'description',
           content:
-            'Read the Privacy Policy of DebtFreePlanner to understand how we handle your personal information.',
+            'Read the Terms of Service for DebtFreePlanner to understand the rules and regulations for using our service.',
         },
         {
           hid: 'keywords',
           name: 'keywords',
           content:
-            'Privacy Policy, DebtFreePlanner, Personal Information, Data Protection',
+            'Terms of Service, DebtFreePlanner, User Agreement, Rules, Regulations',
         },
       ],
     };

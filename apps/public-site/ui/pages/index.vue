@@ -1,5 +1,5 @@
 <!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\pages\index.vue -->
- 
+
 <template>
   <section class="coming-soon-section relative">
     <!-- Main content with parallax background -->
@@ -28,6 +28,30 @@ import LaunchAnnouncement from '@/components/coming-soon/LaunchAnnouncement.vue'
 import CountdownTimer from '@/components/coming-soon/CountdownTimer.vue';
 import EmailSignupForm from '@/components/coming-soon/EmailSignupForm.vue';
 import Features from '@/components/coming-soon/Features.vue';
+</script>
+
+<script lang="ts">
+export default {
+  head() {
+    return {
+      title: 'DebtFreePlanner - Strategically Plan Your Journey to a Debt-Free Living',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Strategically plan your journey to a debt-free living with DebtFreePlanner. Sign up for updates and be the first to know when we launch.',
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content:
+            'DebtFreePlanner, Debt management, Financial planning, Coming soon, Launch, Sign up',
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -60,6 +84,7 @@ import Features from '@/components/coming-soon/Features.vue';
 .features > div {
   padding: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* Keep subtle shadow */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1); /* Keep subtle shadow */
 }
 </style>

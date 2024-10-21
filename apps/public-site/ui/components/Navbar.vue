@@ -1,13 +1,16 @@
 <!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\Navbar.vue -->
- 
+
 <template>
   <Disclosure as="nav" class="bg-white shadow" v-slot="{ open }">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 justify-between items-center">
         <div class="flex items-center">
           <div class="flex-shrink-0 flex items-center">
-            <img class="h-8 w-auto" src="/images/logo.svg" alt="DebtFreePlanner Logo" />
-            <span class="hidden sm:block ml-2 text-xl font-semibold text-gray-800">DebtFreePlanner</span>
+            <!-- Wrapping logo and text with NuxtLink to navigate to the homepage -->
+            <nuxt-link to="/" class="flex items-center">
+              <img class="h-8 w-auto" src="/images/logo.svg" alt="DebtFreePlanner Logo" />
+              <span class="hidden sm:block ml-2 text-xl font-semibold text-gray-800">DebtFreePlanner</span>
+            </nuxt-link>
           </div>
         </div>
 
