@@ -23,35 +23,27 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import LaunchAnnouncement from '@/components/coming-soon/LaunchAnnouncement.vue';
 import CountdownTimer from '@/components/coming-soon/CountdownTimer.vue';
 import EmailSignupForm from '@/components/coming-soon/EmailSignupForm.vue';
 import Features from '@/components/coming-soon/Features.vue';
-</script>
 
-<script lang="ts">
-export default {
-  head() {
-    return {
-      title: 'DebtFreePlanner - Strategically Plan Your Journey to a Debt-Free Living',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'Strategically plan your journey to a debt-free living with DebtFreePlanner. Sign up for updates and be the first to know when we launch.',
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content:
-            'DebtFreePlanner, Debt management, Financial planning, Coming soon, Launch, Sign up',
-        },
-      ],
-    };
-  },
-};
+definePageMeta({
+  title: 'DebtFreePlanner - Strategically Plan Your Journey to a Debt-Free Living',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Strategically plan your journey to a debt-free living with DebtFreePlanner. Sign up for updates and be the first to know when we launch.',
+    },
+    {
+      name: 'keywords',
+      content:
+        'DebtFreePlanner, Debt management, Financial planning, Coming soon, Launch, Sign up',
+    },
+  ],
+});
 </script>
 
 <style scoped>
