@@ -1,5 +1,3 @@
-// apps/public-site/types/nuxt-gtag.d.ts
-
 // Define types for Gtag commands
 type ConsentArg = 'update' | 'default'
 type ConsentParams = {
@@ -11,10 +9,12 @@ type ConsentParams = {
 }
 
 type EventNames = string // Extend with specific event names if known
-type ControlParams = Record<string, any> // Replace `any` with specific types as needed
-type EventParams = Record<string, any>
-type ConfigParams = Record<string, any>
-type CustomParams = Record<string, any>
+
+// Replace `any` with appropriate types, or use a fallback generic type if specifics aren't available
+type ControlParams = Record<string, string | number | boolean | undefined>
+type EventParams = Record<string, string | number | boolean | undefined>
+type ConfigParams = Record<string, string | number | boolean | undefined>
+type CustomParams = Record<string, string | number | boolean | undefined>
 type FieldNames = string
 
 // Define the structure of Gtag commands
@@ -34,7 +34,7 @@ interface GtagCommands {
   get: [
     targetId: string,
     fieldName: FieldNames | string,
-    callback?: (field?: string | CustomParams) => any,
+    callback?: (field?: string | CustomParams) => void,
   ]
   consent: [
     consentArg: ConsentArg | (string & {}),

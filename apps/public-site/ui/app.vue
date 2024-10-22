@@ -1,4 +1,5 @@
-<!-- \ui\app.vue -->
+<!-- apps\public-site\ui\app.vue -->
+
 <template>
   <div>
     <NuxtRouteAnnouncer />
@@ -8,10 +9,10 @@
   </div>
 </template>
 
-<script setup>
-// No additional script needed
+<script setup lang="ts">
+// No additional script needed, but we define it as TypeScript
 </script>
 
-<style>
+<style scoped>
 /* You can add global styles here if needed */
 </style>
