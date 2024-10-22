@@ -1,4 +1,4 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\pages\index.vue -->
+<!-- apps/public-site/ui/pages/index.vue -->
 
 <template>
   <section

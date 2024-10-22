@@ -19,7 +19,8 @@
     "ui/**/*.vue",
     "types/**/*.d.ts",
     "nuxt.config.ts",
-    "eslint.config.js"
+    "eslint.config.js",
+    ".nuxt/**/*.d.ts"
   ],
   "exclude": ["node_modules", ".output", "dist"]
 }
