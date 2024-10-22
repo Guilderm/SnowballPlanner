@@ -1,4 +1,0 @@
-# apps\public-site\.prettierignore
-
-node_modules/
-.nuxt/

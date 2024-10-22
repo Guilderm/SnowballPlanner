@@ -17,13 +17,13 @@ const recommendedConfigs = [
 
 export default [
   {
-    // Ignore built files, node_modules, and ESLint/Nuxt config files
+    // Ignore built files, node_modules, and configuration files
     ignores: [
       '**/dist/**',
       '**/node_modules/**',
       '**/.nuxt/**',
-      'eslint.config.js',
       'nuxt.config.ts',
+      'eslint.config.js',
     ],
   },
   {
@@ -37,8 +37,8 @@ export default [
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: './tsconfig.eslint.json', // Use the separate TSConfig for ESLint
-        extraFileExtensions: ['.vue'], // Support for Vue 3 single-file components (SFC)
+        project: './tsconfig.json',
+        extraFileExtensions: ['.vue'],
       },
     },
     plugins: {
@@ -59,7 +59,7 @@ export default [
       'tailwindcss/no-custom-classname': 'off',
       '@typescript-eslint/no-unused-vars': [
         'warn',
-        { argsIgnorePattern: '^_' }, // Ignore unused variables starting with _
+        { argsIgnorePattern: '^_' },
       ],
     },
   },

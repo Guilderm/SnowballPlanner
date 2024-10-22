@@ -16,14 +16,9 @@
     "ui/**/*.ts",
     "ui/**/*.d.ts",
     "ui/**/*.vue",
-    "types/**/*.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    ".output",
-    "dist",
-    ".nuxt",
+    "types/**/*.d.ts",
     "nuxt.config.ts",
     "eslint.config.js"
-  ]
+  ],
+  "exclude": ["node_modules", ".output", "dist", ".nuxt"]
 }
