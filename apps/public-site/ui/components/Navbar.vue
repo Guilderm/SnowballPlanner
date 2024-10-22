@@ -1,3 +1,4 @@
+<!-- apps/public-site/ui/components/Navbar.vue -->
 <template>
   <Disclosure as="nav" class="bg-white shadow" v-slot="{ open }">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -49,7 +50,7 @@
                 leave-to-class="transform opacity-0 scale-95"
               >
                 <MenuItems
-                  class="ring-opacity/5 absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black focus:outline-none"
+                  class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                 >
                   <MenuItem v-slot="{ active }">
                     <a

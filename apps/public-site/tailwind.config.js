@@ -1,4 +1,4 @@
-// C:\Repository\DebtFreePlanner\apps\public-site\tailwind.config.js
+// apps/public-site/tailwind.config.js
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -17,5 +17,8 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+  ],
 }

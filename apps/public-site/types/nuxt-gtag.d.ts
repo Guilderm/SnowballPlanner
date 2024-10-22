@@ -1,3 +1,5 @@
+// apps/public-site/types/nuxt-gtag.d.ts
+
 // Define types for Gtag commands
 type ConsentArg = 'update' | 'default'
 type ConsentParams = {
@@ -93,3 +95,12 @@ declare module '@nuxt/schema' {
     gtag?: GtagModuleOptions
   }
 }
+
+// Add a global declaration for window.gtag
+declare global {
+  interface Window {
+    gtag: Gtag
+  }
+}
+
+export {}
