@@ -1,10 +1,7 @@
 {
   "semi": false,
   "singleQuote": true,
-  "printWidth": 80,
   "trailingComma": "es5",
-  "tabWidth": 2,
-  "useTabs": false,
   "plugins": ["prettier-plugin-tailwindcss"],
   "ignorePatterns": ["node_modules/", ".nuxt/"]
 }

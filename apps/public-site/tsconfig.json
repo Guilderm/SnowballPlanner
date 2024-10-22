@@ -1,3 +1,4 @@
+// apps/public-site/tsconfig.json
 {
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
@@ -20,5 +21,5 @@
     "nuxt.config.ts",
     "eslint.config.js"
   ],
-  "exclude": ["node_modules", ".output", "dist", ".nuxt"]
+  "exclude": ["node_modules", ".output", "dist"]
 }

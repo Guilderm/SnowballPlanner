@@ -7,7 +7,7 @@ import pluginVue from 'eslint-plugin-vue'
 import pluginPrettier from 'eslint-plugin-prettier'
 import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
 import vueAccessibilityPlugin from 'eslint-plugin-vuejs-accessibility'
-import vueParser from 'vue-eslint-parser' // Import vue-eslint-parser
+import vueParser from 'vue-eslint-parser'
 
 // Use flat config recommended by eslint-plugin-vue for Vue 3
 const vueConfig = pluginVue.configs['flat/recommended']
@@ -39,9 +39,9 @@ export default [
       globals: {
         ...globals.browser,
       },
-      parser: vueParser, // Use the imported parser object
+      parser: vueParser,
       parserOptions: {
-        parser: tsParser, // Use TypeScript parser for <script lang="ts">
+        parser: tsParser,
         ecmaVersion: 'latest',
         sourceType: 'module',
         project: './tsconfig.json',
@@ -57,17 +57,17 @@ export default [
     },
     rules: {
       // Merge recommended rules from all plugins
-      ...vueConfig.rules, // Vue-specific recommended rules
+      ...vueConfig.rules,
       ...recommendedConfigs.reduce((acc, config) => {
         return { ...acc, ...config.rules }
       }, {}),
       // Custom rules
-      'prettier/prettier': 'error', // Enforce Prettier formatting
-      'tailwindcss/classnames-order': 'warn', // Warn for incorrect Tailwind CSS class ordering
-      'tailwindcss/no-custom-classname': 'off', // Allow custom class names in Tailwind CSS
+      'prettier/prettier': 'error',
+      'tailwindcss/classnames-order': 'warn',
+      'tailwindcss/no-custom-classname': 'warn',
       '@typescript-eslint/no-unused-vars': [
         'warn',
-        { argsIgnorePattern: '^_' }, // Ignore unused vars that start with "_"
+        { argsIgnorePattern: '^_' },
       ],
     },
   },

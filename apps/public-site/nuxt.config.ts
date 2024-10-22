@@ -1,4 +1,4 @@
-// apps\public-site\nuxt.config.ts
+// apps/public-site/nuxt.config.ts
 
 import { defineNuxtConfig } from 'nuxt/config'
 import * as dotenv from 'dotenv'
@@ -37,7 +37,7 @@ export default defineNuxtConfig({
 
   gtag: {
     enabled: process.env.NODE_ENV !== 'development',
-    id: process.env.GOOGLE_GTAG_ID,
+    id: process.env.GOOGLE_GTAG_ID as string,
     config: {
       page_title: 'DebtFreePlanner',
       anonymize_ip: false,
