@@ -1,6 +1,7 @@
 <!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\coming-soon\LaunchAnnouncement.vue -->
+
 <template>
-  <div class="launch-announcement text-center">
+  <div class="mt-8 text-center">
     <h1 class="text-4xl font-bold text-white md:text-5xl">
       A powerful web-based tool to
     </h1>
@@ -18,9 +19,3 @@
 <script setup>
 /* No additional script needed */
 </script>
-
-<style scoped>
-.launch-announcement {
-  margin-top: 2rem;
-}
-</style>

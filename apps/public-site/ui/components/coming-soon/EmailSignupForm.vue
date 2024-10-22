@@ -1,3 +1,5 @@
+<!-- apps\public-site\ui\components\coming-soon\EmailSignupForm.vue -->
+
 <template>
   <div class="mx-auto mt-8 w-full max-w-md">
     <form @submit.prevent="submitEmail" class="flex">

@@ -5,7 +5,7 @@
     class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4"
   >
     <!-- Multi-User Support Feature -->
-    <div class="rounded-lg bg-gray-50/60 p-6 text-center shadow-lg">
+    <div class="rounded-lg bg-white/80 p-8 text-center shadow-lg">
       <UserGroupIcon class="mx-auto size-12 text-blue-600" />
       <h3 class="mt-4 text-lg font-semibold text-gray-800">
         Multi-User Support
@@ -17,7 +17,7 @@
     </div>
 
     <!-- Multiple Repayment Strategies Feature -->
-    <div class="rounded-lg bg-gray-50/60 p-6 text-center shadow-lg">
+    <div class="rounded-lg bg-white/80 p-8 text-center shadow-lg">
       <ChartPieIcon class="mx-auto size-12 text-blue-600" />
       <h3 class="mt-4 text-lg font-semibold text-gray-800">
         Multiple Repayment Strategies
@@ -29,7 +29,7 @@
     </div>
 
     <!-- Snowflake Payments Feature -->
-    <div class="rounded-lg bg-gray-50/60 p-6 text-center shadow-lg">
+    <div class="rounded-lg bg-white/80 p-8 text-center shadow-lg">
       <SparklesIcon class="mx-auto size-12 text-blue-600" />
       <h3 class="mt-4 text-lg font-semibold text-gray-800">
         Snowflake Payments
@@ -40,7 +40,7 @@
     </div>
 
     <!-- Multicurrency Support Feature -->
-    <div class="rounded-lg bg-gray-50/60 p-6 text-center shadow-lg">
+    <div class="rounded-lg bg-white/80 p-8 text-center shadow-lg">
       <GlobeAltIcon class="mx-auto size-12 text-blue-600" />
       <h3 class="mt-4 text-lg font-semibold text-gray-800">
         Multicurrency Support
@@ -60,14 +60,3 @@ import {
   GlobeAltIcon,
 } from '@heroicons/vue/24/outline'
 </script>
-
-<style scoped>
-.text-center {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 2rem;
-  border-radius: 0.5rem;
-  box-shadow:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-</style>

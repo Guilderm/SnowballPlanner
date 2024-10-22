@@ -1,10 +1,12 @@
 <!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\pages\index.vue -->
 
 <template>
-  <section class="coming-soon-section relative">
+  <section
+    class="relative z-0 bg-[url('/images/coming-soon-background.jpg')] bg-cover bg-fixed bg-center bg-no-repeat before:absolute before:inset-0 before:z-0 before:bg-black/50 before:content-['']"
+  >
     <!-- Main content with parallax background -->
     <div
-      class="content-wrapper flex min-h-screen flex-col items-center justify-center px-4 py-12"
+      class="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-12"
     >
       <!-- Launch Announcement Component -->
       <LaunchAnnouncement />
@@ -18,7 +20,7 @@
       <EmailSignupForm />
 
       <!-- Features Section -->
-      <div class="features mt-12 w-full px-4">
+      <div class="mt-12 w-full px-4">
         <Features />
       </div>
     </div>
@@ -48,39 +50,3 @@ definePageMeta({
   ],
 })
 </script>
-
-<style scoped>
-.coming-soon-section {
-  background-image: url('/images/coming-soon-background.jpg');
-  background-size: cover;
-  background-attachment: fixed; /* Parallax effect */
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  z-index: 0;
-}
-
-.coming-soon-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-  z-index: 0;
-}
-
-.content-wrapper {
-  position: relative;
-  z-index: 1;
-}
-
-.features > div {
-  padding: 2rem;
-  border-radius: 0.5rem;
-  box-shadow:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -4px rgba(0, 0, 0, 0.1); /* Keep subtle shadow */
-}
-</style>
