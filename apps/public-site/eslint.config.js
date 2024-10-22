@@ -1,18 +1,22 @@
+// apps/public-site/eslint.config.js
+
 import globals from 'globals'
 import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
-import vuePlugin from 'eslint-plugin-vue'
-import prettierPlugin from 'eslint-plugin-prettier'
+import pluginVue from 'eslint-plugin-vue'
+import pluginPrettier from 'eslint-plugin-prettier'
 import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
 import vueAccessibilityPlugin from 'eslint-plugin-vuejs-accessibility'
 
-// Import recommended configurations from plugins
+// Use flat config recommended by eslint-plugin-vue for Vue 3
+const vueConfig = pluginVue.configs['flat/recommended']
+
+// Import recommended configurations from other plugins
 const recommendedConfigs = [
   typescriptEslintPlugin.configs.recommended,
-  vuePlugin.configs['vue3-recommended'],
   vueAccessibilityPlugin.configs.recommended,
   tailwindcssPlugin.configs.recommended,
-  prettierPlugin.configs.recommended,
+  pluginPrettier.configs.recommended,
 ]
 
 export default [
@@ -27,75 +31,40 @@ export default [
     ],
   },
   {
-    // Configuration for Vue files
-    files: ['**/*.vue'],
+    // Base configuration for linting Vue, JS, and TypeScript files
+    files: ['**/*.{js,mjs,cjs,ts,vue}'],
     languageOptions: {
-      parser: 'vue-eslint-parser',
-      parserOptions: {
-        parser: tsParser, // Use TypeScript parser for the script block
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: './tsconfig.json', // Reference the main tsconfig.json
-        extraFileExtensions: ['.vue'], // Support for Vue 3 single-file components (SFC)
-      },
       globals: {
         ...globals.browser,
       },
-    },
-    plugins: {
-      vue: vuePlugin,
-      'vuejs-accessibility': vueAccessibilityPlugin,
-      prettier: prettierPlugin,
-      tailwindcss: tailwindcssPlugin,
-      '@typescript-eslint': typescriptEslintPlugin,
-    },
-    rules: {
-      // Merge recommended rules from all plugins
-      ...recommendedConfigs.reduce((acc, config) => {
-        return { ...acc, ...config.rules }
-      }, {}),
-      // Custom rules
-      'prettier/prettier': 'error',
-      'tailwindcss/classnames-order': 'warn',
-      'tailwindcss/no-custom-classname': 'off',
-      '@typescript-eslint/no-unused-vars': [
-        'warn',
-        { argsIgnorePattern: '^_' }, // Ignore unused variables starting with _
-      ],
-    },
-  },
-  {
-    // Configuration for JavaScript and TypeScript files
-    files: ['**/*.{js,mjs,cjs,ts}'],
-    languageOptions: {
       parser: tsParser,
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: './tsconfig.json', // Reference the main tsconfig.json
-      },
-      globals: {
-        ...globals.browser,
+        project: './tsconfig.json',
+        extraFileExtensions: ['.vue'],
       },
     },
     plugins: {
       '@typescript-eslint': typescriptEslintPlugin,
-      prettier: prettierPlugin,
-      tailwindcss: tailwindcssPlugin,
+      vue: pluginVue,
       'vuejs-accessibility': vueAccessibilityPlugin,
+      tailwindcss: tailwindcssPlugin,
+      prettier: pluginPrettier,
     },
     rules: {
       // Merge recommended rules from all plugins
+      ...vueConfig.rules, // Vue-specific recommended rules
       ...recommendedConfigs.reduce((acc, config) => {
         return { ...acc, ...config.rules }
       }, {}),
       // Custom rules
-      'prettier/prettier': 'error',
-      'tailwindcss/classnames-order': 'warn',
-      'tailwindcss/no-custom-classname': 'off',
+      'prettier/prettier': 'error', // Enforce Prettier formatting
+      'tailwindcss/classnames-order': 'warn', // Warn for incorrect Tailwind CSS class ordering
+      'tailwindcss/no-custom-classname': 'off', // Allow custom class names in Tailwind CSS
       '@typescript-eslint/no-unused-vars': [
         'warn',
-        { argsIgnorePattern: '^_' },
+        { argsIgnorePattern: '^_' }, // Ignore unused vars that start with "_"
       ],
     },
   },
