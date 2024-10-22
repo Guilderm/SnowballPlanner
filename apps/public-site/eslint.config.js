@@ -29,6 +29,7 @@ export default [
       '**/.nuxt/**',
       'nuxt.config.ts',
       'eslint.config.js',
+      'tailwind.config.js',
     ],
   },
   {

@@ -7,9 +7,5 @@
     "nuxt.config.ts",
     "eslint.config.js"
   ],
-  "exclude": ["node_modules",
-   "dist",
-    ".nuxt",
-     ".output"
-    ]
+  "exclude": ["tailwind.config.js", "node_modules", "dist", ".nuxt", ".output"]
 }

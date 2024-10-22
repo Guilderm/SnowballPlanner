@@ -1,5 +1,3 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\pages\contact.vue -->
-
 <template>
   <div class="min-h-screen bg-gray-100">
     <main class="mx-auto max-w-4xl px-4 py-8">
@@ -18,7 +16,6 @@
 
         <!-- Email Section -->
         <section class="flex items-center">
-          <!-- Email Icon -->
           <EnvelopeIcon class="mr-3 size-6 text-gray-600" />
           <a
             href="mailto:support@debtfreeplanner.app"
@@ -30,7 +27,6 @@
 
         <!-- WhatsApp Link Section -->
         <section class="flex items-center">
-          <!-- WhatsApp Icon -->
           <ChatBubbleBottomCenterIcon class="mr-3 size-6 text-green-600" />
           <a
             href="https://wa.me/50671457690"
@@ -40,6 +36,11 @@
           >
             Chat with us on WhatsApp
           </a>
+        </section>
+
+        <!-- Display Last Updated Date -->
+        <section class="text-sm text-gray-500">
+          Last Updated: {{ lastUpdated }}
         </section>
       </div>
     </main>
