@@ -34,7 +34,7 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag'],
-
+/*
   gtag: {
     enabled: process.env.NODE_ENV !== 'development',
     id: process.env.GOOGLE_GTAG_ID,
@@ -57,6 +57,7 @@ export default defineNuxtConfig({
       ],
     ],
   },
+  */
 
   devtools: { enabled: true },
   compatibilityDate: '2024-10-17',
