@@ -1,10 +1,10 @@
 <!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\coming-soon\LaunchAnnouncement.vue -->
 <template>
-  <div class="text-center launch-announcement">
-    <h1 class="text-4xl md:text-5xl font-bold text-white">
+  <div class="launch-announcement text-center">
+    <h1 class="text-4xl font-bold text-white md:text-5xl">
       A powerful web-based tool to
     </h1>
-    <h1 class="text-4xl md:text-5xl font-bold text-white">
+    <h1 class="text-4xl font-bold text-white md:text-5xl">
       Strategically Plan Your Journey to a Debt-Free Living
     </h1>
     <div class="mt-8">

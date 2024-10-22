@@ -1,8 +1,8 @@
 <!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\layouts\default.vue -->
 <template>
-  <div class="flex flex-col min-h-screen">
+  <div class="flex min-h-screen flex-col">
     <Navbar />
-    <main class="flex-grow">
+    <main class="grow">
       <NuxtPage />
     </main>
     <Footer />
@@ -10,8 +10,8 @@
 </template>
 
 <script setup>
-import Navbar from '@/components/Navbar.vue';
-import Footer from '@/components/Footer.vue';
+import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
 </script>
 
 <style scoped>

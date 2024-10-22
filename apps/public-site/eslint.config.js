@@ -7,6 +7,7 @@ import pluginVue from 'eslint-plugin-vue'
 import pluginPrettier from 'eslint-plugin-prettier'
 import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
 import vueAccessibilityPlugin from 'eslint-plugin-vuejs-accessibility'
+import vueParser from 'vue-eslint-parser' // Import vue-eslint-parser
 
 // Use flat config recommended by eslint-plugin-vue for Vue 3
 const vueConfig = pluginVue.configs['flat/recommended']
@@ -37,8 +38,9 @@ export default [
       globals: {
         ...globals.browser,
       },
-      parser: tsParser,
+      parser: vueParser, // Use the imported parser object
       parserOptions: {
+        parser: tsParser, // Use TypeScript parser for <script lang="ts">
         ecmaVersion: 'latest',
         sourceType: 'module',
         project: './tsconfig.json',
