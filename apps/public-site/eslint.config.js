@@ -69,8 +69,8 @@ export default [
         'warn',
         { argsIgnorePattern: '^_' },
       ],
-      // Disable the migration rule as it's incorrectly flagging valid classes
-      'tailwindcss/migration-from-tailwind-2': 'off',
+      // Keep the migration rule enabled
+      'tailwindcss/migration-from-tailwind-2': 'warn',
     },
   },
 ]
