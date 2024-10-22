@@ -1,3 +1,5 @@
+// apps\public-site\nuxt.config.ts
+
 import { defineNuxtConfig } from 'nuxt/config'
 import * as dotenv from 'dotenv'
 import * as path from 'path'
@@ -31,19 +33,29 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: [
-    '@nuxtjs/tailwindcss',
-    'nuxt-gtag', // Add the nuxt-gtag module
-  ],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag'],
 
-  'nuxt-gtag': {
-    id: process.env.GOOGLE_GTAG_ID, // Your GA Measurement ID from .env
+  gtag: {
+    enabled: process.env.NODE_ENV !== 'development',
+    id: process.env.GOOGLE_GTAG_ID,
     config: {
-      anonymize_ip: true, // Optional: Anonymize IP addresses
-      send_page_view: false, // Disable automatic page view tracking
+      page_title: 'DebtFreePlanner',
+      anonymize_ip: false,
+      send_page_view: true,
+      cookie_domain: 'DebtFreePlanner.app',
     },
-    debug: process.env.NODE_ENV !== 'production', // Enable debug in development
-    disableAutoPageTrack: false, // Enable automatic page view tracking (if desired)
+    initCommands: [
+      [
+        'consent',
+        'default',
+        {
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          ad_storage: 'granted',
+          analytics_storage: 'granted',
+        },
+      ],
+    ],
   },
 
   devtools: { enabled: true },
@@ -53,22 +65,18 @@ export default defineNuxtConfig({
     logLevel: 4, // 0: none, 1: error, 2: warn, 3: info, 4: debug
   },
 
-  plugins: [
-    '~/plugins/auth0.client.ts',
-    // Removed the custom GA plugin
-  ],
+  plugins: ['~/plugins/auth0.client.ts'],
 
   runtimeConfig: {
     public: {
       auth0Domain: process.env.AUTH0_DOMAIN,
       auth0ClientId: process.env.AUTH0_CLIENT_ID,
-      // googleGtagId is optional here as it's handled by nuxt-gtag
     },
   },
 
   typescript: {
     strict: true,
-    typeCheck: false, // Set to true once everything is working
+    typeCheck: false, // Temporarily set to false
   },
 
   hooks: {
