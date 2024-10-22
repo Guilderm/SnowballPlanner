@@ -1,5 +1,3 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\Navbar.vue -->
-
 <template>
   <Disclosure as="nav" class="bg-white shadow" v-slot="{ open }">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -51,7 +49,7 @@
                 leave-to-class="transform opacity-0 scale-95"
               >
                 <MenuItems
-                  class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  class="ring-opacity/5 absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black focus:outline-none"
                 >
                   <MenuItem v-slot="{ active }">
                     <a
@@ -90,7 +88,7 @@
           </template>
           <template v-else>
             <button
-              @click="login"
+              @click="handleLogin"
               class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               Log in
@@ -132,23 +130,42 @@ import {
 } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
+// Define the User interface based on Auth0's user object
+interface User {
+  picture?: string
+  // Add other user properties if needed
+}
+
 const isAuthenticated = ref(false)
-const user = ref(null)
-const loginWithRedirect = ref<Function>(() => {})
-const logout = ref<Function>(() => {})
+const user = ref<User | null>(null)
+const loginWithRedirect = ref<() => void>(() => {})
+const logout = ref<
+  (options?: {
+    logoutParams?: {
+      returnTo?: string
+    }
+  }) => void
+>(() => {})
 
 onMounted(() => {
   const auth = useAuth0()
 
   if (auth) {
     isAuthenticated.value = auth.isAuthenticated.value
-    user.value = auth.user.value
+    user.value = auth.user.value as User | null
     loginWithRedirect.value = auth.loginWithRedirect
     logout.value = auth.logout
   }
 })
 
-const login = () => {
+const handleLogin = () => {
+  if (typeof window.gtag !== 'undefined') {
+    window.gtag('event', 'click', {
+      event_category: 'user_interaction',
+      event_label: 'Log In',
+      value: 'login_button_clicked',
+    })
+  }
   loginWithRedirect.value()
 }
 
@@ -156,3 +173,7 @@ const logoutUser = () => {
   logout.value({ logoutParams: { returnTo: window.location.origin } })
 }
 </script>
+
+<style scoped>
+/* Add any component-specific styles here */
+</style>
