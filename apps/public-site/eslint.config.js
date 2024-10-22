@@ -1,4 +1,3 @@
-// eslint.config.js
 import globals from 'globals'
 import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
@@ -7,13 +6,28 @@ import pluginPrettier from 'eslint-plugin-prettier'
 import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
 import vueAccessibilityPlugin from 'eslint-plugin-vuejs-accessibility'
 
+// Import recommended configurations from plugins
+const recommendedConfigs = [
+  typescriptEslintPlugin.configs.recommended,
+  pluginVue.configs['vue3-recommended'],
+  vueAccessibilityPlugin.configs.recommended,
+  tailwindcssPlugin.configs.recommended,
+  pluginPrettier.configs.recommended,
+]
+
 export default [
   {
-    // Ignore built files and node_modules
-    ignores: ['**/dist/**', '**/node_modules/**', '**/.nuxt/**'],
+    // Ignore built files, node_modules, and ESLint/Nuxt config files
+    ignores: [
+      '**/dist/**',
+      '**/node_modules/**',
+      '**/.nuxt/**',
+      'eslint.config.js',
+      'nuxt.config.ts',
+    ],
   },
   {
-    // Base configuration
+    // Base configuration for linting source files
     files: ['**/*.{js,mjs,cjs,ts,vue}'],
     languageOptions: {
       globals: {
@@ -23,7 +37,7 @@ export default [
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: './tsconfig.json', // Ensures compatibility with TypeScript
+        project: './tsconfig.eslint.json', // Use the separate TSConfig for ESLint
         extraFileExtensions: ['.vue'], // Support for Vue 3 single-file components (SFC)
       },
     },
@@ -34,18 +48,12 @@ export default [
       tailwindcss: tailwindcssPlugin,
       prettier: pluginPrettier,
     },
-    extends: [
-      'eslint:recommended',
-      'plugin:@typescript-eslint/recommended',
-      'plugin:vue/vue3-recommended',
-      'plugin:prettier/recommended',
-    ],
     rules: {
-      // Include recommended rules from plugins directly
-      ...typescriptEslintPlugin.configs.recommended.rules,
-      ...pluginVue.configs['vue3-essential'].rules,
-      ...vueAccessibilityPlugin.configs.recommended.rules,
-      ...tailwindcssPlugin.configs.recommended.rules,
+      // Merge recommended rules from all plugins
+      ...recommendedConfigs.reduce((acc, config) => {
+        return { ...acc, ...config.rules }
+      }, {}),
+      // Custom rules
       'prettier/prettier': 'error',
       'tailwindcss/classnames-order': 'warn',
       'tailwindcss/no-custom-classname': 'off',

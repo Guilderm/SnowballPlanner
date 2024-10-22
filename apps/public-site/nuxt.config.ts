@@ -1,5 +1,3 @@
-// apps\public-site\nuxt.config.ts
-
 import { defineNuxtConfig } from 'nuxt/config'
 import * as dotenv from 'dotenv'
 import * as path from 'path'
@@ -34,7 +32,7 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag'],
-/*
+
   gtag: {
     enabled: process.env.NODE_ENV !== 'development',
     id: process.env.GOOGLE_GTAG_ID,
@@ -57,7 +55,6 @@ export default defineNuxtConfig({
       ],
     ],
   },
-  */
 
   devtools: { enabled: true },
   compatibilityDate: '2024-10-17',
@@ -84,6 +81,8 @@ export default defineNuxtConfig({
     ready: () => {
       console.log('AUTH0_DOMAIN:', process.env.AUTH0_DOMAIN)
       console.log('AUTH0_CLIENT_ID:', process.env.AUTH0_CLIENT_ID)
+      console.log('GOOGLE_GTAG_ID:', process.env.GOOGLE_GTAG_ID)
+      console.log('NODE_ENV:', process.env.NODE_ENV)
     },
   },
 })

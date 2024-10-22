@@ -10,5 +10,9 @@
     "typescript",
     "typescriptreact",
     "vue"
-  ]
+  ],
+  "sonarlint.connectedMode.project": {
+    "connectionId": "guilderm",
+    "projectKey": "Guilderm_DebtFreePlanner"
+  }
 }

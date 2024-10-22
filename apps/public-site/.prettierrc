@@ -1,3 +1,5 @@
+// apps\public-site\.prettierrc
+
 {
   "semi": false,
   "singleQuote": true,
