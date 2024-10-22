@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true, // Allow ESLint to process JavaScript files
+    "checkJs": false // Disable type checking for JavaScript files
+  },
+  "include": ["eslint.config.js", "nuxt.config.ts"],
+  "exclude": ["node_modules", ".output", "dist", ".nuxt"]
+}

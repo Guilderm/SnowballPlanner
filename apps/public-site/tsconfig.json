@@ -17,12 +17,13 @@
     "ui/**/*.d.ts",
     "ui/**/*.vue",
     "types/**/*.d.ts"
-    // Removed ".nuxt/**/*.ts" and ".nuxt/**/*.d.ts" from here
   ],
   "exclude": [
     "node_modules",
     ".output",
     "dist",
-    ".nuxt" // Exclude the .nuxt directory
+    ".nuxt",
+    "nuxt.config.ts",
+    "eslint.config.js"
   ]
 }
