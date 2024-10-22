@@ -1,4 +1,5 @@
 // apps/public-site/tsconfig.json
+
 {
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {

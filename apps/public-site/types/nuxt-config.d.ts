@@ -23,10 +23,6 @@ declare module 'nuxt/schema' {
     link?: AppHeadLink[]
   }
 
-  interface AppConfig {
-    head?: AppHeadConfig
-  }
-
   // Define the structure for the `gtag` property
   interface GtagModuleOptions {
     enabled?: boolean
@@ -78,11 +74,11 @@ declare module 'nuxt/schema' {
     ready?: () => void
   }
 
-  // Extend the original NuxtConfig with custom properties
+  // **Extend** the original NuxtConfig with custom properties
   interface NuxtConfig extends OriginalNuxtConfig {
     srcDir?: string
     css?: string[]
-    app?: AppConfig
+    // app?: AppConfig // **Do not override; use existing AppConfig**
     modules?: string[]
     gtag?: GtagModuleOptions
     devtools?: { enabled: boolean }
