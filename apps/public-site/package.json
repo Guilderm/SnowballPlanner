@@ -20,7 +20,8 @@
     "@auth0/auth0-vue": "^2.3.3",
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.1.5",
-    "axios": "^1.7.7"
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",

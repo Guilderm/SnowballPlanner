@@ -1,12 +1,16 @@
+// apps/public-site/nuxt.config.ts
+
 import { defineNuxtConfig } from 'nuxt/config'
+import * as dotenv from 'dotenv'
+import * as path from 'path'
+
+// Load .env from the monorepo root
+dotenv.config({ path: path.resolve(__dirname, '../../.env') })
 
 export default defineNuxtConfig({
   srcDir: 'ui/',
-  css: [
-    '@nuxtjs/tailwindcss/base',
-    '@nuxtjs/tailwindcss/components',
-    '@nuxtjs/tailwindcss/utilities',
-  ],
+
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag'],
 
   app: {
     head: {
@@ -41,8 +45,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag'],
 
   gtag: {
     enabled: process.env.NODE_ENV !== 'development',
@@ -80,9 +82,7 @@ export default defineNuxtConfig({
     public: {
       auth0Domain: process.env.AUTH0_DOMAIN,
       auth0ClientId: process.env.AUTH0_CLIENT_ID,
-      googleGtagId: process.env.GOOGLE_GTAG_ID,
     },
-    // Private variables goes here.
   },
 
   typescript: {
