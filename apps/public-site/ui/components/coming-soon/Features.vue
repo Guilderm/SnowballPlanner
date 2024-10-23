@@ -1,4 +1,4 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\coming-soon\Features.vue -->
+<!-- apps\public-site\ui\components\coming-soon\Features.vue -->
 
 <template>
   <div

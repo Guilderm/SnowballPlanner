@@ -1,4 +1,4 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\coming-soon\CountdownTimer.vue -->
+<!-- apps\public-site\ui\components\coming-soon\CountdownTimer.vue -->
 
 <template>
   <div class="mt-8 flex justify-center space-x-4">

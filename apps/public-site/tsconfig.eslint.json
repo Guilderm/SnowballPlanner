@@ -5,6 +5,7 @@
   "include": [
     "ui/**/*.ts",
     "ui/**/*.vue",
+    "api/**/*.js",
     "types/**/*.d.ts",
     "nuxt.config.ts",
     "eslint.config.js",

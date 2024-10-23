@@ -1,6 +1,6 @@
 <!-- apps/public-site/ui/components/Navbar.vue -->
 <template>
-  <Disclosure as="nav" class="bg-white shadow" v-slot="{ open }">
+  <Disclosure v-slot="{ open }" as="nav" class="bg-white shadow">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="flex items-center">
@@ -74,11 +74,11 @@
                   </MenuItem>
                   <MenuItem v-slot="{ active }">
                     <button
-                      @click="logoutUser"
                       :class="[
                         active ? 'bg-gray-100' : '',
                         'block w-full px-4 py-2 text-left text-sm text-gray-700',
                       ]"
+                      @click="logoutUser"
                     >
                       Sign out
                     </button>
@@ -89,8 +89,8 @@
           </template>
           <template v-else>
             <button
-              @click="handleLogin"
               class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              @click="handleLogin"
             >
               Log in
             </button>

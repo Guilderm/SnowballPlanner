@@ -1,3 +1,5 @@
+// apps/public-site/eslint.config.js
+
 import globals from 'globals'
 import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
@@ -7,7 +9,7 @@ import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
 import vueAccessibilityPlugin from 'eslint-plugin-vuejs-accessibility'
 import vueParser from 'vue-eslint-parser'
 
-const vueConfig = pluginVue.configs['flat/recommended']
+const vueConfig = pluginVue.configs['recommended'] // Changed from 'flat/recommended' to 'recommended'
 
 const recommendedConfigs = [
   typescriptEslintPlugin.configs.recommended,
@@ -57,7 +59,10 @@ export default [
       'prettier/prettier': 'error',
       'tailwindcss/classnames-order': 'warn',
       'tailwindcss/no-custom-classname': 'warn',
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_' },
+      ],
     },
   },
 ]

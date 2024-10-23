@@ -1,3 +1,5 @@
+// apps\public-site\nuxt.config.ts
+
 import { defineNuxtConfig } from 'nuxt/config'
 import * as dotenv from 'dotenv'
 import * as path from 'path'

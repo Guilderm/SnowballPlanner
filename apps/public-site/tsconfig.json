@@ -21,6 +21,7 @@
     "types/**/*.d.ts",
     "nuxt.config.ts",
     "eslint.config.js",
+    "api/**/*.js",
     ".nuxt/**/*.d.ts"
   ],
   "exclude": ["node_modules", ".output", "dist"]
