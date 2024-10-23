@@ -1,5 +1,3 @@
-// apps/public-site/nuxt.config.ts
-
 import { defineNuxtConfig } from 'nuxt/config'
 import * as dotenv from 'dotenv'
 import * as path from 'path'
@@ -7,6 +5,8 @@ import * as path from 'path'
 const siteDescription = 'Strategically Plan Your Journey to a Debt-Free Living.'
 const siteURL = 'https://www.DebtFreePlanner.app'
 const ogImage = '/images/coming-soon-background.jpg'
+const siteTitle = 'DebtFreePlanner - ' + siteDescription
+const twitterCardType = 'summary_large_image'
 
 // Load .env from the monorepo root
 dotenv.config({ path: path.resolve(__dirname, '../../.env') })
@@ -18,7 +18,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'DebtFreePlanner -' + siteDescription,
+      title: siteTitle,
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -29,15 +29,23 @@ export default defineNuxtConfig({
           content:
             'Debt management, Debt repayment, Financial planning, Multicurrency support',
         },
-        { property: 'og:title', content: 'DebtFreePlanner' },
+        // Open Graph / Facebook / LinkedIn
+        { property: 'og:title', content: siteTitle },
         { property: 'og:description', content: siteDescription },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: siteURL },
         { property: 'og:image', content: siteURL + ogImage },
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'DebtFreePlanner' },
+        { property: 'og:site_name', content: 'DebtFreePlanner' },
+        { property: 'og:locale', content: 'en_US' },
+        // Twitter
+        { name: 'twitter:card', content: twitterCardType },
+        { name: 'twitter:title', content: siteTitle },
         { name: 'twitter:description', content: siteDescription },
         { name: 'twitter:image', content: siteURL + ogImage },
+        { name: 'twitter:site', content: '@YourTwitterHandle' }, // Replace with your Twitter handle
+        // Additional Tags
+        { name: 'theme-color', content: '#317EFB' }, // Mobile browsers theme color
+        { name: 'robots', content: 'index, follow' }, // SEO robots directive
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
