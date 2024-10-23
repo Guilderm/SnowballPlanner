@@ -69,8 +69,6 @@ export default [
         'warn',
         { argsIgnorePattern: '^_' },
       ],
-      // Keep the migration rule enabled
-      'tailwindcss/migration-from-tailwind-2': 'warn',
     },
   },
 ]

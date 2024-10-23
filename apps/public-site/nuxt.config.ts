@@ -1,15 +1,12 @@
-// apps/public-site/nuxt.config.ts
-
 import { defineNuxtConfig } from 'nuxt/config'
-import * as dotenv from 'dotenv'
-import * as path from 'path'
-
-// Load .env from the monorepo root
-dotenv.config({ path: path.resolve(__dirname, '../../.env') })
 
 export default defineNuxtConfig({
   srcDir: 'ui/',
-  css: ['@/assets/style/global.css'],
+  css: [
+    '@nuxtjs/tailwindcss/base',
+    '@nuxtjs/tailwindcss/components',
+    '@nuxtjs/tailwindcss/utilities',
+  ],
 
   app: {
     head: {
@@ -28,8 +25,20 @@ export default defineNuxtConfig({
           content:
             'Debt management, Debt repayment, Financial planning, Multicurrency support',
         },
+        // Open Graph
+        { property: 'og:title', content: 'DebtFreePlanner' },
+        {
+          property: 'og:description',
+          content: 'Strategically Plan Your Journey to a Debt-Free Living.',
+        },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://DebtFreePlanner.app' },
+        { property: 'og:image', content: '/images/coming-soon-background.jpg' },
       ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'canonical', href: 'https://WWW.DebtFreePlanner.app' },
+      ],
     },
   },
 
@@ -58,11 +67,11 @@ export default defineNuxtConfig({
     ],
   },
 
-  devtools: { enabled: true },
+  devtools: { enabled: process.env.NODE_ENV === 'development' },
   compatibilityDate: '2024-10-17',
 
   nitro: {
-    logLevel: 4, // 0: none, 1: error, 2: warn, 3: info, 4: debug
+    logLevel: process.env.NODE_ENV === 'development' ? 4 : 2, // 0: none, 1: error, 2: warn, 3: info, 4: debug
   },
 
   plugins: ['~/plugins/auth0.client.ts'],
@@ -71,7 +80,9 @@ export default defineNuxtConfig({
     public: {
       auth0Domain: process.env.AUTH0_DOMAIN,
       auth0ClientId: process.env.AUTH0_CLIENT_ID,
+      googleGtagId: process.env.GOOGLE_GTAG_ID,
     },
+    // Private variables goes here.
   },
 
   typescript: {
