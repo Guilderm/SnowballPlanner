@@ -4,6 +4,10 @@ import { defineNuxtConfig } from 'nuxt/config'
 import * as dotenv from 'dotenv'
 import * as path from 'path'
 
+const siteDescription = 'Strategically Plan Your Journey to a Debt-Free Living.'
+const siteURL = 'https://www.DebtFreePlanner.app'
+const ogImage = '/images/coming-soon-background.jpg'
+
 // Load .env from the monorepo root
 dotenv.config({ path: path.resolve(__dirname, '../../.env') })
 
@@ -14,34 +18,30 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title:
-        'DebtFreePlanner - Strategically Plan Your Journey to a Debt-Free Living',
+      title: 'DebtFreePlanner -' + siteDescription,
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          name: 'description',
-          content: 'Strategically Plan Your Journey to a Debt-Free Living.',
-        },
+        { name: 'description', content: siteDescription },
         { name: 'author', content: 'Guilder W. Milliner' },
         {
           name: 'keywords',
           content:
             'Debt management, Debt repayment, Financial planning, Multicurrency support',
         },
-        // Open Graph
         { property: 'og:title', content: 'DebtFreePlanner' },
-        {
-          property: 'og:description',
-          content: 'Strategically Plan Your Journey to a Debt-Free Living.',
-        },
+        { property: 'og:description', content: siteDescription },
         { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://DebtFreePlanner.app' },
-        { property: 'og:image', content: '/images/coming-soon-background.jpg' },
+        { property: 'og:url', content: siteURL },
+        { property: 'og:image', content: siteURL + ogImage },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'DebtFreePlanner' },
+        { name: 'twitter:description', content: siteDescription },
+        { name: 'twitter:image', content: siteURL + ogImage },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'canonical', href: 'https://WWW.DebtFreePlanner.app' },
+        { rel: 'canonical', href: siteURL },
       ],
     },
   },
@@ -70,7 +70,7 @@ export default defineNuxtConfig({
   },
 
   devtools: { enabled: process.env.NODE_ENV === 'development' },
-  compatibilityDate: '2024-10-17',
+  // compatibilityDate: '2024-10-17', will reinable when the app goes live.
 
   nitro: {
     logLevel: process.env.NODE_ENV === 'development' ? 4 : 2, // 0: none, 1: error, 2: warn, 3: info, 4: debug
