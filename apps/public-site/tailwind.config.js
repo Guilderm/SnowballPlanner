@@ -11,14 +11,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#1E40AF', // Example: blue color
-        accent: '#10B981', // Example: green color
-        neutral: '#6B7280', // Example: gray color
+        primary: '#1E3A8A',   // Indigo Blue
+        secondary: '#1F2937', // Charcoal Gray
+        accent: '#10B981',    // Emerald Green
+        neutral: '#6B7280',   // Cool Gray
+        success: '#16A34A',   // Green
+        warning: '#F59E0B',   // Amber
+        danger: '#DC2626',    // Red
+        info: '#3B82F6',      // Blue
+        background: '#F3F4F6',// Light Gray
+        surface: '#FFFFFF',   // White
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 }
