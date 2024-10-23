@@ -26,8 +26,7 @@ export default defineNuxtConfig({
         { name: 'author', content: 'Guilder W. Milliner' },
         {
           name: 'keywords',
-          content:
-            'Debt management, Debt repayment, Financial planning, Multicurrency support',
+          content: 'Debt management, Debt repayment, Financial planning, Multicurrency support',
         },
         // Open Graph / Facebook / LinkedIn
         { property: 'og:title', content: siteTitle },
@@ -78,7 +77,7 @@ export default defineNuxtConfig({
   },
 
   devtools: { enabled: process.env.NODE_ENV === 'development' },
-  // compatibilityDate: '2024-10-17', will reinable when the app goes live.
+  compatibilityDate: '2024-10-23',
 
   nitro: {
     logLevel: process.env.NODE_ENV === 'development' ? 4 : 2, // 0: none, 1: error, 2: warn, 3: info, 4: debug

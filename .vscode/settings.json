@@ -1,8 +1,7 @@
-// Frontend\eslint.config.js
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": true
   },
   "eslint.validate": [
     "javascript",
@@ -14,5 +13,14 @@
   "sonarlint.connectedMode.project": {
     "connectionId": "guilderm",
     "projectKey": "Guilderm_DebtFreePlanner"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

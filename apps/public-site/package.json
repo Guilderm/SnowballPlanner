@@ -13,7 +13,6 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "type-check": "tsc --noEmit",
-    "cleanup": "tsc --build --clean && npm run lint:fix && npm run format",
     "backup": "npm run cleanup && powershell -ExecutionPolicy Bypass -File ../scripts/Backup/Repository_CleanAndBackup.ps1"
   },
   "dependencies": {

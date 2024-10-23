@@ -1,5 +1,3 @@
-// apps/public-site/eslint.config.js
-
 import globals from 'globals'
 import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
@@ -9,10 +7,8 @@ import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
 import vueAccessibilityPlugin from 'eslint-plugin-vuejs-accessibility'
 import vueParser from 'vue-eslint-parser'
 
-// Use flat config recommended by eslint-plugin-vue for Vue 3
 const vueConfig = pluginVue.configs['flat/recommended']
 
-// Import recommended configurations from other plugins
 const recommendedConfigs = [
   typescriptEslintPlugin.configs.recommended,
   vueAccessibilityPlugin.configs.recommended,
@@ -22,7 +18,6 @@ const recommendedConfigs = [
 
 export default [
   {
-    // Ignore built files, node_modules, and configuration files
     ignores: [
       '**/dist/**',
       '**/node_modules/**',
@@ -33,7 +28,6 @@ export default [
     ],
   },
   {
-    // Base configuration for linting Vue, JS, and TypeScript files
     files: ['**/*.{js,mjs,cjs,ts,vue}'],
     languageOptions: {
       globals: {
@@ -56,19 +50,14 @@ export default [
       prettier: pluginPrettier,
     },
     rules: {
-      // Merge recommended rules from all plugins
       ...vueConfig.rules,
       ...recommendedConfigs.reduce((acc, config) => {
         return { ...acc, ...config.rules }
       }, {}),
-      // Custom rules
       'prettier/prettier': 'error',
       'tailwindcss/classnames-order': 'warn',
       'tailwindcss/no-custom-classname': 'warn',
-      '@typescript-eslint/no-unused-vars': [
-        'warn',
-        { argsIgnorePattern: '^_' },
-      ],
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     },
   },
 ]
