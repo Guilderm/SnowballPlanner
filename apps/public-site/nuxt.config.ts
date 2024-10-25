@@ -14,7 +14,7 @@ const twitterCardType = 'summary_large_image'
 dotenv.config({ path: path.resolve(__dirname, '../../.env') })
 
 export default defineNuxtConfig({
-  srcDir: 'ui/',
+  srcDir: 'app/',
 
   modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag'],
 

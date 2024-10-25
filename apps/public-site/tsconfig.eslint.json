@@ -3,9 +3,8 @@
 {
   "extends": "./tsconfig.json",
   "include": [
-    "ui/**/*.ts",
-    "ui/**/*.vue",
-    "api/**/*.js",
+    "app/**/*.ts",
+    "app/**/*.vue",
     "types/**/*.d.ts",
     "nuxt.config.ts",
     "eslint.config.js",

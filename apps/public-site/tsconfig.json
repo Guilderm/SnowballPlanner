@@ -1,4 +1,4 @@
-// apps/public-site/tsconfig.json
+// apps\public-site\tsconfig.json
 
 {
   "extends": "./.nuxt/tsconfig.json",
@@ -10,19 +10,19 @@
       "#build": [".nuxt/types/app/build.d.ts"],
       "#imports": [".nuxt/types/imports.d.ts"],
       "#vue": [".nuxt/types/vue-shim.d.ts"],
-      "@/*": ["./ui/*"],
-      "~/*": ["./ui/*"]
+      "@/*": ["app/*"],
+      "~/*": ["app/*"]
     }
   },
   "include": [
-    "ui/**/*.ts",
-    "ui/**/*.d.ts",
-    "ui/**/*.vue",
+    "app/**/*.ts",
+    "app/**/*.d.ts",
+    "app/**/*.vue",
     "types/**/*.d.ts",
     "nuxt.config.ts",
     "eslint.config.js",
-    "api/**/*.js",
+    "app/**/*.js",
     ".nuxt/**/*.d.ts"
-  ],
+, "app/utilities/newsletter_subscription.js"  ],
   "exclude": ["node_modules", ".output", "dist"]
 }
