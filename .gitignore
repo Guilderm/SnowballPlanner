@@ -140,6 +140,13 @@ dist/
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test/
 
+# VSCode - Ignore all files in .vscode except essential settings
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
 # yarn v2
 .yarn/cache/
 .yarn/unplugged/
@@ -158,6 +165,7 @@ Documents/~$Product Backlog.xlsx
 # macOS specific
 .AppleDouble/
 .LSOverride/
+.DS_Store
 
 # Windows specific
 ehthumbs.db

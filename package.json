@@ -4,7 +4,7 @@
   "description": "_A MERN stack application for strategic debt payoff planning using Snowball and other methods._",
   "main": "index.js",
   "scripts": {
-    "lint": "markdownlint --fix \"**/*.md\""
+    "lint": "markdownlint --fix \"**/*.md\" --ignore-path .markdownlintignore"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +12,5 @@
   "devDependencies": {
     "markdownlint-cli": "^0.41.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
