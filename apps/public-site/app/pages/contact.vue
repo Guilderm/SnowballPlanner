@@ -1,5 +1,3 @@
-
-
 <template>
   <div class="min-h-screen bg-gray-100">
     <main class="mx-auto max-w-4xl px-4 py-8">
