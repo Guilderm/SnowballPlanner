@@ -17,7 +17,9 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  
+  devServer: {
+    port: process.env.PUBLICSITE_PORT || 3000,
+  },
   modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag'],
 
   app: {

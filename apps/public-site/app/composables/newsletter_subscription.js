@@ -1,12 +1,17 @@
-// apps\public-site\composables\utilities\newsletter_subscription.js
-
 import axios from 'axios'
 
-export default async (req, res) => {
-  const { email_address } = req.body
+export default defineEventHandler(async (event) => {
+  const body = await readBody(event)
+  const { email_address } = body
 
   if (!email_address) {
-    return res.status(400).json({ message: 'Email address is required' })
+    return sendError(
+      event,
+      createError({
+        statusCode: 400,
+        statusMessage: 'Email address is required',
+      })
+    )
   }
 
   try {
@@ -14,9 +19,13 @@ export default async (req, res) => {
     const mailchimpAudienceId = process.env.MAILCHIMP_AUDIENCE_ID
 
     if (!mailchimpApiKey || !mailchimpAudienceId) {
-      return res
-        .status(500)
-        .json({ message: 'MailChimp configuration is missing' })
+      return sendError(
+        event,
+        createError({
+          statusCode: 500,
+          statusMessage: 'MailChimp configuration is missing',
+        })
+      )
     }
 
     const dc = mailchimpApiKey.split('-')[1] // Extract the data center from the API key
@@ -37,9 +46,12 @@ export default async (req, res) => {
 
     console.log('MailChimp Response:', response.data) // Log the response data for debugging
 
-    return res.status(200).json({ message: 'Successfully subscribed' })
+    return { message: 'Successfully subscribed' }
   } catch (error) {
     console.error('MailChimp error:', error.response?.data || error.message)
-    return res.status(500).json({ message: 'Failed to subscribe' })
+    return sendError(
+      event,
+      createError({ statusCode: 500, statusMessage: 'Failed to subscribe' })
+    )
   }
-}
+})
