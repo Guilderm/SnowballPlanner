@@ -4,7 +4,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 import * as dotenv from 'dotenv'
 import * as path from 'path'
 
-const siteDescription = 'Strategically Plan Your Journey to a Debt-Free Living.'
+const siteDescription = 'Plan Your Journey to a Debt-Free Living.'
 const siteURL = 'https://www.DebtFreePlanner.app'
 const ogImage = '/images/coming-soon-background.jpg'
 const siteTitle = 'DebtFreePlanner - ' + siteDescription
@@ -28,7 +28,7 @@ export default defineNuxtConfig({
         { name: 'author', content: 'Guilder W. Milliner' },
         {
           name: 'keywords',
-          content: 'Debt management, Debt repayment, Financial planning, Multicurrency support',
+          content: 'Debt management, Debt repayment, Financial planning',
         },
         // Open Graph / Facebook / LinkedIn
         { property: 'og:title', content: siteTitle },
@@ -45,8 +45,8 @@ export default defineNuxtConfig({
         { name: 'twitter:image', content: siteURL + ogImage },
         { name: 'twitter:site', content: '@YourTwitterHandle' }, // Replace with your Twitter handle
         // Additional Tags
-        { name: 'theme-color', content: '#317EFB' }, // Mobile browsers theme color
-        { name: 'robots', content: 'index, follow' }, // SEO robots directive
+        { name: 'theme-color', content: '#317EFB' },
+        { name: 'robots', content: 'index, follow' },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

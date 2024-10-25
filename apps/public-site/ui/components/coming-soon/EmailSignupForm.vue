@@ -2,9 +2,10 @@
 
 <template>
   <form class="mx-auto mt-8 w-full max-w-md" @submit.prevent="submitEmail">
-    <!-- Updated label: Nesting and 'for' attribute -->
-    <label for="email" class="sr-only">
-      Email Address
+    <label for="email" class="sr-only">Email Address</label>
+
+    <div class="flex">
+      <!-- Visible Email Input Field -->
       <input
         id="email"
         v-model="email"
@@ -14,9 +15,7 @@
         required
         class="grow rounded-l-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
-    </label>
 
-    <div class="flex">
       <!-- Submit Button -->
       <button
         type="submit"
@@ -105,7 +104,3 @@ const submitEmail = async () => {
   }
 }
 </script>
-
-<style scoped>
-/* Optional: Add any component-specific styles here */
-</style>

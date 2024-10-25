@@ -63,16 +63,22 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 ## 1. Executive Summary
 
 **Product Name:** DebtFreePlanner  
-**Product Motto:** Strategically plan your journey to a Debt-Free Living
+**Product Motto:** Plan your journey to a Debt-Free Living
 
 **Problem Statement**  
-Loan recipients struggle to manage debts efficiently, leading to a prolonged financial burden.
+Loan recipients  lack the tools and strategies necessary to efficiently organize and reduce their debt, resulting in extended repayment periods and increased interest burdens.
 
 **Value Proposition**  
-DebtFreePlanner provides loan recipients with a web-based tool to manage debt repayment plans, helping them achieve a Debt-Free Life faster.
+ Help loan recipients  achieve a Debt-Free Life faster by providing a online tool to better plan how they will pay off all debts (often call a Debt Repayment Calculator) that supports Multi curency and multi users.
 
 **Target Audience**  
- Individuals and families managing multiple loans, especially those who would benefit from an online debt repayment planner with multicurrency support
+ Individuals and families managing multiple loans, especially those who have loans in two or more currency.
+
+**Unique Selling Points**
+
+- **Multicurrency Support:** Seamlessly manage debts in multiple currencies with automatic exchange rate updates.
+- **Multi-User Collaboration:** Allow multiple users to collaborate on debt repayment plans.
+- **Mutiple Repayment Strategies:** Implement various debt repayment methods, including customizable strategies.
 
 **Key Objective**
 Provide loan recipients with a tool that optimizes their debt repayment plans through informed decision-making.
