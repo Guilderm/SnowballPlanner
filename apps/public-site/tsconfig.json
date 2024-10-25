@@ -23,6 +23,6 @@
     "eslint.config.js",
     "app/**/*.js",
     ".nuxt/**/*.d.ts"
-, "app/utilities/newsletter_subscription.js"  ],
+, "composables/utilities/newsletter_subscription.js"  ],
   "exclude": ["node_modules", ".output", "dist"]
 }

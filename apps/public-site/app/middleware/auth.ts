@@ -1,4 +1,4 @@
-// C:\Repository\DebtFreePlanner\apps\public-site\ui\middleware\auth.ts
+// apps\public-site\app\middleware\auth.ts
 
 import { defineNuxtRouteMiddleware } from '#app'
 import { useAuth0 } from '@auth0/auth0-vue'

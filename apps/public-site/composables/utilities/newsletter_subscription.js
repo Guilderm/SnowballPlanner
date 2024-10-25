@@ -1,3 +1,5 @@
+// apps\public-site\composables\utilities\newsletter_subscription.js
+
 import axios from 'axios'
 
 export default async (req, res) => {

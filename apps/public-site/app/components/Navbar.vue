@@ -1,4 +1,5 @@
-<!-- apps/public-site/ui/components/Navbar.vue -->
+<!-- apps\public-site\app\components\Navbar.vue -->
+ 
 <template>
   <Disclosure v-slot="{ open }" as="nav" class="bg-white shadow">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

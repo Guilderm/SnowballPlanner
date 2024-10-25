@@ -1,4 +1,4 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\pages\privacy.vue -->
+<!-- apps\public-site\app\pages\privacy.vue-->
 
 <template>
   <div class="min-h-screen bg-gray-100">
@@ -114,7 +114,3 @@ definePageMeta({
 
 const lastUpdated = 'October 21, 2024'
 </script>
-
-<style scoped>
-/* Add any page-specific styles here if needed */
-</style>

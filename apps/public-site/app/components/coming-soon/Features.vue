@@ -1,4 +1,4 @@
-<!-- apps\public-site\ui\components\coming-soon\Features.vue -->
+<!-- apps\public-site\app\components\coming-soon\Features.vue -->
 
 <template>
   <div

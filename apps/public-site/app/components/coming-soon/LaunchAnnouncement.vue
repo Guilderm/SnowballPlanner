@@ -1,4 +1,4 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\coming-soon\LaunchAnnouncement.vue -->
+<!-- apps\public-site\app\components\coming-soon\LaunchAnnouncement.vue -->
 
 <template>
   <div class="mt-8 text-center">

@@ -1,4 +1,4 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\components\Footer.vue -->
+<!-- apps\public-site\app\components\Footer.vue -->
 
 <template>
   <footer class="bg-gray-800 py-8 text-white">
@@ -26,7 +26,3 @@
 <script setup>
 const currentYear = new Date().getFullYear()
 </script>
-
-<style scoped>
-/* No additional styles needed */
-</style>

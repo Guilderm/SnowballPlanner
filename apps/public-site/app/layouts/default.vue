@@ -1,4 +1,4 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\ui\layouts\default.vue -->
+<!-- apps\public-site\app\layouts\default.vue -->
 
 <template>
   <div class="flex min-h-screen flex-col">
@@ -14,7 +14,3 @@
 import Navbar from '@/components/Navbar.vue'
 import Footer from '@/components/Footer.vue'
 </script>
-
-<style scoped>
-/* No additional styles needed */
-</style>

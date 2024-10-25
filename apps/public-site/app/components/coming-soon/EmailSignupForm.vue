@@ -1,4 +1,4 @@
-<!-- apps/public-site/ui/components/coming-soon/EmailSignupForm.vue -->
+<!-- apps\public-site\app\components\coming-soon\EmailSignupForm.vue -->
 
 <template>
   <form class="mx-auto mt-8 w-full max-w-md" @submit.prevent="submitEmail">

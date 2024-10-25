@@ -1,4 +1,4 @@
-<!-- apps/public-site/ui/pages/index.vue -->
+<!-- apps\public-site\app\pages\index.vue -->
 
 <template>
   <section

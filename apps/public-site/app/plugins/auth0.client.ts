@@ -1,4 +1,4 @@
-// C:\Repository\DebtFreePlanner\apps\public-site\ui\plugins\auth0.client.ts
+// apps\public-site\app\plugins\auth0.client.ts
 
 import { defineNuxtPlugin, useRuntimeConfig } from '#app'
 import { createAuth0 } from '@auth0/auth0-vue'
