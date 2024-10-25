@@ -108,6 +108,7 @@ export default defineNuxtConfig({
       console.log('AUTH0_DOMAIN:', process.env.AUTH0_DOMAIN)
       console.log('AUTH0_CLIENT_ID:', process.env.AUTH0_CLIENT_ID)
       console.log('GOOGLE_GTAG_ID:', process.env.GOOGLE_GTAG_ID)
-    },
+      console.log('PWA-SERVER BASE URL:', process.env.PWA_SERVER_BASE_URL)
+                    },
   },
 })

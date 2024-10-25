@@ -1,4 +1,4 @@
-<!-- apps\public-site\app\components\coming-soon\EmailSignupForm.vue -->
+<!-- apps/public-site/app/components/coming-soon/EmailSignupForm.vue -->
 
 <template>
   <form class="mx-auto mt-8 w-full max-w-md" @submit.prevent="submitEmail">
@@ -42,6 +42,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import axios from 'axios'
+import { useRuntimeConfig } from '#app' // Import from Nuxt's runtime
+
+// Access runtime configuration
+const config = useRuntimeConfig()
+const API_URL = `${config.public.pwaServerBaseUrl}/api/services/newsletter_subscription`
 
 // Reactive References
 const email = ref('')
@@ -51,7 +56,6 @@ const isLoading = ref(false)
 
 // Email Submission Handler
 const submitEmail = async () => {
-  // Basic Validation: Check if email is entered
   if (!email.value) {
     message.value = 'Please enter a valid email address.'
     success.value = false
@@ -69,16 +73,12 @@ const submitEmail = async () => {
   // Prepare Data for Submission
   const data = {
     email_address: email.value,
-    status: 'subscribed',
   }
 
   try {
     isLoading.value = true
     // Make API Call to Subscribe Email
-    const response = await axios.post(
-      '/api/services/newsletter_subscription',
-      data
-    )
+    const response = await axios.post(API_URL, data)
     console.log('Subscription Response:', response.data)
 
     // Success Feedback
@@ -86,14 +86,10 @@ const submitEmail = async () => {
     success.value = true
     email.value = '' // Reset Email Input
   } catch (error: unknown) {
-    // Error Handling
+    // Handle API errors
     if (axios.isAxiosError(error) && error.response) {
       console.error('Subscription error:', error.response.data)
-      if (error.response.data && error.response.data.detail) {
-        message.value = `Error: ${error.response.data.detail}`
-      } else {
-        message.value = 'There was an error subscribing. Please try again.'
-      }
+      message.value = error.response.data.detail || 'There was an error subscribing. Please try again.'
     } else {
       console.error('An unknown error occurred:', error)
       message.value = 'An unknown error occurred. Please try again later.'

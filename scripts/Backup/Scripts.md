@@ -1,8 +1,9 @@
 # Scripts
 
 ```Powershell
+#TO get the Monorepo structore
 Get-ChildItem -Recurse | Where-Object { $_.FullName -notlike "*node_modules*" -and $_.FullName -notlike "*.next*" -and $_.FullName -notlike "*.output*" -and $_.FullName -notlike "*.nuxt*"-and $_.FullName -notlike "*dist*"} | ForEach-Object { $_.FullName }
 
 #To synk secrets
-infisical agent --config C:\Repository\infisical\agent-config-file.yaml
+infisical agent --config .\agent-config-file.yaml
 ```
