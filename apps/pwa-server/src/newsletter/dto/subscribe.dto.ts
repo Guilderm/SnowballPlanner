@@ -1,4 +1,4 @@
-// apps\pwa-server\src\newsletter\dto\subscribe.dto.ts
+// apps/pwa-server/src/newsletter/dto/subscribe.dto.ts
 
 import { IsEmail, IsNotEmpty } from 'class-validator';
 

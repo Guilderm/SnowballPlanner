@@ -45,7 +45,7 @@ import { useRuntimeConfig } from 'nuxt/app'
 
 // Access runtime configuration
 const config = useRuntimeConfig()
-const API_URL = `${config.public.PWA_SERVER_BASE_URL}/api/newsletter_subscription`
+const API_URL = `${config.public.pwaServerBaseUrl}/api/newsletter_subscription`
 
 // Reactive References
 const email = ref('')

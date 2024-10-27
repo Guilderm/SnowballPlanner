@@ -1,4 +1,4 @@
-// apps\pwa-server\src\newsletter\newsletter.service.ts
+// apps/pwa-server/src/newsletter/newsletter.service.ts
 
 import {
   Injectable,
@@ -32,7 +32,6 @@ export class NewsletterService {
     }
 
     const dc = mailchimpApiKey.split('-')[1];
-
     const url = `https://${dc}.api.mailchimp.com/3.0/lists/${mailchimpAudienceId}/members`;
 
     const data = {

@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   devServer: {
-    port: parseInt(process.env.PUBLICSITE_PORT ?? '3000', 10),
+    port: parseInt(process.env.PUBLIC_SITE_PORT ?? '3000', 10),
   },
   modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag'],
 
@@ -95,6 +95,8 @@ export default defineNuxtConfig({
     public: {
       auth0Domain: process.env.AUTH0_DOMAIN,
       auth0ClientId: process.env.AUTH0_CLIENT_ID,
+      pwaServerBaseUrl: process.env.PWA_SERVER_BASE_URL,
+      googleGtagId: process.env.GOOGLE_GTAG_ID,
     },
   },
 
@@ -108,7 +110,7 @@ export default defineNuxtConfig({
       console.log('AUTH0_DOMAIN:', process.env.AUTH0_DOMAIN)
       console.log('AUTH0_CLIENT_ID:', process.env.AUTH0_CLIENT_ID)
       console.log('GOOGLE_GTAG_ID:', process.env.GOOGLE_GTAG_ID)
-      console.log('PWA-SERVER BASE URL:', process.env.PWA_SERVER_BASE_URL)
-                    },
+      console.log('PWA_SERVER_BASE_URL:', process.env.PWA_SERVER_BASE_URL)
+    },
   },
 })
