@@ -9,23 +9,25 @@ import { defineConfig } from 'eslint-define-config'
 import tsParser from '@typescript-eslint/parser'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import prettierPlugin from 'eslint-plugin-prettier'
-import prettierConfig from './prettier.config.js' // Adjust the path if necessary
+import prettierConfig from './.prettier.config.js' // Updated to reflect the new filename
 
 export default defineConfig([
     {
-        // Specify the files to ignore
+        // Specify the files and directories to ignore
         ignores: [
-            'node_modules/**',
-            'dist/**',
-            'output/**',
-            'apps/pwa-server/node_modules/**',
-            'apps/pwa-server/dist/**',
-            'apps/pwa-server/output/**',
+            'node_modules',
+            'dist',
+            'output',
+            'coverage',
+            'apps/pwa-server/node_modules',
+            'apps/pwa-server/dist',
+            'apps/pwa-server/output',
         ],
     },
     {
-        // Apply these settings to TypeScript files
-        files: ['**/*.ts'],
+        // Apply these settings to TypeScript and JavaScript files
+        files: ['**/*.{ts,js}'],
+        ignores: ['**/*.d.ts'], // Optional: ignore declaration files
         languageOptions: {
             parser: tsParser,
             parserOptions: {
