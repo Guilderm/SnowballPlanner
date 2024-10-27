@@ -4,7 +4,7 @@ import { Controller, Post, Body, HttpCode, HttpStatus } from '@nestjs/common';
 import { NewsletterService } from './newsletter.service';
 import { SubscribeDto } from './dto/subscribe.dto';
 
-@Controller('api/services/newsletter_subscription')
+@Controller('api/newsletter_subscription')
 export class NewsletterController {
   constructor(private readonly newsletterService: NewsletterService) {}
 

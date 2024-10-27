@@ -2,10 +2,9 @@
 
 <template>
   <form class="mx-auto mt-8 w-full max-w-md" @submit.prevent="submitEmail">
-    <label for="email" class="sr-only">Email Address</label>
-
     <div class="flex">
-      <!-- Visible Email Input Field -->
+      <!-- Label and Input with Associated ID -->
+      <label for="email" class="sr-only">Email Address</label>
       <input
         id="email"
         v-model="email"
@@ -16,7 +15,7 @@
         class="grow rounded-l-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
 
-      <!-- Submit Button -->
+      <!-- Submit Button, aligned with the input -->
       <button
         type="submit"
         :disabled="isLoading"
@@ -42,11 +41,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import axios from 'axios'
-import { useRuntimeConfig } from '#app' // Import from Nuxt's runtime
+import { useRuntimeConfig } from 'nuxt/app'
 
 // Access runtime configuration
 const config = useRuntimeConfig()
-const API_URL = `${config.public.pwaServerBaseUrl}/api/services/newsletter_subscription`
+const API_URL = `${config.public.PWA_SERVER_BASE_URL}/api/newsletter_subscription`
 
 // Reactive References
 const email = ref('')
@@ -89,7 +88,9 @@ const submitEmail = async () => {
     // Handle API errors
     if (axios.isAxiosError(error) && error.response) {
       console.error('Subscription error:', error.response.data)
-      message.value = error.response.data.detail || 'There was an error subscribing. Please try again.'
+      message.value =
+        error.response.data.detail ||
+        'There was an error subscribing. Please try again.'
     } else {
       console.error('An unknown error occurred:', error)
       message.value = 'An unknown error occurred. Please try again later.'

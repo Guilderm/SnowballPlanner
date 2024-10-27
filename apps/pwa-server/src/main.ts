@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
 
-  // Define allowed origins based on `ALLOWED_ORIGINS` environment variable
+  // Define allowed origins based on ALLOWED_ORIGINS environment variable
   const allowedOrigins =
     configService.get<string>('ALLOWED_ORIGINS')?.split(',') || [];
 
@@ -35,7 +35,7 @@ async function bootstrap() {
     }),
   );
 
-  const PORT = configService.get<number>('PWASERVER_PORT') || 3300;
+  const PORT = configService.get<number>('PWA_SERVER_PORT') || 3300;
   await app.listen(PORT);
   console.log(`pwa-server is running on port ${PORT}`);
 }

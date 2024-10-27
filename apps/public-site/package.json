@@ -10,8 +10,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "format": "prettier --write .",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
+    "lint:Read": "eslint --fix .",
+    "lint": "eslint --fix .",
     "type-check": "tsc --noEmit",
     "backup": "npm run cleanup && powershell -ExecutionPolicy Bypass -File ../scripts/Backup/Repository_CleanAndBackup.ps1"
   },
