@@ -1,0 +1,12 @@
+# Ignore build output
+dist/
+.output/
+.nuxt/
+.next/
+node_modules/
+
+# Ignore other configurations and static assets
+package-lock.json
+yarn.lock
+tailwind.config.js
+public/

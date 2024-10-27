@@ -9,14 +9,7 @@ import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
 import vueAccessibilityPlugin from 'eslint-plugin-vuejs-accessibility'
 import vueParser from 'vue-eslint-parser'
 
-const vueConfig = pluginVue.configs['recommended'] // Changed from 'flat/recommended' to 'recommended'
-
-const recommendedConfigs = [
-  typescriptEslintPlugin.configs.recommended,
-  vueAccessibilityPlugin.configs.recommended,
-  tailwindcssPlugin.configs.recommended,
-  pluginPrettier.configs.recommended,
-]
+const vueConfig = pluginVue.configs['recommended']
 
 export default [
   {
@@ -27,6 +20,7 @@ export default [
       'nuxt.config.ts',
       'eslint.config.js',
       'tailwind.config.js',
+      'prettier.config.js',
     ],
   },
   {
@@ -53,9 +47,6 @@ export default [
     },
     rules: {
       ...vueConfig.rules,
-      ...recommendedConfigs.reduce((acc, config) => {
-        return { ...acc, ...config.rules }
-      }, {}),
       'prettier/prettier': 'error',
       'tailwindcss/classnames-order': 'warn',
       'tailwindcss/no-custom-classname': 'warn',

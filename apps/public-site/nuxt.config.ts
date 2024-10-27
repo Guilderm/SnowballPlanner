@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   devServer: {
-    port: parseInt(process.env.PUBLIC_SITE_PORT ?? '3000', 10),
+    port: parseInt(process.env.PUBLIC_SITE_PORT ?? '3100', 10),
   },
   modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag'],
 
@@ -107,6 +107,7 @@ export default defineNuxtConfig({
 
   hooks: {
     ready: () => {
+            console.log('Logging environment variables:')
       console.log('AUTH0_DOMAIN:', process.env.AUTH0_DOMAIN)
       console.log('AUTH0_CLIENT_ID:', process.env.AUTH0_CLIENT_ID)
       console.log('GOOGLE_GTAG_ID:', process.env.GOOGLE_GTAG_ID)

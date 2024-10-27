@@ -1,9 +1,0 @@
-// apps\public-site\.prettierrc
-
-{
-  "semi": false,
-  "singleQuote": true,
-  "trailingComma": "es5",
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "ignorePatterns": ["node_modules/", ".nuxt/"]
-}
