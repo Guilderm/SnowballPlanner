@@ -11,9 +11,8 @@
     "postinstall": "nuxt prepare",
     "format": "prettier --write .",
     "lint:Read": "eslint --fix .",
-    "lint": "eslint --fix .",
-    "type-check": "tsc --noEmit",
-    "backup": "npm run cleanup && powershell -ExecutionPolicy Bypass -File ../scripts/Backup/Repository_CleanAndBackup.ps1"
+    "lint": "eslint . --fix",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@auth0/auth0-vue": "^2.3.3",
@@ -24,9 +23,11 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
+    "@nuxt/types": "^2.18.1",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
+    "@types/node": "^22.8.1",
     "@typescript-eslint/eslint-plugin": "^8.11.0",
     "@typescript-eslint/parser": "^8.11.0",
     "@typescript-eslint/utils": "^8.10.0",

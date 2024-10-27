@@ -1,5 +1,3 @@
-// apps\public-site\tsconfig.json
-
 {
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
@@ -22,7 +20,8 @@
     "nuxt.config.ts",
     "eslint.config.js",
     "app/**/*.js",
-    ".nuxt/**/*.d.ts"
-, "composables/utilities/newsletter_subscription.js"  ],
+    ".nuxt/**/*.d.ts",
+    "composables/utilities/newsletter_subscription.js"
+  ],
   "exclude": ["node_modules", ".output", "dist"]
 }
