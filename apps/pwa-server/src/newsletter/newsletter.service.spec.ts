@@ -1,7 +1,7 @@
 // apps\pwa-server\src\newsletter\newsletter.service.spec.ts
 
 import { Test, TestingModule } from '@nestjs/testing';
-import { NewsletterService } from './newsletter.service';
+import { NewsletterService } from './newsletter.service.js';
 
 describe('NewsletterService', () => {
   let service: NewsletterService;

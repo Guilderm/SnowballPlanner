@@ -1,8 +1,8 @@
 // apps/pwa-server/src/newsletter/newsletter.module.ts
 
 import { Module } from '@nestjs/common'
-import { NewsletterService } from './newsletter.service'
-import { NewsletterController } from './newsletter.controller'
+import { NewsletterService } from './newsletter.service.js'
+import { NewsletterController } from './newsletter.controller.js'
 import { HttpModule } from '@nestjs/axios'
 
 @Module({
