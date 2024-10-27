@@ -5,29 +5,25 @@
  * @type {import("eslint").Linter.Config}
  */
 
+import path from 'path'
+import { fileURLToPath } from 'url'
 import { defineConfig } from 'eslint-define-config'
 import tsParser from '@typescript-eslint/parser'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import prettierPlugin from 'eslint-plugin-prettier'
-import prettierConfig from './.prettier.config.js' // Updated to reflect the new filename
+import prettierConfig from './prettier.config.js'
+
+// Simulate __dirname in an ES module environment
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 export default defineConfig([
     {
-        // Specify the files and directories to ignore
-        ignores: [
-            'node_modules',
-            'dist',
-            'output',
-            'coverage',
-            'apps/pwa-server/node_modules',
-            'apps/pwa-server/dist',
-            'apps/pwa-server/output',
-        ],
+        ignores: ['node_modules', 'dist', 'output', 'coverage'],
     },
     {
-        // Apply these settings to TypeScript and JavaScript files
         files: ['**/*.{ts,js}'],
-        ignores: ['**/*.d.ts'], // Optional: ignore declaration files
+        ignores: ['**/*.d.ts'],
         languageOptions: {
             parser: tsParser,
             parserOptions: {
@@ -40,12 +36,9 @@ export default defineConfig([
             '@typescript-eslint': tsPlugin,
             prettier: prettierPlugin,
         },
-        // Extend recommended rules
         rules: {
             ...tsPlugin.configs.recommended.rules,
-            // Prettier integration
             'prettier/prettier': ['error', prettierConfig],
-            // Custom rules
             '@typescript-eslint/interface-name-prefix': 'off',
             '@typescript-eslint/explicit-function-return-type': 'off',
             '@typescript-eslint/explicit-module-boundary-types': 'off',
