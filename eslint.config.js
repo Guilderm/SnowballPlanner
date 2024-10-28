@@ -36,10 +36,10 @@ export default [
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       parser: typescriptParser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       parserOptions: {
         project: ['./tsconfig.json'],
-        ecmaVersion: 'latest',
-        sourceType: 'module',
       },
       globals: {},
     },
@@ -55,10 +55,10 @@ export default [
     files: ['**/*.vue'],
     languageOptions: {
       parser: vueEslintParser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       parserOptions: {
         parser: typescriptParser,
-        ecmaVersion: 'latest',
-        sourceType: 'module',
       },
       globals: {
         definePageMeta: 'readonly',
@@ -79,7 +79,7 @@ export default [
       'prettier.config.js',
     ],
     languageOptions: {
-      ecmaVersion: '2021', // Equivalent to "es2021": true
+      ecmaVersion: 2021, 
       sourceType: 'module',
       globals: {
         require: 'readonly',
