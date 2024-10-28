@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["apps/public-site/app/*"],
+      "~/*": ["apps/public-site/app/*"]
+    }
+  },
+  "references": [
+    { "path": "./apps/public-site" },
+    { "path": "./apps/pwa-server" }
+  ],
+  "include": [],
+  "exclude": ["node_modules", "dist", ".output", ".nuxt", ".next"]
+}

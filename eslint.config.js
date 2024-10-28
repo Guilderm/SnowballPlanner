@@ -1,54 +1,95 @@
 // eslint.config.js
 
-import { FlatCompat } from "@eslint/eslintrc";
-import js from "@eslint/js";
-import vue from "eslint-plugin-vue";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import prettierPlugin from "eslint-plugin-prettier";
-import path from "path";
-import { fileURLToPath } from "url";
+import js from '@eslint/js';
+import pluginVue from 'eslint-plugin-vue';
+import typescriptPlugin from '@typescript-eslint/eslint-plugin';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { FlatCompat } from '@eslint/eslintrc';
+import { createRequire } from 'module';
 
-// Define __dirname equivalent for ES modules
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const compat = new FlatCompat({ baseDirectory: __dirname });
+const require = createRequire(import.meta.url);
+const typescriptParser = require('@typescript-eslint/parser');
+const vueEslintParser = require('vue-eslint-parser');
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
 
 export default [
-  js.configs.recommended,
-  typescriptEslint.configs.recommended,
-  vue.configs.recommended,
-  compat.extends("prettier"), // Correctly extend 'eslint-config-prettier'
   {
-    files: ["**/*.{js,ts,vue}"],
     ignores: [
-      "dist/",
-      ".output/",
-      ".nuxt/",
-      ".next/",
-      "node_modules/",
-      "public/",
+      '**/dist/**',
+      '**/.output/**',
+      '**/.nuxt/**',
+      '**/.next/**',
+      '**/node_modules/**',
+      '**/public/**',
     ],
+  },
+
+  js.configs.recommended,
+  ...pluginVue.configs['flat/recommended'],
+  {
+    files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
-      parser: "@typescript-eslint/parser",
+      parser: typescriptParser,
       parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-        project: ["./tsconfig.json"],
-        extraFileExtensions: [".vue"],
+        project: ['./tsconfig.json'],
+        ecmaVersion: 'latest',
+        sourceType: 'module',
       },
+      globals: {},
     },
     plugins: {
-      vue,
-      "@typescript-eslint": typescriptEslint,
-      prettier: prettierPlugin, // Assign 'prettier' plugin
+      '@typescript-eslint': typescriptPlugin,
     },
     rules: {
-      "prettier/prettier": "error",
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
-        { argsIgnorePattern: "^_" },
-      ],
-      // Add any additional custom rules here
+      ...typescriptPlugin.configs.recommended.rules,
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    },
+  },
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parser: vueEslintParser,
+      parserOptions: {
+        parser: typescriptParser,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+      globals: {
+        definePageMeta: 'readonly',
+        defineNuxtConfig: 'readonly',
+        defineNuxtPlugin: 'readonly',
+      },
+    },
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+  },
+  ...compat.extends('prettier'),
+  {
+    files: [
+      'Backend/**/*.js',
+      'apps/pwa-server/**/*.js',
+      'apps/public-site/tailwind.config.js',
+      'prettier.config.js',
+    ],
+    languageOptions: {
+      ecmaVersion: '2021', // Equivalent to "es2021": true
+      sourceType: 'module',
+      globals: {
+        require: 'readonly',
+        module: 'readonly',
+        __dirname: 'readonly',
+        process: 'readonly',
+      },
+    },
+    rules: {
+      'no-undef': 'off',
     },
   },
 ];

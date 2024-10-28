@@ -1,5 +1,5 @@
 {
-  "extends": "./.nuxt/tsconfig.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "types": ["@types/node", "nuxt"],
     "baseUrl": ".",
@@ -22,5 +22,5 @@
     "app/**/*.js",
     "composables/utilities/newsletter_subscription.js"
   ],
-  "exclude": ["node_modules", ".output", "dist"]
+  "exclude": ["tailwind.config.js", "node_modules", "dist", ".nuxt", ".output"]
 }

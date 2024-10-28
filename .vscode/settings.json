@@ -8,7 +8,8 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "vue"
+    "vue",
+    "json"
   ],
   "prettier.requireConfig": true,
   "sonarlint.connectedMode.project": {
@@ -18,7 +19,13 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
@@ -27,7 +34,5 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "eslint.workingDirectories": [
-    { "mode": "auto" }
-  ]
+  "eslint.workingDirectories": [{ "mode": "auto" }]
 }
