@@ -19,11 +19,11 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-// List all tsconfig.json paths relative to the root and convert to absolute paths
+// List all tsconfig.json paths relative to the root
 const tsConfigPaths = [
-  path.resolve(__dirname, './tsconfig.json'), // Root tsconfig
-  path.resolve(__dirname, './apps/public-site/tsconfig.json'),
-  path.resolve(__dirname, './apps/pwa-server/tsconfig.json'),
+  './tsconfig.json', // Root tsconfig
+  './apps/public-site/tsconfig.json',
+  './apps/pwa-server/tsconfig.json',
   // Add more tsconfig.json paths here if you have additional projects
 ];
 
@@ -46,7 +46,7 @@ export default [
   // 3. Vue's Flat Recommended Configuration
   ...pluginVue.configs['flat/recommended'],
 
-  // 4. TypeScript Configuration
+  // 4. TypeScript Configuration for Source Files
   {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
@@ -54,7 +54,7 @@ export default [
       ecmaVersion: 'latest', // Correctly set as 'latest'
       sourceType: 'module',
       parserOptions: {
-        project: tsConfigPaths, // Updated to include all tsconfig.json paths as absolute paths
+        project: tsConfigPaths, // Updated to include all tsconfig.json paths as relative paths
       },
       globals: {
         process: 'readonly',
@@ -114,6 +114,30 @@ export default [
     },
     rules: {
       'no-undef': 'off',
+    },
+  },
+
+  // 8. Test Files Configuration: Define Test Globals and Ensure TypeScript Parsing
+  {
+    files: ['**/*.spec.ts', '**/*.test.ts', '**/*.e2e-spec.ts'],
+    languageOptions: {
+      parser: typescriptParser, // Ensure TypeScript parsing
+      parserOptions: {
+        project: tsConfigPaths, // Ensure TypeScript project references
+      },
+      globals: {
+        describe: 'readonly',
+        it: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+      },
+    },
+    plugins: {
+      '@typescript-eslint': typescriptPlugin,
+    },
+    rules: {
+      // Optionally, you can customize rules for test files here
     },
   },
 ];
