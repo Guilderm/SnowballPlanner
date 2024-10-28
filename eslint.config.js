@@ -1,32 +1,25 @@
 // eslint.config.js
 
+import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 import vue from "eslint-plugin-vue";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import prettier from "eslint-plugin-prettier";
+import prettierPlugin from "eslint-plugin-prettier";
 import path from "path";
 import { fileURLToPath } from "url";
 
 // Define __dirname equivalent for ES modules
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const compat = new FlatCompat({ baseDirectory: __dirname });
+
 export default [
-  // JavaScript configurations
   js.configs.recommended,
-
-  // TypeScript configurations
   typescriptEslint.configs.recommended,
-
-  // Vue configurations
   vue.configs.recommended,
-
-  // Prettier configurations
-  prettier.configs.prettier,
-
-  // Custom configuration
+  compat.extends("prettier"), // Correctly extend 'eslint-config-prettier'
   {
     files: ["**/*.{js,ts,vue}"],
-    // Replace .eslintignore with ignores property here
     ignores: [
       "dist/",
       ".output/",
@@ -47,7 +40,7 @@ export default [
     plugins: {
       vue,
       "@typescript-eslint": typescriptEslint,
-      prettier,
+      prettier: prettierPlugin, // Assign 'prettier' plugin
     },
     rules: {
       "prettier/prettier": "error",
