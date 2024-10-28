@@ -107,7 +107,7 @@ export default defineNuxtConfig({
 
   hooks: {
     ready: () => {
-            console.log('Logging environment variables:')
+      console.log('Logging environment variables:')
       console.log('AUTH0_DOMAIN:', process.env.AUTH0_DOMAIN)
       console.log('AUTH0_CLIENT_ID:', process.env.AUTH0_CLIENT_ID)
       console.log('GOOGLE_GTAG_ID:', process.env.GOOGLE_GTAG_ID)

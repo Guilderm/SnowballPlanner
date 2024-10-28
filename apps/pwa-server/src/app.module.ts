@@ -6,15 +6,15 @@ import { AppService } from './app.service.js'
 import { NewsletterModule } from './newsletter/newsletter.module.js'
 
 @Module({
-    imports: [
-        ConfigModule.forRoot({
-            isGlobal: true,
-            envFilePath: ['.env', '../../.env'],
-        }),
-        HttpModule,
-        NewsletterModule,
-    ],
-    controllers: [AppController],
-    providers: [AppService],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: ['.env', '../../.env'],
+    }),
+    HttpModule,
+    NewsletterModule,
+  ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

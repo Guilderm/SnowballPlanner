@@ -67,10 +67,10 @@ This PRD lays the groundwork for the DebtFreePlanner by clearly defining the pro
 **Web Page URL:** [DebtFreePlanner](https://www.debtfreeplanner.app/)
 
 **Problem Statement**  
-Loan recipients  lack the tools and strategies necessary to efficiently organize and reduce their debt, resulting in extended repayment periods and increased interest burdens.
+Loan recipients lack the tools and strategies necessary to efficiently organize and reduce their debt, resulting in extended repayment periods and increased interest burdens.
 
 **Value Proposition**  
- Help loan recipients  achieve a Debt-Free Life faster by providing a online tool to better plan how they will pay off all debts (often call a Debt Repayment Calculator) that supports Multi curency and multi users.
+ Help loan recipients achieve a Debt-Free Life faster by providing a online tool to better plan how they will pay off all debts (often call a Debt Repayment Calculator) that supports Multi curency and multi users.
 
 **Target Audience**  
  Individuals and families managing multiple loans, especially those who have loans in two or more currency.

@@ -6,8 +6,8 @@ import { NewsletterController } from './newsletter.controller.js'
 import { HttpModule } from '@nestjs/axios'
 
 @Module({
-    imports: [HttpModule],
-    providers: [NewsletterService],
-    controllers: [NewsletterController],
+  imports: [HttpModule],
+  providers: [NewsletterService],
+  controllers: [NewsletterController],
 })
 export class NewsletterModule {}
