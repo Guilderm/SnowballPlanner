@@ -1,0 +1,20 @@
+# .prettierignore
+
+# Ignore build output
+dist/
+.output/
+.nuxt/
+.next/
+node_modules/
+
+# Ignore configuration and static files
+*.config.js
+*.config.cjs
+*.config.mjs
+.*rc.js
+.*rc.cjs
+.*rc.mjs
+.eslintignore
+.prettierignore
+.gitignore
+public/

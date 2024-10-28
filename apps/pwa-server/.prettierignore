@@ -1,9 +1,0 @@
-# Ignore generated and temporary files for Prettier
-
-node_modules/
-dist/
-output/
-coverage/
-*.min.js
-*.spec.ts
-*.test.ts

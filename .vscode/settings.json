@@ -1,7 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "always"
   },
   "eslint.validate": [
     "javascript",
@@ -10,6 +10,7 @@
     "typescriptreact",
     "vue"
   ],
+  "prettier.requireConfig": true,
   "sonarlint.connectedMode.project": {
     "connectionId": "guilderm",
     "projectKey": "Guilderm_DebtFreePlanner"
@@ -22,5 +23,11 @@
   },
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.workingDirectories": [
+    { "mode": "auto" }
+  ]
 }

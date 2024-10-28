@@ -18,9 +18,8 @@
     "app/**/*.vue",
     "types/**/*.d.ts",
     "nuxt.config.ts",
-    "eslint.config.js",
-    "app/**/*.js",
     ".nuxt/**/*.d.ts",
+    "app/**/*.js",
     "composables/utilities/newsletter_subscription.js"
   ],
   "exclude": ["node_modules", ".output", "dist"]

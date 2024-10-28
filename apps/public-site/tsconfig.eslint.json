@@ -7,8 +7,8 @@
     "app/**/*.vue",
     "types/**/*.d.ts",
     "nuxt.config.ts",
-    "eslint.config.js",
     ".nuxt/**/*.d.ts"
   ],
   "exclude": ["tailwind.config.js", "node_modules", "dist", ".nuxt", ".output"]
 }
+

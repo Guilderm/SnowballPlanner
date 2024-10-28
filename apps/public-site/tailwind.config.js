@@ -1,3 +1,5 @@
+// apps\public-site\tailwind.config.js
+
 export default {
   content: ['./app/**/*.{vue,js,ts}', './server/**/*.{js,ts}'],
   theme: {
