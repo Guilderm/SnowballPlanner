@@ -9,7 +9,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "type-check": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "lint": "npm run lint --prefix ../../",
     "lint:fix": "npm run lint:fix --prefix ../../",
     "format": "npm run format --prefix ../../",
