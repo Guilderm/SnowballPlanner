@@ -18,9 +18,11 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "type-check": "tsc --noEmit",
-    "lint": "eslint . --ext .js,.ts",
-    "format": "prettier --write ."
+    "lint": "npm run lint --prefix ../../",
+    "lint:fix": "npm run lint:fix --prefix ../../",
+    "format": "npm run format --prefix ../../",
+    "type-check": "npm run typecheck --prefix ../../",
+    "check": "npm run check --prefix ../../"
   },
   "dependencies": {
     "@nestjs/axios": "^3.1.0",

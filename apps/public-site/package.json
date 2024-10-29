@@ -9,10 +9,11 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint:Read": "eslint --fix .",
     "type-check": "tsc --noEmit",
-    "lint": "eslint . --ext .js,.ts,.vue",
-    "format": "prettier --write ."
+    "lint": "npm run lint --prefix ../../",
+    "lint:fix": "npm run lint:fix --prefix ../../",
+    "format": "npm run format --prefix ../../",
+    "check": "npm run check --prefix ../../"
   },
   "dependencies": {
     "@auth0/auth0-vue": "^2.3.3",
