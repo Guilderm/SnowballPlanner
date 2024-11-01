@@ -1,0 +1,18 @@
+# Ignore node_modules (you'll install dependencies in the Dockerfile)
+node_modules
+# Ignore logs
+logs
+*.log
+# Ignore Docker-related files
+Dockerfile
+.dockerignore
+# Ignore temp files and configuration backups
+*.tmp
+*.bak
+# Ignore any editor or IDE configurations
+.vscode
+.idea
+# Ignore build output
+dist
+# Ignore any environment files (if using them locally)
+.env
