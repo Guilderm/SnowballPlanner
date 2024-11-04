@@ -1,3 +1,5 @@
+# apps\pwa-server\Dockerfile
+
 # Stage 1: Builder
 FROM node:20-alpine AS builder
 
