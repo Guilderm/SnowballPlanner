@@ -7,17 +7,17 @@ steps:
       - 'build'
       - '--no-cache'
       - '-t'
-      - '${_AR_HOSTNAME}/${PROJECT_ID}/${_REPOSITORY_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
+      - '${_AR_HOSTNAME}/${PROJECT_ID}/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
       - '-f'
-      - 'apps/pwa-server/Dockerfile'  # Path to your Dockerfile relative to the repository root
-      - 'apps/pwa-server'             # Build context set to the pwa-server directory
+      - 'apps/pwa-server/Dockerfile'
+      - 'apps/pwa-server'
     id: 'Build'
 
   # Step 2: Push the Docker image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - '${_AR_HOSTNAME}/${PROJECT_ID}/${_REPOSITORY_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
+      - '${_AR_HOSTNAME}/${PROJECT_ID}/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
     id: 'Push'
 
   # Step 3: Deploy the Docker image to Cloud Run
@@ -28,23 +28,24 @@ steps:
       - 'deploy'
       - '${_SERVICE_NAME}'
       - '--platform=${_PLATFORM}'
-      - '--image=${_AR_HOSTNAME}/${PROJECT_ID}/${_REPOSITORY_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
+      - '--image=${_AR_HOSTNAME}/${PROJECT_ID}/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
       - '--region=${_DEPLOY_REGION}'
-      - '--allow-unauthenticated'  # Adjust based on your authentication requirements
+      - '--allow-unauthenticated'
       - '--labels=commit-sha=${COMMIT_SHA},trigger-id=${_TRIGGER_ID}'
       - '--quiet'
     id: 'Deploy'
 
 images:
-  - '${_AR_HOSTNAME}/${PROJECT_ID}/${_REPOSITORY_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
+  - '${_AR_HOSTNAME}/${PROJECT_ID}/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
 
 options:
   substitutionOption: 'ALLOW_LOOSE'
   logging: 'CLOUD_LOGGING_ONLY'
 
-# Note: The substitutions section is intentionally left empty because the values are provided by GCP.
-substitutions: {}
+  # Note: The substitutions section is intentionally left empty because the values are provided by GCP.
+substitutions: {} 
 
 tags:
   - 'gcp-cloud-build-deploy-cloud-run'
+  - 'gcp-cloud-build-deploy-cloud-run-managed'
   - 'pwa-server'
