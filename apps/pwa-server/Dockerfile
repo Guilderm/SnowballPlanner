@@ -1,23 +1,23 @@
-# apps\pwa-server\dockerfile
+# Use the official Node.js 16 Alpine image as the base
+FROM node:16-alpine
 
-# Step 1: Use an official Node.js runtime as a base image
-FROM node:18-alpine AS builder
+# Set the working directory
+WORKDIR /usr/src/app
 
-# Step 2: Set the working directory inside the container
-WORKDIR /app
-
-# Step 3: Copy package files and install dependencies
+# Copy package.json and package-lock.json
 COPY package*.json ./
-RUN npm install
 
-# Step 4: Copy the remaining application files
-COPY ./ .
+# Install dependencies
+RUN npm install --production
 
-# Step 5: Build the application
+# Copy the rest of the application code
+COPY . .
+
+# Build the application
 RUN npm run build
 
-# Step 6: Expose the hardcoded port
-EXPOSE 3300
+# Expose port 8080 (optional but recommended for clarity)
+EXPOSE 8080
 
-# Step 7: Start the application
-CMD ["npm", "run", "start:prod"]
+# Start the application
+CMD ["node", "dist/main.js"]
