@@ -1,0 +1,55 @@
+steps:
+  # Step 1: Build the Docker image with commit SHA tag
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '--no-cache'
+      - '-t'
+      - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
+      - '-f'
+      - 'apps/pwa-server/Dockerfile'
+      - 'apps/pwa-server'
+    id: 'Build'
+
+  # Step 2: Push the Docker image with commit SHA tag
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
+    id: 'Push Commit SHA'
+
+  # Step 3: Tag the image as latest
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'tag'
+      - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
+      - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:latest'
+    id: 'Tag Latest'
+
+  # Step 4: Push the Docker image with latest tag
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:latest'
+    id: 'Push Latest'
+
+  # Step 5: Deploy the Docker image tagged as latest to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - '${_SERVICE_NAME}'
+      - '--platform=managed'
+      - '--image=${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:latest'
+      - '--region=${_DEPLOY_REGION}'
+      - '--allow-unauthenticated'  # Adjust based on your authentication requirements
+      - '--labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=${COMMIT_SHA},gcb-build-id=${BUILD_ID},gcb-trigger-id=${_TRIGGER_ID}'
+      - '--quiet'
+    id: 'Deploy Latest'
+
+images:
+  - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
+  - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:latest'
+
+# ... (rest of the configuration)
