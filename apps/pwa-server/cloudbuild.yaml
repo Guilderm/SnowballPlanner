@@ -1,5 +1,13 @@
 steps:
-  # Step 1: Build the Docker image with commit SHA tag
+  # Optional: List files for debugging purposes
+  - name: 'alpine'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - 'ls -la .'
+    id: 'ListFiles'
+
+  # Step 1: Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'build'
@@ -7,33 +15,18 @@ steps:
       - '-t'
       - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
       - '-f'
-      - 'apps/pwa-server/Dockerfile'
-      - 'apps/pwa-server'
+      - 'Dockerfile'          # Direct reference since it's in the same directory
+      - '.'                    # Build context is the current directory
     id: 'Build'
 
-  # Step 2: Push the Docker image with commit SHA tag
+  # Step 2: Push the Docker image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
       - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
-    id: 'Push Commit SHA'
+    id: 'Push'
 
-  # Step 3: Tag the image as latest
-  - name: 'gcr.io/cloud-builders/docker'
-    args:
-      - 'tag'
-      - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
-      - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:latest'
-    id: 'Tag Latest'
-
-  # Step 4: Push the Docker image with latest tag
-  - name: 'gcr.io/cloud-builders/docker'
-    args:
-      - 'push'
-      - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:latest'
-    id: 'Push Latest'
-
-  # Step 5: Deploy the Docker image tagged as latest to Cloud Run
+  # Step 3: Deploy the Docker image to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
     entrypoint: 'gcloud'
     args:
@@ -41,15 +34,28 @@ steps:
       - 'deploy'
       - '${_SERVICE_NAME}'
       - '--platform=managed'
-      - '--image=${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:latest'
+      - '--image=${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
       - '--region=${_DEPLOY_REGION}'
       - '--allow-unauthenticated'  # Adjust based on your authentication requirements
       - '--labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=${COMMIT_SHA},gcb-build-id=${BUILD_ID},gcb-trigger-id=${_TRIGGER_ID}'
       - '--quiet'
-    id: 'Deploy Latest'
+    id: 'Deploy'
 
 images:
   - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
-  - '${_AR_HOSTNAME}/${PROJECT_ID}/cloud-run-source-deploy/${REPO_NAME}/${_SERVICE_NAME}:latest'
 
-# ... (rest of the configuration)
+options:
+  logging: 'CLOUD_LOGGING_ONLY'  # Set logging to Cloud Logging only
+  substitutionOption: 'ALLOW_LOOSE'
+
+substitutions:
+  _DEPLOY_REGION: 'us-central1'
+  _AR_HOSTNAME: 'us-central1-docker.pkg.dev'
+  _TRIGGER_ID: '2d8f81c4-48c0-48c6-bf28-2b3cf6c29dab'
+  _SERVICE_NAME: 'pwa-server'
+  REPO_NAME: 'debtfreeplanner'
+
+tags:
+  - 'gcp-cloud-build-deploy-cloud-run'
+  - 'gcp-cloud-build-deploy-cloud-run-managed'
+  - 'pwa-server'
