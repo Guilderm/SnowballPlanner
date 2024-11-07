@@ -1,7 +1,7 @@
 {
   "name": "debtfreeplanner",
   "version": "1.0.0",
-  "description": "A MERN stack application for strategic debt payoff planning using Snowball and other methods.",
+  "description": "A PWA for strategic debt payoff planning using Snowball and other methods.",
   "type": "module",
   "private": true,
   "scripts": {
@@ -11,7 +11,13 @@
     "typecheck": "tsc --noEmit",
     "check": "npm run lint && npm run format && npm run typecheck"
   },
-  "keywords": ["debt", "finance", "repayment", "planning", "MERN"],
+  "keywords": [
+    "debt",
+    "finance",
+    "repayment",
+    "planning",
+    "MERN"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Guilderm/DebtFreePlanner.git"

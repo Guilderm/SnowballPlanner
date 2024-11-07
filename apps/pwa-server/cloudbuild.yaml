@@ -43,7 +43,7 @@ options:
   logging: 'CLOUD_LOGGING_ONLY'
 
 # Note: The substitutions section is intentionally left empty because the values are provided by GCP.
-substitutions: {} 
+substitutions: {}
 
 tags:
   - 'gcp-cloud-build-deploy-cloud-run'
