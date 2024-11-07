@@ -15,7 +15,7 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
-    "check": "npm run lint && npm run format && npm run typecheck"
+    "verify": "npm run lint && npm run format && npm run typecheck"
   },
   "dependencies": {
     "@nestjs/axios": "^3.1.0",
