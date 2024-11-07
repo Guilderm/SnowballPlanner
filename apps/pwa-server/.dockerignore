@@ -1,3 +1,5 @@
+# apps\pwa-server\.dockerignore
+
 # Ignore node_modules (you'll install dependencies in the Dockerfile)
 node_modules
 # Ignore logs
@@ -16,3 +18,8 @@ Dockerfile
 dist
 # Ignore any environment files (if using them locally)
 .env
+
+
+pwa-server.debtfreeplanner.app
+https://pwa-server.debtfreeplanner.app
+For pwa-server temp

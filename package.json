@@ -1,8 +1,9 @@
 {
   "name": "debtfreeplanner",
   "version": "1.0.0",
-  "description": "_A MERN stack application for strategic debt payoff planning using Snowball and other methods._",
+  "description": "A MERN stack application for strategic debt payoff planning using Snowball and other methods.",
   "type": "module",
+  "private": true,
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -10,9 +11,21 @@
     "typecheck": "tsc --noEmit",
     "check": "npm run lint && npm run format && npm run typecheck"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["debt", "finance", "repayment", "planning", "MERN"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Guilderm/DebtFreePlanner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Guilderm/DebtFreePlanner/issues"
+  },
+  "homepage": "https://www.debtfreeplanner.app/",
+  "author": "Guilder W. Milliner <guilderw@gmail.com>",
+  "license": "CC BY-NC 4.0",
+  "engines": {
+    "node": ">=22.10.0",
+    "npm": ">=10.9.0"
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.13.0",

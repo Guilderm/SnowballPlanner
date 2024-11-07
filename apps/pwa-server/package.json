@@ -1,10 +1,10 @@
 {
   "name": "pwa-server",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "A NestJS server for the DebtFreePlanner PWA, handling API requests and business logic.",
+  "author": "Guilder W. Milliner <guilderw@gmail.com>",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "CC BY-NC 4.0",
   "type": "module",
   "scripts": {
     "build": "nest build",
@@ -23,6 +23,21 @@
     "format": "npm run format --prefix ../../",
     "type-check": "npm run typecheck --prefix ../../",
     "check": "npm run check --prefix ../../"
+  },
+  "keywords": [
+    "nestjs",
+    "backend"  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Guilderm/DebtFreePlanner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Guilderm/DebtFreePlanner/issues"
+  },
+  "homepage": "https://www.debtfreeplanner.app/",
+  "engines": {
+    "node": ">=22.10.0",
+    "npm": ">=10.9.0"
   },
   "dependencies": {
     "@nestjs/axios": "^3.1.0",
@@ -64,19 +79,13 @@
     "typescript": "^5.1.3"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
+    "moduleFileExtensions": ["js", "json", "ts"],
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
+    "collectCoverageFrom": ["**/*.(t|j)s"],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   }
