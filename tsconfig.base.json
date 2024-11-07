@@ -11,7 +11,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["apps/public-site/app/*"],
-      "~/*": ["apps/public-site/app/*"]
+      "~/*": ["apps/public-site/app/*"],
+      "@shared/*": ["apps/shared/src/*"]
     },
     "resolveJsonModule": true
   },

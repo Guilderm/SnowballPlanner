@@ -9,8 +9,11 @@
     "emitDecoratorMetadata": true,
     "baseUrl": ".",
     "incremental": true,
-    "types": ["@types/node"]
+    "types": ["node"],
+    "paths": {
+      "@shared/*": ["../../shared/src/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "test/**/*.ts", "test/**/*.tsx"],
+  "include": ["src/**/*.ts", "test/**/*.ts"],
   "exclude": ["node_modules", "dist", ".nuxt", ".output"]
 }

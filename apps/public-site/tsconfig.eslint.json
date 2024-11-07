@@ -1,5 +1,3 @@
-// apps/public-site/tsconfig.eslint.json
-
 {
   "extends": "./tsconfig.json",
   "include": [

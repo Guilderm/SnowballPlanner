@@ -1,43 +1,19 @@
 {
   "name": "public-site",
-  "version": "1.0.0",
-  "description": "The public-facing website for DebtFreePlanner, built with Nuxt.js and Tailwind CSS to provide users with an intuitive interface for debt management and financial planning.",
+  "version": "0.0.1",
+  "description": "The public-facing website for DebtFreePlanner.",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "test": "vitest run",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
     "typecheck": "tsc --noEmit",
-    "lint": "npm run lint --prefix ../../",
-    "lint:fix": "npm run lint:fix --prefix ../../",
-    "format": "npm run format --prefix ../../",
-    "check": "npm run check --prefix ../../"
-  },
-  "keywords": [
-    "nuxt",
-    "vue",
-    "public-site",
-    "frontend",
-    "tailwindcss",
-    "SSR"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Guilderm/DebtFreePlanner.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Guilderm/DebtFreePlanner/issues"
-  },
-  "homepage": "https://www.debtfreeplanner.app/",
-  "author": "Guilder W. Milliner <guilderw@gmail.com>",
-  "license": "CC BY-NC 4.0",
-  "engines": {
-    "node": ">=22.10.0",
-    "npm": ">=10.9.0"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "check": "npm run lint && npm run format && npm run typecheck"
   },
   "dependencies": {
     "@auth0/auth0-vue": "^2.3.3",
@@ -59,7 +35,6 @@
     "nuxt": "^3.13.2",
     "nuxt-gtag": "^3.0.1",
     "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14",
-    "typescript": "^5.6.3"
+    "tailwindcss": "^3.4.14"
   }
 }
