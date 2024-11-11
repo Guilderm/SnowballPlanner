@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A PWA for strategic debt payoff planning using Snowball and other methods.",
   "private": true,
+  "type": "module",
   "workspaces": [
     "apps/*",
     "!apps/shared"
@@ -12,6 +13,7 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
+    "dev": "npm run dev --workspaces",
     "verify": "npm run lint && npm run format && npm run typecheck"
   },
   "keywords": [
