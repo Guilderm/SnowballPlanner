@@ -1,42 +1,35 @@
 # Stage 1: Builder
 FROM node:20-alpine AS builder
 
-# Set the working directory
 WORKDIR /usr/src/app
 
 # Copy root package files
 COPY package*.json ./
 
-# Copy workspace package files
+# Copy pwa-server package files
 COPY apps/pwa-server/package*.json apps/pwa-server/
-COPY apps/shared/package*.json apps/shared/
 
-# Install dependencies using npm ci for a clean install
+# Install dependencies
 RUN npm ci
 
-# Copy source code for shared and pwa-server
-COPY apps/shared apps/shared
+# Copy source code
 COPY apps/pwa-server apps/pwa-server
+COPY apps/shared apps/shared
 
-# Build the shared and pwa-server packages
-RUN npm run build --workspace=shared && npm run build --workspace=pwa-server
+# Build the pwa-server package
+RUN npm run build --workspace=pwa-server
 
 # Stage 2: Production
 FROM node:20-alpine AS production
 
-# Set the working directory
 WORKDIR /usr/src/app
 
 # Copy the built application from the builder stage
 COPY --from=builder /usr/src/app/apps/pwa-server/dist ./dist
 
-# Copy root package files for production dependencies
+# Copy package files
 COPY package*.json ./
 COPY apps/pwa-server/package*.json apps/pwa-server/
-COPY apps/shared/package*.json apps/shared/
-
-# Set environment to production
-ENV NODE_ENV=production
 
 # Install production dependencies
 RUN npm ci --production

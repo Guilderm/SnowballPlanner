@@ -1,5 +1,3 @@
-# apps\pwa-server\.dockerignore
-
 # Ignore node_modules at the root and within apps
 node_modules
 apps/*/node_modules

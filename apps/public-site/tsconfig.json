@@ -18,8 +18,8 @@
     "app/**/*.d.ts",
     "app/**/*.vue",
     "types/**/*.d.ts",
-    "nuxt.config.ts",
-    ".nuxt/**/*.d.ts"
+  ".nuxt/**/*.d.ts",
+  "../../shared/src/**/*.ts"
   ],
   "exclude": ["node_modules", "dist", ".output", ".nuxt"]
 }
