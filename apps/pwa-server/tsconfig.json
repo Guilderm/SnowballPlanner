@@ -12,12 +12,8 @@
     "types": ["node"],
     "paths": {
       "@shared/*": ["../../shared/src/*"]
-    },
-    "composite": true
+    }
   },
-  "references": [
-    { "path": "../shared" }
-  ],
   "include": ["src/**/*.ts", "test/**/*.ts"],
   "exclude": ["node_modules", "dist", ".nuxt", ".output"]
 }

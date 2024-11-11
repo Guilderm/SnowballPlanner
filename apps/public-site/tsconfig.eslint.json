@@ -1,11 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": [
-    "app/**/*.ts",
-    "app/**/*.vue",
-    "types/**/*.d.ts",
-    "nuxt.config.ts",
-    ".nuxt/**/*.d.ts"
-  ],
-  "exclude": ["tailwind.config.js", "node_modules", "dist", ".nuxt", ".output"]
+  "compilerOptions": {
+    "noEmit": true
+  }
 }

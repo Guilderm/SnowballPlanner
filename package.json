@@ -4,7 +4,8 @@
   "description": "A PWA for strategic debt payoff planning using Snowball and other methods.",
   "private": true,
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "!apps/shared"
   ],
   "scripts": {
     "lint": "eslint .",

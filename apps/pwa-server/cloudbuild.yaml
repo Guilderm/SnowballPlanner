@@ -1,5 +1,3 @@
-# apps\pwa-server\cloudbuild.yaml
-
 steps:
   # Step 1: Build the Docker image using a multi-stage Dockerfile
   - name: 'gcr.io/cloud-builders/docker'
