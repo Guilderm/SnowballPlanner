@@ -10,7 +10,7 @@ steps:
       - '${_AR_HOSTNAME}/${PROJECT_ID}/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
       - '-f'
       - 'apps/pwa-server/Dockerfile'
-      - 'apps/pwa-server'
+      - '.'
     id: 'Build'
 
   # Step 2: Push the Docker image to Artifact Registry
@@ -42,7 +42,7 @@ options:
   substitutionOption: 'ALLOW_LOOSE'
   logging: 'CLOUD_LOGGING_ONLY'
 
-# Note: The substitutions section is intentionally left empty because the values are provided by GCP.
+# The substitutions section is intentionally left empty because values are provided by GCP.
 substitutions: {}
 
 tags:

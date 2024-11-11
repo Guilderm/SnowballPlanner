@@ -6,4 +6,9 @@ Get-ChildItem -Recurse | Where-Object { $_.FullName -notlike "*node_modules*" -a
 
 #To synk secrets
 infisical agent --config .\agent-config-file.yaml
+
+
+
+# TO bild docker immage for pwa-server
+docker build -t pwa-server-image -f apps/pwa-server/Dockerfile .
 ```

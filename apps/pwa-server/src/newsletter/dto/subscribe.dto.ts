@@ -5,5 +5,5 @@ import { IsEmail, IsNotEmpty } from 'class-validator'
 export class SubscribeDto {
   @IsEmail()
   @IsNotEmpty()
-  email_address: string
+  email_address!: string
 }

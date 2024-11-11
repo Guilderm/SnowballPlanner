@@ -1,5 +1,3 @@
-# apps\pwa-server\Dockerfile
-
 # Stage 1: Builder
 FROM node:20-alpine AS builder
 
@@ -13,20 +11,18 @@ COPY package*.json ./
 COPY apps/pwa-server/package*.json apps/pwa-server/
 COPY apps/shared/package*.json apps/shared/
 
-# Install dependencies
-RUN npm install
+# Install dependencies using npm ci for a clean install
+RUN npm ci
 
-# Copy the rest of the application code
-COPY . .
+# Copy source code for shared and pwa-server
+COPY apps/shared apps/shared
+COPY apps/pwa-server apps/pwa-server
 
-# Build the shared package
-RUN npm run build --workspace=shared
-
-# Build the pwa-server
-RUN npm run build --workspace=pwa-server
+# Build the shared and pwa-server packages
+RUN npm run build --workspace=shared && npm run build --workspace=pwa-server
 
 # Stage 2: Production
-FROM node:20-alpine
+FROM node:20-alpine AS production
 
 # Set the working directory
 WORKDIR /usr/src/app
@@ -34,10 +30,16 @@ WORKDIR /usr/src/app
 # Copy the built application from the builder stage
 COPY --from=builder /usr/src/app/apps/pwa-server/dist ./dist
 
-# Install production dependencies
+# Copy root package files for production dependencies
 COPY package*.json ./
 COPY apps/pwa-server/package*.json apps/pwa-server/
-RUN npm install --production
+COPY apps/shared/package*.json apps/shared/
+
+# Set environment to production
+ENV NODE_ENV=production
+
+# Install production dependencies
+RUN npm ci --production
 
 # Expose port 8080
 EXPOSE 8080

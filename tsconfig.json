@@ -9,6 +9,10 @@
       "@shared/*": ["apps/shared/src/*"]
     }
   },
-  "include": ["apps/**/*", "types/**/*.d.ts", "scripts/**/*"],
-  "exclude": ["node_modules", "dist", ".output", ".nuxt", ".next"]
+  "references": [
+    { "path": "./apps/shared" },
+    { "path": "./apps/pwa-server" },
+    { "path": "./apps/public-site" },
+    // Add other apps as needed
+  ]
 }

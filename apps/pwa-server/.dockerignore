@@ -1,25 +1,31 @@
 # apps\pwa-server\.dockerignore
 
-# Ignore node_modules (you'll install dependencies in the Dockerfile)
+# Ignore node_modules at the root and within apps
 node_modules
+apps/*/node_modules
+
 # Ignore logs
 logs
 *.log
+
 # Ignore Docker-related files
 Dockerfile
 .dockerignore
-# Ignore temp files and configuration backups
+
+# Ignore temporary files and backups
 *.tmp
 *.bak
-# Ignore any editor or IDE configurations
+
+# Ignore IDE and editor configurations
 .vscode
 .idea
-# Ignore build output
+
+# Ignore build output directories
 dist
-# Ignore any environment files (if using them locally)
+
+# Ignore environment files
 .env
 
-
-pwa-server.debtfreeplanner.app
-https://pwa-server.debtfreeplanner.app
-For pwa-server temp
+# Ignore Git files
+.git
+.gitignore

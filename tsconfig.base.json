@@ -15,7 +15,5 @@
       "@shared/*": ["apps/shared/src/*"]
     },
     "resolveJsonModule": true
-  },
-  "include": ["types/**/*.d.ts", "apps/**/*", "scripts/**/*"],
-  "exclude": ["node_modules", "dist", ".nuxt", ".output", ".next"]
+  }
 }
