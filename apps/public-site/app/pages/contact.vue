@@ -51,24 +51,24 @@
 import {
   EnvelopeIcon,
   ChatBubbleBottomCenterIcon,
-} from '@heroicons/vue/24/outline'
+} from "@heroicons/vue/24/outline";
 
 definePageMeta({
-  title: 'Contact Us - DebtFreePlanner',
+  title: "Contact Us - DebtFreePlanner",
   meta: [
     {
-      name: 'description',
+      name: "description",
       content:
-        'Contact DebtFreePlanner for support, inquiries, or feedback. Reach us via email or WhatsApp.',
+        "Contact DebtFreePlanner for support, inquiries, or feedback. Reach us via email or WhatsApp.",
     },
     {
-      name: 'keywords',
-      content: 'Contact, DebtFreePlanner, Support, Email, WhatsApp',
+      name: "keywords",
+      content: "Contact, DebtFreePlanner, Support, Email, WhatsApp",
     },
   ],
-})
+});
 
-const lastUpdated = 'October 21, 2024'
+const lastUpdated = "October 21, 2024";
 </script>
 
 <style scoped>

@@ -12,8 +12,7 @@ const require = createRequire(import.meta.url);
 const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const vuePlugin = require('eslint-plugin-vue');
 
-const config = [
-  // Ignored Patterns
+export default [
   {
     ignores: ['dist/**', 'node_modules/**', '.nuxt/**', '.output/**'],
   },
@@ -80,7 +79,7 @@ const config = [
   {
     files: ['**/*.{js,jsx,ts,tsx,vue}'],
     rules: {
-
+      
     },
   },
 
@@ -92,5 +91,3 @@ const config = [
     },
   },
 ];
-
-export default config;

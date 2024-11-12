@@ -1,10 +1,10 @@
 // apps/pwa-server/src/app.service.ts
 
-import { Injectable } from '@nestjs/common'
+import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'Hello from pwa-server!'
+    return "Hello from pwa-server!";
   }
 }

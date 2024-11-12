@@ -94,20 +94,20 @@
 <script setup lang="ts">
 // No need to import definePageMeta
 definePageMeta({
-  title: 'Terms of Service - DebtFreePlanner',
+  title: "Terms of Service - DebtFreePlanner",
   meta: [
     {
-      name: 'description',
+      name: "description",
       content:
-        'Read the Terms of Service for DebtFreePlanner to understand the rules and regulations for using our service.',
+        "Read the Terms of Service for DebtFreePlanner to understand the rules and regulations for using our service.",
     },
     {
-      name: 'keywords',
+      name: "keywords",
       content:
-        'Terms of Service, DebtFreePlanner, User Agreement, Rules, Regulations',
+        "Terms of Service, DebtFreePlanner, User Agreement, Rules, Regulations",
     },
   ],
-})
+});
 
-const lastUpdated = 'October 21, 2024'
+const lastUpdated = "October 21, 2024";
 </script>

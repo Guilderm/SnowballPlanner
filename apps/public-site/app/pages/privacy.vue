@@ -97,20 +97,20 @@
 <script setup lang="ts">
 // No need to import definePageMeta
 definePageMeta({
-  title: 'Privacy Policy - DebtFreePlanner',
+  title: "Privacy Policy - DebtFreePlanner",
   meta: [
     {
-      name: 'description',
+      name: "description",
       content:
-        'Read the Privacy Policy of DebtFreePlanner to understand how we handle your personal information.',
+        "Read the Privacy Policy of DebtFreePlanner to understand how we handle your personal information.",
     },
     {
-      name: 'keywords',
+      name: "keywords",
       content:
-        'Privacy Policy, DebtFreePlanner, Personal Information, Data Protection',
+        "Privacy Policy, DebtFreePlanner, Personal Information, Data Protection",
     },
   ],
-})
+});
 
-const lastUpdated = 'October 21, 2024'
+const lastUpdated = "October 21, 2024";
 </script>

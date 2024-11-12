@@ -21,7 +21,7 @@
         :disabled="isLoading"
         class="rounded-r-md bg-blue-600 px-4 py-2 text-white transition-colors duration-300 hover:bg-blue-700 disabled:bg-blue-400"
       >
-        {{ isLoading ? 'Subscribing...' : 'Subscribe' }}
+        {{ isLoading ? "Subscribing..." : "Subscribe" }}
       </button>
     </div>
 
@@ -39,65 +39,65 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import axios from 'axios'
-import { useRuntimeConfig } from 'nuxt/app'
+import { ref } from "vue";
+import axios from "axios";
+import { useRuntimeConfig } from "nuxt/app";
 
 // Access runtime configuration
-const config = useRuntimeConfig()
-const API_URL = `${config.public.pwaServerBaseUrl}/api/newsletter_subscription`
+const config = useRuntimeConfig();
+const API_URL = `${config.public.pwaServerBaseUrl}/api/newsletter_subscription`;
 
 // Reactive References
-const email = ref('')
-const message = ref('')
-const success = ref(true)
-const isLoading = ref(false)
+const email = ref("");
+const message = ref("");
+const success = ref(true);
+const isLoading = ref(false);
 
 // Email Submission Handler
 const submitEmail = async () => {
   if (!email.value) {
-    message.value = 'Please enter a valid email address.'
-    success.value = false
-    return
+    message.value = "Please enter a valid email address.";
+    success.value = false;
+    return;
   }
 
   // Enhanced Validation: Check email format using regex
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email.value)) {
-    message.value = 'Please enter a valid email address.'
-    success.value = false
-    return
+    message.value = "Please enter a valid email address.";
+    success.value = false;
+    return;
   }
 
   // Prepare Data for Submission
   const data = {
     email_address: email.value,
-  }
+  };
 
   try {
-    isLoading.value = true
+    isLoading.value = true;
     // Make API Call to Subscribe Email
-    const response = await axios.post(API_URL, data)
-    console.log('Subscription Response:', response.data)
+    const response = await axios.post(API_URL, data);
+    console.log("Subscription Response:", response.data);
 
     // Success Feedback
-    message.value = `Thank you! We will notify you at ${email.value}.`
-    success.value = true
-    email.value = '' // Reset Email Input
+    message.value = `Thank you! We will notify you at ${email.value}.`;
+    success.value = true;
+    email.value = ""; // Reset Email Input
   } catch (error: unknown) {
     // Handle API errors
     if (axios.isAxiosError(error) && error.response) {
-      console.error('Subscription error:', error.response.data)
+      console.error("Subscription error:", error.response.data);
       message.value =
         error.response.data.detail ||
-        'There was an error subscribing. Please try again.'
+        "There was an error subscribing. Please try again.";
     } else {
-      console.error('An unknown error occurred:', error)
-      message.value = 'An unknown error occurred. Please try again later.'
+      console.error("An unknown error occurred:", error);
+      message.value = "An unknown error occurred. Please try again later.";
     }
-    success.value = false
+    success.value = false;
   } finally {
-    isLoading.value = false
+    isLoading.value = false;
   }
-}
+};
 </script>

@@ -58,5 +58,5 @@ import {
   ChartPieIcon,
   SparklesIcon,
   GlobeAltIcon,
-} from '@heroicons/vue/24/outline'
+} from "@heroicons/vue/24/outline";
 </script>

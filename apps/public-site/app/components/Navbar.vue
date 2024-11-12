@@ -119,8 +119,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useAuth0 } from '@auth0/auth0-vue'
+import { ref, onMounted } from "vue";
+import { useAuth0 } from "@auth0/auth0-vue";
 import {
   Disclosure,
   DisclosureButton,
@@ -129,45 +129,45 @@ import {
   MenuButton,
   MenuItem,
   MenuItems,
-} from '@headlessui/vue'
-import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+} from "@headlessui/vue";
+import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 
 // Define the User interface based on Auth0's user object
 interface User {
-  picture?: string
+  picture?: string;
   // Add other user properties if needed
 }
 
-const isAuthenticated = ref(false)
-const user = ref<User | null>(null)
-const loginWithRedirect = ref<() => void>(() => {})
-const logout = ref<() => void>(() => {})
+const isAuthenticated = ref(false);
+const user = ref<User | null>(null);
+const loginWithRedirect = ref<() => void>(() => {});
+const logout = ref<() => void>(() => {});
 
 onMounted(() => {
-  const auth = useAuth0()
+  const auth = useAuth0();
 
   if (auth) {
-    isAuthenticated.value = auth.isAuthenticated.value
-    user.value = auth.user.value as User | null
-    loginWithRedirect.value = auth.loginWithRedirect
-    logout.value = auth.logout
+    isAuthenticated.value = auth.isAuthenticated.value;
+    user.value = auth.user.value as User | null;
+    loginWithRedirect.value = auth.loginWithRedirect;
+    logout.value = auth.logout;
   }
-})
+});
 
 const handleLogin = () => {
-  if (typeof window.gtag !== 'undefined') {
-    window.gtag('event', 'click', {
-      event_category: 'user_interaction',
-      event_label: 'Log In',
-      value: 'login_button_clicked',
-    })
+  if (typeof window.gtag !== "undefined") {
+    window.gtag("event", "click", {
+      event_category: "user_interaction",
+      event_label: "Log In",
+      value: "login_button_clicked",
+    });
   }
-  loginWithRedirect.value()
-}
+  loginWithRedirect.value();
+};
 
 const logoutUser = () => {
-  logout.value({ logoutParams: { returnTo: window.location.origin } })
-}
+  logout.value({ logoutParams: { returnTo: window.location.origin } });
+};
 </script>
 
 <style scoped>

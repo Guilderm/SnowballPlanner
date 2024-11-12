@@ -1,12 +1,12 @@
 // apps/public-site/types/nuxt-gtag.d.ts
 
 // Define types for Gtag commands
-type ConsentArg = 'update' | 'default';
+type ConsentArg = "update" | "default";
 type ConsentParams = {
-  ad_user_data?: 'granted' | 'denied';
-  ad_personalization?: 'granted' | 'denied';
-  ad_storage?: 'granted' | 'denied';
-  analytics_storage?: 'granted' | 'denied';
+  ad_user_data?: "granted" | "denied";
+  ad_personalization?: "granted" | "denied";
+  ad_storage?: "granted" | "denied";
+  analytics_storage?: "granted" | "denied";
   wait_for_update?: number;
 };
 
@@ -38,10 +38,7 @@ interface GtagCommands {
     fieldName: FieldNames | string,
     callback?: (field?: string | CustomParams) => void,
   ];
-  consent: [
-    consentArg: ConsentArg | string,
-    consentParams: ConsentParams,
-  ];
+  consent: [consentArg: ConsentArg | string, consentParams: ConsentParams];
 }
 
 // Define the Gtag function type
@@ -71,10 +68,10 @@ interface GtagConfig {
 }
 
 interface GtagConsentConfig {
-  ad_user_data?: 'granted' | 'denied';
-  ad_personalization?: 'granted' | 'denied';
-  ad_storage?: 'granted' | 'denied';
-  analytics_storage?: 'granted' | 'denied';
+  ad_user_data?: "granted" | "denied";
+  ad_personalization?: "granted" | "denied";
+  ad_storage?: "granted" | "denied";
+  analytics_storage?: "granted" | "denied";
   wait_for_update?: number; // Optional delay in consent updates
 }
 
@@ -87,7 +84,7 @@ interface GtagModuleOptions {
 }
 
 // Module augmentation to include `gtag` in NuxtConfig and NuxtOptions
-declare module '@nuxt/schema' {
+declare module "@nuxt/schema" {
   interface NuxtConfig {
     gtag?: GtagModuleOptions;
   }
