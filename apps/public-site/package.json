@@ -6,14 +6,14 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "typecheck": "tsc --noEmit",
+    "dev": "nuxt dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "verify": "npm run lint && npm run format && npm run typecheck"
+    "typecheck": "tsc --noEmit --pretty",
+    "verify": "npm run lint:fix && npm run format && npm run typecheck"
   },
   "dependencies": {
     "@auth0/auth0-vue": "^2.3.3",
