@@ -1,26 +1,18 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "ES2021",
     "outDir": "./dist",
-    "strict": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "useDefineForClassFields": false,
-    "baseUrl": ".",
     "incremental": true,
     "types": ["node"],
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "paths": {
       "@shared/*": ["../../apps/shared/*"]
     },
     "declaration": true,
-    "declarationMap": true,
     "sourceMap": true,
     "removeComments": true
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist", "test", "**/*spec.ts", ".nuxt", ".output"]
+  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
 }
