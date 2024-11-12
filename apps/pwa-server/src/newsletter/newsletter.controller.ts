@@ -1,3 +1,5 @@
+// apps\pwa-server\src\newsletter\newsletter.controller.ts
+
 import { Controller, Post, Body, HttpCode, HttpStatus } from "@nestjs/common";
 import { NewsletterService } from "./newsletter.service";
 import { SubscribeDto } from "./dto/subscribe.dto";

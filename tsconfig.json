@@ -4,14 +4,12 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
-    "strictPropertyInitialization": true,
-    "baseUrl": ".",
+    "baseUrl": ".", // Important for path aliases
     "paths": {
       "@shared/*": ["apps/shared/*"]
     },
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "skipLibCheck": true
   },
   "exclude": ["node_modules", "dist"]
 }
