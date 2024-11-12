@@ -7,7 +7,7 @@
     }
   },
   "include": [
-    "utilities/**/*.ts",
+    "utilities/**/*.ts"
     // Add other relevant include paths as needed
   ],
   "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]

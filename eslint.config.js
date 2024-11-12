@@ -17,34 +17,59 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-// Define the paths to each project's TypeScript configuration
-const tsConfigPaths = [
-  './apps/public-site/tsconfig.json',
-  './apps/pwa-client/tsconfig.json',
-  './apps/pwa-server/tsconfig.json'
-];
-
 export default [
-  {
-    ignores: [
-      '**/dist/**',
-      '**/.output/**',
-      '**/.nuxt/**',
-      '**/.next/**',
-      '**/node_modules/**',
-      '**/public/**',
-    ],
-  },
+  // **1. Base Config: Recommended JS Rules**
   js.configs.recommended,
-  ...pluginVue.configs['flat/recommended'],
+
+  // **2. Base Config: Recommended Vue Rules**
+  pluginVue.configs['flat']?.recommended || pluginVue.configs['recommended'],
+
+  // **3. Prettier Integration**
+  ...compat.extends('prettier'),
+
+  // **4. Configuration for `public-site` Vue files**
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['apps/public-site/**/*.vue'],
+    languageOptions: {
+      parser: vueEslintParser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      parserOptions: {
+        parser: typescriptParser,
+        project: path.resolve(__dirname, './apps/public-site/tsconfig.json'),
+        tsconfigRootDir: __dirname,
+        extraFileExtensions: ['.vue'],
+      },
+      globals: {
+        definePageMeta: 'readonly',
+        defineNuxtConfig: 'readonly',
+        defineNuxtPlugin: 'readonly',
+        process: 'readonly',
+        __dirname: 'readonly',
+      },
+    },
+    plugins: {
+      'vue': pluginVue,
+      '@typescript-eslint': typescriptPlugin,
+    },
+    rules: {
+      'vue/multi-word-component-names': 'off',
+      ...pluginVue.configs['flat']?.recommended.rules || pluginVue.configs['recommended'].rules,
+      ...typescriptPlugin.configs.recommended.rules,
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    },
+  },
+
+  // **5. Configuration for `public-site` TypeScript files**
+  {
+    files: ['apps/public-site/**/*.{ts,tsx}'],
     languageOptions: {
       parser: typescriptParser,
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {
-        project: tsConfigPaths,
+        project: path.resolve(__dirname, './apps/public-site/tsconfig.json'),
+        tsconfigRootDir: __dirname,
       },
       globals: {
         process: 'readonly',
@@ -59,26 +84,87 @@ export default [
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     },
   },
+
+  // **6. Configuration for `pwa-server` TypeScript files**
   {
-    files: ['**/*.vue'],
+    files: ['apps/pwa-server/**/*.{ts,tsx}'],
     languageOptions: {
-      parser: vueEslintParser,
+      parser: typescriptParser,
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {
-        parser: typescriptParser,
+        project: path.resolve(__dirname, './apps/pwa-server/tsconfig.json'),
+        tsconfigRootDir: __dirname,
       },
       globals: {
-        definePageMeta: 'readonly',
-        defineNuxtConfig: 'readonly',
-        defineNuxtPlugin: 'readonly',
+        process: 'readonly',
+        __dirname: 'readonly',
       },
     },
+    plugins: {
+      '@typescript-eslint': typescriptPlugin,
+    },
     rules: {
-      'vue/multi-word-component-names': 'off',
+      ...typescriptPlugin.configs.recommended.rules,
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     },
   },
-  ...compat.extends('prettier'),
+
+  // **7. Configuration for `pwa-client` TypeScript files**
+  {
+    files: ['apps/pwa-client/**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: typescriptParser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      parserOptions: {
+        project: path.resolve(__dirname, './apps/pwa-client/tsconfig.json'),
+        tsconfigRootDir: __dirname,
+      },
+      globals: {
+        process: 'readonly',
+        __dirname: 'readonly',
+      },
+    },
+    plugins: {
+      '@typescript-eslint': typescriptPlugin,
+    },
+    rules: {
+      ...typescriptPlugin.configs.recommended.rules,
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    },
+  },
+
+  // **8. Configuration for Test Files**
+  {
+    files: ['**/*.spec.ts', '**/*.test.ts', '**/*.e2e-spec.ts'],
+    languageOptions: {
+      parser: typescriptParser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      parserOptions: {
+        project: [
+          path.resolve(__dirname, './apps/public-site/tsconfig.json'),
+          path.resolve(__dirname, './apps/pwa-client/tsconfig.json'),
+          path.resolve(__dirname, './apps/pwa-server/tsconfig.json'),
+        ],
+        tsconfigRootDir: __dirname,
+      },
+      globals: {
+        describe: 'readonly',
+        it: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+      },
+    },
+    plugins: {
+      '@typescript-eslint': typescriptPlugin,
+    },
+    rules: {},
+  },
+
+  // **9. Configuration for Specific JS Files**
   {
     files: [
       'Backend/**/*.js',
@@ -99,25 +185,5 @@ export default [
     rules: {
       'no-undef': 'off',
     },
-  },
-  {
-    files: ['**/*.spec.ts', '**/*.test.ts', '**/*.e2e-spec.ts'],
-    languageOptions: {
-      parser: typescriptParser,
-      parserOptions: {
-        project: tsConfigPaths,
-      },
-      globals: {
-        describe: 'readonly',
-        it: 'readonly',
-        expect: 'readonly',
-        beforeEach: 'readonly',
-        afterEach: 'readonly',
-      },
-    },
-    plugins: {
-      '@typescript-eslint': typescriptPlugin,
-    },
-    rules: {},
   },
 ];
