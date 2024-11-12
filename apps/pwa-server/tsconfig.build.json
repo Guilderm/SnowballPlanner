@@ -1,9 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "noEmit": false,
-    "useDefineForClassFields": false // Ensure consistency
-  },
-  "include": ["src/**/*", "../../shared/src/**/*"],
-  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
-}
