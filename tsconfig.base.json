@@ -10,7 +10,7 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@shared/*": ["apps/shared/src/*"]
+      "@shared/*": ["apps/shared/*"]
     },
     "resolveJsonModule": true
   }
