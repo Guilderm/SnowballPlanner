@@ -1,19 +1,17 @@
-// eslint.config.ts
+// eslint.config.js
 
 import js from '@eslint/js';
-import * as typescriptPlugin from '@typescript-eslint/eslint-plugin';
-import typescriptParser from '@typescript-eslint/parser';
+import * as tsPlugin from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
 import * as vuePlugin from 'eslint-plugin-vue';
 import prettierPlugin from 'eslint-plugin-prettier';
 import vueParser from 'vue-eslint-parser';
 import path from 'path';
 
-const __dirname = path.resolve();
-
 const config = [
   // Base JavaScript Configuration
   {
-    files: ['**/*.{js,jsx,mjs,cjs}'],
+    files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -22,38 +20,34 @@ const config = [
       ...js.configs.recommended.rules,
     },
   },
-
   // TypeScript Configuration
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
-      parser: typescriptParser,
+      parser: tsParser,
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
         project: './tsconfig.base.json',
-        tsconfigRootDir: __dirname,
+        tsconfigRootDir: path.resolve(),
       },
     },
     plugins: {
-      '@typescript-eslint': typescriptPlugin,
+      '@typescript-eslint': tsPlugin,
     },
     rules: {
-      ...typescriptPlugin.configs.recommended.rules,
+      ...tsPlugin.configs.recommended.rules,
     },
   },
-
   // Vue Configuration
   {
     files: ['**/*.vue'],
     languageOptions: {
       parser: vueParser,
       parserOptions: {
-        parser: typescriptParser,
+        parser: tsParser,
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: './tsconfig.base.json',
-        tsconfigRootDir: __dirname,
         extraFileExtensions: ['.vue'],
       },
     },
@@ -64,8 +58,7 @@ const config = [
       ...vuePlugin.configs.recommended.rules,
     },
   },
-
-  // Prettier Configuration
+  // Prettier Integration
   {
     files: ['**/*.{js,jsx,ts,tsx,vue}'],
     plugins: {

@@ -1,9 +1,9 @@
 // prettier.config.js
 
-export default {
-  semi: false,
+module.exports = {
+  semi: true,
   singleQuote: true,
-  trailingComma: 'es5',
+  trailingComma: 'all',
   printWidth: 80,
   tabWidth: 2,
   plugins: [require('prettier-plugin-tailwindcss')],
