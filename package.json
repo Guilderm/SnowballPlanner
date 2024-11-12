@@ -9,6 +9,7 @@
     "!apps/shared"
   ],
   "scripts": {
+        "build": "npm run build --workspaces",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
