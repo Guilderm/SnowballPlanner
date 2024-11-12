@@ -1,15 +1,24 @@
+// C:\Repository\DebtFreePlanner\tsconfig.json
 {
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
-    "baseUrl": ".", // Important for path aliases
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
     "paths": {
       "@shared/*": ["apps/shared/*"]
-    },
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    }
   },
-  "exclude": ["node_modules", "dist"]
+  "include": ["apps/**/*"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".nuxt",
+    ".output",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
 }

@@ -9,12 +9,12 @@
     "!apps/shared"
   ],
   "scripts": {
-        "build": "npm run build --workspaces",
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspaces",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "typecheck": "tsc --pretty --noEmit",
-    "dev": "npm run dev --workspaces",
+    "typecheck": "tsc --noEmit --pretty",
     "verify": "npm run lint:fix && npm run format && npm run typecheck"
   },
   "keywords": [
