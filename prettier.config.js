@@ -1,8 +1,8 @@
 // prettier.config.js
 
+import prettierPluginTailwindcss from 'prettier-plugin-tailwindcss';
+
 export default {
-  semi: true,
-  singleQuote: true,
-  trailingComma: 'all',
   printWidth: 80,
+  plugins: [prettierPluginTailwindcss],
 };

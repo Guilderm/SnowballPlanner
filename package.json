@@ -9,9 +9,9 @@
     "!apps/shared"
   ],
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write .",
+  "lint": "eslint .",
+  "lint:fix": "eslint . --fix",
+  "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "dev": "npm run dev --workspaces",
     "verify": "npm run lint:fix && npm run format && npm run typecheck"

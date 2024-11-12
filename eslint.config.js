@@ -1,17 +1,16 @@
 // eslint.config.js
 
 import js from '@eslint/js';
-import tsParser from '@typescript-eslint/parser';
-import prettierPlugin from 'eslint-plugin-prettier';
-import vueParser from 'vue-eslint-parser';
-import path from 'path';
 import { createRequire } from 'module';
+import tsParser from '@typescript-eslint/parser';
+import path from 'path';
+import vueParser from 'vue-eslint-parser';
 
 const require = createRequire(import.meta.url);
 
-// Import CommonJS modules using require
 const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const vuePlugin = require('eslint-plugin-vue');
+const prettierPlugin = require('eslint-plugin-prettier');
 
 const config = [
   // Base JavaScript Configuration
@@ -24,7 +23,6 @@ const config = [
         require: 'readonly',
         module: 'readonly',
         process: 'readonly',
-        __dirname: 'readonly',
         console: 'readonly',
       },
     },
@@ -32,6 +30,7 @@ const config = [
       ...js.configs.recommended.rules,
     },
   },
+
   // TypeScript Configuration
   {
     files: ['**/*.{ts,tsx}'],
@@ -51,6 +50,7 @@ const config = [
       ...tsPlugin.configs.recommended.rules,
     },
   },
+
   // Vue Configuration
   {
     files: ['**/*.vue'],
@@ -70,6 +70,7 @@ const config = [
       ...vuePlugin.configs.recommended.rules,
     },
   },
+
   // Prettier Integration
   {
     files: ['**/*.{js,jsx,ts,tsx,vue}'],
