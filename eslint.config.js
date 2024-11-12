@@ -5,12 +5,12 @@ import { createRequire } from 'module';
 import tsParser from '@typescript-eslint/parser';
 import path from 'path';
 import vueParser from 'vue-eslint-parser';
+import { flatConfigs as prettierConfig } from 'eslint-config-prettier';
 
 const require = createRequire(import.meta.url);
 
 const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const vuePlugin = require('eslint-plugin-vue');
-const prettierPlugin = require('eslint-plugin-prettier');
 
 const config = [
   // Base JavaScript Configuration
@@ -71,17 +71,16 @@ const config = [
     },
   },
 
-  // Prettier Integration
+  // Custom ESLint Rules
   {
     files: ['**/*.{js,jsx,ts,tsx,vue}'],
-    plugins: {
-      prettier: prettierPlugin,
-    },
     rules: {
-      'prettier/prettier': 'error',
       'no-console': 'warn',
     },
   },
+
+  // Integrate Prettier Configurations
+  ...prettierConfig,
 ];
 
 export default config;
