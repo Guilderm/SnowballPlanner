@@ -9,8 +9,8 @@
     "!apps/shared"
   ],
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --flag unstable_ts_config",
+    "lint:fix": "eslint . --fix --flag unstable_ts_config",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "dev": "npm run dev --workspaces",
@@ -40,6 +40,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.14.0",
+    "@types/eslint__js": "^8.42.3",
     "@types/node": "^22.9.0",
     "@typescript-eslint/eslint-plugin": "^8.14.0",
     "@typescript-eslint/parser": "^8.14.0",
@@ -47,9 +48,11 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-vue": "^9.31.0",
+    "jiti": "^2.4.0",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
     "typescript": "^5.6.3",
+    "typescript-eslint": "^8.14.0",
     "vue-eslint-parser": "^9.4.3"
   }
 }
