@@ -1,20 +1,14 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "types": ["node", "nuxt"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["app/*"],
-      "~/*": ["app/*"]
+      "@shared/*": ["../../apps/shared/*"]
     }
   },
   "include": [
-    "app/**/*.ts",
-    "app/**/*.d.ts",
-    "app/**/*.vue",
-    "types/**/*.d.ts",
-    "nuxt.config.ts",
-    ".nuxt/**/*.d.ts"
+    "app/**/*.{ts,tsx,vue}",
+    "types/**/*.d.ts"
   ],
-  "exclude": ["node_modules", "dist", ".output"]
+  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
 }

@@ -6,9 +6,6 @@
       "@shared/*": ["../../apps/shared/*"]
     }
   },
-  "include": [
-    "utilities/**/*.ts"
-    // Add other relevant include paths as needed
-  ],
+  "include": ["utilities/**/*.ts"],
   "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
 }

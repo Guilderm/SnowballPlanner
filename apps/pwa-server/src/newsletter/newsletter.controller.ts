@@ -8,9 +8,7 @@ export class NewsletterController {
 
   @Post()
   @HttpCode(HttpStatus.OK)
-  async subscribe(
-    @Body() subscribeDto: SubscribeDto,
-  ): Promise<{ message: string }> {
+  async subscribe(@Body() subscribeDto: SubscribeDto): Promise<{ message: string }> {
     await this.newsletterService.subscribe(subscribeDto.email_address);
     return { message: "Successfully subscribed" };
   }
