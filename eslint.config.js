@@ -15,7 +15,7 @@ export default [
   // Global ignore patterns for all build-related directories
   {
     ignores: [
-      'dist/**',
+      '**/dist/**',
       'node_modules/**',
       '**/.nuxt/**',
       '**/.output/**'
