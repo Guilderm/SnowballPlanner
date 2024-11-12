@@ -10,25 +10,24 @@
     "build": "nest build",
     "start": "nest start",
     "dev": "nest start --watch",
-    "test": "jest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "typecheck": "tsc --build --pretty",
-    "verify": "npm run lint && npm run format && npm run typecheck"
+    "typecheck": "tsc --noEmit --pretty",
+    "verify": "npm run lint:fix && npm run format && npm run typecheck"
   },
   "dependencies": {
     "@nestjs/axios": "^3.1.0",
-    "@nestjs/common": "^10.0.0",
+    "@nestjs/common": "^10.4.7",
     "@nestjs/config": "^3.3.0",
-    "@nestjs/core": "^10.0.0",
-    "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/core": "^10.4.7",
+    "@nestjs/platform-express": "^10.4.7",
     "@nestjs/throttler": "^6.2.1",
     "axios": "^1.7.7",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "dotenv": "^16.4.5",
-    "reflect-metadata": "^0.2.0",
+    "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
   "devDependencies": {

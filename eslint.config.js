@@ -8,13 +8,18 @@ import vueParser from 'vue-eslint-parser';
 import prettierConfig from 'eslint-config-prettier';
 
 const require = createRequire(import.meta.url);
-
 const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const vuePlugin = require('eslint-plugin-vue');
 
 export default [
+  // Global ignore patterns for all build-related directories
   {
-    ignores: ['dist/**', 'node_modules/**', '.nuxt/**', '.output/**'],
+    ignores: [
+      'dist/**',
+      'node_modules/**',
+      '**/.nuxt/**',
+      '**/.output/**'
+    ],
   },
 
   // Base JavaScript Configuration
@@ -79,7 +84,7 @@ export default [
   {
     files: ['**/*.{js,jsx,ts,tsx,vue}'],
     rules: {
-      
+      // Add any project-specific custom rules here
     },
   },
 
