@@ -1,17 +1,16 @@
 // eslint.config.ts
 
-import type { Linter } from 'eslint';
 import js from '@eslint/js';
-import * as tsConfigs from '@typescript-eslint/eslint-plugin';
+import * as typescriptPlugin from '@typescript-eslint/eslint-plugin';
 import typescriptParser from '@typescript-eslint/parser';
-import * as vueConfigs from 'eslint-plugin-vue';
+import * as vuePlugin from 'eslint-plugin-vue';
 import prettierPlugin from 'eslint-plugin-prettier';
 import vueParser from 'vue-eslint-parser';
 import path from 'path';
 
 const __dirname = path.resolve();
 
-const config: Linter.FlatConfig[] = [
+const config = [
   // Base JavaScript Configuration
   {
     files: ['**/*.{js,jsx,mjs,cjs}'],
@@ -37,11 +36,10 @@ const config: Linter.FlatConfig[] = [
       },
     },
     plugins: {
-      '@typescript-eslint': tsConfigs,
+      '@typescript-eslint': typescriptPlugin,
     },
     rules: {
-      ...tsConfigs.configs.recommended.rules,
-      // Additional TypeScript rules can be added here
+      ...typescriptPlugin.configs.recommended.rules,
     },
   },
 
@@ -51,10 +49,7 @@ const config: Linter.FlatConfig[] = [
     languageOptions: {
       parser: vueParser,
       parserOptions: {
-        parser: {
-          ts: '@typescript-eslint/parser',
-          js: 'espree',
-        },
+        parser: typescriptParser,
         ecmaVersion: 'latest',
         sourceType: 'module',
         project: './tsconfig.base.json',
@@ -63,11 +58,10 @@ const config: Linter.FlatConfig[] = [
       },
     },
     plugins: {
-      vue: vueConfigs,
+      vue: vuePlugin,
     },
     rules: {
-      ...vueConfigs.configs.recommended.rules,
-      // Additional Vue-specific rules can be added here
+      ...vuePlugin.configs.recommended.rules,
     },
   },
 
@@ -80,7 +74,6 @@ const config: Linter.FlatConfig[] = [
     rules: {
       'prettier/prettier': 'error',
       'no-console': 'warn',
-      // Additional custom rules can be added here
     },
   },
 ];
