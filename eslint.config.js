@@ -17,12 +17,10 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-// Define the paths to each project's TypeScript configuration
 const tsConfigPaths = [
   './apps/public-site/tsconfig.json',
   './apps/pwa-client/tsconfig.json',
-  './apps/pwa-server/tsconfig.json',
-  './apps/shared/tsconfig.json',
+  './apps/pwa-server/tsconfig.json'
 ];
 
 export default [
