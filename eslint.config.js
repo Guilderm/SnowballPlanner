@@ -9,7 +9,6 @@ import { FlatCompat } from '@eslint/eslintrc';
 import { createRequire } from 'module';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
 const require = createRequire(import.meta.url);
 const typescriptParser = require('@typescript-eslint/parser');
 const vueEslintParser = require('vue-eslint-parser');
@@ -18,10 +17,12 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
+// Define the paths to each project's TypeScript configuration
 const tsConfigPaths = [
-  './tsconfig.json',
   './apps/public-site/tsconfig.json',
+  './apps/pwa-client/tsconfig.json',
   './apps/pwa-server/tsconfig.json',
+  './apps/shared/tsconfig.json',
 ];
 
 export default [
