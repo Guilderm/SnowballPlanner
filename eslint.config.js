@@ -5,14 +5,19 @@ import { createRequire } from 'module';
 import tsParser from '@typescript-eslint/parser';
 import path from 'path';
 import vueParser from 'vue-eslint-parser';
+import prettierConfig from 'eslint-config-prettier';
 
 const require = createRequire(import.meta.url);
 
 const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const vuePlugin = require('eslint-plugin-vue');
-const prettierConfig = require('eslint-config-prettier');
 
 const config = [
+  // Ignored Patterns
+  {
+    ignores: ['dist/**', 'node_modules/**', '.nuxt/**', '.output/**'],
+  },
+
   // Base JavaScript Configuration
   {
     files: ['**/*.{js,jsx}'],
