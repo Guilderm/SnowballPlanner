@@ -1,16 +1,15 @@
+// tsconfig.json (Root)
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "strict": true,
-    "baseUrl": ".",
-    "paths": {
-      "@shared/*": ["apps/shared/*"]
-    },
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "composite": true
   },
-  "exclude": ["node_modules", "dist", "**/.nuxt", "**/.output"]
+  "references": [
+    { "path": "./apps/public-site" },
+    { "path": "./apps/pwa-server" },
+    { "path": "./apps/pwa-client" },
+    { "path": "./apps/shared" }
+  ],
+  "include": ["apps/**/*", "scripts/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

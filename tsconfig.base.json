@@ -1,0 +1,24 @@
+// tsconfig.base.json
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@shared/*": ["apps/shared/*"]
+    },
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/.nuxt",
+    "**/.output",
+    "**/.next",
+    "**/node_modules",
+    "**/dist"
+  ]
+}

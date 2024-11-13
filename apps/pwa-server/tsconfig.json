@@ -1,6 +1,11 @@
+// apps/pwa-server/tsconfig.json
+
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2017",
+    "lib": ["ES2017", "DOM"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "outDir": "./dist",
@@ -8,18 +13,11 @@
     "sourceMap": true,
     "removeComments": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
     "incremental": true,
-
-    "baseUrl": "./",
-
-    "target": "ES6",
-    "module": "commonjs",
-    "lib": ["ES6", "DOM"],
-    "strict": true,
+    "types": ["node"],
     "esModuleInterop": true
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
+  "exclude": ["node_modules", "dist", "test", "**/*.spec.ts"]
 }
+

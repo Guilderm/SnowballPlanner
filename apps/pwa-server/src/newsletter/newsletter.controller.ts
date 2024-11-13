@@ -1,6 +1,6 @@
-import { Controller, Post, Body, HttpCode, HttpStatus } from "@nestjs/common";
-import { ConfigService } from "@nestjs/config";
+import { Controller, Post, HttpCode, HttpStatus, Body } from "@nestjs/common";
 import { NewsletterService } from "./newsletter.service";
+import { ConfigService } from "@nestjs/config";
 import { SubscribeDto } from "./dto/subscribe.dto";
 
 @Controller("api/newsletter_subscription")

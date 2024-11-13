@@ -1,5 +1,24 @@
+// apps/public-site/tsconfig.json
+
 {
-  "extends": "../../tsconfig.json",
-  "include": ["app/**/*.{ts,tsx,vue}", "types/**/*.d.ts"],
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "types": ["@types/node", "@nuxt/types"],
+    "paths": {
+      "#app": ["./.nuxt/types/app"],
+      "#app/*": ["./.nuxt/types/app/*"],
+      "#build": ["./.nuxt/types/build"],
+      "#build/*": ["./.nuxt/types/build/*"],
+      "@/*": ["./app/*"],
+      "@shared/*": ["../../apps/shared/*"]
+    }
+  },
+  "include": [
+    "app/**/*.{ts,tsx,vue}",
+    "types/**/*.d.ts",
+    ".nuxt/types/**/*.ts"
+  ],
   "exclude": ["node_modules", "dist", "**/.nuxt", "**/.output"]
 }

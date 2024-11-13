@@ -14,8 +14,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write . | findstr /V \"(unchanged)\"",
-    "typecheck": "tsc --noEmit --pretty",
-    "verify": "npm run lint:fix && npm run format && npm run typecheck"
+    "typecheck": "npm run typecheck --workspaces",
+    "verify": "npm run lint:fix && npm run typecheck && npm run format "
   },
   "keywords": [
     "debt",
