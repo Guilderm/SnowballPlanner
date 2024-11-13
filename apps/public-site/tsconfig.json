@@ -1,8 +1,6 @@
-// apps/public-site/tsconfig.json
-
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "composite": true,
     "module": "ESNext",
     "lib": ["ESNext", "DOM"],
     "types": ["@types/node", "@nuxt/types"],
@@ -11,12 +9,12 @@
       "#app/*": ["./.nuxt/types/app/*"],
       "#build": ["./.nuxt/types/build"],
       "#build/*": ["./.nuxt/types/build/*"],
-      "@/*": ["./app/*"],
-      "@shared/*": ["../../apps/shared/*"]
+      "@/*": ["./app/*"]
     }
   },
   "include": [
     "app/**/*.{ts,tsx,vue}",
+    "app/*.{ts,tsx,vue}",
     "types/**/*.d.ts",
     ".nuxt/types/**/*.ts"
   ],

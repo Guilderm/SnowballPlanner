@@ -1,9 +1,7 @@
-// apps/pwa-server/tsconfig.json
-
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "CommonJS",
+    "composite": true,
+    "module": "ESNext",
     "target": "ES2017",
     "lib": ["ES2017", "DOM"],
     "experimentalDecorators": true,
@@ -11,13 +9,9 @@
     "outDir": "./dist",
     "declaration": true,
     "sourceMap": true,
-    "removeComments": true,
-    "allowSyntheticDefaultImports": true,
     "incremental": true,
-    "types": ["node"],
-    "esModuleInterop": true
+    "types": ["node"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist", "test", "**/*.spec.ts"]
 }
-

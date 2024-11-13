@@ -25,13 +25,83 @@ export default [
       'node_modules/**',
       '**/.nuxt/**',
       '**/.output/**',
-      '**/.next/**', // Added to cover any Next.js directories if present
+      '**/.next/**',
     ],
+  },
+
+  // Override Configurations for Specific Projects
+  // Public Site Configuration
+  {
+    files: ['apps/public-site/**/*.{ts,tsx,vue}'],
+    languageOptions: {
+      parser: vueParser,
+      parserOptions: {
+        parser: tsParser,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        project: 'tsconfig.json',
+        tsconfigRootDir: path.join(__dirname, 'apps/public-site'),
+        extraFileExtensions: ['.vue'],
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+      vue: vuePlugin,
+    },
+    rules: {
+      ...tsPlugin.configs.recommended.rules,
+      ...vuePlugin.configs.recommended.rules,
+    },
+  },
+
+  // PWA Server Configuration
+  {
+    files: ['apps/pwa-server/**/*.ts'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        project: 'tsconfig.json',
+        tsconfigRootDir: path.join(__dirname, 'apps/pwa-server'),
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+    },
+    rules: {
+      ...tsPlugin.configs.recommended.rules,
+    },
+  },
+
+  // PWA Client Configuration
+  {
+    files: ['apps/pwa-client/**/*.{ts,tsx,vue}'],
+    languageOptions: {
+      parser: vueParser,
+      parserOptions: {
+        parser: tsParser,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        project: 'tsconfig.json',
+        tsconfigRootDir: path.join(__dirname, 'apps/pwa-client'),
+        extraFileExtensions: ['.vue'],
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+      vue: vuePlugin,
+    },
+    rules: {
+      ...tsPlugin.configs.recommended.rules,
+      ...vuePlugin.configs.recommended.rules,
+    },
   },
 
   // Base JavaScript Configuration
   {
     files: ['**/*.{js,jsx}'],
+    excludedFiles: ['apps/**'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -47,15 +117,15 @@ export default [
     },
   },
 
-  // TypeScript Configuration for Shared and Root Files (if any)
+  // TypeScript Configuration for Root Files
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ['*.{ts,tsx}'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: path.join(__dirname, 'tsconfig.base.json'), // Adjust if you have shared TypeScript files
+        project: 'tsconfig.json',
         tsconfigRootDir: __dirname,
       },
     },
@@ -67,9 +137,9 @@ export default [
     },
   },
 
-  // Vue Configuration for All Vue Files
+  // Vue Configuration for Root Vue Files
   {
-    files: ['**/*.vue'],
+    files: ['*.vue'],
     languageOptions: {
       parser: vueParser,
       parserOptions: {
@@ -77,7 +147,7 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
         extraFileExtensions: ['.vue'],
-        project: path.join(__dirname, 'tsconfig.base.json'), // Adjust if necessary
+        project: 'tsconfig.json',
         tsconfigRootDir: __dirname,
       },
     },
@@ -86,80 +156,6 @@ export default [
     },
     rules: {
       ...vuePlugin.configs.recommended.rules,
-    },
-  },
-
-  // Override Configurations for Specific Projects
-  // Public Site Configuration
-  {
-    files: ['apps/public-site/**/*.{ts,tsx,vue}'],
-    languageOptions: {
-      parser: vueParser,
-      parserOptions: {
-        parser: tsParser,
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: path.join(__dirname, 'apps/public-site/tsconfig.json'),
-        tsconfigRootDir: path.join(__dirname, 'apps/public-site'),
-        extraFileExtensions: ['.vue'],
-      },
-    },
-    plugins: {
-      '@typescript-eslint': tsPlugin,
-      vue: vuePlugin,
-    },
-    rules: {
-      // Inherit base rules
-      ...tsPlugin.configs.recommended.rules,
-      ...vuePlugin.configs.recommended.rules,
-      // Add or override rules specific to public-site if necessary
-    },
-  },
-
-  // PWA Server Configuration
-  {
-    files: ['apps/pwa-server/**/*.ts'],
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: path.join(__dirname, 'apps/pwa-server/tsconfig.json'),
-        tsconfigRootDir: path.join(__dirname, 'apps/pwa-server'),
-      },
-    },
-    plugins: {
-      '@typescript-eslint': tsPlugin,
-    },
-    rules: {
-      ...tsPlugin.configs.recommended.rules,
-      // Add or override rules specific to pwa-server if necessary
-    },
-  },
-
-  // Add additional project-specific overrides here
-  // Example: PWA Client Configuration
-  {
-    files: ['apps/pwa-client/**/*.{ts,tsx,vue}'],
-    languageOptions: {
-      parser: vueParser,
-      parserOptions: {
-        parser: tsParser,
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: path.join(__dirname, 'apps/pwa-client/tsconfig.json'),
-        tsconfigRootDir: path.join(__dirname, 'apps/pwa-client'),
-        extraFileExtensions: ['.vue'],
-      },
-    },
-    plugins: {
-      '@typescript-eslint': tsPlugin,
-      vue: vuePlugin,
-    },
-    rules: {
-      ...tsPlugin.configs.recommended.rules,
-      ...vuePlugin.configs.recommended.rules,
-      // Add or override rules specific to pwa-client if necessary
     },
   },
 
