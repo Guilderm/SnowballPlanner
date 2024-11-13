@@ -15,7 +15,8 @@
   },
   "references": [
     { "path": "./apps/public-site" },
-    { "path": "./apps/pwa-server" }
+    { "path": "./apps/pwa-server" },
+    { "path": "./apps/pwa-client" }
   ],
   "exclude": ["node_modules", "dist", "**/.nuxt", "**/.output", "**/.next"]
 }

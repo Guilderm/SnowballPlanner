@@ -14,10 +14,19 @@
     "composite": true
   },
   "include": [
-    "app/**/*.{ts,tsx,vue}",
-    ".nuxt/types/**/*.ts",
+        "nuxt.config.ts",
     "types/**/*.d.ts",
-    "nuxt.config.ts"
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.vue",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "app/**/*.vue",
+    "apps/shared/**/*.{ts,tsx,vue}",
+    "apps/public-site/**/*.{ts,tsx,vue}",
+    "apps/public-site/**/*.d.ts",
+    "apps/pwa-server/**/*.{ts,tsx,vue}",
+    "apps/pwa-client/**/*.{ts,tsx,vue}"
   ],
   "exclude": ["node_modules", "dist", "**/.nuxt", "**/.output"]
 }

@@ -39,7 +39,7 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
         project: path.join(__dirname, 'apps/public-site/tsconfig.json'),
-        tsconfigRootDir: path.join(__dirname, 'apps/public-site'), // Correct directory for each project
+        tsconfigRootDir: path.join(__dirname, 'apps/public-site'),
         extraFileExtensions: ['.vue'],
       },
     },
@@ -62,7 +62,7 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
         project: path.join(__dirname, 'apps/pwa-server/tsconfig.json'),
-        tsconfigRootDir: path.join(__dirname, 'apps/pwa-server'), // Correct directory for each project
+        tsconfigRootDir: path.join(__dirname, 'apps/pwa-server'),
       },
     },
     plugins: {
@@ -70,6 +70,59 @@ export default [
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
+    },
+  },
+
+  // PWA Client Configuration
+  {
+    files: ['apps/pwa-client/**/*.{ts,tsx,vue}'],
+    languageOptions: {
+      parser: vueParser,
+      parserOptions: {
+        parser: tsParser,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        project: path.join(__dirname, 'apps/pwa-client/tsconfig.json'),
+        tsconfigRootDir: path.join(__dirname, 'apps/pwa-client'),
+        extraFileExtensions: ['.vue'],
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+      vue: vuePlugin,
+    },
+    rules: {
+      ...tsPlugin.configs.recommended.rules,
+      ...vuePlugin.configs.recommended.rules,
+    },
+  },
+
+  // Root TypeScript and Vue Configuration for files like `nuxt.config.ts` and shared components
+  {
+    files: ['*.{ts,tsx,vue}', 'apps/shared/**/*.{ts,tsx,vue}'],
+    languageOptions: {
+      parser: vueParser,
+      parserOptions: {
+        parser: tsParser,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        project: [
+          path.join(__dirname, 'tsconfig.json'), // Root tsconfig
+          path.join(__dirname, 'apps/public-site/tsconfig.json'), // Specific to Public Site
+          path.join(__dirname, 'apps/pwa-server/tsconfig.json'), // Specific to PWA Server
+          path.join(__dirname, 'apps/pwa-client/tsconfig.json'), // Specific to PWA Client
+        ],
+        tsconfigRootDir: __dirname,
+        extraFileExtensions: ['.vue'],
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+      vue: vuePlugin,
+    },
+    rules: {
+      ...tsPlugin.configs.recommended.rules,
+      ...vuePlugin.configs.recommended.rules,
     },
   },
 
@@ -91,80 +144,11 @@ export default [
     },
   },
 
-  // TypeScript Configuration for Root Files
-  {
-    files: ['*.{ts,tsx}'],
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: path.join(__dirname, 'tsconfig.json'),
-        tsconfigRootDir: __dirname,
-      },
-    },
-    plugins: {
-      '@typescript-eslint': tsPlugin,
-    },
-    rules: {
-      ...tsPlugin.configs.recommended.rules,
-    },
-  },
-
-  // Vue Configuration for Root Vue Files
-  {
-    files: ['*.vue'],
-    languageOptions: {
-      parser: vueParser,
-      parserOptions: {
-        parser: tsParser,
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        extraFileExtensions: ['.vue'],
-        project: path.join(__dirname, 'tsconfig.json'),
-        tsconfigRootDir: __dirname,
-      },
-    },
-    plugins: {
-      vue: vuePlugin,
-    },
-    rules: {
-      ...vuePlugin.configs.recommended.rules,
-    },
-  },
-
-  // Custom ESLint Rules for All Relevant Files
-  {
-    files: ['**/*.{js,jsx,ts,tsx,vue}'],
-    rules: {
-      // Add any project-specific custom rules here
-    },
-  },
-
   // Integrate Prettier Configurations
   {
     files: ['**/*.{js,jsx,ts,tsx,vue}'],
     rules: {
       ...prettierConfig.rules,
-    },
-  },
-
-  // TypeScript and Vue Configuration for Root Files
-  {
-    files: ['*.{ts,tsx,vue}'],
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        project: path.join(__dirname, 'tsconfig.json'),
-        tsconfigRootDir: __dirname,
-        extraFileExtensions: ['.vue'],
-      },
-    },
-    plugins: {
-      '@typescript-eslint': tsPlugin,
-    },
-    rules: {
-      // existing rules
     },
   },
 ];
