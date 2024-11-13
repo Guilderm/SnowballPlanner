@@ -29,7 +29,6 @@ export default [
     ],
   },
 
-  // Override Configurations for Specific Projects
   // Public Site Configuration
   {
     files: ['apps/public-site/**/*.{ts,tsx,vue}'],
@@ -39,8 +38,8 @@ export default [
         parser: tsParser,
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: 'tsconfig.json',
-        tsconfigRootDir: path.join(__dirname, 'apps/public-site'),
+        project: path.join(__dirname, 'apps/public-site/tsconfig.json'),
+        tsconfigRootDir: path.join(__dirname, 'apps/public-site'), // Correct directory for each project
         extraFileExtensions: ['.vue'],
       },
     },
@@ -62,8 +61,8 @@ export default [
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: 'tsconfig.json',
-        tsconfigRootDir: path.join(__dirname, 'apps/pwa-server'),
+        project: path.join(__dirname, 'apps/pwa-server/tsconfig.json'),
+        tsconfigRootDir: path.join(__dirname, 'apps/pwa-server'), // Correct directory for each project
       },
     },
     plugins: {
@@ -71,37 +70,12 @@ export default [
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
-    },
-  },
-
-  // PWA Client Configuration
-  {
-    files: ['apps/pwa-client/**/*.{ts,tsx,vue}'],
-    languageOptions: {
-      parser: vueParser,
-      parserOptions: {
-        parser: tsParser,
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: 'tsconfig.json',
-        tsconfigRootDir: path.join(__dirname, 'apps/pwa-client'),
-        extraFileExtensions: ['.vue'],
-      },
-    },
-    plugins: {
-      '@typescript-eslint': tsPlugin,
-      vue: vuePlugin,
-    },
-    rules: {
-      ...tsPlugin.configs.recommended.rules,
-      ...vuePlugin.configs.recommended.rules,
     },
   },
 
   // Base JavaScript Configuration
   {
     files: ['**/*.{js,jsx}'],
-    excludedFiles: ['apps/**'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -125,7 +99,7 @@ export default [
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: 'tsconfig.json',
+        project: path.join(__dirname, 'tsconfig.json'),
         tsconfigRootDir: __dirname,
       },
     },
@@ -147,7 +121,7 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
         extraFileExtensions: ['.vue'],
-        project: 'tsconfig.json',
+        project: path.join(__dirname, 'tsconfig.json'),
         tsconfigRootDir: __dirname,
       },
     },
@@ -172,6 +146,25 @@ export default [
     files: ['**/*.{js,jsx,ts,tsx,vue}'],
     rules: {
       ...prettierConfig.rules,
+    },
+  },
+
+  // TypeScript and Vue Configuration for Root Files
+  {
+    files: ['*.{ts,tsx,vue}'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        project: path.join(__dirname, 'tsconfig.json'),
+        tsconfigRootDir: __dirname,
+        extraFileExtensions: ['.vue'],
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+    },
+    rules: {
+      // existing rules
     },
   },
 ];

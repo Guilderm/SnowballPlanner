@@ -1,8 +1,8 @@
-// tsconfig.json
 {
   "compilerOptions": {
     "target": "ESNext",
     "moduleResolution": "Node",
+    "module": "ESNext",
     "strict": true,
     "baseUrl": ".",
     "paths": {
@@ -11,13 +11,11 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "composite": true // Required for project references
+    "composite": true
   },
   "references": [
     { "path": "./apps/public-site" },
-    { "path": "./apps/pwa-server" },
-    { "path": "./apps/pwa-client" }
+    { "path": "./apps/pwa-server" }
   ],
-  "include": [],
   "exclude": ["node_modules", "dist", "**/.nuxt", "**/.output", "**/.next"]
 }

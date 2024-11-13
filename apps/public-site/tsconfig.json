@@ -1,22 +1,23 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "composite": true,
     "module": "ESNext",
     "lib": ["ESNext", "DOM"],
-    "types": ["@types/node", "@nuxt/types"],
+    "types": ["@nuxt/types"],
     "paths": {
       "#app": ["./.nuxt/types/app"],
       "#app/*": ["./.nuxt/types/app/*"],
       "#build": ["./.nuxt/types/build"],
       "#build/*": ["./.nuxt/types/build/*"],
       "@/*": ["./app/*"]
-    }
+    },
+    "composite": true
   },
   "include": [
     "app/**/*.{ts,tsx,vue}",
-    "app/*.{ts,tsx,vue}",
+    ".nuxt/types/**/*.ts",
     "types/**/*.d.ts",
-    ".nuxt/types/**/*.ts"
+    "nuxt.config.ts"
   ],
   "exclude": ["node_modules", "dist", "**/.nuxt", "**/.output"]
 }
