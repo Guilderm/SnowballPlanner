@@ -3,7 +3,8 @@
   "compilerOptions": {
     "module": "ESNext",
     "lib": ["ESNext", "DOM"],
-    "types": ["@nuxt/types"],
+    // "types": ["@nuxt/types"], // ❌ Remove or clear this line
+    "types": [], // ✅ Optionally set to an empty array
     "paths": {
       "#app": ["./.nuxt/types/app"],
       "#app/*": ["./.nuxt/types/app/*"],
@@ -14,7 +15,7 @@
     "composite": true
   },
   "include": [
-        "nuxt.config.ts",
+    "nuxt.config.ts",
     "types/**/*.d.ts",
     "**/*.ts",
     "**/*.tsx",
@@ -24,9 +25,8 @@
     "app/**/*.vue",
     "apps/shared/**/*.{ts,tsx,vue}",
     "apps/public-site/**/*.{ts,tsx,vue}",
-    "apps/public-site/**/*.d.ts",
     "apps/pwa-server/**/*.{ts,tsx,vue}",
     "apps/pwa-client/**/*.{ts,tsx,vue}"
   ],
-  "exclude": ["node_modules", "dist", "**/.nuxt", "**/.output"]
+  "exclude": ["node_modules", "dist", "**/.nuxt", "**/.output", "**/.next"]
 }
