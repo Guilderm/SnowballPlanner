@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "composite": true,
-    "module": "ESNext",
+    "module": "NodeNext",
     "target": "ES2017",
     "lib": ["ES2017", "DOM"],
     "experimentalDecorators": true,
@@ -10,9 +10,10 @@
     "declaration": true,
     "sourceMap": true,
     "incremental": true,
-    "types": ["node"],
-    "rootDir": ".", // Ensures the compiler looks at the current directory for files
-    "baseUrl": "."
+    "types": ["jest", "node"],
+    "rootDir": ".",
+    "baseUrl": ".",
+    "moduleResolution": "NodeNext"
   },
   "include": ["src/**/*.ts", "test/**/*.ts"],
   "exclude": ["node_modules", "dist"]

@@ -14,7 +14,7 @@
     "format": "prettier --write .",
     "typecheck:tsc": "tsc --noEmit --pretty",
     "typecheck:vue": "vue-tsc --noEmit --pretty",
-    "typecheck": "npm run typecheck:vue && typecheck:tsc",
+    "typecheck": "npm run typecheck:vue && npm run typecheck:tsc",
     "verify": "npm run lint:fix && npm run format && npm run typecheck"
   },
   "dependencies": {
