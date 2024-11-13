@@ -92,8 +92,6 @@
 </template>
 
 <script setup lang="ts">
-import { definePageMeta } from 'nuxt/schema';
-
 definePageMeta({
   title: "Terms of Service - DebtFreePlanner",
   meta: [

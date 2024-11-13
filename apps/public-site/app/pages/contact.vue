@@ -1,4 +1,4 @@
-   <!-- C:\Repository\DebtFreePlanner\apps\public-site\app\pages\contact.vue -->
+<!-- C:\Repository\DebtFreePlanner\apps\public-site\app\pages\contact.vue -->
 
 <template>
   <div class="min-h-screen bg-gray-100">
@@ -54,7 +54,6 @@ import {
   EnvelopeIcon,
   ChatBubbleBottomCenterIcon,
 } from "@heroicons/vue/24/outline";
-import { definePageMeta } from 'nuxt/schema';
 
 definePageMeta({
   title: "Contact Us - DebtFreePlanner",

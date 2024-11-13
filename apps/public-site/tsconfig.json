@@ -1,33 +1,46 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "module": "ESNext",
+    "baseUrl": ".",
+    "composite": true,
     "lib": ["ESNext", "DOM"],
-    "types": ["@types/node", "vue", "nuxt", "nuxt/schema"],
+    "module": "ESNext",
     "paths": {
       "#app": ["./.nuxt/types/app"],
       "#app/*": ["./.nuxt/types/app/*"],
       "#build": ["./.nuxt/types/build"],
       "#build/*": ["./.nuxt/types/build/*"],
-      "@/*": ["./app/*"]
+      "#imports": [".nuxt/types/imports.d.ts"],
+      "#vue": [".nuxt/types/vue-shim.d.ts"],
+      "@/*": ["./app/*"],
+      "@/components/*": ["./app/components/*"],
+      "~/*": ["app/*"]
     },
-    "baseUrl": ".",
-    "composite": true
+    "types": ["@types/node", "vue", "nuxt", "nuxt/schema"],
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true
   },
   "include": [
     ".nuxt",
-    "nuxt.config.ts",
-    "types/**/*.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.vue",
     "app/**/*.ts",
     "app/**/*.tsx",
     "app/**/*.vue",
-    "apps/shared/**/*.{ts,tsx,vue}",
     "apps/public-site/**/*.{ts,tsx,vue}",
+    "apps/pwa-client/**/*.{ts,tsx,vue}",
     "apps/pwa-server/**/*.{ts,tsx,vue}",
-    "apps/pwa-client/**/*.{ts,tsx,vue}"
+    "apps/shared/**/*.{ts,tsx,vue}",
+    "nuxt.config.ts",
+    "types/**/*.d.ts",
+    "**/*.js"
   ],
-  "exclude": ["node_modules", "dist", "**/.output", "**/.next"]
+  "exclude": ["dist", "node_modules", "**/.next", "**/.output"]
 }
