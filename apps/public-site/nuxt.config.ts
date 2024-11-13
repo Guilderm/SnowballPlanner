@@ -1,6 +1,7 @@
 // apps\public-site\nuxt.config.ts
 
 import { defineNuxtConfig } from "nuxt/config";
+import type { NuxtConfig } from "nuxt/schema";
 import * as dotenv from "dotenv";
 import * as path from "path";
 
@@ -13,7 +14,7 @@ const twitterCardType = "summary_large_image";
 // Load .env from the monorepo root
 dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
-export default defineNuxtConfig({
+const config: NuxtConfig = {
   future: {
     compatibilityVersion: 4,
   },
@@ -102,7 +103,7 @@ export default defineNuxtConfig({
 
   typescript: {
     strict: true,
-    typeCheck: false, // Temporarily set to false
+    typeCheck: true, // Enable type checking to catch type errors
   },
 
   hooks: {
@@ -114,4 +115,6 @@ export default defineNuxtConfig({
       console.log("PWA_SERVER_BASE_URL:", process.env.PWA_SERVER_BASE_URL);
     },
   },
-});
+};
+
+export default defineNuxtConfig(config);
