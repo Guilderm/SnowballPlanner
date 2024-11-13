@@ -1,4 +1,4 @@
-<!-- apps\public-site\app\pages\terms.vue -->
+<!-- C:\Repository\DebtFreePlanner\apps\public-site\app\pages\terms.vue -->
 
 <template>
   <div class="min-h-screen bg-gray-100">
@@ -83,8 +83,8 @@
             href="mailto:support@debtfreeplanner.app"
             class="text-blue-600 underline"
           >
-            support@debtfreeplanner.app </a
-          >.
+            support@debtfreeplanner.app
+          </a>.
         </p>
       </section>
     </main>
@@ -92,7 +92,8 @@
 </template>
 
 <script setup lang="ts">
-// No need to import definePageMeta
+import { definePageMeta } from 'nuxt/schema';
+
 definePageMeta({
   title: "Terms of Service - DebtFreePlanner",
   meta: [

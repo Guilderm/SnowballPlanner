@@ -28,7 +28,6 @@
 </template>
 
 <script setup lang="ts">
-import { definePageMeta } from 'nuxt/app';
 import LaunchAnnouncement from "@/components/coming-soon/LaunchAnnouncement.vue";
 import CountdownTimer from "@/components/coming-soon/CountdownTimer.vue";
 import EmailSignupForm from "@/components/coming-soon/EmailSignupForm.vue";

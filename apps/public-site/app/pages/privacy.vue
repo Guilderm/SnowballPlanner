@@ -95,7 +95,8 @@
 </template>
 
 <script setup lang="ts">
-// No need to import definePageMeta
+import { definePageMeta } from 'nuxt/schema';
+
 definePageMeta({
   title: "Privacy Policy - DebtFreePlanner",
   meta: [

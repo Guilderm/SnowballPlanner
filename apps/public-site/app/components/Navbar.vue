@@ -166,7 +166,7 @@ const handleLogin = () => {
 };
 
 const logoutUser = () => {
-  logout.value({ logoutParams: { returnTo: window.location.origin } });
+  logout.value();
 };
 </script>
 
