@@ -1,10 +1,19 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "target": "ES2018",
     "baseUrl": ".",
     "composite": true,
     "lib": ["ESNext", "DOM"],
     "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "types": ["@types/node", "@nuxt/types", "@nuxt/typescript-build"],
     "paths": {
       "#app": ["./.nuxt/types/app"],
       "#app/*": ["./.nuxt/types/app/*"],
@@ -20,22 +29,14 @@
       "@/*": ["./app/*"],
       "@/components/*": ["./app/components/*"],
       "~/*": ["app/*"]
-    },
-    "types": ["@types/node", "vue", "nuxt", "nuxt/schema"],
-    "target": "ESNext",
-    "moduleResolution": "Node",
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true
+    }
   },
   "include": ["**/*.ts", "**/*.js", "**/*.vue", "nuxt.config.ts"],
   "exclude": [
     "dist",
     "node_modules",
     "**/.next",
+    "**/.nuxt",
     "**/.output",
     "tailwind.config.js"
   ]
