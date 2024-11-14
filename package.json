@@ -10,6 +10,9 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces",
+    "dev:public-site": "npm run dev --workspace=apps/public-site",
+    "dev:pwa-client": "npm run dev --workspace=apps/pwa-client",
+    "dev:pwa-server": "npm run start --workspace=apps/pwa-server",
     "dev": "npm run dev --workspaces",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

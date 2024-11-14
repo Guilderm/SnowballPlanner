@@ -95,7 +95,7 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from "@vueuse/head";
+import { useHead } from "nuxt/app";
 
 useHead({
   title: "Privacy Policy - DebtFreePlanner",

@@ -90,8 +90,6 @@ const config: NuxtConfig = {
     logLevel: process.env.NODE_ENV === "development" ? 4 : 2, // 0: none, 1: error, 2: warn, 3: info, 4: debug
   },
 
-  plugins: ["~/plugins/auth0.client.ts"],
-
   runtimeConfig: {
     public: {
       auth0Domain: process.env.AUTH0_DOMAIN,

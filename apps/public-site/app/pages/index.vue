@@ -32,7 +32,7 @@ import LaunchAnnouncement from "@/components/coming-soon/LaunchAnnouncement.vue"
 import CountdownTimer from "@/components/coming-soon/CountdownTimer.vue";
 import EmailSignupForm from "@/components/coming-soon/EmailSignupForm.vue";
 import Features from "@/components/coming-soon/Features.vue";
-import { useHead } from "@vueuse/head";
+import { useHead } from "nuxt/app";
 
 useHead({
   title:
