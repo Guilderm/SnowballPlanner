@@ -11,7 +11,7 @@
     "dev": "nuxt dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write .",
+    "format": "prettier --write . | findstr /V \"(unchanged)\"",
     "typecheck": "nuxi typecheck",
     "verify": "npm run lint:fix && npm run format && npm run typecheck"
   },
