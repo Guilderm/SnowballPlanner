@@ -15,11 +15,8 @@ const twitterCardType = "summary_large_image";
 dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
 const config: NuxtConfig = {
-  future: {
-    compatibilityVersion: 4,
-  },
   devServer: {
-    port: parseInt(process.env.PUBLIC_SITE_PORT ?? "3100", 10),
+    port: parseInt(process.env.PWA_CLIENT_PORT ?? "3200", 10),
   },
   modules: ["@nuxtjs/tailwindcss", "nuxt-gtag"],
 
