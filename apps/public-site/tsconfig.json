@@ -27,5 +27,5 @@
     "esModuleInterop": true
   },
   "include": ["**/*.ts", "**/*.js", "**/*.vue", "nuxt.config.ts"],
-  "exclude": ["dist", "node_modules", "**/.next", "**/.output"]
+  "exclude": ["dist", "node_modules", "**/.next", "**/.output", "tailwind.config.js"]
 }

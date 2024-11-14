@@ -95,6 +95,8 @@
 </template>
 
 <script setup lang="ts">
+import { definePageMeta } from 'nuxt/schema'; // Correct import
+
 definePageMeta({
   title: "Privacy Policy - DebtFreePlanner",
   meta: [
@@ -113,3 +115,7 @@ definePageMeta({
 
 const lastUpdated = "October 21, 2024";
 </script>
+
+<style scoped>
+/* Your styles here */
+</style>

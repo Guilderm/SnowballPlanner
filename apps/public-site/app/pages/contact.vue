@@ -1,24 +1,9 @@
-<!-- C:\Repository\DebtFreePlanner\apps\public-site\app\pages\contact.vue -->
-
 <template>
-  <div class="min-h-screen bg-gray-100">
-    <main class="mx-auto max-w-4xl px-4 py-8">
-      <h1 class="mb-6 text-3xl font-bold">Contact Us</h1>
-
-      <div class="space-y-6">
-        <!-- Contact Information Section -->
+  <div>
+    <main>
+      <div>
+        <!-- Email Link Section -->
         <section>
-          <h2 class="mb-4 text-2xl font-semibold">Get in Touch</h2>
-          <p class="mb-2 text-gray-700">
-            We'd love to hear from you! Whether you have a question about
-            features, pricing, or anything else, our team is ready to answer all
-            your questions.
-          </p>
-        </section>
-
-        <!-- Email Section -->
-        <section class="flex items-center">
-          <EnvelopeIcon class="mr-3 size-6 text-gray-600" />
           <a
             href="mailto:support@debtfreeplanner.app"
             class="text-blue-600 underline"
@@ -49,33 +34,28 @@
   </div>
 </template>
 
-<script lang="ts">
-import { definePageMeta } from 'nuxt'
-import {
-  EnvelopeIcon,
-  ChatBubbleBottomCenterIcon,
-} from "@heroicons/vue/24/outline";
+<script setup lang="ts">
+import { definePageMeta } from 'nuxt/schema';
+import { ChatBubbleBottomCenterIcon } from "@heroicons/vue/24/outline";
 
-export default {
-  definePageMeta({
-    title: "Contact Us - DebtFreePlanner",
-    meta: [
-      {
-        name: "description",
-        content:
-          "Contact DebtFreePlanner for support, inquiries, or feedback. Reach us via email or WhatsApp.",
-      },
-      {
-        name: "keywords",
-        content: "Contact, DebtFreePlanner, Support, Email, WhatsApp",
-      },
-    ],
-  })
-}
+definePageMeta({
+  title: "Contact Us - DebtFreePlanner",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Contact DebtFreePlanner for support, inquiries, or feedback. Reach us via email or WhatsApp.",
+    },
+    {
+      name: "keywords",
+      content: "Contact, DebtFreePlanner, Support, Email, WhatsApp",
+    },
+  ],
+});
 
 const lastUpdated = "October 21, 2024";
 </script>
 
 <style scoped>
-/* Add any page-specific styles here if needed */
+/* Your styles here */
 </style>
