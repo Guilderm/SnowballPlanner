@@ -16,7 +16,7 @@ dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
 const config: NuxtConfig = {
   future: {
-    compatibilityVersion: 4,
+    compatibilityVersion: 3,
   },
   devServer: {
     port: parseInt(process.env.PUBLIC_SITE_PORT ?? "3100", 10),
