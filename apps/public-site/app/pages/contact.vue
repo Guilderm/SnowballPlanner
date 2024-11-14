@@ -35,11 +35,9 @@
 </template>
 
 <script setup lang="ts">
-import { definePageMeta } from 'nuxt/schema';
-import { ChatBubbleBottomCenterIcon } from "@heroicons/vue/24/outline";
+import { useHead } from "@vueuse/head";
 
-definePageMeta({
-  title: "Contact Us - DebtFreePlanner",
+useHead({
   meta: [
     {
       name: "description",

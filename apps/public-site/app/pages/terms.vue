@@ -83,8 +83,8 @@
             href="mailto:support@debtfreeplanner.app"
             class="text-blue-600 underline"
           >
-            support@debtfreeplanner.app
-          </a>.
+            support@debtfreeplanner.app </a
+          >.
         </p>
       </section>
     </main>
@@ -92,7 +92,9 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({
+import { useHead } from "@vueuse/head";
+
+useHead({
   title: "Terms of Service - DebtFreePlanner",
   meta: [
     {

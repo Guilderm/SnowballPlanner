@@ -1,3 +1,5 @@
+// apps\public-site\tsconfig.json
+
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
@@ -27,5 +29,11 @@
     "esModuleInterop": true
   },
   "include": ["**/*.ts", "**/*.js", "**/*.vue", "nuxt.config.ts"],
-  "exclude": ["dist", "node_modules", "**/.next", "**/.output", "tailwind.config.js"]
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/.next",
+    "**/.output",
+    "tailwind.config.js"
+  ]
 }

@@ -1,4 +1,4 @@
-<!-- apps\public-site\app\pages\privacy.vue-->
+<!-- apps\public-site\app\pages\privacy.vue -->
 
 <template>
   <div class="min-h-screen bg-gray-100">
@@ -95,9 +95,9 @@
 </template>
 
 <script setup lang="ts">
-import { definePageMeta } from 'nuxt/schema'; // Correct import
+import { useHead } from "@vueuse/head";
 
-definePageMeta({
+useHead({
   title: "Privacy Policy - DebtFreePlanner",
   meta: [
     {
