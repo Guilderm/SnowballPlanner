@@ -49,26 +49,29 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import { definePageMeta } from 'nuxt'
 import {
   EnvelopeIcon,
   ChatBubbleBottomCenterIcon,
 } from "@heroicons/vue/24/outline";
 
-definePageMeta({
-  title: "Contact Us - DebtFreePlanner",
-  meta: [
-    {
-      name: "description",
-      content:
-        "Contact DebtFreePlanner for support, inquiries, or feedback. Reach us via email or WhatsApp.",
-    },
-    {
-      name: "keywords",
-      content: "Contact, DebtFreePlanner, Support, Email, WhatsApp",
-    },
-  ],
-});
+export default {
+  definePageMeta({
+    title: "Contact Us - DebtFreePlanner",
+    meta: [
+      {
+        name: "description",
+        content:
+          "Contact DebtFreePlanner for support, inquiries, or feedback. Reach us via email or WhatsApp.",
+      },
+      {
+        name: "keywords",
+        content: "Contact, DebtFreePlanner, Support, Email, WhatsApp",
+      },
+    ],
+  })
+}
 
 const lastUpdated = "October 21, 2024";
 </script>

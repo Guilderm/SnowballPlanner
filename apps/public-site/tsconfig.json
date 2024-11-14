@@ -26,21 +26,6 @@
     "skipLibCheck": true,
     "esModuleInterop": true
   },
-  "include": [
-    ".nuxt",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.vue",
-    "app/**/*.ts",
-    "app/**/*.tsx",
-    "app/**/*.vue",
-    "apps/public-site/**/*.{ts,tsx,vue}",
-    "apps/pwa-client/**/*.{ts,tsx,vue}",
-    "apps/pwa-server/**/*.{ts,tsx,vue}",
-    "apps/shared/**/*.{ts,tsx,vue}",
-    "nuxt.config.ts",
-    "types/**/*.d.ts",
-    "**/*.js"
-  ],
+  "include": ["**/*.ts", "**/*.js", "**/*.vue", "nuxt.config.ts"],
   "exclude": ["dist", "node_modules", "**/.next", "**/.output"]
 }
