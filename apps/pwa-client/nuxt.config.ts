@@ -33,6 +33,8 @@ const config: NuxtConfig = {
     strict: true,
     typeCheck: true,
   },
+
+  buildDir: "dist/public-site",
 };
 
 export default defineNuxtConfig(config);

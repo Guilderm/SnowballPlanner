@@ -115,6 +115,8 @@ const config: NuxtConfig = {
       console.log("PWA_SERVER_BASE_URL:", process.env.PWA_SERVER_BASE_URL);
     },
   },
+
+  buildDir: "dist/public-site",
 };
 
 export default defineNuxtConfig(config);
