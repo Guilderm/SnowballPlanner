@@ -35,6 +35,12 @@ const config: NuxtConfig = {
   },
 
   buildDir: "dist/public-site",
+
+  hooks: {
+    ready: () => {
+      console.log("pwa-client is starting...");
+    },
+  },
 };
 
 export default defineNuxtConfig(config);

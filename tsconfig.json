@@ -14,9 +14,7 @@
     "composite": true
   },
   "references": [
-    { "path": "./apps/public-site" },
-    { "path": "./apps/pwa-server" },
-    { "path": "./apps/pwa-client" }
+    { "path": "./apps/pwa-server" }
   ],
   "exclude": ["node_modules", "dist", "**/.nuxt", "**/.output", "**/.next"]
 }
