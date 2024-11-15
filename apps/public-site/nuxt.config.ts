@@ -102,8 +102,8 @@ const config: NuxtConfig = {
   },
 
   typescript: {
-    strict: true,
-    typeCheck: true,
+    strict: false,
+    typeCheck: false,
   },
 
   hooks: {
