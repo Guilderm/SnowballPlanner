@@ -6,7 +6,8 @@
   "type": "module",
   "workspaces": [
     "apps/*",
-    "!apps/shared"
+    "!apps/shared",
+    "!apps/public-site"
   ],
   "scripts": {
     "build": "npm run build --workspaces",
