@@ -1,24 +1,18 @@
 // eslint.config.js
 
 import js from '@eslint/js';
-import { createRequire } from 'module';
 import tsParser from '@typescript-eslint/parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import vueParser from 'vue-eslint-parser';
-import prettierConfig from 'eslint-config-prettier';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
+import vuePlugin from 'eslint-plugin-vue';
 
-// Initialize require for CommonJS modules
-const require = createRequire(import.meta.url);
-const tsPlugin = require('@typescript-eslint/eslint-plugin');
-const vuePlugin = require('eslint-plugin-vue');
-
-// Get the directory name of the current module (ESM equivalent of __dirname)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default [
-  // Global ignore patterns for all build-related directories
+  // Ignore build directories
   {
     ignores: [
       '**/dist/**',
@@ -48,8 +42,11 @@ export default [
       vue: vuePlugin,
     },
     rules: {
-      ...tsPlugin.configs.recommended.rules,
-      ...vuePlugin.configs.recommended.rules,
+      ...tsPlugin.configs['recommended'].rules,
+      ...vuePlugin.configs['recommended'].rules,
+      // Disable conflicting rules
+      'no-unused-expressions': 'off',
+      '@typescript-eslint/no-unused-expressions': ['error'],
     },
   },
 
@@ -69,7 +66,10 @@ export default [
       '@typescript-eslint': tsPlugin,
     },
     rules: {
-      ...tsPlugin.configs.recommended.rules,
+      ...tsPlugin.configs['recommended'].rules,
+      // Disable conflicting rules
+      'no-unused-expressions': 'off',
+      '@typescript-eslint/no-unused-expressions': ['error'],
     },
   },
 
@@ -92,37 +92,11 @@ export default [
       vue: vuePlugin,
     },
     rules: {
-      ...tsPlugin.configs.recommended.rules,
-      ...vuePlugin.configs.recommended.rules,
-    },
-  },
-
-  // Root TypeScript and Vue Configuration for files like `nuxt.config.ts` and shared components
-  {
-    files: ['*.{ts,tsx,vue}', 'apps/shared/**/*.{ts,tsx,vue}'],
-    languageOptions: {
-      parser: vueParser,
-      parserOptions: {
-        parser: tsParser,
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: [
-          path.join(__dirname, 'tsconfig.json'), // Root tsconfig
-          path.join(__dirname, 'apps/public-site/tsconfig.json'), // Specific to Public Site
-          path.join(__dirname, 'apps/pwa-server/tsconfig.json'), // Specific to PWA Server
-          path.join(__dirname, 'apps/pwa-client/tsconfig.json'), // Specific to PWA Client
-        ],
-        tsconfigRootDir: __dirname,
-        extraFileExtensions: ['.vue'],
-      },
-    },
-    plugins: {
-      '@typescript-eslint': tsPlugin,
-      vue: vuePlugin,
-    },
-    rules: {
-      ...tsPlugin.configs.recommended.rules,
-      ...vuePlugin.configs.recommended.rules,
+      ...tsPlugin.configs['recommended'].rules,
+      ...vuePlugin.configs['recommended'].rules,
+      // Disable conflicting rules
+      'no-unused-expressions': 'off',
+      '@typescript-eslint/no-unused-expressions': ['error'],
     },
   },
 
@@ -140,15 +114,18 @@ export default [
       },
     },
     rules: {
-      ...js.configs.recommended.rules,
+      ...js.configs['recommended'].rules,
     },
   },
 
-  // Integrate Prettier Configurations
+  // Prettier Configuration
   {
     files: ['**/*.{js,jsx,ts,tsx,vue}'],
+    plugins: {
+      prettier: require('eslint-plugin-prettier'),
+    },
     rules: {
-      ...prettierConfig.rules,
+      'prettier/prettier': 'error',
     },
   },
 ];
