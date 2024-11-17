@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 
   hooks: {
     ready: () => {
-      console.log('App is starting...');
+      console.log("App is starting...");
     },
   },
 });

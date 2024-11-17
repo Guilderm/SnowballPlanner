@@ -7,9 +7,21 @@ import { fileURLToPath } from 'url';
 import vueParser from 'vue-eslint-parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import vuePlugin from 'eslint-plugin-vue';
+import prettierPlugin from 'eslint-plugin-prettier';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Common TypeScript rules
+const typeScriptRules = {
+  ...tsPlugin.configs['recommended'].rules,
+  'no-unused-expressions': 'off',
+  '@typescript-eslint/no-unused-expressions': ['error', {
+    allowShortCircuit: true,
+    allowTernary: true,
+    allowTaggedTemplates: true
+  }]
+};
 
 export default [
   // Ignore build directories
@@ -42,11 +54,8 @@ export default [
       vue: vuePlugin,
     },
     rules: {
-      ...tsPlugin.configs['recommended'].rules,
+      ...typeScriptRules,
       ...vuePlugin.configs['recommended'].rules,
-      // Disable conflicting rules
-      'no-unused-expressions': 'off',
-      '@typescript-eslint/no-unused-expressions': ['error'],
     },
   },
 
@@ -65,12 +74,7 @@ export default [
     plugins: {
       '@typescript-eslint': tsPlugin,
     },
-    rules: {
-      ...tsPlugin.configs['recommended'].rules,
-      // Disable conflicting rules
-      'no-unused-expressions': 'off',
-      '@typescript-eslint/no-unused-expressions': ['error'],
-    },
+    rules: typeScriptRules,
   },
 
   // PWA Client Configuration
@@ -92,11 +96,8 @@ export default [
       vue: vuePlugin,
     },
     rules: {
-      ...tsPlugin.configs['recommended'].rules,
+      ...typeScriptRules,
       ...vuePlugin.configs['recommended'].rules,
-      // Disable conflicting rules
-      'no-unused-expressions': 'off',
-      '@typescript-eslint/no-unused-expressions': ['error'],
     },
   },
 
@@ -122,7 +123,7 @@ export default [
   {
     files: ['**/*.{js,jsx,ts,tsx,vue}'],
     plugins: {
-      prettier: require('eslint-plugin-prettier'),
+      prettier: prettierPlugin,
     },
     rules: {
       'prettier/prettier': 'error',
