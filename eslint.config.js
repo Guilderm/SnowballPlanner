@@ -101,6 +101,30 @@ export default [
     },
   },
 
+  // Nuxt Vanella App Configuration
+  {
+    files: ['apps/nuxt-vanella-app/**/*.{ts,tsx,vue}'],
+    languageOptions: {
+      parser: vueParser,
+      parserOptions: {
+        parser: tsParser,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        project: path.join(__dirname, 'apps/nuxt-vanella-app/tsconfig.json'),
+        tsconfigRootDir: path.join(__dirname, 'apps/nuxt-vanella-app'),
+        extraFileExtensions: ['.vue'],
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+      vue: vuePlugin,
+    },
+    rules: {
+      ...typeScriptRules,
+      ...vuePlugin.configs['recommended'].rules,
+    },
+  },
+
   // Base JavaScript Configuration
   {
     files: ['**/*.{js,jsx}'],
