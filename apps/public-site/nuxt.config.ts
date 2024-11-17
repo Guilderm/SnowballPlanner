@@ -106,13 +106,13 @@ const config: NuxtConfig = {
     typeCheck: true,
   },
 
+  // buildDir: "dist/public-site",
+
   hooks: {
     ready: () => {
       console.log("public-site is starting...");
     },
   },
-
-  buildDir: "dist/public-site",
 };
 
 export default defineNuxtConfig(config);

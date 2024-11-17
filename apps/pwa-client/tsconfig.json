@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@shared/*": ["../shared/*"]
+      "@shared/*": ["../shared/*"],
+      "@/*": ["./app/*"]
     },
     "composite": true
   },
@@ -14,5 +15,5 @@
     "**/.nuxt",
     "**/.output",
     "tailwind.config.js"
-  ],
+  ]
 }

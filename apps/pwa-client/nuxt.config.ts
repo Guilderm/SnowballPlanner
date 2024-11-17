@@ -34,7 +34,7 @@ const config: NuxtConfig = {
     typeCheck: true,
   },
 
-  buildDir: "dist/public-site",
+ // buildDir: "dist/public-site",
 
   hooks: {
     ready: () => {
