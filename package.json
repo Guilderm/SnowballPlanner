@@ -5,9 +5,9 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "./apps/nuxt-vanella-app",
+    "!./apps/nuxt-vanella-app",
     "./apps/public-site",
-    "!./apps/pwa-client",
+    "./apps/pwa-client",
     "./apps/pwa-server"
   ],
   "scripts": {
@@ -27,9 +27,6 @@
     "debt",
     "finance",
     "repayment",
-
-
-
     "planning",
     "MERN"
   ],
