@@ -30,7 +30,6 @@ steps:
       - "--region=${_DEPLOY_REGION}"
       - "--allow-unauthenticated"
       - "--labels=commit-sha=${COMMIT_SHA},trigger-id=${_TRIGGER_ID}"
-      - "--set-env-vars=PORT=3300"
       - "--quiet"
     id: "Deploy"
 

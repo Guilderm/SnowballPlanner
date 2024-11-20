@@ -5,14 +5,12 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "!./apps/nuxt-vanella-app",
     "!./apps/public-site",
     "!./apps/pwa-client",
     "./apps/pwa-server"
   ],
   "scripts": {
     "build": "npm run build --workspaces",
-    "dev:nuxt-vanella-app": "npm run dev --workspace=apps/public-site",
     "dev:public-site": "npm run dev --workspace=apps/public-site",
     "dev:pwa-client": "npm run dev --workspace=apps/pwa-client",
     "dev:pwa-server": "npm run dev --workspace=apps/pwa-server",
