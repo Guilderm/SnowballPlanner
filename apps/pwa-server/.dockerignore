@@ -6,10 +6,6 @@ apps/*/node_modules
 logs
 *.log
 
-# Ignore Docker-related files
-Dockerfile
-.dockerignore
-
 # Ignore temporary files and backups
 *.tmp
 *.bak
