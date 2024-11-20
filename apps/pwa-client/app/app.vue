@@ -9,8 +9,10 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// No additional script needed, but we define it as TypeScript
+</script>
 
 <style scoped>
-/* Add global styles here if needed */
+/* You can add global styles here if needed */
 </style>

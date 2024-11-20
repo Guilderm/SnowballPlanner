@@ -6,8 +6,8 @@
   "type": "module",
   "workspaces": [
     "!./apps/nuxt-vanella-app",
-    "./apps/public-site",
-    "./apps/pwa-client",
+    "!./apps/public-site",
+    "!./apps/pwa-client",
     "./apps/pwa-server"
   ],
   "scripts": {
