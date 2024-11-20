@@ -9,5 +9,6 @@ infisical agent --config .\agent-config-file.yaml
 
 # TO bild docker immage for pwa-server
 docker build --no-cache -t pwa-server:local -f apps/pwa-server/Dockerfile .
+
 docker build --no-cache -t your-docker-repo/pwa-server:latest -f apps/pwa-server/Dockerfile .
 ```
