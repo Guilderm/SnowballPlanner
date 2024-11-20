@@ -34,7 +34,7 @@ COPY apps/pwa-server/package*.json apps/pwa-server/
 # Install production dependencies
 RUN npm ci --production
 
-# Expose port 3300
+# Expose port 8080
 EXPOSE 3300
 
 # Start the application
