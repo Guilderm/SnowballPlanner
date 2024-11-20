@@ -10,7 +10,7 @@ COPY apps/pwa-server apps/pwa-server
 COPY apps/shared apps/shared
 
 # Install dependencies
-RUN npm ci
+RUN npm install
 
 # Build the pwa-server package
 RUN npm run build --workspace=pwa-server
@@ -26,7 +26,7 @@ COPY package*.json ./
 COPY apps/pwa-server/package*.json apps/pwa-server/
 
 # Install production dependencies
-RUN npm ci --omit=dev
+RUN npm install --only=production
 
 # Expose port
 EXPOSE ${PORT:-3300}
