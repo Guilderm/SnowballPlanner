@@ -45,9 +45,13 @@ async function bootstrap() {
     }),
   );
 
-  // Use PORT environment variable (provided by Cloud Run) or default to 3300
+  // Use Cloud Run-provided PORT or default to 3300 in local development
   const PORT =
     process.env.PORT || configService.get<number>("PWA_SERVER_PORT") || 3300;
+
+  // Log the port being used for debugging
+  console.log(`Starting server on port: ${PORT}`);
+
   await app.listen(PORT);
   console.log(`pwa-server is running on port ${PORT}`);
 }
