@@ -1,5 +1,5 @@
 # Stage 1: Builder
-FROM node:20-alpine AS builder
+FROM node:22.11-alpine AS builder
 
 WORKDIR /usr/src/app
 
@@ -20,7 +20,7 @@ COPY apps/shared apps/shared
 RUN npm run build --workspace=pwa-server
 
 # Stage 2: Production
-FROM node:20-alpine AS production
+FROM node:22.11-alpine AS production
 
 WORKDIR /usr/src/app
 
