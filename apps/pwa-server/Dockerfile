@@ -3,14 +3,16 @@ FROM node:22.11-alpine AS builder
 
 WORKDIR /usr/src/app
 
-# Copy package files
+# Copy root package files
 COPY package*.json ./
+
+# Copy pwa-server package files
 COPY apps/pwa-server/package*.json apps/pwa-server/
 
 # Install dependencies
 RUN npm ci
 
-# Copy the source code
+# Copy source code
 COPY apps/pwa-server apps/pwa-server
 COPY apps/shared apps/shared
 
@@ -22,20 +24,17 @@ FROM node:22.11-alpine AS production
 
 WORKDIR /usr/src/app
 
-# Copy built application
-COPY --from=builder /usr/src/app/apps/pwa-server/dist ./apps/pwa-server/dist
+# Copy the built application from the builder stage
+COPY --from=builder /usr/src/app/apps/pwa-server/dist ./dist
 
 # Copy package files
-COPY apps/pwa-server/package*.json ./apps/pwa-server/
+COPY package*.json ./
+COPY apps/pwa-server/package*.json apps/pwa-server/
 
 # Install production dependencies
-WORKDIR /usr/src/app/apps/pwa-server
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 
-# Copy any runtime dependencies from shared if needed
-COPY apps/shared ../../apps/shared
-
-# Expose port
+# Expose port 3300
 EXPOSE 3300
 
 # Start the application
