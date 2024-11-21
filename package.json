@@ -19,7 +19,10 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write . | findstr /V \"(unchanged)\"",
     "typecheck": "npm run typecheck --workspaces",
-    "verify": "npm run lint:fix && npm run typecheck && npm run format "
+    "verify": "npm run lint:fix && npm run typecheck && npm run format",
+    "typecheck:all": "cd ./apps/public-site && npm run typecheck && cd ../pwa-client && npm run typecheck && cd ../pwa-server && npm run typecheck",
+    "check:deps": "npx depcheck && npm outdated --prefix ./apps/public-site && npm outdated --prefix ./apps/pwa-client && npm outdated --prefix ./apps/pwa-server",
+    "verify:all": "npm run lint:fix && npm run format && npm run typecheck:all && && npm run check:deps"
   },
   "keywords": [
     "debt",
