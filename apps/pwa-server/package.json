@@ -7,7 +7,7 @@
   "license": "CC BY-NC 4.0",
   "type": "module",
   "scripts": {
-    "build": "npx nest build",
+    "build": "pnpm exec nest build",
     "start": "nest start",
     "dev": "nest start --watch",
     "lint": "pnpm --filter debtfreeplanner run lint",

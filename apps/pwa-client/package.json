@@ -5,14 +5,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "dev": "nuxt dev --debug",
+    "build": "nest build",
+    "start": "nest start",
+    "dev": "nest start --watch",
     "lint": "pnpm --filter debtfreeplanner run lint",
     "lint:fix": "pnpm --filter debtfreeplanner run lint:fix",
     "format": "pnpm --filter debtfreeplanner run format",
-    "typecheck": "nuxi typecheck",
+    "typecheck": "tsc --noEmit --pretty",
     "verify": "pnpm run lint:fix && pnpm run format && pnpm run typecheck",
     "preinstall": "npx only-allow pnpm"
   },
@@ -24,6 +23,7 @@
     "nuxt-gtag": "^3.0.1"
   },
   "devDependencies": {
+    "@nestjs/cli": "^10.0.0",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",

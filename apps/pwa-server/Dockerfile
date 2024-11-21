@@ -1,6 +1,12 @@
 # Stage 1: Base and Workspace Setup
 FROM node:22.11-alpine AS base
 
+# Install build dependencies: Python, make, and g++
+RUN apk add --no-cache python3 make g++
+
+# Create a symbolic link for Python
+RUN ln -sf python3 /usr/bin/python
+
 # Install pnpm globally
 RUN npm install -g pnpm
 
@@ -12,8 +18,8 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 # Copy package.json files for workspace packages
 COPY apps/pwa-server/package.json apps/pwa-server/
 
-# Install dependencies for pwa-server, including shared dependencies
-RUN pnpm install --filter @debtfreeplanner/pwa-server --frozen-lockfile --prod=false
+# Install dependencies for pwa-server, including devDependencies
+RUN pnpm install --filter=@debtfreeplanner/pwa-server --include=dev --config.lockfile=true
 
 # Copy the rest of the application code
 COPY apps/pwa-server/ apps/pwa-server/
