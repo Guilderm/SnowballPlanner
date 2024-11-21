@@ -5,11 +5,11 @@ FROM node:22.11-alpine AS builder
 WORKDIR /usr/src/app
 
 # Copy only the pwa-server and shared directories
-COPY apps/pwa-server ./apps/pwa-server/
-COPY apps/shared ./apps/shared/
+COPY apps/pwa-server ./pwa-server/
+COPY apps/shared ./shared/
 
 # Set the working directory to pwa-server
-WORKDIR /usr/src/app/apps/pwa-server
+WORKDIR /usr/src/app/pwa-server
 
 # Install dependencies
 RUN npm install
@@ -24,10 +24,10 @@ FROM node:22.11-alpine AS production
 WORKDIR /usr/src/app
 
 # Copy the built application from the builder stage
-COPY --from=builder /usr/src/app/apps/pwa-server/dist ./dist
+COPY --from=builder /usr/src/app/pwa-server/dist ./dist
 
 # Copy the pwa-server package.json
-COPY apps/pwa-server/package.json ./apps/pwa-server/
+COPY apps/pwa-server/package.json ./pwa-server/
 
 # Install only production dependencies
 RUN npm install --production

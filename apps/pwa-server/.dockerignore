@@ -5,13 +5,9 @@
 !apps/pwa-server/
 !apps/shared/
 
-# Ignore node_modules within the allowed folders
-apps/pwa-server/node_modules
-apps/shared/node_modules
-
-# Ignore build outputs
-apps/pwa-server/dist
-apps/shared/dist
+# Ignore node_modules and build outputs
+**/node_modules
+**/dist
 
 # Ignore temporary files and logs
 *.log
