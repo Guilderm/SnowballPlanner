@@ -1,26 +1,29 @@
-# Ignore everything by default
+# Ignore everything
 **
 
-# Allow required files for pwa-server
-!apps/pwa-server/
-!apps/shared/
+# Allow necessary directories and files
+!apps/pwa-server/**
+!apps/shared/**
 
-# Ignore node_modules and build outputs
+# Exclude node_modules and build outputs
 **/node_modules
 **/dist
+**/.next
+**/.nuxt
+**/.output
 
-# Ignore temporary files and logs
+# Exclude temporary files and logs
 *.log
 *.tmp
 *.bak
 
-# Ignore IDE configurations
+# Exclude IDE configurations
 .vscode
 .idea
 
-# Ignore Git files
+# Exclude Git files
 .git
 .gitignore
 
-# Ignore environment files
+# Exclude environment files
 .env
