@@ -1,35 +1,42 @@
 # Stage 1: Builder
 FROM node:22.11-alpine AS builder
 
+# Set the working directory
 WORKDIR /usr/src/app
 
-# Copy package files and source code in a structured way
-COPY package*.json ./
-COPY apps/pwa-server/package*.json apps/pwa-server/
-COPY apps/pwa-server apps/pwa-server
-COPY apps/shared apps/shared
+# Copy root package.json and package-lock.json
+COPY package.json package-lock.json ./
 
-# Install dependencies
-RUN npm install
+# Copy workspace-specific package.json files
+COPY apps/pwa-server/package.json ./apps/pwa-server/
+COPY apps/shared/package.json ./apps/shared/
 
-# Build the pwa-server package
+# Install dependencies using npm ci
+RUN npm ci
+
+# Copy the rest of the source code
+COPY . .
+
+# Build the pwa-server workspace
 RUN npm run build --workspace=pwa-server
 
 # Stage 2: Production
 FROM node:22.11-alpine AS production
 
+# Set the working directory
 WORKDIR /usr/src/app
 
-# Copy the built application and package files
+# Copy the built application from the builder stage
 COPY --from=builder /usr/src/app/apps/pwa-server/dist ./dist
-COPY package*.json ./
-COPY apps/pwa-server/package*.json apps/pwa-server/
 
-# Install production dependencies
-RUN npm install --only=production
+# Copy the pwa-server package.json
+COPY apps/pwa-server/package.json ./apps/pwa-server/
 
-# Expose port
+# Install only production dependencies
+RUN npm ci --only=production
+
+# Expose the desired port
 EXPOSE ${PORT:-3300}
 
-# Start the application with explicit port logging
-CMD echo "Starting server on port: $PORT" && node dist/main.js
+# Start the server
+CMD ["node", "dist/main.js"]
