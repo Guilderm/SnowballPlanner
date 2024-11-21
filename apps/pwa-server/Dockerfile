@@ -10,10 +10,10 @@ COPY apps/shared ./shared/
 # Set working directory for pwa-server
 WORKDIR /usr/src/app/pwa-server
 
-# Install dependencies, including devDependencies
+# Install dependencies
 RUN npm install --verbose
 
-# Build the server using the local Nest CLI
+# Build the server
 RUN npm run build
 
 # Stage 2: Production
@@ -32,4 +32,4 @@ WORKDIR /usr/src/app/pwa-server
 EXPOSE 3300
 
 # Start the server
-CMD ["node", "dist/main.js"]
+CMD ["node", "dist/src/main.js"]
