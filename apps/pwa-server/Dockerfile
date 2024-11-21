@@ -4,22 +4,23 @@ FROM node:22.11-alpine AS builder
 # Set the working directory
 WORKDIR /usr/src/app
 
-# Copy root package.json and package-lock.json
-COPY package.json package-lock.json ./
-
-# Copy the pwa-server directory and the shared code
+# Copy only the pwa-server and shared directories
 COPY apps/pwa-server ./apps/pwa-server/
 COPY apps/shared ./apps/shared/
+
+# Set the working directory to pwa-server
+WORKDIR /usr/src/app/apps/pwa-server
 
 # Install dependencies
 RUN npm install
 
 # Build the pwa-server workspace
-RUN npm run build --workspace=pwa-server
+RUN npm run build
 
 # Stage 2: Production
 FROM node:22.11-alpine AS production
 
+# Set the working directory
 WORKDIR /usr/src/app
 
 # Copy the built application from the builder stage
