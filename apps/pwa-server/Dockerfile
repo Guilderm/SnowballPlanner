@@ -1,48 +1,37 @@
-# Stage 1: Base and Workspace Setup
-FROM node:22.11-alpine AS base
+# C:\Repository\DebtFreePlanner\apps\pwa-server\Dockerfile
 
-# Install build dependencies: Python, make, and g++
-RUN apk add --no-cache python3 make g++
+# Stage 1: Build
+FROM node:22.11-alpine AS builder
 
-# Create a symbolic link for Python
-RUN ln -sf python3 /usr/bin/python
-
-# Install pnpm globally
-RUN npm install -g pnpm
+# Enable corepack for pnpm
+RUN corepack enable
 
 WORKDIR /usr/src/app
 
-# Copy root files
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+# Copy necessary files
+COPY apps/pwa-server ./pwa-server/
+COPY apps/shared ./shared/
 
-# Copy package.json files for workspace packages
-COPY apps/pwa-server/package.json apps/pwa-server/
+# Set working directory for pwa-server
+WORKDIR /usr/src/app/pwa-server
 
-# Install dependencies for pwa-server, including devDependencies
-RUN pnpm install --filter=@debtfreeplanner/pwa-server --include=dev --config.lockfile=true
+# Install dependencies for the `pwa-server` project and shared modules
+RUN pnpm install  --verbose
 
-# Copy the rest of the application code
-COPY apps/pwa-server/ apps/pwa-server/
-COPY apps/shared/ apps/shared/
-
-# Stage 2: Build
-FROM base AS builder
-
-WORKDIR /usr/src/app/apps/pwa-server
-
-# Build the server
+# Build the application
 RUN pnpm run build
 
-# Stage 3: Production
+# Stage 3: Production Image
 FROM node:22.11-alpine AS production
 
 WORKDIR /usr/src/app
 
-# Copy built files and node_modules from the builder stage
-COPY --from=builder /usr/src/app/apps/pwa-server /usr/src/app/apps/pwa-server
+# Copy only the built files and dependencies
+COPY --from=builder /usr/src/app/pwa-server/dist ./pwa-server/dist
+COPY --from=builder /usr/src/app/pwa-server/node_modules ./pwa-server/node_modules
 
-# Expose the application port
+# Expose application port
 EXPOSE 3300
 
-# Start the server
-CMD ["node", "apps/pwa-server/dist/src/main.js"]
+# Start the application
+CMD ["node", "./apps/pwa-server/dist/src/main.js"]
