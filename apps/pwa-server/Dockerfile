@@ -3,17 +3,18 @@ FROM node:22.11-alpine AS builder
 
 WORKDIR /usr/src/app
 
-# Copy necessary files
-COPY apps/pwa-server ./pwa-server/
-COPY apps/shared ./shared/
+# Step 1: Copy root package.json and lockfile
+COPY package*.json ./
 
-# Set working directory for pwa-server
-WORKDIR /usr/src/app/pwa-server
+# Step 2: Copy all workspace files (including apps/pwa-server and apps/shared)
+COPY apps/pwa-server ./apps/pwa-server/
+COPY apps/shared ./apps/shared/
 
-# Install dependencies
-RUN npm install --verbose
+# Step 3: Install dependencies at the workspace root
+RUN npm install --workspace=apps/pwa-server --no-audit --verbose
 
-# Build the server
+# Step 4: Build the pwa-server workspace
+WORKDIR /usr/src/app/apps/pwa-server
 RUN npm run build
 
 # Stage 2: Production
@@ -22,11 +23,8 @@ FROM node:22.11-alpine AS production
 WORKDIR /usr/src/app
 
 # Copy only the built files and dependencies
-COPY --from=builder /usr/src/app/pwa-server/dist ./pwa-server/dist
-COPY --from=builder /usr/src/app/pwa-server/node_modules ./pwa-server/node_modules
-
-# Set working directory for production
-WORKDIR /usr/src/app/pwa-server
+COPY --from=builder /usr/src/app/apps/pwa-server/dist ./dist
+COPY --from=builder /usr/src/app/apps/pwa-server/node_modules ./node_modules
 
 # Expose the application port
 EXPOSE 3300

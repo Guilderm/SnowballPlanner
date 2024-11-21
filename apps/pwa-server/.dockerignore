@@ -2,6 +2,8 @@
 **
 
 # Allow necessary directories and files
+!package.json
+!package-lock.json
 !apps/pwa-server/**
 !apps/shared/**
 
@@ -12,18 +14,17 @@
 **/.nuxt
 **/.output
 
+# Exclude configuration files
+**/.git
+**/.gitignore
+**/.vscode
+**/.idea
+
 # Exclude temporary files and logs
 *.log
 *.tmp
 *.bak
-
-# Exclude IDE configurations
-.vscode
-.idea
-
-# Exclude Git files
-.git
-.gitignore
+*.lock
 
 # Exclude environment files
-.env
+*.env
