@@ -1,35 +1,42 @@
-# Stage 1: Build
-FROM node:22.11-alpine AS builder
+# Stage 1: Base and Workspace Setup
+FROM node:22.11-alpine AS base
+
+# Install pnpm globally
+RUN npm install -g pnpm
 
 WORKDIR /usr/src/app
 
-# Copy necessary files
-COPY apps/pwa-server ./pwa-server/
-COPY apps/shared ./shared/
+# Copy root files
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
-# Set working directory for pwa-server
-WORKDIR /usr/src/app/pwa-server
+# Copy package.json files for workspace packages
+COPY apps/pwa-server/package.json apps/pwa-server/
 
-# Install dependencies
-RUN npm install --verbose
+# Install dependencies for pwa-server, including shared dependencies
+RUN pnpm install --filter @debtfreeplanner/pwa-server --frozen-lockfile --prod=false
+
+# Copy the rest of the application code
+COPY apps/pwa-server/ apps/pwa-server/
+COPY apps/shared/ apps/shared/
+
+# Stage 2: Build
+FROM base AS builder
+
+WORKDIR /usr/src/app/apps/pwa-server
 
 # Build the server
-RUN npm run build
+RUN pnpm run build
 
-# Stage 2: Production
+# Stage 3: Production
 FROM node:22.11-alpine AS production
 
 WORKDIR /usr/src/app
 
-# Copy only the built files and dependencies
-COPY --from=builder /usr/src/app/pwa-server/dist ./pwa-server/dist
-COPY --from=builder /usr/src/app/pwa-server/node_modules ./pwa-server/node_modules
-
-# Set working directory for production
-WORKDIR /usr/src/app/pwa-server
+# Copy built files and node_modules from the builder stage
+COPY --from=builder /usr/src/app/apps/pwa-server /usr/src/app/apps/pwa-server
 
 # Expose the application port
 EXPOSE 3300
 
 # Start the server
-CMD ["node", "dist/src/main.js"]
+CMD ["node", "apps/pwa-server/dist/src/main.js"]

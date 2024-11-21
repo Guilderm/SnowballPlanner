@@ -1,5 +1,5 @@
 {
-  "name": "public-site",
+  "name": "@debtfreeplanner/pwa-client",
   "version": "0.0.1",
   "description": "The public-facing website for DebtFreePlanner.",
   "private": true,

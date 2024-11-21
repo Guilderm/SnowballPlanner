@@ -1,5 +1,5 @@
 {
-  "name": "pwa-server",
+  "name": "@debtfreeplanner/pwa-server",
   "version": "0.0.1",
   "description": "A NestJS server for the DebtFreePlanner PWA.",
   "author": "Guilder W. Milliner <guilderw@gmail.com>",
