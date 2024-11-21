@@ -1,3 +1,5 @@
+# C:\Repository\DebtFreePlanner\.gitignore
+
 # =========================
 # Logs
 # =========================
@@ -209,3 +211,10 @@ prisma/.env
 .env.*
 apps/*/.env
 !.env.example
+
+# Lock files
+package-lock.json
+yarn.lock
+
+# pnpm lock file (should be included)
+!pnpm-lock.yaml

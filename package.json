@@ -5,23 +5,22 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "!./apps/public-site",
-    "!./apps/pwa-client",
-    "!./apps/pwa-server"
+    "./apps/public-site",
+    "./apps/pwa-client",
+    "./apps/pwa-server"
   ],
   "scripts": {
-    "build": "npm run build --workspaces",
-    "dev:public-site": "npm run dev --workspace=apps/public-site",
-    "dev:pwa-client": "npm run dev --workspace=apps/pwa-client",
-    "dev:pwa-server": "npm run dev --workspace=apps/pwa-server",
-    "dev": "npm run dev --workspaces",
+    "build": "pnpm -r run build",
+    "dev:public-site": "pnpm --filter ./apps/public-site run dev",
+    "dev:pwa-client": "pnpm --filter ./apps/pwa-client run dev",
+    "dev:pwa-server": "pnpm --filter ./apps/pwa-server run dev",
+    "dev": "pnpm -r run dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write . | findstr /V \"(unchanged)\"",
-    "typecheck": "npm run typecheck --workspaces",
-    "verify": "npm run lint:fix && npm run typecheck && npm run format",
-    "typecheck:all": "cd ./apps/public-site && npm run typecheck && cd ../pwa-client && npm run typecheck && cd ../pwa-server && npm run typecheck",
-    "verify:all": "npm run lint:fix && npm run format && npm run typecheck:all"
+    "format": "prettier --write .",
+    "typecheck": "pnpm -r run typecheck",
+    "verify": "pnpm run lint:fix && pnpm run format && pnpm run typecheck",
+    "preinstall": "npx only-allow pnpm"
   },
   "keywords": [
     "debt",
@@ -46,14 +45,14 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
-    "@typescript-eslint/eslint-plugin": "^8.14.0",
-    "@typescript-eslint/parser": "^8.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
     "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-vue": "^9.31.0",
     "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.8",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "typescript": "^5.6.3",
     "vue-eslint-parser": "^9.4.3"
   }

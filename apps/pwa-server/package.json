@@ -10,11 +10,12 @@
     "build": "npx nest build",
     "start": "nest start",
     "dev": "nest start --watch",
-    "lint": "cd ../.. && npm run lint",
-    "lint:fix": "cd ../.. && npm run lint:fix",
-    "format": "cd ../.. && npm run format",
+    "lint": "pnpm --filter debtfreeplanner run lint",
+    "lint:fix": "pnpm --filter debtfreeplanner run lint:fix",
+    "format": "pnpm --filter debtfreeplanner run format",
     "typecheck": "tsc --noEmit --pretty",
-    "verify": "npm run lint:fix && npm run format && npm run typecheck"
+    "verify": "pnpm run lint:fix && pnpm run format && pnpm run typecheck",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@nestjs/axios": "^3.1.2",
