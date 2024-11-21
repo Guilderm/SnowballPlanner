@@ -3,32 +3,26 @@
 
 # Except these files and directories
 !apps/pwa-server
+!apps/shared
 !package.json
 !package-lock.json
-!.npmrc
 
-# Ignore node_modules at the root and within apps
+# Ignore node_modules and build output
 node_modules
-apps/*/node_modules
+**/node_modules
+dist
+**/dist
 
-# Ignore logs
-logs
+# Ignore temporary files and IDE configurations
+.vscode
+.idea
 *.log
-
-# Ignore temporary files and backups
 *.tmp
 *.bak
 
-# Ignore IDE and editor configurations
-.vscode
-.idea
-
-# Ignore build output directories
-dist
-
-# Ignore environment files
-.env
-
-# Ignore Git files
+# Ignore Git-related files
 .git
 .gitignore
+
+# Ignore environment files
+#.env

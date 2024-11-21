@@ -7,9 +7,9 @@ WORKDIR /usr/src/app
 # Copy root package.json and package-lock.json
 COPY package.json package-lock.json ./
 
-# Copy workspace-specific package.json files
-COPY apps/pwa-server/package.json ./apps/pwa-server/
-COPY apps/shared/package.json ./apps/shared/
+# Copy the pwa-server directory and the shared code
+COPY apps/pwa-server ./apps/pwa-server/
+COPY apps/shared ./apps/shared/
 
 # Install dependencies using npm ci
 RUN npm ci
