@@ -13,10 +13,7 @@ WORKDIR /usr/src/app/pwa-server
 # Install dependencies, including devDependencies
 RUN npm install --verbose
 
-# Add global installation for Nest CLI
-RUN npm install -g @nestjs/cli
-
-# Build the server
+# Build the server using the local Nest CLI
 RUN npm run build
 
 # Stage 2: Production
