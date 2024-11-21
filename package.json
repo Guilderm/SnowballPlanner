@@ -7,7 +7,7 @@
   "workspaces": [
     "!./apps/public-site",
     "!./apps/pwa-client",
-    "./apps/pwa-server"
+    "!./apps/pwa-server"
   ],
   "scripts": {
     "build": "npm run build --workspaces",

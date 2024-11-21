@@ -1,18 +1,20 @@
-# Stage 1: Builder
+# Stage 1: Build
 FROM node:22.11-alpine AS builder
 
-# Set the working directory
 WORKDIR /usr/src/app
 
-# Copy the required directories
+# Copy necessary files
 COPY apps/pwa-server ./pwa-server/
 COPY apps/shared ./shared/
 
-# Set the working directory to pwa-server
+# Set working directory for pwa-server
 WORKDIR /usr/src/app/pwa-server
 
-# Install dependencies
-RUN npm install
+# Install dependencies, including devDependencies
+RUN npm install --verbose
+
+# Add global installation for Nest CLI
+RUN npm install -g @nestjs/cli
 
 # Build the server
 RUN npm run build
@@ -20,20 +22,17 @@ RUN npm run build
 # Stage 2: Production
 FROM node:22.11-alpine AS production
 
-# Set the working directory
 WORKDIR /usr/src/app
 
-# Copy the built application from the builder stage
-COPY --from=builder /usr/src/app/pwa-server/dist ./dist
+# Copy only the built files and dependencies
+COPY --from=builder /usr/src/app/pwa-server/dist ./pwa-server/dist
+COPY --from=builder /usr/src/app/pwa-server/node_modules ./pwa-server/node_modules
 
-# Copy production-related files
-COPY apps/pwa-server/package.json ./package.json
+# Set working directory for production
+WORKDIR /usr/src/app/pwa-server
 
-# Install only production dependencies
-RUN npm install --omit=dev
-
-# Expose the desired port
-EXPOSE ${PORT:-3300}
+# Expose the application port
+EXPOSE 3300
 
 # Start the server
 CMD ["node", "dist/main.js"]
