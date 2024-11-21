@@ -11,11 +11,8 @@ COPY package.json package-lock.json ./
 COPY apps/pwa-server ./apps/pwa-server/
 COPY apps/shared ./apps/shared/
 
-# Install dependencies using npm ci
-RUN npm ci
-
-# Copy the rest of the source code
-COPY . .
+# Install dependencies
+RUN npm install
 
 # Build the pwa-server workspace
 RUN npm run build --workspace=pwa-server
@@ -23,7 +20,6 @@ RUN npm run build --workspace=pwa-server
 # Stage 2: Production
 FROM node:22.11-alpine AS production
 
-# Set the working directory
 WORKDIR /usr/src/app
 
 # Copy the built application from the builder stage
@@ -33,7 +29,7 @@ COPY --from=builder /usr/src/app/apps/pwa-server/dist ./dist
 COPY apps/pwa-server/package.json ./apps/pwa-server/
 
 # Install only production dependencies
-RUN npm ci --only=production
+RUN npm install --production
 
 # Expose the desired port
 EXPOSE ${PORT:-3300}
