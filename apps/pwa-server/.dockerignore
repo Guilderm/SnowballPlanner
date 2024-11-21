@@ -1,7 +1,7 @@
-# Ignore everything
+# Ignore everything by default
 **
 
-# Allow only the pwa-server and shared folders
+# Allow required files for pwa-server
 !apps/pwa-server/
 !apps/shared/
 
