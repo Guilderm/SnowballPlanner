@@ -113,4 +113,4 @@ const config: NuxtConfig = {
   },
 };
 
-export default defineNuxtConfig(config);
+export default defineNuxtConfig(config) as NuxtConfig;

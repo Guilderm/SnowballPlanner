@@ -17,9 +17,9 @@
     "dev": "pnpm -r run dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write .",
+    "format": "prettier --write . | findstr /V \"(unchanged)\"",
     "typecheck": "pnpm -r run typecheck",
-    "verify": "pnpm run lint:fix && pnpm run format && pnpm run typecheck",
+    "verify": "pnpm lint:fix && pnpm format && pnpm typecheck",
     "preinstall": "npx only-allow pnpm"
   },
   "keywords": [

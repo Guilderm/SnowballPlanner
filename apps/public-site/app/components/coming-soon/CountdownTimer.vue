@@ -34,23 +34,23 @@ const hours = ref(0);
 const minutes = ref(0);
 const seconds = ref(0);
 
-let timer: number | undefined;
+let timer: number;
 
 const updateCountdown = () => {
-  const now = new Date();
-  const timeRemaining = targetDate.getTime() - now.getTime();
+  const now = new Date().getTime();
+  const distance = targetDate.getTime() - now;
 
-  if (timeRemaining > 0) {
-    days.value = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-    hours.value = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
-    minutes.value = Math.floor((timeRemaining / (1000 * 60)) % 60);
-    seconds.value = Math.floor((timeRemaining / 1000) % 60);
-  } else {
-    days.value = hours.value = minutes.value = seconds.value = 0;
-    if (timer !== undefined) {
-      clearInterval(timer);
-    }
+  if (distance < 0) {
+    clearInterval(timer);
+    return;
   }
+
+  days.value = Math.floor(distance / (1000 * 60 * 60 * 24));
+  hours.value = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+  );
+  minutes.value = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  seconds.value = Math.floor((distance % (1000 * 60)) / 1000);
 };
 
 onMounted(() => {
@@ -59,9 +59,7 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  if (timer !== undefined) {
-    clearInterval(timer);
-  }
+  clearInterval(timer);
 });
 </script>
 

@@ -4,9 +4,8 @@
 **
 
 # Allow root files needed for pnpm and Docker
-!pnpm-workspace.yaml
-!package.json
-!pnpm-lock.yaml
+!pnpm-*.yaml
+!package-*.json
 
 # Allow necessary directories and files
 !apps/pwa-server/**

@@ -21,7 +21,10 @@
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.1.5",
     "axios": "^1.7.7",
-    "nuxt-gtag": "^3.0.1"
+    "dotenv": "^16.4.5",
+    "nuxt-gtag": "^3.0.1",
+    "vite": "^5.0.0",
+    "vue": "3"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.2",
@@ -35,6 +38,6 @@
     "vue-tsc": "^2.1.10"
   },
   "deployConfig": {
-    "platform": "GCP Cloud Run"
+    "platform": "Cloudflare Pages"
   }
 }
