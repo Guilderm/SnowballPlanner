@@ -39,5 +39,10 @@
   },
   "deployConfig": {
     "platform": "Cloudflare Pages"
+  },
+  "engines": {
+    "node": ">=22.10.0",
+    "npm": ">=10.9.0",
+    "pnpm": ">=8.7.1"
   }
 }
