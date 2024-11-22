@@ -6,6 +6,7 @@ steps:
     args:
       - '-c'
       - |
+        cd apps/pwa-client
         npm install -g pnpm
         pnpm install
         pnpm run build
@@ -14,6 +15,7 @@ steps:
     args:
       - '-c'
       - |
+        cd apps/pwa-client
         gcloud config set app/cloud_build_timeout 1600
         gcloud app deploy --quiet
 timeout: '1600s'
