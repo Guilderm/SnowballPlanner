@@ -1,15 +1,25 @@
 options:
   logging: CLOUD_LOGGING_ONLY
 steps:
+  # Install pnpm globally
+  - name: node:22
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        npm install -g pnpm
+
+  # Install dependencies and build the project
   - name: node:22
     entrypoint: bash
     args:
       - '-c'
       - |
         cd apps/pwa-client
-        npm install -g pnpm
         pnpm install
         pnpm run build
+
+  # Deploy to App Engine
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'bash'
     args:
