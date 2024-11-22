@@ -37,7 +37,6 @@ steps:
         pnpm run test
 
   # Step 5: Deploy step (example to GCP App Engine or other platforms)
-  # Adjust this step to your specific deployment needs
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     id: 'Deploy application'
     entrypoint: bash
@@ -46,4 +45,11 @@ steps:
       - |
         gcloud app deploy
 
-timeout: '900s' # Increase timeout if the build takes longer
+options:
+  logging: CLOUD_LOGGING_ONLY
+  default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
+
+# Optional: Specify service account
+# serviceAccount: projects/YOUR_PROJECT_ID/serviceAccounts/YOUR_SERVICE_ACCOUNT_NAME
+
+timeout: '1200s'
