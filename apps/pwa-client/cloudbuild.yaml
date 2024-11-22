@@ -1,0 +1,11 @@
+steps:
+  - name: node:22
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        npm install -g pnpm
+        pnpm install
+        pnpm run build
+  - name: gcr.io/cloud-builders/gcloud
+    args: ['app', 'deploy', '--quiet']

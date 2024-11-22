@@ -1,7 +1,7 @@
 {
   "name": "@debtfreeplanner/pwa-client",
   "version": "0.0.1",
-  "description": "The public-facing website for DebtFreePlanner.",
+  "description": "The PWA for DebtFreePlanner",
   "private": true,
   "type": "module",
   "scripts": {
@@ -40,7 +40,7 @@
     "vue-tsc": "^2.1.10"
   },
   "deployConfig": {
-    "platform": "GCP Cloud Run"
+    "platform": "GCP App Engine"
   },
   "engines": {
     "node": ">=22.10.0",
