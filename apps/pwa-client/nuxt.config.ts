@@ -2,7 +2,7 @@
 
 import { defineNuxtConfig } from "nuxt/config";
 import type { NuxtConfig } from "nuxt/schema";
-import * as dotenv from "dotenv";
+import dotenv from "dotenv";
 import * as path from "path";
 
 const siteDescription = "Plan Your Journey to a Debt-Free Living.";
@@ -19,7 +19,7 @@ const config: NuxtConfig = {
     compatibilityVersion: 4,
   },
   devServer: {
-    port: parseInt(process.env.PUBLIC_SITE_PORT ?? "3100", 10),
+    port: parseInt(process.env.PUBLIC_SITE_PORT ?? "3200", 10),
   },
   modules: ["@nuxtjs/tailwindcss", "nuxt-gtag"],
 
@@ -113,4 +113,4 @@ const config: NuxtConfig = {
   },
 };
 
-export default defineNuxtConfig(config);
+export default defineNuxtConfig(config) as NuxtConfig;
