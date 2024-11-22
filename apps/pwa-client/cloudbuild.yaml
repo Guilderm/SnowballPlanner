@@ -1,31 +1,49 @@
-options:
-  logging: CLOUD_LOGGING_ONLY
 steps:
-  # Install pnpm globally
-  - name: node:22
+  # Step 1: Set up Node.js environment and install pnpm
+  - name: 'node:22'
+    id: 'Install pnpm and dependencies'
     entrypoint: bash
     args:
       - '-c'
       - |
         npm install -g pnpm
+        pnpm install
 
-  # Install dependencies and build the project
-  - name: node:22
+  # Step 2: Run the build script
+  - name: 'node:22'
+    id: 'Build project'
     entrypoint: bash
     args:
       - '-c'
       - |
-        cd apps/pwa-client
-        pnpm install
         pnpm run build
 
-  # Deploy to App Engine
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'bash'
+  # Step 3: Optional - Linting step
+  - name: 'node:22'
+    id: 'Lint project'
+    entrypoint: bash
     args:
       - '-c'
       - |
-        cd apps/pwa-client
-        gcloud config set app/cloud_build_timeout 1600
-        gcloud app deploy --quiet
-timeout: '1600s'
+        pnpm run lint
+
+  # Step 4: Optional - Run tests
+  - name: 'node:22'
+    id: 'Run tests'
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        pnpm run test
+
+  # Step 5: Deploy step (example to GCP App Engine or other platforms)
+  # Adjust this step to your specific deployment needs
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'Deploy application'
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        gcloud app deploy
+
+timeout: '900s' # Increase timeout if the build takes longer
