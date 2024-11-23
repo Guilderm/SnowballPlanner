@@ -8,6 +8,7 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "start": "nuxt start",
     "dev": "nuxt dev --debug",
     "lint": "pnpm --filter debtfreeplanner run lint",
     "lint:fix": "pnpm --filter debtfreeplanner run lint:fix",
