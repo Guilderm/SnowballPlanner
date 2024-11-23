@@ -1,7 +1,7 @@
 steps:
-  # Step 1: Install pnpm globally
+  # Step 1: Install pnpm and dependencies, then build the project
   - name: 'node:22'
-    id: 'Install pnpm'
+    id: 'Install pnpm, dependencies, and build'
     entrypoint: bash
     args:
       - '-c'
@@ -9,27 +9,13 @@ steps:
         echo "Installing pnpm..."
         npm install -g pnpm
 
-  # Step 2: Install project dependencies
-  - name: 'node:22'
-    id: 'Install dependencies'
-    entrypoint: bash
-    args:
-      - '-c'
-      - |
         echo "Installing dependencies..."
         pnpm install
 
-  # Step 3: Build the project
-  - name: 'node:22'
-    id: 'Build project'
-    entrypoint: bash
-    args:
-      - '-c'
-      - |
         echo "Running build..."
         pnpm run build
 
-  # Step 4: Deploy application
+  # Step 2: Deploy application
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     id: 'Deploy application'
     entrypoint: bash
@@ -37,7 +23,7 @@ steps:
       - '-c'
       - |
         echo "Deploying application..."
-        cd dist # Change to your app's output directory if necessary
+        cd dist # Adjust this if necessary
         gcloud app deploy
 
 options:
