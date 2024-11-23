@@ -1,7 +1,7 @@
 steps:
-  # Step 1: Install pnpm and dependencies, then build the project
+  # Step 0: Install pnpm, install dependencies, and build the project
   - name: 'node:22'
-    id: 'Install pnpm, dependencies, and build'
+    id: 'Setup, Install Dependencies, and Build'
     entrypoint: bash
     args:
       - '-c'
@@ -12,10 +12,13 @@ steps:
         echo "Installing dependencies..."
         pnpm install
 
-        echo "Running build..."
+        echo "Building the project..."
         pnpm run build
 
-  # Step 2: Deploy application
+        echo "Copying app.yaml to the build output directory..."
+        cp apps/pwa-client/app.yaml apps/pwa-client/.output/
+
+  # Step 1: Deploy application
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     id: 'Deploy application'
     entrypoint: bash
@@ -23,11 +26,11 @@ steps:
       - '-c'
       - |
         echo "Deploying application..."
-        cd dist # Adjust this if necessary
-        gcloud app deploy
+        cd apps/pwa-client/.output
+        gcloud app deploy app.yaml --quiet
 
 options:
   logging: CLOUD_LOGGING_ONLY
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
 
-timeout: '1200s' # Adjust as needed
+timeout: '1200s'
