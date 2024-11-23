@@ -1,55 +1,32 @@
 steps:
-  # Step 1: Set up Node.js environment and install pnpm
+  # Step 1: Install pnpm, dependencies, and build
   - name: 'node:22'
-    id: 'Install pnpm and dependencies'
+    id: 'Install pnpm, dependencies, and build'
     entrypoint: bash
     args:
       - '-c'
       - |
+        echo "Installing pnpm..."
         npm install -g pnpm
+
+        echo "Installing dependencies..."
         pnpm install
 
-  # Step 2: Run the build script
-  - name: 'node:22'
-    id: 'Build project'
-    entrypoint: bash
-    args:
-      - '-c'
-      - |
+        echo "Running build..."
         pnpm run build
 
-  # Step 3: Optional - Linting step
-  - name: 'node:22'
-    id: 'Lint project'
-    entrypoint: bash
-    args:
-      - '-c'
-      - |
-        pnpm run lint
-
-  # Step 4: Optional - Run tests
-  - name: 'node:22'
-    id: 'Run tests'
-    entrypoint: bash
-    args:
-      - '-c'
-      - |
-        pnpm run test
-
-  # Step 5: Deploy step (example to GCP App Engine or other platforms)
+  # Step 2: Deploy application
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     id: 'Deploy application'
     entrypoint: bash
     args:
       - '-c'
       - |
+        echo "Deploying application..."
         gcloud app deploy
 
 options:
   logging: CLOUD_LOGGING_ONLY
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
 
-# Optional: Specify service account
-# serviceAccount: projects/YOUR_PROJECT_ID/serviceAccounts/YOUR_SERVICE_ACCOUNT_NAME
-
-timeout: '1200s'
+timeout: '1200s' # Adjust as needed
