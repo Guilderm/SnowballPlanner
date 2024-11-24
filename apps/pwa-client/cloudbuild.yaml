@@ -30,6 +30,7 @@ steps:
         
         echo "Copying app.yaml to the build output directory..."
         cp app.yaml .output/ || { echo "Failed to copy app.yaml"; exit 1; }
+        cp package.json .output/ || { echo "Failed to copy package.json"; exit 1; }
 
   # Step 1: Verify that the .output directory has the required files
   - name: 'node:22'

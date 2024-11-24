@@ -87,7 +87,7 @@ const config: NuxtConfig = {
   compatibilityDate: "2024-10-23",
 
   nitro: {
-    logLevel: process.env.NODE_ENV === "development" ? 4 : 2, // 0: none, 1: error, 2: warn, 3: info, 4: debug
+    logLevel: process.env.NODE_ENV === "development" ? 4 : 2,
   },
 
   plugins: ["~/plugins/auth0.client.ts"],
