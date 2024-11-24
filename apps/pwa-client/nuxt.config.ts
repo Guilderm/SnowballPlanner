@@ -88,6 +88,9 @@ const config: NuxtConfig = {
 
   nitro: {
     preset: "standalone",
+    externals: {
+      inline: ["vue-bundle-renderer"],
+    },
     logLevel: process.env.NODE_ENV === "development" ? 4 : 2,
   },
 
