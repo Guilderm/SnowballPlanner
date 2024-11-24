@@ -47,14 +47,6 @@ steps:
         echo "Listing files in .output/server/:"
         ls -la server/ || { echo ".output/server/ directory is missing or empty"; exit 1; }
         
-        echo "Checking if index.mjs exists in .output/:"
-        if [ -f index.mjs ]; then
-          echo "index.mjs exists."
-        else
-          echo "index.mjs does not exist."
-          exit 1
-        fi
-
   # Step 2: Deploy the application to App Engine
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     id: 'Deploy Application'
