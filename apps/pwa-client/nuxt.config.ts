@@ -87,6 +87,7 @@ const config: NuxtConfig = {
   compatibilityDate: "2024-10-23",
 
   nitro: {
+    preset: "standalone",
     logLevel: process.env.NODE_ENV === "development" ? 4 : 2,
   },
 

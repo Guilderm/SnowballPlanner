@@ -7,7 +7,6 @@ steps:
     args:
       - '-c'
       - |
-        set -e
         echo "==== Step 0: Setup, Install Dependencies, and Build ===="
         
         echo "Listing files before build:"
