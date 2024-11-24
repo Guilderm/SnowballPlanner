@@ -10,6 +10,9 @@ steps:
         set -e
         echo "==== Step 0: Setup, Install Dependencies, and Build ===="
         
+        echo "Listing files before build:"
+        ls -la
+        
         echo "Installing pnpm..."
         npm install -g pnpm || { echo "Failed to install pnpm"; exit 1; }
         
@@ -19,11 +22,14 @@ steps:
         echo "Building the project..."
         pnpm run build || { echo "Build failed"; exit 1; }
         
+        echo "Listing files after build:"
+        ls -la .output
+        
+        echo "Listing contents of the server directory after build:"
+        ls -la .output/server || { echo ".output/server/ directory does not exist"; exit 1; }
+        
         echo "Copying app.yaml to the build output directory..."
         cp app.yaml .output/ || { echo "Failed to copy app.yaml"; exit 1; }
-        
-        echo "Listing contents of .output directory..."
-        ls -la .output
 
   # Step 1: Verify that the .output directory has the required files
   - name: 'node:22'
@@ -34,13 +40,12 @@ steps:
       - '-c'
       - |
         echo "==== Step 1: Verifying .output Directory ===="
-        echo "Listing contents of .output:"
+        
+        echo "Listing files in .output/:"
         ls -la
         
-        echo "Checking for server/index.mjs..."
-        if [ ! -f server/index.mjs ]; then
-          echo "Error: server/index.mjs is missing."
-        fi
+        echo "Listing files in .output/server/:"
+        ls -la server/ || { echo ".output/server/ directory is missing or empty"; exit 1; }
 
   # Step 2: Deploy the application to App Engine
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -50,12 +55,13 @@ steps:
     args:
       - '-c'
       - |
-        set -e
         echo "==== Step 2: Deploying Application ===="
+        
+        echo "Deploying to Google App Engine..."
         gcloud app deploy app.yaml --quiet || { echo "Deployment failed"; exit 1; }
 
 options:
   logging: CLOUD_LOGGING_ONLY
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
 
-timeout: '600s'
+timeout: '420s'
