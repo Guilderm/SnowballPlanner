@@ -6,32 +6,38 @@ steps:
     args:
       - '-c'
       - |
+        set -e
+        echo "Starting Step 0..."
+
         echo "Installing pnpm..."
-        npm install -g pnpm
+        npm install -g pnpm || { echo "Failed to install pnpm"; exit 1; }
 
         echo "Installing dependencies..."
-        pnpm install
+        pnpm install || { echo "Failed to install dependencies"; exit 1; }
 
         echo "Building the project..."
-        pnpm run build
+        pnpm run build || { echo "Build failed"; exit 1; }
 
-        echo "Copying app.yaml to the deployment workspace..."
-        cp apps/pwa-client/app.yaml apps/pwa-client/.output/
-        cp apps/pwa-client/app.yaml workspace/
+        echo "Copying app.yaml to the build output directory..."
+        cp app.yaml .output/ || { echo "Failed to copy app.yaml"; exit 1; }
 
   # Step 1: Deploy application
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     id: 'Deploy application'
+    dir: '.output'
     entrypoint: bash
     args:
       - '-c'
       - |
-        echo "Deploying application..."
-        cd workspace
-        gcloud app deploy app.yaml --quiet
+        set -e
+        echo "Starting Step 1..."
+        gcloud app deploy app.yaml --verbosity=info --quiet || { echo "Deployment failed"; exit 1; }
 
 options:
   logging: CLOUD_LOGGING_ONLY
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
+  cache:
+    paths:
+      - /root/.pnpm-store
 
-timeout: '1200s'
+timeout: '420s'
