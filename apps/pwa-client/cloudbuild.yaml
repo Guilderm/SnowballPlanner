@@ -2,9 +2,7 @@ steps:
   # Step 0: Install pnpm, install dependencies, and build the project
   - name: 'node:22'
     id: 'Setup, Install Dependencies, and Build'
-    dir: 'apps/pwa-client'  # Correct working directory
-    entrypoint: bash
-    args:
+    dir: 'apps/pwa-client'
       - '-c'
       - |
         set -e
