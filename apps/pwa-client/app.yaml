@@ -18,6 +18,6 @@ handlers:
 # Optional: Increase startup timeout if necessary
 readiness_check:
   check_interval_sec: 5
-  timeout_sec: 300
-  failure_threshold: 10
-  success_threshold: 1
+  timeout_sec: 5
+  failure_threshold: 3
+  success_threshold: 2
