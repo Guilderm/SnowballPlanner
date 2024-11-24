@@ -15,11 +15,9 @@ steps:
         echo "Building the project..."
         pnpm run build
 
-        echo "Copying app.yaml to the build output directory..."
+        echo "Copying app.yaml to the deployment workspace..."
         cp apps/pwa-client/app.yaml apps/pwa-client/.output/
-
-        echo "Verifying app.yaml in the build output directory..."
-        cat apps/pwa-client/.output/app.yaml
+        cp apps/pwa-client/app.yaml workspace/
 
   # Step 1: Deploy application
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -29,7 +27,7 @@ steps:
       - '-c'
       - |
         echo "Deploying application..."
-        cd apps/pwa-client/.output
+        cd workspace
         gcloud app deploy app.yaml --quiet
 
 options:
