@@ -8,20 +8,28 @@ steps:
       - '-c'
       - |
         set -e
-        echo "[Step 0] Installing pnpm..."
+        echo "==== Step 0: Setup, Install Dependencies, and Build ===="
+        
+        echo "Listing files before build:"
+        ls -la
+        
+        echo "Installing pnpm..."
         npm install -g pnpm || { echo "Failed to install pnpm"; exit 1; }
-
-        echo "[Step 0] Installing dependencies..."
+        
+        echo "Installing dependencies..."
         pnpm install || { echo "Failed to install dependencies"; exit 1; }
-
-        echo "[Step 0] Building the project..."
+        
+        echo "Building the project..."
         pnpm run build || { echo "Build failed"; exit 1; }
-
-        echo "[Step 0] Copying app.yaml to the build output directory..."
-        cp app.yaml .output/ || { echo "Failed to copy app.yaml"; exit 1; }
-
-        echo "[Step 0] Build complete. Listing contents of .output directory..."
+        
+        echo "Listing files after build:"
         ls -la .output
+        
+        echo "Listing contents of the server directory after build:"
+        ls -la .output/server || { echo ".output/server/ directory does not exist"; exit 1; }
+        
+        echo "Copying app.yaml to the build output directory..."
+        cp app.yaml .output/ || { echo "Failed to copy app.yaml"; exit 1; }
 
   # Step 1: Verify that the .output directory has the required files
   - name: 'node:22'
@@ -31,12 +39,21 @@ steps:
     args:
       - '-c'
       - |
-        set -e
-        echo "[Step 1] Verifying .output directory contents..."
-        echo "[Step 1] Root contents:"
+        echo "==== Step 1: Verifying .output Directory ===="
+        
+        echo "Listing files in .output/:"
         ls -la
-        echo "[Step 1] Server contents:"
-        ls -la server
+        
+        echo "Listing files in .output/server/:"
+        ls -la server/ || { echo ".output/server/ directory is missing or empty"; exit 1; }
+        
+        echo "Checking if index.mjs exists in .output/:"
+        if [ -f index.mjs ]; then
+          echo "index.mjs exists."
+        else
+          echo "index.mjs does not exist."
+          exit 1
+        fi
 
   # Step 2: Deploy the application to App Engine
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -47,9 +64,10 @@ steps:
       - '-c'
       - |
         set -e
-        echo "[Step 2] Starting deployment..."
+        echo "==== Step 2: Deploying Application ===="
+        
+        echo "Deploying to Google App Engine..."
         gcloud app deploy app.yaml --quiet || { echo "Deployment failed"; exit 1; }
-        echo "[Step 2] Deployment completed successfully."
 
 options:
   logging: CLOUD_LOGGING_ONLY
