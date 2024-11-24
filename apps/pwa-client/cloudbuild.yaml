@@ -16,7 +16,7 @@ steps:
         pnpm run build
 
         echo "Copying app.yaml to the build output directory..."
-        cp apps/pwa-client/app.yaml apps/pwa-client/.output/
+        cd .o
 
   # Step 1: Deploy application
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
