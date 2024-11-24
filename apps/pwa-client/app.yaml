@@ -1,5 +1,7 @@
 runtime: nodejs22
 env: standard
+
+# Use Node.js to start the server directly
 entrypoint: node server/index.mjs
 
 instance_class: F1
@@ -12,3 +14,10 @@ handlers:
   - url: /.*
     script: auto
     secure: always
+
+# Optional: Increase startup timeout if necessary
+readiness_check:
+  check_interval_sec: 5
+  timeout_sec: 300
+  failure_threshold: 10
+  success_threshold: 1
