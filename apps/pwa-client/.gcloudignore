@@ -1,0 +1,18 @@
+# Node.js dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Build artifacts
+.nuxt/
+.output/
+dist/
+coverage/
+logs/
+*.log
+
+# Local files
+.DS_Store
+.env
+*.local
+.vscode/
+.idea/

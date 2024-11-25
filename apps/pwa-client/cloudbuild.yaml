@@ -1,50 +1,72 @@
 steps:
-  # Step 0: Install dependencies and build the project
+  # Step 0: Install dependencies
   - name: "node:22"
-    id: "Install Dependencies and Build"
+    id: "Install Dependencies"
     entrypoint: bash
     args:
       - "-c"
       - |
-        echo "==== Step 0: Install Dependencies and Build ===="
-
-        echo "Inicial workspace directory structure:"
-        #ls -R .
-
+        set -e
+        echo "==== Step 0: Install Dependencies ===="
+        
         echo "Installing pnpm..."
-        npm install -g pnpm || { echo "Failed to install pnpm"; exit 1; }
-
+        npm install -g pnpm
+        
         echo "Installing dependencies for @debtfreeplanner/pwa-client..."
-        pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile || { echo "Failed to install dependencies"; exit 1; }
+        pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile
 
-        echo "Building the project..."
-        pnpm --filter @debtfreeplanner/pwa-client run build || { echo "Build failed"; exit 1; }
-
-        if [ ! -f .output/server/index.mjs ]; then
+  # Step 1: Build the project
+  - name: "node:22"
+    id: "Build Project"
+    entrypoint: bash
+    args:
+      - "-c"
+      - |
+        set -e
+        echo "==== Step 1: Build Project ===="
+        
+        pnpm --filter @debtfreeplanner/pwa-client run build
+        
+        echo "Validating build output..."
+        if [ ! -f apps/pwa-client/.output/server/index.mjs ]; then
           echo "Build output is incomplete: .output/server/index.mjs not found"
+          exit 1
+        else
+          echo "Build output validated: .output/server/index.mjs found"
         fi
 
+  # Step 2: Prepare deployment files
+  - name: "node:22"
+    id: "Prepare Deployment"
+    entrypoint: bash
+    args:
+      - "-c"
+      - |
+        set -e
+        echo "==== Step 2: Prepare Deployment ===="
+        
         echo "Copying app.yaml to /workspace..."
-        cp apps/pwa-client/app.yaml ./ || { echo "Failed to copy app.yaml"; exit 1; }
+        cp apps/pwa-client/app.yaml ./
 
-        echo "Verifying app.yaml in /workspace..."
-        cat app.yaml
+        echo "Copying cloudbuild.yaml to /workspace..."
+        cp apps/pwa-client/cloudbuild.yaml ./
 
         echo "Final workspace directory structure:"
         ls -R .
 
-  # Step 1: Deploy the application to App Engine
+  # Step 3: Deploy the application to App Engine
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     id: "Deploy Application"
     entrypoint: bash
     args:
       - "-c"
       - |
-        echo "==== Step 1: Deploying Application ===="
-        gcloud app deploy app.yaml --quiet
+        echo "==== Step 3: Deploying Application ===="
+        
+        gcloud app deploy app.yaml --quiet --verbosity=debug
 
 options:
   logging: CLOUD_LOGGING_ONLY
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
 
-timeout: "600s"
+  timeout: "1200s"
