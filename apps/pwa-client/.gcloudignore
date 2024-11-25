@@ -1,6 +1,10 @@
 # Ignore everything by default
 **
 
+# Include the app.yaml file
+!app.yaml
+!.output/
+
 # Include only the necessary files and directories
 !apps/pwa-client/
 !apps/shared/
@@ -9,26 +13,28 @@
 !pnpm-*.yaml
 !package-*.json
 
-# Exclude unnecessary files and directories
-**/.pnpm-store/
-**/node_modules/
+# Exclude node_modules and pnpm store
+node_modules/
+.pnpm-store/
+
+# Exclude build and log directories
 dist/
 coverage/
 logs/
 *.log
 
-# Exclude temporary files and local environment files
+# Exclude temporary and local environment files
 *.tmp
 *.swp
 *.bak
 *.old
-**/.env
-**/*.local
+.env
+*.local
 
 # Exclude IDE configurations
-**/.vscode/
-**/.idea/
+.vscode/
+.idea/
 
 # Exclude Git files
-.git
+.git/
 .gitignore
