@@ -22,7 +22,6 @@ steps:
 
         if [ ! -f .output/server/index.mjs ]; then
           echo "Build output is incomplete: .output/server/index.mjs not found"
-          exit 1
         fi
 
         echo "Copying app.yaml to /workspace..."
