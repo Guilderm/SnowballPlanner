@@ -13,32 +13,36 @@ steps:
 
         # Install pnpm globally
         echo "Installing pnpm..."
-        npm install -g pnpm || { echo "Failed to install pnpm"; exit 1; }
+        npm install -g pnpm || { echo "Failed to install pnpm";  }
 
         # Install dependencies for @debtfreeplanner/pwa-client
         echo "Installing dependencies for @debtfreeplanner/pwa-client..."
-        pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile || { echo "Failed to install dependencies"; exit 1; }
+        pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile || { echo "Failed to install dependencies";  }
 
         # Build the project
         echo "Building the project..."
-        pnpm --filter @debtfreeplanner/pwa-client run build || { echo "Build failed"; exit 1; }
+        pnpm --filter @debtfreeplanner/pwa-client run build || { echo "Build failed";  }
 
         # Validate build output
         if [ ! -f apps/pwa-client/.output/server/index.mjs ]; then
           echo "Build output is incomplete: .output/server/index.mjs not found"
-
+          exit 1
         fi
+
+        # Prune unnecessary files
+        echo "Pruning unnecessary files from .output directory..."
+        find apps/pwa-client/.output -type f -name '*.map' -delete || { echo "Failed to prune source maps"; }
 
         # Copy necessary files to the root for deployment
         echo "Copying app.yaml to /workspace..."
-        cp apps/pwa-client/app.yaml ./ || { echo "Failed to copy app.yaml";}
+        cp apps/pwa-client/app.yaml ./ || { echo "Failed to copy app.yaml";  }
 
         echo "Copying .output directory to /workspace..."
-        cp -r apps/pwa-client/.output ./ || { echo "Failed to copy .output directory";}
+        cp -r apps/pwa-client/.output ./ || { echo "Failed to copy .output directory";  }
 
         echo "Copying package.json and pnpm-lock.yaml to /workspace..."
-        cp apps/pwa-client/package.json ./ || { echo "Failed to copy package.json"; }
-        cp apps/pwa-client/pnpm-lock.yaml ./ || { echo "Failed to copy pnpm-lock.yaml"; }
+        cp apps/pwa-client/package.json ./ || { echo "Failed to copy package.json";  }
+        cp apps/pwa-client/pnpm-lock.yaml ./ || { echo "Failed to copy pnpm-lock.yaml";  }
 
         echo "Final workspace directory structure:"
         ls -R .
