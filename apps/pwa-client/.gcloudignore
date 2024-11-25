@@ -1,6 +1,17 @@
+# Ignore everything by default
+**
+
+# Include only the necessary files and directories
+!apps/pwa-client/
+!apps/shared/
+
+# Allow root files needed 
+!pnpm-*.yaml
+!package-*.json
+
 # Node.js dependencies
 node_modules/
-pnpm-lock.yaml
+.pnpm-store/
 
 # Build artifacts
 .nuxt/
@@ -10,9 +21,20 @@ coverage/
 logs/
 *.log
 
-# Local files
+# Local files and configurations
 .DS_Store
 .env
 *.local
 .vscode/
 .idea/
+*.yaml
+*.json
+
+# Cloud Build cache
+.cache/
+
+# Temporary files
+*.tmp
+*.swp
+*.bak
+*.old
