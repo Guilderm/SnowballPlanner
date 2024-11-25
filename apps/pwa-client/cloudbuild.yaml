@@ -1,59 +1,56 @@
 steps:
-  # Step 0: Install dependencies, build the project, and prepare deployment files
+  # Step 0: Install dependencies and build the project
   - name: "node:22"
-    id: "Install-Build-Prepare"
+    id: "Install Dependencies and Build"
     entrypoint: bash
     args:
       - "-c"
       - |
-        set -e
-        echo "==== Step 0: Install Dependencies, Build, and Prepare ===="
-        
+        echo "==== Step 0: Install Dependencies and Build ===="
+
+        echo "Initial workspace directory structure:"
+        ls -R .
+
+        # Install pnpm globally
         echo "Installing pnpm..."
-        npm install -g pnpm
+        npm install -g pnpm || { echo "Failed to install pnpm"; exit 1; }
 
+        # Install dependencies for @debtfreeplanner/pwa-client
         echo "Installing dependencies for @debtfreeplanner/pwa-client..."
-        pnpm install --frozen-lockfile
+        pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile || { echo "Failed to install dependencies"; exit 1; }
 
+        # Build the project
         echo "Building the project..."
-        pnpm run build
-        
+        pnpm --filter @debtfreeplanner/pwa-client run build || { echo "Build failed"; exit 1; }
+
         # Validate build output
-        echo "Validating build output..."
-        if [ ! -f .output/server/index.mjs ]; then
+        if [ ! -f apps/pwa-client/.output/server/index.mjs ]; then
           echo "Build output is incomplete: .output/server/index.mjs not found"
-        else
-          echo "Build output validated: .output/server/index.mjs found"
+
         fi
 
-  # Step 1: Prepare Deployment Directory
-  - name: "ubuntu"
-    id: "Prepare-Deployment"
-    entrypoint: bash
-    args:
-      - "-c"
-      - |
-        set -e
-        echo "==== Step 1: Prepare Deployment Directory ===="
-        mkdir deployment
-        cp app.yaml deployment/
-        cp -r .output deployment/
-        cp package.json deployment/
-        cp pnpm-lock.yaml deployment/
+        # Copy necessary files to the root for deployment
+        echo "Copying app.yaml to /workspace..."
+        cp apps/pwa-client/app.yaml ./ || { echo "Failed to copy app.yaml"; exit 1; }
 
-        echo "Deployment directory contents:"
-        ls -R deployment/
+        echo "Copying .output directory to /workspace..."
+        cp -r apps/pwa-client/.output ./ || { echo "Failed to copy .output directory"; exit 1; }
 
-  # Step 2: Deploy the application to App Engine
+        echo "Copying package.json and pnpm-lock.yaml to /workspace..."
+        cp apps/pwa-client/package.json ./ || { echo "Failed to copy package.json"; exit 1; }
+        cp apps/pwa-client/pnpm-lock.yaml ./ || { echo "Failed to copy pnpm-lock.yaml"; exit 1; }
+
+        echo "Final workspace directory structure:"
+        ls -R .
+
+  # Step 1: Deploy the application to App Engine
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     id: "Deploy Application"
     entrypoint: bash
     args:
       - "-c"
       - |
-        set -e
-        echo "==== Step 2: Deploying Application ===="
-        cd deployment
+        echo "==== Step 1: Deploying Application ===="
         gcloud app deploy app.yaml --quiet --verbosity=debug --stop-previous-version
 
 options:
