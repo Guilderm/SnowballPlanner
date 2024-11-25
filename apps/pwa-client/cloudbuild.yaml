@@ -8,7 +8,7 @@ steps:
       - |
         echo "==== Step 0: Install Dependencies and Build ===="
 
-        echo "Inicial /workspace directory structure:"
+        echo "Inicial workspace directory structure:"
         #ls -R .
 
         echo "Installing pnpm..."
@@ -30,7 +30,7 @@ steps:
         echo "Verifying app.yaml in /workspace..."
         cat app.yaml
 
-        echo "Final /workspace directory structure:"
+        echo "Final workspace directory structure:"
         ls -R .
 
   # Step 1: Deploy the application to App Engine
@@ -47,4 +47,4 @@ options:
   logging: CLOUD_LOGGING_ONLY
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
 
-timeout: "420s"
+timeout: "600s"
