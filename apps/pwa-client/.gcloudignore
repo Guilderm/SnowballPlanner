@@ -5,36 +5,30 @@
 !apps/pwa-client/
 !apps/shared/
 
-# Allow root files needed 
+# Allow root files needed
 !pnpm-*.yaml
 !package-*.json
 
-# Node.js dependencies
-node_modules/
-.pnpm-store/
-
-# Build artifacts
-.nuxt/
-.output/
+# Exclude unnecessary files and directories
+**/.pnpm-store/
+**/node_modules/
 dist/
 coverage/
 logs/
 *.log
 
-# Local files and configurations
-.DS_Store
-.env
-*.local
-.vscode/
-.idea/
-*.yaml
-*.json
-
-# Cloud Build cache
-.cache/
-
-# Temporary files
+# Exclude temporary files and local environment files
 *.tmp
 *.swp
 *.bak
 *.old
+**/.env
+**/*.local
+
+# Exclude IDE configurations
+**/.vscode/
+**/.idea/
+
+# Exclude Git files
+.git
+.gitignore
