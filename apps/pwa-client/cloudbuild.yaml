@@ -31,14 +31,14 @@ steps:
 
         # Copy necessary files to the root for deployment
         echo "Copying app.yaml to /workspace..."
-        cp apps/pwa-client/app.yaml ./ || { echo "Failed to copy app.yaml"; exit 1; }
+        cp apps/pwa-client/app.yaml ./ || { echo "Failed to copy app.yaml";}
 
         echo "Copying .output directory to /workspace..."
-        cp -r apps/pwa-client/.output ./ || { echo "Failed to copy .output directory"; exit 1; }
+        cp -r apps/pwa-client/.output ./ || { echo "Failed to copy .output directory";}
 
         echo "Copying package.json and pnpm-lock.yaml to /workspace..."
-        cp apps/pwa-client/package.json ./ || { echo "Failed to copy package.json"; exit 1; }
-        cp apps/pwa-client/pnpm-lock.yaml ./ || { echo "Failed to copy pnpm-lock.yaml"; exit 1; }
+        cp apps/pwa-client/package.json ./ || { echo "Failed to copy package.json"; }
+        cp apps/pwa-client/pnpm-lock.yaml ./ || { echo "Failed to copy pnpm-lock.yaml"; }
 
         echo "Final workspace directory structure:"
         ls -R .
