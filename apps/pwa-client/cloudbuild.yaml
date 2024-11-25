@@ -8,10 +8,10 @@ steps:
       - |
         set -e
         echo "==== Step 0: Install Dependencies ===="
-        
+
         echo "Installing pnpm..."
         npm install -g pnpm
-        
+
         echo "Installing dependencies for @debtfreeplanner/pwa-client..."
         pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile
 
@@ -24,9 +24,9 @@ steps:
       - |
         set -e
         echo "==== Step 1: Build Project ===="
-        
+
         pnpm --filter @debtfreeplanner/pwa-client run build
-        
+
         echo "Validating build output..."
         if [ ! -f apps/pwa-client/.output/server/index.mjs ]; then
           echo "Build output is incomplete: .output/server/index.mjs not found"
@@ -44,12 +44,12 @@ steps:
       - |
         set -e
         echo "==== Step 2: Prepare Deployment ===="
-        
+
         echo "Copying app.yaml to /workspace..."
-        cp apps/pwa-client/app.yaml ./
+        cp apps/pwa-client/app.yaml ./ || { echo "Failed to copy app.yaml"; exit 1; }
 
         echo "Copying cloudbuild.yaml to /workspace..."
-        cp apps/pwa-client/cloudbuild.yaml ./
+        cp apps/pwa-client/cloudbuild.yaml ./ || { echo "Failed to copy cloudbuild.yaml"; exit 1; }
 
         echo "Final workspace directory structure:"
         ls -R .
@@ -62,11 +62,11 @@ steps:
       - "-c"
       - |
         echo "==== Step 3: Deploying Application ===="
-        
+
         gcloud app deploy app.yaml --quiet --verbosity=debug
 
 options:
   logging: CLOUD_LOGGING_ONLY
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
 
-  timeout: "1200s"
+timeout: "1200s" # Increased timeout to 20 minutes
