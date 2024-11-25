@@ -21,6 +21,7 @@ steps:
         if [ ! -d .output ] || [ ! -d .output/server ]; then
           echo "Build output is incomplete"; exit 1;
         fi
+        
 
         echo "Copying app.yaml..."
         cp app.yaml .output/ || { echo "Failed to copy app.yaml"; exit 1; }

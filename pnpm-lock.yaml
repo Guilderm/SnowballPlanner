@@ -154,9 +154,6 @@ importers:
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
-      vue-bundle-renderer:
-        specifier: ^1.0.0
-        version: 1.0.3
       vue-tsc:
         specifier: ^2.1.10
         version: 2.1.10(typescript@5.6.3)
@@ -4787,9 +4784,6 @@ packages:
 
   vscode-uri@3.0.8:
     resolution: {integrity: sha512-AyFQ0EVmsOZOlAnxoFOGOq1SQDWAB7C6aqMGS23svWAllfOaxbuFvcT8D1i8z3Gyn8fraVeZNNmN6e9bxxXkKw==}
-
-  vue-bundle-renderer@1.0.3:
-    resolution: {integrity: sha512-EfjX+5TTUl70bki9hPuVp+54JiZOvFIfoWBcfXsSwLzKEiDYyHNi5iX8srnqLIv3YRnvxgbntdcG1WPq0MvffQ==}
 
   vue-bundle-renderer@2.1.1:
     resolution: {integrity: sha512-+qALLI5cQncuetYOXp4yScwYvqh8c6SMXee3B+M7oTZxOgtESP0l4j/fXdEJoZ+EdMxkGWIj+aSEyjXkOdmd7g==}
@@ -10004,10 +9998,6 @@ snapshots:
       vscode-languageserver-protocol: 3.16.0
 
   vscode-uri@3.0.8: {}
-
-  vue-bundle-renderer@1.0.3:
-    dependencies:
-      ufo: 1.5.4
 
   vue-bundle-renderer@2.1.1:
     dependencies:
