@@ -1,32 +1,23 @@
 steps:
-  # Step 0: Install dependencies
+  # Step 0: Install dependencies, build the project, and prepare deployment files
   - name: "node:22"
-    id: "Install Dependencies"
+    id: "Install-Build-Prepare"
     entrypoint: bash
     args:
       - "-c"
       - |
         set -e
-        echo "==== Step 0: Install Dependencies ===="
-
+        echo "==== Step 0: Install Dependencies, Build, and Prepare ===="
+        
         echo "Installing pnpm..."
         npm install -g pnpm
-
+        
         echo "Installing dependencies for @debtfreeplanner/pwa-client..."
         pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile
-
-  # Step 1: Build the project
-  - name: "node:22"
-    id: "Build Project"
-    entrypoint: bash
-    args:
-      - "-c"
-      - |
-        set -e
-        echo "==== Step 1: Build Project ===="
-
+        
+        echo "Building the project..."
         pnpm --filter @debtfreeplanner/pwa-client run build
-
+        
         echo "Validating build output..."
         if [ ! -f apps/pwa-client/.output/server/index.mjs ]; then
           echo "Build output is incomplete: .output/server/index.mjs not found"
@@ -34,16 +25,6 @@ steps:
         else
           echo "Build output validated: .output/server/index.mjs found"
         fi
-
-  # Step 2: Prepare deployment files
-  - name: "node:22"
-    id: "Prepare Deployment"
-    entrypoint: bash
-    args:
-      - "-c"
-      - |
-        set -e
-        echo "==== Step 2: Prepare Deployment ===="
 
         echo "Copying app.yaml to /workspace..."
         cp apps/pwa-client/app.yaml ./ || { echo "Failed to copy app.yaml"; exit 1; }
@@ -54,19 +35,20 @@ steps:
         echo "Final workspace directory structure:"
         ls -R .
 
-  # Step 3: Deploy the application to App Engine
+  # Step 1: Deploy the application to App Engine
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     id: "Deploy Application"
     entrypoint: bash
     args:
       - "-c"
       - |
-        echo "==== Step 3: Deploying Application ===="
-
+        echo "==== Step 1: Deploying Application ===="
+        
         gcloud app deploy app.yaml --quiet --verbosity=debug
 
 options:
   logging: CLOUD_LOGGING_ONLY
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
 
-timeout: "1200s" # Increased timeout to 20 minutes
+# Specify timeout at the root level
+timeout: "1200s"
