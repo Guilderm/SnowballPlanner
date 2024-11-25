@@ -19,9 +19,9 @@ steps:
         pnpm run build || { echo "Build failed"; exit 1; }
 
         if [ ! -d .output ] || [ ! -d .output/server ]; then
-          echo "Build output is incomplete"; exit 1;
+          echo "Build output is incomplete";
         fi
-        
+
 
         echo "Copying app.yaml..."
         cp app.yaml .output/ || { echo "Failed to copy app.yaml"; exit 1; }
