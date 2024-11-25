@@ -13,7 +13,7 @@
     "format": "pnpm --filter debtfreeplanner run format",
     "typecheck": "tsc --noEmit --pretty",
     "verify": "pnpm run lint:fix && pnpm run format && pnpm run typecheck",
-    "preinstall": "[ \"$CI\" != \"true\" ] && npx only-allow pnpm || true"
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@auth0/auth0-vue": "^2.3.3",
