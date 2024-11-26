@@ -1,5 +1,19 @@
 steps:
-  # Step: Deploy the application to App Engine
+  - name: "node:22"
+    id: "Install Dependencies and Build"
+    entrypoint: bash
+    args:
+      - "-c"
+      - |
+        set -e
+        echo "==== Step 1: Installing Dependencies ===="
+        npm install -g pnpm
+        pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile
+        echo "==== Step 2: Building Application ===="
+        pnpm --filter @debtfreeplanner/pwa-client run build
+        echo "==== Build Completed. Verifying Output ===="
+        ls -l apps/pwa-client
+
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     id: "Deploy Application"
     entrypoint: bash
@@ -14,7 +28,7 @@ steps:
         ls -Rla apps/pwa-client
 
         echo  "List files in the current directory"
-        ls -la apps/pwa-client
+        ls -l apps/pwa-client
 
 
 options:
