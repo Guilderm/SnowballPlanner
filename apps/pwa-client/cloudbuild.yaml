@@ -73,3 +73,8 @@ steps:
 
         echo "Deployment complete. Verifying remaining files..."
         ls -R .
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: "900s"
