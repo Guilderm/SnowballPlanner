@@ -27,7 +27,10 @@ steps:
       - |
         set -e
         echo "==== Step 1: Deploying Application ===="
-        ls .output/server/index.mjs
+
+        echo "Listing Current Directory Contents..."
+        ls -la
+
         gcloud app deploy app.yaml --quiet --verbosity=debug --stop-previous-version
 
 options:
