@@ -7,10 +7,11 @@
 ## Include only necessary files for deployment
 
 !app.yaml
-!.output/**
 !pnpm-*.yaml
 !package-*.json
 !apps/pwa-client/**
+!.output/**
+!apps/pwa-client/.output/**
 !apps/shared/**
 
 ## Exclude unnecessary files and directories
