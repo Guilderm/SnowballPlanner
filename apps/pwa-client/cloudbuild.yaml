@@ -30,7 +30,7 @@ steps:
         gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug
         
         echo "Final workspace directory structure:"
-        ls -R .
+        ls -R apps/pwa-client/
 
 options:
   logging: CLOUD_LOGGING_ONLY

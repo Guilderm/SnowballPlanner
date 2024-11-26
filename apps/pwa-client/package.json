@@ -13,8 +13,7 @@
     "format": "pnpm --filter debtfreeplanner run format",
     "typecheck": "tsc --noEmit --pretty",
     "verify": "pnpm run lint:fix && pnpm run format && pnpm run typecheck",
-    "gcp-build": "echo 'Running gcp-build...'; npm install -g pnpm && pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile && pnpm --filter @debtfreeplanner/pwa-client run build && echo 'Build completed.'",
-    "preinstall": "[ \"$NODE_ENV\" != \"production\" ] || npx only-allow pnpm"
+    "gcp-build": "echo 'Running gcp-build...'; npm install -g pnpm && pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile && pnpm --filter @debtfreeplanner/pwa-client run build && echo 'Build completed.'"
   },
   "dependencies": {
     "@auth0/auth0-vue": "^2.3.3",
