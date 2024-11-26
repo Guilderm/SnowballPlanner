@@ -1,4 +1,5 @@
 steps:
+  # Step 0: Install dependencies and build the project
   - name: "node:22"
     id: "Install Dependencies and Build"
     entrypoint: bash
@@ -6,16 +7,18 @@ steps:
       - "-c"
       - |
         set -e
-        echo "==== Step 1: Installing Dependencies ===="
+        echo "==== Step 0: Install Dependencies and Build ===="
+
+        echo "Installing pnpm..."
         npm install -g pnpm
+
+        echo "Installing dependencies for @debtfreeplanner/pwa-client..."
         pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile
 
-        echo "==== Step 2: Building Application ===="
+        echo "Building the project..."
         pnpm --filter @debtfreeplanner/pwa-client run build
 
-        echo "==== Build Completed. Verifying Output ===="
-        ls -l apps/pwa-client/.output/server
-
+  # Step 1: Deploy the application to App Engine
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     id: "Deploy Application"
     entrypoint: bash
@@ -25,12 +28,9 @@ steps:
         set -e
         echo "==== Step 1: Deploying Application ===="
         gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug
-
-        echo  "List all contents in the current directory"
-        ls -Rla apps/pwa-client
-
-        echo  "List files in the current directory"
-        ls -l apps/pwa-client
+        
+        echo "Final workspace directory structure:"
+        ls -R .
 
 options:
   logging: CLOUD_LOGGING_ONLY
