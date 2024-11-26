@@ -1,20 +1,6 @@
 steps:
 
-  # Step 0: Deploy the application to App Engine
-  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-    id: "Deploy Application"
-    entrypoint: bash
-    args:
-      - "-c"
-      - |
-        set -e
-        echo "==== Step 1: Deploying Application ===="
-        gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug
-
-        echo "Final workspace directory structure:"
-        ls -R apps/pwa-client/
-
-  # Step 1: Install dependencies and build the project
+  # Step 0: Install dependencies and build the project
   - name: "node:22"
     id: "Install Dependencies and Build"
     entrypoint: bash
@@ -32,6 +18,20 @@ steps:
 
         echo "Building the project..."
         pnpm --filter @debtfreeplanner/pwa-client run build
+
+  # Step 1: Deploy the application to App Engine
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    id: "Deploy Application"
+    entrypoint: bash
+    args:
+      - "-c"
+      - |
+        set -e
+        echo "==== Step 1: Deploying Application ===="
+        gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug
+
+        echo "Final workspace directory structure:"
+        ls -R apps/pwa-client/
 
 options:
   logging: CLOUD_LOGGING_ONLY
