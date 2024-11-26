@@ -1,4 +1,5 @@
 steps:
+  # Step 0: Install dependencies and build the project
   - name: "node:22"
     id: "Install Dependencies and Build"
     entrypoint: bash
@@ -6,6 +7,8 @@ steps:
       - "-c"
       - |
         set -e
+        echo "==== Step 0: Install Dependencies and Build ===="
+
         echo "Installing pnpm..."
         npm install -g pnpm
 
@@ -15,6 +18,7 @@ steps:
         echo "Building the project..."
         pnpm --filter @debtfreeplanner/pwa-client run build
 
+  # Step 1: Deploy the application to App Engine
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     id: "Deploy Application"
     entrypoint: bash
@@ -22,13 +26,11 @@ steps:
       - "-c"
       - |
         set -e
-
-        echo "Copying .output/ to deployment directory..."
-        cp -R .output/ ./deploy/
-
-        echo "Deploying application..."
+        echo "==== Step 1: Deploying Application ===="
         gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug --stop-previous-version
 
 options:
   logging: CLOUD_LOGGING_ONLY
+  default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
+
 timeout: "1200s"
