@@ -52,6 +52,9 @@ steps:
         set -e
         echo "==== Step 3: Building the pwa-client Application ===="
 
+        echo "Installing pnpm globally..."
+        npm install -g pnpm
+        
         cd apps/pwa-client
         pnpm install --frozen-lockfile
         pnpm run build
