@@ -8,8 +8,10 @@
 
 !app.yaml
 !.output/**
-!package.json
-!pnpm-lock.yaml
+!pnpm-*.yaml
+!package-*.json
+!apps/pwa-client/**
+!apps/shared/**
 
 ## Exclude unnecessary files and directories
 
