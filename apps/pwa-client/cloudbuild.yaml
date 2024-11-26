@@ -29,6 +29,9 @@ steps:
         echo "==== Step 1: Deploying Application ===="
         gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug
         
+        echo "Building the project..."
+        pnpm --filter @debtfreeplanner/pwa-client run build
+        
         echo "Final workspace directory structure:"
         ls -R apps/pwa-client/
 
