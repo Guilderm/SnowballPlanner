@@ -12,7 +12,7 @@ steps:
 
         echo "==== Step 2: Building Application ===="
         pnpm --filter @debtfreeplanner/pwa-client run build
-        
+
         echo "==== Build Completed. Verifying Output ===="
         ls -l apps/pwa-client/.output/server
 
@@ -31,3 +31,8 @@ steps:
 
         echo  "List files in the current directory"
         ls -l apps/pwa-client
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: "900s"
