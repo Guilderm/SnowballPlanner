@@ -1,25 +1,66 @@
 steps:
-
-  # Step 0: Install dependencies and build the project
-  - name: "node:22"
-    id: "Install Dependencies and Build"
+  # Step 1: Clean up unnecessary files and directories
+  - name: "ubuntu"
+    id: "Clean Up Root and Unnecessary Apps"
     entrypoint: bash
     args:
       - "-c"
       - |
         set -e
-        echo "==== Step 0: Install Dependencies and Build ===="
+        echo "==== Step 1: Cleaning Up Root and Unnecessary Files ===="
+        
+        # Remove root package files
+        echo "Deleting root package.json, pnpm-lock.yaml, and pnpm-workspace.yaml..."
+        rm -f package.json pnpm-lock.yaml pnpm-workspace.yaml
 
-        echo "Installing pnpm..."
+        # Remove unnecessary directories
+        echo "Deleting apps/public-site and apps/pwa-server directories..."
+        rm -rf apps/public-site apps/pwa-server
+
+        # Confirm cleanup
+        echo "Remaining directory structure:"
+        find . -type d
+
+  # Step 2: Install dependencies for pwa-client and generate pnpm-lock.yaml
+  - name: "node:22"
+    id: "Install Dependencies for pwa-client"
+    entrypoint: bash
+    args:
+      - "-c"
+      - |
+        set -e
+        echo "==== Step 2: Installing Dependencies for pwa-client ===="
+
+        echo "Installing pnpm globally..."
         npm install -g pnpm
 
-        echo "Installing dependencies for @debtfreeplanner/pwa-client..."
-        pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile
+        echo "Initializing a pnpm-lock.yaml for apps/pwa-client..."
+        cd apps/pwa-client
+        pnpm install --lockfile-only
 
-        echo "Building the project..."
-        pnpm --filter @debtfreeplanner/pwa-client run build
+        # Verify the lockfile is generated
+        echo "Verifying pnpm-lock.yaml for pwa-client..."
+        ls -l pnpm-lock.yaml
 
-  # Step 1: Deploy the application to App Engine
+  # Step 3: Build the pwa-client application
+  - name: "node:22"
+    id: "Build pwa-client"
+    entrypoint: bash
+    args:
+      - "-c"
+      - |
+        set -e
+        echo "==== Step 3: Building the pwa-client Application ===="
+
+        cd apps/pwa-client
+        pnpm install --frozen-lockfile
+        pnpm run build
+
+        # Verify build output
+        echo "Verifying .output directory..."
+        ls -R .output
+
+  # Step 4: Deploy the pwa-client application to App Engine
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     id: "Deploy Application"
     entrypoint: bash
@@ -27,13 +68,8 @@ steps:
       - "-c"
       - |
         set -e
-        echo "==== Step 1: Deploying Application ===="
-        gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug
+        echo "==== Step 4: Deploying Application to App Engine ===="
+        gcloud app deploy app.yaml --quiet --verbosity=debug
 
-        echo "Final workspace directory structure:"
-        ls -R apps/pwa-client/
-
-options:
-  logging: CLOUD_LOGGING_ONLY
-
-timeout: "900s"
+        echo "Deployment complete. Verifying remaining files..."
+        ls -R .
