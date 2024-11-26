@@ -28,10 +28,17 @@ steps:
         set -e
         echo "==== Step 1: Deploying Application ===="
 
+        echo "Listing Current working directory...."
+        pwd
+
         echo "Listing Current Directory Contents..."
         ls -la
 
-        gcloud app deploy app.yaml --quiet --verbosity=debug --stop-previous-version
+        echo "Listing Contents of apps/pwa-client Recursively..."
+        ls -Rla apps/pwa-client
+
+        echo "Deploying the application to App Engine..."
+        gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug --stop-previous-version
 
 options:
   logging: CLOUD_LOGGING_ONLY
