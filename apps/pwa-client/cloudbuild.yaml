@@ -12,6 +12,9 @@ steps:
         echo "Installing pnpm..."
         npm install -g pnpm
 
+        echo "Installing only-allow globally..."
+        npm install -g only-allow
+
         echo "Installing dependencies for @debtfreeplanner/pwa-client..."
         pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile
 
@@ -22,13 +25,8 @@ steps:
         find apps/pwa-client/.output -type f -name '*.map' -delete
         find apps/pwa-client/.output -type f -name '*.ts' -delete
         find apps/pwa-client/.output -type f -name '*.json' ! -name 'package.json' -delete
-
-        echo "Removing .pnpm-store directory..."
         rm -rf apps/pwa-client/.pnpm-store
-
-        echo "Root directory contents:"
-        ls -R .
-
+        
   # Step 1: Deploy the application to App Engine
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     id: "Deploy Application"
