@@ -9,10 +9,6 @@ steps:
         set -e
         echo "==== Step 0: Install Dependencies and Build ===="
 
-        # Set NODE_ENV to production
-        export NODE_ENV=production
-        echo "NODE_ENV is set to: $NODE_ENV"
-
         echo "Installing pnpm..."
         npm install -g pnpm
 
