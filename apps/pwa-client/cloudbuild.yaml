@@ -47,15 +47,6 @@ steps:
         # Create .gcloudignore in deployment directory
         echo "Creating .gcloudignore in deployment directory..."
         cat > deployment/.gcloudignore <<EOF
-# Ignore everything by default
-**
-
-# Include only the necessary files for deployment
-!app.yaml
-!.output/server/**
-!package.json
-!pnpm-lock.yaml
-EOF
 
         echo "Deployment directory contents:"
         ls -R deployment/
