@@ -27,7 +27,8 @@ steps:
       - |
         set -e
         echo "==== Step 1: Deploying Application ===="
-        gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug --stop-previous-version
+        ls .output/server/index.mjs
+        gcloud app deploy app.yaml --quiet --verbosity=debug --stop-previous-version
 
 options:
   logging: CLOUD_LOGGING_ONLY
