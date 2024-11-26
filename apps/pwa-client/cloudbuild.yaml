@@ -22,6 +22,10 @@ steps:
       - "-c"
       - |
         set -e
+
+        echo "Copying .output/ to deployment directory..."
+        cp -R .output/ ./deploy/
+
         echo "Deploying application..."
         gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug --stop-previous-version
 
