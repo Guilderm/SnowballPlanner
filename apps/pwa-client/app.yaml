@@ -1,10 +1,15 @@
 runtime: nodejs22
 env: standard
 
-entrypoint: node apps/pwa-client/.output/server/index.mjs
+entrypoint: node .output/server/index.mjs
 
 instance_class: F1
 
 automatic_scaling:
   min_instances: 0
   max_instances: 1
+
+# Prevent App Engine from reinstalling dependencies
+skip_files:
+  - node_modules
+  - .output

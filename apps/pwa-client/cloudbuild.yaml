@@ -32,10 +32,10 @@ steps:
         pwd
 
         echo "Listing Contents of apps/pwa-client/.output/server Recursively..."
-        ls -Rla apps/pwa-client/.output/server
+        #ls -Rla apps/pwa-client/.output/server
 
         echo "Deploying the application to App Engine..."
-        gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug --stop-previous-version
+        gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug
 
 options:
   logging: CLOUD_LOGGING_ONLY
