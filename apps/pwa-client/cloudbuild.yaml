@@ -22,7 +22,10 @@ steps:
         find apps/pwa-client/.output -type f -name '*.map' -delete
         find apps/pwa-client/.output -type f -name '*.ts' -delete
         find apps/pwa-client/.output -type f -name '*.json' ! -name 'package.json' -delete
-        rm -rf apps/pwa-client/.pnpm-store
+
+        echo "Pruning unnecessary files from .pnpm-store directory..."
+        find apps/pwa-client/.pnpm-store -type f -exec rm -f {} +
+        find apps/pwa-client/.pnpm-store -type d -empty -delete
 
   # Step 1: Deploy the application to App Engine
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
