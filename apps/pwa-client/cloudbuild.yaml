@@ -11,10 +11,10 @@ steps:
         gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug
 
         echo  "List all contents in the current directory"
-        ls -Rla
+        ls -Rla apps/pwa-client
 
         echo  "List files in the current directory"
-        ls -Rla
+        ls -la apps/pwa-client
 
 
 options:
