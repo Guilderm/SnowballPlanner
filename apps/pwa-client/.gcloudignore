@@ -4,6 +4,7 @@
 # Include only the necessary files for deployment
 !app.yaml
 !.output/
+!.output/server/
 !package.json
 !pnpm-lock.yaml
 
@@ -24,3 +25,9 @@ logs/
 .idea/
 .git/
 .gitignore
+
+# Exclude unneeded files in .output
+.output/public/
+.output/.nuxt/
+.output/client/
+.output/**/*.map

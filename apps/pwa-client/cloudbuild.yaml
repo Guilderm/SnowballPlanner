@@ -13,15 +13,15 @@ steps:
 
         # Install pnpm globally
         echo "Installing pnpm..."
-        npm install -g pnpm || { echo "Failed to install pnpm";  }
+        npm install -g pnpm || { echo "Failed to install pnpm";}
 
         # Install dependencies for @debtfreeplanner/pwa-client
         echo "Installing dependencies for @debtfreeplanner/pwa-client..."
-        pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile || { echo "Failed to install dependencies";  }
+        pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile || { echo "Failed to install dependencies";}
 
         # Build the project
         echo "Building the project..."
-        pnpm --filter @debtfreeplanner/pwa-client run build || { echo "Build failed";  }
+        pnpm --filter @debtfreeplanner/pwa-client run build || { echo "Build failed";}
 
         # Validate build output
         if [ ! -f apps/pwa-client/.output/server/index.mjs ]; then
@@ -29,20 +29,26 @@ steps:
           exit 1
         fi
 
-        # Prune unnecessary files
+        # Prune unnecessary files in .output directory
         echo "Pruning unnecessary files from .output directory..."
-        find apps/pwa-client/.output -type f -name '*.map' -delete || { echo "Failed to prune source maps"; }
+        find apps/pwa-client/.output -type f \( -name '*.map' -o -name '*.log' \) -delete || { echo "Failed to prune unnecessary files";}
+
+        # Ensure only server files are included
+        echo "Removing unnecessary directories from .output..."
+        rm -rf apps/pwa-client/.output/public || { echo "Failed to remove .output/public";}
+        rm -rf apps/pwa-client/.output/client || { echo "Failed to remove .output/client";}
+        rm -rf apps/pwa-client/.output/.nuxt || { echo "Failed to remove .output/.nuxt";}
 
         # Copy necessary files to the root for deployment
         echo "Copying app.yaml to /workspace..."
-        cp apps/pwa-client/app.yaml ./ || { echo "Failed to copy app.yaml";  }
+        cp apps/pwa-client/app.yaml ./ || { echo "Failed to copy app.yaml";}
 
-        echo "Copying .output directory to /workspace..."
-        cp -r apps/pwa-client/.output ./ || { echo "Failed to copy .output directory";  }
+        echo "Copying .output/server directory to /workspace..."
+        cp -r apps/pwa-client/.output/server ./ || { echo "Failed to copy .output/server directory";}
 
         echo "Copying package.json and pnpm-lock.yaml to /workspace..."
-        cp apps/pwa-client/package.json ./ || { echo "Failed to copy package.json";  }
-        cp apps/pwa-client/pnpm-lock.yaml ./ || { echo "Failed to copy pnpm-lock.yaml";  }
+        cp apps/pwa-client/package.json ./ || { echo "Failed to copy package.json";}
+        cp apps/pwa-client/pnpm-lock.yaml ./ || { echo "Failed to copy pnpm-lock.yaml";}
 
         echo "Final workspace directory structure:"
         ls -R .
