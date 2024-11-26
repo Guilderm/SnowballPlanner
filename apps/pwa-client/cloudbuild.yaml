@@ -38,21 +38,34 @@ steps:
 
         # Prepare deployment directory
         echo "Preparing deployment directory..."
-        mkdir deployment
+        mkdir -p deployment/.output/server
         cp apps/pwa-client/app.yaml deployment/
-        cp -r apps/pwa-client/.output/server deployment/.output/server/
+        cp -r apps/pwa-client/.output/server/* deployment/.output/server/
         cp apps/pwa-client/package.json deployment/
         cp apps/pwa-client/pnpm-lock.yaml deployment/
+
+        # Create .gcloudignore in deployment directory
+        echo "Creating .gcloudignore in deployment directory..."
+        cat > deployment/.gcloudignore <<EOL
+# Ignore everything by default
+**
+
+# Include only the necessary files for deployment
+!app.yaml
+!.output/server/**
+!package.json
+!pnpm-lock.yaml
+EOL
 
         echo "Deployment directory contents:"
         ls -R deployment/
 
         # Count the number of files to be deployed
         echo "Counting files to be deployed..."
-        FILE_COUNT=$(find deployment -type f | wc -l)
-        echo "Total files to be deployed: $FILE_COUNT"
+        DEPLOY_FILE_COUNT=$(find deployment -type f | wc -l)
+        echo "Total files to be deployed: $DEPLOY_FILE_COUNT"
 
-        if [ "$FILE_COUNT" -gt 9999 ]; then
+        if [ "$DEPLOY_FILE_COUNT" -gt 9999 ]; then
           echo "Error: The deployment contains more than 10,000 files."
           exit 1
         fi
@@ -66,8 +79,7 @@ steps:
       - |
         set -e
         echo "==== Step 1: Deploying Application ===="
-        cd deployment
-        gcloud app deploy app.yaml --quiet --verbosity=debug --stop-previous-version
+        gcloud app deploy deployment/app.yaml --quiet --verbosity=debug --stop-previous-version
 
 options:
   logging: CLOUD_LOGGING_ONLY
