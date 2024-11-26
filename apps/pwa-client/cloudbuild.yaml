@@ -72,7 +72,7 @@ steps:
       - |
         set -e
         echo "==== Step 4: Deploying Application to App Engine ===="
-        gcloud app deploy app.yaml --quiet --verbosity=debug
+        gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug
 
         echo "Deployment complete. Verifying remaining files..."
         ls -R .
