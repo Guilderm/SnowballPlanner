@@ -1,13 +1,16 @@
 # Ignore everything by default
+
 **
 
 # Include only necessary files for deployment
-!app.yaml
-!.output/server/**
+
+!.output/**
 !package.json
+!app.yaml
 !pnpm-lock.yaml
 
 # Exclude specific directories and files
+
 node_modules/
 .pnpm-store/
 dist/
