@@ -7,8 +7,8 @@
 ## Include only necessary files for deployment
 
 !app.yaml
-!pnpm-*.yaml
-!package-*.json
+# !pnpm-*.yaml
+# !package-*.json
 !apps/pwa-client/**
 !.output/**
 !apps/pwa-client/.output/**
