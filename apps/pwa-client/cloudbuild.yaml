@@ -41,4 +41,4 @@ options:
   logging: CLOUD_LOGGING_ONLY
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
 
-timeout: "1200s"
+timeout: "900s"
