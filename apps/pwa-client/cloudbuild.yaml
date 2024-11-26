@@ -10,6 +10,9 @@ steps:
         echo "==== Step 1: Deploying Application ===="
         gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug
 
+        echo  "List files in the current directory"
+        ls -Rla
+
 options:
   logging: CLOUD_LOGGING_ONLY
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
