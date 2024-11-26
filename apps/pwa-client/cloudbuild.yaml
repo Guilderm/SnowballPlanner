@@ -14,15 +14,15 @@ steps:
 
         # Install pnpm globally
         echo "Installing pnpm..."
-        npm install -g pnpm
+        npm install -g pnpm || { echo "Failed to install pnpm";}
 
         # Install dependencies for @debtfreeplanner/pwa-client
         echo "Installing dependencies for @debtfreeplanner/pwa-client..."
-        pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile
+        pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile || { echo "Failed to install dependencies";}
 
         # Build the project
         echo "Building the project..."
-        pnpm --filter @debtfreeplanner/pwa-client run build
+        pnpm --filter @debtfreeplanner/pwa-client run build || { echo "Build failed";}
 
         # Validate build output
         if [ ! -f apps/pwa-client/.output/server/index.mjs ]; then
@@ -32,30 +32,17 @@ steps:
 
         # Prune unnecessary files from the .output directory
         echo "Pruning unnecessary files from .output directory..."
-        find apps/pwa-client/.output -type f -name '*.map' -delete
-        find apps/pwa-client/.output -type f -name '*.ts' -delete
-        find apps/pwa-client/.output -type f -name '*.json' -delete -not -name 'package.json'
+        find apps/pwa-client/.output -type f -name '*.map' -delete || { echo "Failed to prune source maps";}
+        find apps/pwa-client/.output -type f -name '*.ts' -delete || { echo "Failed to prune TypeScript files";}
+        find apps/pwa-client/.output -type f -name '*.json' -delete -not -name 'package.json' || { echo "Failed to prune unnecessary JSON files";}
 
         # Prepare deployment directory
         echo "Preparing deployment directory..."
         mkdir deployment
         cp apps/pwa-client/app.yaml deployment/
-        cp -r apps/pwa-client/.output deployment/
+        cp -r apps/pwa-client/.output/server deployment/.output/server/
         cp apps/pwa-client/package.json deployment/
         cp apps/pwa-client/pnpm-lock.yaml deployment/
-
-        # Create .gcloudignore in deployment directory
-        echo "Creating .gcloudignore in deployment directory..."
-        cat > deployment/.gcloudignore <<EOL
-# Ignore everything by default
-**
-
-# Include only the necessary files for deployment
-!app.yaml
-!.output/**
-!package.json
-!pnpm-lock.yaml
-EOL
 
         echo "Deployment directory contents:"
         ls -R deployment/

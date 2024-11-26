@@ -1,14 +1,13 @@
 # Ignore everything by default
 **
 
-# Include only the necessary files for deployment
+# Include only necessary files for deployment
 !app.yaml
+!.output/server/**
 !package.json
 !pnpm-lock.yaml
-!.output/**
-!.output/server/**
 
-# Exclude unnecessary files and directories
+# Exclude specific directories and files
 node_modules/
 .pnpm-store/
 dist/
@@ -25,9 +24,3 @@ logs/
 .idea/
 .git/
 .gitignore
-
-# Exclude unneeded files in .output
-.output/public/
-.output/.nuxt/
-.output/client/
-.output/**/*.map
