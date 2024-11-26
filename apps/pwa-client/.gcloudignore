@@ -3,10 +3,10 @@
 
 # Include only the necessary files for deployment
 !app.yaml
-!.output/
-!.output/server/
 !package.json
 !pnpm-lock.yaml
+!.output/**
+!.output/server/**
 
 # Exclude unnecessary files and directories
 node_modules/

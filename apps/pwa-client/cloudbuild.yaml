@@ -6,6 +6,7 @@ steps:
     args:
       - "-c"
       - |
+        set -e  # Exit immediately if a command exits with a non-zero status
         echo "==== Step 0: Install Dependencies and Build ===="
 
         echo "Initial workspace directory structure:"
@@ -13,15 +14,15 @@ steps:
 
         # Install pnpm globally
         echo "Installing pnpm..."
-        npm install -g pnpm || { echo "Failed to install pnpm";}
+        npm install -g pnpm
 
         # Install dependencies for @debtfreeplanner/pwa-client
         echo "Installing dependencies for @debtfreeplanner/pwa-client..."
-        pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile || { echo "Failed to install dependencies";}
+        pnpm --filter @debtfreeplanner/pwa-client install --frozen-lockfile
 
         # Build the project
         echo "Building the project..."
-        pnpm --filter @debtfreeplanner/pwa-client run build || { echo "Build failed";}
+        pnpm --filter @debtfreeplanner/pwa-client run build
 
         # Validate build output
         if [ ! -f apps/pwa-client/.output/server/index.mjs ]; then
@@ -29,29 +30,45 @@ steps:
           exit 1
         fi
 
-        # Prune unnecessary files in .output directory
+        # Prune unnecessary files from the .output directory
         echo "Pruning unnecessary files from .output directory..."
-        find apps/pwa-client/.output -type f \( -name '*.map' -o -name '*.log' \) -delete || { echo "Failed to prune unnecessary files";}
+        find apps/pwa-client/.output -type f -name '*.map' -delete
+        find apps/pwa-client/.output -type f -name '*.ts' -delete
+        find apps/pwa-client/.output -type f -name '*.json' -delete -not -name 'package.json'
 
-        # Ensure only server files are included
-        echo "Removing unnecessary directories from .output..."
-        rm -rf apps/pwa-client/.output/public || { echo "Failed to remove .output/public";}
-        rm -rf apps/pwa-client/.output/client || { echo "Failed to remove .output/client";}
-        rm -rf apps/pwa-client/.output/.nuxt || { echo "Failed to remove .output/.nuxt";}
+        # Prepare deployment directory
+        echo "Preparing deployment directory..."
+        mkdir deployment
+        cp apps/pwa-client/app.yaml deployment/
+        cp -r apps/pwa-client/.output deployment/
+        cp apps/pwa-client/package.json deployment/
+        cp apps/pwa-client/pnpm-lock.yaml deployment/
 
-        # Copy necessary files to the root for deployment
-        echo "Copying app.yaml to /workspace..."
-        cp apps/pwa-client/app.yaml ./ || { echo "Failed to copy app.yaml";}
+        # Create .gcloudignore in deployment directory
+        echo "Creating .gcloudignore in deployment directory..."
+        cat > deployment/.gcloudignore <<EOL
+# Ignore everything by default
+**
 
-        echo "Copying .output/server directory to /workspace..."
-        cp -r apps/pwa-client/.output/server ./ || { echo "Failed to copy .output/server directory";}
+# Include only the necessary files for deployment
+!app.yaml
+!.output/**
+!package.json
+!pnpm-lock.yaml
+EOL
 
-        echo "Copying package.json and pnpm-lock.yaml to /workspace..."
-        cp apps/pwa-client/package.json ./ || { echo "Failed to copy package.json";}
-        cp apps/pwa-client/pnpm-lock.yaml ./ || { echo "Failed to copy pnpm-lock.yaml";}
+        echo "Deployment directory contents:"
+        ls -R deployment/
 
-        echo "Final workspace directory structure:"
-        ls -R .
+        # Count the number of files to be deployed
+        echo "Counting files to be deployed..."
+        FILE_COUNT=$(find deployment -type f | wc -l)
+        echo "Total files to be deployed: $FILE_COUNT"
+
+        if [ "$FILE_COUNT" -gt 9999 ]; then
+          echo "Error: The deployment contains more than 10,000 files."
+          exit 1
+        fi
 
   # Step 1: Deploy the application to App Engine
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
@@ -60,7 +77,9 @@ steps:
     args:
       - "-c"
       - |
+        set -e
         echo "==== Step 1: Deploying Application ===="
+        cd deployment
         gcloud app deploy app.yaml --quiet --verbosity=debug --stop-previous-version
 
 options:
