@@ -31,11 +31,8 @@ steps:
         echo "Listing Current working directory...."
         pwd
 
-        echo "Listing Current Directory Contents..."
-        ls -la
-
-        echo "Listing Contents of apps/pwa-client Recursively..."
-        ls -Rla apps/pwa-client
+        echo "Listing Contents of apps/pwa-client/.output/server Recursively..."
+        ls -Rla apps/pwa-client/.output/server
 
         echo "Deploying the application to App Engine..."
         gcloud app deploy apps/pwa-client/app.yaml --quiet --verbosity=debug --stop-previous-version
